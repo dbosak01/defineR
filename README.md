@@ -9,8 +9,8 @@
 <!-- badges: end -->
 
 # Introduction to **defineR**
-<!--<img src="man/images/defineR.png" align="left" height="138" style="margin-right:10px;"/>-->
+<img src="man/images/defineRe.png" align="left" height="138" style="margin-right:10px;"/>
 
 The **defineR** package is an R language package to create define.xml documents
-that is suitable for submission to the U.S. Food and Drug Administration.
+that are suitable for submission to the U.S. Food and Drug Administration.
 
