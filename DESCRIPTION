@@ -1,17 +1,30 @@
 Package: defineR
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Creates Define XML Documents
+Version: 0.0.9000
+Author: c(
+    person(given = "David",
+           family = "Bosak",
+           role = c("aut", "cre"),
+           email = "dbosak01@gmail.com"),
+    person(given = "Jonathan", 
+           family = "Stallings", 
+           role = c("aut"), 
+           email = "jonathan.stallings@gmail.com"))
+Maintainer: David Bosak <dbosak01@gmail.com>
+Description: Reads and writes 'define.xml' documents used for FDA 
+    submissions.  Table metadata can be imported from a variety of sources.
+License: CC0
 Encoding: UTF-8
-LazyData: true
 Suggests: 
     knitr,
     rmarkdown,
+    magrittr,
     testthat (>= 3.0.0)
+Imports:
+    stringi,
+    crayon,
+    tibble
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+RoxygenNote: 7.2.0
