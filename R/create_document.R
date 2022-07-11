@@ -2,9 +2,14 @@
 
 #' @title Creates a define XML document
 #' @export
-create_define <- function() {
+create_document <- function() {
 
 
+  ret <- structure(list(), class = c("doc_spec", "list"))
+
+
+
+  return(ret)
 
 }
 
@@ -13,10 +18,10 @@ create_define <- function() {
 
 
 #' @title Adds a dataset to define XML document
-#' @param dfn A definition object.
+#' @param doc A definition object.
 #' @param ds A dataset definition.
 #' @export
-add_dataset <- function(dfn, ds) {
+add_dataset <- function(doc, ds) {
 
 
 
@@ -24,14 +29,14 @@ add_dataset <- function(dfn, ds) {
 
 
 
-#' @title Print a define specification
+#' @title Print a define document specification
 #' @param x Object to print.
 #' @param ... Follow on parameters.
 #' @param verbose Whether to print in verbose mode.
 #' @import crayon
 #' @export
-print.dfn_spec <- function(x, ..., verbose = FALSE) {
-  
-  
-  
+print.doc_spec <- function(x, ..., verbose = FALSE) {
+
+
+
 }

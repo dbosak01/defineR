@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creates a dataset definition — define_dataset • defineR</title>
+<title>Imports metadata from an Excel file — import_metadata_xl • defineR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,9 @@
 
 
 
-<meta property="og:title" content="Creates a dataset definition — define_dataset" />
-<meta property="og:description" content="Creates a dataset definition" />
+<meta property="og:title" content="Imports metadata from an Excel file — import_metadata_xl" />
+<meta property="og:description" content="Imports define metadata from xls or xlsx files. Returns
+a list of tibbles." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -117,29 +118,30 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Creates a dataset definition</h1>
+    <h1>Imports metadata from an Excel file</h1>
     
-    <div class="hidden name"><code>define_dataset.Rd</code></div>
+    <div class="hidden name"><code>import_metadata_xl.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates a dataset definition</p>
+    <p>Imports define metadata from xls or xlsx files. Returns
+a list of tibbles.</p>
     </div>
 
-    <pre class="usage"><span><span class='fu'>define_dataset</span><span class='op'>(</span><span class='va'>name</span><span class='op'>)</span></span></pre>
+    <pre class="usage"><span><span class='fu'>import_metadata_xl</span><span class='op'>(</span><span class='va'>file_path</span><span class='op'>)</span></span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>name</th>
-      <td><p>The name of the dataset.</p></td>
+      <th>file_path</th>
+      <td><p>The path to the Excel metadata file.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The newly created dataset specification.</p>
+    <p>A list of tibbles, one for each sheet in the excel file.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

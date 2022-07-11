@@ -4,7 +4,13 @@
 \alias{define_dataset}
 \title{Creates a dataset definition}
 \usage{
-define_dataset()
+define_dataset(name)
+}
+\arguments{
+\item{name}{The name of the dataset.}
+}
+\value{
+The newly created dataset specification.
 }
 \description{
 Creates a dataset definition

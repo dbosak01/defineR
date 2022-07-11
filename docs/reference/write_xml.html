@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creates a dataset definition — define_dataset • defineR</title>
+<title>Writes a define XML document to the file system — write_xml • defineR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Creates a dataset definition — define_dataset" />
-<meta property="og:description" content="Creates a dataset definition" />
+<meta property="og:title" content="Writes a define XML document to the file system — write_xml" />
+<meta property="og:description" content="Writes a define XML document to the file system" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -117,29 +117,30 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Creates a dataset definition</h1>
+    <h1>Writes a define XML document to the file system</h1>
     
-    <div class="hidden name"><code>define_dataset.Rd</code></div>
+    <div class="hidden name"><code>write_xml.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates a dataset definition</p>
+    <p>Writes a define XML document to the file system</p>
     </div>
 
-    <pre class="usage"><span><span class='fu'>define_dataset</span><span class='op'>(</span><span class='va'>name</span><span class='op'>)</span></span></pre>
+    <pre class="usage"><span><span class='fu'>write_xml</span><span class='op'>(</span><span class='va'>xml</span>, <span class='va'>file_path</span><span class='op'>)</span></span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>name</th>
-      <td><p>The name of the dataset.</p></td>
+      <th>xml</th>
+      <td><p>The xml to write.</p></td>
+    </tr>
+    <tr>
+      <th>file_path</th>
+      <td><p>The path to write the xml file.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>The newly created dataset specification.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

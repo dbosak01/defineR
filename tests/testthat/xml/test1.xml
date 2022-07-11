@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+  <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
+    <!-- ************************************************************* -->
+    <!-- File: define.xml                                              -->
+    <!-- Date: 10July2022                                                   -->
+    <!-- Description: Define.xml file for XYZ123                       -->
+    <!-- Created by the defineR package                                -->
+    <!-- ************************************************************* -->
+    <ODM
+  xmlns="http://www.cdisc.org/ns/odm/v1.3"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:def="http://www.cdisc.org/ns/def/v2.0"
+  ODMVersion="1.3.2"
+  FileOID="XYZ123"
+  FileType="Snapshot"
+  CreationDateTime="2022-07-10T22:10:43">
+    <Study OID="123">
+    <GlobalVariables>
+    <StudyName>XYZ123</StudyName>
+    <StudyDescription>A PHASE IIB, DOUBLE-BLIND, MULTI-CENTER, PLACEBO CONTROLLED, PARALLEL GROUP TRIAL OF ANALGEZIA HCL FOR THE TREATMENT OF CHRONIC PAIN</StudyDescription>
+    <ProtocolName>XYZ123</ProtocolName>
+    </GlobalVariables>
+    <MetaDataVersion OID="CDISC.SDTM-IG.3.2"
+  Name="XYZ123, SDTM Data Definitions"
+  Description="XYZ123, SDTM Data Definitions"
+  def:DefineVersion="2.0.0"
+  def:StandardName="SDTM-IG"
+  def:StandardVersion="3.2">
+
+  <!-- ******************************************* -->
+  <!-- VALUE LEVEL LIST DEFINITION INFORMATION  ** -->
+  <!-- ******************************************* -->
+
+<def:ValueListDef OID="VL.LB.LBORRES">
+<ItemRef ItemOID="VL.LB.LBORRES.ALB"
+  OrderNumber="1"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.ALP"
+  OrderNumber="2"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.ALT"
+  OrderNumber="3"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.AST"
+  OrderNumber="4"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.BILDIR"
+  OrderNumber="5"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.BILI"
+  OrderNumber="6"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.GGT"
+  OrderNumber="7"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.HCT"
+  OrderNumber="8"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.HGB"
+  OrderNumber="9"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.PROT"
+  OrderNumber="10"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.GLUC"
+  OrderNumber="11"
+  Mandatory="No">
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY"/>
+</ItemRef>
+<ItemRef ItemOID="VL.LB.LBORRES.GLUC"
+  OrderNumber="12"
+  Mandatory="No">
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS"/>
+</ItemRef>
+ </def:ValueListDef>
+
+<def:ValueListDef OID="VL.SUPPDM.QVAL">
+<ItemRef ItemOID="VL.SUPPDM.QVAL.RACEOTH"
+  OrderNumber="1"
+  Mandatory="No">
+  
+</ItemRef>
+<ItemRef ItemOID="VL.SUPPDM.QVAL.RANDDTC"
+  OrderNumber="2"
+  Mandatory="No">
+  
+</ItemRef>
+ </def:ValueListDef>
+
+
+  <!-- ****************************************************************** -->
+  <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->
+  <!-- ****************************************************************** -->
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY">
+<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBCAT" Comparator="EQ">
+  <CheckValue>CHEMISTRY</CheckValue>
+  </RangeCheck>
+  </def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY">
+<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBTESTCD" Comparator="EQ">
+  <CheckValue>GLUC</CheckValue>
+  </RangeCheck>
+  </def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS">
+<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBCAT" Comparator="EQ">
+  <CheckValue>URINALYSIS</CheckValue>
+  </RangeCheck>
+  </def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS">
+<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBTESTCD" Comparator="EQ">
+  <CheckValue>GLUC</CheckValue>
+  </RangeCheck>
+  </def:WhereClauseDef>
+
+  <!-- ******************************** -->
+  <!-- COMMENTS DEFINITION SECTION      -->
+  <!-- ******************************** -->
+<def:CommentDef OID="COM.ARMCD">
+  <Description>
+    <TranslatedText xml:lang="en">Assigned based on Randomization Number.</TranslatedText>
+  </Description>
+</def:CommentDef>
+<def:CommentDef OID="com.ae">
+  <Description>
+    <TranslatedText xml:lang="en">MedDRA dictionary version XX.1 was used to code all adverse events.</TranslatedText>
+  </Description>
+</def:CommentDef>
+</MetaDataVersion>
+</Study>
+</ODM>

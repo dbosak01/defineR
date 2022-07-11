@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creates a dataset definition — define_dataset • defineR</title>
+<title>Add a variable to a dataset definition — add_variable • defineR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Creates a dataset definition — define_dataset" />
-<meta property="og:description" content="Creates a dataset definition" />
+<meta property="og:title" content="Add a variable to a dataset definition — add_variable" />
+<meta property="og:description" content="Add a variable to a dataset definition" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -117,29 +117,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Creates a dataset definition</h1>
+    <h1>Add a variable to a dataset definition</h1>
     
-    <div class="hidden name"><code>define_dataset.Rd</code></div>
+    <div class="hidden name"><code>add_variable.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates a dataset definition</p>
+    <p>Add a variable to a dataset definition</p>
     </div>
 
-    <pre class="usage"><span><span class='fu'>define_dataset</span><span class='op'>(</span><span class='va'>name</span><span class='op'>)</span></span></pre>
+    <pre class="usage"><span><span class='fu'>add_variable</span><span class='op'>(</span><span class='va'>dst</span>, <span class='va'>name</span>, label <span class='op'>=</span> <span class='cn'>NULL</span>, width <span class='op'>=</span> <span class='cn'>NULL</span>, type <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>dst</th>
+      <td><p>The dataset definition to which this variable will be added.</p></td>
+    </tr>
+    <tr>
       <th>name</th>
-      <td><p>The name of the dataset.</p></td>
+      <td><p>The name of the variable.</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p>The label for this variable.</p></td>
+    </tr>
+    <tr>
+      <th>width</th>
+      <td><p>The width of this variable.</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p>The data type for this variable.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The newly created dataset specification.</p>
+    <p>The dataset spec with the variable appended.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
