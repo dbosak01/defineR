@@ -79,7 +79,7 @@ create_xml <- function(lst) {
 #' @import glue
 #' @noRd
 get_header <- function(dta) {
-
+# Comment
   str <- '
   <?xml version="1.0" encoding="ISO-8859-1" ?>
     <?xml-stylesheet type="text/xsl" href="{stylesheet}"?>
