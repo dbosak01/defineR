@@ -1,5 +1,5 @@
 
-base_path <- "c:\\packages\\dfnr\\tests\\testthat"
+base_path <- "c:\\packages\\defineR\\tests\\testthat"
 data_dir <- base_path
 
 base_path <- tempdir()
