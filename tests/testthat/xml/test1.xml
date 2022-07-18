@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-07-18T16:43:20">
+  CreationDateTime="2022-07-18T17:30:15">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -301,6 +301,1028 @@
     <TranslatedText xml:lang="en">Set equal to the randomization date from the source demographics file</TranslatedText>
   </Description>
 </MethodDef>
+
+  <!-- ************************************************************ -->
+  <!-- Codelists are presented below                                -->
+  <!-- ************************************************************ -->
+<CodeList OID="CodeList.ACN"
+Name="ACN"
+DataType="text">
+<CodeListItem CodedValue="DOSE INCREASED" Rank="1">
+  <Decode>
+    <TranslatedText>DOSE INCREASED</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="DOSE NOT CHANGED" Rank="2">
+  <Decode>
+    <TranslatedText>DOSE NOT CHANGED</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="DOSE REDUCED" Rank="3">
+  <Decode>
+    <TranslatedText>DOSE REDUCED</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="DRUG INTERRUPTED" Rank="4">
+  <Decode>
+    <TranslatedText>DRUG INTERRUPTED</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="DRUG WITHDRAWN" Rank="5">
+  <Decode>
+    <TranslatedText>DRUG WITHDRAWN</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="NOT APPLICABLE" Rank="6">
+  <Decode>
+    <TranslatedText>NA</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="UNKNOWN" Rank="7">
+  <Decode>
+    <TranslatedText>U; Unknown</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.AEBODSYS"
+Name="AEBODSYS"
+DataType="text">
+<ExternalCodeList Dictionary="MedDRA" Version="18.0"/>
+</CodeList>
+<CodeList OID="CodeList.AEDECOD"
+Name="AEDECOD"
+DataType="text">
+<ExternalCodeList Dictionary="MedDRA" Version="18.0"/>
+</CodeList>
+<CodeList OID="CodeList.AEREL"
+Name="AEREL"
+DataType="text">
+<CodeListItem CodedValue="NOT RELATED" Rank="1">
+  <Decode>
+    <TranslatedText>NOT RELATED</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="POSSIBLY RELATED" Rank="2">
+  <Decode>
+    <TranslatedText>POSSIBLY RELATED</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="PROBABLY RELATED" Rank="3">
+  <Decode>
+    <TranslatedText>PROBABLY RELATED</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.AESEV"
+Name="AESEV"
+DataType="text">
+<CodeListItem CodedValue="MILD" Rank="1">
+  <Decode>
+    <TranslatedText>Grade 1; 1</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="MODERATE" Rank="2">
+  <Decode>
+    <TranslatedText>Grade 2; 2</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="SEVERE" Rank="3">
+  <Decode>
+    <TranslatedText>Grade 3; 3</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.AGEU"
+Name="AGEU"
+DataType="text">
+<CodeListItem CodedValue="YEARS" Rank="1">
+  <Decode>
+    <TranslatedText>YEARS</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.ARM"
+Name="ARM"
+DataType="text">
+<CodeListItem CodedValue="Analgezia HCL 30 mg" Rank="1">
+  <Decode>
+    <TranslatedText>Analgezia HCL 30 mg</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Placebo" Rank="2">
+  <Decode>
+    <TranslatedText>Placebo</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.ARMCD"
+Name="ARMCD"
+DataType="text">
+<CodeListItem CodedValue="ALG123" Rank="1">
+  <Decode>
+    <TranslatedText>Analgezia HCL 30 mg</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="PLACEBO" Rank="2">
+  <Decode>
+    <TranslatedText>Placebo</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.COUNTRY"
+Name="COUNTRY"
+DataType="text">
+<CodeListItem CodedValue="USA" Rank="1">
+  <Decode>
+    <TranslatedText>UNITED STATES</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.EPOCH"
+Name="EPOCH"
+DataType="text">
+<CodeListItem CodedValue="SCREENING" Rank="1">
+  <Decode>
+    <TranslatedText>SCREENING</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="TREATMENT" Rank="2">
+  <Decode>
+    <TranslatedText>TREATMENT</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.FRM"
+Name="FRM"
+DataType="text">
+<CodeListItem CodedValue="TABLET, COATED" Rank="1">
+  <Decode>
+    <TranslatedText>TABLET, COATED</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.IECAT"
+Name="IECAT"
+DataType="text">
+<CodeListItem CodedValue="INCLUSION" Rank="1">
+  <Decode>
+    <TranslatedText>INCLUSION</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="EXCLUSION" Rank="2">
+  <Decode>
+    <TranslatedText>EXCLUSION</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.LBCAT"
+Name="LBCAT"
+DataType="text">
+<CodeListItem CodedValue="CHEMISTRY" Rank="1">
+  <Decode>
+    <TranslatedText>CHEMISTRY</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="HEMATOLOGY" Rank="2">
+  <Decode>
+    <TranslatedText>HEMATOLOGY</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="URINALYSIS" Rank="3">
+  <Decode>
+    <TranslatedText>URINALYSIS</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.LBNRIND"
+Name="LBNRIND"
+DataType="text">
+<CodeListItem CodedValue="HIGH" Rank="1">
+  <Decode>
+    <TranslatedText>HIGH</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="LOW" Rank="2">
+  <Decode>
+    <TranslatedText>LOW</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="NORMAL" Rank="3">
+  <Decode>
+    <TranslatedText>NORMAL</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.LBTEST"
+Name="LBTEST"
+DataType="text">
+<CodeListItem CodedValue="Albumin; Microalbumin" Rank="1">
+  <Decode>
+    <TranslatedText>Albumin; Microalbumin</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Alkaline Phosphatase" Rank="2">
+  <Decode>
+    <TranslatedText>Alkaline Phosphatase</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Alanine Aminotransferase; SGPT" Rank="3">
+  <Decode>
+    <TranslatedText>Alanine Aminotransferase; SGPT</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Aspartate Aminotransferase; SGOT" Rank="4">
+  <Decode>
+    <TranslatedText>Aspartate Aminotransferase; SGOT</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Direct Bilirubin" Rank="5">
+  <Decode>
+    <TranslatedText>Direct Bilirubin</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Bilirubin; Total Bilirubin" Rank="6">
+  <Decode>
+    <TranslatedText>Bilirubin; Total Bilirubin</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Gamma Glutamyl Transferase" Rank="7">
+  <Decode>
+    <TranslatedText>Gamma Glutamyl Transferase</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume" Rank="8">
+  <Decode>
+    <TranslatedText>EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="FHGB; Free Hemoglobin; Hemoglobin" Rank="9">
+  <Decode>
+    <TranslatedText>FHGB; Free Hemoglobin; Hemoglobin</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Protein" Rank="10">
+  <Decode>
+    <TranslatedText>Protein</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Glucose" Rank="11">
+  <Decode>
+    <TranslatedText>Glucose</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.LBTESTCD"
+Name="LBTESTCD"
+DataType="text">
+<CodeListItem CodedValue="ALB" Rank="1">
+  <Decode>
+    <TranslatedText>Albumin; Microalbumin</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="ALP" Rank="2">
+  <Decode>
+    <TranslatedText>Alkaline Phosphatase</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="ALT" Rank="3">
+  <Decode>
+    <TranslatedText>Alanine Aminotransferase; SGPT</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="AST" Rank="4">
+  <Decode>
+    <TranslatedText>Aspartate Aminotransferase; SGOT</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="BILDIR" Rank="5">
+  <Decode>
+    <TranslatedText>Direct Bilirubin</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="BILI" Rank="6">
+  <Decode>
+    <TranslatedText>Bilirubin; Total Bilirubin</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="GGT" Rank="7">
+  <Decode>
+    <TranslatedText>Gamma Glutamyl Transferase</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="HCT" Rank="8">
+  <Decode>
+    <TranslatedText>EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="HGB" Rank="9">
+  <Decode>
+    <TranslatedText>FHGB; Free Hemoglobin; Hemoglobin</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="PROT" Rank="10">
+  <Decode>
+    <TranslatedText>Protein</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="GLUC" Rank="11">
+  <Decode>
+    <TranslatedText>Glucose</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.NY"
+Name="NY"
+DataType="text">
+<CodeListItem CodedValue="N" Rank="1">
+  <Decode>
+    <TranslatedText>No</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="NA" Rank="2">
+  <Decode>
+    <TranslatedText>NA; Not Applicable</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="U" Rank="3">
+  <Decode>
+    <TranslatedText>U; UNK; Unknown</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Y" Rank="4">
+  <Decode>
+    <TranslatedText>Yes</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.RACE"
+Name="RACE"
+DataType="text">
+<CodeListItem CodedValue="BLACK OR AFRICAN AMERICAN" Rank="1">
+  <Decode>
+    <TranslatedText>BLACK OR AFRICAN AMERICAN</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="ASIAN" Rank="2">
+  <Decode>
+    <TranslatedText>ASIAN</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="WHITE" Rank="3">
+  <Decode>
+    <TranslatedText>WHITE</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.SEX"
+Name="SEX"
+DataType="text">
+<CodeListItem CodedValue="F" Rank="1">
+  <Decode>
+    <TranslatedText>Female</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="M" Rank="2">
+  <Decode>
+    <TranslatedText>Male</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="U" Rank="3">
+  <Decode>
+    <TranslatedText>U; UNK; Unknown</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.TSPARM"
+Name="TSPARM"
+DataType="text">
+<CodeListItem CodedValue="Added on to Existing Treatments" Rank="1">
+  <Decode>
+    <TranslatedText>Added on to Existing Treatments</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Planned Maximum Age of Subjects" Rank="2">
+  <Decode>
+    <TranslatedText>Planned Maximum Age of Subjects</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Planned Minimum Age of Subjects" Rank="3">
+  <Decode>
+    <TranslatedText>Planned Minimum Age of Subjects</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Planned Trial Length" Rank="4">
+  <Decode>
+    <TranslatedText>Planned Trial Length</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Planned Number of Subjects" Rank="5">
+  <Decode>
+    <TranslatedText>Planned Number of Subjects</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Trial is Randomized" Rank="6">
+  <Decode>
+    <TranslatedText>Trial is Randomized</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Sex of Participants" Rank="7">
+  <Decode>
+    <TranslatedText>Sex of Participants</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Study Stop Rules" Rank="8">
+  <Decode>
+    <TranslatedText>Study Stop Rules</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Trial Blinding Schema" Rank="9">
+  <Decode>
+    <TranslatedText>Trial Blinding Schema</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Control Type" Rank="10">
+  <Decode>
+    <TranslatedText>Control Type</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Diagnosis Group" Rank="11">
+  <Decode>
+    <TranslatedText>Diagnosis Group</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Trial Indication Type" Rank="12">
+  <Decode>
+    <TranslatedText>Trial Indication Type</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Trial Title" Rank="13">
+  <Decode>
+    <TranslatedText>Trial Title</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Trial Phase Classification" Rank="14">
+  <Decode>
+    <TranslatedText>Trial Phase Classification</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Trial Type" Rank="15">
+  <Decode>
+    <TranslatedText>Trial Type</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Current Therapy or Treatment" Rank="16">
+  <Decode>
+    <TranslatedText>Current Therapy or Treatment</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Trial Primary Objective" Rank="17">
+  <Decode>
+    <TranslatedText>Trial Primary Objective</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Trial Secondary Objective" Rank="18">
+  <Decode>
+    <TranslatedText>Trial Secondary Objective</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Clinical Study Sponsor" Rank="19">
+  <Decode>
+    <TranslatedText>Clinical Study Sponsor</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Trial Indication" Rank="20">
+  <Decode>
+    <TranslatedText>Trial Indication</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Investigational Therapy or Treatment" Rank="21">
+  <Decode>
+    <TranslatedText>Investigational Therapy or Treatment</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Randomization Quotient" Rank="22">
+  <Decode>
+    <TranslatedText>Randomization Quotient</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Registry Identifier" Rank="23">
+  <Decode>
+    <TranslatedText>Registry Identifier</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Primary Outcome Measure" Rank="24">
+  <Decode>
+    <TranslatedText>Primary Outcome Measure</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Secondary Outcome Measure" Rank="25">
+  <Decode>
+    <TranslatedText>Secondary Outcome Measure</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Exploratory Outcome Measure" Rank="26">
+  <Decode>
+    <TranslatedText>Exploratory Outcome Measure</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Pharmacological Class of Investigational Therapy" Rank="27">
+  <Decode>
+    <TranslatedText>Pharmacological Class of Investigational Therapy</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Planned Country of Investigational Site(s)" Rank="28">
+  <Decode>
+    <TranslatedText>Planned Country of Investigational Site(s)</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Adaptive Design" Rank="29">
+  <Decode>
+    <TranslatedText>Adaptive Design</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Data Cutoff Date" Rank="30">
+  <Decode>
+    <TranslatedText>Data Cutoff Date</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Data Cutoff Description" Rank="31">
+  <Decode>
+    <TranslatedText>Data Cutoff Description</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Intervention Model" Rank="32">
+  <Decode>
+    <TranslatedText>Intervention Model</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Planned Number of Arms" Rank="33">
+  <Decode>
+    <TranslatedText>Planned Number of Arms</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Study Type" Rank="34">
+  <Decode>
+    <TranslatedText>Study Type</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Intervention Type" Rank="35">
+  <Decode>
+    <TranslatedText>Intervention Type</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Study Start Date" Rank="36">
+  <Decode>
+    <TranslatedText>Study Start Date</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Study End Date" Rank="37">
+  <Decode>
+    <TranslatedText>Study End Date</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Actual Number of Subjects" Rank="38">
+  <Decode>
+    <TranslatedText>Actual Number of Subjects</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Healthy Subject" Rank="39">
+  <Decode>
+    <TranslatedText>Healthy Subject</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Stable Disease Minimum Duration" Rank="40">
+  <Decode>
+    <TranslatedText>Stable Disease Minimum Duration</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Confirmed Response Minimum Duration" Rank="41">
+  <Decode>
+    <TranslatedText>Confirmed Response Minimum Duration</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.TSPARMCD"
+Name="TSPARMCD"
+DataType="text">
+<CodeListItem CodedValue="ADDON" Rank="1">
+  <Decode>
+    <TranslatedText>Added on to Existing Treatments</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="AGEMAX" Rank="2">
+  <Decode>
+    <TranslatedText>Planned Maximum Age of Subjects</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="AGEMIN" Rank="3">
+  <Decode>
+    <TranslatedText>Planned Minimum Age of Subjects</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="LENGTH" Rank="4">
+  <Decode>
+    <TranslatedText>Planned Trial Length</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="PLANSUB" Rank="5">
+  <Decode>
+    <TranslatedText>Planned Number of Subjects</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="RANDOM" Rank="6">
+  <Decode>
+    <TranslatedText>Trial is Randomized</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="SEXPOP" Rank="7">
+  <Decode>
+    <TranslatedText>Sex of Participants</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="STOPRULE" Rank="8">
+  <Decode>
+    <TranslatedText>Study Stop Rules</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="TBLIND" Rank="9">
+  <Decode>
+    <TranslatedText>Trial Blinding Schema</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="TCNTRL" Rank="10">
+  <Decode>
+    <TranslatedText>Control Type</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="TDIGRP" Rank="11">
+  <Decode>
+    <TranslatedText>Diagnosis Group</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="TINDTP" Rank="12">
+  <Decode>
+    <TranslatedText>Trial Indication Type</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="TITLE" Rank="13">
+  <Decode>
+    <TranslatedText>Trial Title</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="TPHASE" Rank="14">
+  <Decode>
+    <TranslatedText>Trial Phase Classification</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="TTYPE" Rank="15">
+  <Decode>
+    <TranslatedText>Trial Type</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="CURTRT" Rank="16">
+  <Decode>
+    <TranslatedText>Current Therapy or Treatment</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="OBJPRIM" Rank="17">
+  <Decode>
+    <TranslatedText>Trial Primary Objective</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="OBJSEC" Rank="18">
+  <Decode>
+    <TranslatedText>Trial Secondary Objective</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="SPONSOR" Rank="19">
+  <Decode>
+    <TranslatedText>Clinical Study Sponsor</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="INDIC" Rank="20">
+  <Decode>
+    <TranslatedText>Trial Indication</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="TRT" Rank="21">
+  <Decode>
+    <TranslatedText>Investigational Therapy or Treatment</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="RANDQT" Rank="22">
+  <Decode>
+    <TranslatedText>Randomization Quotient</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="REGID" Rank="23">
+  <Decode>
+    <TranslatedText>Registry Identifier</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="OUTMSPRI" Rank="24">
+  <Decode>
+    <TranslatedText>Primary Outcome Measure</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="OUTMSSEC" Rank="25">
+  <Decode>
+    <TranslatedText>Secondary Outcome Measure</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="OUTMSEXP" Rank="26">
+  <Decode>
+    <TranslatedText>Exploratory Outcome Measure</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="PCLAS" Rank="27">
+  <Decode>
+    <TranslatedText>Pharmacological Class of Investigational Therapy</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="FCNTRY" Rank="28">
+  <Decode>
+    <TranslatedText>Planned Country of Investigational Site(s)</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="ADAPT" Rank="29">
+  <Decode>
+    <TranslatedText>Adaptive Design</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="DCUTDTC" Rank="30">
+  <Decode>
+    <TranslatedText>Data Cutoff Date</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="DCUTDESC" Rank="31">
+  <Decode>
+    <TranslatedText>Data Cutoff Description</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="INTMODEL" Rank="32">
+  <Decode>
+    <TranslatedText>Intervention Model</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="NARMS" Rank="33">
+  <Decode>
+    <TranslatedText>Planned Number of Arms</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="STYPE" Rank="34">
+  <Decode>
+    <TranslatedText>Study Type</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="INTTYPE" Rank="35">
+  <Decode>
+    <TranslatedText>Intervention Type</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="SSTDTC" Rank="36">
+  <Decode>
+    <TranslatedText>Study Start Date</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="SENDTC" Rank="37">
+  <Decode>
+    <TranslatedText>Study End Date</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="ACTSUB" Rank="38">
+  <Decode>
+    <TranslatedText>Actual Number of Subjects</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="HLTSUBJI" Rank="39">
+  <Decode>
+    <TranslatedText>Healthy Subject</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="SDMDUR" Rank="40">
+  <Decode>
+    <TranslatedText>Stable Disease Minimum Duration</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="CRMDUR" Rank="41">
+  <Decode>
+    <TranslatedText>Confirmed Response Minimum Duration</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.UNIT"
+Name="UNIT"
+DataType="text">
+<CodeListItem CodedValue="%" Rank="1">
+  <Decode>
+    <TranslatedText>Percentage</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="g/dL" Rank="2">
+  <Decode>
+    <TranslatedText>Gram per Deciliter</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="IU/L" Rank="3">
+  <Decode>
+    <TranslatedText>International Unit per Liter</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="mg/dL" Rank="4">
+  <Decode>
+    <TranslatedText>Milligram per Deciliter</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="mg" Rank="5">
+  <Decode>
+    <TranslatedText>Milligram</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.URINGLUC"
+Name="URINGLUC"
+DataType="text">
+<CodeListItem CodedValue="NEGATIVE" Rank="1">
+  <Decode>
+    <TranslatedText>Negative</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="POSITIVE" Rank="2">
+  <Decode>
+    <TranslatedText>Positive</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.VISIT"
+Name="VISIT"
+DataType="text">
+<CodeListItem CodedValue="Baseline" Rank="1">
+  <Decode>
+    <TranslatedText>Baseline</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Month 3" Rank="2">
+  <Decode>
+    <TranslatedText>Month 3</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeListItem CodedValue="Month 6" Rank="3">
+  <Decode>
+    <TranslatedText>Month 6</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.XPTEST"
+Name="XPTEST"
+DataType="text">
+<CodeListItem CodedValue="Pain Score" Rank="1">
+  <Decode>
+    <TranslatedText>Pain Score</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
+<CodeList OID="CodeList.XPTESTCD"
+Name="XPTESTCD"
+DataType="text">
+<CodeListItem CodedValue="XPPAIN" Rank="1">
+  <Decode>
+    <TranslatedText>XPPAIN</TranslatedText>
+  </Decode>
+</CodeListItem>
+</CodeList>
 
   <!-- ****************************************************************** -->
   <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->

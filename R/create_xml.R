@@ -228,31 +228,54 @@ get_computations <- function(dta) {
                                  comp = dta[rw, "TYPE"],
                                  compMthd = dta[rw, "COMPUTATIONMETHOD"])
   }
+  ret[length(ret) + 1] <- ""
   return(ret)
 
 }
 
 #' @noRd
 get_code_lists <- function(dta) {
-  # blk <- '<!-- ************************************************************ -->
-  # <!-- Codelists are presented below                                -->
-  # <!-- ************************************************************ -->'
-  # listHead <- '<CodeList OID="CodeList.ACN"
-  # Name="ACN"
-  # DataType="text">'
-  # endCL <- '</CodeList>'
-  # item <- '<CodeListItem CodedValue="DOSE INCREASED" Rank="1">
-  #       <Decode>
-  #         <TranslatedText>DOSE INCREASED</TranslatedText>
-  #       </Decode>
-  #     </CodeListItem>'
-  # dict <- '<ExternalCodeList Dictionary="MedDRA" Version="18.0"/>'
-  #
-  #
-  # f <- list(as.factor(dta[["CODELISTNAME"]]))
-  # splts <- split(dta, f)
-  # print(splts)
+  blk <- '  <!-- ************************************************************ -->
+  <!-- Codelists are presented below                                -->
+  <!-- ************************************************************ -->'
+  listHead <- '<CodeList OID="CodeList.{codelistname}"
+  Name="{codelistname}"
+  DataType="{dtype}">'
+  endCL <- '</CodeList>'
+  item <- '  <CodeListItem CodedValue="{codedval}" Rank="{rank}">
+          <Decode>
+            <TranslatedText>{translated}</TranslatedText>
+          </Decode>
+        </CodeListItem>'
+  dictcl <- '<ExternalCodeList Dictionary="{dict}" Version="{clver}"/>'
 
+
+  f <- list(as.factor(dta[["CODELISTNAME"]]))
+  splts <- split(dta, f)
+
+
+  ret <- c(blk)
+
+  for(sp in splts) {
+    ret[length(ret) + 1] <- glue(listHead,
+                                 codelistname = sp[1, "CODELISTNAME"],
+                                 dtype = sp[1, "TYPE"])
+    for(rw in seq_len(nrow(sp))) {
+      if(!is.na(sp[[rw, "CODELISTDICTIONARY"]])) {
+        ret[length(ret) + 1] <- glue(dictcl,
+                                     dict = sp[rw, "CODELISTDICTIONARY"],
+                                     clver = sp[rw, "CODELISTVERSION"])
+      }
+      else {
+        ret[length(ret) + 1] <- glue(item,
+                                     codedval = sp[rw, "CODEDVALUE"],
+                                     rank = sp[rw, "RANK"],
+                                     translated = sp[rw, "TRANSLATED"])
+      }
+      ret[length(ret) + 1] <- endCL
+    }
+  }
+  return(ret)
 }
 
 #' @noRd
