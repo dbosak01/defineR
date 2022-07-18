@@ -3,6 +3,8 @@
 
 # test
 
+library(common)
+
 
 create_xml <- function(lst) {
 
@@ -208,14 +210,48 @@ get_value_level <- function(dta) {
 #' @noRd
 get_computations <- function(dta) {
 
+  blk <-'  <!-- ******************************************* -->
+  <!-- COMPUTATIONAL METHOD INFORMATION        *** -->
+  <!-- ******************************************* -->'
 
+  str <- '<MethodDef OID="{mthdOID}" Name="{label}" Type="{comp}">
+        <Description>
+          <TranslatedText xml:lang="en">{compMthd}</TranslatedText>
+        </Description>
+      </MethodDef>'
+
+  ret <- c(blk)
+  for(rw in seq_len(nrow(dta))) {
+    ret[length(ret) + 1] <- glue(str,
+                                 mthdOID = dta[rw, "COMPUTATIONMETHODOID"],
+                                 label = dta[rw, "LABEL"],
+                                 comp = dta[rw, "TYPE"],
+                                 compMthd = dta[rw, "COMPUTATIONMETHOD"])
+  }
+  return(ret)
 
 }
 
 #' @noRd
 get_code_lists <- function(dta) {
-
-
+  # blk <- '<!-- ************************************************************ -->
+  # <!-- Codelists are presented below                                -->
+  # <!-- ************************************************************ -->'
+  # listHead <- '<CodeList OID="CodeList.ACN"
+  # Name="ACN"
+  # DataType="text">'
+  # endCL <- '</CodeList>'
+  # item <- '<CodeListItem CodedValue="DOSE INCREASED" Rank="1">
+  #       <Decode>
+  #         <TranslatedText>DOSE INCREASED</TranslatedText>
+  #       </Decode>
+  #     </CodeListItem>'
+  # dict <- '<ExternalCodeList Dictionary="MedDRA" Version="18.0"/>'
+  #
+  #
+  # f <- list(as.factor(dta[["CODELISTNAME"]]))
+  # splts <- split(dta, f)
+  # print(splts)
 
 }
 
@@ -284,12 +320,66 @@ get_comments <- function(dta) {
 
 
 
-
+#' @import common
 #' @noRd
 get_external_links <- function(dta) {
+  blk <- '
+  <!-- ******************************************* -->
+  <!-- EXTERNAL DOCUMENT REFERENCE             *** -->
+  <!-- ******************************************* -->'
+
+  str1 <- '<def:AnnotatedCRF>
+      <def:DocumentRef leafID="{leafid}"/>
+    </def:AnnotatedCRF>\n\n'
+
+  str2 <- '<def:SupplementalDoc>
+      <def:DocumentRef leafID="{leafid}"/>
+    </def:SupplementalDoc>\n\n'
+
+  ret <- c(blk)
+
+  # for(rw in seq_len(nrow(dta))) {
+  #   # print(unclass(dta[rw, "AnnotatedCRF"])[1])
+  #   # print(unclass(dta[rw, "SupplementalDoc"])[1])
+  #   print(dta[rw, "AnnotatedCRF"][1] == "Y")
+  #   print(dta[rw, "SupplementalDoc"][1] == "Y")
+  #   if(dta[rw, "AnnotatedCRF"][1] == "Y") {print("balls")}
+  #   # Fix the if block below it's a retarded statement if you think about it
+  #
+  #   if(is.na(dta[rw, "AnnotatedCRF"][1]) || is.null(dta[rw,"AnnotatedCRF"][1])) {
+  #
+  #   }
+  #   else if(is.na(dta[rw, "SupplementalDoc"][1]) || is.null(dta[rw, "SupplementalDoc"][1])) {
+  #
+  #   }
+  #
+  #   if(is.na(dta[rw, "AnnotatedCRF"][1]) || is.null(dta[rw,"AnnotatedCRF"][1]) ||
+  #      is.na(dta[rw, "SupplementalDoc"][1]) || is.null(dta[rw, "SupplementalDoc"][1])) {
+  #   }
+  #   else if(dta[rw, "AnnotatedCRF"][1] == "Y") {
+  #     print("hi")
+  #     ret[length(ret) + 1] <- glue(str1, leafid = dta[rw, "LeafID"])
+  #   }
+  #   else if(dta[rw, "SupplementalDoc"][1] == "Y") {
+  #     ret[length(ret) + 1] <- glue(str2, leafid = dta[rw, "LeafID"])
+  #   }
+  # }
 
 
 
+
+  for(rw in seq_len(nrow(dta))) {
+    # print(dta[[rw, "AnnotatedCRF"]])
+    # print(dta[[rw,"SupplementalDoc"]])
+    if(dta[[rw, "AnnotatedCRF"]] %eq% 'Y') {
+      # print("hi")
+      ret[length(ret) + 1] <- glue(str1, leafid = dta[rw, "LeafID"])
+    }
+    else if (dta[[rw, "SupplementalDoc"]] %eq% 'Y') {
+      ret[length(ret) + 1] <- glue(str2, leafid = dta[rw, "LeafID"])
+    }
+  }
+  return(ret)
 }
 
 #' @noRd
