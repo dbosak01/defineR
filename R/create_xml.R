@@ -131,7 +131,39 @@ get_header <- function(dta) {
 
 #' @noRd
 get_item_groups <- function(toc, vardt) {
+  blk <-     '<!-- ******************************************* -->
+  <!-- {name}             ItemGroupDef INFORMATION *** -->
+  <!-- ******************************************* -->'
 
+  itemGroup <- '    <ItemGroupDef OID="AE"
+      Domain="{dom}"
+      Name="{name}"
+      Repeating="{repeat}"
+      Purpose="{purp}"
+      IsReferenceData="{isRef}"
+      SASDatasetName="{name}"
+      def:Structure="{struct}"
+      def:Class="{class}"
+      def:ArchiveLocationID="Location.{name}">
+      <Description>
+        <TranslatedText xml:lang="en">{label}</TranslatedText>
+      </Description>'
+
+  endCom <- '      <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->'
+
+  groupEnd <- '      <def:leaf ID="Location.{name}" xlink:href="{loc}.xpt">
+        <def:title>{loc}.xpt </def:title>
+      </def:leaf>
+    </ItemGroupDef>'
+
+  itemDefs <- '<ItemRef ItemOID="{domain}.{varname}"
+  OrderNumber="{varnum}"
+  Mandatory="{manda}"
+  KeySequence="{keyseq}"
+  Role="{role}"
+  RoleCodeListOID="CodeList.rolecode"/>'
 
 
 }
