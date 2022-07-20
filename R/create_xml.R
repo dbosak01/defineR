@@ -131,41 +131,93 @@ get_header <- function(dta) {
 
 #' @noRd
 get_item_groups <- function(toc, vardt) {
-  blk <-     '<!-- ******************************************* -->
+  blk <-
+  '<!-- ******************************************* -->
   <!-- {name}             ItemGroupDef INFORMATION *** -->
   <!-- ******************************************* -->'
 
-  itemGroup <- '    <ItemGroupDef OID="AE"
-      Domain="{dom}"
-      Name="{name}"
-      Repeating="{repeat}"
-      Purpose="{purp}"
-      IsReferenceData="{isRef}"
-      SASDatasetName="{name}"
-      def:Structure="{struct}"
-      def:Class="{class}"
-      def:ArchiveLocationID="Location.{name}">
-      <Description>
-        <TranslatedText xml:lang="en">{label}</TranslatedText>
-      </Description>'
+  itemGroup <-
+  '<ItemGroupDef OID="{oid}"
+        Domain="{name}"
+        Name="{name}"
+        Repeating="{reps}"
+        Purpose="{purp}"
+        IsReferenceData="{isRef}"
+        SASDatasetName="{name}"
+        def:Structure="{struct}"
+        def:Class="{class}"
+        def:ArchiveLocationID="Location.{name}">
+        <Description>
+          <TranslatedText xml:lang="en">{label}</TranslatedText>
+        </Description>'
 
-  endCom <- '      <!-- **************************************************** -->
+  endCom <-
+      ' <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->'
 
-  groupEnd <- '      <def:leaf ID="Location.{name}" xlink:href="{loc}.xpt">
+  groupEnd <-
+  '<def:leaf ID="Location.{name}" xlink:href="{loc}.xpt">
         <def:title>{loc}.xpt </def:title>
       </def:leaf>
     </ItemGroupDef>'
 
-  itemDefs <- '<ItemRef ItemOID="{domain}.{varname}"
-  OrderNumber="{varnum}"
-  Mandatory="{manda}"
-  KeySequence="{keyseq}"
-  Role="{role}"
-  RoleCodeListOID="CodeList.rolecode"/>'
+  itemRefs <-
+  '<ItemRef ItemOID="{domain}.{varname}"
+    OrderNumber="{varnum}"
+    Mandatory="{manda}"
+    {keyseq}{methodoid}Role="{role}"
+    RoleCodeListOID="CodeList.rolecode"/>'
+
+  ret<-vector()
+  for(rw in 1:nrow(toc)) {
+    ret[length(ret) + 1] <- glue(blk, name = toc[rw, "NAME"])
+    ret[length(ret) + 1] <- glue(itemGroup,
+                                 oid = toc[rw, "OID"],
+                                 name = toc[rw, "NAME"],
+                                 reps = toc[rw, "REPEATING"],
+                                 purp = toc[rw, "PURPOSE"],
+                                 isRef = toc[rw, "ISREFERENCEDATA"],
+                                 struct = toc[rw, "STRUCTURE"],
+                                 class = toc[rw, "CLASS"],
+                                 label = toc[rw, "LABEL"])
+
+    for(varrow in 1:nrow(vardt)) {
+      keyHolder <- ""
+      methodoidHolder <- ""
+      # search for variables sharing domain name from toc
+      if(toc[[rw, "NAME"]] %eq% vardt[[varrow, "DOMAIN"]]) {
+        # second check, existence of keyseq
+        if(!is.na(vardt[varrow, "KEYSEQUENCE"])) {
+          keyHolder <- paste0('KeySequence="',vardt[[varrow, "KEYSEQUENCE"]],'"\n')
+        }
+        # third check, nonmutual, existence of methodoid
+        if(!is.na(vardt[varrow, "COMPUTATIONMETHODOID"])) {
+          methodoidHolder <- paste0('MethodOID="',vardt[[varrow, "COMPUTATIONMETHODOID"]],'"\n')
+        }
 
 
+
+
+        # itemref
+        ret[length(ret) + 1] <- glue(itemRefs,
+                                     domain = vardt[varrow, "DOMAIN"],
+                                     varname = vardt[varrow, "VARIABLE"],
+                                     varnum = vardt[varrow, "VARNUM"],
+                                     manda = vardt[varrow, "MANDATORY"],
+                                     keyseq = keyHolder,
+                                     methodoid = methodoidHolder,
+                                     role = vardt[varrow, "ROLE"])
+      }
+    }
+
+    ret[length(ret) + 1] <- endCom
+    ret[length(ret) + 1] <- glue(groupEnd,
+                                 name = toc[rw, "NAME"],
+                                 loc = toc[rw, "ARCHIVELOCATIONID"])
+
+  }
+  return(ret)
 }
 
 #' @noRd
@@ -392,35 +444,6 @@ get_external_links <- function(dta) {
     </def:SupplementalDoc>\n\n'
 
   ret <- c(blk)
-
-  # for(rw in seq_len(nrow(dta))) {
-  #   # print(unclass(dta[rw, "AnnotatedCRF"])[1])
-  #   # print(unclass(dta[rw, "SupplementalDoc"])[1])
-  #   print(dta[rw, "AnnotatedCRF"][1] == "Y")
-  #   print(dta[rw, "SupplementalDoc"][1] == "Y")
-  #   if(dta[rw, "AnnotatedCRF"][1] == "Y") {print("balls")}
-  #   # Fix the if block below it's a retarded statement if you think about it
-  #
-  #   if(is.na(dta[rw, "AnnotatedCRF"][1]) || is.null(dta[rw,"AnnotatedCRF"][1])) {
-  #
-  #   }
-  #   else if(is.na(dta[rw, "SupplementalDoc"][1]) || is.null(dta[rw, "SupplementalDoc"][1])) {
-  #
-  #   }
-  #
-  #   if(is.na(dta[rw, "AnnotatedCRF"][1]) || is.null(dta[rw,"AnnotatedCRF"][1]) ||
-  #      is.na(dta[rw, "SupplementalDoc"][1]) || is.null(dta[rw, "SupplementalDoc"][1])) {
-  #   }
-  #   else if(dta[rw, "AnnotatedCRF"][1] == "Y") {
-  #     print("hi")
-  #     ret[length(ret) + 1] <- glue(str1, leafid = dta[rw, "LeafID"])
-  #   }
-  #   else if(dta[rw, "SupplementalDoc"][1] == "Y") {
-  #     ret[length(ret) + 1] <- glue(str2, leafid = dta[rw, "LeafID"])
-  #   }
-  # }
-
-
 
 
   for(rw in seq_len(nrow(dta))) {

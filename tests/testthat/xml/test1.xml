@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 18July2022                                                   -->
+    <!-- Date: 19July2022                                                   -->
     <!-- Description: Define.xml file for XYZ123                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-07-18T17:30:15">
+  CreationDateTime="2022-07-19T22:46:43">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -107,6 +107,1202 @@
 </ItemRef>
  </def:ValueListDef>
 
+<!-- ******************************************* -->
+<!-- AE             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="AE"
+Domain="AE"
+Name="AE"
+Repeating="Yes"
+Purpose="Tabulation"
+IsReferenceData="No"
+SASDatasetName="AE"
+def:Structure="Events - One record per event per subject"
+def:Class="Events"
+def:ArchiveLocationID="Location.AE">
+<Description>
+  <TranslatedText xml:lang="en">Adverse Events</TranslatedText>
+</Description>
+<ItemRef ItemOID="AE.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.USUBJID"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AESEQ"
+OrderNumber="4"
+Mandatory="Yes"
+MethodOID="AE.AESEQ"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AETERM"
+OrderNumber="5"
+Mandatory="Yes"
+Role="Topic"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AELLT"
+OrderNumber="6"
+Mandatory="Yes"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AELLTCD"
+OrderNumber="7"
+Mandatory="Yes"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEDECOD"
+OrderNumber="8"
+Mandatory="Yes"
+KeySequence="3"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEPTCD"
+OrderNumber="9"
+Mandatory="Yes"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEHLT"
+OrderNumber="10"
+Mandatory="Yes"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEHLTCD"
+OrderNumber="11"
+Mandatory="Yes"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEHLGT"
+OrderNumber="12"
+Mandatory="Yes"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEHLGTCD"
+OrderNumber="13"
+Mandatory="Yes"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEBODSYS"
+OrderNumber="14"
+Mandatory="No"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEBDSYCD"
+OrderNumber="15"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AESOC"
+OrderNumber="16"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AESOCCD"
+OrderNumber="17"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AESEV"
+OrderNumber="18"
+Mandatory="No"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AESER"
+OrderNumber="19"
+Mandatory="No"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEACN"
+OrderNumber="20"
+Mandatory="No"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEREL"
+OrderNumber="21"
+Mandatory="No"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AESLIFE"
+OrderNumber="22"
+Mandatory="No"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.EPOCH"
+OrderNumber="23"
+Mandatory="No"
+MethodOID="AE.EPOCH"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AESTDTC"
+OrderNumber="24"
+Mandatory="No"
+KeySequence="4"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEENDTC"
+OrderNumber="25"
+Mandatory="No"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AESTDY"
+OrderNumber="26"
+Mandatory="No"
+MethodOID="STUDYDAYS"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="AE.AEENDY"
+OrderNumber="27"
+Mandatory="No"
+MethodOID="STUDYDAYS"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.AE" xlink:href="ae.xpt">
+    <def:title>ae.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- DM             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="DM"
+Domain="DM"
+Name="DM"
+Repeating="No"
+Purpose="Tabulation "
+IsReferenceData="No"
+SASDatasetName="DM"
+def:Structure="Special Purpose - One record per event per subject"
+def:Class="Special Purpose"
+def:ArchiveLocationID="Location.DM">
+<Description>
+  <TranslatedText xml:lang="en">Demographics</TranslatedText>
+</Description>
+<ItemRef ItemOID="DM.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.USUBJID"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.SUBJID"
+OrderNumber="4"
+Mandatory="Yes"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.RFSTDTC"
+OrderNumber="5"
+Mandatory="No"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.RFENDTC"
+OrderNumber="6"
+Mandatory="No"
+MethodOID="DM.RFENDTC"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.RFXSTDTC"
+OrderNumber="7"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.RFXENDTC"
+OrderNumber="8"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.RFICDTC"
+OrderNumber="9"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.RFPENDTC"
+OrderNumber="10"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.DTHDTC"
+OrderNumber="11"
+Mandatory="Yes"
+MethodOID="DM.DTHDTC"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.DTHFL"
+OrderNumber="12"
+Mandatory="Yes"
+MethodOID="DM.DTHFL"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.SITEID"
+OrderNumber="13"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.BRTHDTC"
+OrderNumber="14"
+Mandatory="No"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.AGE"
+OrderNumber="15"
+Mandatory="No"
+MethodOID="DM.AGE"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.AGEU"
+OrderNumber="16"
+Mandatory="No"
+MethodOID="DM.AGEU"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.SEX"
+OrderNumber="17"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.RACE"
+OrderNumber="18"
+Mandatory="No"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.ARMCD"
+OrderNumber="19"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.ARM"
+OrderNumber="20"
+Mandatory="Yes"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.ACTARMCD"
+OrderNumber="21"
+Mandatory="Yes"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.ACTARM"
+OrderNumber="22"
+Mandatory="Yes"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="DM.COUNTRY"
+OrderNumber="23"
+Mandatory="Yes"
+MethodOID="DM.COUNTRY"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.DM" xlink:href="dm.xpt">
+    <def:title>dm.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- EX             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="EX"
+Domain="EX"
+Name="EX"
+Repeating="Yes"
+Purpose="Tabulation "
+IsReferenceData="No"
+SASDatasetName="EX"
+def:Structure="One record per constant dosing interval per subject"
+def:Class="Interventions"
+def:ArchiveLocationID="Location.EX">
+<Description>
+  <TranslatedText xml:lang="en">Exposure</TranslatedText>
+</Description>
+<ItemRef ItemOID="EX.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.USUBJID"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.EXSEQ"
+OrderNumber="4"
+Mandatory="Yes"
+MethodOID="EX.EXSEQ"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.EXTRT"
+OrderNumber="5"
+Mandatory="Yes"
+KeySequence="3"
+MethodOID="EX.EXTRT"
+Role="Topic"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.EXDOSE"
+OrderNumber="6"
+Mandatory="No"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.EXDOSU"
+OrderNumber="7"
+Mandatory="No"
+MethodOID="EX.EXDOSU"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.EXDOSFRM"
+OrderNumber="8"
+Mandatory="No"
+MethodOID="EX.EXDOSFRM"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.EPOCH"
+OrderNumber="9"
+Mandatory="No"
+MethodOID="EX.EPOCH"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.EXSTDTC"
+OrderNumber="10"
+Mandatory="No"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.EXENDTC"
+OrderNumber="11"
+Mandatory="No"
+KeySequence="4"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.EXSTDY"
+OrderNumber="12"
+Mandatory="No"
+MethodOID="STUDYDAYS"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="EX.EXENDY"
+OrderNumber="13"
+Mandatory="No"
+MethodOID="STUDYDAYS"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.EX" xlink:href="ex.xpt">
+    <def:title>ex.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- LB             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="LB"
+Domain="LB"
+Name="LB"
+Repeating="Yes"
+Purpose="Tabulation "
+IsReferenceData="No"
+SASDatasetName="LB"
+def:Structure="Findings - One record per lab test per subject"
+def:Class="Findings"
+def:ArchiveLocationID="Location.LB">
+<Description>
+  <TranslatedText xml:lang="en">Laboratory Test Results</TranslatedText>
+</Description>
+<ItemRef ItemOID="LB.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.USUBJID"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBSEQ"
+OrderNumber="4"
+Mandatory="Yes"
+MethodOID="LB.LBSEQ"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBTESTCD"
+OrderNumber="5"
+Mandatory="Yes"
+KeySequence="4"
+MethodOID="LB.LBTESTCD"
+Role="Topic"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBTEST"
+OrderNumber="6"
+Mandatory="Yes"
+MethodOID="LB.LBTEST"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBCAT"
+OrderNumber="7"
+Mandatory="No"
+KeySequence="3"
+MethodOID="LB.LBCAT"
+Role="Grouping Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBORRES"
+OrderNumber="8"
+Mandatory="No"
+Role="Result Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBORRESU"
+OrderNumber="9"
+Mandatory="No"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBORNRLO"
+OrderNumber="10"
+Mandatory="No"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBORNRHI"
+OrderNumber="11"
+Mandatory="No"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBSTRESC"
+OrderNumber="12"
+Mandatory="No"
+MethodOID="LB.LBSTRESC"
+Role="Result Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBSTRESN"
+OrderNumber="13"
+Mandatory="No"
+MethodOID="LB.LBSTRESN"
+Role="Result Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBSTRESU"
+OrderNumber="14"
+Mandatory="No"
+MethodOID="LB.LBSTRESU"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBSTNRLO"
+OrderNumber="15"
+Mandatory="No"
+MethodOID="LB.LBSTNRLO"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBSTNRHI"
+OrderNumber="16"
+Mandatory="No"
+MethodOID="LB.LBSTNRHI"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBNRIND"
+OrderNumber="17"
+Mandatory="No"
+MethodOID="LB.LBNRIND"
+Role="Variable Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBBLFL"
+OrderNumber="18"
+Mandatory="No"
+MethodOID="LB.LBBLFL"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.VISITNUM"
+OrderNumber="19"
+Mandatory="No"
+KeySequence="5"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.VISIT"
+OrderNumber="20"
+Mandatory="No"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.EPOCH"
+OrderNumber="21"
+Mandatory="No"
+MethodOID="LB.EPOCH"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBDTC"
+OrderNumber="22"
+Mandatory="No"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="LB.LBDY"
+OrderNumber="23"
+Mandatory="No"
+MethodOID="STUDYDAYS"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.LB" xlink:href="lb.xpt">
+    <def:title>lb.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- XP             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="XP"
+Domain="XP"
+Name="XP"
+Repeating="Yes"
+Purpose="Tabulation"
+IsReferenceData="No"
+SASDatasetName="XP"
+def:Structure="One record per subject per visit"
+def:Class="Findings"
+def:ArchiveLocationID="Location.XP">
+<Description>
+  <TranslatedText xml:lang="en">Pain Scores</TranslatedText>
+</Description>
+<ItemRef ItemOID="XP.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.USUBJID"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.XPSEQ"
+OrderNumber="4"
+Mandatory="Yes"
+MethodOID="XP.XPSEQ"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.XPTESTCD"
+OrderNumber="5"
+Mandatory="Yes"
+KeySequence="3"
+MethodOID="XP.XPTESTCD"
+Role="Topic"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.XPTEST"
+OrderNumber="6"
+Mandatory="Yes"
+MethodOID="XP.XPTEST"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.XPORRES"
+OrderNumber="7"
+Mandatory="No"
+Role="Result Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.XPSTRESC"
+OrderNumber="8"
+Mandatory="No"
+Role="Result Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.XPSTRESN"
+OrderNumber="9"
+Mandatory="No"
+Role="Result Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.EPOCH"
+OrderNumber="10"
+Mandatory="No"
+MethodOID="XP.EPOCH"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.VISITNUM"
+OrderNumber="11"
+Mandatory="No"
+KeySequence="4"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.VISIT"
+OrderNumber="12"
+Mandatory="No"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.XPBLFL"
+OrderNumber="13"
+Mandatory="No"
+MethodOID="XP.XPBLFL"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.XPDTC"
+OrderNumber="14"
+Mandatory="No"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="XP.XPDY"
+OrderNumber="15"
+Mandatory="No"
+MethodOID="STUDYDAYS"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.XP" xlink:href="xp.xpt">
+    <def:title>xp.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- TA             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="TA"
+Domain="TA"
+Name="TA"
+Repeating="Yes"
+Purpose="Tabulation "
+IsReferenceData="Yes"
+SASDatasetName="TA"
+def:Structure="One record per planned Element per Arm"
+def:Class="Trial Design"
+def:ArchiveLocationID="Location.TA">
+<Description>
+  <TranslatedText xml:lang="en">Trial Arms</TranslatedText>
+</Description>
+<ItemRef ItemOID="TA.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TA.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TA.ARMCD"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+MethodOID="METADATAENTRY"
+Role="Topic"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TA.ARM"
+OrderNumber="4"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TA.TAETORD"
+OrderNumber="5"
+Mandatory="Yes"
+KeySequence="3"
+MethodOID="METADATAENTRY"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TA.ETCD"
+OrderNumber="6"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TA.ELEMENT"
+OrderNumber="7"
+Mandatory="No"
+MethodOID="METADATAENTRY"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TA.TABRANCH"
+OrderNumber="8"
+Mandatory="No"
+MethodOID="METADATAENTRY"
+Role="Rule"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TA.TATRANS"
+OrderNumber="9"
+Mandatory="No"
+MethodOID="METADATAENTRY"
+Role="Rule"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TA.EPOCH"
+OrderNumber="10"
+Mandatory="No"
+MethodOID="METADATAENTRY"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.TA" xlink:href="ta.xpt">
+    <def:title>ta.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- TD             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="TD"
+Domain="TD"
+Name="TD"
+Repeating="Yes"
+Purpose="Tabulation "
+IsReferenceData="Yes"
+SASDatasetName="TD"
+def:Structure="One record per planned schedule of assessments"
+def:Class="Trial Design"
+def:ArchiveLocationID="Location.TD">
+<Description>
+  <TranslatedText xml:lang="en">Trial Disease Assessments</TranslatedText>
+</Description>
+<ItemRef ItemOID="TD.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TD.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TD.TDORDER"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+MethodOID="METADATAENTRY"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TD.TDANCVAR"
+OrderNumber="4"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TD.TDSTOFF"
+OrderNumber="5"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TD.TDTGTPAI"
+OrderNumber="6"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TD.TDMINPAI"
+OrderNumber="7"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TD.TDMAXPAI"
+OrderNumber="8"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TD.TDNUMRPT"
+OrderNumber="9"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.TD" xlink:href="td.xpt">
+    <def:title>td.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- TE             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="TE"
+Domain="TE"
+Name="TE"
+Repeating="Yes"
+Purpose="Tabulation "
+IsReferenceData="Yes"
+SASDatasetName="TE"
+def:Structure="One record per planned Element"
+def:Class="Trial Design"
+def:ArchiveLocationID="Location.TE">
+<Description>
+  <TranslatedText xml:lang="en">Trial Elements</TranslatedText>
+</Description>
+<ItemRef ItemOID="TE.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TE.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TE.ETCD"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+MethodOID="METADATAENTRY"
+Role="Topic"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TE.ELEMENT"
+OrderNumber="4"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TE.TESTRL"
+OrderNumber="5"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Rule"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TE.TEENRL"
+OrderNumber="6"
+Mandatory="No"
+MethodOID="METADATAENTRY"
+Role="Rule"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TE.TEDUR"
+OrderNumber="7"
+Mandatory="No"
+MethodOID="METADATAENTRY"
+Role="Timing"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.TE" xlink:href="te.xpt">
+    <def:title>te.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- TI             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="TI"
+Domain="TI"
+Name="TI"
+Repeating="Yes"
+Purpose="Tabulation "
+IsReferenceData="Yes"
+SASDatasetName="TI"
+def:Structure="One record per I/E criterion"
+def:Class="Trial Design"
+def:ArchiveLocationID="Location.TI">
+<Description>
+  <TranslatedText xml:lang="en">Trial Inclusion/Exclusion Criteria</TranslatedText>
+</Description>
+<ItemRef ItemOID="TI.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TI.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TI.IETESTCD"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+MethodOID="METADATAENTRY"
+Role="Topic"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TI.IETEST"
+OrderNumber="4"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TI.IECAT"
+OrderNumber="5"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Grouping Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.TI" xlink:href="ti.xpt">
+    <def:title>ti.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- TS             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="TS"
+Domain="TS"
+Name="TS"
+Repeating="Yes"
+Purpose="Tabulation "
+IsReferenceData="Yes"
+SASDatasetName="TS"
+def:Structure="One record per trial summary parameter value"
+def:Class="Trial Design"
+def:ArchiveLocationID="Location.TS">
+<Description>
+  <TranslatedText xml:lang="en">Trial Summary</TranslatedText>
+</Description>
+<ItemRef ItemOID="TS.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TS.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TS.TSSEQ"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+MethodOID="METADATAENTRY"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TS.TSPARMCD"
+OrderNumber="4"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Topic"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TS.TSPARM"
+OrderNumber="5"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TS.TSVAL"
+OrderNumber="6"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Result Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TS.TSVALCD"
+OrderNumber="8"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Result Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TS.TSVCDREF"
+OrderNumber="9"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Result Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TS.TSVCDVER"
+OrderNumber="10"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Result Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.TS" xlink:href="ts.xpt">
+    <def:title>ts.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- TV             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="TV"
+Domain="TV"
+Name="TV"
+Repeating="Yes"
+Purpose="Tabulation "
+IsReferenceData="Yes"
+SASDatasetName="TV"
+def:Structure="One record per planned Visit per Arm"
+def:Class="Trial Design"
+def:ArchiveLocationID="Location.TV">
+<Description>
+  <TranslatedText xml:lang="en">Trial Visits</TranslatedText>
+</Description>
+<ItemRef ItemOID="TV.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TV.DOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+MethodOID="SETDOMAIN"
+Role="Identifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TV.VISITNUM"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="2"
+MethodOID="METADATAENTRY"
+Role="Topic"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TV.VISIT"
+OrderNumber="4"
+Mandatory="No"
+MethodOID="METADATAENTRY"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TV.ARMCD"
+OrderNumber="5"
+Mandatory="No"
+KeySequence="3"
+MethodOID="METADATAENTRY"
+Role="Record Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TV.ARM"
+OrderNumber="6"
+Mandatory="No"
+MethodOID="METADATAENTRY"
+Role="Synonym Qualifier"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TV.TVSTRL"
+OrderNumber="7"
+Mandatory="Yes"
+MethodOID="METADATAENTRY"
+Role="Rule"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="TV.TVENRL"
+OrderNumber="8"
+Mandatory="No"
+MethodOID="METADATAENTRY"
+Role="Rule"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.TV" xlink:href="tv.xpt">
+    <def:title>tv.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
+<!-- ******************************************* -->
+<!-- SUPPDM             ItemGroupDef INFORMATION *** -->
+<!-- ******************************************* -->
+<ItemGroupDef OID="SUPPDM"
+Domain="SUPPDM"
+Name="SUPPDM"
+Repeating="Yes"
+Purpose="Tabulation"
+IsReferenceData="No"
+SASDatasetName="SUPPDM"
+def:Structure="Supplemental Qualifier - One record per qualifier"
+def:Class="Relationship"
+def:ArchiveLocationID="Location.SUPPDM">
+<Description>
+  <TranslatedText xml:lang="en">DM - Supplemental Qualifiers</TranslatedText>
+</Description>
+<ItemRef ItemOID="SUPPDM.STUDYID"
+OrderNumber="1"
+Mandatory="Yes"
+KeySequence="1"
+Role="NA"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="SUPPDM.RDOMAIN"
+OrderNumber="2"
+Mandatory="Yes"
+KeySequence="2"
+MethodOID="SETDOMAIN"
+Role="NA"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="SUPPDM.USUBJID"
+OrderNumber="3"
+Mandatory="Yes"
+KeySequence="3"
+Role="NA"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="SUPPDM.IDVAR"
+OrderNumber="4"
+Mandatory="No"
+KeySequence="4"
+Role="NA"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="SUPPDM.IDVARVAL"
+OrderNumber="5"
+Mandatory="No"
+KeySequence="5"
+Role="NA"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="SUPPDM.QNAM"
+OrderNumber="6"
+Mandatory="Yes"
+KeySequence="6"
+Role="NA"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="SUPPDM.QLABEL"
+OrderNumber="7"
+Mandatory="Yes"
+Role="NA"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="SUPPDM.QVAL"
+OrderNumber="8"
+Mandatory="Yes"
+Role="NA"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="SUPPDM.QORIG"
+OrderNumber="9"
+Mandatory="Yes"
+MethodOID="SETNULL"
+Role="NA"
+RoleCodeListOID="CodeList.rolecode"/>
+<ItemRef ItemOID="SUPPDM.QEVAL"
+OrderNumber="10"
+Mandatory="No"
+MethodOID="SETNULL"
+Role="NA"
+RoleCodeListOID="CodeList.rolecode"/>
+ <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->
+<def:leaf ID="Location.SUPPDM" xlink:href="suppdm.xpt">
+    <def:title>suppdm.xpt </def:title>
+  </def:leaf>
+</ItemGroupDef>
   <!-- ******************************************* -->
   <!-- COMPUTATIONAL METHOD INFORMATION        *** -->
   <!-- ******************************************* -->
