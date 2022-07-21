@@ -3,8 +3,10 @@
 
 # test
 
+library(common)
 
-create_xml <- function(lst) {
+
+create_xml <- function(lst, version) {
 
 
 
@@ -24,7 +26,7 @@ create_xml <- function(lst) {
 
   defs <- c()
   if ("VARIABLE_METADATA" %in% nms)
-    defs <- get_item_defs(lst[["VARIABLE_METADATA"]])
+    defs <- get_item_defs(lst[["TOC_METADATA"]], lst[["VARIABLE_METADATA"]])
   else
     stop("Variable metadata is required.")
 
@@ -129,14 +131,140 @@ get_header <- function(dta) {
 
 #' @noRd
 get_item_groups <- function(toc, vardt) {
+  blk <-
+  '  <!-- ******************************************* -->
+    <!-- {name}             ItemGroupDef INFORMATION *** -->
+    <!-- ******************************************* -->'
+
+  itemGroup <-
+  '  <ItemGroupDef OID="{oid}"
+      Domain="{name}"
+      Name="{name}"
+      Repeating="{reps}"
+      Purpose="{purp}"
+      IsReferenceData="{isRef}"
+      SASDatasetName="{name}"
+      def:Structure="{struct}"
+      def:Class="{class}"
+      def:ArchiveLocationID="Location.{name}">
+      <Description>
+        <TranslatedText xml:lang="en">{label}</TranslatedText>
+      </Description>'
+
+  endCom <-
+      ' <!-- **************************************************** -->
+      <!-- def:leaf details for hypertext linking the dataset   -->
+      <!-- **************************************************** -->'
+
+  groupEnd <-
+  '<def:leaf ID="Location.{name}" xlink:href="{loc}.xpt">
+        <def:title>{loc}.xpt </def:title>
+      </def:leaf>
+    </ItemGroupDef>'
+
+  itemRefs <-
+  '<ItemRef ItemOID="{domain}.{varname}"
+    OrderNumber="{varnum}"
+    Mandatory="{manda}"
+    {keyseq}{methodoid}Role="{role}"
+    RoleCodeListOID="CodeList.rolecode"/>'
+
+  ret<-vector()
+  for(rw in 1:nrow(toc)) {
+    ret[length(ret) + 1] <- glue(blk, name = toc[rw, "NAME"])
+    ret[length(ret) + 1] <- glue(itemGroup,
+                                 oid = toc[rw, "OID"],
+                                 name = toc[rw, "NAME"],
+                                 reps = toc[rw, "REPEATING"],
+                                 purp = toc[rw, "PURPOSE"],
+                                 isRef = toc[rw, "ISREFERENCEDATA"],
+                                 struct = toc[rw, "STRUCTURE"],
+                                 class = toc[rw, "CLASS"],
+                                 label = toc[rw, "LABEL"])
+
+    for(varrow in 1:nrow(vardt)) {
+      keyHolder <- ""
+      methodoidHolder <- ""
+      # search for variables sharing domain name from toc
+      if(toc[[rw, "NAME"]] %eq% vardt[[varrow, "DOMAIN"]]) {
+        # second check, existence of keyseq
+        if(!is.na(vardt[varrow, "KEYSEQUENCE"])) {
+          keyHolder <- paste0('KeySequence="',vardt[[varrow, "KEYSEQUENCE"]],'"\n')
+        }
+        # third check, nonmutual, existence of methodoid
+        if(!is.na(vardt[varrow, "COMPUTATIONMETHODOID"])) {
+          methodoidHolder <- paste0('MethodOID="',vardt[[varrow, "COMPUTATIONMETHODOID"]],'"\n')
+        }
 
 
 
+
+        # itemref
+        ret[length(ret) + 1] <- glue(itemRefs,
+                                     domain = vardt[varrow, "DOMAIN"],
+                                     varname = vardt[varrow, "VARIABLE"],
+                                     varnum = vardt[varrow, "VARNUM"],
+                                     manda = vardt[varrow, "MANDATORY"],
+                                     keyseq = keyHolder,
+                                     methodoid = methodoidHolder,
+                                     role = vardt[varrow, "ROLE"])
+      }
+    }
+
+    ret[length(ret) + 1] <- endCom
+    ret[length(ret) + 1] <- glue(groupEnd,
+                                 name = toc[rw, "NAME"],
+                                 loc = toc[rw, "ARCHIVELOCATIONID"])
+
+  }
+  return(ret)
 }
+
 
 #' @noRd
 get_item_defs <- function(toc, vardt) {
 
+  blk <- '<!-- ************************************************************ -->
+  <!-- The details of each variable is here for all domains         -->
+  <!-- ************************************************************ -->'
+  str <-
+  ' <ItemDef OID="{domain}.{variable}"
+      Name="{variable}"
+      SASFieldName="{variable}"
+      DataType="{type}"
+      Length="{length}"
+      def:DisplayFormat="{display}"
+      >
+      <Description>
+          <TranslatedText xml:lang="en">{label}</TranslatedText>
+      </Description>
+      <def:Origin Type="{origin}">
+      </def:Origin>
+    </ItemDef>'
+
+  ret <- c(blk)
+  for(rw in 1:nrow(toc)) {
+    for(varrow in 1:nrow(vardt)) {
+      if(toc[[rw, "NAME"]] %eq% vardt[[varrow, "DOMAIN"]]) {
+        strHolder <- ""
+        if(!is.na(vardt[varrow, "DISPLAYFORMAT"])) {
+          strHolder <- vardt[[varrow, "DISPLAYFORMAT"]]
+        }
+        else {
+          strHolder <- vardt[[varrow, "LENGTH"]]
+        }
+        ret[length(ret) + 1] <- glue(str,
+                                   domain = vardt[varrow, "DOMAIN"],
+                                   variable = vardt[varrow, "VARIABLE"],
+                                   type = vardt[varrow, "TYPE"],
+                                   length = vardt[varrow, "LENGTH"],
+                                   display = strHolder,
+                                   label = vardt[varrow, "LABEL"],
+                                   origin = vardt[varrow, "ORIGIN"])
+      }
+    }
+  }
+  return(ret)
 
 
 }
@@ -208,15 +336,72 @@ get_value_level <- function(dta) {
 #' @noRd
 get_computations <- function(dta) {
 
+  blk <-'  <!-- ******************************************* -->
+  <!-- COMPUTATIONAL METHOD INFORMATION        *** -->
+  <!-- ******************************************* -->'
 
+  str <- '<MethodDef OID="{mthdOID}" Name="{label}" Type="{comp}">
+        <Description>
+          <TranslatedText xml:lang="en">{compMthd}</TranslatedText>
+        </Description>
+      </MethodDef>'
+
+  ret <- c(blk)
+  for(rw in seq_len(nrow(dta))) {
+    ret[length(ret) + 1] <- glue(str,
+                                 mthdOID = dta[rw, "COMPUTATIONMETHODOID"],
+                                 label = dta[rw, "LABEL"],
+                                 comp = dta[rw, "TYPE"],
+                                 compMthd = dta[rw, "COMPUTATIONMETHOD"])
+  }
+  ret[length(ret) + 1] <- ""
+  return(ret)
 
 }
 
 #' @noRd
 get_code_lists <- function(dta) {
+  blk <- '  <!-- ************************************************************ -->
+  <!-- Codelists are presented below                                -->
+  <!-- ************************************************************ -->'
+  listHead <- '<CodeList OID="CodeList.{codelistname}"
+  Name="{codelistname}"
+  DataType="{dtype}">'
+  endCL <- '</CodeList>'
+  item <- '  <CodeListItem CodedValue="{codedval}" Rank="{rank}">
+          <Decode>
+            <TranslatedText>{translated}</TranslatedText>
+          </Decode>
+        </CodeListItem>'
+  dictcl <- '<ExternalCodeList Dictionary="{dict}" Version="{clver}"/>'
 
 
+  f <- list(as.factor(dta[["CODELISTNAME"]]))
+  splts <- split(dta, f)
 
+
+  ret <- c(blk)
+
+  for(sp in splts) {
+    ret[length(ret) + 1] <- glue(listHead,
+                                 codelistname = sp[1, "CODELISTNAME"],
+                                 dtype = sp[1, "TYPE"])
+    for(rw in seq_len(nrow(sp))) {
+      if(!is.na(sp[[rw, "CODELISTDICTIONARY"]])) {
+        ret[length(ret) + 1] <- glue(dictcl,
+                                     dict = sp[rw, "CODELISTDICTIONARY"],
+                                     clver = sp[rw, "CODELISTVERSION"])
+      }
+      else {
+        ret[length(ret) + 1] <- glue(item,
+                                     codedval = sp[rw, "CODEDVALUE"],
+                                     rank = sp[rw, "RANK"],
+                                     translated = sp[rw, "TRANSLATED"])
+      }
+      ret[length(ret) + 1] <- endCL
+    }
+  }
+  return(ret)
 }
 
 #' @noRd
@@ -284,12 +469,37 @@ get_comments <- function(dta) {
 
 
 
-
+#' @import common
 #' @noRd
 get_external_links <- function(dta) {
+  blk <- '
+  <!-- ******************************************* -->
+  <!-- EXTERNAL DOCUMENT REFERENCE             *** -->
+  <!-- ******************************************* -->'
+
+  str1 <- '<def:AnnotatedCRF>
+      <def:DocumentRef leafID="{leafid}"/>
+    </def:AnnotatedCRF>\n\n'
+
+  str2 <- '<def:SupplementalDoc>
+      <def:DocumentRef leafID="{leafid}"/>
+    </def:SupplementalDoc>\n\n'
+
+  ret <- c(blk)
 
 
-
+  for(rw in seq_len(nrow(dta))) {
+    # print(dta[[rw, "AnnotatedCRF"]])
+    # print(dta[[rw,"SupplementalDoc"]])
+    if(dta[[rw, "AnnotatedCRF"]] %eq% 'Y') {
+      # print("hi")
+      ret[length(ret) + 1] <- glue(str1, leafid = dta[rw, "LeafID"])
+    }
+    else if (dta[[rw, "SupplementalDoc"]] %eq% 'Y') {
+      ret[length(ret) + 1] <- glue(str2, leafid = dta[rw, "LeafID"])
+    }
+  }
+  return(ret)
 }
 
 #' @noRd

@@ -1,6 +1,8 @@
 
 base_path <- "c:\\packages\\defineR\\tests\\testthat"
+base_path <- "~/cheese/defineR/tests/testthat"
 data_dir <- base_path
+
 
 base_path <- tempdir()
 data_dir <- "."
