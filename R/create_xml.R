@@ -6,7 +6,7 @@
 library(common)
 
 
-create_xml <- function(lst) {
+create_xml <- function(lst, version) {
 
 
 
@@ -26,7 +26,7 @@ create_xml <- function(lst) {
 
   defs <- c()
   if ("VARIABLE_METADATA" %in% nms)
-    defs <- get_item_defs(lst[["VARIABLE_METADATA"]])
+    defs <- get_item_defs(lst[["TOC_METADATA"]], lst[["VARIABLE_METADATA"]])
   else
     stop("Variable metadata is required.")
 
@@ -132,24 +132,24 @@ get_header <- function(dta) {
 #' @noRd
 get_item_groups <- function(toc, vardt) {
   blk <-
-  '<!-- ******************************************* -->
-  <!-- {name}             ItemGroupDef INFORMATION *** -->
-  <!-- ******************************************* -->'
+  '  <!-- ******************************************* -->
+    <!-- {name}             ItemGroupDef INFORMATION *** -->
+    <!-- ******************************************* -->'
 
   itemGroup <-
-  '<ItemGroupDef OID="{oid}"
-        Domain="{name}"
-        Name="{name}"
-        Repeating="{reps}"
-        Purpose="{purp}"
-        IsReferenceData="{isRef}"
-        SASDatasetName="{name}"
-        def:Structure="{struct}"
-        def:Class="{class}"
-        def:ArchiveLocationID="Location.{name}">
-        <Description>
-          <TranslatedText xml:lang="en">{label}</TranslatedText>
-        </Description>'
+  '  <ItemGroupDef OID="{oid}"
+      Domain="{name}"
+      Name="{name}"
+      Repeating="{reps}"
+      Purpose="{purp}"
+      IsReferenceData="{isRef}"
+      SASDatasetName="{name}"
+      def:Structure="{struct}"
+      def:Class="{class}"
+      def:ArchiveLocationID="Location.{name}">
+      <Description>
+        <TranslatedText xml:lang="en">{label}</TranslatedText>
+      </Description>'
 
   endCom <-
       ' <!-- **************************************************** -->
@@ -220,9 +220,51 @@ get_item_groups <- function(toc, vardt) {
   return(ret)
 }
 
+
 #' @noRd
 get_item_defs <- function(toc, vardt) {
 
+  blk <- '<!-- ************************************************************ -->
+  <!-- The details of each variable is here for all domains         -->
+  <!-- ************************************************************ -->'
+  str <-
+  ' <ItemDef OID="{domain}.{variable}"
+      Name="{variable}"
+      SASFieldName="{variable}"
+      DataType="{type}"
+      Length="{length}"
+      def:DisplayFormat="{display}"
+      >
+      <Description>
+          <TranslatedText xml:lang="en">{label}</TranslatedText>
+      </Description>
+      <def:Origin Type="{origin}">
+      </def:Origin>
+    </ItemDef>'
+
+  ret <- c(blk)
+  for(rw in 1:nrow(toc)) {
+    for(varrow in 1:nrow(vardt)) {
+      if(toc[[rw, "NAME"]] %eq% vardt[[varrow, "DOMAIN"]]) {
+        strHolder <- ""
+        if(!is.na(vardt[varrow, "DISPLAYFORMAT"])) {
+          strHolder <- vardt[[varrow, "DISPLAYFORMAT"]]
+        }
+        else {
+          strHolder <- vardt[[varrow, "LENGTH"]]
+        }
+        ret[length(ret) + 1] <- glue(str,
+                                   domain = vardt[varrow, "DOMAIN"],
+                                   variable = vardt[varrow, "VARIABLE"],
+                                   type = vardt[varrow, "TYPE"],
+                                   length = vardt[varrow, "LENGTH"],
+                                   display = strHolder,
+                                   label = vardt[varrow, "LABEL"],
+                                   origin = vardt[varrow, "ORIGIN"])
+      }
+    }
+  }
+  return(ret)
 
 
 }
