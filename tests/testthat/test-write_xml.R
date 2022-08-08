@@ -11,13 +11,28 @@ DEV <- FALSE
 
 
 
-test_that("write_define1: The write_define function works as expected.", {
+test_that("create_xml test", {
 
   fp <- file.path(data_dir, "data/SDTM_METADATA.xls")
   op <- file.path(base_path, "xml/test1.xml")
 
   mdt <- import_metadata_xl(fp)
 
+
+  xml <- create_xml(mdt)
+
+  write_xml(xml, op)
+
+  expect_equal(file.exists(op), TRUE)
+
+})
+
+test_that("Base robustness tests", {
+
+  fp <- file.path(getwd(), "inst/extdata/robust/SDTM_METADATA_robustness.xls")
+  op <- file.path(base_path, "xml/test_robust.xml")
+
+  mdt <- import_metadata_xl(fp)
 
   xml <- create_xml(mdt)
 
