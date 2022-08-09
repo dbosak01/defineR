@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • defineR</title>
+<title>Creates Define XML documents — defineR • defineR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,11 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Creates Define XML documents — defineR" />
+<meta property="og:description" content="The defineR package contains functions to
+create CDISC compliant define.xml documents suitable for
+submission to the FDA. The package also contains related capabilities
+to help create and manage metadata needed to create the define.xml." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +70,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -116,42 +120,54 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      
+    <h1>Creates Define XML documents</h1>
+    
+    <div class="hidden name"><code>defineR.Rd</code></div>
     </div>
 
-    <div id="definer-009001" class="section level1">
-<h1 class="page-header" data-toc-text="0.0.9001">
-<a href="#definer-009001" class="anchor"></a>defineR 0.0.9001</h1>
-<ul>
-<li>Redefined <code><a href="../reference/import_metadata.html">import_metadata()</a></code>
-</li>
-<li>Added ADAM xml export</li>
-<li>Added HTML generation</li>
-<li>Added XSD conformance check</li>
-<li>Added metadata validation check</li>
-</ul>
-</div>
-    <div id="definer-009000" class="section level1">
-<h1 class="page-header" data-toc-text="0.0.9000">
-<a href="#definer-009000" class="anchor"></a>defineR 0.0.9000</h1>
-<ul>
-<li>Added code stubs</li>
-<li>Writing SDTM define.xml</li>
-<li>Added test_that()</li>
-<li>Added vignettes</li>
-<li>Added pkgdown</li>
-<li>Added a <code>NEWS.md</code> file</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>The <strong>defineR</strong> package contains functions to
+create CDISC compliant define.xml documents suitable for
+submission to the FDA. The package also contains related capabilities
+to help create and manage metadata needed to create the define.xml.</p>
+    </div>
 
+
+
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The <strong>logr</strong> package helps create log files for R scripts.  The package
+provides easy logging, without the complexity of other logging systems.
+It is
+designed for analysts who simply want a written log of the their program
+execution.  The package is designed as a wrapper to
+the base R <code><a href='https://rdrr.io/r/base/sink.html'>sink()</a></code> function.</p>
+    <h2 class="hasAnchor" id="how-to-use"><a class="anchor" href="#how-to-use"></a>How to use</h2>
+
+    
+
+<p>There are only three <strong>logr</strong> functions:</p><ul>
+<li><p><code>log_open</code></p></li>
+<li><p><code>log_print</code></p></li>
+<li><p><code>log_close</code></p></li>
+</ul><p>The <code>log_open()</code> function initiates the log.  The
+<code>log_print()</code> function prints an object to the log.  The
+<code>log_close()</code> function closes the log.  In normal situations,
+a user would place the call to
+<code>log_open</code> at the top of the program, call <code>log_print()</code>
+as needed in the
+program body, and call <code>log_close()</code> once at the end of the program.</p>
+<p>Logging may be controlled globally using the options "logr.on" and
+"logr.notes".  Both options accept TRUE or FALSE values, and control
+log printing or log notes, respectively.</p>
+<p>See function documentation for additional details.</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 

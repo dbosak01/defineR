@@ -1,7 +1,16 @@
+# defineR 0.0.9001
+
+* Redefined `import_metadata()`
+* Added ADAM xml export
+* Added HTML generation
+* Added XSD conformance check
+* Added metadata validation check
+
 
 # defineR 0.0.9000
 
 * Added code stubs
+* Writing SDTM define.xml
 * Added test_that()
 * Added vignettes
 * Added pkgdown

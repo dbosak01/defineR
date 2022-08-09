@@ -1,82 +1,106 @@
-library(common)
 
+# Create XML --------------------------------------------------------------
 
-create_adam_xml <- function(lst, version) {
+#' @title Create XML for SDTM
+#' @description Function generates XML for the SDTM define.xml file.
+#' @param lst A list of data frames that contain SDTM metadata.
+#' @param version The version of the define XML to create.  Currently
+#' only 2.0.0 is supported, which is the default.
+#' @returns A list of tibbles.
+#' @export
+create_sdtm_xml <- function(lst, version = "2.0.0") {
 
+  if(!is.list(lst)) {
+   stop("Metadata must provided in the form of a list")
+  }
 
+  ret <- NULL
 
-  nms <- names(lst)
+  if (version == "2.0.0") {
 
-  hdr <- c()
-  if ("DEFINE_HEADER_METADATA" %in% nms)
-    hdr <- get_header_adam(lst[["DEFINE_HEADER_METADATA"]])
-  else
-    stop("Header metadata is required.")
+   ret <- get_sdtm_xml_20(lst)
+  } else {
 
-  grps <- c()
-  if ("TOC_METADATA" %in% nms)
-    grps <- get_item_groups_adam(lst[["TOC_METADATA"]], lst[["VARIABLE_METADATA"]])
-  else
-    stop("Table of Contents metadata is required.")
-
-  defs <- c()
-  if ("VARIABLE_METADATA" %in% nms)
-    defs <- get_item_defs_adam(lst[["TOC_METADATA"]], lst[["VARIABLE_METADATA"]])
-  else
-    stop("Variable metadata is required.")
-
-  val <- c()
-  if ("VALUELEVEL_METADATA" %in% nms)
-    val <- get_value_level_adam(lst[["VALUELEVEL_METADATA"]])
-  else
-    stop("Table of Contents metadata is required.")
-
-  comp <- c()
-  if ("COMPUTATION_METHOD" %in% nms)
-    comp <- get_computations_adam(lst[["COMPUTATION_METHOD"]])
-  else
-    stop("Computation Method metadata is required.")
-
-  cl <- c()
-  if ("CODELISTS" %in% nms)
-    cl <- get_code_lists_adam(lst[["CODELISTS"]])
-  else
-    stop("Code List metadata is required.")
-
-  whr <- c()
-  if ("WHERE_CLAUSES" %in% nms)
-    whr <- get_where_adam(lst[["WHERE_CLAUSES"]])
-
-
-  cmnts <- c()
-  if ("COMMENTS" %in% nms)
-    cmnts <- get_comments_adam(lst[["COMMENTS"]])
-
-
-  extl <- c()
-  if ("EXTERNAL_LINKS" %in% nms)
-    extl <- get_external_links_adam(lst[["EXTERNAL_LINKS"]])
-
-  ftr <- get_footer()
-
-
-  ret <- c(hdr, val, grps, defs,  comp, cl, whr, cmnts, extl, ftr)
-
+   stop(paste0("Version ", version, " not supported."))
+  }
 
 
   return(ret)
 
 }
 
+get_sdtm_xml_20 <- function(lst) {
 
-# Small changes in header relating to ADaM name/version etc.
-#' @import glue
+  nms <- names(lst)
+
+  hdr <- c()
+  if ("DEFINE_HEADER_METADATA" %in% nms)
+    hdr <- get_header(lst[["DEFINE_HEADER_METADATA"]])
+  else
+    stop("Header metadata is required.")
+
+  grps <- c()
+  if ("TOC_METADATA" %in% nms)
+    grps <- get_item_groups(lst[["TOC_METADATA"]], lst[["VARIABLE_METADATA"]])
+  else
+    stop("Table of Contents metadata is required.")
+
+  defs <- c()
+  if ("VARIABLE_METADATA" %in% nms)
+    defs <- get_item_defs(lst[["TOC_METADATA"]], lst[["VARIABLE_METADATA"]])
+  else
+    stop("Variable metadata is required.")
+
+  val <- c()
+  if ("VALUELEVEL_METADATA" %in% nms)
+    val <- get_value_level(lst[["VALUELEVEL_METADATA"]])
+  else
+    stop("Table of Contents metadata is required.")
+
+  comp <- c()
+  if ("COMPUTATION_METHOD" %in% nms)
+    comp <- get_computations(lst[["COMPUTATION_METHOD"]])
+  else
+    stop("Computation Method metadata is required.")
+
+  cl <- c()
+  if ("CODELISTS" %in% nms)
+    cl <- get_code_lists(lst[["CODELISTS"]])
+  else
+    stop("Code List metadata is required.")
+
+  whr <- c()
+  if ("WHERE_CLAUSES" %in% nms)
+    whr <- get_where(lst[["WHERE_CLAUSES"]])
+
+
+  cmnts <- c()
+  if ("COMMENTS" %in% nms)
+    cmnts <- get_comments(lst[["COMMENTS"]])
+
+
+  extl <- c()
+  if ("EXTERNAL_LINKS" %in% nms)
+    extl <- get_external_links(lst[["EXTERNAL_LINKS"]])
+
+  ftr <- get_footer()
+
+
+  ret <- c(hdr, val, grps, defs,  comp, cl, whr, cmnts, extl, ftr)
+
+  return(ret)
+
+}
+
+
+# Subsections -------------------------------------------------------------
+
 #' @noRd
-get_header_adam <- function(dta) {
-
+get_header <- function(dta) {
+# Comment
   str <- '
   <?xml version="1.0" encoding="ISO-8859-1" ?>
-    <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
+    <?xml-stylesheet type="text/xsl" href="{stylesheet}"?>
       <!-- ************************************************************* -->
       <!-- File: define.xml                                              -->
       <!-- Date: {sdt}                                                   -->
@@ -97,9 +121,9 @@ get_header_adam <- function(dta) {
       <StudyDescription>{desc}</StudyDescription>
       <ProtocolName>{protocol}</ProtocolName>
       </GlobalVariables>
-      <MetaDataVersion OID="CDISC.ADaM-IG.1.0"
-    Name="{study}, ADaM Data Definitions"
-    Description="{study}, ADaM Data Definitions"
+      <MetaDataVersion OID="CDISC.SDTM-IG.3.2"
+    Name="{study}, SDTM Data Definitions"
+    Description="{study}, SDTM Data Definitions"
     def:DefineVersion="2.0.0"
     def:StandardName="{sn}"
     def:StandardVersion="{sv}">'
@@ -120,16 +144,16 @@ get_header_adam <- function(dta) {
   return(ret)
 }
 
-# CommentOID def added, role and rolecodelist removed
+
 #' @noRd
-get_item_groups_adam <- function(toc, vardt) {
+get_item_groups <- function(toc, vardt) {
   blk <-
-    '  <!-- ******************************************* -->
+  '  <!-- ******************************************* -->
     <!-- {name}             ItemGroupDef INFORMATION *** -->
     <!-- ******************************************* -->'
 
   itemGroup <-
-    '  <ItemGroupDef OID="{oid}"
+  '  <ItemGroupDef OID="{oid}"
       Domain="{name}"
       Name="{name}"
       Repeating="{reps}"
@@ -138,28 +162,28 @@ get_item_groups_adam <- function(toc, vardt) {
       SASDatasetName="{name}"
       def:Structure="{struct}"
       def:Class="{class}"
-      def:CommentOID="{commentoid}"
       def:ArchiveLocationID="Location.{name}">
       <Description>
         <TranslatedText xml:lang="en">{label}</TranslatedText>
       </Description>'
 
   endCom <-
-    ' <!-- **************************************************** -->
+      ' <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->'
 
   groupEnd <-
-    '<def:leaf ID="Location.{name}" xlink:href="{loc}.xpt">
+  '<def:leaf ID="Location.{name}" xlink:href="{loc}.xpt">
         <def:title>{loc}.xpt </def:title>
       </def:leaf>
     </ItemGroupDef>'
 
   itemRefs <-
-    '<ItemRef ItemOID="{domain}.{varname}"
+  '<ItemRef ItemOID="{domain}.{varname}"
     OrderNumber="{varnum}"
     Mandatory="{manda}"
-    {keyseq}{methodoid}/>'
+    {keyseq}{methodoid}Role="{role}"
+    RoleCodeListOID="CodeList.rolecode"/>'
 
   ret<-vector()
   for(rw in 1:nrow(toc)) {
@@ -172,7 +196,6 @@ get_item_groups_adam <- function(toc, vardt) {
                                  isRef = toc[rw, "ISREFERENCEDATA"],
                                  struct = toc[rw, "STRUCTURE"],
                                  class = toc[rw, "CLASS"],
-                                 commentoid = toc[rw, "COMMENTOID"],
                                  label = toc[rw, "LABEL"])
 
     for(varrow in 1:nrow(vardt)) {
@@ -199,7 +222,8 @@ get_item_groups_adam <- function(toc, vardt) {
                                      varnum = vardt[varrow, "VARNUM"],
                                      manda = vardt[varrow, "MANDATORY"],
                                      keyseq = keyHolder,
-                                     methodoid = methodoidHolder)
+                                     methodoid = methodoidHolder,
+                                     role = vardt[varrow, "ROLE"])
       }
     }
 
@@ -212,19 +236,14 @@ get_item_groups_adam <- function(toc, vardt) {
   return(ret)
 }
 
-
-
-# BIG NOTE TO SELF - WHAT EXACTLY GOES IN INTERNALS (LINE 238)
-# Predescessor? When to insert vs when to use original
-# Rest of the function remains identical
 #' @noRd
-get_item_defs_adam <- function(toc, vardt) {
+get_item_defs <- function(toc, vardt) {
 
   blk <- '<!-- ************************************************************ -->
   <!-- The details of each variable is here for all domains         -->
   <!-- ************************************************************ -->'
   str <-
-    ' <ItemDef OID="{domain}.{variable}"
+  ' <ItemDef OID="{domain}.{variable}"
       Name="{variable}"
       SASFieldName="{variable}"
       DataType="{type}"
@@ -235,7 +254,6 @@ get_item_defs_adam <- function(toc, vardt) {
           <TranslatedText xml:lang="en">{label}</TranslatedText>
       </Description>
       <def:Origin Type="{origin}">
-        {internals}
       </def:Origin>
     </ItemDef>'
 
@@ -251,13 +269,13 @@ get_item_defs_adam <- function(toc, vardt) {
           strHolder <- vardt[[varrow, "LENGTH"]]
         }
         ret[length(ret) + 1] <- glue(str,
-                                     domain = vardt[varrow, "DOMAIN"],
-                                     variable = vardt[varrow, "VARIABLE"],
-                                     type = vardt[varrow, "TYPE"],
-                                     length = vardt[varrow, "LENGTH"],
-                                     display = strHolder,
-                                     label = vardt[varrow, "LABEL"],
-                                     origin = vardt[varrow, "ORIGIN"])
+                                   domain = vardt[varrow, "DOMAIN"],
+                                   variable = vardt[varrow, "VARIABLE"],
+                                   type = vardt[varrow, "TYPE"],
+                                   length = vardt[varrow, "LENGTH"],
+                                   display = strHolder,
+                                   label = vardt[varrow, "LABEL"],
+                                   origin = vardt[varrow, "ORIGIN"])
       }
     }
   }
@@ -266,10 +284,8 @@ get_item_defs_adam <- function(toc, vardt) {
 
 }
 
-
-# identical to sdtm as far as I can tell
 #' @noRd
-get_value_level_adam <- function(dta) {
+get_value_level <- function(dta) {
 
 
   blk <- '
@@ -307,23 +323,23 @@ get_value_level_adam <- function(dta) {
       for (rw in seq_len(nrow(sp))) {
 
 
-        whrc <- ""
-        holder <- ""
-        if (!is.na(sp[rw, "WHERECLAUSEOID"]))
-          whrc <- glue(wcstr, wcoid = sp[rw, "WHERECLAUSEOID"])
-        # Added 312, 315-316
-        if(!is.na(sp[rw, "COMPUTATIONMETHODOID"]))
-          holder <- paste0('MethodOID="', sp[rw, "COMPUTATIONMETHODOID"], '">\n')
+          whrc <- ""
+          holder <- ""
+          if (!is.na(sp[rw, "WHERECLAUSEOID"]))
+            whrc <- glue(wcstr, wcoid = sp[rw, "WHERECLAUSEOID"])
+          # Added 312, 315-316
+          if(!is.na(sp[rw, "COMPUTATIONMETHODOID"]))
+            holder <- paste0('MethodOID="', sp[rw, "COMPUTATIONMETHODOID"], '">\n')
 
-        ret[length(ret) + 1] <- glue(str,
-                                     domain =  sp[rw, "DOMAIN"],
-                                     variable = sp[rw, "VARIABLE"],
-                                     value =  sp[rw, "VALUENAME"],
-                                     varnum =  sp[rw, "VARNUM"],
-                                     mandatory =  sp[rw, "MANDATORY"],
-                                     methodoid = holder,
-                                     wc = whrc
-        )
+          ret[length(ret) + 1] <- glue(str,
+                                       domain =  sp[rw, "DOMAIN"],
+                                       variable = sp[rw, "VARIABLE"],
+                                       value =  sp[rw, "VALUENAME"],
+                                       varnum =  sp[rw, "VARNUM"],
+                                       mandatory =  sp[rw, "MANDATORY"],
+                                       methodoid = holder,
+                                       wc = whrc
+                                       )
 
       }
 
@@ -337,9 +353,8 @@ get_value_level_adam <- function(dta) {
   return(ret)
 }
 
-# identical function
 #' @noRd
-get_computations_adam <- function(dta) {
+get_computations <- function(dta) {
 
   blk <-'  <!-- ******************************************* -->
   <!-- COMPUTATIONAL METHOD INFORMATION        *** -->
@@ -364,9 +379,8 @@ get_computations_adam <- function(dta) {
 
 }
 
-# Changed Rank to OrderNumber, otherwise identical
 #' @noRd
-get_code_lists_adam <- function(dta) {
+get_code_lists <- function(dta) {
   blk <- '  <!-- ************************************************************ -->
   <!-- Codelists are presented below                                -->
   <!-- ************************************************************ -->'
@@ -374,7 +388,7 @@ get_code_lists_adam <- function(dta) {
   Name="{codelistname}"
   DataType="{dtype}">'
   endCL <- '</CodeList>'
-  item <- '  <CodeListItem CodedValue="{codedval}" OrderNumber="{rank}">
+  item <- '  <CodeListItem CodedValue="{codedval}" Rank="{rank}">
           <Decode>
             <TranslatedText>{translated}</TranslatedText>
           </Decode>
@@ -410,10 +424,8 @@ get_code_lists_adam <- function(dta) {
   return(ret)
 }
 
-
-# Identical function
 #' @noRd
-get_where_adam <- function(dta) {
+get_where <- function(dta) {
 
   blk <- '
   <!-- ****************************************************************** -->
@@ -444,11 +456,8 @@ get_where_adam <- function(dta) {
 }
 
 
-
-# Identical function
-#' @import glue
 #' @noRd
-get_comments_adam <- function(dta) {
+get_comments <- function(dta) {
 
   blk <- '
   <!-- ******************************** -->
@@ -477,10 +486,10 @@ get_comments_adam <- function(dta) {
 
 }
 
-# Identical Function
-#' @import common
+
+
 #' @noRd
-get_external_links_adam <- function(dta) {
+get_external_links <- function(dta) {
   blk <- '
   <!-- ******************************************* -->
   <!-- EXTERNAL DOCUMENT REFERENCE             *** -->
@@ -511,81 +520,15 @@ get_external_links_adam <- function(dta) {
   return(ret)
 }
 
-# Stub for leaf definition
-get_leaf_definitions_adam <- function(dta) {
+#' @noRd
+get_footer <- function() {
 
-  blk <- "    <!-- ******************************************* -->
-    <!-- LEAF DEFINITION SECTION                 *** -->
-    <!-- ******************************************* -->"
+  ret <- c()
 
-  leafdefs <- '    <def:leaf ID="{leafid}"
-      xlink:href="{leafrelpath}">
-      <def:title>{title}</def:title>
-    </def:leaf>\n'
-  ret <- c(blk)
-  for(rw in 1:nrow(dta)) {
-    ret[length(ret) + 1] <- glue(leafdefs,
-                                 leafid = dta[rw, "LeafID"],
-                                 leafrelpath = dta[rw, "LeafRelPath"],
-                                 title = dta[rw, "Title"])
-  }
+  ret[length(ret) + 1] <- "</MetaDataVersion>"
+  ret[length(ret) + 1] <- "</Study>"
+  ret[length(ret) + 1] <- "</ODM>"
+
   return(ret)
 }
 
-
-# Stub for analysis metadata
-get_analysis_results_adam <- function(dta) {
-  blk <-     '<!-- ************************************************************ -->
-    <!-- Analysis Results MetaData are Presented Below                -->
-    <!-- ************************************************************ -->
-    <arm:AnalysisResultDisplays>'
-
-  resultDisplay <- '    <arm:ResultDisplay OID="RD.Table_14.1.1" Name="Table 14.1.1">
-      <Description>
-          <TranslatedText xml:lang="en">Summary of Demographics (ITT Population)</TranslatedText>
-      </Description>
-      <def:DocumentRef leafID="Table_14.1.1">
-        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
-      </def:DocumentRef>
-      <arm:AnalysisResult
-        OID="Table_14.1.1"
-        ParameterOID="ADSL.PARAMCD"
-        ResultIdentifier="Table_14.1.1"
-        AnalysisReason="SPECIFIED IN SAP"
-        AnalysisPurpose="Comparisons of baseline characteristics by treatment group">
-        <Description>
-          <TranslatedText xml:lang="en">Summary of Demographics</TranslatedText>
-        </Description>
-        <arm:AnalysisDatasets>
-          <arm:AnalysisDataset ItemGroupOID="ADSL" >
-          <def:WhereClauseRef WhereClauseOID="WC.ITTFL" />
-
-          <arm:AnalysisVariable ItemOID="ADSL.AGE"/>
-          <arm:AnalysisVariable ItemOID="ADSL.AGEGR1"/>
-          <arm:AnalysisVariable ItemOID="ADSL.SEX"/>
-          <arm:AnalysisVariable ItemOID="ADSL.RACE"/>
-          </arm:AnalysisDataset>
-        </arm:AnalysisDatasets>
-        <arm:Documentation>
-        <Description>
-          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical demographic variables </TranslatedText>
-        </Description>
-        <def:DocumentRef  leafID="SAP_Section_9.1.1">
-        </def:DocumentRef>
-        </arm:Documentation>
-
-        <arm:ProgrammingCode Context="SAS Version 9.4">
-        <arm:Code>
-PROC FREQ DATA=ADSL;
-  where ittfl=&quot;Y&quot;;
-  tables trt01pn * (agegr1 sex race) / cmh;
-  run;
-        </arm:Code>
-        </arm:ProgrammingCode>
-      </arm:AnalysisResult>
-    </arm:ResultDisplay>'
-
-  end <- '</arm:AnalysisResultDisplays>'
-
-
-}

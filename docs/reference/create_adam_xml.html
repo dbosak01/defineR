@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • defineR</title>
+<title>Imports metadata — create_adam_xml • defineR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,9 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Imports metadata — create_adam_xml" />
+<meta property="og:description" content="Imports define metadata from a data source. Returns
+a list of tibbles." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +68,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -116,42 +118,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      
+    <h1>Imports metadata</h1>
+    
+    <div class="hidden name"><code>create_adam_xml.Rd</code></div>
     </div>
 
-    <div id="definer-009001" class="section level1">
-<h1 class="page-header" data-toc-text="0.0.9001">
-<a href="#definer-009001" class="anchor"></a>defineR 0.0.9001</h1>
-<ul>
-<li>Redefined <code><a href="../reference/import_metadata.html">import_metadata()</a></code>
-</li>
-<li>Added ADAM xml export</li>
-<li>Added HTML generation</li>
-<li>Added XSD conformance check</li>
-<li>Added metadata validation check</li>
-</ul>
-</div>
-    <div id="definer-009000" class="section level1">
-<h1 class="page-header" data-toc-text="0.0.9000">
-<a href="#definer-009000" class="anchor"></a>defineR 0.0.9000</h1>
-<ul>
-<li>Added code stubs</li>
-<li>Writing SDTM define.xml</li>
-<li>Added test_that()</li>
-<li>Added vignettes</li>
-<li>Added pkgdown</li>
-<li>Added a <code>NEWS.md</code> file</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>Imports define metadata from a data source. Returns
+a list of tibbles.</p>
+    </div>
 
+    <pre class="usage"><span><span class='fu'>create_adam_xml</span><span class='op'>(</span><span class='va'>lst</span>, <span class='va'>version</span><span class='op'>)</span></span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>location</th>
+      <td><p>The location of the metadata.  For a file data
+source, this is the path to the file.</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p>The type of data source for the metadata.  Currently
+only supports the "excel" source type, which is the default.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A list of tibbles.</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 

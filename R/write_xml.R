@@ -4,12 +4,15 @@
 
 
 
-#' @title Writes a define XML document to the file system
-#' @param xml The xml to write.
-#' @param file_path The path to write the xml file.
-#' @import stringi
+#' @title Writes an markup document
+#' @description The function writes an XML or HTML document to the file system.
+#' @param x The markup to write.
+#' @param file_path The path to write the markup file.
+#' @return The full path to the file.
+#' @seealso \code{\link{create_sdtm_xml}} and \code{\link{create_adam_xml}}
+#' function to generate XML.
 #' @export
-write_xml <- function(xml, file_path) {
+write_markup <- function(x, file_path) {
 
 
 
@@ -25,9 +28,9 @@ write_xml <- function(xml, file_path) {
   }
 
 
-  f <- file(file_path, open="a", encoding = "native.enc")
+  f <- file(file_path, open="w", encoding = "native.enc")
 
-  writeLines(xml, con = f, useBytes = TRUE)
+  writeLines(x, con = f, useBytes = TRUE)
 
 
   close(f)

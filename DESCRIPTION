@@ -1,31 +1,37 @@
 Package: defineR
 Type: Package
 Title: Creates Define XML Documents
-Version: 0.0.9000
+Version: 0.0.9001
 Author: c(
     person(given = "David",
            family = "Bosak",
            role = c("aut", "cre"),
            email = "dbosak01@gmail.com"),
+    person(given = "Aheer",
+           family = "Alvi",
+           role = c("aut"),
+           email = "aheer.alvi@gmail.com"),
     person(given = "Jonathan", 
            family = "Stallings", 
-           role = c("aut"), 
-           email = "jonathan.stallings@gmail.com"))
+           role = c("ctb"), 
+           email = "jonathan.stallings@gmailL.com"))
 Maintainer: David Bosak <dbosak01@gmail.com>
-Description: Reads and writes 'define.xml' documents used for FDA 
-    submissions.  Table metadata can be imported from a variety of sources.
+Description: Creates 'define.xml' documents used for FDA 
+    submissions based on spreadsheet metadata.  Can also help
+    create metadata and generate HTML data explorer. 
 License: CC0
 Encoding: UTF-8
+Depends: R (>= 3.6.0),
+         common,
+         glue
 Suggests: 
     knitr,
     rmarkdown,
     magrittr,
     testthat (>= 3.0.0),
 Imports:
-    stringi,
     readxl,
-    glue,
-    common
+    xml2
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 RoxygenNote: 7.2.0
