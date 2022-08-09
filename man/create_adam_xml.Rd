@@ -2,21 +2,19 @@
 % Please edit documentation in R/create_adam_xml.R
 \name{create_adam_xml}
 \alias{create_adam_xml}
-\title{Imports metadata}
+\title{Create XML for ADAM}
 \usage{
 create_adam_xml(lst, version)
 }
 \arguments{
-\item{location}{The location of the metadata.  For a file data
-source, this is the path to the file.}
+\item{lst}{A list of data frames that contain SDTM metadata.}
 
-\item{type}{The type of data source for the metadata.  Currently
-only supports the "excel" source type, which is the default.}
+\item{version}{The version of the define XML to create.  Currently
+only 2.0.0 is supported, which is the default.}
 }
 \value{
-A list of tibbles.
+A vector of XML strings.
 }
 \description{
-Imports define metadata from a data source. Returns
-a list of tibbles.
+Function generates XML for the ADAM define.xml file.
 }

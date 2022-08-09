@@ -1,12 +1,10 @@
 
-#' @title Imports metadata
-#' @description Imports define metadata from a data source. Returns
-#' a list of tibbles.
-#' @param location The location of the metadata.  For a file data
-#' source, this is the path to the file.
-#' @param type The type of data source for the metadata.  Currently
-#' only supports the "excel" source type, which is the default.
-#' @returns A list of tibbles.
+#' @title Create XML for ADAM
+#' @description Function generates XML for the ADAM define.xml file.
+#' @param lst A list of data frames that contain SDTM metadata.
+#' @param version The version of the define XML to create.  Currently
+#' only 2.0.0 is supported, which is the default.
+#' @returns A vector of XML strings.
 #' @export
 create_adam_xml <- function(lst, version) {
 

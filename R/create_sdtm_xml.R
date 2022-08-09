@@ -6,7 +6,7 @@
 #' @param lst A list of data frames that contain SDTM metadata.
 #' @param version The version of the define XML to create.  Currently
 #' only 2.0.0 is supported, which is the default.
-#' @returns A list of tibbles.
+#' @returns A vector of XML strings.
 #' @export
 create_sdtm_xml <- function(lst, version = "2.0.0") {
 

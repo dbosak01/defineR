@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Imports metadata — create_adam_xml • defineR</title>
+<title>Create XML for ADAM — create_adam_xml • defineR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,9 +46,8 @@
 
 
 
-<meta property="og:title" content="Imports metadata — create_adam_xml" />
-<meta property="og:description" content="Imports define metadata from a data source. Returns
-a list of tibbles." />
+<meta property="og:title" content="Create XML for ADAM — create_adam_xml" />
+<meta property="og:description" content="Function generates XML for the ADAM define.xml file." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -118,14 +117,13 @@ a list of tibbles." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Imports metadata</h1>
+    <h1>Create XML for ADAM</h1>
     
     <div class="hidden name"><code>create_adam_xml.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Imports define metadata from a data source. Returns
-a list of tibbles.</p>
+    <p>Function generates XML for the ADAM define.xml file.</p>
     </div>
 
     <pre class="usage"><span><span class='fu'>create_adam_xml</span><span class='op'>(</span><span class='va'>lst</span>, <span class='va'>version</span><span class='op'>)</span></span></pre>
@@ -134,20 +132,19 @@ a list of tibbles.</p>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>location</th>
-      <td><p>The location of the metadata.  For a file data
-source, this is the path to the file.</p></td>
+      <th>lst</th>
+      <td><p>A list of data frames that contain SDTM metadata.</p></td>
     </tr>
     <tr>
-      <th>type</th>
-      <td><p>The type of data source for the metadata.  Currently
-only supports the "excel" source type, which is the default.</p></td>
+      <th>version</th>
+      <td><p>The version of the define XML to create.  Currently
+only 2.0.0 is supported, which is the default.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list of tibbles.</p>
+    <p>A vector of XML strings.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

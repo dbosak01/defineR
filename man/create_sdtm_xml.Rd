@@ -13,7 +13,7 @@ create_sdtm_xml(lst, version = "2.0.0")
 only 2.0.0 is supported, which is the default.}
 }
 \value{
-A list of tibbles.
+A vector of XML strings.
 }
 \description{
 Function generates XML for the SDTM define.xml file.

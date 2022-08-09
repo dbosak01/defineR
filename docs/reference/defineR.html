@@ -136,30 +136,24 @@ to help create and manage metadata needed to create the define.xml.</p>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The <strong>logr</strong> package helps create log files for R scripts.  The package
-provides easy logging, without the complexity of other logging systems.
-It is
-designed for analysts who simply want a written log of the their program
-execution.  The package is designed as a wrapper to
-the base R <code><a href='https://rdrr.io/r/base/sink.html'>sink()</a></code> function.</p>
+    <p>The <strong>defineR</strong> package helps create define.xml files for FDA
+submission.  More here...</p>
     <h2 class="hasAnchor" id="how-to-use"><a class="anchor" href="#how-to-use"></a>How to use</h2>
 
     
 
-<p>There are only three <strong>logr</strong> functions:</p><ul>
-<li><p><code>log_open</code></p></li>
-<li><p><code>log_print</code></p></li>
-<li><p><code>log_close</code></p></li>
-</ul><p>The <code>log_open()</code> function initiates the log.  The
-<code>log_print()</code> function prints an object to the log.  The
-<code>log_close()</code> function closes the log.  In normal situations,
-a user would place the call to
-<code>log_open</code> at the top of the program, call <code>log_print()</code>
-as needed in the
-program body, and call <code>log_close()</code> once at the end of the program.</p>
-<p>Logging may be controlled globally using the options "logr.on" and
-"logr.notes".  Both options accept TRUE or FALSE values, and control
-log printing or log notes, respectively.</p>
+<p>There are three steps to creating a define.xml document:</p><ul>
+<li><p>Import metadata</p></li>
+<li><p>Create XML</p></li>
+<li><p>Write out XML markup</p></li>
+</ul><p>In the <strong>defineR</strong> package, the <code><a href='import_metadata.html'>import_metadata</a></code> function
+reads in the metadata. Currently, the package supports spreadsheet-based
+metadata. Once you have the metadata, you can create XML for an SDTM or ADAM
+define.xml using <code><a href='create_sdtm_xml.html'>create_sdtm_xml</a></code> and
+<code><a href='create_adam_xml.html'>create_adam_xml</a></code>.  Then write out the XML to a file using
+<code><a href='write_markup.html'>write_markup</a></code>.</p>
+<p>The package also supports the ability to create an HTML page to explore
+your define.xml.</p>
 <p>See function documentation for additional details.</p>
 
   </div>

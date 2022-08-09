@@ -6,36 +6,31 @@
 #' to help create and manage metadata needed to create the define.xml.
 #'
 #' @details
-#' The \strong{logr} package helps create log files for R scripts.  The package
-#' provides easy logging, without the complexity of other logging systems.
-#' It is
-#' designed for analysts who simply want a written log of the their program
-#' execution.  The package is designed as a wrapper to
-#' the base R \code{sink()} function.
+#' The \strong{defineR} package helps create define.xml files for FDA
+#' submission.  More here...
 #'
 #' @section How to use:
-#' There are only three \strong{logr} functions:
+#' There are three steps to creating a define.xml document:
 #' \itemize{
-#'   \item \code{\link{log_open}}
-#'   \item \code{\link{log_print}}
-#'   \item \code{\link{log_close}}
+#'   \item Import metadata
+#'   \item Create XML
+#'   \item Write out XML markup
 #' }
-#' The \code{log_open()} function initiates the log.  The
-#' \code{log_print()} function prints an object to the log.  The
-#' \code{log_close()} function closes the log.  In normal situations,
-#' a user would place the call to
-#' \code{log_open} at the top of the program, call \code{log_print()}
-#' as needed in the
-#' program body, and call \code{log_close()} once at the end of the program.
+#' In the \strong{defineR} package, the \code{\link{import_metadata}} function
+#' reads in the metadata. Currently, the package supports spreadsheet-based
+#' metadata. Once you have the metadata, you can create XML for an SDTM or ADAM
+#' define.xml using \code{\link{create_sdtm_xml}} and
+#' \code{\link{create_adam_xml}}.  Then write out the XML to a file using
+#' \code{\link{write_markup}}.
 #'
-#' Logging may be controlled globally using the options "logr.on" and
-#' "logr.notes".  Both options accept TRUE or FALSE values, and control
-#' log printing or log notes, respectively.
+#' The package also supports the ability to create an HTML page to explore
+#' your define.xml.
 #'
 #' See function documentation for additional details.
 #' @import glue
 #' @import common
 #' @import xml2
+#' @import xslt
 #' @docType package
 #' @name defineR
 NULL
