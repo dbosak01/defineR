@@ -1,11 +1,11 @@
 
-base_path <- "c:\\packages\\defineR\\tests\\testthat"
-#base_path <- "~/cheese/defineR/tests/testthat"
+# base_path <- "c:\\packages\\defineR\\tests\\testthat"
+base_path <- "~/witchcraft/defineR/tests/testthat"
 data_dir <- base_path
 
 
-base_path <- tempdir()
-data_dir <- "."
+# base_path <- tempdir()
+# data_dir <- "."
 
 DEV <- FALSE
 
@@ -90,15 +90,15 @@ test_that("write5: defineR XML conforms to 2.0 define XSD schema", {
 
   library(xml2)
 
-  # fp <- file.path(base_path, "xml/test1.xml")
-  # op <- file.path(base_path, "xsd/cdisc-define-2.0/define2-0-0.xsd")
-  #
-  # doc <- read_xml(fp)
-  # schema <- read_xml(op)
-  # res <- xml_validate(doc, schema)
-  #
-  #
-  # expect_equal(res %in% c(TRUE, FALSE), TRUE)
+  fp <- file.path(base_path, "xml/test1.xml")
+  op <- file.path(base_path, "xsd/cdisc-define-2.0/define2-0-0.xsd")
+
+  doc <- read_xml(fp)
+  schema <- read_xml(op)
+  res <- xml_validate(doc, schema)
+
+
+  expect_equal(res %in% c(TRUE, FALSE), TRUE)
 
 
   expect_equal(TRUE, TRUE)
@@ -142,23 +142,23 @@ test_that("write7: defineR XML can be converted to HTML using XSL", {
   library(xml2)
   library(xslt)
 
-  # fp <- file.path(data_dir, "xml/test1.xml")
-  # sp <- file.path(data_dir, "xsl/define2-0-0.xsl")
-  # op <- file.path(base_path, "html/test7.html")
-  #
-  # if (file.exists(op))
-  #   file.remove(op)
-  #
-  # doc <- read_xml(fp)
-  # style <- read_xml(sp)
-  # html <- xml_xslt(doc, style)
-  #
-  #
-  # write_html(html, op)
-  #
-  # fe <- file.exists(op)
-  #
-  # expect_equal(fe, TRUE)
+  fp <- file.path(data_dir, "xml/test1.xml")
+  sp <- file.path(data_dir, "xsl/define2-0-0.xsl")
+  op <- file.path(base_path, "html/test7.html")
+
+  if (file.exists(op))
+    file.remove(op)
+
+  doc <- read_xml(fp)
+  style <- read_xml(sp)
+  html <- xml_xslt(doc, style)
+
+
+  write_html(html, op)
+
+  fe <- file.exists(op)
+
+  expect_equal(fe, TRUE)
 
 
   expect_equal(TRUE, TRUE)

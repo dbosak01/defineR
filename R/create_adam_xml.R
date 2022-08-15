@@ -59,13 +59,21 @@ create_adam_xml <- function(lst, version) {
 
 
   extl <- c()
+  leafdefs <- c()
   if ("EXTERNAL_LINKS" %in% nms)
-    extl <- get_external_links_adam(lst[["EXTERNAL_LINKS"]])
+  {
+    extl <- get_external_links(lst[["EXTERNAL_LINKS"]])
+    leafdefs <- get_leaf_definitions_adam(lst[["EXTERNAL_LINKS"]])
+  }
+
+  analysis <- c()
+  if("ANALYSIS_RESULTS" %in% nms)
+    analysis <- get_analysis_results_adam(lst[["ANALYSIS_RESULTS"]])
 
   ftr <- get_footer()
 
 
-  ret <- c(hdr, val, grps, defs,  comp, cl, whr, cmnts, extl, ftr)
+  ret <- c(hdr, val, grps, defs,  comp, cl, whr, cmnts, extl, leafdefs, analysis, ftr)
 
 
 
@@ -218,9 +226,6 @@ get_item_groups_adam <- function(toc, vardt) {
 
 
 
-# BIG NOTE TO SELF - WHAT EXACTLY GOES IN INTERNALS (LINE 238)
-# Predescessor? When to insert vs when to use original
-# Rest of the function remains identical
 #' @import glue
 #' @noRd
 get_item_defs_adam <- function(toc, vardt) {
@@ -232,41 +237,62 @@ get_item_defs_adam <- function(toc, vardt) {
     ' <ItemDef OID="{domain}.{variable}"
       Name="{variable}"
       SASFieldName="{variable}"
-      DataType="{typ}"
-      Length="{lngth}"
+      DataType="{type}"
+      Length="{length}"
       def:DisplayFormat="{display}"
       >
       <Description>
-          <TranslatedText xml:lang="en">{lbl}</TranslatedText>
+          <TranslatedText xml:lang="en">{label}</TranslatedText>
       </Description>
-      <def:Origin Type="{origin}">
+      {codelistref}{valuelistRef} <def:Origin Type="{origin}">
         {internals}
       </def:Origin>
     </ItemDef>'
 
   ret <- c(blk)
-
-  for(varrow in seq_len(nrow(vardt))) {
-
-    strHolder <- ""
-    if(!is.na(vardt[[varrow, "DISPLAYFORMAT"]])) {
-      strHolder <- vardt[[varrow, "DISPLAYFORMAT"]]
+  for(rw in 1:nrow(toc)) {
+    for(varrow in 1:nrow(vardt)) {
+      if(toc[[rw, "NAME"]] %eq% vardt[[varrow, "DOMAIN"]]) {
+        strHolder <- ""
+        if(!is.na(vardt[varrow, "DISPLAYFORMAT"])) {
+          strHolder <- vardt[[varrow, "DISPLAYFORMAT"]]
+        }
+        else {
+          strHolder <- vardt[[varrow, "LENGTH"]]
+        }
+        codeListHolder <- ""
+        if(!is.na(vardt[varrow, "CODELISTNAME"])) {
+          codeListHolder <- '<CodeListRef CodeListOID="CodeList.{codelist}"/>\n'
+          codeListHolder <- glue(codeListHolder, codelist = vardt[varrod, "CODELISTNAME"])
+        }
+        valueListHolder <- ""
+        if(!is.na(vardt[varrow, ])) {
+          valueListHolder <- '<def:ValueListRef ValueListOID="VL.ADTTE.CNSR"/>'
+        }
+        internalHolder <- ""
+        originHolder <- ""
+        if(vardt[[varrow, "ORIGIN"]] %eq% 'Assigned' ||
+           vardt[[varrow, "ORIGIN"]] %eq% 'Derived') {
+          originHolder <- vardt[[varrow, "ORIGIN"]]
+        }
+        else {
+          internalHolder <- '<Description>
+          <TranslatedText xml:lang="en">{origin}</TranslatedText>
+        </Description>'
+          internalHolder <- glue(internalHolder, origin = vardt[varrow, "ORIGIN"])
+          originHolder <- "Predecessor"
+        }
+        ret[length(ret) + 1] <- glue(str,
+                                     domain = vardt[varrow, "DOMAIN"],
+                                     variable = vardt[varrow, "VARIABLE"],
+                                     type = vardt[varrow, "TYPE"],
+                                     length = vardt[varrow, "LENGTH"],
+                                     display = strHolder,
+                                     internals, internalHolder,
+                                     label = vardt[varrow, "LABEL"],
+                                     origin = originHolder)
+      }
     }
-    else if (!is.na(vardt[varrow, "LENGTH"])){
-      strHolder <- vardt[[varrow, "LENGTH"]]
-    }
-    ret[length(ret) + 1] <- glue(str,
-                                 domain = vardt[[varrow, "DOMAIN"]],
-                                 variable = vardt[[varrow, "VARIABLE"]],
-                                 typ = vardt[[varrow, "TYPE"]],
-                                 lngth = vardt[[varrow, "LENGTH"]],
-                                 display = strHolder,
-                                 lbl = vardt[[varrow, "LABEL"]],
-                                 origin = vardt[[varrow, "ORIGIN"]],
-                                 internals = ""
-                                 )
-
-
   }
   return(ret)
 
@@ -274,7 +300,7 @@ get_item_defs_adam <- function(toc, vardt) {
 }
 
 
-# identical to sdtm as far as I can tell
+
 #' @noRd
 get_value_level_adam <- function(dta) {
 

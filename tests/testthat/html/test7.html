@@ -1,0 +1,2806 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title> Study XYZ123, Data Definitions</title>
+<script type="text/javascript">
+<!--
+/**
+ * With one argument, return the textContent or innerText of the element.
+ * With two arguments, set the textContent or innerText of element to value.
+ */
+function textContent(element, value) {
+  "use strict";
+  var rtn;
+  var content = element.textContent;  // Check if textContent is defined
+  if (value === undefined) { // No value passed, so return current text
+    if (content !== undefined) {
+      rtn = content;
+    } else {
+      rtn = element.innerText;
+    }
+    return rtn;
+  }
+  else { // A value was passed, so set text
+    if (content !== undefined) {
+      element.textContent = value;
+    } else {
+      element.innerText = value;
+    }
+  }
+}
+
+var ITEM  = '\u00A0';
+var OPEN  = '\u25BC';
+var CLOSE = '\u25BA';
+
+function toggle_submenu(e) {
+  "use strict";
+  if (textContent(e)===OPEN) {
+    textContent(e, CLOSE);
+  }
+  else {
+    textContent(e, OPEN);
+  }
+
+  var i;
+  for (i=0; i < e.parentNode.childNodes.length; i++) {
+    var c;
+    c=e.parentNode.childNodes[i];
+    if (c.tagName==='UL') {c.style.display=(c.style.display==='none') ? 'block' : 'none';}
+   }
+}
+
+function reset_menus() {
+"use strict";
+  var li;
+  var c;
+  var i;
+  var j;
+  var li_tags = document.getElementsByTagName('LI');
+  for (i=0; i < li_tags.length; i++) {
+    li=li_tags[i];
+    if ( li.className.match('hmenu-item') ){
+      for (j=0; j < li.childNodes.length; j++) {
+        c=li.childNodes[j];
+        if ( c.tagName === 'SPAN' && c.className.match('hmenu-bullet') ) {textContent(c, ITEM);}
+        }
+      }
+    if ( li.className.match('hmenu-submenu') ) {
+      for (j=0; j < li.childNodes.length; j++) {
+        c=li.childNodes[j];
+        if ( c.tagName === 'SPAN' && c.className.match('hmenu-bullet') ) {textContent(c, CLOSE);}
+        else if ( c.tagName === 'UL' ) { c.style.display = 'none'; }
+        }
+    }
+  }
+}
+//-->
+</script><style type="text/css">
+  body{
+  background-color:#FFFFFF;
+  font-family:Verdana, Arial, Helvetica, sans-serif;        
+  font-size:62.5%;
+  margin:0;
+  padding:30px;        
+  }
+  
+  h1{
+  font-size:1.6em;
+  margin-left:0;
+  font-weight:bolder;
+  text-align:left;
+  color:#800000;
+  }
+  
+  ul{
+  margin-left:0px;
+  }
+  
+  a{
+  color:#0000FF;
+  text-decoration:underline;
+  }
+  a.visited{
+  color:#551A8B;
+  text-decoration:underline;
+  }
+  a:hover{
+  color:#FF9900;
+  text-decoration:underline;
+  }
+  a.tocItem{
+  color:#004A95;
+  text-decoration:none;
+  margin-top:2px;
+  font-size:1.4em;
+  }
+  a.tocItem.level2{
+  margin-left:15px;
+  }
+  
+  #menu{
+  position:fixed;
+  left:0px;
+  top:10px;
+  width:20%;
+  height:96%;
+  bottom:0px;
+  overflow:auto;
+  background-color:#FFFFFF;
+  color:#000000;
+  border:0px none black;
+  text-align:left;
+  white-space:nowrap;
+  }
+  
+  .hmenu li{
+  list-style:none;
+  line-height:200%;
+  padding-left:0;
+  }
+  .hmenu ul{
+  padding-left:14px;
+  margin-left:0;
+  }
+  .hmenu-item{
+  }
+  .hmenu-submenu{
+  }
+  .hmenu-bullet{
+  float:left;
+  width:16px;
+  color:#AAAAAA;
+  font-size:1.2em;
+  }
+  
+  #main{
+  position:absolute;
+  left:22%;
+  top:0px;
+  overflow:auto;
+  color:#000000;
+  background-color:#FFFFFF;
+  }
+  
+  #main .docinfo{
+  width:95%;
+  text-align:right;
+  padding: 0px 5px;
+  }
+  
+  div.containerbox{
+  padding:0px;
+  margin:10px auto;
+  border:0px solid #999;
+  page-break-after:always;
+  }
+  
+  div.codelist{
+  page-break-after:avoid;
+  }
+  
+  table{
+  width:95%;
+  border-spacing:4px;
+  border:1px solid #000000;
+  background-color:#EEEEEE;
+  margin-top:5px;
+  border-collapse:collapse;
+  padding:5px;
+  empty-cells:show;
+  }
+  
+  table caption{
+  border:0px solid #999999;
+  left:20px;
+  font-size:1.4em;
+  font-weight:bolder;
+  color:#800000;
+  margin:10px auto;
+  text-align:left;
+  }
+  
+  table caption .dataset{
+  font-weight:normal;
+  }
+  
+  table caption.header{
+  font-size:1.6em;
+  margin-left:0;
+  font-weight:bolder;
+  text-align:left;
+  color:#800000;
+  }
+  
+  table tr{
+  border:1px solid #000000;
+  }
+  
+  table tr.header{
+  background-color:#6699CC;
+  color:#FFFFFF;
+  font-weight:bold;
+  }
+  
+  table th{
+  font-weight:bold;
+  vertical-align:top;
+  text-align:left;
+  padding:5px;
+  border:1px solid #000000;
+  font-size:1.3em;
+  }
+  
+  table td{
+  vertical-align:top;
+  padding:5px;
+  border:1px solid #000000;
+  font-size:1.2em;
+  line-height:150%;
+  }
+  
+  table th.codedvalue{
+  width:20%;
+  }
+  table th.length{
+  width:7%;
+  }
+  table td.datatype{
+  text-align:center;
+  }
+  table td.number{
+  text-align:right;
+  }
+  .tablerowodd{
+  background-color:#FFFFFF;
+  }
+  .tableroweven{
+  background-color:#E2E2E2;
+  }
+  
+  .linebreakcell{
+  vertical-align:top;
+  margin-top:3px;
+  margin-bottom:3px;
+  }
+  
+  .nci, .extended{
+  font-style:italic;
+  }
+  .super{
+  vertical-align:super;
+  }
+  .footnote{
+  font-size:1.2em;
+  }
+  
+  .standard{
+  font-size:1.6em;
+  font-weight:bold;
+  text-align:left;
+  padding:15px;
+  margin-left:20px;
+  margin-top:40px;
+  margin-right:20px;
+  margin-bottom:20px;
+  color:#800000;
+  border:0px;
+  }
+  
+  .study{
+  font-size:1.6em;
+  font-weight:bold;
+  text-align:left;
+  padding:0px;
+  margin-left:0px;
+  margin-top:00px;
+  margin-right:0px;
+  margin-bottom:0px;
+  color:#800000;
+  border:0px none;
+  }
+  
+  .linktop{
+  font-size:1.2em;
+  margin-top:5px;
+  }
+  .documentinfo, .stylesheetinfo{
+  font-size:1.2em;
+  }
+  
+  .invisible{
+  display:none;
+  }
+  
+  span.error{
+  width:95%;
+  font-size:1.6em;
+  font-weight: bold;	
+  padding:5px;
+  color:#FF0000;
+  border-spacing:4px;
+  border:2px solid #FF0000;
+  }
+  td.error{
+  color:#FF0000;
+  }
+  
+  .arm-table{ background-color:#ececec;}
+  
+  table th.label{
+  width:13%;
+  }
+  .arm{
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:5px;
+  margin-right:0;
+  background-color:#C0C0C0;
+  width:97%;
+  }
+  
+  .title{ margin-left:5pt; }
+  
+  p.summaryresult{ margin-left:15px; margin-top:5px; margin-bottom:5px;}
+  p.parameter{ margin-top:5px; margin-bottom:5px;}
+  p.analysisvariable{ margin-top:5px; margin-bottom:5px;}
+  .datareference{ margin-top:5px; margin-bottom:5px;}
+  tr.analysisresult{ background-color:#6699CC; color:#FFFFFF; font-weight:bold; border:1px solid black;}
+  
+  .code-context{
+  padding:5px 0px;
+  }
+  .coderef{
+  font-size:1.2em;
+  line-height:150%;
+  padding:5px;
+  }
+  .code{
+  font-family:"Courier New", monospace, serif;
+  font-size:1.2em;
+  line-height:150%;
+  white-space:pre;
+  display:block;
+  vertical-align:top;
+  padding:5px;
+  }
+  
+  
+  dl.multiple-table
+  {
+  width:95%;
+  padding: 5px 0px;
+  font-size:0.8em;
+  color:#000000;
+  }
+
+  dl.multiple-table dt
+  {
+  clear: left;
+  float: left;
+  width: 200px;
+  margin: 0;
+  padding: 5px 5px 5px 0px;
+  font-weight: bold;
+  }
+  
+  dl.multiple-table dd
+  {
+  margin-left: 210px;
+  padding: 5px;
+  font-weight: normal;
+  }
+  
+  @media print{
+  
+  body, h1, table caption, table caption.header{
+  color:#000000;
+  }
+  
+  a:link,
+  a:visited{
+  background:transparent;
+  text-decoration:none;
+  color:#000000;
+  }
+  a.external:link:after,
+  #main a:visited:after{
+  content:" <" attr(href) "> ";
+  font-size:90%;
+  text-decoration:none;
+  font-weight:bold;
+  color:#808080;
+  }
+    
+  table{
+  border-width:2px;
+  }
+  
+  #menu,
+  .linktop, .stylesheetinfo{
+  display:none !important;
+  width:0px;
+  }
+  #main{
+  left:0px;
+  }
+ 
+ }
+</style>
+</head>
+<body onload="reset_menus();">
+<div id="menu">
+<a name="top" class="invisible" href="#main">Skip Navigation Link</a><span class="standard">SDTM-IG 3.2</span><ul class="hmenu">
+<li class="hmenu-item">
+<span class="hmenu-bullet">+</span><a class="tocItem" href=""></a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">+</span><a class="tocItem" href=""></a>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#_Datasets_Table"> Datasets</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.AE">Adverse Events (AE)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.DM">Demographics (DM)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.EX">Exposure (EX)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.LB">Laboratory Test Results (LB)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.XP">Pain Scores (XP)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TA">Trial Arms (TA)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TD">Trial Disease Assessments (TD)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TE">Trial Elements (TE)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TI">Trial Inclusion/Exclusion Criteria (TI)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TS">Trial Summary (TS)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TV">Trial Visits (TV)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.SUPPDM">DM - Supplemental Qualifiers (SUPPDM)</a>
+</li>
+</ul>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#valuemeta">Value Level Metadata</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem level2" href="#VL.VL.LB.LBORRES"> []</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem level2" href="#VL.VL.SUPPDM.QVAL"> []</a>
+</li>
+</ul>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#comment">Comments</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#COMM.COM.ARMCD">COM.ARMCD</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#COMM.com.ae">com.ae</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="main">
+<div class="docinfo">
+<p class="documentinfo">Date of Define-XML document generation: 2022-08-04T22:46:34</p>
+<span class="stylesheetinfo">Stylesheet version: 2015-01-16</span><br>
+</div>
+<span class="error">It is expected that all ItemGroups have Purpose='Tabulation' or all ItemGroups have Purpose='Analysis'.</span><div class="study"><dl class="multiple-table">
+<dt>Standard</dt>
+<dd>SDTM-IG 3.2</dd>
+<dt>Study Name</dt>
+<dd>XYZ123</dd>
+<dt>Study Description</dt>
+<dd>A PHASE IIB, DOUBLE-BLIND, MULTI-CENTER, PLACEBO CONTROLLED, PARALLEL GROUP TRIAL OF ANALGEZIA HCL FOR THE TREATMENT OF CHRONIC PAIN</dd>
+<dt>Protocol Name</dt>
+<dd>XYZ123</dd>
+<dt>Metadata Name</dt>
+<dd>XYZ123, SDTM Data Definitions</dd>
+<dt>Metadata Description</dt>
+<dd>XYZ123, SDTM Data Definitions</dd>
+</dl></div>
+<a id="_Datasets_Table"></a><h1 class="invisible"> Datasets for Study XYZ123 (SDTM-IG 3.2)</h1>
+<div class="containerbox" style="page-break-after: always;"><table summary="Data Definition Tables">
+<caption class="header"> Datasets for Study XYZ123 (SDTM-IG 3.2)</caption>
+<tr class="header">
+<th scope="col">Dataset</th>
+<th scope="col">Description</th>
+<th scope="col">Class</th>
+<th scope="col">Structure</th>
+<th scope="col">Purpose</th>
+<th scope="col">Keys</th>
+<th scope="col">Location</th>
+<th scope="col">Documentation</th>
+</tr>
+<tr class="tablerowodd" id="AE">
+<td>AE</td>
+<td><a href="#IG.AE">Adverse Events</a></td>
+<td>NA</td>
+<td>Events - One record per event per subject</td>
+<td>Tabulation</td>
+<td>STUDYID, USUBJID, AEDECOD, AESTDTC</td>
+<td><a href="ae.xpt">ae.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tableroweven" id="DM">
+<td>DM</td>
+<td><a href="#IG.DM">Demographics</a></td>
+<td>Special Purpose</td>
+<td>Special Purpose - One record per event per subject</td>
+<td class="error">TabulationÂ </td>
+<td>STUDYID, USUBJID</td>
+<td><a href="dm.xpt">dm.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tablerowodd" id="EX">
+<td>EX</td>
+<td><a href="#IG.EX">Exposure</a></td>
+<td>Interventions</td>
+<td>One record per constant dosing interval per subject</td>
+<td class="error">TabulationÂ </td>
+<td>STUDYID, USUBJID, EXTRT, EXENDTC</td>
+<td><a href="ex.xpt">ex.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tableroweven" id="LB">
+<td>LB</td>
+<td><a href="#IG.LB">Laboratory Test Results</a></td>
+<td>Findings</td>
+<td>Findings - One record per lab test per subject</td>
+<td class="error">TabulationÂ </td>
+<td>STUDYID, USUBJID, LBCAT, LBTESTCD, VISITNUM</td>
+<td><a href="lb.xpt">lb.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tablerowodd" id="XP">
+<td>XP</td>
+<td><a href="#IG.XP">Pain Scores</a></td>
+<td>Findings</td>
+<td>One record per subject per visit</td>
+<td>Tabulation</td>
+<td>STUDYID, USUBJID, XPTESTCD, VISITNUM</td>
+<td><a href="xp.xpt">xp.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tableroweven" id="TA">
+<td>TA</td>
+<td><a href="#IG.TA">Trial Arms</a></td>
+<td>Trial Design</td>
+<td>One record per planned Element per Arm</td>
+<td class="error">TabulationÂ </td>
+<td>STUDYID, ARMCD, TAETORD</td>
+<td><a href="ta.xpt">ta.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tablerowodd" id="TD">
+<td>TD</td>
+<td><a href="#IG.TD">Trial Disease Assessments</a></td>
+<td>Trial Design</td>
+<td>One record per planned schedule of assessments</td>
+<td class="error">TabulationÂ </td>
+<td>STUDYID, TDORDER</td>
+<td><a href="td.xpt">td.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tableroweven" id="TE">
+<td>TE</td>
+<td><a href="#IG.TE">Trial Elements</a></td>
+<td>Trial Design</td>
+<td>One record per planned Element</td>
+<td class="error">TabulationÂ </td>
+<td>STUDYID, ETCD</td>
+<td><a href="te.xpt">te.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tablerowodd" id="TI">
+<td>TI</td>
+<td><a href="#IG.TI">Trial Inclusion/Exclusion Criteria</a></td>
+<td>Trial Design</td>
+<td>One record per I/E criterion</td>
+<td class="error">TabulationÂ </td>
+<td>STUDYID, IETESTCD</td>
+<td><a href="ti.xpt">ti.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tableroweven" id="TS">
+<td>TS</td>
+<td><a href="#IG.TS">Trial Summary</a></td>
+<td>Trial Design</td>
+<td>One record per trial summary parameter value</td>
+<td class="error">TabulationÂ </td>
+<td>STUDYID, TSSEQ</td>
+<td><a href="ts.xpt">ts.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tablerowodd" id="TV">
+<td>TV</td>
+<td><a href="#IG.TV">Trial Visits</a></td>
+<td>Trial Design</td>
+<td>One record per planned Visit per Arm</td>
+<td class="error">TabulationÂ </td>
+<td>STUDYID, VISITNUM, ARMCD</td>
+<td><a href="tv.xpt">tv.xpt </a></td>
+<td></td>
+</tr>
+<tr class="tableroweven" id="SUPPDM">
+<td>SUPPDM</td>
+<td><a href="#IG.SUPPDM">DM - Supplemental Qualifiers</a></td>
+<td>Relationship</td>
+<td>Supplemental Qualifier - One record per qualifier</td>
+<td>Tabulation</td>
+<td>STUDYID, RDOMAIN, USUBJID, IDVAR, IDVARVAL, QNAM</td>
+<td><a href="suppdm.xpt">suppdm.xpt </a></td>
+<td></td>
+</tr>
+</table></div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.AE"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Adverse Events (AE) </h1>
+<table summary="ItemGroup IG.AE">
+<caption>Adverse Events (AE) <span class="dataset">[Location: <a href="ae.xpt">ae.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="number">2</td>
+<td class="datatype">text</td>
+<td class="number">25</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AESEQ"></a>AESEQ</td>
+<td>Sequence Number</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AETERM"></a>AETERM</td>
+<td>Reported Term for the Adverse Event</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>CRF page 6</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AELLT"></a>AELLT</td>
+<td>Lowest Level Term</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AELLTCD"></a>AELLTCD</td>
+<td>Lowest Level Term Code</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AEDECOD"></a>AEDECOD</td>
+<td>Dictionary-Derived Term</td>
+<td class="number">3</td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AEPTCD"></a>AEPTCD</td>
+<td>Preferred Term Code</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AEHLT"></a>AEHLT</td>
+<td>High Level Term</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AEHLTCD"></a>AEHLTCD</td>
+<td>High Level Term Code</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AEHLGT"></a>AEHLGT</td>
+<td>High Level Group Term</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AEHLGTCD"></a>AEHLGTCD</td>
+<td>High Level Group Term Code</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AEBODSYS"></a>AEBODSYS</td>
+<td>Body System or Organ Class</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AEBDSYCD"></a>AEBDSYCD</td>
+<td>Body System or Organ Class Code</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AESOC"></a>AESOC</td>
+<td>Primary System Organ Class</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AESOCCD"></a>AESOCCD</td>
+<td>Primary System Organ Class Code</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AESEV"></a>AESEV</td>
+<td>Severity</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">20</td>
+<td></td>
+<td>CRF page 6</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AESER"></a>AESER</td>
+<td>Serious Event</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>CRF page 6</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AEACN"></a>AEACN</td>
+<td>Action Taken with Study Treatment</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>CRF page 6</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AEREL"></a>AEREL</td>
+<td>Causality</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>CRF page 6</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AESLIFE"></a>AESLIFE</td>
+<td>Is Life Threatening</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>CRF page 6</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.EPOCH"></a>EPOCH</td>
+<td>Epoch</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AESTDTC"></a>AESTDTC</td>
+<td>Start Date/Time of Adverse Event</td>
+<td class="number">4</td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF page 6</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AEENDTC"></a>AEENDTC</td>
+<td>End Date/Time of Adverse Event</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF page 6</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="AE.AE.AESTDY"></a>AESTDY</td>
+<td>Study Day of Start of Adverse Event</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="AE.AE.AEENDY"></a>AEENDY</td>
+<td>Study Day of End of Adverse Event</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.DM"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Demographics (DM) </h1>
+<table summary="ItemGroup IG.DM">
+<caption>Demographics (DM) <span class="dataset">[Location: <a href="dm.xpt">dm.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="number">2</td>
+<td class="datatype">text</td>
+<td class="number">25</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.SUBJID"></a>SUBJID</td>
+<td>Subject Identifier for the Study</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">7</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.RFSTDTC"></a>RFSTDTC</td>
+<td>Subject Reference Start Date/Time</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF page 1</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.RFENDTC"></a>RFENDTC</td>
+<td>Subject Reference End Date/Time</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.RFXSTDTC"></a>RFXSTDTC</td>
+<td>Date/Time of First Study Treatment</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF page 4</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.RFXENDTC"></a>RFXENDTC</td>
+<td>Date/Time of Last Study Treatment</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF page 4</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.RFICDTC"></a>RFICDTC</td>
+<td>Date/Time of Informed Consent</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF Page 1</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.RFPENDTC"></a>RFPENDTC</td>
+<td>Date/Time of End of Participation</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF Page 30</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.DTHDTC"></a>DTHDTC</td>
+<td>Date/Time of Death</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.DTHFL"></a>DTHFL</td>
+<td>Subject Death Flag</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.SITEID"></a>SITEID</td>
+<td>Study Site Identifier</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">7</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.BRTHDTC"></a>BRTHDTC</td>
+<td>Date/Time of Birth</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF page 1</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.AGE"></a>AGE</td>
+<td>Age</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.AGEU"></a>AGEU</td>
+<td>Age Units</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">10</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.SEX"></a>SEX</td>
+<td>Sex</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>CRF page 1</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.RACE"></a>RACE</td>
+<td>Race</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">80</td>
+<td></td>
+<td>CRF page 1</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.ARMCD"></a>ARMCD</td>
+<td>Planned Arm Code</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.ARM"></a>ARM</td>
+<td>Description of Planned Arm</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.ACTARMCD"></a>ACTARMCD</td>
+<td>Actual Arm Code</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="DM.DM.ACTARM"></a>ACTARM</td>
+<td>Description of Actual Arm</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="DM.DM.COUNTRY"></a>COUNTRY</td>
+<td>Country</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">3</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr><td colspan="8">Related dataset: DM - Supplemental Qualifiers (<a href="#IG.SUPPDM">SUPPDM)</a>
+</td></tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.EX"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Exposure (EX) </h1>
+<table summary="ItemGroup IG.EX">
+<caption>Exposure (EX) <span class="dataset">[Location: <a href="ex.xpt">ex.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="EX.EX.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="EX.EX.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="EX.EX.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="number">2</td>
+<td class="datatype">text</td>
+<td class="number">25</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="EX.EX.EXSEQ"></a>EXSEQ</td>
+<td>Sequence Number</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="EX.EX.EXTRT"></a>EXTRT</td>
+<td>Name of Actual Treatment</td>
+<td class="number">3</td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="EX.EX.EXDOSE"></a>EXDOSE</td>
+<td>Dose</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>CRF Page 4</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="EX.EX.EXDOSU"></a>EXDOSU</td>
+<td>Dose Units</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="EX.EX.EXDOSFRM"></a>EXDOSFRM</td>
+<td>Dose Form</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">80</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="EX.EX.EPOCH"></a>EPOCH</td>
+<td>Epoch</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="EX.EX.EXSTDTC"></a>EXSTDTC</td>
+<td>Start Date/Time of Treatment</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF Page 4</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="EX.EX.EXENDTC"></a>EXENDTC</td>
+<td>End Date/Time of Treatment</td>
+<td class="number">4</td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF Page 4</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="EX.EX.EXSTDY"></a>EXSTDY</td>
+<td>Study Day of Start of Treatment</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="EX.EX.EXENDY"></a>EXENDY</td>
+<td>Study Day of End of Treatment</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.LB"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Laboratory Test Results (LB) </h1>
+<table summary="ItemGroup IG.LB">
+<caption>Laboratory Test Results (LB) <span class="dataset">[Location: <a href="lb.xpt">lb.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="number">2</td>
+<td class="datatype">text</td>
+<td class="number">25</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.LBSEQ"></a>LBSEQ</td>
+<td>Sequence Number</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.LBTESTCD"></a>LBTESTCD</td>
+<td>Lab Test or Examination Short Name</td>
+<td class="number">4</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.LBTEST"></a>LBTEST</td>
+<td>Lab Test or Examination Name</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.LBCAT"></a>LBCAT</td>
+<td>Category for Lab Test</td>
+<td class="number">3</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.LBORRES"></a>LBORRES</td>
+<td>Result or Finding in Original Units</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.LBORRESU"></a>LBORRESU</td>
+<td>Original Units</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.LBORNRLO"></a>LBORNRLO</td>
+<td>Reference Range Lower Limit in Orig Unit</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.LBORNRHI"></a>LBORNRHI</td>
+<td>Reference Range Upper Limit in Orig Unit</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.LBSTRESC"></a>LBSTRESC</td>
+<td>Character Result/Finding in Std Format</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.LBSTRESN"></a>LBSTRESN</td>
+<td>Numeric Result/Finding in Standard Units</td>
+<td class="number"></td>
+<td class="datatype">float</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.LBSTRESU"></a>LBSTRESU</td>
+<td>Standard Units</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.LBSTNRLO"></a>LBSTNRLO</td>
+<td>Reference Range Lower Limit-Std Units</td>
+<td class="number"></td>
+<td class="datatype">float</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.LBSTNRHI"></a>LBSTNRHI</td>
+<td>Reference Range Upper Limit-Std Units</td>
+<td class="number"></td>
+<td class="datatype">float</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.LBNRIND"></a>LBNRIND</td>
+<td>Reference Range Indicator</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">20</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.LBBLFL"></a>LBBLFL</td>
+<td>Baseline Flag</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.VISITNUM"></a>VISITNUM</td>
+<td>Visit Number</td>
+<td class="number">5</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.VISIT"></a>VISIT</td>
+<td>Visit Name</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.EPOCH"></a>EPOCH</td>
+<td>Epoch</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="LB.LB.LBDTC"></a>LBDTC</td>
+<td>Date/Time of Specimen Collection</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>eDT</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="LB.LB.LBDY"></a>LBDY</td>
+<td>Study Day of Specimen Collection</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.XP"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Pain Scores (XP) </h1>
+<table summary="ItemGroup IG.XP">
+<caption>Pain Scores (XP) <span class="dataset">[Location: <a href="xp.xpt">xp.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="XP.XP.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="XP.XP.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="XP.XP.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="number">2</td>
+<td class="datatype">text</td>
+<td class="number">25</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="XP.XP.XPSEQ"></a>XPSEQ</td>
+<td>Sequence Number</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="XP.XP.XPTESTCD"></a>XPTESTCD</td>
+<td>Pain Test Short Name</td>
+<td class="number">3</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="XP.XP.XPTEST"></a>XPTEST</td>
+<td>Pain Test Name</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="XP.XP.XPORRES"></a>XPORRES</td>
+<td>Result or Finding in Original Units</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>CRF Page 5</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="XP.XP.XPSTRESC"></a>XPSTRESC</td>
+<td>Character Result/Finding in Std Format</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>CRF Page 5</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="XP.XP.XPSTRESN"></a>XPSTRESN</td>
+<td>Numeric Result/Finding in Std Format</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>CRF Page 5</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="XP.XP.EPOCH"></a>EPOCH</td>
+<td>Epoch</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="XP.XP.VISITNUM"></a>VISITNUM</td>
+<td>Visit Number</td>
+<td class="number">4</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="XP.XP.VISIT"></a>VISIT</td>
+<td>Visit Name</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>CRF Page 5</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="XP.XP.XPBLFL"></a>XPBLFL</td>
+<td>Baseline Flag</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="XP.XP.XPDTC"></a>XPDTC</td>
+<td>Date/Time of  Collection</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>CRF Page 5</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="XP.XP.XPDY"></a>XPDY</td>
+<td>Study Day of  Collection</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.TA"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Trial Arms (TA) </h1>
+<table summary="ItemGroup IG.TA">
+<caption>Trial Arms (TA) <span class="dataset">[Location: <a href="ta.xpt">ta.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TA.TA.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TA.TA.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TA.TA.ARMCD"></a>ARMCD</td>
+<td>Planned Arm Code</td>
+<td class="number">2</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TA.TA.ARM"></a>ARM</td>
+<td>Description of Planned Arm</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TA.TA.TAETORD"></a>TAETORD</td>
+<td>Planned Order of Element within Arm</td>
+<td class="number">3</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TA.TA.ETCD"></a>ETCD</td>
+<td>Element Code</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TA.TA.ELEMENT"></a>ELEMENT</td>
+<td>Description of Element</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TA.TA.TABRANCH"></a>TABRANCH</td>
+<td>Branch</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TA.TA.TATRANS"></a>TATRANS</td>
+<td>Transition Rule</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TA.TA.EPOCH"></a>EPOCH</td>
+<td>Epoch</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.TD"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Trial Disease Assessments (TD) </h1>
+<table summary="ItemGroup IG.TD">
+<caption>Trial Disease Assessments (TD) <span class="dataset">[Location: <a href="td.xpt">td.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TD.TD.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TD.TD.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TD.TD.TDORDER"></a>TDORDER</td>
+<td>Sequence of Planned Assessment Schedule</td>
+<td class="number">2</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TD.TD.TDANCVAR"></a>TDANCVAR</td>
+<td>Anchor Variable Name</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TD.TD.TDSTOFF"></a>TDSTOFF</td>
+<td>Offset from the Anchor</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TD.TD.TDTGTPAI"></a>TDTGTPAI</td>
+<td>Planned Assessment Interval</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TD.TD.TDMINPAI"></a>TDMINPAI</td>
+<td>Planned Assessment Interval Minimum</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TD.TD.TDMAXPAI"></a>TDMAXPAI</td>
+<td>Planned Assessment Interval Maximum</td>
+<td class="number"></td>
+<td class="datatype">date</td>
+<td class="number">16</td>
+<td>ISO8601</td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TD.TD.TDNUMRPT"></a>TDNUMRPT</td>
+<td>Maximum Number of Actual Assessments</td>
+<td class="number"></td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.TE"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Trial Elements (TE) </h1>
+<table summary="ItemGroup IG.TE">
+<caption>Trial Elements (TE) <span class="dataset">[Location: <a href="te.xpt">te.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TE.TE.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TE.TE.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TE.TE.ETCD"></a>ETCD</td>
+<td>Element Code</td>
+<td class="number">2</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TE.TE.ELEMENT"></a>ELEMENT</td>
+<td>Description of Element</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TE.TE.TESTRL"></a>TESTRL</td>
+<td>Rule for Start of Element</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TE.TE.TEENRL"></a>TEENRL</td>
+<td>Rule for End of Element</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TE.TE.TEDUR"></a>TEDUR</td>
+<td>Planned Duration of Element</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">64</td>
+<td>ISO8601</td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.TI"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Trial Inclusion/Exclusion Criteria (TI) </h1>
+<table summary="ItemGroup IG.TI">
+<caption>Trial Inclusion/Exclusion Criteria (TI) <span class="dataset">[Location: <a href="ti.xpt">ti.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TI.TI.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TI.TI.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TI.TI.IETESTCD"></a>IETESTCD</td>
+<td>Inclusion/Exclusion Criterion Short Name</td>
+<td class="number">2</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TI.TI.IETEST"></a>IETEST</td>
+<td>Inclusion/Exclusion Criterion</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TI.TI.IECAT"></a>IECAT</td>
+<td>Inclusion/Exclusion Category</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.TS"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Trial Summary (TS) </h1>
+<table summary="ItemGroup IG.TS">
+<caption>Trial Summary (TS) <span class="dataset">[Location: <a href="ts.xpt">ts.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TS.TS.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TS.TS.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TS.TS.TSSEQ"></a>TSSEQ</td>
+<td>Sequence Number</td>
+<td class="number">2</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TS.TS.TSPARMCD"></a>TSPARMCD</td>
+<td>Trial Summary Parameter Short Name</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TS.TS.TSPARM"></a>TSPARM</td>
+<td>Trial Summary Parameter</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TS.TS.TSVAL"></a>TSVAL</td>
+<td>Parameter Value</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TS.TS.TSVALCD"></a>TSVALCD</td>
+<td>Parameter Value Code</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TS.TS.TSVCDREF"></a>TSVCDREF</td>
+<td>Name of the Reference Terminology</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TS.TS.TSVCDVER"></a>TSVCDVER</td>
+<td>Version of the Reference Terminology</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.TV"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Trial Visits (TV) </h1>
+<table summary="ItemGroup IG.TV">
+<caption>Trial Visits (TV) <span class="dataset">[Location: <a href="tv.xpt">tv.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TV.TV.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TV.TV.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TV.TV.VISITNUM"></a>VISITNUM</td>
+<td>Visit Number</td>
+<td class="number">2</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TV.TV.VISIT"></a>VISIT</td>
+<td>Visit Name</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TV.TV.ARMCD"></a>ARMCD</td>
+<td>Planned Arm Code</td>
+<td class="number">3</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TV.TV.ARM"></a>ARM</td>
+<td>Description of Planned Arm</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="TV.TV.TVSTRL"></a>TVSTRL</td>
+<td>Visit Start Rule</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="TV.TV.TVENRL"></a>TVENRL</td>
+<td>Visit End Rule</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="IG.SUPPDM"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">DM - Supplemental Qualifiers (SUPPDM) </h1>
+<table summary="ItemGroup IG.SUPPDM">
+<caption>DM - Supplemental Qualifiers (SUPPDM) <span class="dataset">[Location: <a href="suppdm.xpt">suppdm.xpt </a>]</span>
+</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label</th>
+<th scope="col">Key</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="SUPPDM.SUPPDM.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="number">1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="SUPPDM.SUPPDM.RDOMAIN"></a>RDOMAIN</td>
+<td>Related Domain Abbreviation</td>
+<td class="number">2</td>
+<td class="datatype">text</td>
+<td class="number">2</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="SUPPDM.SUPPDM.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="number">3</td>
+<td class="datatype">text</td>
+<td class="number">25</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="SUPPDM.SUPPDM.IDVAR"></a>IDVAR</td>
+<td>Identifying Variable</td>
+<td class="number">4</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="SUPPDM.SUPPDM.IDVARVAL"></a>IDVARVAL</td>
+<td>Identifying Variable Value</td>
+<td class="number">5</td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="SUPPDM.SUPPDM.QNAM"></a>QNAM</td>
+<td>Qualifier Variable Name</td>
+<td class="number">6</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="SUPPDM.SUPPDM.QLABEL"></a>QLABEL</td>
+<td>Qualifier Variable Label</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td>Assigned</td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="SUPPDM.SUPPDM.QVAL"></a>QVAL</td>
+<td>Data Value</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>NA</td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a name="SUPPDM.SUPPDM.QORIG"></a>QORIG</td>
+<td>Origin</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">20</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a name="SUPPDM.SUPPDM.QEVAL"></a>QEVAL</td>
+<td>Evaluator</td>
+<td class="number"></td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>Derived</td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr><td colspan="8">Related dataset: Demographics (<a href="#IG.DM">DM)
+                </a>
+</td></tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><br><a name="valuemeta"></a><div class="containerbox" style="page-break-after: always;">
+<h1>Value Lists</h1>
+<div class="containerbox" id="VL.VL.LB.LBORRES"><table summary="ValueList / ParameterList">
+<caption> Value List -  []</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Where</th>
+<th scope="col">Type</th>
+<th scope="col" abbr="Length" class="length">Length / Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tablerowodd">
+<td></td>
+<td>LBCAT = "CHEMISTRY"<br> and LBTESTCD = "GLUC"<br>
+</td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td></td>
+<td>LBCAT = "URINALYSIS"<br> and LBTESTCD = "GLUC"<br>
+</td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></div>
+<div class="containerbox" id="VL.VL.SUPPDM.QVAL"><table summary="ValueList / ParameterList">
+<caption> Value List -  []</caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Where</th>
+<th scope="col">Type</th>
+<th scope="col" abbr="Length" class="length">Length / Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or Format</th>
+<th scope="col">Origin</th>
+<th scope="col">Derivation/Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="tableroweven">
+<td></td>
+<td></td>
+<td class="datatype"></td>
+<td class="number"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></div>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<br><a id="comment"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Comments</h1>
+<table summary="ItemGroup, ItemDef and WhereClauseDef Comments">
+<caption class="header">Comments</caption>
+<tr class="header">
+<th scope="col">CommentOID</th>
+<th scope="col">Description</th>
+</tr>
+<tr id="COMM.COM.ARMCD" class="tablerowodd">
+<td>COM.ARMCD</td>
+<td>Assigned based on Randomization Number.</td>
+</tr>
+<tr id="COMM.com.ae" class="tableroweven">
+<td>com.ae</td>
+<td>MedDRA dictionary version XX.1 was used to code all adverse events.</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+</div>
+</body>
+</html>
