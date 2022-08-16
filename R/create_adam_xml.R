@@ -244,11 +244,12 @@ get_item_defs_adam <- function(toc, vardt) {
       <Description>
           <TranslatedText xml:lang="en">{label}</TranslatedText>
       </Description>
-      {codelistref}{valuelistRef} <def:Origin Type="{origin}">
+      {codelistref}<def:Origin Type="{origin}">
         {internals}
       </def:Origin>
     </ItemDef>'
 
+  # double check efficiency for outer loop
   ret <- c(blk)
   for(rw in 1:nrow(toc)) {
     for(varrow in 1:nrow(vardt)) {
@@ -263,12 +264,13 @@ get_item_defs_adam <- function(toc, vardt) {
         codeListHolder <- ""
         if(!is.na(vardt[varrow, "CODELISTNAME"])) {
           codeListHolder <- '<CodeListRef CodeListOID="CodeList.{codelist}"/>\n'
-          codeListHolder <- glue(codeListHolder, codelist = vardt[varrod, "CODELISTNAME"])
+          codeListHolder <- glue(codeListHolder, codelist = vardt[varrow, "CODELISTNAME"])
         }
         valueListHolder <- ""
-        if(!is.na(vardt[varrow, "VALUELIST"])) {
-          valueListHolder <- '<def:ValueListRef ValueListOID="VL.ADTTE.CNSR"/>'
-        }
+        # #
+        # if(!is.na(vardt[varrow, "VALUELIST"])) {
+        #   valueListHolder <- '<def:ValueListRef ValueListOID="VL.ADTTE.CNSR"/>'
+        # }
         internalHolder <- ""
         originHolder <- ""
         if(vardt[[varrow, "ORIGIN"]] %eq% 'Assigned' ||
@@ -288,7 +290,8 @@ get_item_defs_adam <- function(toc, vardt) {
                                      type = vardt[varrow, "TYPE"],
                                      length = vardt[varrow, "LENGTH"],
                                      display = strHolder,
-                                     internals, internalHolder,
+                                     internals = internalHolder,
+                                     codelistref = codeListHolder,
                                      label = vardt[varrow, "LABEL"],
                                      origin = originHolder)
       }
