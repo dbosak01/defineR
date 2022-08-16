@@ -418,8 +418,8 @@ get_code_lists <- function(dta) {
                                      rank = sp[rw, "RANK"],
                                      translated = sp[rw, "TRANSLATED"])
       }
-      ret[length(ret) + 1] <- endCL
     }
+    ret[length(ret) + 1] <- endCL
   }
   return(ret)
 }

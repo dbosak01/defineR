@@ -266,7 +266,7 @@ get_item_defs_adam <- function(toc, vardt) {
           codeListHolder <- glue(codeListHolder, codelist = vardt[varrod, "CODELISTNAME"])
         }
         valueListHolder <- ""
-        if(!is.na(vardt[varrow, ])) {
+        if(!is.na(vardt[varrow, "VALUELIST"])) {
           valueListHolder <- '<def:ValueListRef ValueListOID="VL.ADTTE.CNSR"/>'
         }
         internalHolder <- ""
@@ -437,8 +437,8 @@ get_code_lists_adam <- function(dta) {
                                      rank = sp[rw, "RANK"],
                                      translated = sp[rw, "TRANSLATED"])
       }
-      ret[length(ret) + 1] <- endCL
     }
+    ret[length(ret) + 1] <- endCL
   }
   return(ret)
 }
