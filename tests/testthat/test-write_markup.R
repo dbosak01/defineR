@@ -72,8 +72,8 @@ test_that("write4: CDISC XML conforms to 2.0 define XSD schema", {
 
   library(xml2)
 
-  fp <- file.path(data_dir, "sdtm/define.xml")
-  op <- file.path(data_dir, "xsd/cdisc-define-2.0/define2-0-0.xsd")
+  fp <- file.path(base_path, "sdtm/define.xml")
+  op <- file.path(base_path, "xsd/cdisc-define-2.0/define2-0-0.xsd")
 
   doc <- read_xml(fp)
   schema <- read_xml(op)
@@ -163,4 +163,16 @@ test_that("write7: defineR XML can be converted to HTML using XSL", {
 
   expect_equal(TRUE, TRUE)
 
+})
+
+# New test for isolating computational methods
+
+test_that("write 8: bug in computational methods", {
+
+  library(xml2)
+  library(textutils)
+
+  fp <- file.path(base_path, "xml/comptest.xml")
+  doc <- read_xml(fp)
+  expect_equal(TRUE, TRUE)
 })

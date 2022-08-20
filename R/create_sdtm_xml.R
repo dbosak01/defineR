@@ -258,9 +258,8 @@ get_item_defs <- function(toc, vardt) {
     </ItemDef>'
 
   ret <- c(blk)
-  for(rw in 1:nrow(toc)) {
     for(varrow in 1:nrow(vardt)) {
-      if(toc[[rw, "NAME"]] %eq% vardt[[varrow, "DOMAIN"]]) {
+
         strHolder <- ""
         if(!is.na(vardt[varrow, "DISPLAYFORMAT"])) {
           strHolder <- vardt[[varrow, "DISPLAYFORMAT"]]
@@ -276,9 +275,7 @@ get_item_defs <- function(toc, vardt) {
                                    display = strHolder,
                                    label = vardt[varrow, "LABEL"],
                                    origin = vardt[varrow, "ORIGIN"])
-      }
     }
-  }
   return(ret)
 
 
@@ -372,7 +369,7 @@ get_computations <- function(dta) {
                                  mthdOID = dta[rw, "COMPUTATIONMETHODOID"],
                                  label = dta[rw, "LABEL"],
                                  comp = dta[rw, "TYPE"],
-                                 compMthd = dta[rw, "COMPUTATIONMETHOD"])
+                                 compMthd = textutils::HTMLencode(dta[rw, "COMPUTATIONMETHOD"], encode.only = c("&", "<", ">")))
   }
   ret[length(ret) + 1] <- ""
   return(ret)

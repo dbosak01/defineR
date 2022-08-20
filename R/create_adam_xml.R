@@ -251,52 +251,52 @@ get_item_defs_adam <- function(toc, vardt) {
 
   # double check efficiency for outer loop
   ret <- c(blk)
-  for(rw in 1:nrow(toc)) {
-    for(varrow in 1:nrow(vardt)) {
-      if(toc[[rw, "NAME"]] %eq% vardt[[varrow, "DOMAIN"]]) {
-        strHolder <- ""
-        if(!is.na(vardt[varrow, "DISPLAYFORMAT"])) {
-          strHolder <- vardt[[varrow, "DISPLAYFORMAT"]]
-        }
-        else {
-          strHolder <- vardt[[varrow, "LENGTH"]]
-        }
-        codeListHolder <- ""
-        if(!is.na(vardt[varrow, "CODELISTNAME"])) {
-          codeListHolder <- '<CodeListRef CodeListOID="CodeList.{codelist}"/>\n'
-          codeListHolder <- glue(codeListHolder, codelist = vardt[varrow, "CODELISTNAME"])
-        }
-        valueListHolder <- ""
-        # #
-        # if(!is.na(vardt[varrow, "VALUELIST"])) {
-        #   valueListHolder <- '<def:ValueListRef ValueListOID="VL.ADTTE.CNSR"/>'
-        # }
-        internalHolder <- ""
-        originHolder <- ""
-        if(vardt[[varrow, "ORIGIN"]] %eq% 'Assigned' ||
-           vardt[[varrow, "ORIGIN"]] %eq% 'Derived') {
-          originHolder <- vardt[[varrow, "ORIGIN"]]
-        }
-        else {
-          internalHolder <- '<Description>
-          <TranslatedText xml:lang="en">{origin}</TranslatedText>
-        </Description>'
-          internalHolder <- glue(internalHolder, origin = vardt[varrow, "ORIGIN"])
-          originHolder <- "Predecessor"
-        }
-        ret[length(ret) + 1] <- glue(str,
-                                     domain = vardt[varrow, "DOMAIN"],
-                                     variable = vardt[varrow, "VARIABLE"],
-                                     type = vardt[varrow, "TYPE"],
-                                     length = vardt[varrow, "LENGTH"],
-                                     display = strHolder,
-                                     internals = internalHolder,
-                                     codelistref = codeListHolder,
-                                     label = vardt[varrow, "LABEL"],
-                                     origin = originHolder)
+
+  for(varrow in 1:nrow(vardt)) {
+    newDomain <- vardt[[varrow, "DOMAIN"]]
+    flag <- varrow
+      strHolder <- ""
+      if(!is.na(vardt[varrow, "DISPLAYFORMAT"])) {
+        strHolder <- vardt[[varrow, "DISPLAYFORMAT"]]
       }
-    }
+      else {
+        strHolder <- vardt[[varrow, "LENGTH"]]
+      }
+      codeListHolder <- ""
+      if(!is.na(vardt[varrow, "CODELISTNAME"])) {
+        codeListHolder <- '<CodeListRef CodeListOID="CodeList.{codelist}"/>\n'
+        codeListHolder <- glue(codeListHolder, codelist = vardt[varrow, "CODELISTNAME"])
+      }
+      valueListHolder <- ""
+      # #
+      # if(!is.na(vardt[varrow, "VALUELIST"])) {
+      #   valueListHolder <- '<def:ValueListRef ValueListOID="VL.ADTTE.CNSR"/>'
+      # }
+      internalHolder <- ""
+      originHolder <- ""
+      if(vardt[[varrow, "ORIGIN"]] %eq% 'Assigned' ||
+         vardt[[varrow, "ORIGIN"]] %eq% 'Derived') {
+        originHolder <- vardt[[varrow, "ORIGIN"]]
+      }
+      else {
+        internalHolder <- '<Description>
+        <TranslatedText xml:lang="en">{origin}</TranslatedText>
+      </Description>'
+        internalHolder <- glue(internalHolder, origin = vardt[varrow, "ORIGIN"])
+        originHolder <- "Predecessor"
+      }
+      ret[length(ret) + 1] <- glue(str,
+                                   domain = vardt[varrow, "DOMAIN"],
+                                   variable = vardt[varrow, "VARIABLE"],
+                                   type = vardt[varrow, "TYPE"],
+                                   length = vardt[varrow, "LENGTH"],
+                                   display = strHolder,
+                                   internals = internalHolder,
+                                   codelistref = codeListHolder,
+                                   label = vardt[varrow, "LABEL"],
+                                   origin = originHolder)
   }
+
   return(ret)
 
 
@@ -567,53 +567,51 @@ get_leaf_definitions_adam <- function(dta) {
 }
 
 
-# Stub for analysis metadata
+# Final issue - what do with analysis_results_helper when analysisdataset is NA
+# (but the variable is not)
+# Func already handles opposite scenario and returns empty
 get_analysis_results_adam <- function(dta) {
-  blk <-     '<!-- ************************************************************ -->
+  blk <-
+  '<!-- ************************************************************ -->
     <!-- Analysis Results MetaData are Presented Below                -->
     <!-- ************************************************************ -->
     <arm:AnalysisResultDisplays>'
 
-  resultDisplay <- '    <arm:ResultDisplay OID="RD.Table_14.1.1" Name="Table 14.1.1">
+  resultDisplay <-
+  '    <arm:ResultDisplay OID="RD.{dispid}" Name="{dispid}">
       <Description>
-          <TranslatedText xml:lang="en">Summary of Demographics (ITT Population)</TranslatedText>
+          <TranslatedText xml:lang="en">{dispname}</TranslatedText>
       </Description>
-      <def:DocumentRef leafID="Table_14.1.1">
+      <def:DocumentRef leafID="{dispid}">
         <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
       </def:DocumentRef>
       <arm:AnalysisResult
-        OID="Table_14.1.1"
-        ParameterOID="ADSL.PARAMCD"
-        ResultIdentifier="Table_14.1.1"
-        AnalysisReason="SPECIFIED IN SAP"
-        AnalysisPurpose="Comparisons of baseline characteristics by treatment group">
+        OID="{dispid}"
+        ParameterOID="{analysisdata}.{paramcd}"
+        ResultIdentifier="{dispid}"
+        AnalysisReason="{reason}"
+        AnalysisPurpose="{purpose}">
         <Description>
-          <TranslatedText xml:lang="en">Summary of Demographics</TranslatedText>
+          <TranslatedText xml:lang="en">{resultname}</TranslatedText>
         </Description>
         <arm:AnalysisDatasets>
-          <arm:AnalysisDataset ItemGroupOID="ADSL" >
-          <def:WhereClauseRef WhereClauseOID="WC.ITTFL" />
+          <arm:AnalysisDataset ItemGroupOID="{analysisdata}" >
+          <def:WhereClauseRef WhereClauseOID="{wcoid}" />
 
-          <arm:AnalysisVariable ItemOID="ADSL.AGE"/>
-          <arm:AnalysisVariable ItemOID="ADSL.AGEGR1"/>
-          <arm:AnalysisVariable ItemOID="ADSL.SEX"/>
-          <arm:AnalysisVariable ItemOID="ADSL.RACE"/>
+        {analysisvars}
           </arm:AnalysisDataset>
         </arm:AnalysisDatasets>
         <arm:Documentation>
         <Description>
-          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical demographic variables </TranslatedText>
+          <TranslatedText xml:lang="en">{document}</TranslatedText>
         </Description>
-        <def:DocumentRef  leafID="SAP_Section_9.1.1">
+        <def:DocumentRef  leafID="{rleafid}">
         </def:DocumentRef>
         </arm:Documentation>
 
-        <arm:ProgrammingCode Context="SAS Version 9.4">
+        <arm:ProgrammingCode Context="{context}">
         <arm:Code>
-PROC FREQ DATA=ADSL;
-  where ittfl=&quot;Y&quot;;
-  tables trt01pn * (agegr1 sex race) / cmh;
-  run;
+{pgrmcode}
         </arm:Code>
         </arm:ProgrammingCode>
       </arm:AnalysisResult>
@@ -622,4 +620,46 @@ PROC FREQ DATA=ADSL;
   end <- '</arm:AnalysisResultDisplays>'
 
 
+  ret <- c(blk)
+  for(rw in 1:nrow(dta)) {
+
+    ret[length(ret) + 1] <- glue(resultDisplay,
+                                 dispid = dta[rw, "DISPLAYID"],
+                                 dispname = dta[rw, "DISPLAYNAME"],
+                                 analysisdata = dta[rw, "ANALYSISDATASET"],
+                                 paramcd = dta[rw, "PARAMCD"],
+                                 reason = dta[rw, "REASON"],
+                                 purpose = dta[rw, "PURPOSE"],
+                                 resultname = dta[rw, "RESULTNAME"],
+                                 wcoid = dta[rw, "WHERECLAUSEOID"],
+                                 analysisvars = analysis_results_helper(dta[[rw,
+                                  "ANALYSISVARIABLES"]],
+                                  dta[[rw, "ANALYSISDATASET"]]),
+                                 document = dta[rw, "DOCUMENTATION"],
+                                 rleafid = dta[rw, "REFLEAFID"],
+                                 context = dta[rw, "CONTEXT"],
+                                 pgrmcode = dta[rw, "PROGRAMMINGCODE"])
+  }
+
+  ret[length(ret) + 1] <- end
+  return(ret)
+}
+
+
+analysis_results_helper <- function(cellcont, dtaSetName) {
+
+  varTag <- '<arm:AnalysisVariable ItemOID="{analysisdata}.{varname}"/>'
+  # Generate analysis variables
+  strHolder <- ""
+  if(!(cellcont %eq% "")){
+    varRes <- strsplit(cellcont, split = ", ", fixed = TRUE)
+
+    for(i in 1:length(varRes[[1]])) {
+      temp <- glue(varTag,
+                   analysisdata = dtaSetName,
+                   varname = varRes[[1]][[i]])
+      strHolder <- paste0(strHolder, temp,"\n")
+    }
+  }
+  return(strHolder)
 }

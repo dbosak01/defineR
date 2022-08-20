@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 16August2022                                                   -->
+    <!-- Date: 18August2022                                                   -->
     <!-- Description: Define.xml file for oGvHD-2-SC                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="oGvHD-2-SC"
   FileType="Snapshot"
-  CreationDateTime="2022-08-16T10:25:56">
+  CreationDateTime="2022-08-18T00:57:48">
     <Study OID="oGvHD-2-SC">
     <GlobalVariables>
     <StudyName>oGvHD-2-SC</StudyName>
@@ -746,450 +746,6 @@ Mandatory="No"
 <!-- ************************************************************ -->
   <!-- The details of each variable is here for all domains         -->
   <!-- ************************************************************ -->
-<ItemDef OID="ADAE.STUDYID"
-  Name="STUDYID"
-  SASFieldName="STUDYID"
-  DataType="text"
-  Length="15"
-  def:DisplayFormat="15"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
-  </Description>
-  <def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.USUBJID"
-  Name="USUBJID"
-  SASFieldName="USUBJID"
-  DataType="text"
-  Length="25"
-  def:DisplayFormat="25"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
-  </Description>
-  <def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.SITEID"
-  Name="SITEID"
-  SASFieldName="SITEID"
-  DataType="text"
-  Length="7"
-  def:DisplayFormat="7"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Study Site Identifier</TranslatedText>
-  </Description>
-  <def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.COUNTRY"
-  Name="COUNTRY"
-  SASFieldName="COUNTRY"
-  DataType="text"
-  Length="3"
-  def:DisplayFormat="3"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Country</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.COUNTRY"/><def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AESEQ"
-  Name="AESEQ"
-  SASFieldName="AESEQ"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
-  </Description>
-  <def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">AE</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AGE"
-  Name="AGE"
-  SASFieldName="AGE"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
-  </Description>
-  <def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AGEGR1N"
-  Name="AGEGR1N"
-  SASFieldName="AGEGR1N"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Pooled Age Group 1 (N)</TranslatedText>
-  </Description>
-  <def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AGEGR1"
-  Name="AGEGR1"
-  SASFieldName="AGEGR1"
-  DataType="text"
-  Length="20"
-  def:DisplayFormat="20"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Pooled Age Group 1</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.AGEGR1"/><def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.SEX"
-  Name="SEX"
-  SASFieldName="SEX"
-  DataType="text"
-  Length="1"
-  def:DisplayFormat="1"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Sex</TranslatedText>
-  </Description>
-  <def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.TRTAN"
-  Name="TRTAN"
-  SASFieldName="TRTAN"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Actual Treatment (N)</TranslatedText>
-  </Description>
-  <def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL.TRT01AN</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.TRTA"
-  Name="TRTA"
-  SASFieldName="TRTA"
-  DataType="text"
-  Length="40"
-  def:DisplayFormat="40"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Actual Treatment</TranslatedText>
-  </Description>
-  <def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL.TRT01A</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AETERM"
-  Name="AETERM"
-  SASFieldName="AETERM"
-  DataType="text"
-  Length="200"
-  def:DisplayFormat="200"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Reported Term for the Adverse Event</TranslatedText>
-  </Description>
-  <def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">AE</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AEDECOD"
-  Name="AEDECOD"
-  SASFieldName="AEDECOD"
-  DataType="text"
-  Length="200"
-  def:DisplayFormat="200"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Dictionary-Derived Term</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.MedDRA"/><def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">AE</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AEBODSYS"
-  Name="AEBODSYS"
-  SASFieldName="AEBODSYS"
-  DataType="text"
-  Length="200"
-  def:DisplayFormat="200"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Body System or Organ Class</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.MedDRA"/><def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">AE</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.ASTDT"
-  Name="ASTDT"
-  SASFieldName="ASTDT"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Start Date/Time of Adverse Events</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-    
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AENDT"
-  Name="AENDT"
-  SASFieldName="AENDT"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">End Date/Time of Adverse Events</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-    
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.ASTDY"
-  Name="ASTDY"
-  SASFieldName="ASTDY"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Study Day of Start of Adverse Event</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-    
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AENDY"
-  Name="AENDY"
-  SASFieldName="AENDY"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Study Day of End of Adverse Event</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-    
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AESEV"
-  Name="AESEV"
-  SASFieldName="AESEV"
-  DataType="text"
-  Length="40"
-  def:DisplayFormat="40"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Severity/Intensity</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.AESEV"/><def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">AE</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AESEVN"
-  Name="AESEVN"
-  SASFieldName="AESEVN"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="1"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Severity/Intensity (N)</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.AESEVN"/><def:Origin Type="Derived">
-    
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AESER"
-  Name="AESER"
-  SASFieldName="AESER"
-  DataType="text"
-  Length="40"
-  def:DisplayFormat="40"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Serious Event</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.YN"/><def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">AE</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AEACN"
-  Name="AEACN"
-  SASFieldName="AEACN"
-  DataType="text"
-  Length="40"
-  def:DisplayFormat="40"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Action Taken with Study Treatment</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.ACN"/><def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">AE</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AEREL"
-  Name="AEREL"
-  SASFieldName="AEREL"
-  DataType="text"
-  Length="40"
-  def:DisplayFormat="40"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Causality</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.AEREL"/><def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">AE</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.AERELN"
-  Name="AERELN"
-  SASFieldName="AERELN"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="1"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Causality (N)</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.AERELN"/><def:Origin Type="Derived">
-    
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.CQ01NAM"
-  Name="CQ01NAM"
-  SASFieldName="CQ01NAM"
-  DataType="text"
-  Length="200"
-  def:DisplayFormat="200"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">CQ 01 Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-    
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.RELGR1"
-  Name="RELGR1"
-  SASFieldName="RELGR1"
-  DataType="text"
-  Length="15"
-  def:DisplayFormat="15"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Pooled Causality Group 1</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.RELGR1"/><def:Origin Type="Derived">
-    
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.RELGR1N"
-  Name="RELGR1N"
-  SASFieldName="RELGR1N"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Pooled Causality Group 1 (N)</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.RELGR1N"/><def:Origin Type="Derived">
-    
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.TRTEMFL"
-  Name="TRTEMFL"
-  SASFieldName="TRTEMFL"
-  DataType="text"
-  Length="1"
-  def:DisplayFormat="1"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Treatment Emergent Flag</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.FLAGS"/><def:Origin Type="Derived">
-    
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="ADAE.SAFFL"
-  Name="SAFFL"
-  SASFieldName="SAFFL"
-  DataType="text"
-  Length="1"
-  def:DisplayFormat="1"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Safety Population Flag</TranslatedText>
-  </Description>
-  <CodeListRef CodeListOID="CodeList.FLAGS"/><def:Origin Type="Predecessor">
-    <Description>
-  <TranslatedText xml:lang="en">ADSL</TranslatedText>
-</Description>
-  </def:Origin>
-</ItemDef>
 <ItemDef OID="ADSL.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
@@ -1971,6 +1527,450 @@ Mandatory="No"
   >
   <Description>
       <TranslatedText xml:lang="en">Intent-to-Treat Flag</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.FLAGS"/><def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.STUDYID"
+  Name="STUDYID"
+  SASFieldName="STUDYID"
+  DataType="text"
+  Length="15"
+  def:DisplayFormat="15"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
+  </Description>
+  <def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.USUBJID"
+  Name="USUBJID"
+  SASFieldName="USUBJID"
+  DataType="text"
+  Length="25"
+  def:DisplayFormat="25"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
+  </Description>
+  <def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.SITEID"
+  Name="SITEID"
+  SASFieldName="SITEID"
+  DataType="text"
+  Length="7"
+  def:DisplayFormat="7"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Study Site Identifier</TranslatedText>
+  </Description>
+  <def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.COUNTRY"
+  Name="COUNTRY"
+  SASFieldName="COUNTRY"
+  DataType="text"
+  Length="3"
+  def:DisplayFormat="3"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Country</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.COUNTRY"/><def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AESEQ"
+  Name="AESEQ"
+  SASFieldName="AESEQ"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
+  </Description>
+  <def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">AE</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AGE"
+  Name="AGE"
+  SASFieldName="AGE"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
+  </Description>
+  <def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AGEGR1N"
+  Name="AGEGR1N"
+  SASFieldName="AGEGR1N"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Pooled Age Group 1 (N)</TranslatedText>
+  </Description>
+  <def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AGEGR1"
+  Name="AGEGR1"
+  SASFieldName="AGEGR1"
+  DataType="text"
+  Length="20"
+  def:DisplayFormat="20"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Pooled Age Group 1</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.AGEGR1"/><def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.SEX"
+  Name="SEX"
+  SASFieldName="SEX"
+  DataType="text"
+  Length="1"
+  def:DisplayFormat="1"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Sex</TranslatedText>
+  </Description>
+  <def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.TRTAN"
+  Name="TRTAN"
+  SASFieldName="TRTAN"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Actual Treatment (N)</TranslatedText>
+  </Description>
+  <def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL.TRT01AN</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.TRTA"
+  Name="TRTA"
+  SASFieldName="TRTA"
+  DataType="text"
+  Length="40"
+  def:DisplayFormat="40"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Actual Treatment</TranslatedText>
+  </Description>
+  <def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">ADSL.TRT01A</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AETERM"
+  Name="AETERM"
+  SASFieldName="AETERM"
+  DataType="text"
+  Length="200"
+  def:DisplayFormat="200"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Reported Term for the Adverse Event</TranslatedText>
+  </Description>
+  <def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">AE</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AEDECOD"
+  Name="AEDECOD"
+  SASFieldName="AEDECOD"
+  DataType="text"
+  Length="200"
+  def:DisplayFormat="200"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Dictionary-Derived Term</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.MedDRA"/><def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">AE</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AEBODSYS"
+  Name="AEBODSYS"
+  SASFieldName="AEBODSYS"
+  DataType="text"
+  Length="200"
+  def:DisplayFormat="200"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Body System or Organ Class</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.MedDRA"/><def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">AE</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.ASTDT"
+  Name="ASTDT"
+  SASFieldName="ASTDT"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Start Date/Time of Adverse Events</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+    
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AENDT"
+  Name="AENDT"
+  SASFieldName="AENDT"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">End Date/Time of Adverse Events</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+    
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.ASTDY"
+  Name="ASTDY"
+  SASFieldName="ASTDY"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Study Day of Start of Adverse Event</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+    
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AENDY"
+  Name="AENDY"
+  SASFieldName="AENDY"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Study Day of End of Adverse Event</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+    
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AESEV"
+  Name="AESEV"
+  SASFieldName="AESEV"
+  DataType="text"
+  Length="40"
+  def:DisplayFormat="40"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Severity/Intensity</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.AESEV"/><def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">AE</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AESEVN"
+  Name="AESEVN"
+  SASFieldName="AESEVN"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="1"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Severity/Intensity (N)</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.AESEVN"/><def:Origin Type="Derived">
+    
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AESER"
+  Name="AESER"
+  SASFieldName="AESER"
+  DataType="text"
+  Length="40"
+  def:DisplayFormat="40"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Serious Event</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.YN"/><def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">AE</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AEACN"
+  Name="AEACN"
+  SASFieldName="AEACN"
+  DataType="text"
+  Length="40"
+  def:DisplayFormat="40"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Action Taken with Study Treatment</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.ACN"/><def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">AE</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AEREL"
+  Name="AEREL"
+  SASFieldName="AEREL"
+  DataType="text"
+  Length="40"
+  def:DisplayFormat="40"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Causality</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.AEREL"/><def:Origin Type="Predecessor">
+    <Description>
+  <TranslatedText xml:lang="en">AE</TranslatedText>
+</Description>
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.AERELN"
+  Name="AERELN"
+  SASFieldName="AERELN"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="1"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Causality (N)</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.AERELN"/><def:Origin Type="Derived">
+    
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.CQ01NAM"
+  Name="CQ01NAM"
+  SASFieldName="CQ01NAM"
+  DataType="text"
+  Length="200"
+  def:DisplayFormat="200"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">CQ 01 Name</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+    
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.RELGR1"
+  Name="RELGR1"
+  SASFieldName="RELGR1"
+  DataType="text"
+  Length="15"
+  def:DisplayFormat="15"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Pooled Causality Group 1</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.RELGR1"/><def:Origin Type="Derived">
+    
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.RELGR1N"
+  Name="RELGR1N"
+  SASFieldName="RELGR1N"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Pooled Causality Group 1 (N)</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.RELGR1N"/><def:Origin Type="Derived">
+    
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.TRTEMFL"
+  Name="TRTEMFL"
+  SASFieldName="TRTEMFL"
+  DataType="text"
+  Length="1"
+  def:DisplayFormat="1"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Treatment Emergent Flag</TranslatedText>
+  </Description>
+  <CodeListRef CodeListOID="CodeList.FLAGS"/><def:Origin Type="Derived">
+    
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="ADAE.SAFFL"
+  Name="SAFFL"
+  SASFieldName="SAFFL"
+  DataType="text"
+  Length="1"
+  def:DisplayFormat="1"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Safety Population Flag</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CodeList.FLAGS"/><def:Origin Type="Predecessor">
     <Description>
@@ -3087,6 +3087,1604 @@ DataType="text">
   xlink:href="ae-t14-3-02.sas">
   <def:title>AE Analysis Program</def:title>
 </def:leaf>
+<!-- ************************************************************ -->
+    <!-- Analysis Results MetaData are Presented Below                -->
+    <!-- ************************************************************ -->
+    <arm:AnalysisResultDisplays>
+<arm:ResultDisplay OID="RD.Table 14.1.1" Name="Table 14.1.1">
+      <Description>
+          <TranslatedText xml:lang="en">Comparisons of participant disposition by treatment group</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.1.1">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.1.1"
+        ParameterOID="ADSL.N/A"
+        ResultIdentifier="Table 14.1.1"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Comparisons of participant disposition by treatment group">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Participant Disposition</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADSL" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.1.1" />
+
+        <arm:AnalysisVariable ItemOID="ADSL.AGE"/>
+<arm:AnalysisVariable ItemOID="ADSL.AGEGR1"/>
+<arm:AnalysisVariable ItemOID="ADSL.SEX"/>
+<arm:AnalysisVariable ItemOID="ADSL.RACE"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical participant disposition variables</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.2.2">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+PROC FREQ DATA=ADSL; where ittfl='Y';  tables trt01pn * (agegr1 sex race) / cmh; run;
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.1.2" Name="Table 14.1.2">
+      <Description>
+          <TranslatedText xml:lang="en">Comparisons of protocol deviations by treatment group</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.1.2">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.1.2"
+        ParameterOID="ADEF.N/A"
+        ResultIdentifier="Table 14.1.2"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Comparisons of protocol deviations by treatment group">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Protocol Deviations</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADEF" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.1.2" />
+
+        <arm:AnalysisVariable ItemOID="ADEF.CRIT1FL"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical protocol deviation variables</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.2.3">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+proc freq data = adef; by crit1 avisitn; where ittfl='Y'; tables trtpn * crit1fl / chisq; run;
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.1.3" Name="Table 14.1.3">
+      <Description>
+          <TranslatedText xml:lang="en">Comparisons of baseline characteristics by treatment group</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.1.3">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.1.3"
+        ParameterOID="ADEF.N/A"
+        ResultIdentifier="Table 14.1.3"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Comparisons of baseline characteristics by treatment group">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Demographic Data</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADEF" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.1.3" />
+
+        <arm:AnalysisVariable ItemOID="ADEF.AVAL"/>
+<arm:AnalysisVariable ItemOID="ADEF.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical demographic variables</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.2.4">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+proc glm data = adef; by avisitn avisit; class trtpn; model aval = trtpn base; run;
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.1.4" Name="Table 14.1.4">
+      <Description>
+          <TranslatedText xml:lang="en">Comparisons of occular medical histories by treatment group</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.1.4">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.1.4"
+        ParameterOID="ADTTE.N/A"
+        ResultIdentifier="Table 14.1.4"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Comparisons of occular medical histories by treatment group">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of History of Dry Eye Disease</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADTTE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.1.4" />
+
+        <arm:AnalysisVariable ItemOID="ADTTE.AVAL"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical history of dry eye disease variables</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.2.5">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF';  id usubjid;  strata trtpn;  time aval*cnsr (1 2 3);   test trtpn; run;
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.1.5" Name="Table 14.1.5">
+      <Description>
+          <TranslatedText xml:lang="en">Comparisons of non-occular medical histories by treatment group</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.1.5">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.1.5"
+        ParameterOID="ADTTE.N/A"
+        ResultIdentifier="Table 14.1.5"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Comparisons of non-occular medical histories by treatment group">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Medical History</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADTTE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.1.5" />
+
+        <arm:AnalysisVariable ItemOID="ADTTE.AVAL"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical medical history variables</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.2.5">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.1.6" Name="Table 14.1.6">
+      <Description>
+          <TranslatedText xml:lang="en">Comparisons of prior and concomitant medications by treatment group</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.1.6">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.1.6"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.1.6"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Comparisons of prior and concomitant medications by treatment group">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Prior & Concomitant Medications</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.1.6" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical prior and concomitant medication variables</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.2.6">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.1.7" Name="Table 14.1.7">
+      <Description>
+          <TranslatedText xml:lang="en">Comparisons of treatment exposure by treatment group</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.1.7">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.1.7"
+        ParameterOID="NA.N/A"
+        ResultIdentifier="Table 14.1.7"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Comparisons of treatment exposure by treatment group">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Exposure</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="NA" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.1.7" />
+
+        <arm:AnalysisVariable ItemOID="NA.NA"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical treatment exposure variables</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.2.7">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.1.8" Name="Table 14.1.8">
+      <Description>
+          <TranslatedText xml:lang="en">Comparisons of treatment compliance by treatment group</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.1.8">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.1.8"
+        ParameterOID="NA.N/A"
+        ResultIdentifier="Table 14.1.8"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Comparisons of treatment compliance by treatment group">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Treatment Compliance</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="NA" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.1.8" />
+
+        <arm:AnalysisVariable ItemOID="NA.NA"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical treatment compliance variables</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.2.7">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.2.1.1" Name="Table 14.2.1.1">
+      <Description>
+          <TranslatedText xml:lang="en">Mean SANDE Nightly Global Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.2.1.1">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.2.1.1"
+        ParameterOID="ADEF.SANDNGOU"
+        ResultIdentifier="Table 14.2.1.1"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Primary efficacy endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Symptom Assessment iN Dry Eye Questionnaire (SANDE) - Global Score for Nightly Non-Scleral Lens Wear, Change from Baseline at 12-Weeks</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADEF" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.2.1.1" />
+
+        <arm:AnalysisVariable ItemOID="ADEF.AVAL"/>
+<arm:AnalysisVariable ItemOID="ADEF.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.3.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.2.1.2" Name="Table 14.2.1.2">
+      <Description>
+          <TranslatedText xml:lang="en">Mean Central Corneal Staining Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.2.1.2">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.2.1.2"
+        ParameterOID="ADEF.CFSCLTOU"
+        ResultIdentifier="Table 14.2.1.2"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Secondary efficacy endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Corneal Staining, Central Region, Change from Baseline at 12-Weeks</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADEF" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.2.1.2" />
+
+        <arm:AnalysisVariable ItemOID="ADEF.AVAL"/>
+<arm:AnalysisVariable ItemOID="ADEF.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.3.2.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.2.1.3" Name="Table 14.2.1.3">
+      <Description>
+          <TranslatedText xml:lang="en">Mean Modified GODSDS Blurred or Cloudy Vision Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.2.1.3">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.2.1.3"
+        ParameterOID="ADEF.GOSDBKOU"
+        ResultIdentifier="Table 14.2.1.3"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Secondary efficacy endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Modified Glia Ocular Surface Disease Symptoms Questionnaire (GOSDS) - Blurred or Cloudy Vision Score (while wearing scleral lenses), Change from Baseline at 12-Weeks</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADEF" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.2.1.3" />
+
+        <arm:AnalysisVariable ItemOID="ADEF.AVAL"/>
+<arm:AnalysisVariable ItemOID="ADEF.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.3.2.2">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.2.2.1" Name="Table 14.2.2.1">
+      <Description>
+          <TranslatedText xml:lang="en">Mean SANDE Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.2.2.1">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.2.2.1"
+        ParameterOID="ADEF.SANDFDOS
+SANDFDOD
+SANDFDOU
+SANDSDOS
+SANDSDOD
+SANDSDOU
+SANDGDOS
+SANDGDOD
+SANDFDOU
+SANDFNOS
+SANDFNOD
+SANDFNOU
+SANDSNOS
+SANDSNOD
+SANDSNOU
+SANDGNOS
+SANDGNOD"
+        ResultIdentifier="Table 14.2.2.1"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory efficacy endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Symptom Assessment iN Dry Eye Questionnaire (SANDE) - All Scores, Daily and Nightly by Visit (Observed)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADEF" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.2.2.1" />
+
+        <arm:AnalysisVariable ItemOID="ADEF.AVAL"/>
+<arm:AnalysisVariable ItemOID="ADEF.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.3.4">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.2.2.2" Name="Table 14.2.2.2">
+      <Description>
+          <TranslatedText xml:lang="en">Mean Modified GOSDS Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.2.2.2">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.2.2.2"
+        ParameterOID="ADEF.GOSDDIOS
+GOSDDIOD
+GOSDDIOU
+GOSDDROS
+GOSDDROD
+GOSDDROU
+GOSDEROS
+GOSDEROD
+GOSDEROU
+GOSDSNOS
+GOSDSNOD
+GOSDSNOU
+GOSDBKOS
+GOSDBKOD
+GOSDSDIS"
+        ResultIdentifier="Table 14.2.2.2"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory efficacy endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Modified Glia Ocular Surface Disease Symptoms Questionnaire (GOSDS) - All Scores, by Visit (Observed)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADEF" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.2.2.2" />
+
+        <arm:AnalysisVariable ItemOID="ADEF.AVAL"/>
+<arm:AnalysisVariable ItemOID="ADEF.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.3.4">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.2.2.3" Name="Table 14.2.2.3">
+      <Description>
+          <TranslatedText xml:lang="en">Mean SLWGQ Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.2.2.3">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.2.2.3"
+        ParameterOID="ADEF.SLWGQ1OS
+SLWGQ1OD
+SLWGQ1OU
+SLWGQ2OS
+SLWQG2OD
+SLWGQ2OU
+SLWGQ3OS
+SLWGQ3OD
+SLWGQ3OU
+SLWGQ4OS
+SLWGQ4OD
+SLWGQ4OU"
+        ResultIdentifier="Table 14.2.2.3"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory efficacy endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Scleral Lens Wear Glia Questionnaire (SLWGQ) - All Scores, by Visit (Observed)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADEF" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.2.2.3" />
+
+        <arm:AnalysisVariable ItemOID="ADEF.AVAL"/>
+<arm:AnalysisVariable ItemOID="ADEF.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.3.4">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.2.2.4" Name="Table 14.2.2.4">
+      <Description>
+          <TranslatedText xml:lang="en">Mean Corneal and Conjunctival Staining Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.2.2.4">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.2.2.4"
+        ParameterOID="ADEF.CLSZ1OD
+CLSZ1OS
+CLSZ1OU
+CLSZ2OD
+CLSZ2OS
+CLSZ2OU
+CLSZ3OD
+CLSZ3OS
+CLSZ3OU
+CLSZ4OD
+CLSZ4OS
+CLSZ5OD
+CLSZ5OS
+CLSZ5OU
+CLSZ6OD
+CLSZ6OS
+CLSZ6OU
+CFSCTLOD
+CFSCTLOS
+CFSINFOD
+CFSINFOS
+CFSINFOU
+CFSSUPOD
+CFSSUPOS
+CFSSUPOU
+CFSTOTOD
+CFSTOTOS
+CFSTOTOU"
+        ResultIdentifier="Table 14.2.2.4"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory efficacy endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Corneal and Conjunctival Staining by All Scores, by Visit (Observed)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADEF" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.2.2.4" />
+
+        <arm:AnalysisVariable ItemOID="ADEF.AVAL"/>
+<arm:AnalysisVariable ItemOID="ADEF.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.3.4">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.2.2.5" Name="Table 14.2.2.5">
+      <Description>
+          <TranslatedText xml:lang="en">Mean Efron Scale Gradding and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.2.2.5">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.2.2.5"
+        ParameterOID="ADEF.EGSNASOD
+EGSNASOS
+EGSNASOU
+EGSULOD
+EGSULOS
+EGSULOU
+EGSTMPOD
+EGSTMPOS
+EGSTMPOU
+EGSNAWOD
+EGSNAWOS
+EGSNAWOU
+EGSULWOD
+EGSULWOS
+EGSULWOU
+EGSTMWOD
+EGSTMWOS
+EGSTMWOU"
+        ResultIdentifier="Table 14.2.2.5"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory efficacy endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Eyelid Evaluation and Conjunctival Redness by Efron Scale (EFG), All Scores by Visit (Observed)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADEF" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.2.2.5" />
+
+        <arm:AnalysisVariable ItemOID="ADEF.AVAL"/>
+<arm:AnalysisVariable ItemOID="ADEF.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.3.4">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.1" Name="Table 14.3.1.1">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of AEs by System Organ Class and Preferred Term</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.1">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.1"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.1"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Overall Summary of Adverse Events (AE)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.1" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of AEs by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.2" Name="Table 14.3.1.2">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of non-TEAEs by System Organ Class and Preferred Term</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.2">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.2"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.2"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Non-Treatment Emergent AEs (TEAEs) by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.2" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of non-TEAEs by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.3" Name="Table 14.3.1.3">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs by System Organ Class and Preferred Term</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.3">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.3"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.3"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of TEAEs by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.3" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.4" Name="Table 14.3.1.4">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of Treatement Related TEAEs by System Organ Class and Preferred Term</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.4">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.4"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.4"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Treatment Related TEAEs by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.4" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of Treatement Related TEAEs by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.5" Name="Table 14.3.1.5">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of Serious TEAEs by System Organ Class and Preferred Term</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.5">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.5"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.5"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Serious TEAEs by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.5" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of Serious TEAEs by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.6" Name="Table 14.3.1.6">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of Serious Treatement Related TEAEs by System Organ Class and Preferred Term</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.6">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.6"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.6"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Serious Treatment Related TEAEs by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.6" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of Serious Treatement Related TEAEs by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.2">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.7" Name="Table 14.3.1.7">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs Two-fold Greater in Active Group</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.7">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.7"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.7"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of TEAEs with a Relative Frequency in the Active Treatment Group of At Least Twice the Relative Frequency in the Vehicle group by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.7" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs Two-fold Greater in Active Group</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.8" Name="Table 14.3.1.8">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs Leading to Premature Withdrawal of Study Treatment</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.8">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.8"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.8"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of TEAEs Leading to Premature Withdrawal of the Study Treatment by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.8" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs Leading to Premature Withdrawal of Study Treatment</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.9" Name="Table 14.3.1.9">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs Leading to Study Discontinuation</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.9">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.9"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.9"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of TEAEs Leading to Study Discontinuation by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.9" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs Leading to Study Discontinuation</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.10" Name="Table 14.3.1.10">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs During Treatment Periods</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.10">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.10"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.10"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of TEAEs during Treatment Period by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.10" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs During Treatment Periods</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.11" Name="Table 14.3.1.11">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs During Follow-up</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.11">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.11"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.11"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of TEAEs during Follow-Up Period by System Organ Class and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.11" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs During Follow-up</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.1.12" Name="Table 14.3.1.12">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs By Severity</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.1.12">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.1.12"
+        ParameterOID="ADAE.N/A"
+        ResultIdentifier="Table 14.3.1.12"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="NA">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of TEAEs by Severity, System Organ Class, and Preferred Term</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="ADAE" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.1.12" />
+
+        <arm:AnalysisVariable ItemOID="ADAE.AEBODSYS"/>
+<arm:AnalysisVariable ItemOID="ADAE.AEDECOD"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of TEAEs By Severity</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.2" Name="Table 14.3.2">
+      <Description>
+          <TranslatedText xml:lang="en">Mean Endocrine Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.2">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.2"
+        ParameterOID="NA.NA"
+        ResultIdentifier="Table 14.3.2"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory safety endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Endocrine Endpoints (Progesterone, Total and Free Testosterone, Estradiol, Dihydrotestosterone, Luteinizing Hormone, and Follicle-Stimulating Hormone)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="NA" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.2" />
+
+        <arm:AnalysisVariable ItemOID="NA.AVAL"/>
+<arm:AnalysisVariable ItemOID="NA.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.3.4">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.3" Name="Table 14.3.3">
+      <Description>
+          <TranslatedText xml:lang="en">Summary Assessments of Pregnancy Tests</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.3">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.3"
+        ParameterOID="NA.NA"
+        ResultIdentifier="Table 14.3.3"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory safety endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Urine Pregnancy Test</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="NA" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.3" />
+
+        <arm:AnalysisVariable ItemOID="NA.NA"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">NA</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.3.5">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.4" Name="Table 14.3.4">
+      <Description>
+          <TranslatedText xml:lang="en">Mean IOP Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.4">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.4"
+        ParameterOID="NA.IOP
+IOPOD
+IOPOS"
+        ResultIdentifier="Table 14.3.4"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory safety endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Intraocular Pressure (IOP)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="NA" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.4" />
+
+        <arm:AnalysisVariable ItemOID="NA.AVAL"/>
+<arm:AnalysisVariable ItemOID="NA.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.3.1">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.5" Name="Table 14.3.5">
+      <Description>
+          <TranslatedText xml:lang="en">Mean VA Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.5">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.5"
+        ParameterOID="NA.VISACOD
+VISACOS
+VISACOU"
+        ResultIdentifier="Table 14.3.5"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory safety endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Visual Acuity (VA)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="NA" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.5" />
+
+        <arm:AnalysisVariable ItemOID="NA.AVAL"/>
+<arm:AnalysisVariable ItemOID="NA.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.3.3">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.6" Name="Table 14.3.6">
+      <Description>
+          <TranslatedText xml:lang="en">Mean Tear Break-Up Time Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.6">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.6"
+        ParameterOID="NA.TBUTWOD
+TBUTWOS
+TBUTWOSL"
+        ResultIdentifier="Table 14.3.6"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory safety endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Tear Break-Up Time (TBUT)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="NA" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.6" />
+
+        <arm:AnalysisVariable ItemOID="NA.AVAL"/>
+<arm:AnalysisVariable ItemOID="NA.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.7">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.7" Name="Table 14.3.7">
+      <Description>
+          <TranslatedText xml:lang="en">Mean Keratograph Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.7">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.7"
+        ParameterOID="NA.KBRTOD
+KBRTOS
+KBRTOU
+KBRNOD
+KBRNOS
+KBRNOU
+KLRTOD
+KLRTOS
+KLRTOU
+KLRNOD
+KBRTWOD
+KBRTWOS
+KBRTWOU
+KBRNWOD
+KBRNWOS
+KBRNWOU
+KLRTWOD
+KLRTWOS
+KLRTWOU
+KLRNOD
+KLRNOS
+KLRNOU
+KABROD
+KABROS
+KABROU
+KAASOD
+KAASOS
+KAASOU"
+        ResultIdentifier="Table 14.3.7"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory safety endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Redness Scan – Keratograph, with and without lenses</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="NA" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.7" />
+
+        <arm:AnalysisVariable ItemOID="NA.AVAL"/>
+<arm:AnalysisVariable ItemOID="NA.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.3.4">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.8" Name="Table 14.3.8">
+      <Description>
+          <TranslatedText xml:lang="en">Mean UF Assessments and Changes from Baseline</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.8">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.8"
+        ParameterOID="NA.UNDFUNDA
+UNDFUND
+UFVHOD
+UFVHAOD
+UFONOD
+UFONAOD
+UFCDROD
+UFMACOD
+UFMACAOD
+UFVHOS
+UFVHAOS
+UFONOS
+UFONAOS
+UFCDROS
+UFMACOS
+UFMACAOS"
+        ResultIdentifier="Table 14.3.8"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory safety endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Undilated Fundoscopy</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="NA" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.8" />
+
+        <arm:AnalysisVariable ItemOID="NA.AVAL"/>
+<arm:AnalysisVariable ItemOID="NA.CHG"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.4.3.2">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
+<arm:ResultDisplay OID="RD.Table 14.3.9" Name="Table 14.3.9">
+      <Description>
+          <TranslatedText xml:lang="en">Incidence Rates of Clinically Signficant Corneal and Conjunctival Staining</TranslatedText>
+      </Description>
+      <def:DocumentRef leafID="Table 14.3.9">
+        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
+      </def:DocumentRef>
+      <arm:AnalysisResult
+        OID="Table 14.3.9"
+        ParameterOID="NA.CLSZ2COD
+CLSZ2COS
+CLSZ3COD
+CLSZ3COS
+CLSZ4COD
+CLSZ4COS
+CLSZ5COD
+CLSZ5COS
+CLSOTHOD
+CLSOTHOS
+CLSCSOS
+CLSZ1COD
+CLSZ1COS
+CLSZ6COD
+CLSZ6COS
+CLSOTOD
+CLSOTOS
+CFSSUCOD
+CFSSUCOS
+CFSCTCOD
+CFSCTCOS
+CFSINCOD
+CFSINCOS
+CFSOTHOD
+CFSCSOD
+CFSOTHOS
+CFSCSOS"
+        ResultIdentifier="Table 14.3.9"
+        AnalysisReason="SPECIFIED IN SAP"
+        AnalysisPurpose="Exploratory safety endpoint">
+        <Description>
+          <TranslatedText xml:lang="en">Summary of Corneal and Conjunctival Staining (Clinical Significance)</TranslatedText>
+        </Description>
+        <arm:AnalysisDatasets>
+          <arm:AnalysisDataset ItemGroupOID="NA" >
+          <def:WhereClauseRef WhereClauseOID="WC.Table 14.3.9" />
+
+        <arm:AnalysisVariable ItemOID="NA.NA"/>
+
+          </arm:AnalysisDataset>
+        </arm:AnalysisDatasets>
+        <arm:Documentation>
+        <Description>
+          <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical clinically significant variables</TranslatedText>
+        </Description>
+        <def:DocumentRef  leafID="SAP_Section_13.3.4">
+        </def:DocumentRef>
+        </arm:Documentation>
+
+        <arm:ProgrammingCode Context="R Version 4.0.3 (2020-10-10)">
+        <arm:Code>
+NA
+        </arm:Code>
+        </arm:ProgrammingCode>
+      </arm:AnalysisResult>
+    </arm:ResultDisplay>
 </arm:AnalysisResultDisplays>
 </MetaDataVersion>
 </Study>

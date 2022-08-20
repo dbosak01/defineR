@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 16August2022                                                   -->
+    <!-- Date: 19August2022                                                   -->
     <!-- Description: Define.xml file for XYZ123                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-08-16T10:26:47">
+  CreationDateTime="2022-08-19T10:01:18">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -2127,6 +2127,136 @@ RoleCodeListOID="CodeList.rolecode"/>
   <def:Origin Type="Derived">
   </def:Origin>
 </ItemDef>
+<ItemDef OID="SUPPDM.STUDYID"
+  Name="STUDYID"
+  SASFieldName="STUDYID"
+  DataType="text"
+  Length="15"
+  def:DisplayFormat="15"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
+  </Description>
+  <def:Origin Type="Assigned">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="SUPPDM.RDOMAIN"
+  Name="RDOMAIN"
+  SASFieldName="RDOMAIN"
+  DataType="text"
+  Length="2"
+  def:DisplayFormat="2"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Related Domain Abbreviation</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="SUPPDM.USUBJID"
+  Name="USUBJID"
+  SASFieldName="USUBJID"
+  DataType="text"
+  Length="25"
+  def:DisplayFormat="25"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
+  </Description>
+  <def:Origin Type="Assigned">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="SUPPDM.IDVAR"
+  Name="IDVAR"
+  SASFieldName="IDVAR"
+  DataType="text"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Identifying Variable</TranslatedText>
+  </Description>
+  <def:Origin Type="Assigned">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="SUPPDM.IDVARVAL"
+  Name="IDVARVAL"
+  SASFieldName="IDVARVAL"
+  DataType="text"
+  Length="200"
+  def:DisplayFormat="200"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Identifying Variable Value</TranslatedText>
+  </Description>
+  <def:Origin Type="Assigned">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="SUPPDM.QNAM"
+  Name="QNAM"
+  SASFieldName="QNAM"
+  DataType="text"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Qualifier Variable Name</TranslatedText>
+  </Description>
+  <def:Origin Type="Assigned">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="SUPPDM.QLABEL"
+  Name="QLABEL"
+  SASFieldName="QLABEL"
+  DataType="text"
+  Length="40"
+  def:DisplayFormat="40"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Qualifier Variable Label</TranslatedText>
+  </Description>
+  <def:Origin Type="Assigned">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="SUPPDM.QVAL"
+  Name="QVAL"
+  SASFieldName="QVAL"
+  DataType="text"
+  Length="200"
+  def:DisplayFormat="200"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Data Value</TranslatedText>
+  </Description>
+  <def:Origin Type="NA">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="SUPPDM.QORIG"
+  Name="QORIG"
+  SASFieldName="QORIG"
+  DataType="text"
+  Length="20"
+  def:DisplayFormat="20"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Origin</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="SUPPDM.QEVAL"
+  Name="QEVAL"
+  SASFieldName="QEVAL"
+  DataType="text"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Evaluator</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
 <ItemDef OID="LB.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
@@ -2426,201 +2556,6 @@ RoleCodeListOID="CodeList.rolecode"/>
   <def:Origin Type="Derived">
   </def:Origin>
 </ItemDef>
-<ItemDef OID="XP.STUDYID"
-  Name="STUDYID"
-  SASFieldName="STUDYID"
-  DataType="text"
-  Length="15"
-  def:DisplayFormat="15"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
-  </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.DOMAIN"
-  Name="DOMAIN"
-  SASFieldName="DOMAIN"
-  DataType="text"
-  Length="2"
-  def:DisplayFormat="2"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.USUBJID"
-  Name="USUBJID"
-  SASFieldName="USUBJID"
-  DataType="text"
-  Length="25"
-  def:DisplayFormat="25"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
-  </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.XPSEQ"
-  Name="XPSEQ"
-  SASFieldName="XPSEQ"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.XPTESTCD"
-  Name="XPTESTCD"
-  SASFieldName="XPTESTCD"
-  DataType="text"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Pain Test Short Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.XPTEST"
-  Name="XPTEST"
-  SASFieldName="XPTEST"
-  DataType="text"
-  Length="40"
-  def:DisplayFormat="40"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Pain Test Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.XPORRES"
-  Name="XPORRES"
-  SASFieldName="XPORRES"
-  DataType="text"
-  Length="200"
-  def:DisplayFormat="200"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.XPSTRESC"
-  Name="XPSTRESC"
-  SASFieldName="XPSTRESC"
-  DataType="text"
-  Length="200"
-  def:DisplayFormat="200"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Character Result/Finding in Std Format</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.XPSTRESN"
-  Name="XPSTRESN"
-  SASFieldName="XPSTRESN"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Numeric Result/Finding in Std Format</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.EPOCH"
-  Name="EPOCH"
-  SASFieldName="EPOCH"
-  DataType="text"
-  Length="40"
-  def:DisplayFormat="40"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.VISITNUM"
-  Name="VISITNUM"
-  SASFieldName="VISITNUM"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Visit Number</TranslatedText>
-  </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.VISIT"
-  Name="VISIT"
-  SASFieldName="VISIT"
-  DataType="text"
-  Length="40"
-  def:DisplayFormat="40"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Visit Name</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.XPBLFL"
-  Name="XPBLFL"
-  SASFieldName="XPBLFL"
-  DataType="text"
-  Length="2"
-  def:DisplayFormat="2"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Baseline Flag</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.XPDTC"
-  Name="XPDTC"
-  SASFieldName="XPDTC"
-  DataType="date"
-  Length="16"
-  def:DisplayFormat="16"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Date/Time of  Collection</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="XP.XPDY"
-  Name="XPDY"
-  SASFieldName="XPDY"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Study Day of  Collection</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
 <ItemDef OID="TA.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
@@ -2747,123 +2682,6 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="TD.STUDYID"
-  Name="STUDYID"
-  SASFieldName="STUDYID"
-  DataType="text"
-  Length="15"
-  def:DisplayFormat="15"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
-  </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="TD.DOMAIN"
-  Name="DOMAIN"
-  SASFieldName="DOMAIN"
-  DataType="text"
-  Length="2"
-  def:DisplayFormat="2"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="TD.TDORDER"
-  Name="TDORDER"
-  SASFieldName="TDORDER"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Sequence of Planned Assessment Schedule</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="TD.TDANCVAR"
-  Name="TDANCVAR"
-  SASFieldName="TDANCVAR"
-  DataType="text"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Anchor Variable Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="TD.TDSTOFF"
-  Name="TDSTOFF"
-  SASFieldName="TDSTOFF"
-  DataType="date"
-  Length="16"
-  def:DisplayFormat="16"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Offset from the Anchor</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="TD.TDTGTPAI"
-  Name="TDTGTPAI"
-  SASFieldName="TDTGTPAI"
-  DataType="date"
-  Length="16"
-  def:DisplayFormat="16"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Planned Assessment Interval</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="TD.TDMINPAI"
-  Name="TDMINPAI"
-  SASFieldName="TDMINPAI"
-  DataType="date"
-  Length="16"
-  def:DisplayFormat="16"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Planned Assessment Interval Minimum</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="TD.TDMAXPAI"
-  Name="TDMAXPAI"
-  SASFieldName="TDMAXPAI"
-  DataType="date"
-  Length="16"
-  def:DisplayFormat="16"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Planned Assessment Interval Maximum</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="TD.TDNUMRPT"
-  Name="TDNUMRPT"
-  SASFieldName="TDNUMRPT"
-  DataType="integer"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Maximum Number of Actual Assessments</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
   </def:Origin>
@@ -3020,6 +2838,123 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Inclusion/Exclusion Category</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="TD.STUDYID"
+  Name="STUDYID"
+  SASFieldName="STUDYID"
+  DataType="text"
+  Length="15"
+  def:DisplayFormat="15"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
+  </Description>
+  <def:Origin Type="Assigned">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="TD.DOMAIN"
+  Name="DOMAIN"
+  SASFieldName="DOMAIN"
+  DataType="text"
+  Length="2"
+  def:DisplayFormat="2"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="TD.TDORDER"
+  Name="TDORDER"
+  SASFieldName="TDORDER"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Sequence of Planned Assessment Schedule</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="TD.TDANCVAR"
+  Name="TDANCVAR"
+  SASFieldName="TDANCVAR"
+  DataType="text"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Anchor Variable Name</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="TD.TDSTOFF"
+  Name="TDSTOFF"
+  SASFieldName="TDSTOFF"
+  DataType="date"
+  Length="16"
+  def:DisplayFormat="16"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Offset from the Anchor</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="TD.TDTGTPAI"
+  Name="TDTGTPAI"
+  SASFieldName="TDTGTPAI"
+  DataType="date"
+  Length="16"
+  def:DisplayFormat="16"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Planned Assessment Interval</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="TD.TDMINPAI"
+  Name="TDMINPAI"
+  SASFieldName="TDMINPAI"
+  DataType="date"
+  Length="16"
+  def:DisplayFormat="16"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Planned Assessment Interval Minimum</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="TD.TDMAXPAI"
+  Name="TDMAXPAI"
+  SASFieldName="TDMAXPAI"
+  DataType="date"
+  Length="16"
+  def:DisplayFormat="16"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Planned Assessment Interval Maximum</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="TD.TDNUMRPT"
+  Name="TDNUMRPT"
+  SASFieldName="TDNUMRPT"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Maximum Number of Actual Assessments</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
   </def:Origin>
@@ -3245,7 +3180,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <def:Origin Type="Derived">
   </def:Origin>
 </ItemDef>
-<ItemDef OID="SUPPDM.STUDYID"
+<ItemDef OID="XP.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -3258,20 +3193,20 @@ RoleCodeListOID="CodeList.rolecode"/>
   <def:Origin Type="Assigned">
   </def:Origin>
 </ItemDef>
-<ItemDef OID="SUPPDM.RDOMAIN"
-  Name="RDOMAIN"
-  SASFieldName="RDOMAIN"
+<ItemDef OID="XP.DOMAIN"
+  Name="DOMAIN"
+  SASFieldName="DOMAIN"
   DataType="text"
   Length="2"
   def:DisplayFormat="2"
   >
   <Description>
-      <TranslatedText xml:lang="en">Related Domain Abbreviation</TranslatedText>
+      <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
   </def:Origin>
 </ItemDef>
-<ItemDef OID="SUPPDM.USUBJID"
+<ItemDef OID="XP.USUBJID"
   Name="USUBJID"
   SASFieldName="USUBJID"
   DataType="text"
@@ -3284,93 +3219,158 @@ RoleCodeListOID="CodeList.rolecode"/>
   <def:Origin Type="Assigned">
   </def:Origin>
 </ItemDef>
-<ItemDef OID="SUPPDM.IDVAR"
-  Name="IDVAR"
-  SASFieldName="IDVAR"
+<ItemDef OID="XP.XPSEQ"
+  Name="XPSEQ"
+  SASFieldName="XPSEQ"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="XP.XPTESTCD"
+  Name="XPTESTCD"
+  SASFieldName="XPTESTCD"
   DataType="text"
   Length="8"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Identifying Variable</TranslatedText>
+      <TranslatedText xml:lang="en">Pain Test Short Name</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
+  <def:Origin Type="Derived">
   </def:Origin>
 </ItemDef>
-<ItemDef OID="SUPPDM.IDVARVAL"
-  Name="IDVARVAL"
-  SASFieldName="IDVARVAL"
-  DataType="text"
-  Length="200"
-  def:DisplayFormat="200"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Identifying Variable Value</TranslatedText>
-  </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="SUPPDM.QNAM"
-  Name="QNAM"
-  SASFieldName="QNAM"
-  DataType="text"
-  Length="8"
-  def:DisplayFormat="8"
-  >
-  <Description>
-      <TranslatedText xml:lang="en">Qualifier Variable Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
-</ItemDef>
-<ItemDef OID="SUPPDM.QLABEL"
-  Name="QLABEL"
-  SASFieldName="QLABEL"
+<ItemDef OID="XP.XPTEST"
+  Name="XPTEST"
+  SASFieldName="XPTEST"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
   >
   <Description>
-      <TranslatedText xml:lang="en">Qualifier Variable Label</TranslatedText>
+      <TranslatedText xml:lang="en">Pain Test Name</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
+  <def:Origin Type="Derived">
   </def:Origin>
 </ItemDef>
-<ItemDef OID="SUPPDM.QVAL"
-  Name="QVAL"
-  SASFieldName="QVAL"
+<ItemDef OID="XP.XPORRES"
+  Name="XPORRES"
+  SASFieldName="XPORRES"
   DataType="text"
   Length="200"
   def:DisplayFormat="200"
   >
   <Description>
-      <TranslatedText xml:lang="en">Data Value</TranslatedText>
+      <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
   </Description>
-  <def:Origin Type="NA">
+  <def:Origin Type="CRF Page 5">
   </def:Origin>
 </ItemDef>
-<ItemDef OID="SUPPDM.QORIG"
-  Name="QORIG"
-  SASFieldName="QORIG"
+<ItemDef OID="XP.XPSTRESC"
+  Name="XPSTRESC"
+  SASFieldName="XPSTRESC"
   DataType="text"
-  Length="20"
-  def:DisplayFormat="20"
+  Length="200"
+  def:DisplayFormat="200"
   >
   <Description>
-      <TranslatedText xml:lang="en">Origin</TranslatedText>
+      <TranslatedText xml:lang="en">Character Result/Finding in Std Format</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
+  <def:Origin Type="CRF Page 5">
   </def:Origin>
 </ItemDef>
-<ItemDef OID="SUPPDM.QEVAL"
-  Name="QEVAL"
-  SASFieldName="QEVAL"
-  DataType="text"
+<ItemDef OID="XP.XPSTRESN"
+  Name="XPSTRESN"
+  SASFieldName="XPSTRESN"
+  DataType="integer"
   Length="8"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Evaluator</TranslatedText>
+      <TranslatedText xml:lang="en">Numeric Result/Finding in Std Format</TranslatedText>
+  </Description>
+  <def:Origin Type="CRF Page 5">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="XP.EPOCH"
+  Name="EPOCH"
+  SASFieldName="EPOCH"
+  DataType="text"
+  Length="40"
+  def:DisplayFormat="40"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Epoch</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="XP.VISITNUM"
+  Name="VISITNUM"
+  SASFieldName="VISITNUM"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Visit Number</TranslatedText>
+  </Description>
+  <def:Origin Type="Assigned">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="XP.VISIT"
+  Name="VISIT"
+  SASFieldName="VISIT"
+  DataType="text"
+  Length="40"
+  def:DisplayFormat="40"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Visit Name</TranslatedText>
+  </Description>
+  <def:Origin Type="CRF Page 5">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="XP.XPBLFL"
+  Name="XPBLFL"
+  SASFieldName="XPBLFL"
+  DataType="text"
+  Length="2"
+  def:DisplayFormat="2"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Baseline Flag</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="XP.XPDTC"
+  Name="XPDTC"
+  SASFieldName="XPDTC"
+  DataType="date"
+  Length="16"
+  def:DisplayFormat="16"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Date/Time of  Collection</TranslatedText>
+  </Description>
+  <def:Origin Type="CRF Page 5">
+  </def:Origin>
+</ItemDef>
+<ItemDef OID="XP.XPDY"
+  Name="XPDY"
+  SASFieldName="XPDY"
+  DataType="integer"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Study Day of  Collection</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
   </def:Origin>
@@ -3510,10 +3510,10 @@ RoleCodeListOID="CodeList.rolecode"/>
  else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then
    lbnrind = 'NORMAL';
  else if lbstnrlo ne . and lbstresn ne . and 
-             round(lbstresn,.0000001) < round(lbstnrlo,.0000001) then
+             round(lbstresn,.0000001) &LT; round(lbstnrlo,.0000001) then
           lbnrind = 'LOW';
     else if lbstnrhi ne . and lbstresn ne . and 
-            round(lbstresn,.0000001) > round(lbstnrhi,.0000001) then
+            round(lbstresn,.0000001) &GT; round(lbstnrhi,.0000001) then
       lbnrind = 'HIGH';
     else if lbstnrhi ne . and lbstresn ne . then
       lbnrind = 'NORMAL';</TranslatedText>
@@ -3526,7 +3526,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 </MethodDef>
 <MethodDef OID="LB.EPOCH" Name="EPOCH derivation" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">If VISITNUM < 0 then SCREENING and otherwise TREATMENT</TranslatedText>
+    <TranslatedText xml:lang="en">If VISITNUM &LT; 0 then SCREENING and otherwise TREATMENT</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="METADATAENTRY" Name="Manual entry" Type="Computation">

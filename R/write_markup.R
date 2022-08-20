@@ -43,4 +43,12 @@ write_markup <- function(x, file_path) {
 
 # Utilities ---------------------------------------------------------------
 
+unescape_xml <- function(str){
+  xml2::xml_text(xml2::read_xml(paste0("<x>", str, "</x>")))
+}
+
+unescape_html <- function(str){
+  xml2::xml_text(xml2::read_html(paste0("<x>", str, "</x>")))
+}
+
 
