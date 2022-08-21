@@ -1,2 +1,23 @@
-url: ~
+url: https://defineR.r-sassy.org
 
+articles:
+- title: Examples
+  navbar: ~
+  contents:
+  - defineR-define
+  - defineR-metadata
+
+reference:
+- title: All Functions
+  desc: Functions to create define.xml documents and metadata.
+  contents:
+  - write_define
+  - write_metadata
+
+navbar:
+  structure:
+    left: [home, intro, articles, reference, faq, news, github]
+  components:
+    faq:
+      text: FAQ
+      href: ./articles/defineR-faq.html

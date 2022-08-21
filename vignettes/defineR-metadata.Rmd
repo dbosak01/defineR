@@ -1,0 +1,18 @@
+---
+title: "Create Metadata"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Create Metadata}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+Write up on write_metadata function...
+
+

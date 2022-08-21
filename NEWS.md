@@ -1,3 +1,12 @@
+# defineR 0.0.9002
+
+* Added `write_define()`
+* Added `write_metadata()`
+* Set up template files in extdata.
+* Lot of fixes to SDTM define.
+* Wrote readme.
+
+
 # defineR 0.0.9001
 
 * Redefined `import_metadata()`

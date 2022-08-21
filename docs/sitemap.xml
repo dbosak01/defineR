@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://defineR.r-sassy.org/index.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/defineR.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/write_define.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/write_metadata.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/articles/defineR-define.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/articles/defineR-faq.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/articles/defineR-metadata.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/articles/defineR.html</loc>
+  </url>
+</urlset>

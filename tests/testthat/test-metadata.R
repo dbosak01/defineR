@@ -6,7 +6,7 @@ data_dir <- "."
 
 dev <- FALSE
 
-test_that("import1: Import sdtm metadata xls works as expected.", {
+test_that("metadata1: Import sdtm metadata xls works as expected.", {
 
   fp <- file.path(data_dir, "data/SDTM_METADATA.xls")
 
@@ -21,7 +21,7 @@ test_that("import1: Import sdtm metadata xls works as expected.", {
 })
 
 
-test_that("import2: Import sdtm metadata xlsx works as expected.", {
+test_that("metadata2: Import sdtm metadata xlsx works as expected.", {
 
   fp <- file.path(data_dir, "data/SDTM_METADATA2.xlsx")
 
@@ -36,7 +36,7 @@ test_that("import2: Import sdtm metadata xlsx works as expected.", {
 })
 
 
-test_that("import3: Import adam metadata works as expected.", {
+test_that("metadata3: Import adam metadata works as expected.", {
 
   fp <- file.path(data_dir, "data/ADAM_METADATA.xlsx")
 
@@ -51,7 +51,7 @@ test_that("import3: Import adam metadata works as expected.", {
 })
 
 
-test_that("import4: Import sdtm robustness metadata works as expected.", {
+test_that("metadata: Import sdtm robustness metadata works as expected.", {
 
   fp <- file.path(data_dir, "data/SDTM_METADATA_robustness.xls")
 
@@ -66,7 +66,7 @@ test_that("import4: Import sdtm robustness metadata works as expected.", {
 })
 
 
-test_that("import5: Parameter checks work.", {
+test_that("metadata5: Parameter checks work.", {
 
   fp <- file.path(data_dir, "data/SDTM_METADATA_robustmess.xls")
 
@@ -78,5 +78,48 @@ test_that("import5: Parameter checks work.", {
 
   expect_error(import_metadata(fp))
 
+
+})
+
+
+test_that("metadata6: Templates can be created.", {
+
+  dp1 <- file.path(base_path, "metadata/template")
+  dp2 <- file.path(base_path, "metadata/demo")
+
+
+  fp1 <- file.path(dp1, "SDTM_METADATA.xls")
+  fp2 <- file.path(dp2, "SDTM_METADATA.xls")
+
+  if (file.exists(fp1))
+    file.remove(fp1)
+
+  if (file.exists(fp2))
+    file.remove(fp2)
+
+
+  res <- write_metadata(dp1)
+
+  expect_equal(is.null(res), FALSE)
+  expect_equal(file.exists(fp1), TRUE)
+  expect_equal(file.exists(res), TRUE)
+
+
+  res <- write_metadata(dp2, demo = TRUE)
+
+  expect_equal(file.exists(fp2), TRUE)
+  expect_equal(file.exists(res), TRUE)
+
+
+})
+
+test_that("metadata7: Parameter checks work.", {
+
+  fp <- file.path(base_path, "metadata/template")
+
+  expect_error(write_metadata(fp, ver = "2.1"))
+  expect_error(write_metadata(fp, type = "fork"))
+  expect_error(write_metadata(fp, type = NULL))
+  expect_error(write_metadata(fp))
 
 })

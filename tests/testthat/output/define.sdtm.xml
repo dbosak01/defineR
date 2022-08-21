@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-08-21T08:33:40">
+  CreationDateTime="2022-08-21T17:58:45">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -28,68 +28,92 @@
   def:StandardVersion="3.2">
 
   <!-- ******************************************* -->
+  <!-- EXTERNAL DOCUMENT REFERENCE             *** -->
+  <!-- ******************************************* -->
+<def:AnnotatedCRF>
+  <def:DocumentRef leafID="blankcrf"/>
+</def:AnnotatedCRF>
+
+<def:SupplementalDoc>
+  <def:DocumentRef leafID="CRTRG"/>
+</def:SupplementalDoc>
+
+
+  <!-- ******************************************* -->
   <!-- VALUE LEVEL LIST DEFINITION INFORMATION  ** -->
   <!-- ******************************************* -->
 
 <def:ValueListDef OID="VL.LB.LBORRES">
 <ItemRef ItemOID="VL.LB.LBORRES.ALB"
   OrderNumber="1"
-  Mandatory="No">
+  Mandatory="No"
+  >
   
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.ALP"
   OrderNumber="2"
-  Mandatory="No">
+  Mandatory="No"
+  >
   
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.ALT"
   OrderNumber="3"
-  Mandatory="No">
+  Mandatory="No"
+  >
   
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.AST"
   OrderNumber="4"
-  Mandatory="No">
+  Mandatory="No"
+  >
   
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.BILDIR"
   OrderNumber="5"
-  Mandatory="No">
+  Mandatory="No"
+  >
   
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.BILI"
   OrderNumber="6"
-  Mandatory="No">
+  Mandatory="No"
+  >
   
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.GGT"
   OrderNumber="7"
-  Mandatory="No">
+  Mandatory="No"
+  >
   
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.HCT"
   OrderNumber="8"
-  Mandatory="No">
+  Mandatory="No"
+  >
   
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.HGB"
   OrderNumber="9"
-  Mandatory="No">
+  Mandatory="No"
+  >
   
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.PROT"
   OrderNumber="10"
-  Mandatory="No">
+  Mandatory="No"
+  >
   
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.GLUC"
+<ItemRef ItemOID="VL.LB.LBORRES.CHEMGLUC"
   OrderNumber="11"
-  Mandatory="No">
+  Mandatory="No"
+  >
   <def:WhereClauseRef WhereClauseOID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY"/>
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.GLUC"
+<ItemRef ItemOID="VL.LB.LBORRES.URINGLUC"
   OrderNumber="12"
-  Mandatory="No">
+  Mandatory="No"
+  >
   <def:WhereClauseRef WhereClauseOID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS"/>
 </ItemRef>
  </def:ValueListDef>
@@ -97,18 +121,42 @@
 <def:ValueListDef OID="VL.SUPPDM.QVAL">
 <ItemRef ItemOID="VL.SUPPDM.QVAL.RACEOTH"
   OrderNumber="1"
-  Mandatory="No">
-  MethodOID="SUPPDM.RACEOTH">
-
+  Mandatory="No"
+  MethodOID="METHOD.SUPPDM.RACEOTH">
+  
 </ItemRef>
 <ItemRef ItemOID="VL.SUPPDM.QVAL.RANDDTC"
   OrderNumber="2"
-  Mandatory="No">
-  MethodOID="SUPPDM.RANDDT">
-
+  Mandatory="No"
+  MethodOID="METHOD.SUPPDM.RANDDT">
+  
 </ItemRef>
  </def:ValueListDef>
 
+
+  <!-- ****************************************************************** -->
+  <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->
+  <!-- ****************************************************************** -->
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY1">
+<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBCAT" Comparator="EQ">
+  <CheckValue>CHEMISTRY</CheckValue>
+  </RangeCheck>
+  </def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY2">
+<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBTESTCD" Comparator="EQ">
+  <CheckValue>GLUC</CheckValue>
+  </RangeCheck>
+  </def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS1">
+<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBCAT" Comparator="EQ">
+  <CheckValue>URINALYSIS</CheckValue>
+  </RangeCheck>
+  </def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS2">
+<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBTESTCD" Comparator="EQ">
+  <CheckValue>GLUC</CheckValue>
+  </RangeCheck>
+  </def:WhereClauseDef>
 <!-- ******************************************* -->
 <!-- AE             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
@@ -134,7 +182,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="AE.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="AE.USUBJID"
@@ -146,7 +194,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="AE.AESEQ"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="AE.AESEQ"
+MethodOID="METHOD.AE.AESEQ"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="AE.AETERM"
@@ -243,7 +291,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="AE.EPOCH"
 OrderNumber="23"
 Mandatory="No"
-MethodOID="AE.EPOCH"
+MethodOID="METHOD.AE.EPOCH"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="AE.AESTDTC"
@@ -260,13 +308,13 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="AE.AESTDY"
 OrderNumber="26"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="METHOD.STUDYDAYS"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="AE.AEENDY"
 OrderNumber="27"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="METHOD.STUDYDAYS"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -283,7 +331,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="DM"
 Name="DM"
 Repeating="No"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="No"
 SASDatasetName="DM"
 def:Structure="Special Purpose - One record per event per subject"
@@ -301,7 +349,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.USUBJID"
@@ -323,7 +371,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.RFENDTC"
 OrderNumber="6"
 Mandatory="No"
-MethodOID="DM.RFENDTC"
+MethodOID="METHOD.DM.RFENDTC"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.RFXSTDTC"
@@ -349,13 +397,13 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.DTHDTC"
 OrderNumber="11"
 Mandatory="Yes"
-MethodOID="DM.DTHDTC"
+MethodOID="METHOD.DM.DTHDTC"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.DTHFL"
 OrderNumber="12"
 Mandatory="Yes"
-MethodOID="DM.DTHFL"
+MethodOID="METHOD.DM.DTHFL"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.SITEID"
@@ -371,13 +419,13 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.AGE"
 OrderNumber="15"
 Mandatory="No"
-MethodOID="DM.AGE"
+MethodOID="METHOD.DM.AGE"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.AGEU"
 OrderNumber="16"
 Mandatory="No"
-MethodOID="DM.AGEU"
+MethodOID="METHOD.DM.AGEU"
 Role="Variable Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.SEX"
@@ -413,7 +461,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="DM.COUNTRY"
 OrderNumber="23"
 Mandatory="Yes"
-MethodOID="DM.COUNTRY"
+MethodOID="METHOD.DM.COUNTRY"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -430,7 +478,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="EX"
 Name="EX"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="No"
 SASDatasetName="EX"
 def:Structure="One record per constant dosing interval per subject"
@@ -448,7 +496,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.USUBJID"
@@ -460,14 +508,14 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.EXSEQ"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="EX.EXSEQ"
+MethodOID="METHOD.EX.EXSEQ"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.EXTRT"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="3"
-MethodOID="EX.EXTRT"
+MethodOID="METHOD.EX.EXTRT"
 Role="Topic"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.EXDOSE"
@@ -478,19 +526,19 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.EXDOSU"
 OrderNumber="7"
 Mandatory="No"
-MethodOID="EX.EXDOSU"
+MethodOID="METHOD.EX.EXDOSU"
 Role="Variable Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.EXDOSFRM"
 OrderNumber="8"
 Mandatory="No"
-MethodOID="EX.EXDOSFRM"
+MethodOID="METHOD.EX.EXDOSFRM"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.EPOCH"
 OrderNumber="9"
 Mandatory="No"
-MethodOID="EX.EPOCH"
+MethodOID="METHOD.EX.EPOCH"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.EXSTDTC"
@@ -507,13 +555,13 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.EXSTDY"
 OrderNumber="12"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="METHOD.STUDYDAYS"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="EX.EXENDY"
 OrderNumber="13"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="METHOD.STUDYDAYS"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -530,7 +578,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="LB"
 Name="LB"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="No"
 SASDatasetName="LB"
 def:Structure="Findings - One record per lab test per subject"
@@ -548,7 +596,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.USUBJID"
@@ -560,27 +608,27 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBSEQ"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="LB.LBSEQ"
+MethodOID="METHOD.LB.LBSEQ"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBTESTCD"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="4"
-MethodOID="LB.LBTESTCD"
+MethodOID="METHOD.LB.LBTESTCD"
 Role="Topic"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBTEST"
 OrderNumber="6"
 Mandatory="Yes"
-MethodOID="LB.LBTEST"
+MethodOID="METHOD.LB.LBTEST"
 Role="Synonym Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBCAT"
 OrderNumber="7"
 Mandatory="No"
 KeySequence="3"
-MethodOID="LB.LBCAT"
+MethodOID="METHOD.LB.LBCAT"
 Role="Grouping Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBORRES"
@@ -606,43 +654,43 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBSTRESC"
 OrderNumber="12"
 Mandatory="No"
-MethodOID="LB.LBSTRESC"
+MethodOID="METHOD.LB.LBSTRESC"
 Role="Result Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBSTRESN"
 OrderNumber="13"
 Mandatory="No"
-MethodOID="LB.LBSTRESN"
+MethodOID="METHOD.LB.LBSTRESN"
 Role="Result Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBSTRESU"
 OrderNumber="14"
 Mandatory="No"
-MethodOID="LB.LBSTRESU"
+MethodOID="METHOD.LB.LBSTRESU"
 Role="Variable Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBSTNRLO"
 OrderNumber="15"
 Mandatory="No"
-MethodOID="LB.LBSTNRLO"
+MethodOID="METHOD.LB.LBSTNRLO"
 Role="Variable Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBSTNRHI"
 OrderNumber="16"
 Mandatory="No"
-MethodOID="LB.LBSTNRHI"
+MethodOID="METHOD.LB.LBSTNRHI"
 Role="Variable Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBNRIND"
 OrderNumber="17"
 Mandatory="No"
-MethodOID="LB.LBNRIND"
+MethodOID="METHOD.LB.LBNRIND"
 Role="Variable Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBBLFL"
 OrderNumber="18"
 Mandatory="No"
-MethodOID="LB.LBBLFL"
+MethodOID="METHOD.LB.LBBLFL"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.VISITNUM"
@@ -659,7 +707,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.EPOCH"
 OrderNumber="21"
 Mandatory="No"
-MethodOID="LB.EPOCH"
+MethodOID="METHOD.LB.EPOCH"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBDTC"
@@ -670,7 +718,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="LB.LBDY"
 OrderNumber="23"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="METHOD.STUDYDAYS"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -705,7 +753,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.USUBJID"
@@ -717,20 +765,20 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.XPSEQ"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="XP.XPSEQ"
+MethodOID="METHOD.XP.XPSEQ"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.XPTESTCD"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="3"
-MethodOID="XP.XPTESTCD"
+MethodOID="METHOD.XP.XPTESTCD"
 Role="Topic"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.XPTEST"
 OrderNumber="6"
 Mandatory="Yes"
-MethodOID="XP.XPTEST"
+MethodOID="METHOD.XP.XPTEST"
 Role="Synonym Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.XPORRES"
@@ -751,7 +799,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.EPOCH"
 OrderNumber="10"
 Mandatory="No"
-MethodOID="XP.EPOCH"
+MethodOID="METHOD.XP.EPOCH"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.VISITNUM"
@@ -768,7 +816,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.XPBLFL"
 OrderNumber="13"
 Mandatory="No"
-MethodOID="XP.XPBLFL"
+MethodOID="METHOD.XP.XPBLFL"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.XPDTC"
@@ -779,7 +827,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="XP.XPDY"
 OrderNumber="15"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="METHOD.STUDYDAYS"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -796,7 +844,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TA"
 Name="TA"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TA"
 def:Structure="One record per planned Element per Arm"
@@ -814,57 +862,57 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TA.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TA.ARMCD"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Topic"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TA.ARM"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Synonym Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TA.TAETORD"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="3"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TA.ETCD"
 OrderNumber="6"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TA.ELEMENT"
 OrderNumber="7"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Synonym Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TA.TABRANCH"
 OrderNumber="8"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Rule"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TA.TATRANS"
 OrderNumber="9"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Rule"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TA.EPOCH"
 OrderNumber="10"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -881,7 +929,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TD"
 Name="TD"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TD"
 def:Structure="One record per planned schedule of assessments"
@@ -899,50 +947,50 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TD.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TD.TDORDER"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TD.TDANCVAR"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TD.TDSTOFF"
 OrderNumber="5"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TD.TDTGTPAI"
 OrderNumber="6"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TD.TDMINPAI"
 OrderNumber="7"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TD.TDMAXPAI"
 OrderNumber="8"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TD.TDNUMRPT"
 OrderNumber="9"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -959,7 +1007,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TE"
 Name="TE"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TE"
 def:Structure="One record per planned Element"
@@ -977,38 +1025,38 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TE.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TE.ETCD"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Topic"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TE.ELEMENT"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Synonym Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TE.TESTRL"
 OrderNumber="5"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Rule"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TE.TEENRL"
 OrderNumber="6"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Rule"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TE.TEDUR"
 OrderNumber="7"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Timing"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -1025,7 +1073,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TI"
 Name="TI"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TI"
 def:Structure="One record per I/E criterion"
@@ -1043,26 +1091,26 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TI.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TI.IETESTCD"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Topic"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TI.IETEST"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Synonym Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TI.IECAT"
 OrderNumber="5"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Grouping Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -1079,7 +1127,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TS"
 Name="TS"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TS"
 def:Structure="One record per trial summary parameter value"
@@ -1097,50 +1145,50 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TS.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TS.TSSEQ"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TS.TSPARMCD"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Topic"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TS.TSPARM"
 OrderNumber="5"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Synonym Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TS.TSVAL"
 OrderNumber="6"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Result Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TS.TSVALCD"
 OrderNumber="8"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Result Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TS.TSVCDREF"
 OrderNumber="9"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Result Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TS.TSVCDVER"
 OrderNumber="10"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Result Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -1157,7 +1205,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TV"
 Name="TV"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TV"
 def:Structure="One record per planned Visit per Arm"
@@ -1175,45 +1223,45 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TV.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="Identifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TV.VISITNUM"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Topic"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TV.VISIT"
 OrderNumber="4"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Synonym Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TV.ARMCD"
 OrderNumber="5"
 Mandatory="No"
 KeySequence="3"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Record Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TV.ARM"
 OrderNumber="6"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Synonym Qualifier"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TV.TVSTRL"
 OrderNumber="7"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Rule"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="TV.TVENRL"
 OrderNumber="8"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="METHOD.METADATAENTRY"
 Role="Rule"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -1249,7 +1297,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 OrderNumber="2"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="SETDOMAIN"
+MethodOID="METHOD.SETDOMAIN"
 Role="NA"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="SUPPDM.USUBJID"
@@ -1289,13 +1337,13 @@ RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="SUPPDM.QORIG"
 OrderNumber="9"
 Mandatory="Yes"
-MethodOID="SETNULL"
+MethodOID="METHOD.SETNULL"
 Role="NA"
 RoleCodeListOID="CodeList.rolecode"/>
 <ItemRef ItemOID="SUPPDM.QEVAL"
 OrderNumber="10"
 Mandatory="No"
-MethodOID="SETNULL"
+MethodOID="METHOD.SETNULL"
 Role="NA"
 RoleCodeListOID="CodeList.rolecode"/>
  <!-- **************************************************** -->
@@ -3375,190 +3423,6 @@ RoleCodeListOID="CodeList.rolecode"/>
   <def:Origin Type="Derived">
   </def:Origin>
 </ItemDef>
-  <!-- ******************************************* -->
-  <!-- COMPUTATIONAL METHOD INFORMATION        *** -->
-  <!-- ******************************************* -->
-<MethodDef OID="SETDOMAIN" Name="Hardcode to assign domain" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Hardcode to the name of the SDTM domain</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="STUDYDAYS" Name="--DY derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="SETNULL" Name="Null Value" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Set to null</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="AE.AESEQ" Name="AESEQ derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid aedecod aestdtc aeendtc</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="AE.EPOCH" Name="EPOCH hardcode" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Hardcoded to TREATMENT</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="DM.RFENDTC" Name="RFENDTC derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">RFENDTC is the last date of dosing from the source dosing dataset</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="DM.DTHDTC" Name="DTHDTC derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">DTHDTC is set to null as no subjects died</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="DM.DTHFL" Name="DTHFL derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">DTHFL='N' since no subjects died</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="DM.AGE" Name="Algorithm to compute age" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">integer value of (BRTHDTC - RFSTDTC)/365.25</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="DM.AGEU" Name="Age units hardcode" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Hardcoded to YEARS</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="DM.COUNTRY" Name="Country hardcode" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Hardcoded to USA</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="EX.EXSEQ" Name="EXSEQ derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid extrt exstdtc</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="EX.EXTRT" Name="EXTRT derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">All subjects were dosed with what they were randomized to, so EXTRT=DM.ARM</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="EX.EXDOSU" Name="EXDOSU hardcode" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Hardcoded to mg</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="EX.EXDOSFRM" Name="EXDOSFRM hardcode" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Hardcoded to TABLET, COATED</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="EX.EPOCH" Name="EPOCH hardcode" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Hardcoded to TREATMENT</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBSEQ" Name="LBSEQ derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid lbcat lbtestcd visitnum</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBTESTCD" Name="LBTESTCD derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Source labs.labtest variable mapped to LBTESTCD controlled terminology</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBTEST" Name="LBTEST derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Source labs.labtest variable mapped to LBTEST controlled terminology</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBCAT" Name="LBCAT derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Source labs.labcat variable mapped to LBCAT controlled terminology</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBSTRESC" Name="LBSTRESC derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Copied directly (and unrealistically) from LBORRES</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBSTRESN" Name="LBSTRESN derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Copied directly (and unrealistically) from LBORRES</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBSTRESU" Name="LBSTRESN derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Copied directly (and unrealistically) from LBORRESU</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBSTNRLO" Name="LBSTNRLO derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Set equal to (and unrealistically) from the soucre labs.lownorm</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBSTNRHI" Name="LBSTNRHI derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Set equal to (and unrealistically) from the soucre labs.highnorm</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBNRIND" Name="LBNRIND derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then   lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then   lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and              round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then          lbnrind = 'LOW';    else if lbstnrhi ne . and lbstresn ne . and             round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then      lbnrind = 'HIGH';    else if lbstnrhi ne . and lbstresn ne . then      lbnrind = 'NORMAL';</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.LBBLFL" Name="LBBLFL derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">If visit=Baseline then Y, else blank</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="LB.EPOCH" Name="EPOCH derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">If VISITNUM &lt; 0 then SCREENING and otherwise TREATMENT</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="METADATAENTRY" Name="Manual entry" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">This variable consists of study level metadata that was manually entered</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="XP.XPSEQ" Name="XPSEQ derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid xptestcd visitnum</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="XP.XPTESTCD" Name="XPTESTCD hardcode" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Set to XPAIN</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="XP.XPTEST" Name="XPTEST hardcode" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Set to Pain Score</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="XP.EPOCH" Name="EPOCH hardcode" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Hardcoded to TREATMENT</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="XP.XPBLFL" Name="XPBLFL derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">If visit=Baseline then Y, else blank</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="SUPPDM.RACEOTH" Name="RACEOTH derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Set to other race from source demographics file</TranslatedText>
-  </Description>
-</MethodDef>
-<MethodDef OID="SUPPDM.RANDDT" Name="RANDDT derivation" Type="Computation">
-  <Description>
-    <TranslatedText xml:lang="en">Set equal to the randomization date from the source demographics file</TranslatedText>
-  </Description>
-</MethodDef>
-
   <!-- ************************************************************ -->
   <!-- Codelists are presented below                                -->
   <!-- ************************************************************ -->
@@ -4448,30 +4312,190 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
+  <!-- ******************************************* -->
+  <!-- COMPUTATIONAL METHOD INFORMATION        *** -->
+  <!-- ******************************************* -->
+<MethodDef OID="METHOD.SETDOMAIN" Name="Hardcode to assign domain" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Hardcode to the name of the SDTM domain</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.STUDYDAYS" Name="--DY derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.SETNULL" Name="Null Value" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Set to null</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.AE.AESEQ" Name="AESEQ derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid aedecod aestdtc aeendtc</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.AE.EPOCH" Name="EPOCH hardcode" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Hardcoded to TREATMENT</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.DM.RFENDTC" Name="RFENDTC derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">RFENDTC is the last date of dosing from the source dosing dataset</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.DM.DTHDTC" Name="DTHDTC derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">DTHDTC is set to null as no subjects died</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.DM.DTHFL" Name="DTHFL derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">DTHFL='N' since no subjects died</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.DM.AGE" Name="Algorithm to compute age" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">integer value of (BRTHDTC - RFSTDTC)/365.25</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.DM.AGEU" Name="Age units hardcode" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Hardcoded to YEARS</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.DM.COUNTRY" Name="Country hardcode" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Hardcoded to USA</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.EX.EXSEQ" Name="EXSEQ derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid extrt exstdtc</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.EX.EXTRT" Name="EXTRT derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">All subjects were dosed with what they were randomized to, so EXTRT=DM.ARM</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.EX.EXDOSU" Name="EXDOSU hardcode" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Hardcoded to mg</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.EX.EXDOSFRM" Name="EXDOSFRM hardcode" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Hardcoded to TABLET, COATED</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.EX.EPOCH" Name="EPOCH hardcode" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Hardcoded to TREATMENT</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBSEQ" Name="LBSEQ derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid lbcat lbtestcd visitnum</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBTESTCD" Name="LBTESTCD derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Source labs.labtest variable mapped to LBTESTCD controlled terminology</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBTEST" Name="LBTEST derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Source labs.labtest variable mapped to LBTEST controlled terminology</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBCAT" Name="LBCAT derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Source labs.labcat variable mapped to LBCAT controlled terminology</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBSTRESC" Name="LBSTRESC derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Copied directly (and unrealistically) from LBORRES</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBSTRESN" Name="LBSTRESN derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Copied directly (and unrealistically) from LBORRES</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBSTRESU" Name="LBSTRESN derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Copied directly (and unrealistically) from LBORRESU</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBSTNRLO" Name="LBSTNRLO derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Set equal to (and unrealistically) from the soucre labs.lownorm</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBSTNRHI" Name="LBSTNRHI derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Set equal to (and unrealistically) from the soucre labs.highnorm</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBNRIND" Name="LBNRIND derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then   lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then   lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and              round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then          lbnrind = 'LOW';    else if lbstnrhi ne . and lbstresn ne . and             round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then      lbnrind = 'HIGH';    else if lbstnrhi ne . and lbstresn ne . then      lbnrind = 'NORMAL';</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.LBBLFL" Name="LBBLFL derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">If visit=Baseline then Y, else blank</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.LB.EPOCH" Name="EPOCH derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">If VISITNUM &lt; 0 then SCREENING and otherwise TREATMENT</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.METADATAENTRY" Name="Manual entry" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">This variable consists of study level metadata that was manually entered</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.XP.XPSEQ" Name="XPSEQ derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid xptestcd visitnum</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.XP.XPTESTCD" Name="XPTESTCD hardcode" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Set to XPAIN</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.XP.XPTEST" Name="XPTEST hardcode" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Set to Pain Score</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.XP.EPOCH" Name="EPOCH hardcode" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Hardcoded to TREATMENT</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.XP.XPBLFL" Name="XPBLFL derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">If visit=Baseline then Y, else blank</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.SUPPDM.RACEOTH" Name="RACEOTH derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Set to other race from source demographics file</TranslatedText>
+  </Description>
+</MethodDef>
+<MethodDef OID="METHOD.SUPPDM.RANDDT" Name="RANDDT derivation" Type="Computation">
+  <Description>
+    <TranslatedText xml:lang="en">Set equal to the randomization date from the source demographics file</TranslatedText>
+  </Description>
+</MethodDef>
 
-  <!-- ****************************************************************** -->
-  <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->
-  <!-- ****************************************************************** -->
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY">
-<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBCAT" Comparator="EQ">
-  <CheckValue>CHEMISTRY</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY">
-<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>GLUC</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS">
-<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBCAT" Comparator="EQ">
-  <CheckValue>URINALYSIS</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS">
-<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>GLUC</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
 
   <!-- ******************************** -->
   <!-- COMMENTS DEFINITION SECTION      -->
@@ -4486,18 +4510,6 @@ DataType="text">
     <TranslatedText xml:lang="en">MedDRA dictionary version XX.1 was used to code all adverse events.</TranslatedText>
   </Description>
 </def:CommentDef>
-
-  <!-- ******************************************* -->
-  <!-- EXTERNAL DOCUMENT REFERENCE             *** -->
-  <!-- ******************************************* -->
-<def:AnnotatedCRF>
-  <def:DocumentRef leafID="blankcrf"/>
-</def:AnnotatedCRF>
-
-<def:SupplementalDoc>
-  <def:DocumentRef leafID="CRTRG"/>
-</def:SupplementalDoc>
-
 </MetaDataVersion>
 </Study>
 </ODM>

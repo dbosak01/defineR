@@ -6,27 +6,20 @@
 #' to help create and manage metadata needed to create the define.xml.
 #'
 #' @details
-#' The \strong{defineR} package helps create define.xml files for FDA
-#' submission.  More here...
+#' The \strong{defineR} package uses spreadsheet-based metadata.  The package
+#' can use the metadata to produce the define.xml, define.html, and a check
+#' report.  It also has the capability to create a template to get
+#' you started defining metadata for your project.
 #'
-#' @section How to use:
-#' There are three steps to creating a define.xml document:
+#' The \strong{defineR} package is simple to use.  It contains only two functions:
 #' \itemize{
-#'   \item Import metadata
-#'   \item Create XML
-#'   \item Write out XML markup
+#'   \item \code{\link{write_define}}: Creates a define.xml document and related files.
+#'   \item \code{\link{write_metadata}}: Creates a metadata template.
 #' }
-#' In the \strong{defineR} package, the \code{\link{import_metadata}} function
-#' reads in the metadata. Currently, the package supports spreadsheet-based
-#' metadata. Once you have the metadata, you can create XML for an SDTM or ADAM
-#' define.xml using \code{\link{create_sdtm_xml}} and
-#' \code{\link{create_adam_xml}}.  Then write out the XML to a file using
-#' \code{\link{write_markup}}.
+#' See the [Getting Started](https://defineR.r-sassy.org/articles/defineR.html)
+#' page for an overview of these functions.  Additional
+#' information is available in the function references.
 #'
-#' The package also supports the ability to create an HTML page to explore
-#' your define.xml.
-#'
-#' See function documentation for additional details.
 #' @import glue
 #' @import common
 #' @import xml2

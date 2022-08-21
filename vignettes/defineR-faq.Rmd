@@ -1,0 +1,182 @@
+---
+title: "Frequently Asked Questions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{FAQ}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+options(rmarkdown.html_vignette.check_title = FALSE)
+
+```
+
+Below are some frequently asked questions about the **defineR** package. Click
+on the links below to navigate to the full question and answer content.
+
+## Index{#top}
+
+* [How can I generate a frequency table?](#freq)
+* [How can I generate summary statistics?](#means)
+* [How can I pivot my statistical results?](#transpose)
+* [How can I generate a crosstabulation table?](#crosstab)
+* [How can I write a frequency report?](#report)
+* [Why are you trying to simulate SAS® procedures?](#motivation)
+* [Can you do N-way tables?](#nway)
+* [Can these procedures create plots?](#plots)
+* [How can I get p-values?](#stats)
+* [Are these functions validated?](#validation)
+* [Can I create a PDF directly?  What about RTF?](#outputs)
+* [Can I change the report colors?](#colors)
+
+
+## Content
+
+### Question? {#freq}
+
+**Q:** A question.
+
+**A:** An answer.  
+
+[top](#top) 
+
+******
+
+### Question? {#means}
+
+**Q:** A question.
+
+**A:** An answer.  
+
+[top](#top) 
+
+******
+
+### Question? {#transpose}
+
+**Q:** A question.
+
+**A:** An answer.  
+
+[top](#top) 
+
+******
+
+### Question? {#crosstab}
+
+**Q:** I can see from the examples ...
+
+
+**A:** The package supports ...
+
+[top](#top) 
+
+******
+
+### Question 2? {#report}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+
+### Question 2? {#motivation}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+
+### Question 2? {#nway}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+
+### Question 2? {#plots}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+
+### Question 2? {#stats}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+
+### Question 2? {#validation}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+
+### Question 2? {#outputs}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+
+### Question 2? {#colors}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+
+<!-- ### Question 2? {#q2} -->
+
+<!-- **Q:** Question here. -->
+
+<!-- **A:** Answer here. -->
+
+<!-- [top](#top) -->
+
+<!-- ****** -->
+
+<!-- ### Question 1? {#q1} -->
+
+<!-- **Q:** Question here. -->
+
+
+<!-- **A:** Answer here. -->
+
+<!-- [top](#top)  -->
+
+<!-- ****** -->
+

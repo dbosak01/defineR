@@ -51,7 +51,7 @@
 create CDISC compliant define.xml documents suitable for
 submission to the FDA. The package also contains related capabilities
 to help create and manage metadata needed to create the define.xml." />
-<meta property="og:image" content="/logo.png" />
+<meta property="og:image" content="https://defineR.r-sassy.org/logo.png" />
 
 
 
@@ -83,7 +83,7 @@ to help create and manage metadata needed to create the define.xml." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">defineR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.9002</span>
       </span>
     </div>
 
@@ -98,8 +98,26 @@ to help create and manage metadata needed to create the define.xml." />
 <li>
   <a href="../articles/defineR.html">Get started</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/defineR-define.html">Create define.xml</a>
+    </li>
+    <li>
+      <a href="../articles/defineR-metadata.html">Create Metadata</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href=".././articles/defineR-faq.html">FAQ</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -136,25 +154,16 @@ to help create and manage metadata needed to create the define.xml.</p>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The <strong>defineR</strong> package helps create define.xml files for FDA
-submission.  More here...</p>
-    <h2 class="hasAnchor" id="how-to-use"><a class="anchor" href="#how-to-use"></a>How to use</h2>
-
-    
-
-<p>There are three steps to creating a define.xml document:</p><ul>
-<li><p>Import metadata</p></li>
-<li><p>Create XML</p></li>
-<li><p>Write out XML markup</p></li>
-</ul><p>In the <strong>defineR</strong> package, the <code><a href='import_metadata.html'>import_metadata</a></code> function
-reads in the metadata. Currently, the package supports spreadsheet-based
-metadata. Once you have the metadata, you can create XML for an SDTM or ADAM
-define.xml using <code><a href='create_sdtm_xml.html'>create_sdtm_xml</a></code> and
-<code><a href='create_adam_xml.html'>create_adam_xml</a></code>.  Then write out the XML to a file using
-<code><a href='write_markup.html'>write_markup</a></code>.</p>
-<p>The package also supports the ability to create an HTML page to explore
-your define.xml.</p>
-<p>See function documentation for additional details.</p>
+    <p>The <strong>defineR</strong> package uses spreadsheet-based metadata.  The package
+can use the metadata to produce the define.xml, define.html, and a check
+report.  It also has the capability to create a template to get
+you started defining metadata for your project.</p>
+<p>The <strong>defineR</strong> package is simple to use.  It contains only two functions:</p><ul>
+<li><p><code><a href='write_define.html'>write_define</a></code>: Creates a define.xml document and related files.</p></li>
+<li><p><code><a href='write_metadata.html'>write_metadata</a></code>: Creates a metadata template.</p></li>
+</ul><p>See the [Getting Started](https://defineR.r-sassy.org/articles/defineR.html)
+page for an overview of these functions.  Additional
+information is available in the function references.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

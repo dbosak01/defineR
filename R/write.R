@@ -153,36 +153,6 @@ write_define <- function(path, dir = ".", type = "sdtm", ver = NULL,
 
 
 
-#' @title Writes a define XML metadata spreadsheet to the file system
-#' @description The function generates metadata and
-#' writes it to the file system. The function can generate a blank metadata
-#' spreadsheet, a demonstration spreadsheet, or metadata generated
-#' from existing data files.
-#' @details Here are some details.
-#' @param path The path of the metadata file to produce.
-#' @param type The type of metadata file to produce.  Valid values are
-#' "SDTM" and "ADAM". Default is "SDTM".
-#' @param version The version of the metadata file.  Default is
-#' the preferred version of the define standard.  Function
-#' currently supports only version 2.0.0.
-#' @param check Whether or not to run the checks.
-#' @param src_dir If the metadata will be created from existing datasets,
-#' supply the directory path for those datasets.  If the metadata will
-#' not be created from datasets, this parameter should be NULL.
-#' @param demo If this parameter is TRUE, the function will generate
-#' a metadata file with example data.  Default is FALSE.
-#' @return The path of the generated file.
-#' @export
-#' @examples
-#' # Example data
-write_metadata <- function(path, type = "sdtm", version = NULL,
-                           check = TRUE, src_dir = NULL,
-                           demo = FALSE) {
-
-
-
-}
-
 
 
 
@@ -195,6 +165,7 @@ write_metadata <- function(path, type = "sdtm", version = NULL,
 #' @param x The markup to write.
 #' @param file_path The path to write the markup file.
 #' @return The full path to the file.
+#' @noRd
 write_markup <- function(x, file_path) {
 
 
@@ -228,6 +199,7 @@ write_markup <- function(x, file_path) {
 
 #' @import xml2
 #' @import xslt
+#' @noRd
 write_HTML <- function(xmlpth, htmlpth, ver, msg) {
 
 

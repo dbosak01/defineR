@@ -7,6 +7,7 @@
 #' @param version The version of the define XML to create.  Currently
 #' only 2.0.0 is supported, which is the default.
 #' @returns A vector of XML strings.
+#' @noRd
 create_sdtm_xml <- function(lst, version = "2.0.0") {
 
   if(!is.list(lst)) {
@@ -56,17 +57,17 @@ get_sdtm_xml_20 <- function(lst) {
   else
     stop("Table of Contents metadata is required.")
 
-  comp <- c()
-  if ("COMPUTATION_METHOD" %in% nms)
-    comp <- get_computations(lst[["COMPUTATION_METHOD"]])
-  else
-    stop("Computation Method metadata is required.")
-
   cl <- c()
   if ("CODELISTS" %in% nms)
     cl <- get_code_lists(lst[["CODELISTS"]])
   else
     stop("Code List metadata is required.")
+
+  comp <- c()
+  if ("COMPUTATION_METHOD" %in% nms)
+    comp <- get_computations(lst[["COMPUTATION_METHOD"]])
+  else
+    stop("Computation Method metadata is required.")
 
   whr <- c()
   if ("WHERE_CLAUSES" %in% nms)
@@ -85,7 +86,7 @@ get_sdtm_xml_20 <- function(lst) {
   ftr <- get_footer()
 
 
-  ret <- c(hdr, val, grps, defs,  comp, cl, whr, cmnts, extl, ftr)
+  ret <- c(hdr, extl, val, whr, grps, defs, cl, comp,  cmnts, ftr)
 
   return(ret)
 
@@ -298,8 +299,9 @@ get_value_level <- function(dta) {
   str <- '
     <ItemRef ItemOID="VL.{domain}.{variable}.{value}"
       OrderNumber="{varnum}"
-      Mandatory="{mandatory}">
-      {methodoid}{wc}
+      Mandatory="{mandatory}"
+      {methodoid}>
+      {wc}
     </ItemRef>'
 
 
@@ -327,7 +329,7 @@ get_value_level <- function(dta) {
             whrc <- glue(wcstr, wcoid = sp[rw, "WHERECLAUSEOID"])
           # Added 312, 315-316
           if(!is.na(sp[rw, "COMPUTATIONMETHODOID"]))
-            holder <- paste0('MethodOID="', sp[rw, "COMPUTATIONMETHODOID"], '">\n')
+            holder <- paste0('MethodOID="', sp[rw, "COMPUTATIONMETHODOID"], '"')
 
           ret[length(ret) + 1] <- glue(str,
                                        domain =  sp[rw, "DOMAIN"],
