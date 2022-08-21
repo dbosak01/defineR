@@ -4,8 +4,7 @@
 [![defineR lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://cran.r-project.org/package=defineR)
 [![defineR downloads](https://cranlogs.r-pkg.org/badges/defineR)](https://cran.r-project.org/package=defineR)
 [![defineR total downloads](https://cranlogs.r-pkg.org/badges/grand-total/defineR)](https://cran.r-project.org/package=defineR)
-[![R-CMD-check](https://github.com/dbosak01/defineR/workflows/R-CMD-check/badge.svg)](https://github.com/dbosak01/defineR/actions)
-
+[![R-CMD-check](https://github.com/dbosak01/defineR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dbosak01/defineR/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # Introduction to **defineR**
