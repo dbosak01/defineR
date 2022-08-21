@@ -3,7 +3,7 @@
 * Added Github Actions.
 * Changed license to CC BY-NC 4.0.
 * Fixed up ADAM define.
-* Assigned to r-sassy domain.
+* Assigned to r-sassy domain. 
 * Flushed out function references.
 
 
