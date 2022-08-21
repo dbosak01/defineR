@@ -9,7 +9,6 @@
 #' only supports the "excel" source type, which is the default.
 #' @returns A list of tibbles.
 #' @import readxl
-#' @export
 import_metadata <- function(location, type = "excel") {
 
   if (!type %in% c("excel")) {

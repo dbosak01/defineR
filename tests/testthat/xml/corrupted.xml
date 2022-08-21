@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 21August2022                                                   -->
+    <!-- Date: 20August2022                                                   -->
     <!-- Description: Define.xml file for XYZ123                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-08-21T08:33:23">
+  CreationDateTime="2022-08-20T12:07:18">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -31,56 +31,57 @@
   <!-- VALUE LEVEL LIST DEFINITION INFORMATION  ** -->
   <!-- ******************************************* -->
 
-<def:ValueListDef OID="VL.LB.LBORRES">
+here is something to corrupt the file<fork></fork>
+<def: Valuesdfsdfsdf ListDef OID="VL.LB.LBORRES">
 <ItemRef ItemOID="VL.LB.LBORRES.ALB"
   OrderNumber="1"
   Mandatory="No">
-  
+
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.ALP"
   OrderNumber="2"
   Mandatory="No">
-  
+
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.ALT"
   OrderNumber="3"
   Mandatory="No">
-  
+
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.AST"
   OrderNumber="4"
   Mandatory="No">
-  
+
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.BILDIR"
   OrderNumber="5"
   Mandatory="No">
-  
+
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.BILI"
   OrderNumber="6"
   Mandatory="No">
-  
+
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.GGT"
   OrderNumber="7"
   Mandatory="No">
-  
+
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.HCT"
   OrderNumber="8"
   Mandatory="No">
-  
+
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.HGB"
   OrderNumber="9"
   Mandatory="No">
-  
+
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.PROT"
   OrderNumber="10"
   Mandatory="No">
-  
+
 </ItemRef>
 <ItemRef ItemOID="VL.LB.LBORRES.GLUC"
   OrderNumber="11"
@@ -120,7 +121,7 @@ Purpose="Tabulation"
 IsReferenceData="No"
 SASDatasetName="AE"
 def:Structure="Events - One record per event per subject"
-def:Class="NA"
+def:Class="Events"
 def:ArchiveLocationID="Location.AE">
 <Description>
   <TranslatedText xml:lang="en">Adverse Events</TranslatedText>
@@ -283,7 +284,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="DM"
 Name="DM"
 Repeating="No"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="No"
 SASDatasetName="DM"
 def:Structure="Special Purpose - One record per event per subject"
@@ -430,7 +431,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="EX"
 Name="EX"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="No"
 SASDatasetName="EX"
 def:Structure="One record per constant dosing interval per subject"
@@ -530,7 +531,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="LB"
 Name="LB"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="No"
 SASDatasetName="LB"
 def:Structure="Findings - One record per lab test per subject"
@@ -796,7 +797,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TA"
 Name="TA"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TA"
 def:Structure="One record per planned Element per Arm"
@@ -881,7 +882,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TD"
 Name="TD"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TD"
 def:Structure="One record per planned schedule of assessments"
@@ -959,7 +960,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TE"
 Name="TE"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TE"
 def:Structure="One record per planned Element"
@@ -1025,7 +1026,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TI"
 Name="TI"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TI"
 def:Structure="One record per I/E criterion"
@@ -1079,7 +1080,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TS"
 Name="TS"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TS"
 def:Structure="One record per trial summary parameter value"
@@ -1157,7 +1158,7 @@ RoleCodeListOID="CodeList.rolecode"/>
 Domain="TV"
 Name="TV"
 Repeating="Yes"
-Purpose="Tabulation "
+Purpose="Tabulation"
 IsReferenceData="Yes"
 SASDatasetName="TV"
 def:Structure="One record per planned Visit per Arm"
@@ -2228,7 +2229,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Data Value</TranslatedText>
   </Description>
-  <def:Origin Type="">
+  <def:Origin Type="NA">
   </def:Origin>
 </ItemDef>
 <ItemDef OID="SUPPDM.QORIG"
@@ -3505,7 +3506,18 @@ RoleCodeListOID="CodeList.rolecode"/>
 </MethodDef>
 <MethodDef OID="LB.LBNRIND" Name="LBNRIND derivation" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then   lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then   lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and              round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then          lbnrind = 'LOW';    else if lbstnrhi ne . and lbstresn ne . and             round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then      lbnrind = 'HIGH';    else if lbstnrhi ne . and lbstresn ne . then      lbnrind = 'NORMAL';</TranslatedText>
+    <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then
+   lbnrind = 'HIGH';
+ else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then
+   lbnrind = 'NORMAL';
+ else if lbstnrlo ne . and lbstresn ne . and
+             round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then
+          lbnrind = 'LOW';
+    else if lbstnrhi ne . and lbstresn ne . and
+            round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then
+      lbnrind = 'HIGH';
+    else if lbstnrhi ne . and lbstresn ne . then
+      lbnrind = 'NORMAL';</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="LB.LBBLFL" Name="LBBLFL derivation" Type="Computation">
@@ -4123,9 +4135,9 @@ DataType="text">
     <TranslatedText>Study Type</TranslatedText>
   </Decode>
 </CodeListItem>
-<CodeListItem CodedValue="*failed to decode utf16*Intervention Type" Rank="35">
+<CodeListItem CodedValue="Intervention Type" Rank="35">
   <Decode>
-    <TranslatedText>*failed to decode utf16*Intervention Type</TranslatedText>
+    <TranslatedText>Intervention Type</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="Study Start Date" Rank="36">
@@ -4334,7 +4346,7 @@ DataType="text">
 </CodeListItem>
 <CodeListItem CodedValue="INTTYPE" Rank="35">
   <Decode>
-    <TranslatedText>*failed to decode utf16*Intervention Type</TranslatedText>
+    <TranslatedText>Intervention Type</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="SSTDTC" Rank="36">

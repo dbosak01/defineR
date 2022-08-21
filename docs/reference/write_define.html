@@ -47,7 +47,11 @@
 
 
 <meta property="og:title" content="Writes a define XML document to the file system — write_define" />
-<meta property="og:description" content="Writes a define XML document to the file system" />
+<meta property="og:description" content="The write_define function inputs an SDTM or ADAM
+metadata file and exports a define.xml and associated files to a specified
+directory. Possible associated files are the HTML transformation of
+the define.xml and a check report. By default, the check report will
+also be shown in the viewer." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -80,7 +84,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">defineR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.9001</span>
       </span>
     </div>
 
@@ -123,21 +127,85 @@
     </div>
 
     <div class="ref-description">
-    <p>Writes a define XML document to the file system</p>
+    <p>The <code>write_define</code> function inputs an SDTM or ADAM
+metadata file and exports a define.xml and associated files to a specified
+directory. Possible associated files are the HTML transformation of
+the define.xml and a check report. By default, the check report will
+also be shown in the viewer.</p>
     </div>
 
-    <pre class="usage"><span><span class='fu'>write_define</span><span class='op'>(</span><span class='va'>dfn</span><span class='op'>)</span></span></pre>
+    <pre class="usage"><span><span class='fu'>write_define</span><span class='op'>(</span></span>
+<span>  <span class='va'>path</span>,</span>
+<span>  dir <span class='op'>=</span> <span class='st'>"."</span>,</span>
+<span>  type <span class='op'>=</span> <span class='st'>"sdtm"</span>,</span>
+<span>  ver <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span>  check <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span>  html <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span>  view <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span>  report_type <span class='op'>=</span> <span class='st'>"PDF"</span></span>
+<span><span class='op'>)</span></span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dfn</th>
-      <td><p>The define object to write.</p></td>
+      <th>path</th>
+      <td><p>The path to the metadata file.  Currently only Excel metadata
+files are supported.</p></td>
+    </tr>
+    <tr>
+      <th>dir</th>
+      <td><p>The output directory to create the define.xml and associated files.
+By default, the current working directory will be used. If the directory
+does not exist, the function will attempt to create it.</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p>The type of define.xml to create.  Valid values are
+"sdtm" and "adam".  Default is "sdtm".</p></td>
+    </tr>
+    <tr>
+      <th>ver</th>
+      <td><p>The version of the define XML to produce.  Default is the
+preferred version of the FDA. Currently only version "2.0.0" is supported.</p></td>
+    </tr>
+    <tr>
+      <th>check</th>
+      <td><p>Whether or not to perform consistency checks.  If so,
+a check report will be produced in the output directory. Valid values
+are TRUE, FALSE, and "V5".  Default is TRUE.  The "V5" option will include
+checks that metadata conforms to SAS Transport file version 5 requirements.</p></td>
+    </tr>
+    <tr>
+      <th>html</th>
+      <td><p>Whether or not to produce the HTML output associated with the
+define.xml.  Valid values are TRUE and FALSE.  Default is TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>view</th>
+      <td><p>Whether or not to show the check report in the viewer.  Valid
+values are TRUE and FALSE.  Default is TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>report_type</th>
+      <td><p>The output type of the check report, if requested.
+Valid values are "TXT", "RTF", "PDF", "HTML" and "DOCX".  Default is
+"DOCX".</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>The define.xml file and any associated files will be written
+to the directory specified on the <code>dir</code> parameter.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If there is
+a serious error producing the XML, the XML and HTML outputs will not be
+produced.  A check report will produced that shows the error.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span><span class='co'># Create data</span></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

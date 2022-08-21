@@ -5,7 +5,6 @@
 #' @param version The version of the define XML to create.  Currently
 #' only 2.0.0 is supported, which is the default.
 #' @returns A vector of XML strings.
-#' @export
 create_adam_xml <- function(lst, version) {
 
 

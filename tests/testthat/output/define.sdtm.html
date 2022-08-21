@@ -1,0 +1,4460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<!--
+     xsl:version = "1.0"
+     xsl:vendor = "libxslt"
+     xsl:vendor-url = "http://xmlsoft.org/XSLT/"
+   -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>XYZ123, SDTM-IG3.2</title>
+<script type="text/javascript"><!--
+/**
+ * With one argument, return the textContent or innerText of the element.
+ * With two arguments, set the textContent or innerText of element to value.
+ */
+function textContent(element, value) {
+  "use strict";
+  var rtn;
+  var content = element.textContent;  // Check if textContent is defined
+  if (value === undefined) { // No value passed, so return current text
+    if (content !== undefined) {
+      rtn = content;
+    } else {
+      rtn = element.innerText;
+    }
+    return rtn;
+  }
+  else { // A value was passed, so set text
+    if (content !== undefined) {
+      element.textContent = value;
+    } else {
+      element.innerText = value;
+    }
+  }
+}
+
+var ITEM  = '\u00A0';
+var CLOSE = '\u25BA';
+var OPEN  = '\u25BC';
+
+function toggle_submenu(e) {
+  "use strict";
+  if (textContent(e)===OPEN) {
+    textContent(e, CLOSE);
+  }
+  else {
+    textContent(e, OPEN);
+  }
+
+  var i;
+  for (i=0; i < e.parentNode.childNodes.length; i++) {
+    var c;
+    c=e.parentNode.childNodes[i];
+    if (c.tagName==='UL') {c.style.display=(c.style.display==='none') ? 'block' : 'none';}
+   }
+}
+
+function reset_menus() {
+"use strict";
+  var li;
+  var c;
+  var i;
+  var j;
+  var li_tags = document.getElementsByTagName('LI');
+  for (i=0; i < li_tags.length; i++) {
+    li=li_tags[i];
+    if ( li.className.match('hmenu-item') ){
+      for (j=0; j < li.childNodes.length; j++) {
+        c=li.childNodes[j];
+        if ( c.tagName === 'SPAN' && c.className.match('hmenu-bullet') ) {textContent(c, ITEM);}
+        }
+      }
+    if ( li.className.match('hmenu-submenu') ) {
+      for (j=0; j < li.childNodes.length; j++) {
+        c=li.childNodes[j];
+        if ( c.tagName === 'SPAN' && c.className.match('hmenu-bullet') ) {textContent(c, CLOSE);}
+        else if ( c.tagName === 'UL' ) { c.style.display = 'none'; }
+        }
+    }
+  }
+}
+
+function toggle_vlm(element) {
+  var child_id = element.childNodes[0].getAttribute("id");
+  var vlm_rows = document.getElementsByClassName(child_id);
+  for (j=0; j < vlm_rows.length; j++) {
+    if (vlm_rows[j].style.display==='none') {
+      vlm_rows[j].style.display=''; }
+    else {
+      vlm_rows[j].style.display='none'; 
+      }
+    }
+}
+
+function expand_all_vlm() {
+  var vlm_rows = document.getElementsByClassName("vlm");
+  for (j=0; j < vlm_rows.length; j++) {
+      vlm_rows[j].style.display='';
+    }
+}
+
+function collapse_all_vlm() {
+  var vlm_rows = document.getElementsByClassName("vlm");
+  for (j=0; j < vlm_rows.length; j++) {
+      vlm_rows[j].style.display='none';
+    }
+}
+
+/**
+ * Open external documents (PDFs, ...) in a new window.
+ */
+document.onclick = function(e)
+{
+  var target = e ? e.target : window.event.srcElement;    
+  while (target && !/^(a|body)$/i.test(target.nodeName))
+  {
+    target = target.parentNode;
+  }
+
+  if (target && target.className.match('external'))
+  {
+    var external = window.open(target.href);
+    return external.closed;
+  }
+}
+//--></script>
+  <style type="text/css">
+      .external-link-gif{
+        background: 
+        url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gCGhErDWL4mOoAAAB6SURBVBjTbVCxDcAgDHNRP2KDY9gYO5YbWNno1mPY6E3pAJEIYCmCOCQOPogII6wNkug4d49KiXMz1EiUEg8uLBN3Ui7FVduYmxjG3JRru+facubVuIdLEV4Dzwe8V4BYg7t4Ap+d57qUnuWICBzi116v1ggfd3bM+AEZWXFvnym8EwAAAABJRU5ErkJggg==)
+       no-repeat
+       right center;
+        padding: 8px;
+      }      
+      
+      body{
+        background-color: #FFFFFF;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 62.5%;
+        margin: 0;
+        padding: 30px;
+      }
+      
+      h1{
+        font-size: 1.6em;
+        margin-left: 0;
+        font-weight: bolder;
+        text-align: left;
+        color: #696969;
+      }
+      
+      h1.header{
+        text-align: center;
+      }
+      
+      ul{
+        margin-left: 0px;
+      }
+      
+      a{
+      color: #0000FF;
+        text-decoration: underline;
+      }
+      a.visited{
+      color: #551A8B;
+        text-decoration: underline;
+      }
+      a:hover{
+      color: #FF9900;
+        text-decoration: underline;
+      }
+      a.tocItem{
+      color: #004A95;
+      text-decoration: none;
+      margin-top: 2px;
+      font-size: 1.4em;
+      }
+      .tocItem{
+      text-decoration: none;
+      margin-top: 2px;
+      font-size: 1.4em;
+      }
+      
+      #menu{
+        position: fixed;
+        left: 0px;
+        top: 10px;
+        width: 20%;
+        height: 96%;
+        bottom: 0px;
+        overflow: auto;
+        background-color: #FFFFFF;
+        color: #000000;
+        border: 0px;
+        text-align: left;
+        white-space: nowrap;
+      }
+ 
+      .hmenu li{
+        list-style-type: none;
+        line-height: 200%;
+        padding-left: 0;
+      }
+      .hmenu ul{
+        padding-left: 14px;
+        margin-left: 0;
+      }
+      .hmenu-item{
+      }
+      .hmenu-submenu{
+      }
+      .hmenu-bullet{
+        float: left;
+        width: 16px;
+        color: #AAAAAA;
+        font-size: 1.2em;
+      }
+      
+      div.buttons {
+        padding: 5px 0 5px 40px;
+        display: inline-block;
+      }
+        div.button {
+        padding: 5px 0 5px 0;   
+      }
+      
+      button { 
+        width: 100%;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 3px 3px 2px #888;
+        -moz-box-shadow: 3px 3px 2px #888;
+        box-shadow: 3px 3px 2px #888;
+        padding: 4px 16px 4px 16px;
+        display:block;
+        cursor: pointer;
+      }
+
+      #main{
+        position: absolute;
+        left: 22%;
+        top: 0px;
+        overflow: auto;
+        background-color: #FFFFFF;
+        color: #000000;
+        float: none !important;
+      }
+      
+      ul.codelist{
+        padding: 1px;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        
+      }
+      .codelist li{
+        list-style-type:none;
+        line-height: 200%;
+        padding-left: 0;
+        text-indent: -4px;
+      }
+      
+      .codelist-caption{
+        font-size: 1.4em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-left: 0;
+        font-weight: bolder;
+        text-align: left;
+        color: #696969;
+      }
+      
+      .codelist-item{
+        list-style-type: disk;
+        list-style-position: inside;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 0 0 0;
+        }
+
+      .codelist-item-decode{
+        white-space: pre; /* CSS 2.0 */
+        white-space: pre-wrap; /* CSS 2.1 */
+         /* CSS 3.0 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap; /* HP Printers */
+        word-wrap: break-word; /* IE 5+ */
+      }      
+
+      ul.SubClass {
+        list-style-type: '- ';
+        padding-left: 5;
+        margin: 0 0 0 0;
+      }
+      ul.SubClass.li {}
+
+      #main .docinfo{
+        width: 95%;
+        text-align: right;
+        padding: 0px 5px;
+      }
+      
+      div.containerbox{
+        padding: 0px;
+        margin: 10px auto;
+        border: 0px;
+        page-break-after: always;
+      }
+      
+      .study-name{
+        font-size: 1.6em;
+        font-weight: bold;
+        text-align: left;
+        padding: 15px;
+        margin-left: 20px;
+        margin-top: 40px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        color: #696969;
+        border: 0px;
+      }
+      
+      div.study-metadata{
+        font-size: 1.6em;
+        font-weight: bold;
+        text-align: left;
+        padding: 0px;
+        margin-left: 0px;
+        margin-top: 00px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        color: #696969;
+        border: 0px;
+      }
+      
+      dl.study-metadata{
+        width: 95%;
+        padding: 5px 0px;
+        font-size: 0.8em;
+        color: black;
+      }
+      
+      dl.study-metadata dt{
+        clear: left;
+        float: left;
+        width: 200px;
+        margin: 0;
+        padding: 5px 5px 5px 0px;
+        font-weight: bold;
+      }
+      
+      dl.study-metadata dd{
+        margin-left: 210px;
+        padding: 5px;
+        font-weight: normal;
+        min-height: 20px;
+      }
+      
+      div.codelist{
+        page-break-after: avoid;
+      }
+      
+      div.qval-indent {
+      margin-left: 20px;
+      }
+      
+      div.qval-indent2 {
+      margin-left: 40px;
+      }
+      
+      table{
+        width: 95%;
+        border-spacing: 4px;
+        border: 1px solid #000000;
+        background-color: #EEEEEE;
+        margin-top: 5px;
+        border-collapse: collapse;
+        padding: 5px;
+        empty-cells: show;
+      }
+      
+      table caption{
+        border: 0px;
+        left: 20px;
+        font-size: 1.4em;
+        font-weight: bolder;
+        color: #696969;
+        margin: 10px auto;
+        text-align: left;
+      }
+      
+      .description{
+        margin-left: 0px;
+        color: black;
+        font-weight: normal;
+        font-size: 0.85em;
+      }
+      
+      table caption .dataset{
+        font-weight: normal;
+        float: right;
+      }
+
+      table caption.header{
+        font-size: 1.6em;
+        margin-left: 0;
+        font-weight: bolder;
+        text-align: center;
+        color: #696969;
+      }
+      
+      table tr{
+        border: 1px solid #000000;
+      }
+      
+      table tr.header{
+        background-color: #6699CC;
+        color: #FFFFFF;
+        font-weight: bold;
+      }
+      
+      table th{
+        font-weight: bold;
+        vertical-align: top;
+        text-align: left;
+        padding: 5px;
+        border: 1px solid #000000;
+        font-size: 1.3em;
+      }
+      
+      table th.codedvalue{
+        width: 20%;
+      }
+      table th.length{
+        width: 7%;
+      }
+ 
+      table th.label{
+        width: 13%;
+      }
+ 
+      table td{
+        vertical-align: top;
+        padding: 5px;
+        border: 1px solid #000000;
+        font-size: 1.2em;
+        line-height: 150%;
+      }
+
+      table td.datatype{
+        text-align: left;
+      }
+      table td.role{
+        text-align: left;
+      }
+      table td.number{
+        text-align: right;
+      }
+      
+      tr.tablerowodd{
+        background-color: #FFFFFF;
+      }
+      tr.tableroweven{
+        background-color: #EEEEEE;
+      }
+      
+      .linebreakcell{
+        vertical-align: top;
+        margin-top: 3px;
+        margin-bottom: 3px;
+      }
+      
+      .nci,
+      .extended{
+        font-style: italic;
+      }
+      .super{
+        vertical-align: super;
+      }
+      .footnote{
+        font-size: 1.2em;
+      }
+      
+      .valuelist-reference{
+      vertical-align: super;
+      font-size: 0.8em;
+      padding-left: 5px;
+      cursor: pointer;
+      }
+      
+      .valuelist-no-reference{
+      vertical-align: super;
+      font-size: 0.8em;
+      padding-left: 5px;
+      }
+      
+      div.formalexpression{
+        margin-top: 6px;
+        margin-bottom: 6px;      
+      }
+
+      span.label{
+        font-weight: bold;      
+      }
+
+      .formalexpression-reference{
+        vertical-align: super;
+        font-size: 0.8em;
+        padding-left: 5px;
+      }
+
+      .formalexpression-code{
+        font-family:"Courier New", monospace, serif;
+        font-size:1.2em;
+        line-height:120%;
+        display:block;
+        vertical-align:top;
+        margin: 0px;
+        padding: 5px 0 0 20px;
+        white-space:pre;  /* CSS 2.0 */
+        white-space: pre-wrap; /* CSS 2.1 */
+        /* CSS 3.0 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap; /* HP Printers */
+        word-wrap: break-word; /* IE 5+ */
+      }
+      
+      .method-code{
+        vertical-align: top;
+        white-space: pre; /* CSS 2.0 */
+        white-space: pre-wrap; /* CSS 2.1 */
+         /* CSS 3.0 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap; /* HP Printers */
+        word-wrap: break-word; /* IE 5+ */
+      }
+
+      .linktop{
+        font-size: 1.2em;
+        margin-top: 5px;
+      }
+      .documentinfo,
+      .stylesheetinfo{
+        font-size: 1.1em;
+        line-height: 60%;
+      }
+      
+      .invisible{
+        display: none;
+      }
+      
+      .standard-refeference {
+        width: 95%;
+        font-size: 1.0em;
+        font-weight: bold;
+        padding: 5px;
+        color: #696969;
+        white-space: nowrap;
+      }
+
+      .nodata{
+        width: 95%;
+        font-size: 1.0em;
+        font-weight: bold;
+        padding: 5px;
+        color: #000000;
+        white-space: nowrap;
+      }
+
+      span.unresolved{
+        color: #000000;
+      }
+      td.unresolved{
+      color: #000000;
+      }
+      td.span.unresolved{
+      color: #000000;
+      }
+      
+      span.prefix{
+        font-weight: normal;
+      }      
+
+      .arm-summary{
+        width: 95%;
+        border-spacing: 5px;
+        border-width: 1px;
+        border-color: #000000;
+        border-style: solid solid none solid;
+        background-color: #EEEEEE;
+        font-size: 1.2em;
+        line-height: 150%;
+        vertical-align: top;
+      }
+      .arm-summary-resultdisplay{
+        margin: 0px 0px 0px 0px;
+        padding: 10px 10px 10px 10px;  
+        border-spacing: 5px;
+        border-width: 1px;
+        border-color #000000;
+        border-style: none none solid none;
+      }
+
+      .arm-display-title{
+        margin-left: 5pt;
+      }
+      
+      .table.analysisresults-detail{
+        background-color: #EEEEEE;
+      }
+      
+      .arm-summary-result{
+        margin-left: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      th span.arm-displaytitle{
+        font-weight: bold;
+      }
+      td span.arm-resulttitle{
+        font-weight: bold;
+      }
+      tr.arm-analysisresult{
+        background-color: #6699CC;
+        color: #FFFFFF;
+        font-weight: bold;
+        border: 1px solid #000000;
+      }
+      td.arm-label{
+        font-weight: bold;
+      }
+
+      p.arm-analysisvariable{
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .arm-data-reference{
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      
+      .arm-code-context{
+        padding: 5px 0px;
+      }
+      .arm-code-ref{
+        font-size: 1.2em;
+        line-height: 150%;
+        padding: 5px;
+      }
+
+      .arm-code{
+        font-family:"Courier New", monospace, serif;
+        font-size:1.2em;
+        line-height:120%;
+        display:block;
+        vertical-align:top;
+        margin: 0px;
+        padding:0px;
+        white-space:pre;  /* CSS 2.0 */
+        white-space: pre-wrap; /* CSS 2.1 */
+        /* CSS 3.0 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap; /* HP Printers */
+        word-wrap: break-word; /* IE 5+ */
+      }
+      
+
+      
+      @media print{
+      
+        @page {
+          margin: 1.5cm;
+        }
+      
+        body,
+        h1,
+        table caption,
+        table caption.header{
+          color: #000;
+          background: #fff;
+          float: none !important;
+        }
+      
+        div.containerbox{
+          padding: 0px;
+          border: 0px;
+          page-break-after: always;
+        }
+      
+        a:link,
+        a:visited{
+          background: transparent;
+          text-decoration: none;
+          color: black;
+        }
+        a.external:link:after,
+        #main a:visited:after{
+          content: " (" attr(href) ") ";
+          font-size: 100%;
+          text-decoration: underline;
+          font-weight: normal;
+          color: black;
+        }
+        .external-link-gif,
+        .formalexpression-reference
+        .valuelist-reference{
+          display: none !important;
+          width: 0px;
+        }
+        
+        table{
+          border-width: 2px;
+        }
+
+        table tr.vlm{
+        display: table-row !important;
+        }
+      
+        #menu,
+        .linktop{
+          display: none !important;
+          width: 0px;
+        }
+        #main{
+          left: 2cm;
+          float: none !important;
+        }
+        span.prefix{
+          font-weight: normal;
+        }
+        
+        row, ul, img {
+          page-break-inside: avoid;
+        }
+      
+      }
+    </style>
+  </head>
+<body onload="reset_menus();">
+<div id="menu">
+<a name="top" class="invisible" href="#main">Skip Navigation Link</a><span class="study-name">XYZ123</span><ul class="hmenu">
+<li class="hmenu-item">
+<span class="hmenu-bullet">+</span><span class="tocItem unresolved">[unresolved: blankcrf]</span><span class="external-link-gif"></span>
+</li>
+<li class="hmenu-submenu">
+<span onclick="toggle_submenu(this);" class="hmenu-bullet">+</span><a class="tocItem">Supplemental Documents</a><ul><li class="hmenu-item">
+<span class="hmenu-bullet">+</span><span class="tocItem unresolved">[unresolved: CRTRG]</span><span class="external-link-gif"></span>
+</li></ul>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#datasets">Datasets</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.AE">AE (Adverse Events)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.DM">DM (Demographics)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.EX">EX (Exposure)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.LB">LB (Laboratory Test Results)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.XP">XP (Pain Scores)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TA">TA (Trial Arms)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TD">TD (Trial Disease Assessments)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TE">TE (Trial Elements)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TI">TI (Trial Inclusion/Exclusion Criteria)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TS">TS (Trial Summary)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.TV">TV (Trial Visits)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.SUPPDM">SUPPDM (DM - Supplemental Qualifiers)</a>
+</li>
+</ul>
+</li>
+<li class="hmenu-submenu">
+<span onclick="toggle_submenu(this);" class="hmenu-bullet">+</span><a href="#decodelist" class="tocItem">Controlled Terminology</a><ul>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#decodelist">CodeLists</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.ACN">ACN</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.AEREL">AEREL</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.AESEV">AESEV</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.AGEU">AGEU</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.ARM">ARM</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.ARMCD">ARMCD</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.COUNTRY">COUNTRY</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.EPOCH">EPOCH</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.FRM">FRM</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.IECAT">IECAT</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.LBCAT">LBCAT</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.LBNRIND">LBNRIND</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.LBTEST">LBTEST</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.LBTESTCD">LBTESTCD</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.NY">NY</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.RACE">RACE</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.SEX">SEX</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.TSPARM">TSPARM</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.TSPARMCD">TSPARMCD</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.UNIT">UNIT</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.URINGLUC">URINGLUC</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.VISIT">VISIT</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.XPTEST">XPTEST</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.XPTESTCD">XPTESTCD</a>
+</li>
+</ul>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#externaldictionary">External Dictionaries</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.AEBODSYS">AEBODSYS</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.AEDECOD">AEDECOD</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#compmethod">Methods</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.SETDOMAIN">Hardcode to assign domain</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.STUDYDAYS">--DY derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.SETNULL">Null Value</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.AE.AESEQ">AESEQ derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.AE.EPOCH">EPOCH hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.RFENDTC">RFENDTC derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.DTHDTC">DTHDTC derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.DTHFL">DTHFL derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.AGE">Algorithm to compute age</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.AGEU">Age units hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.COUNTRY">Country hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.EX.EXSEQ">EXSEQ derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.EX.EXTRT">EXTRT derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.EX.EXDOSU">EXDOSU hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.EX.EXDOSFRM">EXDOSFRM hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.EX.EPOCH">EPOCH hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSEQ">LBSEQ derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBTESTCD">LBTESTCD derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBTEST">LBTEST derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBCAT">LBCAT derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSTRESC">LBSTRESC derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSTRESN">LBSTRESN derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSTRESU">LBSTRESN derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSTNRLO">LBSTNRLO derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSTNRHI">LBSTNRHI derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBNRIND">LBNRIND derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBBLFL">LBBLFL derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.EPOCH">EPOCH derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.METADATAENTRY">Manual entry</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.XP.XPSEQ">XPSEQ derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.XP.XPTESTCD">XPTESTCD hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.XP.XPTEST">XPTEST hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.XP.EPOCH">EPOCH hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.XP.XPBLFL">XPBLFL derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.SUPPDM.RACEOTH">RACEOTH derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.SUPPDM.RANDDT">RANDDT derivation</a>
+</li>
+</ul>
+</li>
+</ul>
+<div class="buttons">
+<div class="button"><button type="button" onclick="expand_all_vlm();">Expand all VLM</button></div>
+<div class="button"><button type="button" onclick="collapse_all_vlm();">Collapse all VLM</button></div>
+</div>
+</div>
+<div id="main">
+<div class="docinfo">
+<p class="documentinfo">Date/Time of Define-XML document generation: 2022-08-21T08:33:40</p>
+<p class="documentinfo">Define-XML version: 2.0.0</p>
+<p class="stylesheetinfo">Stylesheet version: 2018-11-21</p>
+</div>
+<div class="study-metadata"><dl class="study-metadata">
+<dt>Standard</dt>
+<dd>SDTM-IG 3.2</dd>
+<dt>Study Name</dt>
+<dd>XYZ123</dd>
+<dt>Study Description</dt>
+<dd>A PHASE IIB, DOUBLE-BLIND, MULTI-CENTER, PLACEBO CONTROLLED, PARALLEL GROUP TRIAL OF ANALGEZIA HCL FOR THE TREATMENT OF CHRONIC PAIN</dd>
+<dt>Protocol Name</dt>
+<dd>XYZ123</dd>
+<dt>Metadata Name</dt>
+<dd>XYZ123, SDTM Data Definitions</dd>
+<dt>Metadata Description</dt>
+<dd>XYZ123, SDTM Data Definitions</dd>
+</dl></div>
+<a id="datasets"></a><h1 class="invisible">Datasets</h1>
+<div class="containerbox"><table summary="Data Definition Tables">
+<caption class="header">Datasets</caption>
+<tr class="header">
+<th scope="col">Dataset</th>
+<th scope="col">Description</th>
+<th scope="col">Class
+            </th>
+<th scope="col">Structure</th>
+<th scope="col">Purpose</th>
+<th scope="col">Keys</th>
+<th scope="col">Documentation</th>
+<th scope="col">Location</th>
+</tr>
+<tr class="tablerowodd" id="AE">
+<td><a href="#IG.AE">AE</a></td>
+<td>Adverse Events</td>
+<td>Events</td>
+<td>Events - One record per event per subject</td>
+<td>Tabulation</td>
+<td>STUDYID, USUBJID, AEDECOD, AESTDTC</td>
+<td></td>
+<td>
+<a class="external" href="ae.xpt">ae.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tableroweven" id="DM">
+<td><a href="#IG.DM">DM</a></td>
+<td>Demographics</td>
+<td>Special Purpose</td>
+<td>Special Purpose - One record per event per subject</td>
+<td>TabulationÂ </td>
+<td>STUDYID, USUBJID</td>
+<td></td>
+<td>
+<a class="external" href="dm.xpt">dm.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tablerowodd" id="EX">
+<td><a href="#IG.EX">EX</a></td>
+<td>Exposure</td>
+<td>Interventions</td>
+<td>One record per constant dosing interval per subject</td>
+<td>TabulationÂ </td>
+<td>STUDYID, USUBJID, EXTRT, EXENDTC</td>
+<td></td>
+<td>
+<a class="external" href="ex.xpt">ex.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tableroweven" id="LB">
+<td><a href="#IG.LB">LB</a></td>
+<td>Laboratory Test Results</td>
+<td>Findings</td>
+<td>Findings - One record per lab test per subject</td>
+<td>TabulationÂ </td>
+<td>STUDYID, USUBJID, LBCAT, LBTESTCD, VISITNUM</td>
+<td></td>
+<td>
+<a class="external" href="lb.xpt">lb.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tablerowodd" id="XP">
+<td><a href="#IG.XP">XP</a></td>
+<td>Pain Scores</td>
+<td>Findings</td>
+<td>One record per subject per visit</td>
+<td>Tabulation</td>
+<td>STUDYID, USUBJID, XPTESTCD, VISITNUM</td>
+<td></td>
+<td>
+<a class="external" href="xp.xpt">xp.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tableroweven" id="TA">
+<td><a href="#IG.TA">TA</a></td>
+<td>Trial Arms</td>
+<td>Trial Design</td>
+<td>One record per planned Element per Arm</td>
+<td>TabulationÂ </td>
+<td>STUDYID, ARMCD, TAETORD</td>
+<td></td>
+<td>
+<a class="external" href="ta.xpt">ta.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tablerowodd" id="TD">
+<td><a href="#IG.TD">TD</a></td>
+<td>Trial Disease Assessments</td>
+<td>Trial Design</td>
+<td>One record per planned schedule of assessments</td>
+<td>TabulationÂ </td>
+<td>STUDYID, TDORDER</td>
+<td></td>
+<td>
+<a class="external" href="td.xpt">td.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tableroweven" id="TE">
+<td><a href="#IG.TE">TE</a></td>
+<td>Trial Elements</td>
+<td>Trial Design</td>
+<td>One record per planned Element</td>
+<td>TabulationÂ </td>
+<td>STUDYID, ETCD</td>
+<td></td>
+<td>
+<a class="external" href="te.xpt">te.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tablerowodd" id="TI">
+<td><a href="#IG.TI">TI</a></td>
+<td>Trial Inclusion/Exclusion Criteria</td>
+<td>Trial Design</td>
+<td>One record per I/E criterion</td>
+<td>TabulationÂ </td>
+<td>STUDYID, IETESTCD</td>
+<td></td>
+<td>
+<a class="external" href="ti.xpt">ti.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tableroweven" id="TS">
+<td><a href="#IG.TS">TS</a></td>
+<td>Trial Summary</td>
+<td>Trial Design</td>
+<td>One record per trial summary parameter value</td>
+<td>TabulationÂ </td>
+<td>STUDYID, TSSEQ</td>
+<td></td>
+<td>
+<a class="external" href="ts.xpt">ts.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tablerowodd" id="TV">
+<td><a href="#IG.TV">TV</a></td>
+<td>Trial Visits</td>
+<td>Trial Design</td>
+<td>One record per planned Visit per Arm</td>
+<td>TabulationÂ </td>
+<td>STUDYID, VISITNUM, ARMCD</td>
+<td></td>
+<td>
+<a class="external" href="tv.xpt">tv.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tableroweven" id="SUPPDM">
+<td><a href="#IG.SUPPDM">SUPPDM</a></td>
+<td>DM - Supplemental Qualifiers</td>
+<td>Relationship</td>
+<td>Supplemental Qualifier - One record per qualifier</td>
+<td>Tabulation</td>
+<td>STUDYID, RDOMAIN, USUBJID, IDVAR, IDVARVAL, QNAM</td>
+<td></td>
+<td>
+<a class="external" href="suppdm.xpt">suppdm.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+</table></div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.AE"></a><div class="containerbox">
+<h1 class="invisible">Adverse Events (AE) </h1>
+<table summary="ItemGroup IG.AE">
+<caption><span>AE (Adverse Events) - Events <span class="dataset">Location: <a class="external" href="ae.xpt">ae.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">25</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AESEQ"></a>AESEQ</td>
+<td>Sequence Number</td>
+<td class="datatype">integer</td>
+<td class="role">Identifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Unique sequence based on sort order of studyid usubjid aedecod aestdtc aeendtc</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AETERM"></a>AETERM</td>
+<td>Reported Term for the Adverse Event</td>
+<td class="datatype">text</td>
+<td class="role">Topic</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">CRF page 6</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AELLT"></a>AELLT</td>
+<td>Lowest Level Term</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AELLTCD"></a>AELLTCD</td>
+<td>Lowest Level Term Code</td>
+<td class="datatype">integer</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AEDECOD"></a>AEDECOD</td>
+<td>Dictionary-Derived Term</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AEPTCD"></a>AEPTCD</td>
+<td>Preferred Term Code</td>
+<td class="datatype">integer</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AEHLT"></a>AEHLT</td>
+<td>High Level Term</td>
+<td class="datatype">text</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AEHLTCD"></a>AEHLTCD</td>
+<td>High Level Term Code</td>
+<td class="datatype">integer</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AEHLGT"></a>AEHLGT</td>
+<td>High Level Group Term</td>
+<td class="datatype">text</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AEHLGTCD"></a>AEHLGTCD</td>
+<td>High Level Group Term Code</td>
+<td class="datatype">integer</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AEBODSYS"></a>AEBODSYS</td>
+<td>Body System or Organ Class</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AEBDSYCD"></a>AEBDSYCD</td>
+<td>Body System or Organ Class Code</td>
+<td class="datatype">integer</td>
+<td class="role">Record Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AESOC"></a>AESOC</td>
+<td>Primary System Organ Class</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AESOCCD"></a>AESOCCD</td>
+<td>Primary System Organ Class Code</td>
+<td class="datatype">integer</td>
+<td class="role">Record Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AESEV"></a>AESEV</td>
+<td>Severity</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">20</td>
+<td></td>
+<td><div class="linebreakcell">CRF page 6</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AESER"></a>AESER</td>
+<td>Serious Event</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">2</td>
+<td></td>
+<td><div class="linebreakcell">CRF page 6</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AEACN"></a>AEACN</td>
+<td>Action Taken with Study Treatment</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">CRF page 6</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AEREL"></a>AEREL</td>
+<td>Causality</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">CRF page 6</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AESLIFE"></a>AESLIFE</td>
+<td>Is Life Threatening</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">2</td>
+<td></td>
+<td><div class="linebreakcell">CRF page 6</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.EPOCH"></a>EPOCH</td>
+<td>Epoch</td>
+<td class="datatype">text</td>
+<td class="role">Timing</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcoded to TREATMENT</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AESTDTC"></a>AESTDTC</td>
+<td>Start Date/Time of Adverse Event</td>
+<td class="datatype">date</td>
+<td class="role">Timing</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF page 6</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AEENDTC"></a>AEENDTC</td>
+<td>End Date/Time of Adverse Event</td>
+<td class="datatype">date</td>
+<td class="role">Timing</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF page 6</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="AE.AE.AESTDY"></a>AESTDY</td>
+<td>Study Day of Start of Adverse Event</td>
+<td class="datatype">integer</td>
+<td class="role">Timing</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="AE.AE.AEENDY"></a>AEENDY</td>
+<td>Study Day of End of Adverse Event</td>
+<td class="datatype">integer</td>
+<td class="role">Timing</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.DM"></a><div class="containerbox">
+<h1 class="invisible">Demographics (DM) </h1>
+<table summary="ItemGroup IG.DM">
+<caption><span>DM (Demographics) - Special Purpose <span class="dataset">Location: <a class="external" href="dm.xpt">dm.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr><td colspan="8">Related Supplemental Qualifiers Dataset: <a href="#IG.SUPPDM">SUPPDM</a> (DM - Supplemental Qualifiers)</td></tr>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">25</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.SUBJID"></a>SUBJID</td>
+<td>Subject Identifier for the Study</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">7</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.RFSTDTC"></a>RFSTDTC</td>
+<td>Subject Reference Start Date/Time</td>
+<td class="datatype">date</td>
+<td class="role">Record Qualifier</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF page 1</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.RFENDTC"></a>RFENDTC</td>
+<td>Subject Reference End Date/Time</td>
+<td class="datatype">date</td>
+<td class="role">Record Qualifier</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">RFENDTC is the last date of dosing from the source dosing dataset</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.RFXSTDTC"></a>RFXSTDTC</td>
+<td>Date/Time of First Study Treatment</td>
+<td class="datatype">date</td>
+<td class="role">Record Qualifier</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF page 4</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.RFXENDTC"></a>RFXENDTC</td>
+<td>Date/Time of Last Study Treatment</td>
+<td class="datatype">date</td>
+<td class="role">Record Qualifier</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF page 4</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.RFICDTC"></a>RFICDTC</td>
+<td>Date/Time of Informed Consent</td>
+<td class="datatype">date</td>
+<td class="role">Record Qualifier</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF Page 1</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.RFPENDTC"></a>RFPENDTC</td>
+<td>Date/Time of End of Participation</td>
+<td class="datatype">date</td>
+<td class="role">Record Qualifier</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF Page 30</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.DTHDTC"></a>DTHDTC</td>
+<td>Date/Time of Death</td>
+<td class="datatype">date</td>
+<td class="role">Record Qualifier</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">DTHDTC is set to null as no subjects died</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.DTHFL"></a>DTHFL</td>
+<td>Subject Death Flag</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">DTHFL='N' since no subjects died</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.SITEID"></a>SITEID</td>
+<td>Study Site Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">7</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.BRTHDTC"></a>BRTHDTC</td>
+<td>Date/Time of Birth</td>
+<td class="datatype">date</td>
+<td class="role">Record Qualifier</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF page 1</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.AGE"></a>AGE</td>
+<td>Age</td>
+<td class="datatype">integer</td>
+<td class="role">Record Qualifier</td>
+<td class="number">3.0</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">integer value of (BRTHDTC - RFSTDTC)/365.25</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.AGEU"></a>AGEU</td>
+<td>Age Units</td>
+<td class="datatype">text</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">10</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcoded to YEARS</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.SEX"></a>SEX</td>
+<td>Sex</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">2</td>
+<td></td>
+<td><div class="linebreakcell">CRF page 1</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.RACE"></a>RACE</td>
+<td>Race</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">80</td>
+<td></td>
+<td><div class="linebreakcell">CRF page 1</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.ARMCD"></a>ARMCD</td>
+<td>Planned Arm Code</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.ARM"></a>ARM</td>
+<td>Description of Planned Arm</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.ACTARMCD"></a>ACTARMCD</td>
+<td>Actual Arm Code</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="DM.DM.ACTARM"></a>ACTARM</td>
+<td>Description of Actual Arm</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="DM.DM.COUNTRY"></a>COUNTRY</td>
+<td>Country</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">3</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcoded to USA</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.EX"></a><div class="containerbox">
+<h1 class="invisible">Exposure (EX) </h1>
+<table summary="ItemGroup IG.EX">
+<caption><span>EX (Exposure) - Interventions <span class="dataset">Location: <a class="external" href="ex.xpt">ex.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="EX.EX.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="EX.EX.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="EX.EX.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">25</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="EX.EX.EXSEQ"></a>EXSEQ</td>
+<td>Sequence Number</td>
+<td class="datatype">integer</td>
+<td class="role">Identifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Unique sequence based on sort order of studyid usubjid extrt exstdtc</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="EX.EX.EXTRT"></a>EXTRT</td>
+<td>Name of Actual Treatment</td>
+<td class="datatype">text</td>
+<td class="role">Topic</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">All subjects were dosed with what they were randomized to, so EXTRT=DM.ARM</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="EX.EX.EXDOSE"></a>EXDOSE</td>
+<td>Dose</td>
+<td class="datatype">integer</td>
+<td class="role">Record Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">CRF Page 4</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="EX.EX.EXDOSU"></a>EXDOSU</td>
+<td>Dose Units</td>
+<td class="datatype">text</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcoded to mg</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="EX.EX.EXDOSFRM"></a>EXDOSFRM</td>
+<td>Dose Form</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">80</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcoded to TABLET, COATED</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="EX.EX.EPOCH"></a>EPOCH</td>
+<td>Epoch</td>
+<td class="datatype">text</td>
+<td class="role">Timing</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcoded to TREATMENT</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="EX.EX.EXSTDTC"></a>EXSTDTC</td>
+<td>Start Date/Time of Treatment</td>
+<td class="datatype">date</td>
+<td class="role">Timing</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF Page 4</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="EX.EX.EXENDTC"></a>EXENDTC</td>
+<td>End Date/Time of Treatment</td>
+<td class="datatype">date</td>
+<td class="role">Timing</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF Page 4</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="EX.EX.EXSTDY"></a>EXSTDY</td>
+<td>Study Day of Start of Treatment</td>
+<td class="datatype">integer</td>
+<td class="role">Timing</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="EX.EX.EXENDY"></a>EXENDY</td>
+<td>Study Day of End of Treatment</td>
+<td class="datatype">integer</td>
+<td class="role">Timing</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.LB"></a><div class="containerbox">
+<h1 class="invisible">Laboratory Test Results (LB) </h1>
+<table summary="ItemGroup IG.LB">
+<caption><span>LB (Laboratory Test Results) - Findings <span class="dataset">Location: <a class="external" href="lb.xpt">lb.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">25</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.LBSEQ"></a>LBSEQ</td>
+<td>Sequence Number</td>
+<td class="datatype">integer</td>
+<td class="role">Identifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Unique sequence based on sort order of studyid usubjid lbcat lbtestcd visitnum</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.LBTESTCD"></a>LBTESTCD</td>
+<td>Lab Test or Examination Short Name</td>
+<td class="datatype">text</td>
+<td class="role">Topic</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Source labs.labtest variable mapped to LBTESTCD controlled terminology</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.LBTEST"></a>LBTEST</td>
+<td>Lab Test or Examination Name</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Source labs.labtest variable mapped to LBTEST controlled terminology</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.LBCAT"></a>LBCAT</td>
+<td>Category for Lab Test</td>
+<td class="datatype">text</td>
+<td class="role">Grouping Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Source labs.labcat variable mapped to LBCAT controlled terminology</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.LBORRES"></a>LBORRES</td>
+<td>Result or Finding in Original Units</td>
+<td class="datatype">text</td>
+<td class="role">Result Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.LBORRESU"></a>LBORRESU</td>
+<td>Original Units</td>
+<td class="datatype">text</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.LBORNRLO"></a>LBORNRLO</td>
+<td>Reference Range Lower Limit in Orig Unit</td>
+<td class="datatype">text</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.LBORNRHI"></a>LBORNRHI</td>
+<td>Reference Range Upper Limit in Orig Unit</td>
+<td class="datatype">text</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.LBSTRESC"></a>LBSTRESC</td>
+<td>Character Result/Finding in Std Format</td>
+<td class="datatype">text</td>
+<td class="role">Result Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Copied directly (and unrealistically) from LBORRES</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.LBSTRESN"></a>LBSTRESN</td>
+<td>Numeric Result/Finding in Standard Units</td>
+<td class="datatype">float</td>
+<td class="role">Result Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Copied directly (and unrealistically) from LBORRES</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.LBSTRESU"></a>LBSTRESU</td>
+<td>Standard Units</td>
+<td class="datatype">text</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Copied directly (and unrealistically) from LBORRESU</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.LBSTNRLO"></a>LBSTNRLO</td>
+<td>Reference Range Lower Limit-Std Units</td>
+<td class="datatype">float</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Set equal to (and unrealistically) from the soucre labs.lownorm</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.LBSTNRHI"></a>LBSTNRHI</td>
+<td>Reference Range Upper Limit-Std Units</td>
+<td class="datatype">float</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Set equal to (and unrealistically) from the soucre labs.highnorm</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.LBNRIND"></a>LBNRIND</td>
+<td>Reference Range Indicator</td>
+<td class="datatype">text</td>
+<td class="role">Variable Qualifier</td>
+<td class="number">20</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then   lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then   lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and              round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then          lbnrind = 'LOW';    else if lbstnrhi ne . and lbstresn ne . and             round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then      lbnrind = 'HIGH';    else if lbstnrhi ne . and lbstresn ne . then      lbnrind = 'NORMAL';</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.LBBLFL"></a>LBBLFL</td>
+<td>Baseline Flag</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If visit=Baseline then Y, else blank</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.VISITNUM"></a>VISITNUM</td>
+<td>Visit Number</td>
+<td class="datatype">integer</td>
+<td class="role">Timing</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.VISIT"></a>VISIT</td>
+<td>Visit Name</td>
+<td class="datatype">text</td>
+<td class="role">Timing</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.EPOCH"></a>EPOCH</td>
+<td>Epoch</td>
+<td class="datatype">text</td>
+<td class="role">Timing</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If VISITNUM &lt; 0 then SCREENING and otherwise TREATMENT</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="LB.LB.LBDTC"></a>LBDTC</td>
+<td>Date/Time of Specimen Collection</td>
+<td class="datatype">date</td>
+<td class="role">Timing</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">eDT</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="LB.LB.LBDY"></a>LBDY</td>
+<td>Study Day of Specimen Collection</td>
+<td class="datatype">integer</td>
+<td class="role">Timing</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.XP"></a><div class="containerbox">
+<h1 class="invisible">Pain Scores (XP) </h1>
+<table summary="ItemGroup IG.XP">
+<caption><span>XP (Pain Scores) - Findings <span class="dataset">Location: <a class="external" href="xp.xpt">xp.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="XP.XP.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="XP.XP.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="XP.XP.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">25</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="XP.XP.XPSEQ"></a>XPSEQ</td>
+<td>Sequence Number</td>
+<td class="datatype">integer</td>
+<td class="role">Identifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Unique sequence based on sort order of studyid usubjid xptestcd visitnum</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="XP.XP.XPTESTCD"></a>XPTESTCD</td>
+<td>Pain Test Short Name</td>
+<td class="datatype">text</td>
+<td class="role">Topic</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Set to XPAIN</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="XP.XP.XPTEST"></a>XPTEST</td>
+<td>Pain Test Name</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Set to Pain Score</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="XP.XP.XPORRES"></a>XPORRES</td>
+<td>Result or Finding in Original Units</td>
+<td class="datatype">text</td>
+<td class="role">Result Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">CRF Page 5</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="XP.XP.XPSTRESC"></a>XPSTRESC</td>
+<td>Character Result/Finding in Std Format</td>
+<td class="datatype">text</td>
+<td class="role">Result Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">CRF Page 5</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="XP.XP.XPSTRESN"></a>XPSTRESN</td>
+<td>Numeric Result/Finding in Std Format</td>
+<td class="datatype">integer</td>
+<td class="role">Result Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">CRF Page 5</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="XP.XP.EPOCH"></a>EPOCH</td>
+<td>Epoch</td>
+<td class="datatype">text</td>
+<td class="role">Timing</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcoded to TREATMENT</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="XP.XP.VISITNUM"></a>VISITNUM</td>
+<td>Visit Number</td>
+<td class="datatype">integer</td>
+<td class="role">Timing</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="XP.XP.VISIT"></a>VISIT</td>
+<td>Visit Name</td>
+<td class="datatype">text</td>
+<td class="role">Timing</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">CRF Page 5</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="XP.XP.XPBLFL"></a>XPBLFL</td>
+<td>Baseline Flag</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If visit=Baseline then Y, else blank</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="XP.XP.XPDTC"></a>XPDTC</td>
+<td>Date/Time of  Collection</td>
+<td class="datatype">date</td>
+<td class="role">Timing</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">CRF Page 5</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="XP.XP.XPDY"></a>XPDY</td>
+<td>Study Day of  Collection</td>
+<td class="datatype">integer</td>
+<td class="role">Timing</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.TA"></a><div class="containerbox">
+<h1 class="invisible">Trial Arms (TA) </h1>
+<table summary="ItemGroup IG.TA">
+<caption><span>TA (Trial Arms) - Trial Design <span class="dataset">Location: <a class="external" href="ta.xpt">ta.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TA.TA.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TA.TA.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TA.TA.ARMCD"></a>ARMCD</td>
+<td>Planned Arm Code</td>
+<td class="datatype">text</td>
+<td class="role">Topic</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TA.TA.ARM"></a>ARM</td>
+<td>Description of Planned Arm</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TA.TA.TAETORD"></a>TAETORD</td>
+<td>Planned Order of Element within Arm</td>
+<td class="datatype">integer</td>
+<td class="role">Identifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TA.TA.ETCD"></a>ETCD</td>
+<td>Element Code</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TA.TA.ELEMENT"></a>ELEMENT</td>
+<td>Description of Element</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TA.TA.TABRANCH"></a>TABRANCH</td>
+<td>Branch</td>
+<td class="datatype">text</td>
+<td class="role">Rule</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TA.TA.TATRANS"></a>TATRANS</td>
+<td>Transition Rule</td>
+<td class="datatype">text</td>
+<td class="role">Rule</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TA.TA.EPOCH"></a>EPOCH</td>
+<td>Epoch</td>
+<td class="datatype">text</td>
+<td class="role">Timing</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.TD"></a><div class="containerbox">
+<h1 class="invisible">Trial Disease Assessments (TD) </h1>
+<table summary="ItemGroup IG.TD">
+<caption><span>TD (Trial Disease Assessments) - Trial Design <span class="dataset">Location: <a class="external" href="td.xpt">td.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TD.TD.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TD.TD.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TD.TD.TDORDER"></a>TDORDER</td>
+<td>Sequence of Planned Assessment Schedule</td>
+<td class="datatype">integer</td>
+<td class="role">Timing</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TD.TD.TDANCVAR"></a>TDANCVAR</td>
+<td>Anchor Variable Name</td>
+<td class="datatype">text</td>
+<td class="role">Timing</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TD.TD.TDSTOFF"></a>TDSTOFF</td>
+<td>Offset from the Anchor</td>
+<td class="datatype">date</td>
+<td class="role">Timing</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TD.TD.TDTGTPAI"></a>TDTGTPAI</td>
+<td>Planned Assessment Interval</td>
+<td class="datatype">date</td>
+<td class="role">Timing</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TD.TD.TDMINPAI"></a>TDMINPAI</td>
+<td>Planned Assessment Interval Minimum</td>
+<td class="datatype">date</td>
+<td class="role">Timing</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TD.TD.TDMAXPAI"></a>TDMAXPAI</td>
+<td>Planned Assessment Interval Maximum</td>
+<td class="datatype">date</td>
+<td class="role">Timing</td>
+<td class="number">16</td>
+<td>ISO 8601</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TD.TD.TDNUMRPT"></a>TDNUMRPT</td>
+<td>Maximum Number of Actual Assessments</td>
+<td class="datatype">integer</td>
+<td class="role">Record Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.TE"></a><div class="containerbox">
+<h1 class="invisible">Trial Elements (TE) </h1>
+<table summary="ItemGroup IG.TE">
+<caption><span>TE (Trial Elements) - Trial Design <span class="dataset">Location: <a class="external" href="te.xpt">te.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TE.TE.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TE.TE.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TE.TE.ETCD"></a>ETCD</td>
+<td>Element Code</td>
+<td class="datatype">text</td>
+<td class="role">Topic</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TE.TE.ELEMENT"></a>ELEMENT</td>
+<td>Description of Element</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TE.TE.TESTRL"></a>TESTRL</td>
+<td>Rule for Start of Element</td>
+<td class="datatype">text</td>
+<td class="role">Rule</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TE.TE.TEENRL"></a>TEENRL</td>
+<td>Rule for End of Element</td>
+<td class="datatype">text</td>
+<td class="role">Rule</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TE.TE.TEDUR"></a>TEDUR</td>
+<td>Planned Duration of Element</td>
+<td class="datatype">text</td>
+<td class="role">Timing</td>
+<td class="number">64</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.TI"></a><div class="containerbox">
+<h1 class="invisible">Trial Inclusion/Exclusion Criteria (TI) </h1>
+<table summary="ItemGroup IG.TI">
+<caption><span>TI (Trial Inclusion/Exclusion Criteria) - Trial Design <span class="dataset">Location: <a class="external" href="ti.xpt">ti.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TI.TI.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TI.TI.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TI.TI.IETESTCD"></a>IETESTCD</td>
+<td>Inclusion/Exclusion Criterion Short Name</td>
+<td class="datatype">text</td>
+<td class="role">Topic</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TI.TI.IETEST"></a>IETEST</td>
+<td>Inclusion/Exclusion Criterion</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TI.TI.IECAT"></a>IECAT</td>
+<td>Inclusion/Exclusion Category</td>
+<td class="datatype">text</td>
+<td class="role">Grouping Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.TS"></a><div class="containerbox">
+<h1 class="invisible">Trial Summary (TS) </h1>
+<table summary="ItemGroup IG.TS">
+<caption><span>TS (Trial Summary) - Trial Design <span class="dataset">Location: <a class="external" href="ts.xpt">ts.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TS.TS.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TS.TS.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TS.TS.TSSEQ"></a>TSSEQ</td>
+<td>Sequence Number</td>
+<td class="datatype">integer</td>
+<td class="role">Identifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TS.TS.TSPARMCD"></a>TSPARMCD</td>
+<td>Trial Summary Parameter Short Name</td>
+<td class="datatype">text</td>
+<td class="role">Topic</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TS.TS.TSPARM"></a>TSPARM</td>
+<td>Trial Summary Parameter</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TS.TS.TSVAL"></a>TSVAL</td>
+<td>Parameter Value</td>
+<td class="datatype">text</td>
+<td class="role">Result Qualifier</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TS.TS.TSVALCD"></a>TSVALCD</td>
+<td>Parameter Value Code</td>
+<td class="datatype">text</td>
+<td class="role">Result Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TS.TS.TSVCDREF"></a>TSVCDREF</td>
+<td>Name of the Reference Terminology</td>
+<td class="datatype">text</td>
+<td class="role">Result Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TS.TS.TSVCDVER"></a>TSVCDVER</td>
+<td>Version of the Reference Terminology</td>
+<td class="datatype">text</td>
+<td class="role">Result Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.TV"></a><div class="containerbox">
+<h1 class="invisible">Trial Visits (TV) </h1>
+<table summary="ItemGroup IG.TV">
+<caption><span>TV (Trial Visits) - Trial Design <span class="dataset">Location: <a class="external" href="tv.xpt">tv.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TV.TV.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TV.TV.DOMAIN"></a>DOMAIN</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">Identifier</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TV.TV.VISITNUM"></a>VISITNUM</td>
+<td>Visit Number</td>
+<td class="datatype">integer</td>
+<td class="role">Topic</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TV.TV.VISIT"></a>VISIT</td>
+<td>Visit Name</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TV.TV.ARMCD"></a>ARMCD</td>
+<td>Planned Arm Code</td>
+<td class="datatype">text</td>
+<td class="role">Record Qualifier</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TV.TV.ARM"></a>ARM</td>
+<td>Description of Planned Arm</td>
+<td class="datatype">text</td>
+<td class="role">Synonym Qualifier</td>
+<td class="number">40</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="TV.TV.TVSTRL"></a>TVSTRL</td>
+<td>Visit Start Rule</td>
+<td class="datatype">text</td>
+<td class="role">Rule</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="TV.TV.TVENRL"></a>TVENRL</td>
+<td>Visit End Rule</td>
+<td class="datatype">text</td>
+<td class="role">Rule</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">This variable consists of study level metadata that was manually entered</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.SUPPDM"></a><div class="containerbox">
+<h1 class="invisible">DM - Supplemental Qualifiers (SUPPDM) </h1>
+<table summary="ItemGroup IG.SUPPDM">
+<caption><span>SUPPDM (DM - Supplemental Qualifiers) - Relationship <span class="dataset">Location: <a class="external" href="suppdm.xpt">suppdm.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr><td colspan="8">Related Parent Dataset: <a href="#IG.DM">DM</a> (Demographics)</td></tr>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col">Role</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="SUPPDM.SUPPDM.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="role">NA</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="SUPPDM.SUPPDM.RDOMAIN"></a>RDOMAIN</td>
+<td>Related Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="role">NA</td>
+<td class="number">2</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Hardcode to the name of the SDTM domain</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="SUPPDM.SUPPDM.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">text</td>
+<td class="role">NA</td>
+<td class="number">25</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="SUPPDM.SUPPDM.IDVAR"></a>IDVAR</td>
+<td>Identifying Variable</td>
+<td class="datatype">text</td>
+<td class="role">NA</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="SUPPDM.SUPPDM.IDVARVAL"></a>IDVARVAL</td>
+<td>Identifying Variable Value</td>
+<td class="datatype">text</td>
+<td class="role">NA</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="SUPPDM.SUPPDM.QNAM"></a>QNAM</td>
+<td>Qualifier Variable Name</td>
+<td class="datatype">text</td>
+<td class="role">NA</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="SUPPDM.SUPPDM.QLABEL"></a>QLABEL</td>
+<td>Qualifier Variable Label</td>
+<td class="datatype">text</td>
+<td class="role">NA</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="SUPPDM.SUPPDM.QVAL"></a>QVAL</td>
+<td>Data Value</td>
+<td class="datatype">text</td>
+<td class="role">NA</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell"></div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="SUPPDM.SUPPDM.QORIG"></a>QORIG</td>
+<td>Origin</td>
+<td class="datatype">text</td>
+<td class="role">NA</td>
+<td class="number">20</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Set to null</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="SUPPDM.SUPPDM.QEVAL"></a>QEVAL</td>
+<td>Evaluator</td>
+<td class="datatype">text</td>
+<td class="role">NA</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Set to null</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="decodelist"></a><div class="containerbox">
+<h1 class="header">CodeLists</h1>
+<div class="codelist" id="CL.CodeList.ACN">
+<div class="codelist-caption">ACN</div>
+<table summary="Controlled Term - ACN">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>DOSE INCREASED</td>
+<td class="codelist-item-decode">DOSE INCREASED</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>DOSE NOT CHANGED</td>
+<td class="codelist-item-decode">DOSE NOT CHANGED</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>DOSE REDUCED</td>
+<td class="codelist-item-decode">DOSE REDUCED</td>
+<td>3</td>
+</tr>
+<tr class="tableroweven">
+<td>DRUG INTERRUPTED</td>
+<td class="codelist-item-decode">DRUG INTERRUPTED</td>
+<td>4</td>
+</tr>
+<tr class="tablerowodd">
+<td>DRUG WITHDRAWN</td>
+<td class="codelist-item-decode">DRUG WITHDRAWN</td>
+<td>5</td>
+</tr>
+<tr class="tableroweven">
+<td>NOT APPLICABLE</td>
+<td class="codelist-item-decode">NA</td>
+<td>6</td>
+</tr>
+<tr class="tablerowodd">
+<td>UNKNOWN</td>
+<td class="codelist-item-decode">U; Unknown</td>
+<td>7</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.AEREL">
+<div class="codelist-caption">AEREL</div>
+<table summary="Controlled Term - AEREL">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>NOT RELATED</td>
+<td class="codelist-item-decode">NOT RELATED</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>POSSIBLY RELATED</td>
+<td class="codelist-item-decode">POSSIBLY RELATED</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>PROBABLY RELATED</td>
+<td class="codelist-item-decode">PROBABLY RELATED</td>
+<td>3</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.AESEV">
+<div class="codelist-caption">AESEV</div>
+<table summary="Controlled Term - AESEV">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>MILD</td>
+<td class="codelist-item-decode">Grade 1; 1</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>MODERATE</td>
+<td class="codelist-item-decode">Grade 2; 2</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>SEVERE</td>
+<td class="codelist-item-decode">Grade 3; 3</td>
+<td>3</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.AGEU">
+<div class="codelist-caption">AGEU</div>
+<table summary="Controlled Term - AGEU">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>YEARS</td>
+<td class="codelist-item-decode">YEARS</td>
+<td>1</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.ARM">
+<div class="codelist-caption">ARM</div>
+<table summary="Controlled Term - ARM">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>Analgezia HCL 30 mg</td>
+<td class="codelist-item-decode">Analgezia HCL 30 mg</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>Placebo</td>
+<td class="codelist-item-decode">Placebo</td>
+<td>2</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.ARMCD">
+<div class="codelist-caption">ARMCD</div>
+<table summary="Controlled Term - ARMCD">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>ALG123</td>
+<td class="codelist-item-decode">Analgezia HCL 30 mg</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>PLACEBO</td>
+<td class="codelist-item-decode">Placebo</td>
+<td>2</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.COUNTRY">
+<div class="codelist-caption">COUNTRY</div>
+<table summary="Controlled Term - COUNTRY">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>USA</td>
+<td class="codelist-item-decode">UNITED STATES</td>
+<td>1</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.EPOCH">
+<div class="codelist-caption">EPOCH</div>
+<table summary="Controlled Term - EPOCH">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>SCREENING</td>
+<td class="codelist-item-decode">SCREENING</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>TREATMENT</td>
+<td class="codelist-item-decode">TREATMENT</td>
+<td>2</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.FRM">
+<div class="codelist-caption">FRM</div>
+<table summary="Controlled Term - FRM">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>TABLET, COATED</td>
+<td class="codelist-item-decode">TABLET, COATED</td>
+<td>1</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.IECAT">
+<div class="codelist-caption">IECAT</div>
+<table summary="Controlled Term - IECAT">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>INCLUSION</td>
+<td class="codelist-item-decode">INCLUSION</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>EXCLUSION</td>
+<td class="codelist-item-decode">EXCLUSION</td>
+<td>2</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.LBCAT">
+<div class="codelist-caption">LBCAT</div>
+<table summary="Controlled Term - LBCAT">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>CHEMISTRY</td>
+<td class="codelist-item-decode">CHEMISTRY</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>HEMATOLOGY</td>
+<td class="codelist-item-decode">HEMATOLOGY</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>URINALYSIS</td>
+<td class="codelist-item-decode">URINALYSIS</td>
+<td>3</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.LBNRIND">
+<div class="codelist-caption">LBNRIND</div>
+<table summary="Controlled Term - LBNRIND">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>HIGH</td>
+<td class="codelist-item-decode">HIGH</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>LOW</td>
+<td class="codelist-item-decode">LOW</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>NORMAL</td>
+<td class="codelist-item-decode">NORMAL</td>
+<td>3</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.LBTEST">
+<div class="codelist-caption">LBTEST</div>
+<table summary="Controlled Term - LBTEST">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>Albumin; Microalbumin</td>
+<td class="codelist-item-decode">Albumin; Microalbumin</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>Alkaline Phosphatase</td>
+<td class="codelist-item-decode">Alkaline Phosphatase</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>Alanine Aminotransferase; SGPT</td>
+<td class="codelist-item-decode">Alanine Aminotransferase; SGPT</td>
+<td>3</td>
+</tr>
+<tr class="tableroweven">
+<td>Aspartate Aminotransferase; SGOT</td>
+<td class="codelist-item-decode">Aspartate Aminotransferase; SGOT</td>
+<td>4</td>
+</tr>
+<tr class="tablerowodd">
+<td>Direct Bilirubin</td>
+<td class="codelist-item-decode">Direct Bilirubin</td>
+<td>5</td>
+</tr>
+<tr class="tableroweven">
+<td>Bilirubin; Total Bilirubin</td>
+<td class="codelist-item-decode">Bilirubin; Total Bilirubin</td>
+<td>6</td>
+</tr>
+<tr class="tablerowodd">
+<td>Gamma Glutamyl Transferase</td>
+<td class="codelist-item-decode">Gamma Glutamyl Transferase</td>
+<td>7</td>
+</tr>
+<tr class="tableroweven">
+<td>EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</td>
+<td class="codelist-item-decode">EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</td>
+<td>8</td>
+</tr>
+<tr class="tablerowodd">
+<td>FHGB; Free Hemoglobin; Hemoglobin</td>
+<td class="codelist-item-decode">FHGB; Free Hemoglobin; Hemoglobin</td>
+<td>9</td>
+</tr>
+<tr class="tableroweven">
+<td>Protein</td>
+<td class="codelist-item-decode">Protein</td>
+<td>10</td>
+</tr>
+<tr class="tablerowodd">
+<td>Glucose</td>
+<td class="codelist-item-decode">Glucose</td>
+<td>11</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.LBTESTCD">
+<div class="codelist-caption">LBTESTCD</div>
+<table summary="Controlled Term - LBTESTCD">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>ALB</td>
+<td class="codelist-item-decode">Albumin; Microalbumin</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>ALP</td>
+<td class="codelist-item-decode">Alkaline Phosphatase</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>ALT</td>
+<td class="codelist-item-decode">Alanine Aminotransferase; SGPT</td>
+<td>3</td>
+</tr>
+<tr class="tableroweven">
+<td>AST</td>
+<td class="codelist-item-decode">Aspartate Aminotransferase; SGOT</td>
+<td>4</td>
+</tr>
+<tr class="tablerowodd">
+<td>BILDIR</td>
+<td class="codelist-item-decode">Direct Bilirubin</td>
+<td>5</td>
+</tr>
+<tr class="tableroweven">
+<td>BILI</td>
+<td class="codelist-item-decode">Bilirubin; Total Bilirubin</td>
+<td>6</td>
+</tr>
+<tr class="tablerowodd">
+<td>GGT</td>
+<td class="codelist-item-decode">Gamma Glutamyl Transferase</td>
+<td>7</td>
+</tr>
+<tr class="tableroweven">
+<td>HCT</td>
+<td class="codelist-item-decode">EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</td>
+<td>8</td>
+</tr>
+<tr class="tablerowodd">
+<td>HGB</td>
+<td class="codelist-item-decode">FHGB; Free Hemoglobin; Hemoglobin</td>
+<td>9</td>
+</tr>
+<tr class="tableroweven">
+<td>PROT</td>
+<td class="codelist-item-decode">Protein</td>
+<td>10</td>
+</tr>
+<tr class="tablerowodd">
+<td>GLUC</td>
+<td class="codelist-item-decode">Glucose</td>
+<td>11</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.NY">
+<div class="codelist-caption">NY</div>
+<table summary="Controlled Term - NY">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>N</td>
+<td class="codelist-item-decode">No</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>NA</td>
+<td class="codelist-item-decode">NA; Not Applicable</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>U</td>
+<td class="codelist-item-decode">U; UNK; Unknown</td>
+<td>3</td>
+</tr>
+<tr class="tableroweven">
+<td>Y</td>
+<td class="codelist-item-decode">Yes</td>
+<td>4</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.RACE">
+<div class="codelist-caption">RACE</div>
+<table summary="Controlled Term - RACE">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>BLACK OR AFRICAN AMERICAN</td>
+<td class="codelist-item-decode">BLACK OR AFRICAN AMERICAN</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>ASIAN</td>
+<td class="codelist-item-decode">ASIAN</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>WHITE</td>
+<td class="codelist-item-decode">WHITE</td>
+<td>3</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.SEX">
+<div class="codelist-caption">SEX</div>
+<table summary="Controlled Term - SEX">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>F</td>
+<td class="codelist-item-decode">Female</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>M</td>
+<td class="codelist-item-decode">Male</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>U</td>
+<td class="codelist-item-decode">U; UNK; Unknown</td>
+<td>3</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.TSPARM">
+<div class="codelist-caption">TSPARM</div>
+<table summary="Controlled Term - TSPARM">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>Added on to Existing Treatments</td>
+<td class="codelist-item-decode">Added on to Existing Treatments</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>Planned Maximum Age of Subjects</td>
+<td class="codelist-item-decode">Planned Maximum Age of Subjects</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>Planned Minimum Age of Subjects</td>
+<td class="codelist-item-decode">Planned Minimum Age of Subjects</td>
+<td>3</td>
+</tr>
+<tr class="tableroweven">
+<td>Planned Trial Length</td>
+<td class="codelist-item-decode">Planned Trial Length</td>
+<td>4</td>
+</tr>
+<tr class="tablerowodd">
+<td>Planned Number of Subjects</td>
+<td class="codelist-item-decode">Planned Number of Subjects</td>
+<td>5</td>
+</tr>
+<tr class="tableroweven">
+<td>Trial is Randomized</td>
+<td class="codelist-item-decode">Trial is Randomized</td>
+<td>6</td>
+</tr>
+<tr class="tablerowodd">
+<td>Sex of Participants</td>
+<td class="codelist-item-decode">Sex of Participants</td>
+<td>7</td>
+</tr>
+<tr class="tableroweven">
+<td>Study Stop Rules</td>
+<td class="codelist-item-decode">Study Stop Rules</td>
+<td>8</td>
+</tr>
+<tr class="tablerowodd">
+<td>Trial Blinding Schema</td>
+<td class="codelist-item-decode">Trial Blinding Schema</td>
+<td>9</td>
+</tr>
+<tr class="tableroweven">
+<td>Control Type</td>
+<td class="codelist-item-decode">Control Type</td>
+<td>10</td>
+</tr>
+<tr class="tablerowodd">
+<td>Diagnosis Group</td>
+<td class="codelist-item-decode">Diagnosis Group</td>
+<td>11</td>
+</tr>
+<tr class="tableroweven">
+<td>Trial Indication Type</td>
+<td class="codelist-item-decode">Trial Indication Type</td>
+<td>12</td>
+</tr>
+<tr class="tablerowodd">
+<td>Trial Title</td>
+<td class="codelist-item-decode">Trial Title</td>
+<td>13</td>
+</tr>
+<tr class="tableroweven">
+<td>Trial Phase Classification</td>
+<td class="codelist-item-decode">Trial Phase Classification</td>
+<td>14</td>
+</tr>
+<tr class="tablerowodd">
+<td>Trial Type</td>
+<td class="codelist-item-decode">Trial Type</td>
+<td>15</td>
+</tr>
+<tr class="tableroweven">
+<td>Current Therapy or Treatment</td>
+<td class="codelist-item-decode">Current Therapy or Treatment</td>
+<td>16</td>
+</tr>
+<tr class="tablerowodd">
+<td>Trial Primary Objective</td>
+<td class="codelist-item-decode">Trial Primary Objective</td>
+<td>17</td>
+</tr>
+<tr class="tableroweven">
+<td>Trial Secondary Objective</td>
+<td class="codelist-item-decode">Trial Secondary Objective</td>
+<td>18</td>
+</tr>
+<tr class="tablerowodd">
+<td>Clinical Study Sponsor</td>
+<td class="codelist-item-decode">Clinical Study Sponsor</td>
+<td>19</td>
+</tr>
+<tr class="tableroweven">
+<td>Trial Indication</td>
+<td class="codelist-item-decode">Trial Indication</td>
+<td>20</td>
+</tr>
+<tr class="tablerowodd">
+<td>Investigational Therapy or Treatment</td>
+<td class="codelist-item-decode">Investigational Therapy or Treatment</td>
+<td>21</td>
+</tr>
+<tr class="tableroweven">
+<td>Randomization Quotient</td>
+<td class="codelist-item-decode">Randomization Quotient</td>
+<td>22</td>
+</tr>
+<tr class="tablerowodd">
+<td>Registry Identifier</td>
+<td class="codelist-item-decode">Registry Identifier</td>
+<td>23</td>
+</tr>
+<tr class="tableroweven">
+<td>Primary Outcome Measure</td>
+<td class="codelist-item-decode">Primary Outcome Measure</td>
+<td>24</td>
+</tr>
+<tr class="tablerowodd">
+<td>Secondary Outcome Measure</td>
+<td class="codelist-item-decode">Secondary Outcome Measure</td>
+<td>25</td>
+</tr>
+<tr class="tableroweven">
+<td>Exploratory Outcome Measure</td>
+<td class="codelist-item-decode">Exploratory Outcome Measure</td>
+<td>26</td>
+</tr>
+<tr class="tablerowodd">
+<td>Pharmacological Class of Investigational Therapy</td>
+<td class="codelist-item-decode">Pharmacological Class of Investigational Therapy</td>
+<td>27</td>
+</tr>
+<tr class="tableroweven">
+<td>Planned Country of Investigational Site(s)</td>
+<td class="codelist-item-decode">Planned Country of Investigational Site(s)</td>
+<td>28</td>
+</tr>
+<tr class="tablerowodd">
+<td>Adaptive Design</td>
+<td class="codelist-item-decode">Adaptive Design</td>
+<td>29</td>
+</tr>
+<tr class="tableroweven">
+<td>Data Cutoff Date</td>
+<td class="codelist-item-decode">Data Cutoff Date</td>
+<td>30</td>
+</tr>
+<tr class="tablerowodd">
+<td>Data Cutoff Description</td>
+<td class="codelist-item-decode">Data Cutoff Description</td>
+<td>31</td>
+</tr>
+<tr class="tableroweven">
+<td>Intervention Model</td>
+<td class="codelist-item-decode">Intervention Model</td>
+<td>32</td>
+</tr>
+<tr class="tablerowodd">
+<td>Planned Number of Arms</td>
+<td class="codelist-item-decode">Planned Number of Arms</td>
+<td>33</td>
+</tr>
+<tr class="tableroweven">
+<td>Study Type</td>
+<td class="codelist-item-decode">Study Type</td>
+<td>34</td>
+</tr>
+<tr class="tablerowodd">
+<td>Intervention Type</td>
+<td class="codelist-item-decode">Intervention Type</td>
+<td>35</td>
+</tr>
+<tr class="tableroweven">
+<td>Study Start Date</td>
+<td class="codelist-item-decode">Study Start Date</td>
+<td>36</td>
+</tr>
+<tr class="tablerowodd">
+<td>Study End Date</td>
+<td class="codelist-item-decode">Study End Date</td>
+<td>37</td>
+</tr>
+<tr class="tableroweven">
+<td>Actual Number of Subjects</td>
+<td class="codelist-item-decode">Actual Number of Subjects</td>
+<td>38</td>
+</tr>
+<tr class="tablerowodd">
+<td>Healthy Subject</td>
+<td class="codelist-item-decode">Healthy Subject</td>
+<td>39</td>
+</tr>
+<tr class="tableroweven">
+<td>Stable Disease Minimum Duration</td>
+<td class="codelist-item-decode">Stable Disease Minimum Duration</td>
+<td>40</td>
+</tr>
+<tr class="tablerowodd">
+<td>Confirmed Response Minimum Duration</td>
+<td class="codelist-item-decode">Confirmed Response Minimum Duration</td>
+<td>41</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.TSPARMCD">
+<div class="codelist-caption">TSPARMCD</div>
+<table summary="Controlled Term - TSPARMCD">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>ADDON</td>
+<td class="codelist-item-decode">Added on to Existing Treatments</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>AGEMAX</td>
+<td class="codelist-item-decode">Planned Maximum Age of Subjects</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>AGEMIN</td>
+<td class="codelist-item-decode">Planned Minimum Age of Subjects</td>
+<td>3</td>
+</tr>
+<tr class="tableroweven">
+<td>LENGTH</td>
+<td class="codelist-item-decode">Planned Trial Length</td>
+<td>4</td>
+</tr>
+<tr class="tablerowodd">
+<td>PLANSUB</td>
+<td class="codelist-item-decode">Planned Number of Subjects</td>
+<td>5</td>
+</tr>
+<tr class="tableroweven">
+<td>RANDOM</td>
+<td class="codelist-item-decode">Trial is Randomized</td>
+<td>6</td>
+</tr>
+<tr class="tablerowodd">
+<td>SEXPOP</td>
+<td class="codelist-item-decode">Sex of Participants</td>
+<td>7</td>
+</tr>
+<tr class="tableroweven">
+<td>STOPRULE</td>
+<td class="codelist-item-decode">Study Stop Rules</td>
+<td>8</td>
+</tr>
+<tr class="tablerowodd">
+<td>TBLIND</td>
+<td class="codelist-item-decode">Trial Blinding Schema</td>
+<td>9</td>
+</tr>
+<tr class="tableroweven">
+<td>TCNTRL</td>
+<td class="codelist-item-decode">Control Type</td>
+<td>10</td>
+</tr>
+<tr class="tablerowodd">
+<td>TDIGRP</td>
+<td class="codelist-item-decode">Diagnosis Group</td>
+<td>11</td>
+</tr>
+<tr class="tableroweven">
+<td>TINDTP</td>
+<td class="codelist-item-decode">Trial Indication Type</td>
+<td>12</td>
+</tr>
+<tr class="tablerowodd">
+<td>TITLE</td>
+<td class="codelist-item-decode">Trial Title</td>
+<td>13</td>
+</tr>
+<tr class="tableroweven">
+<td>TPHASE</td>
+<td class="codelist-item-decode">Trial Phase Classification</td>
+<td>14</td>
+</tr>
+<tr class="tablerowodd">
+<td>TTYPE</td>
+<td class="codelist-item-decode">Trial Type</td>
+<td>15</td>
+</tr>
+<tr class="tableroweven">
+<td>CURTRT</td>
+<td class="codelist-item-decode">Current Therapy or Treatment</td>
+<td>16</td>
+</tr>
+<tr class="tablerowodd">
+<td>OBJPRIM</td>
+<td class="codelist-item-decode">Trial Primary Objective</td>
+<td>17</td>
+</tr>
+<tr class="tableroweven">
+<td>OBJSEC</td>
+<td class="codelist-item-decode">Trial Secondary Objective</td>
+<td>18</td>
+</tr>
+<tr class="tablerowodd">
+<td>SPONSOR</td>
+<td class="codelist-item-decode">Clinical Study Sponsor</td>
+<td>19</td>
+</tr>
+<tr class="tableroweven">
+<td>INDIC</td>
+<td class="codelist-item-decode">Trial Indication</td>
+<td>20</td>
+</tr>
+<tr class="tablerowodd">
+<td>TRT</td>
+<td class="codelist-item-decode">Investigational Therapy or Treatment</td>
+<td>21</td>
+</tr>
+<tr class="tableroweven">
+<td>RANDQT</td>
+<td class="codelist-item-decode">Randomization Quotient</td>
+<td>22</td>
+</tr>
+<tr class="tablerowodd">
+<td>REGID</td>
+<td class="codelist-item-decode">Registry Identifier</td>
+<td>23</td>
+</tr>
+<tr class="tableroweven">
+<td>OUTMSPRI</td>
+<td class="codelist-item-decode">Primary Outcome Measure</td>
+<td>24</td>
+</tr>
+<tr class="tablerowodd">
+<td>OUTMSSEC</td>
+<td class="codelist-item-decode">Secondary Outcome Measure</td>
+<td>25</td>
+</tr>
+<tr class="tableroweven">
+<td>OUTMSEXP</td>
+<td class="codelist-item-decode">Exploratory Outcome Measure</td>
+<td>26</td>
+</tr>
+<tr class="tablerowodd">
+<td>PCLAS</td>
+<td class="codelist-item-decode">Pharmacological Class of Investigational Therapy</td>
+<td>27</td>
+</tr>
+<tr class="tableroweven">
+<td>FCNTRY</td>
+<td class="codelist-item-decode">Planned Country of Investigational Site(s)</td>
+<td>28</td>
+</tr>
+<tr class="tablerowodd">
+<td>ADAPT</td>
+<td class="codelist-item-decode">Adaptive Design</td>
+<td>29</td>
+</tr>
+<tr class="tableroweven">
+<td>DCUTDTC</td>
+<td class="codelist-item-decode">Data Cutoff Date</td>
+<td>30</td>
+</tr>
+<tr class="tablerowodd">
+<td>DCUTDESC</td>
+<td class="codelist-item-decode">Data Cutoff Description</td>
+<td>31</td>
+</tr>
+<tr class="tableroweven">
+<td>INTMODEL</td>
+<td class="codelist-item-decode">Intervention Model</td>
+<td>32</td>
+</tr>
+<tr class="tablerowodd">
+<td>NARMS</td>
+<td class="codelist-item-decode">Planned Number of Arms</td>
+<td>33</td>
+</tr>
+<tr class="tableroweven">
+<td>STYPE</td>
+<td class="codelist-item-decode">Study Type</td>
+<td>34</td>
+</tr>
+<tr class="tablerowodd">
+<td>INTTYPE</td>
+<td class="codelist-item-decode">Intervention Type</td>
+<td>35</td>
+</tr>
+<tr class="tableroweven">
+<td>SSTDTC</td>
+<td class="codelist-item-decode">Study Start Date</td>
+<td>36</td>
+</tr>
+<tr class="tablerowodd">
+<td>SENDTC</td>
+<td class="codelist-item-decode">Study End Date</td>
+<td>37</td>
+</tr>
+<tr class="tableroweven">
+<td>ACTSUB</td>
+<td class="codelist-item-decode">Actual Number of Subjects</td>
+<td>38</td>
+</tr>
+<tr class="tablerowodd">
+<td>HLTSUBJI</td>
+<td class="codelist-item-decode">Healthy Subject</td>
+<td>39</td>
+</tr>
+<tr class="tableroweven">
+<td>SDMDUR</td>
+<td class="codelist-item-decode">Stable Disease Minimum Duration</td>
+<td>40</td>
+</tr>
+<tr class="tablerowodd">
+<td>CRMDUR</td>
+<td class="codelist-item-decode">Confirmed Response Minimum Duration</td>
+<td>41</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.UNIT">
+<div class="codelist-caption">UNIT</div>
+<table summary="Controlled Term - UNIT">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>%</td>
+<td class="codelist-item-decode">Percentage</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>g/dL</td>
+<td class="codelist-item-decode">Gram per Deciliter</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>IU/L</td>
+<td class="codelist-item-decode">International Unit per Liter</td>
+<td>3</td>
+</tr>
+<tr class="tableroweven">
+<td>mg/dL</td>
+<td class="codelist-item-decode">Milligram per Deciliter</td>
+<td>4</td>
+</tr>
+<tr class="tablerowodd">
+<td>mg</td>
+<td class="codelist-item-decode">Milligram</td>
+<td>5</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.URINGLUC">
+<div class="codelist-caption">URINGLUC</div>
+<table summary="Controlled Term - URINGLUC">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>NEGATIVE</td>
+<td class="codelist-item-decode">Negative</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>POSITIVE</td>
+<td class="codelist-item-decode">Positive</td>
+<td>2</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.VISIT">
+<div class="codelist-caption">VISIT</div>
+<table summary="Controlled Term - VISIT">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>Baseline</td>
+<td class="codelist-item-decode">Baseline</td>
+<td>1</td>
+</tr>
+<tr class="tableroweven">
+<td>Month 3</td>
+<td class="codelist-item-decode">Month 3</td>
+<td>2</td>
+</tr>
+<tr class="tablerowodd">
+<td>Month 6</td>
+<td class="codelist-item-decode">Month 6</td>
+<td>3</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.XPTEST">
+<div class="codelist-caption">XPTEST</div>
+<table summary="Controlled Term - XPTEST">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>Pain Score</td>
+<td class="codelist-item-decode">Pain Score</td>
+<td>1</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CodeList.XPTESTCD">
+<div class="codelist-caption">XPTESTCD</div>
+<table summary="Controlled Term - XPTESTCD">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+<th scope="col">Rank</th>
+</tr>
+<tr class="tablerowodd">
+<td>XPPAIN</td>
+<td class="codelist-item-decode">XPPAIN</td>
+<td>1</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br>
+</div>
+<a id="externaldictionary"></a><h1 class="invisible">External Dictionaries</h1>
+<div class="containerbox"><table summary="External Dictionaries (MedDra, WHODRUG, ...)">
+<caption class="header">External Dictionaries</caption>
+<tr class="header">
+<th scope="col">Reference Name</th>
+<th scope="col">External Dictionary</th>
+<th scope="col">Dictionary Version</th>
+</tr>
+<tr id="CL.CodeList.AEBODSYS" class="tablerowodd">
+<td>AEBODSYS</td>
+<td>MedDRA</td>
+<td>18.0</td>
+</tr>
+<tr id="CL.CodeList.AEDECOD" class="tableroweven">
+<td>AEDECOD</td>
+<td>MedDRA</td>
+<td>18.0</td>
+</tr>
+</table></div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="compmethod"></a><div class="containerbox">
+<h1 class="invisible">Methods</h1>
+<table summary="Methods">
+<caption class="header">Methods</caption>
+<tr class="header">
+<th scope="col">Method</th>
+<th scope="col">Type</th>
+<th scope="col">Description</th>
+</tr>
+<tr id="MT.SETDOMAIN" class="tablerowodd">
+<td>Hardcode to assign domain</td>
+<td>Computation</td>
+<td><div class="method-code">Hardcode to the name of the SDTM domain</div></td>
+</tr>
+<tr id="MT.STUDYDAYS" class="tableroweven">
+<td>--DY derivation</td>
+<td>Computation</td>
+<td><div class="method-code">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div></td>
+</tr>
+<tr id="MT.SETNULL" class="tablerowodd">
+<td>Null Value</td>
+<td>Computation</td>
+<td><div class="method-code">Set to null</div></td>
+</tr>
+<tr id="MT.AE.AESEQ" class="tableroweven">
+<td>AESEQ derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Unique sequence based on sort order of studyid usubjid aedecod aestdtc aeendtc</div></td>
+</tr>
+<tr id="MT.AE.EPOCH" class="tablerowodd">
+<td>EPOCH hardcode</td>
+<td>Computation</td>
+<td><div class="method-code">Hardcoded to TREATMENT</div></td>
+</tr>
+<tr id="MT.DM.RFENDTC" class="tableroweven">
+<td>RFENDTC derivation</td>
+<td>Computation</td>
+<td><div class="method-code">RFENDTC is the last date of dosing from the source dosing dataset</div></td>
+</tr>
+<tr id="MT.DM.DTHDTC" class="tablerowodd">
+<td>DTHDTC derivation</td>
+<td>Computation</td>
+<td><div class="method-code">DTHDTC is set to null as no subjects died</div></td>
+</tr>
+<tr id="MT.DM.DTHFL" class="tableroweven">
+<td>DTHFL derivation</td>
+<td>Computation</td>
+<td><div class="method-code">DTHFL='N' since no subjects died</div></td>
+</tr>
+<tr id="MT.DM.AGE" class="tablerowodd">
+<td>Algorithm to compute age</td>
+<td>Computation</td>
+<td><div class="method-code">integer value of (BRTHDTC - RFSTDTC)/365.25</div></td>
+</tr>
+<tr id="MT.DM.AGEU" class="tableroweven">
+<td>Age units hardcode</td>
+<td>Computation</td>
+<td><div class="method-code">Hardcoded to YEARS</div></td>
+</tr>
+<tr id="MT.DM.COUNTRY" class="tablerowodd">
+<td>Country hardcode</td>
+<td>Computation</td>
+<td><div class="method-code">Hardcoded to USA</div></td>
+</tr>
+<tr id="MT.EX.EXSEQ" class="tableroweven">
+<td>EXSEQ derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Unique sequence based on sort order of studyid usubjid extrt exstdtc</div></td>
+</tr>
+<tr id="MT.EX.EXTRT" class="tablerowodd">
+<td>EXTRT derivation</td>
+<td>Computation</td>
+<td><div class="method-code">All subjects were dosed with what they were randomized to, so EXTRT=DM.ARM</div></td>
+</tr>
+<tr id="MT.EX.EXDOSU" class="tableroweven">
+<td>EXDOSU hardcode</td>
+<td>Computation</td>
+<td><div class="method-code">Hardcoded to mg</div></td>
+</tr>
+<tr id="MT.EX.EXDOSFRM" class="tablerowodd">
+<td>EXDOSFRM hardcode</td>
+<td>Computation</td>
+<td><div class="method-code">Hardcoded to TABLET, COATED</div></td>
+</tr>
+<tr id="MT.EX.EPOCH" class="tableroweven">
+<td>EPOCH hardcode</td>
+<td>Computation</td>
+<td><div class="method-code">Hardcoded to TREATMENT</div></td>
+</tr>
+<tr id="MT.LB.LBSEQ" class="tablerowodd">
+<td>LBSEQ derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Unique sequence based on sort order of studyid usubjid lbcat lbtestcd visitnum</div></td>
+</tr>
+<tr id="MT.LB.LBTESTCD" class="tableroweven">
+<td>LBTESTCD derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Source labs.labtest variable mapped to LBTESTCD controlled terminology</div></td>
+</tr>
+<tr id="MT.LB.LBTEST" class="tablerowodd">
+<td>LBTEST derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Source labs.labtest variable mapped to LBTEST controlled terminology</div></td>
+</tr>
+<tr id="MT.LB.LBCAT" class="tableroweven">
+<td>LBCAT derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Source labs.labcat variable mapped to LBCAT controlled terminology</div></td>
+</tr>
+<tr id="MT.LB.LBSTRESC" class="tablerowodd">
+<td>LBSTRESC derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Copied directly (and unrealistically) from LBORRES</div></td>
+</tr>
+<tr id="MT.LB.LBSTRESN" class="tableroweven">
+<td>LBSTRESN derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Copied directly (and unrealistically) from LBORRES</div></td>
+</tr>
+<tr id="MT.LB.LBSTRESU" class="tablerowodd">
+<td>LBSTRESN derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Copied directly (and unrealistically) from LBORRESU</div></td>
+</tr>
+<tr id="MT.LB.LBSTNRLO" class="tableroweven">
+<td>LBSTNRLO derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Set equal to (and unrealistically) from the soucre labs.lownorm</div></td>
+</tr>
+<tr id="MT.LB.LBSTNRHI" class="tablerowodd">
+<td>LBSTNRHI derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Set equal to (and unrealistically) from the soucre labs.highnorm</div></td>
+</tr>
+<tr id="MT.LB.LBNRIND" class="tableroweven">
+<td>LBNRIND derivation</td>
+<td>Computation</td>
+<td><div class="method-code">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then   lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then   lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and              round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then          lbnrind = 'LOW';    else if lbstnrhi ne . and lbstresn ne . and             round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then      lbnrind = 'HIGH';    else if lbstnrhi ne . and lbstresn ne . then      lbnrind = 'NORMAL';</div></td>
+</tr>
+<tr id="MT.LB.LBBLFL" class="tablerowodd">
+<td>LBBLFL derivation</td>
+<td>Computation</td>
+<td><div class="method-code">If visit=Baseline then Y, else blank</div></td>
+</tr>
+<tr id="MT.LB.EPOCH" class="tableroweven">
+<td>EPOCH derivation</td>
+<td>Computation</td>
+<td><div class="method-code">If VISITNUM &lt; 0 then SCREENING and otherwise TREATMENT</div></td>
+</tr>
+<tr id="MT.METADATAENTRY" class="tablerowodd">
+<td>Manual entry</td>
+<td>Computation</td>
+<td><div class="method-code">This variable consists of study level metadata that was manually entered</div></td>
+</tr>
+<tr id="MT.XP.XPSEQ" class="tableroweven">
+<td>XPSEQ derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Unique sequence based on sort order of studyid usubjid xptestcd visitnum</div></td>
+</tr>
+<tr id="MT.XP.XPTESTCD" class="tablerowodd">
+<td>XPTESTCD hardcode</td>
+<td>Computation</td>
+<td><div class="method-code">Set to XPAIN</div></td>
+</tr>
+<tr id="MT.XP.XPTEST" class="tableroweven">
+<td>XPTEST hardcode</td>
+<td>Computation</td>
+<td><div class="method-code">Set to Pain Score</div></td>
+</tr>
+<tr id="MT.XP.EPOCH" class="tablerowodd">
+<td>EPOCH hardcode</td>
+<td>Computation</td>
+<td><div class="method-code">Hardcoded to TREATMENT</div></td>
+</tr>
+<tr id="MT.XP.XPBLFL" class="tableroweven">
+<td>XPBLFL derivation</td>
+<td>Computation</td>
+<td><div class="method-code">If visit=Baseline then Y, else blank</div></td>
+</tr>
+<tr id="MT.SUPPDM.RACEOTH" class="tablerowodd">
+<td>RACEOTH derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Set to other race from source demographics file</div></td>
+</tr>
+<tr id="MT.SUPPDM.RANDDT" class="tableroweven">
+<td>RANDDT derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Set equal to the randomization date from the source demographics file</div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br>
+</div>
+</body>
+</html>

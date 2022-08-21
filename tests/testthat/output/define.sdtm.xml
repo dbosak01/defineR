@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-08-21T08:33:23">
+  CreationDateTime="2022-08-21T08:33:40">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -120,7 +120,7 @@ Purpose="Tabulation"
 IsReferenceData="No"
 SASDatasetName="AE"
 def:Structure="Events - One record per event per subject"
-def:Class="NA"
+def:Class="Events"
 def:ArchiveLocationID="Location.AE">
 <Description>
   <TranslatedText xml:lang="en">Adverse Events</TranslatedText>
@@ -4123,9 +4123,9 @@ DataType="text">
     <TranslatedText>Study Type</TranslatedText>
   </Decode>
 </CodeListItem>
-<CodeListItem CodedValue="*failed to decode utf16*Intervention Type" Rank="35">
+<CodeListItem CodedValue="Intervention Type" Rank="35">
   <Decode>
-    <TranslatedText>*failed to decode utf16*Intervention Type</TranslatedText>
+    <TranslatedText>Intervention Type</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="Study Start Date" Rank="36">
@@ -4334,7 +4334,7 @@ DataType="text">
 </CodeListItem>
 <CodeListItem CodedValue="INTTYPE" Rank="35">
   <Decode>
-    <TranslatedText>*failed to decode utf16*Intervention Type</TranslatedText>
+    <TranslatedText>Intervention Type</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="SSTDTC" Rank="36">

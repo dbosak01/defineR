@@ -441,7 +441,7 @@ function reset_menus() {
 <span class="hmenu-bullet">+</span><a class="tocItem" href=""></a>
 </li>
 <li class="hmenu-submenu">
-<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#_Datasets_Table"> Datasets</a><ul>
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#Tabulation_Datasets_Table">Tabulation Datasets</a><ul>
 <li class="hmenu-item">
 <span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.AE">Adverse Events (AE)</a>
 </li>
@@ -491,6 +491,208 @@ function reset_menus() {
 </ul>
 </li>
 <li class="hmenu-submenu">
+<span onclick="toggle_submenu(this);" class="hmenu-bullet">+</span><a href="#decodelist" class="tocItem">Controlled Terminology</a><ul>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#decodelist">Controlled Terms</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.ACN">ACN</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.AEREL">AEREL</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.AESEV">AESEV</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.AGEU">AGEU</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.ARM">ARM</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.ARMCD">ARMCD</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.COUNTRY">COUNTRY</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.EPOCH">EPOCH</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.FRM">FRM</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.IECAT">IECAT</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.LBCAT">LBCAT</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.LBNRIND">LBNRIND</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.LBTEST">LBTEST</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.LBTESTCD">LBTESTCD</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.NY">NY</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.RACE">RACE</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.SEX">SEX</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.TSPARM">TSPARM</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.TSPARMCD">TSPARMCD</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.UNIT">UNIT</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.URINGLUC">URINGLUC</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.VISIT">VISIT</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.XPTEST">XPTEST</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.XPTESTCD">XPTESTCD</a>
+</li>
+</ul>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#externaldictionary">External Dictionaries</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.AEBODSYS">AEBODSYS</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CodeList.AEDECOD">AEDECOD</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#compmethod">Computational Algorithms</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.SETDOMAIN">Hardcode to assign domain</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.STUDYDAYS">--DY derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.SETNULL">Null Value</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.AE.AESEQ">AESEQ derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.AE.EPOCH">EPOCH hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.RFENDTC">RFENDTC derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.DTHDTC">DTHDTC derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.DTHFL">DTHFL derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.AGE">Algorithm to compute age</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.AGEU">Age units hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.DM.COUNTRY">Country hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.EX.EXSEQ">EXSEQ derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.EX.EXTRT">EXTRT derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.EX.EXDOSU">EXDOSU hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.EX.EXDOSFRM">EXDOSFRM hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.EX.EPOCH">EPOCH hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSEQ">LBSEQ derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBTESTCD">LBTESTCD derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBTEST">LBTEST derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBCAT">LBCAT derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSTRESC">LBSTRESC derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSTRESN">LBSTRESN derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSTRESU">LBSTRESN derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSTNRLO">LBSTNRLO derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBSTNRHI">LBSTNRHI derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBNRIND">LBNRIND derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.LBBLFL">LBBLFL derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.LB.EPOCH">EPOCH derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.METADATAENTRY">Manual entry</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.XP.XPSEQ">XPSEQ derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.XP.XPTESTCD">XPTESTCD hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.XP.XPTEST">XPTEST hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.XP.EPOCH">EPOCH hardcode</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.XP.XPBLFL">XPBLFL derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.SUPPDM.RACEOTH">RACEOTH derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.SUPPDM.RANDDT">RANDDT derivation</a>
+</li>
+</ul>
+</li>
+<li class="hmenu-submenu">
 <span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#comment">Comments</a><ul>
 <li class="hmenu-item">
 <span class="hmenu-bullet">-</span><a class="tocItem" href="#COMM.COM.ARMCD">COM.ARMCD</a>
@@ -504,10 +706,10 @@ function reset_menus() {
 </div>
 <div id="main">
 <div class="docinfo">
-<p class="documentinfo">Date of Define-XML document generation: 2022-08-04T22:46:34</p>
+<p class="documentinfo">Date of Define-XML document generation: 2022-08-21T08:33:21</p>
 <span class="stylesheetinfo">Stylesheet version: 2015-01-16</span><br>
 </div>
-<span class="error">It is expected that all ItemGroups have Purpose='Tabulation' or all ItemGroups have Purpose='Analysis'.</span><div class="study"><dl class="multiple-table">
+<div class="study"><dl class="multiple-table">
 <dt>Standard</dt>
 <dd>SDTM-IG 3.2</dd>
 <dt>Study Name</dt>
@@ -521,9 +723,9 @@ function reset_menus() {
 <dt>Metadata Description</dt>
 <dd>XYZ123, SDTM Data Definitions</dd>
 </dl></div>
-<a id="_Datasets_Table"></a><h1 class="invisible"> Datasets for Study XYZ123 (SDTM-IG 3.2)</h1>
+<a id="Tabulation_Datasets_Table"></a><h1 class="invisible">Tabulation Datasets for Study XYZ123 (SDTM-IG 3.2)</h1>
 <div class="containerbox" style="page-break-after: always;"><table summary="Data Definition Tables">
-<caption class="header"> Datasets for Study XYZ123 (SDTM-IG 3.2)</caption>
+<caption class="header">Tabulation Datasets for Study XYZ123 (SDTM-IG 3.2)</caption>
 <tr class="header">
 <th scope="col">Dataset</th>
 <th scope="col">Description</th>
@@ -537,7 +739,7 @@ function reset_menus() {
 <tr class="tablerowodd" id="AE">
 <td>AE</td>
 <td><a href="#IG.AE">Adverse Events</a></td>
-<td>NA</td>
+<td>Events</td>
 <td>Events - One record per event per subject</td>
 <td>Tabulation</td>
 <td>STUDYID, USUBJID, AEDECOD, AESTDTC</td>
@@ -549,7 +751,7 @@ function reset_menus() {
 <td><a href="#IG.DM">Demographics</a></td>
 <td>Special Purpose</td>
 <td>Special Purpose - One record per event per subject</td>
-<td class="error">TabulationÂ </td>
+<td>Tabulation</td>
 <td>STUDYID, USUBJID</td>
 <td><a href="dm.xpt">dm.xpt </a></td>
 <td></td>
@@ -559,7 +761,7 @@ function reset_menus() {
 <td><a href="#IG.EX">Exposure</a></td>
 <td>Interventions</td>
 <td>One record per constant dosing interval per subject</td>
-<td class="error">TabulationÂ </td>
+<td>Tabulation</td>
 <td>STUDYID, USUBJID, EXTRT, EXENDTC</td>
 <td><a href="ex.xpt">ex.xpt </a></td>
 <td></td>
@@ -569,7 +771,7 @@ function reset_menus() {
 <td><a href="#IG.LB">Laboratory Test Results</a></td>
 <td>Findings</td>
 <td>Findings - One record per lab test per subject</td>
-<td class="error">TabulationÂ </td>
+<td>Tabulation</td>
 <td>STUDYID, USUBJID, LBCAT, LBTESTCD, VISITNUM</td>
 <td><a href="lb.xpt">lb.xpt </a></td>
 <td></td>
@@ -589,7 +791,7 @@ function reset_menus() {
 <td><a href="#IG.TA">Trial Arms</a></td>
 <td>Trial Design</td>
 <td>One record per planned Element per Arm</td>
-<td class="error">TabulationÂ </td>
+<td>Tabulation</td>
 <td>STUDYID, ARMCD, TAETORD</td>
 <td><a href="ta.xpt">ta.xpt </a></td>
 <td></td>
@@ -599,7 +801,7 @@ function reset_menus() {
 <td><a href="#IG.TD">Trial Disease Assessments</a></td>
 <td>Trial Design</td>
 <td>One record per planned schedule of assessments</td>
-<td class="error">TabulationÂ </td>
+<td>Tabulation</td>
 <td>STUDYID, TDORDER</td>
 <td><a href="td.xpt">td.xpt </a></td>
 <td></td>
@@ -609,7 +811,7 @@ function reset_menus() {
 <td><a href="#IG.TE">Trial Elements</a></td>
 <td>Trial Design</td>
 <td>One record per planned Element</td>
-<td class="error">TabulationÂ </td>
+<td>Tabulation</td>
 <td>STUDYID, ETCD</td>
 <td><a href="te.xpt">te.xpt </a></td>
 <td></td>
@@ -619,7 +821,7 @@ function reset_menus() {
 <td><a href="#IG.TI">Trial Inclusion/Exclusion Criteria</a></td>
 <td>Trial Design</td>
 <td>One record per I/E criterion</td>
-<td class="error">TabulationÂ </td>
+<td>Tabulation</td>
 <td>STUDYID, IETESTCD</td>
 <td><a href="ti.xpt">ti.xpt </a></td>
 <td></td>
@@ -629,7 +831,7 @@ function reset_menus() {
 <td><a href="#IG.TS">Trial Summary</a></td>
 <td>Trial Design</td>
 <td>One record per trial summary parameter value</td>
-<td class="error">TabulationÂ </td>
+<td>Tabulation</td>
 <td>STUDYID, TSSEQ</td>
 <td><a href="ts.xpt">ts.xpt </a></td>
 <td></td>
@@ -639,7 +841,7 @@ function reset_menus() {
 <td><a href="#IG.TV">Trial Visits</a></td>
 <td>Trial Design</td>
 <td>One record per planned Visit per Arm</td>
-<td class="error">TabulationÂ </td>
+<td>Tabulation</td>
 <td>STUDYID, VISITNUM, ARMCD</td>
 <td><a href="tv.xpt">tv.xpt </a></td>
 <td></td>
@@ -691,7 +893,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -713,7 +915,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Unique sequence based on sort order of studyid usubjid aedecod aestdtc aeendtc</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -922,7 +1124,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcoded to TREATMENT</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -955,7 +1157,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -966,7 +1168,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div></td>
 </tr>
 </table>
 </div>
@@ -1006,7 +1208,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1050,7 +1252,7 @@ function reset_menus() {
 <td class="number">16</td>
 <td>ISO8601</td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">RFENDTC is the last date of dosing from the source dosing dataset</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1105,7 +1307,7 @@ function reset_menus() {
 <td class="number">16</td>
 <td>ISO8601</td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">DTHDTC is set to null as no subjects died</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1116,7 +1318,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">DTHFL='N' since no subjects died</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1149,7 +1351,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">integer value of (BRTHDTC - RFSTDTC)/365.25</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1160,7 +1362,7 @@ function reset_menus() {
 <td class="number">10</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcoded to YEARS</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1237,7 +1439,7 @@ function reset_menus() {
 <td class="number">3</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcoded to USA</div></td>
 </tr>
 <tr><td colspan="8">Related dataset: DM - Supplemental Qualifiers (<a href="#IG.SUPPDM">SUPPDM)</a>
 </td></tr>
@@ -1279,7 +1481,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1301,7 +1503,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Unique sequence based on sort order of studyid usubjid extrt exstdtc</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1312,7 +1514,7 @@ function reset_menus() {
 <td class="number">200</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">All subjects were dosed with what they were randomized to, so EXTRT=DM.ARM</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1334,7 +1536,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcoded to mg</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1345,7 +1547,7 @@ function reset_menus() {
 <td class="number">80</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcoded to TABLET, COATED</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1356,7 +1558,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcoded to TREATMENT</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1389,7 +1591,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1400,7 +1602,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div></td>
 </tr>
 </table>
 </div>
@@ -1440,7 +1642,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1462,7 +1664,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Unique sequence based on sort order of studyid usubjid lbcat lbtestcd visitnum</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1473,7 +1675,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Source labs.labtest variable mapped to LBTESTCD controlled terminology</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1484,7 +1686,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Source labs.labtest variable mapped to LBTEST controlled terminology</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1495,7 +1697,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Source labs.labcat variable mapped to LBCAT controlled terminology</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1550,7 +1752,7 @@ function reset_menus() {
 <td class="number">200</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Copied directly (and unrealistically) from LBORRES</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1561,7 +1763,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Copied directly (and unrealistically) from LBORRES</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1572,7 +1774,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Copied directly (and unrealistically) from LBORRESU</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1583,7 +1785,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Set equal to (and unrealistically) from the soucre labs.lownorm</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1594,7 +1796,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Set equal to (and unrealistically) from the soucre labs.highnorm</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1605,7 +1807,7 @@ function reset_menus() {
 <td class="number">20</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then lbnrind = 'LOW'; else if lbstnrhi ne . and lbstresn ne . and round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then lbnrind = 'HIGH'; else if lbstnrhi ne . and lbstresn ne . then lbnrind = 'NORMAL';</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1616,7 +1818,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">If visit=Baseline then Y, else blank</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1649,7 +1851,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">If VISITNUM &lt; 0 then SCREENING and otherwise TREATMENT</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1671,7 +1873,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div></td>
 </tr>
 </table>
 </div>
@@ -1711,7 +1913,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1733,7 +1935,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Unique sequence based on sort order of studyid usubjid xptestcd visitnum</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1744,7 +1946,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Set to XPAIN</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1755,7 +1957,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Set to Pain Score</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1799,7 +2001,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcoded to TREATMENT</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1832,7 +2034,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">If visit=Baseline then Y, else blank</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1854,7 +2056,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</div></td>
 </tr>
 </table>
 </div>
@@ -1894,7 +2096,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1905,7 +2107,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1916,7 +2118,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1927,7 +2129,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1938,7 +2140,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1949,7 +2151,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1960,7 +2162,7 @@ function reset_menus() {
 <td class="number">200</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -1971,7 +2173,7 @@ function reset_menus() {
 <td class="number">200</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -1982,7 +2184,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 </table>
 </div>
@@ -2022,7 +2224,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2033,7 +2235,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2044,7 +2246,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2055,7 +2257,7 @@ function reset_menus() {
 <td class="number">16</td>
 <td>ISO8601</td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2066,7 +2268,7 @@ function reset_menus() {
 <td class="number">16</td>
 <td>ISO8601</td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2077,7 +2279,7 @@ function reset_menus() {
 <td class="number">16</td>
 <td>ISO8601</td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2088,7 +2290,7 @@ function reset_menus() {
 <td class="number">16</td>
 <td>ISO8601</td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2099,7 +2301,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 </table>
 </div>
@@ -2139,7 +2341,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2150,7 +2352,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2161,7 +2363,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2172,7 +2374,7 @@ function reset_menus() {
 <td class="number">200</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2183,7 +2385,7 @@ function reset_menus() {
 <td class="number">200</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2194,7 +2396,7 @@ function reset_menus() {
 <td class="number">64</td>
 <td>ISO8601</td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 </table>
 </div>
@@ -2234,7 +2436,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2245,7 +2447,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2256,7 +2458,7 @@ function reset_menus() {
 <td class="number">200</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2267,7 +2469,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 </table>
 </div>
@@ -2307,7 +2509,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2318,7 +2520,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2329,7 +2531,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2340,7 +2542,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2351,7 +2553,7 @@ function reset_menus() {
 <td class="number">200</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2362,7 +2564,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2373,7 +2575,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2384,7 +2586,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 </table>
 </div>
@@ -2424,7 +2626,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2435,7 +2637,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2446,7 +2648,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2457,7 +2659,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2468,7 +2670,7 @@ function reset_menus() {
 <td class="number">40</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2479,7 +2681,7 @@ function reset_menus() {
 <td class="number">200</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2490,7 +2692,7 @@ function reset_menus() {
 <td class="number">200</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">This variable consists of study level metadata that was manually entered</div></td>
 </tr>
 </table>
 </div>
@@ -2530,7 +2732,7 @@ function reset_menus() {
 <td class="number">2</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Hardcode to the name of the SDTM domain</div></td>
 </tr>
 <tr class="tablerowodd">
 <td>
@@ -2595,7 +2797,7 @@ function reset_menus() {
 <td class="datatype">text</td>
 <td class="number">200</td>
 <td></td>
-<td>NA</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="tablerowodd">
@@ -2607,7 +2809,7 @@ function reset_menus() {
 <td class="number">20</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Set to null</div></td>
 </tr>
 <tr class="tableroweven">
 <td>
@@ -2618,7 +2820,7 @@ function reset_menus() {
 <td class="number">8</td>
 <td></td>
 <td>Derived</td>
-<td><div class="linebreakcell"></div></td>
+<td><div class="linebreakcell">Set to null</div></td>
 </tr>
 <tr><td colspan="8">Related dataset: Demographics (<a href="#IG.DM">DM)
                 </a>
@@ -2627,9 +2829,9 @@ function reset_menus() {
 </div>
 <p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
 <br><br><a name="valuemeta"></a><div class="containerbox" style="page-break-after: always;">
-<h1>Value Lists</h1>
+<h1>Value Level Metadata</h1>
 <div class="containerbox" id="VL.VL.LB.LBORRES"><table summary="ValueList / ParameterList">
-<caption> Value List -  []</caption>
+<caption> Value Level Metadata -  []</caption>
 <tr class="header">
 <th scope="col">Variable</th>
 <th scope="col">Where</th>
@@ -2751,7 +2953,7 @@ function reset_menus() {
 </tr>
 </table></div>
 <div class="containerbox" id="VL.VL.SUPPDM.QVAL"><table summary="ValueList / ParameterList">
-<caption> Value List -  []</caption>
+<caption> Value Level Metadata -  []</caption>
 <tr class="header">
 <th scope="col">Variable</th>
 <th scope="col">Where</th>
@@ -2782,7 +2984,1015 @@ function reset_menus() {
 </table></div>
 </div>
 <p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
-<br><a id="comment"></a><div class="containerbox" style="page-break-after: always;">
+<br><a id="decodelist"></a><div class="containerbox" style="page-break-after: always;">
+<h1>Controlled Terms</h1>
+<div class="codelist" id="CL.CodeList.ACN"><table summary="Controlled Term - ACN">
+<caption>ACN [CodeList.ACN]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>DOSE INCREASED</td>
+<td>DOSE INCREASED</td>
+</tr>
+<tr class="tableroweven">
+<td>DOSE NOT CHANGED</td>
+<td>DOSE NOT CHANGED</td>
+</tr>
+<tr class="tablerowodd">
+<td>DOSE REDUCED</td>
+<td>DOSE REDUCED</td>
+</tr>
+<tr class="tableroweven">
+<td>DRUG INTERRUPTED</td>
+<td>DRUG INTERRUPTED</td>
+</tr>
+<tr class="tablerowodd">
+<td>DRUG WITHDRAWN</td>
+<td>DRUG WITHDRAWN</td>
+</tr>
+<tr class="tableroweven">
+<td>NOT APPLICABLE</td>
+<td>NA</td>
+</tr>
+<tr class="tablerowodd">
+<td>UNKNOWN</td>
+<td>U; Unknown</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.AEREL"><table summary="Controlled Term - AEREL">
+<caption>AEREL [CodeList.AEREL]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>NOT RELATED</td>
+<td>NOT RELATED</td>
+</tr>
+<tr class="tableroweven">
+<td>POSSIBLY RELATED</td>
+<td>POSSIBLY RELATED</td>
+</tr>
+<tr class="tablerowodd">
+<td>PROBABLY RELATED</td>
+<td>PROBABLY RELATED</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.AESEV"><table summary="Controlled Term - AESEV">
+<caption>AESEV [CodeList.AESEV]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>MILD</td>
+<td>Grade 1; 1</td>
+</tr>
+<tr class="tableroweven">
+<td>MODERATE</td>
+<td>Grade 2; 2</td>
+</tr>
+<tr class="tablerowodd">
+<td>SEVERE</td>
+<td>Grade 3; 3</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.AGEU"><table summary="Controlled Term - AGEU">
+<caption>AGEU [CodeList.AGEU]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>YEARS</td>
+<td>YEARS</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.ARM"><table summary="Controlled Term - ARM">
+<caption>ARM [CodeList.ARM]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Analgezia HCL 30 mg</td>
+<td>Analgezia HCL 30 mg</td>
+</tr>
+<tr class="tableroweven">
+<td>Placebo</td>
+<td>Placebo</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.ARMCD"><table summary="Controlled Term - ARMCD">
+<caption>ARMCD [CodeList.ARMCD]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>ALG123</td>
+<td>Analgezia HCL 30 mg</td>
+</tr>
+<tr class="tableroweven">
+<td>PLACEBO</td>
+<td>Placebo</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.COUNTRY"><table summary="Controlled Term - COUNTRY">
+<caption>COUNTRY [CodeList.COUNTRY]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>USA</td>
+<td>UNITED STATES</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.EPOCH"><table summary="Controlled Term - EPOCH">
+<caption>EPOCH [CodeList.EPOCH]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>SCREENING</td>
+<td>SCREENING</td>
+</tr>
+<tr class="tableroweven">
+<td>TREATMENT</td>
+<td>TREATMENT</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.FRM"><table summary="Controlled Term - FRM">
+<caption>FRM [CodeList.FRM]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>TABLET, COATED</td>
+<td>TABLET, COATED</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.IECAT"><table summary="Controlled Term - IECAT">
+<caption>IECAT [CodeList.IECAT]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>INCLUSION</td>
+<td>INCLUSION</td>
+</tr>
+<tr class="tableroweven">
+<td>EXCLUSION</td>
+<td>EXCLUSION</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.LBCAT"><table summary="Controlled Term - LBCAT">
+<caption>LBCAT [CodeList.LBCAT]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>CHEMISTRY</td>
+<td>CHEMISTRY</td>
+</tr>
+<tr class="tableroweven">
+<td>HEMATOLOGY</td>
+<td>HEMATOLOGY</td>
+</tr>
+<tr class="tablerowodd">
+<td>URINALYSIS</td>
+<td>URINALYSIS</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.LBNRIND"><table summary="Controlled Term - LBNRIND">
+<caption>LBNRIND [CodeList.LBNRIND]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>HIGH</td>
+<td>HIGH</td>
+</tr>
+<tr class="tableroweven">
+<td>LOW</td>
+<td>LOW</td>
+</tr>
+<tr class="tablerowodd">
+<td>NORMAL</td>
+<td>NORMAL</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.LBTEST"><table summary="Controlled Term - LBTEST">
+<caption>LBTEST [CodeList.LBTEST]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Albumin; Microalbumin</td>
+<td>Albumin; Microalbumin</td>
+</tr>
+<tr class="tableroweven">
+<td>Alkaline Phosphatase</td>
+<td>Alkaline Phosphatase</td>
+</tr>
+<tr class="tablerowodd">
+<td>Alanine Aminotransferase; SGPT</td>
+<td>Alanine Aminotransferase; SGPT</td>
+</tr>
+<tr class="tableroweven">
+<td>Aspartate Aminotransferase; SGOT</td>
+<td>Aspartate Aminotransferase; SGOT</td>
+</tr>
+<tr class="tablerowodd">
+<td>Direct Bilirubin</td>
+<td>Direct Bilirubin</td>
+</tr>
+<tr class="tableroweven">
+<td>Bilirubin; Total Bilirubin</td>
+<td>Bilirubin; Total Bilirubin</td>
+</tr>
+<tr class="tablerowodd">
+<td>Gamma Glutamyl Transferase</td>
+<td>Gamma Glutamyl Transferase</td>
+</tr>
+<tr class="tableroweven">
+<td>EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</td>
+<td>EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</td>
+</tr>
+<tr class="tablerowodd">
+<td>FHGB; Free Hemoglobin; Hemoglobin</td>
+<td>FHGB; Free Hemoglobin; Hemoglobin</td>
+</tr>
+<tr class="tableroweven">
+<td>Protein</td>
+<td>Protein</td>
+</tr>
+<tr class="tablerowodd">
+<td>Glucose</td>
+<td>Glucose</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.LBTESTCD"><table summary="Controlled Term - LBTESTCD">
+<caption>LBTESTCD [CodeList.LBTESTCD]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>ALB</td>
+<td>Albumin; Microalbumin</td>
+</tr>
+<tr class="tableroweven">
+<td>ALP</td>
+<td>Alkaline Phosphatase</td>
+</tr>
+<tr class="tablerowodd">
+<td>ALT</td>
+<td>Alanine Aminotransferase; SGPT</td>
+</tr>
+<tr class="tableroweven">
+<td>AST</td>
+<td>Aspartate Aminotransferase; SGOT</td>
+</tr>
+<tr class="tablerowodd">
+<td>BILDIR</td>
+<td>Direct Bilirubin</td>
+</tr>
+<tr class="tableroweven">
+<td>BILI</td>
+<td>Bilirubin; Total Bilirubin</td>
+</tr>
+<tr class="tablerowodd">
+<td>GGT</td>
+<td>Gamma Glutamyl Transferase</td>
+</tr>
+<tr class="tableroweven">
+<td>HCT</td>
+<td>EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</td>
+</tr>
+<tr class="tablerowodd">
+<td>HGB</td>
+<td>FHGB; Free Hemoglobin; Hemoglobin</td>
+</tr>
+<tr class="tableroweven">
+<td>PROT</td>
+<td>Protein</td>
+</tr>
+<tr class="tablerowodd">
+<td>GLUC</td>
+<td>Glucose</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.NY"><table summary="Controlled Term - NY">
+<caption>NY [CodeList.NY]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>N</td>
+<td>No</td>
+</tr>
+<tr class="tableroweven">
+<td>NA</td>
+<td>NA; Not Applicable</td>
+</tr>
+<tr class="tablerowodd">
+<td>U</td>
+<td>U; UNK; Unknown</td>
+</tr>
+<tr class="tableroweven">
+<td>Y</td>
+<td>Yes</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.RACE"><table summary="Controlled Term - RACE">
+<caption>RACE [CodeList.RACE]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>BLACK OR AFRICAN AMERICAN</td>
+<td>BLACK OR AFRICAN AMERICAN</td>
+</tr>
+<tr class="tableroweven">
+<td>ASIAN</td>
+<td>ASIAN</td>
+</tr>
+<tr class="tablerowodd">
+<td>WHITE</td>
+<td>WHITE</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.SEX"><table summary="Controlled Term - SEX">
+<caption>SEX [CodeList.SEX]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>F</td>
+<td>Female</td>
+</tr>
+<tr class="tableroweven">
+<td>M</td>
+<td>Male</td>
+</tr>
+<tr class="tablerowodd">
+<td>U</td>
+<td>U; UNK; Unknown</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.TSPARM"><table summary="Controlled Term - TSPARM">
+<caption>TSPARM [CodeList.TSPARM]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Added on to Existing Treatments</td>
+<td>Added on to Existing Treatments</td>
+</tr>
+<tr class="tableroweven">
+<td>Planned Maximum Age of Subjects</td>
+<td>Planned Maximum Age of Subjects</td>
+</tr>
+<tr class="tablerowodd">
+<td>Planned Minimum Age of Subjects</td>
+<td>Planned Minimum Age of Subjects</td>
+</tr>
+<tr class="tableroweven">
+<td>Planned Trial Length</td>
+<td>Planned Trial Length</td>
+</tr>
+<tr class="tablerowodd">
+<td>Planned Number of Subjects</td>
+<td>Planned Number of Subjects</td>
+</tr>
+<tr class="tableroweven">
+<td>Trial is Randomized</td>
+<td>Trial is Randomized</td>
+</tr>
+<tr class="tablerowodd">
+<td>Sex of Participants</td>
+<td>Sex of Participants</td>
+</tr>
+<tr class="tableroweven">
+<td>Study Stop Rules</td>
+<td>Study Stop Rules</td>
+</tr>
+<tr class="tablerowodd">
+<td>Trial Blinding Schema</td>
+<td>Trial Blinding Schema</td>
+</tr>
+<tr class="tableroweven">
+<td>Control Type</td>
+<td>Control Type</td>
+</tr>
+<tr class="tablerowodd">
+<td>Diagnosis Group</td>
+<td>Diagnosis Group</td>
+</tr>
+<tr class="tableroweven">
+<td>Trial Indication Type</td>
+<td>Trial Indication Type</td>
+</tr>
+<tr class="tablerowodd">
+<td>Trial Title</td>
+<td>Trial Title</td>
+</tr>
+<tr class="tableroweven">
+<td>Trial Phase Classification</td>
+<td>Trial Phase Classification</td>
+</tr>
+<tr class="tablerowodd">
+<td>Trial Type</td>
+<td>Trial Type</td>
+</tr>
+<tr class="tableroweven">
+<td>Current Therapy or Treatment</td>
+<td>Current Therapy or Treatment</td>
+</tr>
+<tr class="tablerowodd">
+<td>Trial Primary Objective</td>
+<td>Trial Primary Objective</td>
+</tr>
+<tr class="tableroweven">
+<td>Trial Secondary Objective</td>
+<td>Trial Secondary Objective</td>
+</tr>
+<tr class="tablerowodd">
+<td>Clinical Study Sponsor</td>
+<td>Clinical Study Sponsor</td>
+</tr>
+<tr class="tableroweven">
+<td>Trial Indication</td>
+<td>Trial Indication</td>
+</tr>
+<tr class="tablerowodd">
+<td>Investigational Therapy or Treatment</td>
+<td>Investigational Therapy or Treatment</td>
+</tr>
+<tr class="tableroweven">
+<td>Randomization Quotient</td>
+<td>Randomization Quotient</td>
+</tr>
+<tr class="tablerowodd">
+<td>Registry Identifier</td>
+<td>Registry Identifier</td>
+</tr>
+<tr class="tableroweven">
+<td>Primary Outcome Measure</td>
+<td>Primary Outcome Measure</td>
+</tr>
+<tr class="tablerowodd">
+<td>Secondary Outcome Measure</td>
+<td>Secondary Outcome Measure</td>
+</tr>
+<tr class="tableroweven">
+<td>Exploratory Outcome Measure</td>
+<td>Exploratory Outcome Measure</td>
+</tr>
+<tr class="tablerowodd">
+<td>Pharmacological Class of Investigational Therapy</td>
+<td>Pharmacological Class of Investigational Therapy</td>
+</tr>
+<tr class="tableroweven">
+<td>Planned Country of Investigational Site(s)</td>
+<td>Planned Country of Investigational Site(s)</td>
+</tr>
+<tr class="tablerowodd">
+<td>Adaptive Design</td>
+<td>Adaptive Design</td>
+</tr>
+<tr class="tableroweven">
+<td>Data Cutoff Date</td>
+<td>Data Cutoff Date</td>
+</tr>
+<tr class="tablerowodd">
+<td>Data Cutoff Description</td>
+<td>Data Cutoff Description</td>
+</tr>
+<tr class="tableroweven">
+<td>Intervention Model</td>
+<td>Intervention Model</td>
+</tr>
+<tr class="tablerowodd">
+<td>Planned Number of Arms</td>
+<td>Planned Number of Arms</td>
+</tr>
+<tr class="tableroweven">
+<td>Study Type</td>
+<td>Study Type</td>
+</tr>
+<tr class="tablerowodd">
+<td>Intervention Type</td>
+<td>Intervention Type</td>
+</tr>
+<tr class="tableroweven">
+<td>Study Start Date</td>
+<td>Study Start Date</td>
+</tr>
+<tr class="tablerowodd">
+<td>Study End Date</td>
+<td>Study End Date</td>
+</tr>
+<tr class="tableroweven">
+<td>Actual Number of Subjects</td>
+<td>Actual Number of Subjects</td>
+</tr>
+<tr class="tablerowodd">
+<td>Healthy Subject</td>
+<td>Healthy Subject</td>
+</tr>
+<tr class="tableroweven">
+<td>Stable Disease Minimum Duration</td>
+<td>Stable Disease Minimum Duration</td>
+</tr>
+<tr class="tablerowodd">
+<td>Confirmed Response Minimum Duration</td>
+<td>Confirmed Response Minimum Duration</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.TSPARMCD"><table summary="Controlled Term - TSPARMCD">
+<caption>TSPARMCD [CodeList.TSPARMCD]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>ADDON</td>
+<td>Added on to Existing Treatments</td>
+</tr>
+<tr class="tableroweven">
+<td>AGEMAX</td>
+<td>Planned Maximum Age of Subjects</td>
+</tr>
+<tr class="tablerowodd">
+<td>AGEMIN</td>
+<td>Planned Minimum Age of Subjects</td>
+</tr>
+<tr class="tableroweven">
+<td>LENGTH</td>
+<td>Planned Trial Length</td>
+</tr>
+<tr class="tablerowodd">
+<td>PLANSUB</td>
+<td>Planned Number of Subjects</td>
+</tr>
+<tr class="tableroweven">
+<td>RANDOM</td>
+<td>Trial is Randomized</td>
+</tr>
+<tr class="tablerowodd">
+<td>SEXPOP</td>
+<td>Sex of Participants</td>
+</tr>
+<tr class="tableroweven">
+<td>STOPRULE</td>
+<td>Study Stop Rules</td>
+</tr>
+<tr class="tablerowodd">
+<td>TBLIND</td>
+<td>Trial Blinding Schema</td>
+</tr>
+<tr class="tableroweven">
+<td>TCNTRL</td>
+<td>Control Type</td>
+</tr>
+<tr class="tablerowodd">
+<td>TDIGRP</td>
+<td>Diagnosis Group</td>
+</tr>
+<tr class="tableroweven">
+<td>TINDTP</td>
+<td>Trial Indication Type</td>
+</tr>
+<tr class="tablerowodd">
+<td>TITLE</td>
+<td>Trial Title</td>
+</tr>
+<tr class="tableroweven">
+<td>TPHASE</td>
+<td>Trial Phase Classification</td>
+</tr>
+<tr class="tablerowodd">
+<td>TTYPE</td>
+<td>Trial Type</td>
+</tr>
+<tr class="tableroweven">
+<td>CURTRT</td>
+<td>Current Therapy or Treatment</td>
+</tr>
+<tr class="tablerowodd">
+<td>OBJPRIM</td>
+<td>Trial Primary Objective</td>
+</tr>
+<tr class="tableroweven">
+<td>OBJSEC</td>
+<td>Trial Secondary Objective</td>
+</tr>
+<tr class="tablerowodd">
+<td>SPONSOR</td>
+<td>Clinical Study Sponsor</td>
+</tr>
+<tr class="tableroweven">
+<td>INDIC</td>
+<td>Trial Indication</td>
+</tr>
+<tr class="tablerowodd">
+<td>TRT</td>
+<td>Investigational Therapy or Treatment</td>
+</tr>
+<tr class="tableroweven">
+<td>RANDQT</td>
+<td>Randomization Quotient</td>
+</tr>
+<tr class="tablerowodd">
+<td>REGID</td>
+<td>Registry Identifier</td>
+</tr>
+<tr class="tableroweven">
+<td>OUTMSPRI</td>
+<td>Primary Outcome Measure</td>
+</tr>
+<tr class="tablerowodd">
+<td>OUTMSSEC</td>
+<td>Secondary Outcome Measure</td>
+</tr>
+<tr class="tableroweven">
+<td>OUTMSEXP</td>
+<td>Exploratory Outcome Measure</td>
+</tr>
+<tr class="tablerowodd">
+<td>PCLAS</td>
+<td>Pharmacological Class of Investigational Therapy</td>
+</tr>
+<tr class="tableroweven">
+<td>FCNTRY</td>
+<td>Planned Country of Investigational Site(s)</td>
+</tr>
+<tr class="tablerowodd">
+<td>ADAPT</td>
+<td>Adaptive Design</td>
+</tr>
+<tr class="tableroweven">
+<td>DCUTDTC</td>
+<td>Data Cutoff Date</td>
+</tr>
+<tr class="tablerowodd">
+<td>DCUTDESC</td>
+<td>Data Cutoff Description</td>
+</tr>
+<tr class="tableroweven">
+<td>INTMODEL</td>
+<td>Intervention Model</td>
+</tr>
+<tr class="tablerowodd">
+<td>NARMS</td>
+<td>Planned Number of Arms</td>
+</tr>
+<tr class="tableroweven">
+<td>STYPE</td>
+<td>Study Type</td>
+</tr>
+<tr class="tablerowodd">
+<td>INTTYPE</td>
+<td>Intervention Type</td>
+</tr>
+<tr class="tableroweven">
+<td>SSTDTC</td>
+<td>Study Start Date</td>
+</tr>
+<tr class="tablerowodd">
+<td>SENDTC</td>
+<td>Study End Date</td>
+</tr>
+<tr class="tableroweven">
+<td>ACTSUB</td>
+<td>Actual Number of Subjects</td>
+</tr>
+<tr class="tablerowodd">
+<td>HLTSUBJI</td>
+<td>Healthy Subject</td>
+</tr>
+<tr class="tableroweven">
+<td>SDMDUR</td>
+<td>Stable Disease Minimum Duration</td>
+</tr>
+<tr class="tablerowodd">
+<td>CRMDUR</td>
+<td>Confirmed Response Minimum Duration</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.UNIT"><table summary="Controlled Term - UNIT">
+<caption>UNIT [CodeList.UNIT]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>%</td>
+<td>Percentage</td>
+</tr>
+<tr class="tableroweven">
+<td>g/dL</td>
+<td>Gram per Deciliter</td>
+</tr>
+<tr class="tablerowodd">
+<td>IU/L</td>
+<td>International Unit per Liter</td>
+</tr>
+<tr class="tableroweven">
+<td>mg/dL</td>
+<td>Milligram per Deciliter</td>
+</tr>
+<tr class="tablerowodd">
+<td>mg</td>
+<td>Milligram</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.URINGLUC"><table summary="Controlled Term - URINGLUC">
+<caption>URINGLUC [CodeList.URINGLUC]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>NEGATIVE</td>
+<td>Negative</td>
+</tr>
+<tr class="tableroweven">
+<td>POSITIVE</td>
+<td>Positive</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.VISIT"><table summary="Controlled Term - VISIT">
+<caption>VISIT [CodeList.VISIT]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Baseline</td>
+<td>Baseline</td>
+</tr>
+<tr class="tableroweven">
+<td>Month 3</td>
+<td>Month 3</td>
+</tr>
+<tr class="tablerowodd">
+<td>Month 6</td>
+<td>Month 6</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.XPTEST"><table summary="Controlled Term - XPTEST">
+<caption>XPTEST [CodeList.XPTEST]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Pain Score</td>
+<td>Pain Score</td>
+</tr>
+</table></div>
+<div class="codelist" id="CL.CodeList.XPTESTCD"><table summary="Controlled Term - XPTESTCD">
+<caption>XPTESTCD [CodeList.XPTESTCD]</caption>
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>XPPAIN</td>
+<td>XPPAIN</td>
+</tr>
+</table></div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+</div>
+<a id="externaldictionary"></a><h1 class="invisible">External Dictionaries</h1>
+<div class="containerbox" style="page-break-after: always;"><table summary="External Dictionaries (MedDra, WHODRUG, ...)">
+<caption class="header">External Dictionaries</caption>
+<tr class="header">
+<th scope="col">Reference Name</th>
+<th scope="col">External Dictionary</th>
+<th scope="col">Dictionary Version</th>
+</tr>
+<tr id="CL.CodeList.AEBODSYS" class="tablerowodd">
+<td>AEBODSYS (CodeList.AEBODSYS)</td>
+<td>MedDRA</td>
+<td>18.0</td>
+</tr>
+<tr id="CL.CodeList.AEDECOD" class="tableroweven">
+<td>AEDECOD (CodeList.AEDECOD)</td>
+<td>MedDRA</td>
+<td>18.0</td>
+</tr>
+</table></div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<a id="compmethod"></a><div class="containerbox" style="page-break-after: always;">
+<h1 class="invisible">Computational Algorithms</h1>
+<table summary="Computational Algorithms / Analysis Derivations">
+<caption class="header">Computational Algorithms</caption>
+<tr class="header">
+<th scope="col">Method</th>
+<th scope="col">Type</th>
+<th scope="col">Description</th>
+</tr>
+<tr id="MT.SETDOMAIN" class="tablerowodd">
+<td>Hardcode to assign domain</td>
+<td>Computation</td>
+<td>Hardcode to the name of the SDTM domain</td>
+</tr>
+<tr id="MT.STUDYDAYS" class="tableroweven">
+<td>--DY derivation</td>
+<td>Computation</td>
+<td>If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</td>
+</tr>
+<tr id="MT.SETNULL" class="tablerowodd">
+<td>Null Value</td>
+<td>Computation</td>
+<td>Set to null</td>
+</tr>
+<tr id="MT.AE.AESEQ" class="tableroweven">
+<td>AESEQ derivation</td>
+<td>Computation</td>
+<td>Unique sequence based on sort order of studyid usubjid aedecod aestdtc aeendtc</td>
+</tr>
+<tr id="MT.AE.EPOCH" class="tablerowodd">
+<td>EPOCH hardcode</td>
+<td>Computation</td>
+<td>Hardcoded to TREATMENT</td>
+</tr>
+<tr id="MT.DM.RFENDTC" class="tableroweven">
+<td>RFENDTC derivation</td>
+<td>Computation</td>
+<td>RFENDTC is the last date of dosing from the source dosing dataset</td>
+</tr>
+<tr id="MT.DM.DTHDTC" class="tablerowodd">
+<td>DTHDTC derivation</td>
+<td>Computation</td>
+<td>DTHDTC is set to null as no subjects died</td>
+</tr>
+<tr id="MT.DM.DTHFL" class="tableroweven">
+<td>DTHFL derivation</td>
+<td>Computation</td>
+<td>DTHFL='N' since no subjects died</td>
+</tr>
+<tr id="MT.DM.AGE" class="tablerowodd">
+<td>Algorithm to compute age</td>
+<td>Computation</td>
+<td>integer value of (BRTHDTC - RFSTDTC)/365.25</td>
+</tr>
+<tr id="MT.DM.AGEU" class="tableroweven">
+<td>Age units hardcode</td>
+<td>Computation</td>
+<td>Hardcoded to YEARS</td>
+</tr>
+<tr id="MT.DM.COUNTRY" class="tablerowodd">
+<td>Country hardcode</td>
+<td>Computation</td>
+<td>Hardcoded to USA</td>
+</tr>
+<tr id="MT.EX.EXSEQ" class="tableroweven">
+<td>EXSEQ derivation</td>
+<td>Computation</td>
+<td>Unique sequence based on sort order of studyid usubjid extrt exstdtc</td>
+</tr>
+<tr id="MT.EX.EXTRT" class="tablerowodd">
+<td>EXTRT derivation</td>
+<td>Computation</td>
+<td>All subjects were dosed with what they were randomized to, so EXTRT=DM.ARM</td>
+</tr>
+<tr id="MT.EX.EXDOSU" class="tableroweven">
+<td>EXDOSU hardcode</td>
+<td>Computation</td>
+<td>Hardcoded to mg</td>
+</tr>
+<tr id="MT.EX.EXDOSFRM" class="tablerowodd">
+<td>EXDOSFRM hardcode</td>
+<td>Computation</td>
+<td>Hardcoded to TABLET, COATED</td>
+</tr>
+<tr id="MT.EX.EPOCH" class="tableroweven">
+<td>EPOCH hardcode</td>
+<td>Computation</td>
+<td>Hardcoded to TREATMENT</td>
+</tr>
+<tr id="MT.LB.LBSEQ" class="tablerowodd">
+<td>LBSEQ derivation</td>
+<td>Computation</td>
+<td>Unique sequence based on sort order of studyid usubjid lbcat lbtestcd visitnum</td>
+</tr>
+<tr id="MT.LB.LBTESTCD" class="tableroweven">
+<td>LBTESTCD derivation</td>
+<td>Computation</td>
+<td>Source labs.labtest variable mapped to LBTESTCD controlled terminology</td>
+</tr>
+<tr id="MT.LB.LBTEST" class="tablerowodd">
+<td>LBTEST derivation</td>
+<td>Computation</td>
+<td>Source labs.labtest variable mapped to LBTEST controlled terminology</td>
+</tr>
+<tr id="MT.LB.LBCAT" class="tableroweven">
+<td>LBCAT derivation</td>
+<td>Computation</td>
+<td>Source labs.labcat variable mapped to LBCAT controlled terminology</td>
+</tr>
+<tr id="MT.LB.LBSTRESC" class="tablerowodd">
+<td>LBSTRESC derivation</td>
+<td>Computation</td>
+<td>Copied directly (and unrealistically) from LBORRES</td>
+</tr>
+<tr id="MT.LB.LBSTRESN" class="tableroweven">
+<td>LBSTRESN derivation</td>
+<td>Computation</td>
+<td>Copied directly (and unrealistically) from LBORRES</td>
+</tr>
+<tr id="MT.LB.LBSTRESU" class="tablerowodd">
+<td>LBSTRESN derivation</td>
+<td>Computation</td>
+<td>Copied directly (and unrealistically) from LBORRESU</td>
+</tr>
+<tr id="MT.LB.LBSTNRLO" class="tableroweven">
+<td>LBSTNRLO derivation</td>
+<td>Computation</td>
+<td>Set equal to (and unrealistically) from the soucre labs.lownorm</td>
+</tr>
+<tr id="MT.LB.LBSTNRHI" class="tablerowodd">
+<td>LBSTNRHI derivation</td>
+<td>Computation</td>
+<td>Set equal to (and unrealistically) from the soucre labs.highnorm</td>
+</tr>
+<tr id="MT.LB.LBNRIND" class="tableroweven">
+<td>LBNRIND derivation</td>
+<td>Computation</td>
+<td>if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then lbnrind = 'LOW'; else if lbstnrhi ne . and lbstresn ne . and round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then lbnrind = 'HIGH'; else if lbstnrhi ne . and lbstresn ne . then lbnrind = 'NORMAL';</td>
+</tr>
+<tr id="MT.LB.LBBLFL" class="tablerowodd">
+<td>LBBLFL derivation</td>
+<td>Computation</td>
+<td>If visit=Baseline then Y, else blank</td>
+</tr>
+<tr id="MT.LB.EPOCH" class="tableroweven">
+<td>EPOCH derivation</td>
+<td>Computation</td>
+<td>If VISITNUM &lt; 0 then SCREENING and otherwise TREATMENT</td>
+</tr>
+<tr id="MT.METADATAENTRY" class="tablerowodd">
+<td>Manual entry</td>
+<td>Computation</td>
+<td>This variable consists of study level metadata that was manually entered</td>
+</tr>
+<tr id="MT.XP.XPSEQ" class="tableroweven">
+<td>XPSEQ derivation</td>
+<td>Computation</td>
+<td>Unique sequence based on sort order of studyid usubjid xptestcd visitnum</td>
+</tr>
+<tr id="MT.XP.XPTESTCD" class="tablerowodd">
+<td>XPTESTCD hardcode</td>
+<td>Computation</td>
+<td>Set to XPAIN</td>
+</tr>
+<tr id="MT.XP.XPTEST" class="tableroweven">
+<td>XPTEST hardcode</td>
+<td>Computation</td>
+<td>Set to Pain Score</td>
+</tr>
+<tr id="MT.XP.EPOCH" class="tablerowodd">
+<td>EPOCH hardcode</td>
+<td>Computation</td>
+<td>Hardcoded to TREATMENT</td>
+</tr>
+<tr id="MT.XP.XPBLFL" class="tableroweven">
+<td>XPBLFL derivation</td>
+<td>Computation</td>
+<td>If visit=Baseline then Y, else blank</td>
+</tr>
+<tr id="MT.SUPPDM.RACEOTH" class="tablerowodd">
+<td>RACEOTH derivation</td>
+<td>Computation</td>
+<td>Set to other race from source demographics file</td>
+</tr>
+<tr id="MT.SUPPDM.RANDDT" class="tableroweven">
+<td>RANDDT derivation</td>
+<td>Computation</td>
+<td>Set equal to the randomization date from the source demographics file</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the define.xml</p>
+<a id="comment"></a><div class="containerbox" style="page-break-after: always;">
 <h1 class="invisible">Comments</h1>
 <table summary="ItemGroup, ItemDef and WhereClauseDef Comments">
 <caption class="header">Comments</caption>

@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 18August2022                                                   -->
+    <!-- Date: 21August2022                                                   -->
     <!-- Description: Define.xml file for oGvHD-2-SC                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="oGvHD-2-SC"
   FileType="Snapshot"
-  CreationDateTime="2022-08-18T00:57:48">
+  CreationDateTime="2022-08-21T08:33:22">
     <Study OID="oGvHD-2-SC">
     <GlobalVariables>
     <StudyName>oGvHD-2-SC</StudyName>
@@ -3537,22 +3537,22 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.2.2.1"
-        ParameterOID="ADEF.SANDFDOS
-SANDFDOD
-SANDFDOU
-SANDSDOS
-SANDSDOD
-SANDSDOU
-SANDGDOS
-SANDGDOD
-SANDFDOU
-SANDFNOS
-SANDFNOD
-SANDFNOU
-SANDSNOS
-SANDSNOD
-SANDSNOU
-SANDGNOS
+        ParameterOID="ADEF.SANDFDOS
+SANDFDOD
+SANDFDOU
+SANDSDOS
+SANDSDOD
+SANDSDOU
+SANDGDOS
+SANDGDOD
+SANDFDOU
+SANDFNOS
+SANDFNOD
+SANDFNOU
+SANDSNOS
+SANDSNOD
+SANDSNOU
+SANDGNOS
 SANDGNOD"
         ResultIdentifier="Table 14.2.2.1"
         AnalysisReason="SPECIFIED IN SAP"
@@ -3593,20 +3593,20 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.2.2.2"
-        ParameterOID="ADEF.GOSDDIOS
-GOSDDIOD
-GOSDDIOU
-GOSDDROS
-GOSDDROD
-GOSDDROU
-GOSDEROS
-GOSDEROD
-GOSDEROU
-GOSDSNOS
-GOSDSNOD
-GOSDSNOU
-GOSDBKOS
-GOSDBKOD
+        ParameterOID="ADEF.GOSDDIOS
+GOSDDIOD
+GOSDDIOU
+GOSDDROS
+GOSDDROD
+GOSDDROU
+GOSDEROS
+GOSDEROD
+GOSDEROU
+GOSDSNOS
+GOSDSNOD
+GOSDSNOU
+GOSDBKOS
+GOSDBKOD
 GOSDSDIS"
         ResultIdentifier="Table 14.2.2.2"
         AnalysisReason="SPECIFIED IN SAP"
@@ -3647,17 +3647,17 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.2.2.3"
-        ParameterOID="ADEF.SLWGQ1OS
-SLWGQ1OD
-SLWGQ1OU
-SLWGQ2OS
-SLWQG2OD
-SLWGQ2OU
-SLWGQ3OS
-SLWGQ3OD
-SLWGQ3OU
-SLWGQ4OS
-SLWGQ4OD
+        ParameterOID="ADEF.SLWGQ1OS
+SLWGQ1OD
+SLWGQ1OU
+SLWGQ2OS
+SLWQG2OD
+SLWGQ2OU
+SLWGQ3OS
+SLWGQ3OD
+SLWGQ3OU
+SLWGQ4OS
+SLWGQ4OD
 SLWGQ4OU"
         ResultIdentifier="Table 14.2.2.3"
         AnalysisReason="SPECIFIED IN SAP"
@@ -3698,33 +3698,33 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.2.2.4"
-        ParameterOID="ADEF.CLSZ1OD
-CLSZ1OS
-CLSZ1OU
-CLSZ2OD
-CLSZ2OS
-CLSZ2OU
-CLSZ3OD
-CLSZ3OS
-CLSZ3OU
-CLSZ4OD
-CLSZ4OS
-CLSZ5OD
-CLSZ5OS
-CLSZ5OU
-CLSZ6OD
-CLSZ6OS
-CLSZ6OU
-CFSCTLOD
-CFSCTLOS
-CFSINFOD
-CFSINFOS
-CFSINFOU
-CFSSUPOD
-CFSSUPOS
-CFSSUPOU
-CFSTOTOD
-CFSTOTOS
+        ParameterOID="ADEF.CLSZ1OD
+CLSZ1OS
+CLSZ1OU
+CLSZ2OD
+CLSZ2OS
+CLSZ2OU
+CLSZ3OD
+CLSZ3OS
+CLSZ3OU
+CLSZ4OD
+CLSZ4OS
+CLSZ5OD
+CLSZ5OS
+CLSZ5OU
+CLSZ6OD
+CLSZ6OS
+CLSZ6OU
+CFSCTLOD
+CFSCTLOS
+CFSINFOD
+CFSINFOS
+CFSINFOU
+CFSSUPOD
+CFSSUPOS
+CFSSUPOU
+CFSTOTOD
+CFSTOTOS
 CFSTOTOU"
         ResultIdentifier="Table 14.2.2.4"
         AnalysisReason="SPECIFIED IN SAP"
@@ -3765,23 +3765,23 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.2.2.5"
-        ParameterOID="ADEF.EGSNASOD
-EGSNASOS
-EGSNASOU
-EGSULOD
-EGSULOS
-EGSULOU
-EGSTMPOD
-EGSTMPOS
-EGSTMPOU
-EGSNAWOD
-EGSNAWOS
-EGSNAWOU
-EGSULWOD
-EGSULWOS
-EGSULWOU
-EGSTMWOD
-EGSTMWOS
+        ParameterOID="ADEF.EGSNASOD
+EGSNASOS
+EGSNASOU
+EGSULOD
+EGSULOS
+EGSULOU
+EGSTMPOD
+EGSTMPOS
+EGSTMPOU
+EGSNAWOD
+EGSNAWOS
+EGSNAWOU
+EGSULWOD
+EGSULWOS
+EGSULWOU
+EGSTMWOD
+EGSTMWOS
 EGSTMWOU"
         ResultIdentifier="Table 14.2.2.5"
         AnalysisReason="SPECIFIED IN SAP"
@@ -4381,8 +4381,8 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.3.4"
-        ParameterOID="NA.IOP
-IOPOD
+        ParameterOID="NA.IOP
+IOPOD
 IOPOS"
         ResultIdentifier="Table 14.3.4"
         AnalysisReason="SPECIFIED IN SAP"
@@ -4423,8 +4423,8 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.3.5"
-        ParameterOID="NA.VISACOD
-VISACOS
+        ParameterOID="NA.VISACOD
+VISACOS
 VISACOU"
         ResultIdentifier="Table 14.3.5"
         AnalysisReason="SPECIFIED IN SAP"
@@ -4465,8 +4465,8 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.3.6"
-        ParameterOID="NA.TBUTWOD
-TBUTWOS
+        ParameterOID="NA.TBUTWOD
+TBUTWOS
 TBUTWOSL"
         ResultIdentifier="Table 14.3.6"
         AnalysisReason="SPECIFIED IN SAP"
@@ -4507,33 +4507,33 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.3.7"
-        ParameterOID="NA.KBRTOD
-KBRTOS
-KBRTOU
-KBRNOD
-KBRNOS
-KBRNOU
-KLRTOD
-KLRTOS
-KLRTOU
-KLRNOD
-KBRTWOD
-KBRTWOS
-KBRTWOU
-KBRNWOD
-KBRNWOS
-KBRNWOU
-KLRTWOD
-KLRTWOS
-KLRTWOU
-KLRNOD
-KLRNOS
-KLRNOU
-KABROD
-KABROS
-KABROU
-KAASOD
-KAASOS
+        ParameterOID="NA.KBRTOD
+KBRTOS
+KBRTOU
+KBRNOD
+KBRNOS
+KBRNOU
+KLRTOD
+KLRTOS
+KLRTOU
+KLRNOD
+KBRTWOD
+KBRTWOS
+KBRTWOU
+KBRNWOD
+KBRNWOS
+KBRNWOU
+KLRTWOD
+KLRTWOS
+KLRTWOU
+KLRNOD
+KLRNOS
+KLRNOU
+KABROD
+KABROS
+KABROU
+KAASOD
+KAASOS
 KAASOU"
         ResultIdentifier="Table 14.3.7"
         AnalysisReason="SPECIFIED IN SAP"
@@ -4574,21 +4574,21 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.3.8"
-        ParameterOID="NA.UNDFUNDA
-UNDFUND
-UFVHOD
-UFVHAOD
-UFONOD
-UFONAOD
-UFCDROD
-UFMACOD
-UFMACAOD
-UFVHOS
-UFVHAOS
-UFONOS
-UFONAOS
-UFCDROS
-UFMACOS
+        ParameterOID="NA.UNDFUNDA
+UNDFUND
+UFVHOD
+UFVHAOD
+UFONOD
+UFONAOD
+UFCDROD
+UFMACOD
+UFMACAOD
+UFVHOS
+UFVHAOS
+UFONOS
+UFONAOS
+UFCDROS
+UFMACOS
 UFMACAOS"
         ResultIdentifier="Table 14.3.8"
         AnalysisReason="SPECIFIED IN SAP"
@@ -4629,32 +4629,32 @@ NA
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="Table 14.3.9"
-        ParameterOID="NA.CLSZ2COD
-CLSZ2COS
-CLSZ3COD
-CLSZ3COS
-CLSZ4COD
-CLSZ4COS
-CLSZ5COD
-CLSZ5COS
-CLSOTHOD
-CLSOTHOS
-CLSCSOS
-CLSZ1COD
-CLSZ1COS
-CLSZ6COD
-CLSZ6COS
-CLSOTOD
-CLSOTOS
-CFSSUCOD
-CFSSUCOS
-CFSCTCOD
-CFSCTCOS
-CFSINCOD
-CFSINCOS
-CFSOTHOD
-CFSCSOD
-CFSOTHOS
+        ParameterOID="NA.CLSZ2COD
+CLSZ2COS
+CLSZ3COD
+CLSZ3COS
+CLSZ4COD
+CLSZ4COS
+CLSZ5COD
+CLSZ5COS
+CLSOTHOD
+CLSOTHOS
+CLSCSOS
+CLSZ1COD
+CLSZ1COS
+CLSZ6COD
+CLSZ6COS
+CLSOTOD
+CLSOTOS
+CFSSUCOD
+CFSSUCOS
+CFSCTCOD
+CFSCTCOS
+CFSINCOD
+CFSINCOS
+CFSOTHOD
+CFSCSOD
+CFSOTHOS
 CFSCSOS"
         ResultIdentifier="Table 14.3.9"
         AnalysisReason="SPECIFIED IN SAP"

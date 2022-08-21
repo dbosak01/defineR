@@ -7,7 +7,6 @@
 #' @param version The version of the define XML to create.  Currently
 #' only 2.0.0 is supported, which is the default.
 #' @returns A vector of XML strings.
-#' @export
 create_sdtm_xml <- function(lst, version = "2.0.0") {
 
   if(!is.list(lst)) {
@@ -134,7 +133,7 @@ get_header <- function(dta) {
               foid = dta[["FILEOID"]][1],
               soid = dta[["STUDYOID"]][1],
               study = dta[["STUDYNAME"]][1],
-              desc = dta[["STUDYDESCRIPTION"]][1],
+              desc = encodeMarkup(dta[["STUDYDESCRIPTION"]][1]),
               protocol = dta[["PROTOCOLNAME"]][1],
               sn = dta[["STANDARD"]][1],
               sv = dta[["VERSION"]][1],
@@ -189,14 +188,14 @@ get_item_groups <- function(toc, vardt) {
   for(rw in 1:nrow(toc)) {
     ret[length(ret) + 1] <- glue(blk, name = toc[rw, "NAME"])
     ret[length(ret) + 1] <- glue(itemGroup,
-                                 oid = toc[rw, "OID"],
-                                 name = toc[rw, "NAME"],
-                                 reps = toc[rw, "REPEATING"],
-                                 purp = toc[rw, "PURPOSE"],
-                                 isRef = toc[rw, "ISREFERENCEDATA"],
-                                 struct = toc[rw, "STRUCTURE"],
-                                 class = toc[rw, "CLASS"],
-                                 label = toc[rw, "LABEL"])
+                                 oid = toc[[rw, "OID"]],
+                                 name = toc[[rw, "NAME"]],
+                                 reps = toc[[rw, "REPEATING"]],
+                                 purp = toc[[rw, "PURPOSE"]],
+                                 isRef = toc[[rw, "ISREFERENCEDATA"]],
+                                 struct = toc[[rw, "STRUCTURE"]],
+                                 class = toc[[rw, "CLASS"]],
+                                 label = encodeMarkup(toc[[rw, "LABEL"]]))
 
     for(varrow in 1:nrow(vardt)) {
       keyHolder <- ""
@@ -217,20 +216,20 @@ get_item_groups <- function(toc, vardt) {
 
         # itemref
         ret[length(ret) + 1] <- glue(itemRefs,
-                                     domain = vardt[varrow, "DOMAIN"],
-                                     varname = vardt[varrow, "VARIABLE"],
-                                     varnum = vardt[varrow, "VARNUM"],
-                                     manda = vardt[varrow, "MANDATORY"],
+                                     domain = vardt[[varrow, "DOMAIN"]],
+                                     varname = vardt[[varrow, "VARIABLE"]],
+                                     varnum = vardt[[varrow, "VARNUM"]],
+                                     manda = vardt[[varrow, "MANDATORY"]],
                                      keyseq = keyHolder,
                                      methodoid = methodoidHolder,
-                                     role = vardt[varrow, "ROLE"])
+                                     role = vardt[[varrow, "ROLE"]])
       }
     }
 
     ret[length(ret) + 1] <- endCom
     ret[length(ret) + 1] <- glue(groupEnd,
-                                 name = toc[rw, "NAME"],
-                                 loc = toc[rw, "ARCHIVELOCATIONID"])
+                                 name = toc[[rw, "NAME"]],
+                                 loc = toc[[rw, "ARCHIVELOCATIONID"]])
 
   }
   return(ret)
@@ -261,20 +260,22 @@ get_item_defs <- function(toc, vardt) {
     for(varrow in 1:nrow(vardt)) {
 
         strHolder <- ""
-        if(!is.na(vardt[varrow, "DISPLAYFORMAT"])) {
-          strHolder <- vardt[[varrow, "DISPLAYFORMAT"]]
+        if(!is.na(vardt[[varrow, "DISPLAYFORMAT"]])) {
+          strHolder <- encodeMarkup(vardt[[varrow, "DISPLAYFORMAT"]])
         }
         else {
-          strHolder <- vardt[[varrow, "LENGTH"]]
+          strHolder <- ifelse(is.na(vardt[[varrow, "LENGTH"]]),
+                              "", vardt[[varrow, "LENGTH"]])
         }
         ret[length(ret) + 1] <- glue(str,
-                                   domain = vardt[varrow, "DOMAIN"],
-                                   variable = vardt[varrow, "VARIABLE"],
-                                   type = vardt[varrow, "TYPE"],
-                                   length = vardt[varrow, "LENGTH"],
+                                   domain = vardt[[varrow, "DOMAIN"]],
+                                   variable = vardt[[varrow, "VARIABLE"]],
+                                   type = vardt[[varrow, "TYPE"]],
+                                   length = ifelse(is.na(vardt[[varrow, "LENGTH"]]),
+                                                   "", vardt[[varrow, "LENGTH"]]),
                                    display = strHolder,
-                                   label = vardt[varrow, "LABEL"],
-                                   origin = vardt[varrow, "ORIGIN"])
+                                   label = encodeMarkup(vardt[[varrow, "LABEL"]]),
+                                   origin = encodeMarkup(vardt[[varrow, "ORIGIN"]]))
     }
   return(ret)
 
@@ -366,10 +367,10 @@ get_computations <- function(dta) {
   ret <- c(blk)
   for(rw in seq_len(nrow(dta))) {
     ret[length(ret) + 1] <- glue(str,
-                                 mthdOID = dta[rw, "COMPUTATIONMETHODOID"],
-                                 label = dta[rw, "LABEL"],
-                                 comp = dta[rw, "TYPE"],
-                                 compMthd = textutils::HTMLencode(dta[rw, "COMPUTATIONMETHOD"], encode.only = c("&", "<", ">")))
+                                 mthdOID = dta[[rw, "COMPUTATIONMETHODOID"]],
+                                 label = encodeMarkup(dta[[rw, "LABEL"]]),
+                                 comp = dta[[rw, "TYPE"]],
+                                 compMthd = encodeMarkup(dta[[rw, "COMPUTATIONMETHOD"]]))
   }
   ret[length(ret) + 1] <- ""
   return(ret)
@@ -401,19 +402,19 @@ get_code_lists <- function(dta) {
 
   for(sp in splts) {
     ret[length(ret) + 1] <- glue(listHead,
-                                 codelistname = sp[1, "CODELISTNAME"],
-                                 dtype = sp[1, "TYPE"])
+                                 codelistname = sp[[1, "CODELISTNAME"]],
+                                 dtype = sp[[1, "TYPE"]])
     for(rw in seq_len(nrow(sp))) {
       if(!is.na(sp[[rw, "CODELISTDICTIONARY"]])) {
         ret[length(ret) + 1] <- glue(dictcl,
                                      dict = sp[rw, "CODELISTDICTIONARY"],
-                                     clver = sp[rw, "CODELISTVERSION"])
+                                     clver = sp[[rw, "CODELISTVERSION"]])
       }
       else {
         ret[length(ret) + 1] <- glue(item,
-                                     codedval = sp[rw, "CODEDVALUE"],
-                                     rank = sp[rw, "RANK"],
-                                     translated = sp[rw, "TRANSLATED"])
+                                     codedval = encodeMarkup(sp[[rw, "CODEDVALUE"]]),
+                                     rank = sp[[rw, "RANK"]],
+                                     translated = encodeMarkup(sp[[rw, "TRANSLATED"]]))
       }
 
     }

@@ -14,7 +14,7 @@ Author: c(
     person(given = "Jonathan", 
            family = "Stallings", 
            role = c("ctb"), 
-           email = "jonathan.stallings@gmailL.com"))
+           email = "jdstallings@dataindeed.io"))
 Maintainer: David Bosak <dbosak01@gmail.com>
 Description: Creates 'define.xml' documents used for FDA 
     submissions based on spreadsheet metadata.  Can also help
@@ -32,7 +32,8 @@ Suggests:
 Imports:
     readxl,
     xml2,
-    xslt
+    xslt,
+    reporter
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 RoxygenNote: 7.2.0
