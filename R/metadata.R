@@ -120,9 +120,9 @@ copy_template <- function(dir, type, ver, demo) {
     }
 
     if (tolower(type) == "sdtm") {
-      src <- file.path(src, "SDTM_METADATA.xls")
+      src <- file.path(src, "SDTM_METADATA.xlsx")
     } else if (tolower(type) == "adam") {
-      src <- file.path(src, "ADAM_METADATA.xls")
+      src <- file.path(src, "ADAM_METADATA.xlsx")
     } else {
       stop("Type '" %p% type %p% "' no supported.")
     }
@@ -153,11 +153,11 @@ copy_template <- function(dir, type, ver, demo) {
 
     dnm <- dirname(path)
     bnm <- basename(path)
-    fnm <- substr(bnm, 1, nchar(bnm) - 4)  # not the best
+    fnm <- substr(bnm, 1, nchar(bnm) - 5)  # not the best
 
     for (i in 1:20) {
 
-      pth <- file.path(dnm, paste0(fnm, "(", i, ").xls"))
+      pth <- file.path(dnm, paste0(fnm, "(", i, ").xlsx"))
 
       if (!file.exists(pth)) {
         break()

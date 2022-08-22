@@ -48,7 +48,7 @@
 
 <meta property="og:title" content="Creates a define XML document — write_define" />
 <meta property="og:description" content="The write_define function inputs an SDTM or ADAM
-metadata file and exports a define.xml and associated files to a specified
+metadata file and outputs a define.xml and associated files to a specified
 directory. Possible associated files are the HTML transformation of
 the define.xml and a check report. By default, the check report will
 also be shown in the viewer." />
@@ -131,7 +131,7 @@ also be shown in the viewer." />
 
     <div class="ref-description">
     <p>The <code>write_define</code> function inputs an SDTM or ADAM
-metadata file and exports a define.xml and associated files to a specified
+metadata file and outputs a define.xml and associated files to a specified
 directory. Possible associated files are the HTML transformation of
 the define.xml and a check report. By default, the check report will
 also be shown in the viewer.</p>
@@ -154,7 +154,8 @@ also be shown in the viewer.</p>
     <tr>
       <th>path</th>
       <td><p>The path to the metadata file.  Currently only Excel metadata
-files are supported.</p></td>
+files are supported.  Other metadata sources may be added if there is sufficient
+interest.</p></td>
     </tr>
     <tr>
       <th>dir</th>
@@ -193,7 +194,7 @@ values are TRUE and FALSE.  Default is TRUE.</p></td>
       <th>report_type</th>
       <td><p>The output type of the check report, if requested.
 Valid values are "TXT", "RTF", "PDF", "HTML" and "DOCX".  Default is
-"DOCX".</p></td>
+"PDF".</p></td>
     </tr>
     </table>
 
@@ -220,7 +221,7 @@ will compare the define.xml file against the XSD schema supplied by
 CDISC.  Any discrepancies will be writted to the check report.  By default,
 the check report is also shown in the viewer, and returned as a vector of
 strings by the function.  This discrepancy list allows you to verify
-that the metadata as been filled out correctly.</p>
+that the metadata has been filled out correctly.</p>
 <p>For instance, the
 conformance check will ensure that each object ID (OID) is unique within
 the document.  Any non-unique IDs will be identified and written to the
@@ -232,7 +233,7 @@ warnings will be sent to the check report, and will not stop execution.</p>
 <p>Note that the <code>check</code> parameter can be used to turn off the
 conformance check mechanism, and just create the XML.  Also note that this
 parameter accepts a "V5" option, to perform checks that ensure the
-data complies with version 5 transport file format constraints.</p>
+data complies with version 5 transport file constraints.</p>
 <p>The XSD schema and XSLT transformation documents were created by CDISC,
 and are included in the <strong>defineR</strong> package for convenience.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
