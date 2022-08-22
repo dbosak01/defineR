@@ -11,9 +11,10 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:def="http://www.cdisc.org/ns/def/v2.0"
   ODMVersion="1.3.2"
+  xmlns:arm="http://www.cdisc.org/ns/arm/v1.0"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-08-22T02:16:28">
+  CreationDateTime="2022-08-22T11:41:01">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -2906,6 +2907,50 @@ DataType="text">
   </Description>
 </MethodDef>
 
+
+  <!-- ******************************** -->
+  <!-- COMMENTS DEFINITION SECTION      -->
+  <!-- ******************************** -->
+<def:CommentDef OID="COM.CRIT1">
+  <Description>
+    <TranslatedText xml:lang="en">Assignment per the codelist</TranslatedText>
+  </Description>
+</def:CommentDef>
+<def:CommentDef OID="COM.CQ01NAME">
+  <Description>
+    <TranslatedText xml:lang="en">if non-null then PAIN EVENT</TranslatedText>
+  </Description>
+</def:CommentDef>
+<def:CommentDef OID="COM.SEECODELIST">
+  <Description>
+    <TranslatedText xml:lang="en">See codelist</TranslatedText>
+  </Description>
+</def:CommentDef>
+<def:CommentDef OID="COM.SEEVALUELEVEL">
+  <Description>
+    <TranslatedText xml:lang="en">See parameter value-level metadata</TranslatedText>
+  </Description>
+</def:CommentDef>
+<def:CommentDef OID="COM.ADAE">
+  <Description>
+    <TranslatedText xml:lang="en">Primarily derived from SDTM.AE</TranslatedText>
+  </Description>
+</def:CommentDef>
+<def:CommentDef OID="COM.ADSL">
+  <Description>
+    <TranslatedText xml:lang="en">Derived from multiple SDTM domains</TranslatedText>
+  </Description>
+</def:CommentDef>
+<def:CommentDef OID="COM.ADEF">
+  <Description>
+    <TranslatedText xml:lang="en">Primarily derived from SDTM.XP</TranslatedText>
+  </Description>
+</def:CommentDef>
+<def:CommentDef OID="COM.ADTTE">
+  <Description>
+    <TranslatedText xml:lang="en">Primarily derived from ADaM.ADAE</TranslatedText>
+  </Description>
+</def:CommentDef>
     <!-- ******************************************* -->
     <!-- LEAF DEFINITION SECTION                 *** -->
     <!-- ******************************************* -->
@@ -3195,50 +3240,6 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
       </arm:AnalysisResult>
     </arm:ResultDisplay>
 </arm:AnalysisResultDisplays>
-
-  <!-- ******************************** -->
-  <!-- COMMENTS DEFINITION SECTION      -->
-  <!-- ******************************** -->
-<def:CommentDef OID="COM.CRIT1">
-  <Description>
-    <TranslatedText xml:lang="en">Assignment per the codelist</TranslatedText>
-  </Description>
-</def:CommentDef>
-<def:CommentDef OID="COM.CQ01NAME">
-  <Description>
-    <TranslatedText xml:lang="en">if non-null then PAIN EVENT</TranslatedText>
-  </Description>
-</def:CommentDef>
-<def:CommentDef OID="COM.SEECODELIST">
-  <Description>
-    <TranslatedText xml:lang="en">See codelist</TranslatedText>
-  </Description>
-</def:CommentDef>
-<def:CommentDef OID="COM.SEEVALUELEVEL">
-  <Description>
-    <TranslatedText xml:lang="en">See parameter value-level metadata</TranslatedText>
-  </Description>
-</def:CommentDef>
-<def:CommentDef OID="COM.ADAE">
-  <Description>
-    <TranslatedText xml:lang="en">Primarily derived from SDTM.AE</TranslatedText>
-  </Description>
-</def:CommentDef>
-<def:CommentDef OID="COM.ADSL">
-  <Description>
-    <TranslatedText xml:lang="en">Derived from multiple SDTM domains</TranslatedText>
-  </Description>
-</def:CommentDef>
-<def:CommentDef OID="COM.ADEF">
-  <Description>
-    <TranslatedText xml:lang="en">Primarily derived from SDTM.XP</TranslatedText>
-  </Description>
-</def:CommentDef>
-<def:CommentDef OID="COM.ADTTE">
-  <Description>
-    <TranslatedText xml:lang="en">Primarily derived from ADaM.ADAE</TranslatedText>
-  </Description>
-</def:CommentDef>
 </MetaDataVersion>
 </Study>
 </ODM>

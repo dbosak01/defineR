@@ -73,7 +73,7 @@ create_adam_xml <- function(lst, version) {
   ftr <- get_footer()
 
 
-  ret <- c(hdr, extl, val, whr, grps, defs, cl, comp, leafdefs, analysis, cmnts, ftr)
+  ret <- c(hdr, extl, val, whr, grps, defs, cl, comp, cmnts, leafdefs, analysis, ftr)
 
 
 
@@ -100,6 +100,7 @@ get_header_adam <- function(dta) {
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:def="http://www.cdisc.org/ns/def/v2.0"
     ODMVersion="1.3.2"
+    xmlns:arm="http://www.cdisc.org/ns/arm/v1.0"
     FileOID="{foid}"
     FileType="Snapshot"
     CreationDateTime="{dstmp}">

@@ -180,7 +180,7 @@ test_that("metadata7: ADAM Templates can be created.", {
 
 })
 
-test_that("metadata7: Parameter checks work.", {
+test_that("metadata8: Parameter checks work.", {
 
   fp <- file.path(base_path, "metadata/template")
 
