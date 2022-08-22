@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 The **defineR** package creates the "define.xml" documents needed for 
 regulatory submission to the FDA.  The XML structure for the documents 
-was defined by the [CDISC](https://www.cdisc.org/) standards body, in association 
+was defined by the [CDISC](https://www.cdisc.org/) standards body, in collaboration 
 with industry representatives.  The documents are required for FDA submission, 
 and are frequently characterized as the "most important" documents.  These documents
 are used by FDA reviewers to understand the data being submitted.
@@ -91,8 +91,8 @@ The HTML transformation was also generated and placed in the
 output directory.  Here is a portion of the HTML:
 <img src="../man/images/html.png"/>
 
-The transformation uses the latest available XSL transformation from CDISC.
-The latest XSL includes code to insert line feeds in the method/comment column.
+The transformation uses the latest available XSLT transformation from CDISC.
+The latest XSLT includes code to insert line feeds in the method/comment column.
 These line feeds make the HTML more readable than in the past.
 
 Reviewing the HTML can give you valuable feedback on the accuracy and completeness
@@ -121,9 +121,8 @@ until no issues are found.
 
 ### Next Steps
 
-For next steps, please review the examples provided in the vignette articles. 
-Those articles include:
+For next steps, please review the function reference documentation:
 
-* [Create Define](defineR-define.html)
-* [Create Metadata](defineR-metadata.html)
+* `write_define()`
+* `write_metadata()`
 

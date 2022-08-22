@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Writes a define XML metadata spreadsheet to the file system — write_metadata • defineR</title>
+<title>Creates define XML metadata — write_metadata • defineR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,11 +46,12 @@
 
 
 
-<meta property="og:title" content="Writes a define XML metadata spreadsheet to the file system — write_metadata" />
-<meta property="og:description" content="The function generates metadata and
+<meta property="og:title" content="Creates define XML metadata — write_metadata" />
+<meta property="og:description" content="The function generates define.xml metadata and
 writes it to the file system. The function can generate a blank metadata
-spreadsheet, a demonstration spreadsheet, or metadata generated
-from existing data files." />
+spreadsheet, a demonstration spreadsheet, or metadata read
+from existing data files. The type parameter can be used
+to request an SDTM or ADAM spreadsheet." />
 <meta property="og:image" content="https://defineR.r-sassy.org/logo.png" />
 
 
@@ -98,21 +99,6 @@ from existing data files." />
 <li>
   <a href="../articles/defineR.html">Get started</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/defineR-define.html">Create define.xml</a>
-    </li>
-    <li>
-      <a href="../articles/defineR-metadata.html">Create Metadata</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -138,16 +124,17 @@ from existing data files." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Writes a define XML metadata spreadsheet to the file system</h1>
+    <h1>Creates define XML metadata</h1>
     
     <div class="hidden name"><code>write_metadata.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The function generates metadata and
+    <p>The function generates define.xml metadata and
 writes it to the file system. The function can generate a blank metadata
-spreadsheet, a demonstration spreadsheet, or metadata generated
-from existing data files.</p>
+spreadsheet, a demonstration spreadsheet, or metadata read
+from existing data files. The <code>type</code> parameter can be used
+to request an SDTM or ADAM spreadsheet.</p>
     </div>
 
     <pre class="usage"><span><span class='fu'>write_metadata</span><span class='op'>(</span></span>
@@ -175,12 +162,12 @@ is the current working directory.</p></td>
     <tr>
       <th>ver</th>
       <td><p>The version of the metadata file.  Default is
-the preferred version of the define standard.  Function
-currently supports only version 2.0.0.</p></td>
+the preferred version of the define standard.  The function
+currently supports only version "2.0.0".</p></td>
     </tr>
     <tr>
       <th>src_dir</th>
-      <td><p>If the metadata will be created from existing datasets,
+      <td><p>If the metadata will be generated from existing datasets,
 supply the directory path for those datasets.  If the metadata will
 not be created from datasets, this parameter should be NULL.</p></td>
     </tr>
@@ -191,19 +178,52 @@ not be created from datasets, this parameter should be NULL.</p></td>
     <tr>
       <th>demo</th>
       <td><p>If this parameter is TRUE, the function will generate
-a metadata file with example data.  Default is FALSE.</p></td>
+a metadata file populated with sample data. If the parameter is FALSE,
+a blank metadata spreadsheet will be produced. Default is FALSE.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The path of the generated file.</p>
+    <p>The full path of the generated metadata file.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Here are some details.</p>
+    <p>Frequently, organizations already have study metadata stored
+in Excel spreadsheets, and in the correct structure.  This structure
+is used commonly in the industry by other software.</p>
+<p>The purpose of the <code>write_metadata</code> function is to create an
+initial metadata template for studies in which you have no metadata.
+This task will ensure that you have the proper metadata structure
+to later create the define.xml.</p>
+<p>By default, the function creates an unpopulated metadata spreadsheet.
+If the <code>demo</code> parameter is set to TRUE, the function will create
+the same spreadsheet populated with sample data.  This sample data
+can help you to understand how to populate the metadata for your study.
+Note that this demo spreadsheet is populated correctly, and has no
+conformance errors.  Use this demo spreadsheet as a guide to fill
+out your metadata.</p>
+<p>The demo spreadsheet was created by CDISC, and is
+included in the <strong>defineR</strong> package for convenience.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='write_define.html'>write_define</a></code> to create a define.xml document and
+associated files.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span><span class='co'># Example data</span></span></pre>
+    <pre class="examples"><span><span class='co'># Get temporary directory</span></span>
+<span><span class='va'>tmp</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Create demo spreadsheet</span></span>
+<span><span class='va'>out1</span> <span class='op'>&lt;-</span> <span class='fu'>write_metadata</span><span class='op'>(</span><span class='va'>tmp</span>, demo <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># View file</span></span>
+<span><span class='co'># file.show(out1)</span></span>
+<span></span>
+<span><span class='co'># Create unpopulated spreadsheet</span></span>
+<span><span class='va'>out2</span> <span class='op'>&lt;-</span> <span class='fu'>write_metadata</span><span class='op'>(</span><span class='va'>tmp</span>, demo <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># View file</span></span>
+<span><span class='co'># file.show(out2)</span></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -1,11 +1,9 @@
 url: https://defineR.r-sassy.org
 
+
 articles:
-- title: Examples
+- titles: Examples
   navbar: ~
-  contents:
-  - defineR-define
-  - defineR-metadata
 
 reference:
 - title: All Functions
@@ -16,7 +14,7 @@ reference:
 
 navbar:
   structure:
-    left: [home, intro, articles, reference, faq, news, github]
+    left: [home, intro, reference, faq, news, github]
   components:
     faq:
       text: FAQ

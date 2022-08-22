@@ -2,7 +2,7 @@
 % Please edit documentation in R/write.R
 \name{write_define}
 \alias{write_define}
-\title{Writes a define XML document to the file system}
+\title{Creates a define XML document}
 \usage{
 write_define(
   path,
@@ -56,10 +56,68 @@ the define.xml and a check report. By default, the check report will
 also be shown in the viewer.
 }
 \details{
-If there is
-a serious error producing the XML, the XML and HTML outputs will not be
-produced.  A check report will produced that shows the error.
+The define.xml document is used by the FDA (and others) to review
+study data. All datasets used in the study are listed, along with
+variable and value metadata, where clauses, and more.  The define.xml
+can be used along with an XSLT style sheet to transform the XML into
+an HTML report.  This HTML report has links that allow you to easily
+navigate the data structures.
+
+The \code{write_define} function
+creates both the define XML and the define HTML. The \code{path}
+parameter identifies the location of the Excel metadata, and the
+\code{dir} parameter specifies an output directory.  You can create
+both SDTM and ADAM metadata by passing the appropriate value on the
+\code{type} parameter.
+
+Importantly, the function also produces a check report.  This report
+will compare the define.xml file against the XSD schema supplied by
+CDISC.  Any discrepancies will be writted to the check report.  By default,
+the check report is also shown in the viewer, and returned as a vector of
+strings by the function.  This discrepancy list allows you to verify
+that the metadata as been filled out correctly.
+
+For instance, the
+conformance check will ensure that each object ID (OID) is unique within
+the document.  Any non-unique IDs will be identified and written to the
+check report. The check report may therefore be used iteratively to
+fix the metadata.
+
+Any errors that prevent proper functioning of the procedure will stop
+execution, and be displayed in the console.  All other errors and
+warnings will be sent to the check report, and will not stop execution.
+
+Note that the \code{check} parameter can be used to turn off the
+conformance check mechanism, and just create the XML.  Also note that this
+parameter accepts a "V5" option, to perform checks that ensure the
+data complies with version 5 transport file format constraints.
+
+The XSD schema and XSLT transformation documents were created by CDISC,
+and are included in the \strong{defineR} package for convenience.
 }
 \examples{
-# Create data
+# Get temp directory
+tmp <- tempdir()
+
+# Create demo metadata
+pth <- write_metadata(tmp, demo = TRUE)
+
+# Generate define files
+res <- write_define(pth, tmp)
+
+# View check results
+res
+# NULL
+
+# View XML
+# file.show(file.path(tmp, "define.sdtm.xml"))
+
+# View check report
+# file.show(file.path(tmp, "check.sdtm.pdf"))
+
+# View HTML
+# file.show(file.path(tmp, "define.sdtm.html"))
+}
+\seealso{
+\code{\link{write_metadata}} to create a metadata template.
 }

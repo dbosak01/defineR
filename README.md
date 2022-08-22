@@ -21,9 +21,9 @@ capabilities:
 <tab>4. Produce the define.html transformation of define.xml  
 <tab>5. Generate the metadata templates needed to create the define.xml  
 
-Currently, the package only supports version 2.0.0 of the define.xml, 
-which is the version preferred by the FDA.  Future versions of the package
-will support version 2.1.
+Currently, the package only supports version 2.0.0 of the define.xml. 
+Define version 2.0.0 is the version preferred by the FDA.  
+Future enhancements to the package will add support for define version 2.1.
 
 ### Installation
 

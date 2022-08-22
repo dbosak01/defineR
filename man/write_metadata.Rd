@@ -2,7 +2,7 @@
 % Please edit documentation in R/metadata.R
 \name{write_metadata}
 \alias{write_metadata}
-\title{Writes a define XML metadata spreadsheet to the file system}
+\title{Creates define XML metadata}
 \usage{
 write_metadata(
   dir = ".",
@@ -21,30 +21,67 @@ is the current working directory.}
 "SDTM" and "ADAM". Default is "SDTM".}
 
 \item{ver}{The version of the metadata file.  Default is
-the preferred version of the define standard.  Function
-currently supports only version 2.0.0.}
+the preferred version of the define standard.  The function
+currently supports only version "2.0.0".}
 
-\item{src_dir}{If the metadata will be created from existing datasets,
+\item{src_dir}{If the metadata will be generated from existing datasets,
 supply the directory path for those datasets.  If the metadata will
 not be created from datasets, this parameter should be NULL.}
 
 \item{check}{Whether or not to run the checks.}
 
 \item{demo}{If this parameter is TRUE, the function will generate
-a metadata file with example data.  Default is FALSE.}
+a metadata file populated with sample data. If the parameter is FALSE,
+a blank metadata spreadsheet will be produced. Default is FALSE.}
 }
 \value{
-The path of the generated file.
+The full path of the generated metadata file.
 }
 \description{
-The function generates metadata and
+The function generates define.xml metadata and
 writes it to the file system. The function can generate a blank metadata
-spreadsheet, a demonstration spreadsheet, or metadata generated
-from existing data files.
+spreadsheet, a demonstration spreadsheet, or metadata read
+from existing data files. The \code{type} parameter can be used
+to request an SDTM or ADAM spreadsheet.
 }
 \details{
-Here are some details.
+Frequently, organizations already have study metadata stored
+in Excel spreadsheets, and in the correct structure.  This structure
+is used commonly in the industry by other software.
+
+The purpose of the \code{write_metadata} function is to create an
+initial metadata template for studies in which you have no metadata.
+This task will ensure that you have the proper metadata structure
+to later create the define.xml.
+
+By default, the function creates an unpopulated metadata spreadsheet.
+If the \code{demo} parameter is set to TRUE, the function will create
+the same spreadsheet populated with sample data.  This sample data
+can help you to understand how to populate the metadata for your study.
+Note that this demo spreadsheet is populated correctly, and has no
+conformance errors.  Use this demo spreadsheet as a guide to fill
+out your metadata.
+
+The demo spreadsheet was created by CDISC, and is
+included in the \strong{defineR} package for convenience.
 }
 \examples{
-# Example data
+# Get temporary directory
+tmp <- tempdir()
+
+# Create demo spreadsheet
+out1 <- write_metadata(tmp, demo = TRUE)
+
+# View file
+# file.show(out1)
+
+# Create unpopulated spreadsheet
+out2 <- write_metadata(tmp, demo = FALSE)
+
+# View file
+# file.show(out2)
+}
+\seealso{
+\code{\link{write_define}} to create a define.xml document and
+associated files.
 }
