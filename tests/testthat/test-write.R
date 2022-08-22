@@ -509,8 +509,43 @@ test_that("write20: write_define() works as expected on perfect ADAM metadata.",
   res <- write_define(fp, op, type = "ADAM", check = TRUE)
 
   res
-  expect_equal(length(res) == 3, TRUE)  # Seems there are three errors in schema
+  expect_equal(length(res) == 0, TRUE)
   expect_equal(file.exists(df), TRUE)
   expect_equal(file.exists(hf), TRUE)
+
+})
+
+
+test_that("write20: write_define() works with custom XSD and XSLT.", {
+
+  fp <- file.path(data_dir, "data/ADAM_METADATA_PERFECT.xls")
+  op <- file.path(base_path, "output")
+
+  df <- file.path(op, "define.adam.xml")
+  hf <- file.path(op, "define.adam.html")
+
+  xd <- file.path(data_dir, "schema/cdisc-define-2.0/define2-0-0.xsd")
+  xs <- file.path(data_dir, "adam/define2-0-0.xsl")
+
+  options("defineR.xsd" = xd,
+          "defineR.xslt" = xs)
+
+  if (file.exists(df))
+    file.remove(df)
+
+  if (file.exists(hf))
+    file.remove(hf)
+
+
+  res <- write_define(fp, op, type = "ADAM", check = TRUE)
+
+  res
+  expect_equal(length(res) == 0, TRUE)
+  expect_equal(file.exists(df), TRUE)
+  expect_equal(file.exists(hf), TRUE)
+
+
+  options("defineR.xsd" = NULL,
+          "defineR.xslt" = NULL)
 
 })

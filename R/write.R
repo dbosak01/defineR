@@ -45,9 +45,10 @@
 #' data complies with version 5 transport file constraints.
 #'
 #' The XSD schema and XSLT transformation documents were created by CDISC,
-#' and are included in the \strong{defineR} package for convenience. Note
-#' that the ADAM schema has three persistent errors, and the conformance check
-#' for ADAM will not run clean. The SDTM checks will run clean.
+#' and are included in the \strong{defineR} package for convenience. To
+#' specify another version of the documents, use the options "defineR.xsd"
+#' and "defineR.xslt".  For example:
+#' \code{options("defineR.xsd" = "c:/myproject/define2-1-0.xsd")}.
 #'
 #' @param path The path to the metadata file.  Currently only Excel metadata
 #' files are supported.  Other metadata sources may be added if there is sufficient
@@ -269,13 +270,21 @@ write_HTML <- function(xmlpth, htmlpth, ver, msg) {
     # Get external data directory
     extd <- system.file("extdata", package = "defineR")
 
-    # Get path to xsd
-    if (ver == "2.0.0") {
-      xsl <- file.path(extd, ver, "cdisc-xsl/define2-0.xsl")
+
+    if (is.null(options()[["defineR.xslt"]]) == FALSE) {
+
+      xsl <- options("defineR.xslt")[[1]]
 
     } else {
 
-      stop("Version '" %p% ver %p% "' not supported.")
+      # Get path to xsd
+      if (ver == "2.0.0") {
+        xsl <- file.path(extd, ver, "cdisc-xsl/define2-0.xsl")
+
+      } else {
+
+        stop("Version '" %p% ver %p% "' not supported.")
+      }
     }
 
     if (!file.exists(xsl)) {

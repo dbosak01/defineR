@@ -16,13 +16,21 @@ check_xsd <- function(pth, ver, msg) {
     # Get external data directory
     extd <- system.file("extdata", package = "defineR")
 
-    # Get path to xsd
-    if (ver == "2.0.0") {
-      xsd <- file.path(extd, ver, "cdisc-define-2.0/define2-0-0.xsd")
+    if (is.null(options()[["defineR.xsd"]]) == FALSE) {
+
+      xsd <- options("defineR.xsd")[[1]]
 
     } else {
 
-      stop("Version '" %p% ver %p% "' not supported.")
+
+      # Get path to xsd
+      if (ver == "2.0.0") {
+        xsd <- file.path(extd, ver, "cdisc-define-2.0/define2-0-0.xsd")
+
+      } else {
+
+        stop("Version '" %p% ver %p% "' not supported.")
+      }
     }
 
     if (!file.exists(xsd)) {
@@ -81,6 +89,8 @@ check_xsd <- function(pth, ver, msg) {
         if (res == FALSE) {
 
           msg <- append(msg, attr(res, "errors"))
+
+          msg <- remove_messages(msg)
         }
 
       }
@@ -92,6 +102,53 @@ check_xsd <- function(pth, ver, msg) {
 
 }
 
+# These are persistent errors in ADAM 2.0 schema.  No reason to pass them
+# on to user or explain them.  Makes more sense to just take them out of
+# the check results.
+remove_messages <- function(msg) {
+
+
+  if (length(msg) > 0) {
+
+    rmvect <- c()
+
+    m1 <- paste0("Element '{http://www.w3.org/2001/XMLSchema}import': ",
+    "Skipping import of schema located at ")
+
+    m1pos <- grep(m1, msg, fixed = TRUE)
+    if (!is.na(m1pos)) {
+
+      rmvect[length(rmvect) + 1] <- m1pos
+    }
+
+
+    m2 <- paste0("Element '{http://www.cdisc.org/ns/odm/v1.3}CodeListItem': ",
+    "Duplicate key-sequence ['1'] in unique identity-constraint ",
+    "'{http://www.cdisc.org/ns/odm/v1.3}UC-CL-2'.")
+
+    m2pos <- match(m2, msg)
+    if (!is.na(m2pos)) {
+
+      rmvect[length(rmvect) + 1] <- m2pos
+    }
+
+    m3 <- paste0("Element '{http://www.cdisc.org/ns/arm/v1.0}AnalysisResultDisplays': ",
+    "This element is not expected. Expected is ( {http://www.cdisc.org/ns/def/v2.0}leaf ).")
+
+    m3pos <- match(m3, msg)
+    if (!is.na(m3pos)) {
+
+      rmvect[length(rmvect) + 1] <- m3pos
+    }
+
+
+    msg <- msg[!seq(1, length(msg)) %in% rmvect]
+
+  }
+
+  return(msg)
+
+}
 
 
 # Check Metadata ----------------------------------------------------------

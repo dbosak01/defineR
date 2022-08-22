@@ -94,9 +94,10 @@ parameter accepts a "V5" option, to perform checks that ensure the
 data complies with version 5 transport file constraints.
 
 The XSD schema and XSLT transformation documents were created by CDISC,
-and are included in the \strong{defineR} package for convenience. Note
-that the ADAM schema has three persistent errors, and the conformance check
-for ADAM will not run clean. The SDTM checks will run clean.
+and are included in the \strong{defineR} package for convenience. To
+specify another version of the documents, use the options "defineR.xsd"
+and "defineR.xslt".  For example:
+\code{options("defineR.xsd" = "c:/myproject/define2-1-0.xsd")}.
 }
 \examples{
 # Get temp directory

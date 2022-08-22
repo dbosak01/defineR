@@ -235,7 +235,10 @@ conformance check mechanism, and just create the XML.  Also note that this
 parameter accepts a "V5" option, to perform checks that ensure the
 data complies with version 5 transport file constraints.</p>
 <p>The XSD schema and XSLT transformation documents were created by CDISC,
-and are included in the <strong>defineR</strong> package for convenience.</p>
+and are included in the <strong>defineR</strong> package for convenience. To
+specify another version of the documents, use the options "defineR.xsd"
+and "defineR.xslt".  For example:
+<code>options("defineR.xsd" = "c:/myproject/define2-1-0.xsd")</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='write_metadata.html'>write_metadata</a></code> to create a metadata template.</p></div>
