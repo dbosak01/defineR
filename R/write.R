@@ -27,7 +27,7 @@
 #' CDISC.  Any discrepancies will be writted to the check report.  By default,
 #' the check report is also shown in the viewer, and returned as a vector of
 #' strings by the function.  This discrepancy list allows you to verify
-#' that the metadata as been filled out correctly.
+#' that the metadata has been filled out correctly.
 #'
 #' For instance, the
 #' conformance check will ensure that each object ID (OID) is unique within

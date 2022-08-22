@@ -145,11 +145,35 @@ copy_template <- function(dir, type, ver, demo) {
 
   path <- file.path(dir, basename(src))
 
+  # If path exists, don't kill existing.
+  # I'm worried about people accidentally wiping out their metadata.
+  # So instead, try appending integers until you get a name that
+  # is not being used.
   if (file.exists(path)) {
 
-    file.remove(path)
+    dnm <- dirname(path)
+    bnm <- basename(path)
+    fnm <- substr(bnm, 1, nchar(bnm) - 4)  # not the best
 
-    #stop("Target file '" %p% path %p% "' already exists.")
+    for (i in 1:20) {
+
+      pth <- file.path(dnm, paste0(fnm, "(", i, ").xls"))
+
+      if (!file.exists(pth)) {
+        break()
+
+      }
+    }
+
+
+    if (file.exists(pth)) {
+      # Give up
+      stop("Target file '" %p% path %p% "' already exists.")
+    } else {
+
+      path <- pth
+    }
+
   }
 
   ret <- file.copy(src, path)

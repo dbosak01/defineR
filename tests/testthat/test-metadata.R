@@ -90,6 +90,8 @@ test_that("metadata6: Templates can be created.", {
 
   fp1 <- file.path(dp1, "SDTM_METADATA.xls")
   fp2 <- file.path(dp2, "SDTM_METADATA.xls")
+  fp3 <- file.path(dp2, "SDTM_METADATA(1).xls")
+  fp4 <- file.path(dp2, "SDTM_METADATA(2).xls")
 
   if (file.exists(fp1))
     file.remove(fp1)
@@ -97,6 +99,11 @@ test_that("metadata6: Templates can be created.", {
   if (file.exists(fp2))
     file.remove(fp2)
 
+  if (file.exists(fp3))
+    file.remove(fp3)
+
+  if (file.exists(fp4))
+    file.remove(fp4)
 
   res <- write_metadata(dp1)
 
@@ -108,6 +115,17 @@ test_that("metadata6: Templates can be created.", {
   res <- write_metadata(dp2, demo = TRUE)
 
   expect_equal(file.exists(fp2), TRUE)
+  expect_equal(file.exists(res), TRUE)
+
+
+  res <- write_metadata(dp2, demo = TRUE)
+
+  expect_equal(file.exists(fp3), TRUE)
+  expect_equal(file.exists(res), TRUE)
+
+  res <- write_metadata(dp2, demo = TRUE)
+
+  expect_equal(file.exists(fp4), TRUE)
   expect_equal(file.exists(res), TRUE)
 
 
