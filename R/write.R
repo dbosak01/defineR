@@ -130,9 +130,9 @@ write_define <- function(path, dir = ".", type = "sdtm", ver = NULL,
    v5flg <- FALSE
   }
 
-  dfl <- "define." %p% type %p% ".xml"
-  hfl <- "define." %p% type %p% ".html"
-  cfl <- "check." %p% type %p% "." %p% tolower(report_type)
+  dfl <- "define." %p% tolower(type) %p% ".xml"
+  hfl <- "define." %p% tolower(type) %p% ".html"
+  cfl <- "check." %p% tolower(type) %p% "." %p% tolower(report_type)
 
   dpth <- file.path(dir, dfl)
   hpth <- file.path(dir, hfl)

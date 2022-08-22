@@ -73,7 +73,7 @@ create_adam_xml <- function(lst, version) {
   ftr <- get_footer()
 
 
-  ret <- c(hdr, val, grps, defs,  comp, cl, whr, cmnts, extl, leafdefs, analysis, ftr)
+  ret <- c(hdr, extl, val, whr, grps, defs, cl, comp, leafdefs, analysis, cmnts, ftr)
 
 
 
@@ -122,7 +122,7 @@ get_header_adam <- function(dta) {
               foid = dta[["FILEOID"]][1],
               soid = dta[["STUDYOID"]][1],
               study = dta[["STUDYNAME"]][1],
-              desc = dta[["STUDYDESCRIPTION"]][1],
+              desc = encodeMarkup(dta[["STUDYDESCRIPTION"]][1]),
               protocol = dta[["PROTOCOLNAME"]][1],
               sn = dta[["STANDARD"]][1],
               sv = dta[["VERSION"]][1],
@@ -175,17 +175,17 @@ get_item_groups_adam <- function(toc, vardt) {
 
   ret<-vector()
   for(rw in 1:nrow(toc)) {
-    ret[length(ret) + 1] <- glue(blk, name = toc[rw, "NAME"])
+    ret[length(ret) + 1] <- glue(blk, name = toc[[rw, "NAME"]])
     ret[length(ret) + 1] <- glue(itemGroup,
-                                 oid = toc[rw, "OID"],
-                                 name = toc[rw, "NAME"],
-                                 reps = toc[rw, "REPEATING"],
-                                 purp = toc[rw, "PURPOSE"],
-                                 isRef = toc[rw, "ISREFERENCEDATA"],
-                                 struct = toc[rw, "STRUCTURE"],
-                                 class = toc[rw, "CLASS"],
-                                 commentoid = toc[rw, "COMMENTOID"],
-                                 label = toc[rw, "LABEL"])
+                                 oid = toc[[rw, "OID"]],
+                                 name = toc[[rw, "NAME"]],
+                                 reps = toc[[rw, "REPEATING"]],
+                                 purp = toc[[rw, "PURPOSE"]],
+                                 isRef = toc[[rw, "ISREFERENCEDATA"]],
+                                 struct = toc[[rw, "STRUCTURE"]],
+                                 class = toc[[rw, "CLASS"]],
+                                 commentoid = toc[[rw, "COMMENTOID"]],
+                                 label = encodeMarkup(toc[[rw, "LABEL"]]))
 
     for(varrow in 1:nrow(vardt)) {
       keyHolder <- ""
@@ -206,10 +206,10 @@ get_item_groups_adam <- function(toc, vardt) {
 
         # itemref
         ret[length(ret) + 1] <- glue(itemRefs,
-                                     domain = vardt[varrow, "DOMAIN"],
-                                     varname = vardt[varrow, "VARIABLE"],
-                                     varnum = vardt[varrow, "VARNUM"],
-                                     manda = vardt[varrow, "MANDATORY"],
+                                     domain = vardt[[varrow, "DOMAIN"]],
+                                     varname = vardt[[varrow, "VARIABLE"]],
+                                     varnum = vardt[[varrow, "VARNUM"]],
+                                     manda = vardt[[varrow, "MANDATORY"]],
                                      keyseq = keyHolder,
                                      methodoid = methodoidHolder)
       }
@@ -217,8 +217,8 @@ get_item_groups_adam <- function(toc, vardt) {
 
     ret[length(ret) + 1] <- endCom
     ret[length(ret) + 1] <- glue(groupEnd,
-                                 name = toc[rw, "NAME"],
-                                 loc = toc[rw, "ARCHIVELOCATIONID"])
+                                 name = toc[[rw, "NAME"]],
+                                 loc = toc[[rw, "ARCHIVELOCATIONID"]])
 
   }
   return(ret)
@@ -276,7 +276,7 @@ get_item_defs_adam <- function(toc, vardt) {
       originHolder <- ""
       if(vardt[[varrow, "ORIGIN"]] %eq% 'Assigned' ||
          vardt[[varrow, "ORIGIN"]] %eq% 'Derived') {
-        originHolder <- vardt[[varrow, "ORIGIN"]]
+        originHolder <- encodeMarkup(vardt[[varrow, "ORIGIN"]])
       }
       else {
         internalHolder <- '<Description>
@@ -286,14 +286,14 @@ get_item_defs_adam <- function(toc, vardt) {
         originHolder <- "Predecessor"
       }
       ret[length(ret) + 1] <- glue(str,
-                                   domain = vardt[varrow, "DOMAIN"],
-                                   variable = vardt[varrow, "VARIABLE"],
-                                   type = vardt[varrow, "TYPE"],
-                                   length = vardt[varrow, "LENGTH"],
+                                   domain = vardt[[varrow, "DOMAIN"]],
+                                   variable = vardt[[varrow, "VARIABLE"]],
+                                   type = vardt[[varrow, "TYPE"]],
+                                   length = vardt[[varrow, "LENGTH"]],
                                    display = strHolder,
                                    internals = internalHolder,
                                    codelistref = codeListHolder,
-                                   label = vardt[varrow, "LABEL"],
+                                   label = encodeMarkup(vardt[[varrow, "LABEL"]]),
                                    origin = originHolder)
   }
 
@@ -320,8 +320,9 @@ get_value_level_adam <- function(dta) {
   str <- '
     <ItemRef ItemOID="VL.{domain}.{variable}.{value}"
       OrderNumber="{varnum}"
-      Mandatory="{mandatory}">
-      {methodoid}{wc}
+      Mandatory="{mandatory}"
+      {methodoid}>
+      {wc}
     </ItemRef>'
 
 
@@ -337,26 +338,26 @@ get_value_level_adam <- function(dta) {
 
     if (nrow(sp)) {
       ret[length(ret) + 1] <- glue(defstart,
-                                   domain =  sp[1, "DOMAIN"],
-                                   variable = sp[1, "VARIABLE"])
+                                   domain =  sp[[1, "DOMAIN"]],
+                                   variable = sp[[1, "VARIABLE"]])
 
       for (rw in seq_len(nrow(sp))) {
 
 
         whrc <- ""
         holder <- ""
-        if (!is.na(sp[rw, "WHERECLAUSEOID"]))
-          whrc <- glue(wcstr, wcoid = sp[rw, "WHERECLAUSEOID"])
+        if (!is.na(sp[[rw, "WHERECLAUSEOID"]]))
+          whrc <- glue(wcstr, wcoid = sp[[rw, "WHERECLAUSEOID"]])
         # Added 312, 315-316
-        if(!is.na(sp[rw, "COMPUTATIONMETHODOID"]))
-          holder <- paste0('MethodOID="', sp[rw, "COMPUTATIONMETHODOID"], '">\n')
+        if(!is.na(sp[[rw, "COMPUTATIONMETHODOID"]]))
+          holder <- paste0('MethodOID="', sp[[rw, "COMPUTATIONMETHODOID"]], '"')
 
         ret[length(ret) + 1] <- glue(str,
-                                     domain =  sp[rw, "DOMAIN"],
-                                     variable = sp[rw, "VARIABLE"],
-                                     value =  sp[rw, "VALUENAME"],
-                                     varnum =  sp[rw, "VARNUM"],
-                                     mandatory =  sp[rw, "MANDATORY"],
+                                     domain =  sp[[rw, "DOMAIN"]],
+                                     variable = sp[[rw, "VARIABLE"]],
+                                     value =  sp[[rw, "VALUENAME"]],
+                                     varnum =  sp[[rw, "VARNUM"]],
+                                     mandatory =  sp[[rw, "MANDATORY"]],
                                      methodoid = holder,
                                      wc = whrc
         )
@@ -390,10 +391,10 @@ get_computations_adam <- function(dta) {
   ret <- c(blk)
   for(rw in seq_len(nrow(dta))) {
     ret[length(ret) + 1] <- glue(str,
-                                 mthdOID = dta[rw, "COMPUTATIONMETHODOID"],
-                                 label = dta[rw, "LABEL"],
-                                 comp = dta[rw, "TYPE"],
-                                 compMthd = dta[rw, "COMPUTATIONMETHOD"])
+                                 mthdOID = dta[[rw, "COMPUTATIONMETHODOID"]],
+                                 label = encodeMarkup(dta[[rw, "LABEL"]]),
+                                 comp = dta[[rw, "TYPE"]],
+                                 compMthd = encodeMarkup(dta[[rw, "COMPUTATIONMETHOD"]]))
   }
   ret[length(ret) + 1] <- ""
   return(ret)
@@ -426,19 +427,19 @@ get_code_lists_adam <- function(dta) {
 
   for(sp in splts) {
     ret[length(ret) + 1] <- glue(listHead,
-                                 codelistname = sp[1, "CODELISTNAME"],
-                                 dtype = sp[1, "TYPE"])
+                                 codelistname = sp[[1, "CODELISTNAME"]],
+                                 dtype = sp[[1, "TYPE"]])
     for(rw in seq_len(nrow(sp))) {
       if(!is.na(sp[[rw, "CODELISTDICTIONARY"]])) {
         ret[length(ret) + 1] <- glue(dictcl,
-                                     dict = sp[rw, "CODELISTDICTIONARY"],
-                                     clver = sp[rw, "CODELISTVERSION"])
+                                     dict = sp[[rw, "CODELISTDICTIONARY"]],
+                                     clver = sp[[rw, "CODELISTVERSION"]])
       }
       else {
         ret[length(ret) + 1] <- glue(item,
-                                     codedval = sp[rw, "CODEDVALUE"],
-                                     rank = sp[rw, "RANK"],
-                                     translated = sp[rw, "TRANSLATED"])
+                                     codedval = encodeMarkup(sp[[rw, "CODEDVALUE"]]),
+                                     rank = sp[[rw, "RANK"]],
+                                     translated = encodeMarkup(sp[[rw, "TRANSLATED"]]))
       }
     }
     ret[length(ret) + 1] <- endCL
@@ -467,11 +468,11 @@ get_where_adam <- function(dta) {
   for (rw in seq_len(nrow(dta))) {
 
     ret[length(ret) + 1] <- glue(str,
-                                 oid = dta[rw, "WHERECLAUSEOID"],
-                                 sh = dta[rw, "SOFTHARD"],
-                                 iod = dta[rw, "ITEMOID"],
-                                 comp = dta[rw, "COMPARATOR"],
-                                 val = dta[rw, "VALUES"])
+                                 oid = dta[[rw, "WHERECLAUSEOID"]],
+                                 sh = dta[[rw, "SOFTHARD"]],
+                                 iod = dta[[rw, "ITEMOID"]],
+                                 comp = encodeMarkup(dta[[rw, "COMPARATOR"]]),
+                                 val = encodeMarkup(dta[[rw, "VALUES"]]))
   }
 
 
@@ -502,8 +503,8 @@ get_comments_adam <- function(dta) {
   for (rw in seq_len(nrow(dta))) {
 
     ret[length(ret) + 1] <- glue(str,
-                                 oid = dta[rw, "COMMENTOID"],
-                                 comment = dta[rw, "COMMENT"])
+                                 oid = dta[[rw, "COMMENTOID"]],
+                                 comment = dta[[rw, "COMMENT"]])
 
   }
 
@@ -535,11 +536,10 @@ get_external_links_adam <- function(dta) {
     # print(dta[[rw, "AnnotatedCRF"]])
     # print(dta[[rw,"SupplementalDoc"]])
     if(dta[[rw, "AnnotatedCRF"]] %eq% 'Y') {
-      # print("hi")
-      ret[length(ret) + 1] <- glue(str1, leafid = dta[rw, "LeafID"])
+      ret[length(ret) + 1] <- glue(str1, leafid = dta[[rw, "LeafID"]])
     }
     else if (dta[[rw, "SupplementalDoc"]] %eq% 'Y') {
-      ret[length(ret) + 1] <- glue(str2, leafid = dta[rw, "LeafID"])
+      ret[length(ret) + 1] <- glue(str2, leafid = dta[[rw, "LeafID"]])
     }
   }
   return(ret)
@@ -559,9 +559,9 @@ get_leaf_definitions_adam <- function(dta) {
   ret <- c(blk)
   for(rw in 1:nrow(dta)) {
     ret[length(ret) + 1] <- glue(leafdefs,
-                                 leafid = dta[rw, "LeafID"],
-                                 leafrelpath = dta[rw, "LeafRelPath"],
-                                 title = dta[rw, "Title"])
+                                 leafid = dta[[rw, "LeafID"]],
+                                 leafrelpath = dta[[rw, "LeafRelPath"]],
+                                 title = encodeMarkup(dta[[rw, "Title"]]))
   }
   return(ret)
 }
@@ -624,21 +624,21 @@ get_analysis_results_adam <- function(dta) {
   for(rw in 1:nrow(dta)) {
 
     ret[length(ret) + 1] <- glue(resultDisplay,
-                                 dispid = dta[rw, "DISPLAYID"],
-                                 dispname = dta[rw, "DISPLAYNAME"],
-                                 analysisdata = dta[rw, "ANALYSISDATASET"],
-                                 paramcd = dta[rw, "PARAMCD"],
-                                 reason = dta[rw, "REASON"],
-                                 purpose = dta[rw, "PURPOSE"],
-                                 resultname = dta[rw, "RESULTNAME"],
-                                 wcoid = dta[rw, "WHERECLAUSEOID"],
+                                 dispid = dta[[rw, "DISPLAYID"]],
+                                 dispname = encodeMarkup(dta[[rw, "DISPLAYNAME"]]),
+                                 analysisdata = dta[[rw, "ANALYSISDATASET"]],
+                                 paramcd = dta[[rw, "PARAMCD"]],
+                                 reason = encodeMarkup(dta[[rw, "REASON"]]),
+                                 purpose = encodeMarkup(dta[[rw, "PURPOSE"]]),
+                                 resultname = dta[[rw, "RESULTNAME"]],
+                                 wcoid = dta[[rw, "WHERECLAUSEOID"]],
                                  analysisvars = analysis_results_helper(dta[[rw,
                                   "ANALYSISVARIABLES"]],
                                   dta[[rw, "ANALYSISDATASET"]]),
-                                 document = dta[rw, "DOCUMENTATION"],
-                                 rleafid = dta[rw, "REFLEAFID"],
-                                 context = dta[rw, "CONTEXT"],
-                                 pgrmcode = dta[rw, "PROGRAMMINGCODE"])
+                                 document = encodeMarkup(dta[[rw, "DOCUMENTATION"]]),
+                                 rleafid = dta[[rw, "REFLEAFID"]],
+                                 context = encodeMarkup(dta[[rw, "CONTEXT"]]),
+                                 pgrmcode = encodeMarkup(dta[[rw, "PROGRAMMINGCODE"]]))
   }
 
   ret[length(ret) + 1] <- end

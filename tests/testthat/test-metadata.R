@@ -138,6 +138,5 @@ test_that("metadata7: Parameter checks work.", {
   expect_error(write_metadata(fp, ver = "2.1"))
   expect_error(write_metadata(fp, type = "fork"))
   expect_error(write_metadata(fp, type = NULL))
-  expect_error(write_metadata(fp))
 
 })

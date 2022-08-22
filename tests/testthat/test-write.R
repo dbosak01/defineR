@@ -71,8 +71,8 @@ test_that("write4: CDISC XML conforms to 2.0 define XSD schema", {
 
   library(xml2)
 
-  fp <- file.path(base_path, "sdtm/define.xml")
-  op <- file.path(base_path, "xsd/cdisc-define-2.0/define2-0-0.xsd")
+  fp <- file.path(data_dir, "sdtm/define.xml")
+  op <- file.path(data_dir, "xsd/cdisc-define-2.0/define2-0-0.xsd")
 
   doc <- read_xml(fp)
   schema <- read_xml(op)
@@ -88,8 +88,8 @@ test_that("write5: defineR XML conforms to 2.0 define XSD schema", {
 
   library(xml2)
 
-  fp <- file.path(base_path, "xml/test1.xml")
-  op <- file.path(base_path, "xsd/cdisc-define-2.0/define2-0-0.xsd")
+  fp <- file.path(data_dir, "xml/test1.xml")
+  op <- file.path(data_dir, "xsd/cdisc-define-2.0/define2-0-0.xsd")
 
   doc <- read_xml(fp)
   schema <- read_xml(op)
@@ -161,33 +161,31 @@ test_that("write7: defineR XML can be converted to HTML using XSL", {
 })
 
 
+test_that("write8: ADAM defineR XML can be converted to HTML using XSL", {
 
-# Make this work
-# test_that("write8: ADAM defineR XML can be converted to HTML using XSL", {
-#
-#   library(xml2)
-#   library(xslt)
-#
-#   fp <- file.path(data_dir, "xml/test2.xml")
-#   sp <- file.path(data_dir, "xsl/define2-0-0.xsl")
-#   op <- file.path(base_path, "html/test8.html")
-#
-#   if (file.exists(op))
-#     file.remove(op)
-#
-#   doc <- read_xml(fp)
-#   style <- read_xml(sp)
-#   html <- xml_xslt(doc, style)
-#
-#
-#   write_html(html, op)
-#
-#   fe <- file.exists(op)
-#
-#   expect_equal(fe, TRUE)
-#
-#
-# })
+  library(xml2)
+  library(xslt)
+
+  fp <- file.path(data_dir, "adam/define.xml")
+  sp <- file.path(data_dir, "xsl/define2-0.xsl")
+  op <- file.path(base_path, "html/test8.html")
+
+  if (file.exists(op))
+    file.remove(op)
+
+  doc <- read_xml(fp)
+  style <- read_xml(sp)
+  html <- xml_xslt(doc, style)
+
+
+  write_html(html, op)
+
+  fe <- file.exists(op)
+
+  expect_equal(fe, TRUE)
+
+
+})
 
 
 test_that("write9: create_sdtm_xml works with JS metadata", {
@@ -408,7 +406,7 @@ test_that("write17: write_define() works as expected on CDISC metadata with chec
 
 
 
-test_that("write17: write_define() works as expected on perfect CDISC metadata with checks.", {
+test_that("write18: write_define() works as expected on perfect SDTM metadata.", {
 
   fp <- file.path(data_dir, "data/SDTM_METADATA_PERFECT.xls")
   op <- file.path(base_path, "output")
@@ -431,3 +429,49 @@ test_that("write17: write_define() works as expected on perfect CDISC metadata w
   expect_equal(file.exists(hf), TRUE)
 
 })
+
+
+
+
+
+test_that("write19: CDISC ADAM XML conforms to 2.0 define XSD schema", {
+
+  library(xml2)
+
+  fp <- file.path(data_dir, "adam/define.xml")
+  op <- file.path(data_dir, "xsd/cdisc-define-2.0/define2-0-0.xsd")
+
+  doc <- read_xml(fp)
+  schema <- read_xml(op)
+  res <- xml_validate(doc, schema)
+
+
+  expect_equal(res %in% c(TRUE, FALSE), TRUE)
+
+
+})
+
+# This is still broken
+# test_that("write20: write_define() works as expected on perfect ADAM metadata.", {
+#
+#   fp <- file.path(data_dir, "data/ADAM_METADATA_PERFECT.xls")
+#   op <- file.path(base_path, "output")
+#
+#   df <- file.path(op, "define.adam.xml")
+#   hf <- file.path(op, "define.adam.html")
+#
+#   if (file.exists(df))
+#     file.remove(df)
+#
+#   if (file.exists(hf))
+#     file.remove(hf)
+#
+#
+#   res <- write_define(fp, op, type = "ADAM", check = TRUE)
+#
+#   res
+#   expect_equal(length(res) == 0, TRUE)
+#   expect_equal(file.exists(df), TRUE)
+#   expect_equal(file.exists(hf), TRUE)
+#
+# })

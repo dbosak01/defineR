@@ -17,7 +17,8 @@ write_define(
 }
 \arguments{
 \item{path}{The path to the metadata file.  Currently only Excel metadata
-files are supported.}
+files are supported.  Other metadata sources may be added if there is sufficient
+interest.}
 
 \item{dir}{The output directory to create the define.xml and associated files.
 By default, the current working directory will be used. If the directory
@@ -42,7 +43,7 @@ values are TRUE and FALSE.  Default is TRUE.}
 
 \item{report_type}{The output type of the check report, if requested.
 Valid values are "TXT", "RTF", "PDF", "HTML" and "DOCX".  Default is
-"DOCX".}
+"PDF".}
 }
 \value{
 The define.xml file and any associated files will be written
@@ -50,7 +51,7 @@ to the directory specified on the \code{dir} parameter.
 }
 \description{
 The \code{write_define} function inputs an SDTM or ADAM
-metadata file and exports a define.xml and associated files to a specified
+metadata file and outputs a define.xml and associated files to a specified
 directory. Possible associated files are the HTML transformation of
 the define.xml and a check report. By default, the check report will
 also be shown in the viewer.
@@ -75,7 +76,7 @@ will compare the define.xml file against the XSD schema supplied by
 CDISC.  Any discrepancies will be writted to the check report.  By default,
 the check report is also shown in the viewer, and returned as a vector of
 strings by the function.  This discrepancy list allows you to verify
-that the metadata as been filled out correctly.
+that the metadata has been filled out correctly.
 
 For instance, the
 conformance check will ensure that each object ID (OID) is unique within
@@ -90,7 +91,7 @@ warnings will be sent to the check report, and will not stop execution.
 Note that the \code{check} parameter can be used to turn off the
 conformance check mechanism, and just create the XML.  Also note that this
 parameter accepts a "V5" option, to perform checks that ensure the
-data complies with version 5 transport file format constraints.
+data complies with version 5 transport file constraints.
 
 The XSD schema and XSLT transformation documents were created by CDISC,
 and are included in the \strong{defineR} package for convenience.

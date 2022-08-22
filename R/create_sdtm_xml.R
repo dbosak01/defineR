@@ -444,11 +444,11 @@ get_where <- function(dta) {
   for (rw in seq_len(nrow(dta))) {
 
     ret[length(ret) + 1] <- glue(str,
-                                 oid = dta[rw, "WHERECLAUSEOID"],
-                                 sh = dta[rw, "SOFTHARD"],
-                                 iod = dta[rw, "ITEMOID"],
-                                 comp = dta[rw, "COMPARATOR"],
-                                 val = dta[rw, "VALUES"])
+                                 oid = dta[[rw, "WHERECLAUSEOID"]],
+                                 sh = dta[[rw, "SOFTHARD"]],
+                                 iod = dta[[rw, "ITEMOID"]],
+                                 comp = encodeMarkup(dta[[rw, "COMPARATOR"]]),
+                                 val = encodeMarkup(dta[[rw, "VALUES"]]))
   }
 
 
