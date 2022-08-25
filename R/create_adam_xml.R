@@ -172,7 +172,7 @@ get_item_groups_adam <- function(toc, vardt) {
       def:Structure="{struct}"
       def:Class="{class}"
       def:CommentOID="COM.{commentoid}"
-      def:ArchiveLocationID="Location.{name}">
+      def:ArchiveLocationID="LF.{name}">
       <Description>
         <TranslatedText xml:lang="en">{label}</TranslatedText>
       </Description>'
@@ -674,7 +674,7 @@ get_analysis_results <- function(dta, wcdta) {
       </def:DocumentRef>
       <arm:AnalysisResult
         OID="AR.{dispid}"
-        ParameterOID="IT.{analysisdata}.{paramcd}"
+        {paramcd}
         ResultIdentifier="{dispid}"
         AnalysisReason="{reason}"
         AnalysisPurpose="{purpose}">
@@ -723,11 +723,20 @@ get_analysis_results <- function(dta, wcdta) {
 
     }
 
+    pcd <- ""
+    if (!is.na(dta[[rw, "PARAMCD"]])) {
+
+
+      pcd <- paste0('ParameterOID="',
+                      "IT.", trimws(dta[[rw, "ANALYSISDATASET"]]) , ".PARAMCD",
+                    '"')
+    }
+
     ret[length(ret) + 1] <- glue(resultDisplay,
                                  dispid = dta[[rw, "DISPLAYID"]],
                                  dispname = encodeMarkup(dta[[rw, "DISPLAYNAME"]]),
                                  analysisdata = dta[[rw, "ANALYSISDATASET"]],
-                                 paramcd = trimws(dta[[rw, "PARAMCD"]]),
+                                 paramcd = pcd,
                                  reason = encodeMarkup(dta[[rw, "REASON"]]),
                                  purpose = encodeMarkup(dta[[rw, "PURPOSE"]]),
                                  resultname = dta[[rw, "RESULTNAME"]],

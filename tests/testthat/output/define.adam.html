@@ -980,7 +980,7 @@ document.onclick = function(e)
 </div>
 <div id="main">
 <div class="docinfo">
-<p class="documentinfo">Date/Time of Define-XML document generation: 2022-08-25T08:12:51</p>
+<p class="documentinfo">Date/Time of Define-XML document generation: 2022-08-25T12:06:35</p>
 <p class="documentinfo">Define-XML version: 2.0.0</p>
 <p class="stylesheetinfo">Stylesheet version: 2018-11-21</p>
 </div>
@@ -1037,7 +1037,7 @@ document.onclick = function(e)
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
-<td><span class="unresolved">[unresolved: IT.ADSL.NA]</span></td>
+<td></td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Variable(s)</td>
@@ -1079,7 +1079,11 @@ document.onclick = function(e)
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-PROC FREQ DATA=ADSL; where ittfl='Y';  tables trt01pn * (agegr1 sex race) / cmh; run;
+PROC FREQ DATA=ADSL;
+ where ittfl='Y';
+  tables trt01pn * (agegr1 sex race) / cmh;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1102,7 +1106,9 @@ PROC FREQ DATA=ADSL; where ittfl='Y';  tables trt01pn * (agegr1 sex race) / cmh;
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
-<td><span class="unresolved">[unresolved: IT.ADEF.XPPAIN]</span></td>
+<td>
+<a href="#IG.ADEF.IT.ADEF.PARAMCD" title="Parameter Code">PARAMCD</a> = "XPPAIN" (Pain Score)<br>
+</td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Variable(s)</td>
@@ -1133,7 +1139,12 @@ PROC FREQ DATA=ADSL; where ittfl='Y';  tables trt01pn * (agegr1 sex race) / cmh;
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc freq data = adef; by crit1 avisitn; where ittfl='Y'; tables trtpn * crit1fl / chisq; run;
+proc freq data = adef;
+ by crit1 avisitn;
+ where ittfl='Y';
+ tables trtpn * crit1fl / chisq;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1156,7 +1167,9 @@ proc freq data = adef; by crit1 avisitn; where ittfl='Y'; tables trtpn * crit1fl
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
-<td><span class="unresolved">[unresolved: IT.ADEF.XPPAIN]</span></td>
+<td>
+<a href="#IG.ADEF.IT.ADEF.PARAMCD" title="Parameter Code">PARAMCD</a> = "XPPAIN" (Pain Score)<br>
+</td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Variable(s)</td>
@@ -1192,7 +1205,12 @@ proc freq data = adef; by crit1 avisitn; where ittfl='Y'; tables trtpn * crit1fl
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc glm data = adef; by avisitn avisit; class trtpn; model aval = trtpn base; run;
+proc glm data = adef;
+ by avisitn avisit;
+ class trtpn;
+ model aval = trtpn base;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1215,7 +1233,9 @@ proc glm data = adef; by avisitn avisit; class trtpn; model aval = trtpn base; r
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
-<td><span class="unresolved">[unresolved: IT.ADTTE.TTPNRELF]</span></td>
+<td>
+<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br><a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
+</td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Variable(s)</td>
@@ -1256,7 +1276,14 @@ proc glm data = adef; by avisitn avisit; class trtpn; model aval = trtpn base; r
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF';  id usubjid;  strata trtpn;  time aval*cnsr (1 2 3);   test trtpn; run;
+proc lifetest  data = adtte plots=s;
+  where ittfl = 'Y' and paramcd = 'TTPNRELF';
+  id usubjid;
+  strata trtpn;
+  time aval*cnsr (1 2 3);
+   test trtpn;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1265,7 +1292,10 @@ proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF'
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
+proc phreg data = adtte;
+ model aval*cnsr(1, 2, 3) = trtpn;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1276,7 +1306,9 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
-<td><span class="unresolved">[unresolved: IT.ADTTE.TTPNRELF]</span></td>
+<td>
+<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br><a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
+</td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Variable(s)</td>
@@ -1317,7 +1349,14 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF';  id usubjid;  strata trtpn;  time aval*cnsr (1 2 3);   test trtpn; run;
+proc lifetest  data = adtte plots=s;
+  where ittfl = 'Y' and paramcd = 'TTPNRELF';
+  id usubjid;
+  strata trtpn;
+  time aval*cnsr (1 2 3);
+   test trtpn;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1326,7 +1365,10 @@ proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF'
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
+proc phreg data = adtte;
+ model aval*cnsr(1, 2, 3) = trtpn;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1349,7 +1391,9 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
-<td><span class="unresolved">[unresolved: IT.ADTTE.TTPNRELF]</span></td>
+<td>
+<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br><a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
+</td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Variable(s)</td>
@@ -1390,7 +1434,14 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF';  id usubjid;  strata trtpn;  time aval*cnsr (1 2 3);   test trtpn; run;
+proc lifetest  data = adtte plots=s;
+  where ittfl = 'Y' and paramcd = 'TTPNRELF';
+  id usubjid;
+  strata trtpn;
+  time aval*cnsr (1 2 3);
+   test trtpn;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1399,7 +1450,10 @@ proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF'
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
+proc phreg data = adtte;
+ model aval*cnsr(1, 2, 3) = trtpn;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1410,7 +1464,9 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
-<td><span class="unresolved">[unresolved: IT.ADTTE.TTPNRELF]</span></td>
+<td>
+<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br><a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
+</td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Variable(s)</td>
@@ -1451,7 +1507,14 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF';  id usubjid;  strata trtpn;  time aval*cnsr (1 2 3);   test trtpn; run;
+proc lifetest  data = adtte plots=s;
+  where ittfl = 'Y' and paramcd = 'TTPNRELF';
+  id usubjid;
+  strata trtpn;
+  time aval*cnsr (1 2 3);
+   test trtpn;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1460,7 +1523,10 @@ proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF'
 <td class="arm-label">Programming Statements</td>
 <td>
 <span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
+proc phreg data = adtte;
+ model aval*cnsr(1, 2, 3) = trtpn;
+ run;
+
         </pre>
 <div class="arm-code-ref"></div>
 </td>
@@ -1484,7 +1550,7 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
-<td><span class="unresolved">[unresolved: IT.ADAE.N/A]</span></td>
+<td></td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Variable(s)</td>
@@ -1549,8 +1615,9 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <td>ADAE - One record per event per subject</td>
 <td>Analysis</td>
 <td>STUDYID, USUBJID, ASTDT, AEDECOD</td>
-<td><p class="linebreakcell"><span class="unresolved">[unresolved: COM.COM.ADAE]</span></p></td>
-<td>[unresolved: Location.ADAE]<span class="external-link-gif"></span> </td>
+<td><p class="linebreakcell">Primarily derived from SDTM.AE</p></td>
+<td>
+<a class="external" href="ADAE.xpt">ADAE.xpt </a><span class="external-link-gif"></span> </td>
 </tr>
 <tr class="tableroweven" id="IG.ADSL">
 <td><a href="#IG.IG.ADSL">ADSL</a></td>
@@ -1559,8 +1626,9 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <td>ADSL - One record per subject</td>
 <td>Analysis</td>
 <td>STUDYID, USUBJID</td>
-<td><p class="linebreakcell"><span class="unresolved">[unresolved: COM.COM.ADSL]</span></p></td>
-<td>[unresolved: Location.ADSL]<span class="external-link-gif"></span> </td>
+<td><p class="linebreakcell">Derived from multiple SDTM domains</p></td>
+<td>
+<a class="external" href="ADSL.xpt">ADSL.xpt </a><span class="external-link-gif"></span> </td>
 </tr>
 <tr class="tablerowodd" id="IG.ADEF">
 <td><a href="#IG.IG.ADEF">ADEF</a></td>
@@ -1569,8 +1637,9 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <td>One record per subject per visit</td>
 <td>Analysis</td>
 <td>STUDYID, USUBJID, PARAMCD, AVISITN, ADT</td>
-<td><p class="linebreakcell"><span class="unresolved">[unresolved: COM.COM.ADEF]</span></p></td>
-<td>[unresolved: Location.ADEF]<span class="external-link-gif"></span> </td>
+<td><p class="linebreakcell">Primarily derived from SDTM.XP</p></td>
+<td>
+<a class="external" href="ADEF.xpt">ADEF.xpt </a><span class="external-link-gif"></span> </td>
 </tr>
 <tr class="tableroweven" id="IG.ADTTE">
 <td><a href="#IG.IG.ADTTE">ADTTE</a></td>
@@ -1579,15 +1648,16 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <td>One record per subject</td>
 <td>Analysis</td>
 <td>STUDYID, USUBJID, PARAMCD</td>
-<td><p class="linebreakcell"><span class="unresolved">[unresolved: COM.COM.ADTTE]</span></p></td>
-<td>[unresolved: Location.ADTTE]<span class="external-link-gif"></span> </td>
+<td><p class="linebreakcell">Primarily derived from ADaM.ADAE</p></td>
+<td>
+<a class="external" href="ADTTE.xpt">ADTTE.xpt </a><span class="external-link-gif"></span> </td>
 </tr>
 </table></div>
 <p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
 <br><a id="IG.IG.ADAE"></a><div class="containerbox">
 <h1 class="invisible">Adverse Events Analysis Datasets (ADAE) </h1>
 <table summary="ItemGroup IG.IG.ADAE">
-<caption><span>ADAE (Adverse Events Analysis Datasets) - Occurrence data structure <span class="dataset">Location: [unresolved: Location.ADAE]<span class="external-link-gif"></span> </span></span></caption>
+<caption><span>ADAE (Adverse Events Analysis Datasets) - Occurrence data structure <span class="dataset">Location: <a class="external" href="ADAE.xpt">ADAE.xpt </a><span class="external-link-gif"></span> </span></span></caption>
 <tr class="header">
 <th scope="col">Variable</th>
 <th scope="col">Label / Description</th>
@@ -1678,7 +1748,8 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </td>
 <td>
 <div class="linebreakcell">Predecessor: ADSL</div>
-<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years";
+ else if age&gt;=55 then "&gt;=55 YEARS"</div>
 </td>
 </tr>
 <tr class="tablerowodd">
@@ -1791,9 +1862,12 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <td class="number">40</td>
 <td>
 <span class="linebreakcell"><a href="#CL.CL.AESEV">AESEV</a></span><ul class="codelist">
-<li class="codelist-item">• "MILD" = "Grade 1; 1"</li>
-<li class="codelist-item">• "MODERATE" = "Grade 2; 2"</li>
-<li class="codelist-item">• "SEVERE" = "Grade 3; 3"</li>
+<li class="codelist-item">• "MILD" = "Grade 1;
+ 1"</li>
+<li class="codelist-item">• "MODERATE" = "Grade 2;
+ 2"</li>
+<li class="codelist-item">• "SEVERE" = "Grade 3;
+ 3"</li>
 </ul>
 </td>
 <td><div class="linebreakcell">Predecessor: AE</div></td>
@@ -1902,7 +1976,8 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </td>
 <td>
 <div class="linebreakcell">Derived</div>
-<div class="method-code">If AEREL=NOT RELATED  then NOT RELATED; Otherwise RELATED</div>
+<div class="method-code">If AEREL=NOT RELATED  then NOT RELATED;
+ Otherwise RELATED</div>
 </td>
 </tr>
 <tr class="tablerowodd">
@@ -1950,7 +2025,7 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <br><a id="IG.IG.ADSL"></a><div class="containerbox">
 <h1 class="invisible">Subject Level Analysis Dataset (ADSL) </h1>
 <table summary="ItemGroup IG.IG.ADSL">
-<caption><span>ADSL (Subject Level Analysis Dataset) - Subject level analysis dataset <span class="dataset">Location: [unresolved: Location.ADSL]<span class="external-link-gif"></span> </span></span></caption>
+<caption><span>ADSL (Subject Level Analysis Dataset) - Subject level analysis dataset <span class="dataset">Location: <a class="external" href="ADSL.xpt">ADSL.xpt </a><span class="external-link-gif"></span> </span></span></caption>
 <tr class="header">
 <th scope="col">Variable</th>
 <th scope="col">Label / Description</th>
@@ -2049,7 +2124,8 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </td>
 <td>
 <div class="linebreakcell">Derived</div>
-<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years";
+ else if age&gt;=55 then "&gt;=55 YEARS"</div>
 </td>
 </tr>
 <tr class="tableroweven">
@@ -2271,7 +2347,7 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <br><a id="IG.IG.ADEF"></a><div class="containerbox">
 <h1 class="invisible">Efficacy/Pain Scores Analysis Dataset (ADEF) </h1>
 <table summary="ItemGroup IG.IG.ADEF">
-<caption><span>ADEF (Efficacy/Pain Scores Analysis Dataset) - Basic data structure <span class="dataset">Location: [unresolved: Location.ADEF]<span class="external-link-gif"></span> </span></span></caption>
+<caption><span>ADEF (Efficacy/Pain Scores Analysis Dataset) - Basic data structure <span class="dataset">Location: <a class="external" href="ADEF.xpt">ADEF.xpt </a><span class="external-link-gif"></span> </span></span></caption>
 <tr class="header">
 <th scope="col">Variable</th>
 <th scope="col">Label / Description</th>
@@ -2367,7 +2443,8 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </td>
 <td>
 <div class="linebreakcell">Predecessor: ADSL</div>
-<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years";
+ else if age&gt;=55 then "&gt;=55 YEARS"</div>
 </td>
 </tr>
 <tr class="tablerowodd">
@@ -2649,7 +2726,7 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <br><a id="IG.IG.ADTTE"></a><div class="containerbox">
 <h1 class="invisible">Time-to-Pain Relief Analysis Dataset (ADTTE) </h1>
 <table summary="ItemGroup IG.IG.ADTTE">
-<caption><span>ADTTE (Time-to-Pain Relief Analysis Dataset) - Basic data structure <span class="dataset">Location: [unresolved: Location.ADTTE]<span class="external-link-gif"></span> </span></span></caption>
+<caption><span>ADTTE (Time-to-Pain Relief Analysis Dataset) - Basic data structure <span class="dataset">Location: <a class="external" href="ADTTE.xpt">ADTTE.xpt </a><span class="external-link-gif"></span> </span></span></caption>
 <tr class="header">
 <th scope="col">Variable</th>
 <th scope="col">Label / Description</th>
@@ -2731,7 +2808,8 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </td>
 <td>
 <div class="linebreakcell">Predecessor: ADSL</div>
-<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years";
+ else if age&gt;=55 then "&gt;=55 YEARS"</div>
 </td>
 </tr>
 <tr class="tableroweven">
@@ -2895,7 +2973,8 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <td></td>
 <td>
 <div class="linebreakcell">Derived</div>
-<div class="method-code">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record; else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</div>
+<div class="method-code">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record;
+ else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</div>
 </td>
 </tr>
 <tr class="tableroweven">
@@ -2947,7 +3026,8 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </tr>
 <tr class="tablerowodd">
 <td>UNKNOWN</td>
-<td class="codelist-item-decode">U; Unknown</td>
+<td class="codelist-item-decode">U;
+ Unknown</td>
 </tr>
 </table>
 </div>
@@ -3067,15 +3147,18 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 </tr>
 <tr class="tablerowodd">
 <td>MILD</td>
-<td class="codelist-item-decode">Grade 1; 1</td>
+<td class="codelist-item-decode">Grade 1;
+ 1</td>
 </tr>
 <tr class="tableroweven">
 <td>MODERATE</td>
-<td class="codelist-item-decode">Grade 2; 2</td>
+<td class="codelist-item-decode">Grade 2;
+ 2</td>
 </tr>
 <tr class="tablerowodd">
 <td>SEVERE</td>
-<td class="codelist-item-decode">Grade 3; 3</td>
+<td class="codelist-item-decode">Grade 3;
+ 3</td>
 </tr>
 </table>
 </div>
@@ -3520,12 +3603,18 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <tr id="MT.MT.TTPNRELF.CNSR" class="tablerowodd">
 <td>Censoring algorithm for Time to First Pain Relief</td>
 <td>Computation</td>
-<td><div class="method-code">if pain relief occurs before worsening, then CNSR=0; else if worsening from pain data, then CNSR=1; else if worsening from AE data, then CNSR=3; else if no relief and no worsening at time of last observation, then CNSR=4</div></td>
+<td><div class="method-code">if pain relief occurs before worsening, then CNSR=0;
+ else if worsening from pain data, then CNSR=1;
+ else if worsening from AE data, then CNSR=3;
+ else if no relief and no worsening at time of last observation, then CNSR=4</div></td>
 </tr>
 <tr id="MT.MT.TTPNRELF.EVNTDESC" class="tableroweven">
 <td>Event descriptions for Time to First Pain Relief</td>
 <td>Computation</td>
-<td><div class="method-code">if CNSR=0, then EVNTDESC=PAIN RELIEF; if CNSR=1, then EVNTDESC=PAIN WORSENING PRIOR TO RELIEF; if CNSR=2, then EVNTDESC=PAIN ADVERSE EVENT PRIOR TO RELIEF; if CNSR=3, then EVNTDESC=NO RELIEF AND NO WORSENING AT LAST ASSESSMENT</div></td>
+<td><div class="method-code">if CNSR=0, then EVNTDESC=PAIN RELIEF;
+ if CNSR=1, then EVNTDESC=PAIN WORSENING PRIOR TO RELIEF;
+ if CNSR=2, then EVNTDESC=PAIN ADVERSE EVENT PRIOR TO RELIEF;
+ if CNSR=3, then EVNTDESC=NO RELIEF AND NO WORSENING AT LAST ASSESSMENT</div></td>
 </tr>
 <tr id="MT.MT.TRTSDT" class="tablerowodd">
 <td>Date of first exposure to treatment derivation</td>
@@ -3600,7 +3689,8 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <tr id="MT.MT.ADTTE.SRCSEQ" class="tablerowodd">
 <td>SRCSEQ algorithm</td>
 <td>Computation</td>
-<td><div class="method-code">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record; else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</div></td>
+<td><div class="method-code">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record;
+ else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</div></td>
 </tr>
 <tr id="MT.MT.SEECODELIST" class="tableroweven">
 <td>See codelist</td>
@@ -3615,12 +3705,14 @@ proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;
 <tr id="MT.MT.RELGR1" class="tableroweven">
 <td>AE relatedness derivation</td>
 <td>Computation</td>
-<td><div class="method-code">If AEREL=NOT RELATED  then NOT RELATED; Otherwise RELATED</div></td>
+<td><div class="method-code">If AEREL=NOT RELATED  then NOT RELATED;
+ Otherwise RELATED</div></td>
 </tr>
 <tr id="MT.MT.AGEGR1" class="tablerowodd">
 <td>Age group derivation</td>
 <td>Computation</td>
-<td><div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div></td>
+<td><div class="method-code">If age&lt;55 then "&lt;55 years";
+ else if age&gt;=55 then "&gt;=55 YEARS"</div></td>
 </tr>
 </table>
 </div>
