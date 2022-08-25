@@ -100,10 +100,15 @@ get_sdtm_xml_20 <- function(lst) {
   if ("EXTERNAL_LINKS" %in% nms)
     extl <- get_external_links(lst[["EXTERNAL_LINKS"]])
 
+
+  leafs <- c()
+  if ("EXTERNAL_LINKS" %in% nms)
+    leafs <- get_leaf_definitions(lst[["EXTERNAL_LINKS"]])
+
   ftr <- get_footer()
 
 
-  ret <- c(hdr, extl, val, whr, grps, defs, cl, comp,  cmnts, ftr)
+  ret <- c(hdr, extl, val, whr, grps, defs, cl, comp,  cmnts, leafs, ftr)
 
   return(ret)
 
@@ -275,13 +280,6 @@ get_item_defs <- function(toc, vardt, valdt) {
       {vlevel}
     </ItemDef>'
 
-  vstr <-
-    '<ItemDef OID="IT.ADQSADAS.AVAL.ACITM01-ACITM14" Name="AVAL" SASFieldName="AVAL" DataType="integer" Length="8">
-        <Description>
-          <TranslatedText xml:lang="en">Analysis Value</TranslatedText>
-        </Description>
-        <def:Origin Type="Derived"/>
-      </ItemDef>'
 
   vdefstr <-
     '<ItemDef OID="{ValueOID}" Name="{Variable}" SASFieldName="{SASFieldName}"
@@ -308,8 +306,8 @@ get_item_defs <- function(toc, vardt, valdt) {
                               "", vardt[[varrow, "LENGTH"]])
         }
 
-        sbst <- subset(valdt, "DOMAIN"==vardt[[varrow, "DOMAIN"]] &
-                              "VARIABLE"==vardt[[varrow, "VARIABLE"]])
+        sbst <- subset(valdt, valdt$DOMAIN==vardt[[varrow, "DOMAIN"]] &
+                              valdt$VARIABLE==vardt[[varrow, "VARIABLE"]])
 
         valLevel <- ""
         vDefs <- ""
@@ -423,7 +421,7 @@ get_value_level <- function(dta, wcdt) {
 
             whre <- paste0(".", splt[length(splt)])
 
-            fltr <- subset(wcdt, "WHERECLAUSEOID" == wcnm)
+            fltr <- subset(wcdt, wcdt$WHERECLAUSEOID == wcnm)
 
             for (i in seq_len(nrow(fltr))) {
 
@@ -559,7 +557,7 @@ get_where <- function(dta, valdta) {
   <!-- ****************************************************************** -->'
 
   str <- '<def:WhereClauseDef OID="{oid}">
-    <RangeCheck SoftHard="{sh}" def:ItemOID="{iod}" Comparator="{comp}">
+    <RangeCheck SoftHard="{sh}" def:ItemOID="IT.{iod}" Comparator="{comp}">
       <CheckValue>{val}</CheckValue>
       </RangeCheck>
       </def:WhereClauseDef>'
@@ -573,7 +571,7 @@ get_where <- function(dta, valdta) {
     ret[length(ret) + 1] <- glue(str,
                                  oid = wcoid,
                                  sh = dta[[rw, "SOFTHARD"]],
-                                 iod = paste0("IT.", dta[[rw, "ITEMOID"]]),
+                                 iod = dta[[rw, "ITEMOID"]],
                                  comp = encodeMarkup(dta[[rw, "COMPARATOR"]]),
                                  val = encodeMarkup(dta[[rw, "VALUES"]]))
   }
@@ -587,7 +585,7 @@ get_where <- function(dta, valdta) {
       wcoid <- paste0("WC.", valdta[[rw, "DOMAIN"]], ".", valdta[[rw, "VARIABLE"]],
                       ".", valdta[[rw, "VALUENAME"]])
 
-      ioid <- paste0("IT.", valdta[[rw, "DOMAIN"]], ".", valdta[[rw, "VALUEVAR"]])
+      ioid <- paste0(valdta[[rw, "DOMAIN"]], ".", valdta[[rw, "VALUEVAR"]])
 
       ret[length(ret) + 1] <- glue(str,
                                    oid = wcoid,

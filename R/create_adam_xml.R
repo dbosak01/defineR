@@ -45,7 +45,9 @@ get_adam_xml_20 <- function(lst) {
 
   defs <- c()
   if ("VARIABLE_METADATA" %in% nms)
-    defs <- get_item_defs_adam(lst[["TOC_METADATA"]], lst[["VARIABLE_METADATA"]])
+    defs <- get_item_defs_adam(lst[["TOC_METADATA"]],
+                               lst[["VARIABLE_METADATA"]],
+                               lst[["VALUELEVEL_METADATA"]])
   else
     stop("Variable metadata is required.")
 
@@ -87,7 +89,7 @@ get_adam_xml_20 <- function(lst) {
 
   analysis <- c()
   if("ANALYSIS_RESULTS" %in% nms)
-    analysis <- get_analysis_results(lst[["ANALYSIS_RESULTS"]])
+    analysis <- get_analysis_results(lst[["ANALYSIS_RESULTS"]], lst[["WHERE_CLAUSES"]])
 
   ftr <- get_footer()
 
@@ -160,7 +162,7 @@ get_item_groups_adam <- function(toc, vardt) {
     <!-- ******************************************* -->'
 
   itemGroup <-
-    '  <ItemGroupDef OID="{oid}"
+    '  <ItemGroupDef OID="IG.{oid}"
       Domain="{name}"
       Name="{name}"
       Repeating="{reps}"
@@ -169,7 +171,7 @@ get_item_groups_adam <- function(toc, vardt) {
       SASDatasetName="{name}"
       def:Structure="{struct}"
       def:Class="{class}"
-      def:CommentOID="{commentoid}"
+      def:CommentOID="COM.{commentoid}"
       def:ArchiveLocationID="Location.{name}">
       <Description>
         <TranslatedText xml:lang="en">{label}</TranslatedText>
@@ -181,13 +183,13 @@ get_item_groups_adam <- function(toc, vardt) {
       <!-- **************************************************** -->'
 
   groupEnd <-
-    '<def:leaf ID="Location.{name}" xlink:href="{loc}.xpt">
+    '<def:leaf ID="LF.{name}" xlink:href="{loc}.xpt">
         <def:title>{loc}.xpt </def:title>
       </def:leaf>
     </ItemGroupDef>'
 
   itemRefs <-
-    '<ItemRef ItemOID="{domain}.{varname}"
+    '<ItemRef ItemOID="IT.{domain}.{varname}"
     OrderNumber="{varnum}"
     Mandatory="{manda}"
     {keyseq}{methodoid}/>'
@@ -217,7 +219,7 @@ get_item_groups_adam <- function(toc, vardt) {
         }
         # third check, nonmutual, existence of methodoid
         if(!is.na(vardt[varrow, "COMPUTATIONMETHODOID"])) {
-          methodoidHolder <- paste0('MethodOID="',vardt[[varrow, "COMPUTATIONMETHODOID"]],'"\n')
+          methodoidHolder <- paste0('MethodOID="MT.',vardt[[varrow, "COMPUTATIONMETHODOID"]],'"\n')
         }
 
 
@@ -247,13 +249,13 @@ get_item_groups_adam <- function(toc, vardt) {
 
 #' @import glue
 #' @noRd
-get_item_defs_adam <- function(toc, vardt) {
+get_item_defs_adam <- function(toc, vardt, valdt) {
 
   blk <- '<!-- ************************************************************ -->
   <!-- The details of each variable is here for all domains         -->
   <!-- ************************************************************ -->'
   str <-
-    ' <ItemDef OID="{domain}.{variable}"
+    ' <ItemDef OID="IT.{domain}.{variable}"
       Name="{variable}"
       SASFieldName="{variable}"
       DataType="{type}"
@@ -267,6 +269,18 @@ get_item_defs_adam <- function(toc, vardt) {
         {internals}
       </def:Origin>
     </ItemDef>'
+
+
+  vdefstr <-
+    '<ItemDef OID="{ValueOID}" Name="{Variable}" SASFieldName="{SASFieldName}"
+         DataType="{DataType}" Length="{Length}">
+        <Description>
+          <TranslatedText xml:lang="en">{Label}</TranslatedText>
+        </Description>
+        <def:Origin Type="{Origin}"/>
+      </ItemDef>'
+
+  valstr <- '<def:ValueListRef ValueListOID="{ValueID}"/>'
 
   # double check efficiency for outer loop
   ret <- c(blk)
@@ -283,7 +297,7 @@ get_item_defs_adam <- function(toc, vardt) {
       }
       codeListHolder <- ""
       if(!is.na(vardt[varrow, "CODELISTNAME"])) {
-        codeListHolder <- '<CodeListRef CodeListOID="CodeList.{codelist}"/>\n'
+        codeListHolder <- '<CodeListRef CodeListOID="CL.{codelist}"/>\n'
         codeListHolder <- glue(codeListHolder, codelist = vardt[varrow, "CODELISTNAME"])
       }
       valueListHolder <- ""
@@ -291,6 +305,55 @@ get_item_defs_adam <- function(toc, vardt) {
       # if(!is.na(vardt[varrow, "VALUELIST"])) {
       #   valueListHolder <- '<def:ValueListRef ValueListOID="VL.ADTTE.CNSR"/>'
       # }
+
+
+      sbst <- subset(valdt, valdt$DOMAIN==vardt[[varrow, "DOMAIN"]] &
+                       valdt$VARIABLE==vardt[[varrow, "VARIABLE"]])
+
+      valLevel <- ""
+      vDefs <- ""
+      if (nrow(sbst) > 0) {
+
+        #browser()
+
+        vid <- paste0("VL.",
+                      vardt[[varrow, "DOMAIN"]],
+                      ".",
+                      vardt[[varrow, "VARIABLE"]])
+
+        valLevel <- paste0(valLevel,  glue(valstr,
+                                           ValueID = vid), "\n")
+
+        for (i in seq_len(nrow(sbst))) {
+
+          vid <- paste0("IT.",
+                        sbst[[i, "DOMAIN"]],
+                        ".",
+                        sbst[[i, "VARIABLE"]],
+                        ".",
+                        sbst[[i, "VALUENAME"]])
+
+          if (!is.na(sbst[[i, "WHERECLAUSEOID"]])) {
+
+            splt <- strsplit(sbst[[i, "WHERECLAUSEOID"]], ".", fixed = TRUE)[[1]]
+
+            vid <- paste0(vid, ".", splt[length(splt)])
+          }
+
+          vDefs <- paste0(vDefs,  glue(vdefstr,
+                                       ValueOID = vid,
+                                       Variable = vardt[[varrow, "VARIABLE"]],
+                                       SASFieldName = vardt[[varrow, "VARIABLE"]],
+                                       DataType = vardt[[varrow, "TYPE"]],
+                                       Length = vardt[[varrow, "LENGTH"]],
+                                       Label = vardt[[varrow, "LABEL"]],
+                                       Origin = vardt[[varrow, "ORIGIN"]]), "\n")
+
+        }
+
+      }
+
+
       internalHolder <- ""
       originHolder <- ""
       if(vardt[[varrow, "ORIGIN"]] %eq% 'Assigned' ||
@@ -314,6 +377,8 @@ get_item_defs_adam <- function(toc, vardt) {
                                    codelistref = codeListHolder,
                                    label = encodeMarkup(vardt[[varrow, "LABEL"]]),
                                    origin = originHolder)
+
+      ret[length(ret) + 1] <- vDefs
   }
 
   return(ret)
@@ -426,7 +491,7 @@ get_code_lists_adam <- function(dta) {
   blk <- '  <!-- ************************************************************ -->
   <!-- Codelists are presented below                                -->
   <!-- ************************************************************ -->'
-  listHead <- '<CodeList OID="CodeList.{codelistname}"
+  listHead <- '<CodeList OID="CL.{codelistname}"
   Name="{codelistname}"
   DataType="{dtype}">'
   endCL <- '</CodeList>'
@@ -571,7 +636,7 @@ get_leaf_definitions <- function(dta) {
     <!-- LEAF DEFINITION SECTION                 *** -->
     <!-- ******************************************* -->"
 
-  leafdefs <- '    <def:leaf ID="{leafid}"
+  leafdefs <- '    <def:leaf ID="LF.{leafid}"
       xlink:href="{leafrelpath}">
       <def:title>{title}</def:title>
     </def:leaf>\n'
@@ -589,7 +654,7 @@ get_leaf_definitions <- function(dta) {
 # Final issue - what do with analysis_results_helper when analysisdataset is NA
 # (but the variable is not)
 # Func already handles opposite scenario and returns empty
-get_analysis_results <- function(dta) {
+get_analysis_results <- function(dta, wcdta) {
   blk <-
   '<!-- ************************************************************ -->
     <!-- Analysis Results MetaData are Presented Below                -->
@@ -601,12 +666,12 @@ get_analysis_results <- function(dta) {
       <Description>
           <TranslatedText xml:lang="en">{dispname}</TranslatedText>
       </Description>
-      <def:DocumentRef leafID="{dispid}">
+      <def:DocumentRef leafID="LF.{dispid}">
         <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
       </def:DocumentRef>
       <arm:AnalysisResult
-        OID="{dispid}"
-        ParameterOID="{analysisdata}.{paramcd}"
+        OID="AR.{dispid}"
+        ParameterOID="IT.{analysisdata}.{paramcd}"
         ResultIdentifier="{dispid}"
         AnalysisReason="{reason}"
         AnalysisPurpose="{purpose}">
@@ -614,9 +679,9 @@ get_analysis_results <- function(dta) {
           <TranslatedText xml:lang="en">{resultname}</TranslatedText>
         </Description>
         <arm:AnalysisDatasets>
-          <arm:AnalysisDataset ItemGroupOID="{analysisdata}" >
-          <def:WhereClauseRef WhereClauseOID="{wcoid}" />
+          <arm:AnalysisDataset ItemGroupOID="IG.{analysisdata}" >
 
+        {WhereClauses}
         {analysisvars}
           </arm:AnalysisDataset>
         </arm:AnalysisDatasets>
@@ -638,24 +703,38 @@ get_analysis_results <- function(dta) {
 
   end <- '</arm:AnalysisResultDisplays>'
 
+  wcstr <- '      <def:WhereClauseRef WhereClauseOID="WC.{wcoid}" /> '
 
   ret <- c(blk)
   for(rw in 1:nrow(dta)) {
+#browser()
+    sbst <- subset(wcdta, wcdta$WHERECLAUSEOID == dta[[rw, "WHERECLAUSEOID"]])
+    wc <- ""
+    if (nrow(sbst) > 0) {
+
+      for (i in seq_len(nrow(sbst))) {
+
+         wc <- paste0(wc, glue(wcstr, wcoid = paste0(sbst[[i, "WHERECLAUSEOID"]],
+                                                    ".",  sbst[[i, "SEQ"]])), "\n")
+      }
+
+    }
 
     ret[length(ret) + 1] <- glue(resultDisplay,
                                  dispid = dta[[rw, "DISPLAYID"]],
                                  dispname = encodeMarkup(dta[[rw, "DISPLAYNAME"]]),
                                  analysisdata = dta[[rw, "ANALYSISDATASET"]],
-                                 paramcd = dta[[rw, "PARAMCD"]],
+                                 paramcd = trimws(dta[[rw, "PARAMCD"]]),
                                  reason = encodeMarkup(dta[[rw, "REASON"]]),
                                  purpose = encodeMarkup(dta[[rw, "PURPOSE"]]),
                                  resultname = dta[[rw, "RESULTNAME"]],
-                                 wcoid = dta[[rw, "WHERECLAUSEOID"]],
+                                 WhereClauses = wc,
                                  analysisvars = analysis_results_helper(dta[[rw,
                                   "ANALYSISVARIABLES"]],
                                   dta[[rw, "ANALYSISDATASET"]]),
                                  document = encodeMarkup(dta[[rw, "DOCUMENTATION"]]),
-                                 rleafid = dta[[rw, "REFLEAFID"]],
+                                 rleafid = ifelse(!is.na(dta[[rw, "REFLEAFID"]]),
+                                                  paste0("LF.", dta[[rw, "REFLEAFID"]]), ""),
                                  context = encodeMarkup(dta[[rw, "CONTEXT"]]),
                                  pgrmcode = encodeMarkup(dta[[rw, "PROGRAMMINGCODE"]]))
   }
@@ -667,7 +746,7 @@ get_analysis_results <- function(dta) {
 
 analysis_results_helper <- function(cellcont, dtaSetName) {
 
-  varTag <- '<arm:AnalysisVariable ItemOID="{analysisdata}.{varname}"/>'
+  varTag <- '<arm:AnalysisVariable ItemOID="IT.{analysisdata}.{varname}"/>'
   # Generate analysis variables
   strHolder <- ""
   if(!(cellcont %eq% "")){
