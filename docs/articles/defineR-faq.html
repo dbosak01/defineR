@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">defineR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.9004</span>
       </span>
     </div>
 
@@ -94,113 +94,202 @@ to the full question and answer content.</p>
 <a href="#top" class="anchor"></a>Index</h2>
 <ul>
 <li><a href="#define">What is a define.xml?</a></li>
+<li><a href="#adam">How do I generate a define.xml for ADaM?</a></li>
 <li><a href="#template">Where can I get a metadata template?</a></li>
-<li><a href="#adam">Can I generate a define.xml for ADAM?</a></li>
-<li><a href="#xpt">Can I use my xpt files to generate a metadata
+<li><a href="#send">Can I generate a define.xml for SEND?</a></li>
+<li><a href="#xpt">Can I use my XPT files to generate a metadata
 file?</a></li>
-<li><a href="#sas">Can I use my SAS datasets to generate a metadata
+<li><a href="#other">Can I use other files to generate a metadata
 file?</a></li>
+<li><a href="#version">Does the package support define 2.1?</a></li>
+<li><a href="#styles">What if I want to use a different XSLT style
+sheet?</a></li>
+<li><a href="#existing">Can it read in an existing define.xml?</a></li>
+<li><a href="#sas">Is this the same template as the SAS®
+toolkit?</a></li>
 </ul>
 </div>
 <div id="content" class="section level2">
 <h2 class="hasAnchor">
 <a href="#content" class="anchor"></a>Content</h2>
-<div id="freq" class="section level3">
+<div id="define" class="section level3">
 <h3 class="hasAnchor">
-<a href="#freq" class="anchor"></a>Question?</h3>
-<p><strong>Q:</strong> A question.</p>
-<p><strong>A:</strong> An answer.</p>
+<a href="#define" class="anchor"></a>What is a define.xml?</h3>
+<p><strong>Q:</strong> I don’t quite understand what this is about. What
+is a define.xml? Do I need one?</p>
+<p><strong>A:</strong> The define.xml is a special XML file used to
+describe data sent to regulatory bodies for drug applications. If you
+don’t know what it is, then you don’t need one.</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="means" class="section level3">
+<div id="adam" class="section level3">
 <h3 class="hasAnchor">
-<a href="#means" class="anchor"></a>Question?</h3>
-<p><strong>Q:</strong> A question.</p>
-<p><strong>A:</strong> An answer.</p>
+<a href="#adam" class="anchor"></a>How do I generate a define.xml for ADaM?</h3>
+<p><strong>Q:</strong> The <strong>defineR</strong> generator seems to
+always create a define.xml for SDTM. I want to create one for ADaM. How
+can I do that?</p>
+<p><strong>A:</strong> There is a parameter called <code>type</code> on
+the <code><a href="../reference/write_define.html">write_define()</a></code> function that you can use to specify an
+SDTM or ADaM define. Here is an example:</p>
+<pre><code># Get temporary directory for output
+tmp &lt;- tempdir()
+
+# Create demo spreadsheet
+pth &lt;- write_metadata(tmp, type = "adam", demo = TRUE)
+
+# Generate define for ADaM
+res &lt;- write_define(pth, tmp, type = "adam")
+
+# View XML
+# file.show(file.path(tmp, "define.adam.xml"))
+
+# View check report
+# file.show(file.path(tmp, "check.adam.pdf"))
+
+# View HTML
+# file.show(file.path(tmp, "define.adam.html"))
+</code></pre>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="transpose" class="section level3">
+<div id="template" class="section level3">
 <h3 class="hasAnchor">
-<a href="#transpose" class="anchor"></a>Question?</h3>
-<p><strong>Q:</strong> A question.</p>
-<p><strong>A:</strong> An answer.</p>
+<a href="#template" class="anchor"></a>Where can I get a metadata template?</h3>
+<p><strong>Q:</strong> I’d like to try out <strong>defineR</strong>.
+Where can I get a starting template?</p>
+<p><strong>A:</strong> You can generate a starting template. It it
+recommended to start with the demo template, rather than a blank
+template. To do that, set the <code>demo</code> option on the
+<code><a href="../reference/write_metadata.html">write_metadata()</a></code> function. Like this:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Create temp directory</span></span>
+<span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create metadata template</span></span>
+<span><span class="fu"><a href="../reference/write_metadata.html">write_metadata</a></span><span class="op">(</span><span class="st">"&lt;target path&gt;"</span>, </span>
+<span>               type <span class="op">=</span> <span class="st">"&lt;sdtm or adam&gt;"</span>, </span>
+<span>               demo <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="crosstab" class="section level3">
+<div id="send" class="section level3">
 <h3 class="hasAnchor">
-<a href="#crosstab" class="anchor"></a>Question?</h3>
-<p><strong>Q:</strong> I can see from the examples …</p>
-<p><strong>A:</strong> The package supports …</p>
+<a href="#send" class="anchor"></a>Can I generate a define.xml for SEND?</h3>
+<p><strong>Q:</strong> I am working on an animal study, and need to
+generate a define.xml for SEND. Can <strong>defineR</strong> do
+that?</p>
+<p><strong>A:</strong> Not at this time. If you desire this feature,
+please send and an issue to the GitHub <a href="https://github.com/dbosak01/defineR/issues">issue list</a>.</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="report" class="section level3">
+<div id="xpt" class="section level3">
 <h3 class="hasAnchor">
-<a href="#report" class="anchor"></a>Question 2?</h3>
-<p><strong>Q:</strong> Question here.</p>
-<p><strong>A:</strong> Answer here.</p>
+<a href="#xpt" class="anchor"></a>Can I use my XPT files to generate a metadata file?</h3>
+<p><strong>Q:</strong> I have some XPT files already. Can I use them to
+generate metadata?</p>
+<p><strong>A:</strong> Yes. Use the <code><a href="../reference/write_metadata.html">write_metadata()</a></code>
+function, and supply the <code>src_dir</code> parameter with the
+directory that contains your XPT files. Like this:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Create temp directory</span></span>
+<span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create metadata template</span></span>
+<span><span class="fu"><a href="../reference/write_metadata.html">write_metadata</a></span><span class="op">(</span><span class="st">"&lt;target path&gt;"</span>, </span>
+<span>               type <span class="op">=</span> <span class="st">"&lt;sdtm or adam&gt;"</span>, </span>
+<span>               src_dir <span class="op">=</span> <span class="st">"&lt;source data path&gt;"</span><span class="op">)</span></span></code></pre></div>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="motivation" class="section level3">
+<div id="other" class="section level3">
 <h3 class="hasAnchor">
-<a href="#motivation" class="anchor"></a>Question 2?</h3>
-<p><strong>Q:</strong> Question here.</p>
-<p><strong>A:</strong> Answer here.</p>
+<a href="#other" class="anchor"></a>Can I use other files to generate a metadata file?</h3>
+<p><strong>Q:</strong> What if I don’t have XPT files? Can I generate
+metadata from Excel files or SAS datasets?</p>
+<p><strong>A:</strong> Not in the current release. If you desire this
+feature, please submit a request to the GitHub <a href="https://github.com/dbosak01/defineR/issues">issue list</a>, and we
+can up the priority.</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="nway" class="section level3">
+<div id="version" class="section level3">
 <h3 class="hasAnchor">
-<a href="#nway" class="anchor"></a>Question 2?</h3>
-<p><strong>Q:</strong> Question here.</p>
-<p><strong>A:</strong> Answer here.</p>
+<a href="#version" class="anchor"></a>Does the package support define 2.1?</h3>
+<p><strong>Q:</strong> Our organization is getting ready for define
+version 2.1. Does the <strong>defineR</strong> package support it?</p>
+<p><strong>A:</strong> Not yet. Define version 2.0.0 is the preferred
+version of the FDA, and therefore the package was developed for that
+version. Define version 2.1 will be coming in a future release.</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="plots" class="section level3">
+<div id="styles" class="section level3">
 <h3 class="hasAnchor">
-<a href="#plots" class="anchor"></a>Question 2?</h3>
-<p><strong>Q:</strong> Question here.</p>
-<p><strong>A:</strong> Answer here.</p>
+<a href="#styles" class="anchor"></a>What if I want to use a different XSLT style sheet?</h3>
+<p><strong>Q:</strong> I have a custom style sheet, and want to use it
+with <strong>defineR</strong>. Can I do that?</p>
+<p><strong>A:</strong> Yes. There is a global option to specify a custom
+style sheet. The option is called “defineR.xslt”, and you can set it as
+follows:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span><span class="st">"defineR.xslt"</span> <span class="op">=</span> <span class="st">"&lt;path&gt;"</span><span class="op">)</span></span></code></pre></div>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="stats" class="section level3">
+<div id="existing" class="section level3">
 <h3 class="hasAnchor">
-<a href="#stats" class="anchor"></a>Question 2?</h3>
-<p><strong>Q:</strong> Question here.</p>
-<p><strong>A:</strong> Answer here.</p>
+<a href="#existing" class="anchor"></a>Can it read in an existing define.xml?</h3>
+<p><strong>Q:</strong> I have a define.xml alread and want to create a
+metadata template from it. Can this package do it?</p>
+<p><strong>A:</strong> Not at this time. If there is sufficient interest
+in this feature, we can add it.</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="validation" class="section level3">
+<div id="sas" class="section level3">
 <h3 class="hasAnchor">
-<a href="#validation" class="anchor"></a>Question 2?</h3>
-<p><strong>Q:</strong> Question here.</p>
-<p><strong>A:</strong> Answer here.</p>
+<a href="#sas" class="anchor"></a>Is this the same template as the SAS® toolkit?</h3>
+<p><strong>Q:</strong> This template looks exactly like the template in
+the SAS® Clinical Standards Toolkit. Are they the same?</p>
+<p><strong>A:</strong> Yes. The metadata template for the
+<strong>defineR</strong> package was taken directly from the SAS®
+template. This was done for ease of interchange/migration between the
+two systems.</p>
 <p><a href="#top">top</a></p>
 <hr>
-</div>
-<div id="outputs" class="section level3">
-<h3 class="hasAnchor">
-<a href="#outputs" class="anchor"></a>Question 2?</h3>
-<p><strong>Q:</strong> Question here.</p>
-<p><strong>A:</strong> Answer here.</p>
-<p><a href="#top">top</a></p>
-<hr>
-</div>
-<div id="colors" class="section level3">
-<h3 class="hasAnchor">
-<a href="#colors" class="anchor"></a>Question 2?</h3>
-<p><strong>Q:</strong> Question here.</p>
-<p><strong>A:</strong> Answer here.</p>
-<p><a href="#top">top</a></p>
-<hr>
-<!-- ### Question 2? {#q2} --><!-- **Q:** Question here. --><!-- **A:** Answer here. --><!-- [top](#top) --><!-- ****** --><!-- ### Question 1? {#q1} --><!-- **Q:** Question here. --><!-- **A:** Answer here. --><!-- [top](#top)  --><!-- ****** -->
+<!--
+### Question 2? {#validation}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+
+### Question 2? {#outputs}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+
+### Question 2? {#colors}
+
+**Q:** Question here.
+
+**A:** Answer here.
+
+[top](#top)
+
+****** 
+--><!-- ### Question 2? {#q2} --><!-- **Q:** Question here. --><!-- **A:** Answer here. --><!-- [top](#top) --><!-- ****** --><!-- ### Question 1? {#q1} --><!-- **Q:** Question here. --><!-- **A:** Answer here. --><!-- [top](#top)  --><!-- ****** -->
 </div>
 </div>
   </div>

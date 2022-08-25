@@ -1,7 +1,7 @@
 <!-- badges: start -->
 
 [![defineR version](https://www.r-pkg.org/badges/version/defineR)](https://cran.r-project.org/package=defineR)
-[![defineR lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://cran.r-project.org/package=defineR)
+[![defineR lifecycle](https://img.shields.io/badge/lifecycle-experimental-red.svg)](https://cran.r-project.org/package=defineR)
 [![defineR downloads](https://cranlogs.r-pkg.org/badges/defineR)](https://cran.r-project.org/package=defineR)
 [![defineR total downloads](https://cranlogs.r-pkg.org/badges/grand-total/defineR)](https://cran.r-project.org/package=defineR)
 [![R-CMD-check](https://github.com/dbosak01/defineR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dbosak01/defineR/actions/workflows/R-CMD-check.yaml)
@@ -21,9 +21,17 @@ capabilities:
 <tab>4. Produce the define.html transformation of define.xml  
 <tab>5. Generate the metadata templates needed to create the define.xml  
 
-Currently, the package only supports version 2.0.0 of the define.xml. 
-Define version 2.0.0 is the version preferred by the FDA.  
+Currently, the package only supports version 2.0.0 of the define.xml for
+SDTM and ADaM. 
+Define version 2.0.0 is the version preferred by the FDA.
 Future enhancements to the package will add support for define version 2.1.
+
+IMPORTANT: This package is being released experimentally for the purposes
+of gathering public feedback.  It is not recommended to use this package
+for regulatory submissions yet. Please do use this package to examine and refine
+your metadata, scrutinize the output, 
+and submit any issues/suggestions to the GitHub issue list 
+[here](https://github.com/dbosak01/defineR/issues).
 
 ### Installation
 

@@ -1,7 +1,7 @@
 Package: defineR
 Type: Package
 Title: Creates Define XML Documents
-Version: 0.0.9003
+Version: 0.0.9004
 Author: c(
     person(given = "David",
            family = "Bosak",

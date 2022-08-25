@@ -1,3 +1,8 @@
+# defineR 0.0.9004
+
+* Fixes to XML output.
+* Wrote FAQ.
+
 # defineR 0.0.9003
 
 * Added Github Actions.

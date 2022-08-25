@@ -261,6 +261,7 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
       DataType="{type}"
       Length="{length}"
       def:DisplayFormat="{display}"
+      {commentid}
       >
       <Description>
           <TranslatedText xml:lang="en">{label}</TranslatedText>
@@ -282,7 +283,6 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
 
   valstr <- '<def:ValueListRef ValueListOID="{ValueID}"/>'
 
-  # double check efficiency for outer loop
   ret <- c(blk)
 
   for(varrow in 1:nrow(vardt)) {
@@ -300,11 +300,7 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
         codeListHolder <- '<CodeListRef CodeListOID="CL.{codelist}"/>\n'
         codeListHolder <- glue(codeListHolder, codelist = vardt[varrow, "CODELISTNAME"])
       }
-      valueListHolder <- ""
-      # #
-      # if(!is.na(vardt[varrow, "VALUELIST"])) {
-      #   valueListHolder <- '<def:ValueListRef ValueListOID="VL.ADTTE.CNSR"/>'
-      # }
+
 
 
       sbst <- subset(valdt, valdt$DOMAIN==vardt[[varrow, "DOMAIN"]] &
@@ -367,6 +363,12 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
         internalHolder <- glue(internalHolder, origin = vardt[varrow, "ORIGIN"])
         originHolder <- "Predecessor"
       }
+
+      cmtid <- ""
+      if (!is.na(vardt[[varrow, "COMMENTOID"]])) {
+
+        cmtid <- paste0('def:CommentOID="COM.', vardt[[varrow, "COMMENTOID"]], '"')
+      }
       ret[length(ret) + 1] <- glue(str,
                                    domain = vardt[[varrow, "DOMAIN"]],
                                    variable = vardt[[varrow, "VARIABLE"]],
@@ -376,7 +378,8 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
                                    internals = internalHolder,
                                    codelistref = codeListHolder,
                                    label = encodeMarkup(vardt[[varrow, "LABEL"]]),
-                                   origin = originHolder)
+                                   origin = originHolder,
+                                   commentid = cmtid)
 
       ret[length(ret) + 1] <- vDefs
   }

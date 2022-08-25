@@ -23,105 +23,188 @@ on the links below to navigate to the full question and answer content.
 ## Index{#top}
 
 * [What is a define.xml?](#define)
+* [How do I generate a define.xml for ADaM?](#adam)
 * [Where can I get a metadata template?](#template)
-* [Can I generate a define.xml for ADAM?](#adam)
-* [Can I use my xpt files to generate a metadata file?](#xpt)
-* [Can I use my SAS datasets to generate a metadata file?](#sas)
+* [Can I generate a define.xml for SEND?](#send)
+* [Can I use my XPT files to generate a metadata file?](#xpt)
+* [Can I use other files to generate a metadata file?](#other)
+* [Does the package support define 2.1?](#version)
+* [What if I want to use a different XSLT style sheet?](#styles)
+* [Can it read in an existing define.xml?](#existing)
+* [Is this the same template as the SAS® toolkit?](#sas)
 
 
 ## Content
 
-### Question? {#freq}
+### What is a define.xml? {#define}
 
-**Q:** A question.
+**Q:** I don't quite understand what this is about.  What is a define.xml?
+Do I need one?
 
-**A:** An answer.  
-
-[top](#top) 
-
-******
-
-### Question? {#means}
-
-**Q:** A question.
-
-**A:** An answer.  
+**A:** The define.xml is a special XML file used to describe data
+sent to regulatory bodies for drug applications.  If you don't know what it is,
+then you don't need one.
 
 [top](#top) 
 
 ******
 
-### Question? {#transpose}
+### How do I generate a define.xml for ADaM? {#adam}
 
-**Q:** A question.
+**Q:** The **defineR** generator seems to always create a define.xml 
+for SDTM.  I want to create one for ADaM.  How can I do that?
 
-**A:** An answer.  
+**A:** There is a parameter called `type` on the `write_define()` function
+that you can use to specify an SDTM or ADaM define. Here is an example:
+```
+# Get temporary directory for output
+tmp <- tempdir()
+
+# Create demo spreadsheet
+pth <- write_metadata(tmp, type = "adam", demo = TRUE)
+
+# Generate define for ADaM
+res <- write_define(pth, tmp, type = "adam")
+
+# View XML
+# file.show(file.path(tmp, "define.adam.xml"))
+
+# View check report
+# file.show(file.path(tmp, "check.adam.pdf"))
+
+# View HTML
+# file.show(file.path(tmp, "define.adam.html"))
+
+```
 
 [top](#top) 
 
 ******
 
-### Question? {#crosstab}
+### Where can I get a metadata template? {#template}
 
-**Q:** I can see from the examples ...
+**Q:** I'd like to try out **defineR**.  Where can I get a starting template?
 
+**A:** You can generate a starting template. It it recommended to start 
+with the demo template, rather than a blank template.  To do that, 
+set the `demo` option on the `write_metadata()` function.  Like this:
+```{r eval=FALSE, echo=TRUE} 
+# Create temp directory
+tmp <- tempdir()
 
-**A:** The package supports ...
+# Create metadata template
+write_metadata("<target path>", 
+               type = "<sdtm or adam>", 
+               demo = TRUE)
+
+```
 
 [top](#top) 
 
 ******
 
-### Question 2? {#report}
+### Can I generate a define.xml for SEND? {#send}
 
-**Q:** Question here.
+**Q:** I am working on an animal study, and need to generate a define.xml
+for SEND.  Can **defineR** do that?
 
-**A:** Answer here.
+**A:** Not at this time.  If you desire this feature, please send 
+and an issue to the GitHub [issue list](https://github.com/dbosak01/defineR/issues). 
 
-[top](#top)
+[top](#top) 
 
-****** 
+******
 
-### Question 2? {#motivation}
+### Can I use my XPT files to generate a metadata file? {#xpt}
 
-**Q:** Question here.
+**Q:** I have some XPT files already.  Can I use them to generate metadata?
 
-**A:** Answer here.
 
-[top](#top)
+**A:** Yes. Use the `write_metadata()` function, and supply the 
+`src_dir` parameter with the directory that contains your XPT files.  Like this:
+```{r eval=FALSE, echo=TRUE} 
+# Create temp directory
+tmp <- tempdir()
 
-****** 
+# Create metadata template
+write_metadata("<target path>", 
+               type = "<sdtm or adam>", 
+               src_dir = "<source data path>")
 
-### Question 2? {#nway}
+```
 
-**Q:** Question here.
+[top](#top) 
 
-**A:** Answer here.
+******
 
-[top](#top)
+### Can I use other files to generate a metadata file? {#other}
 
-****** 
+**Q:** What if I don't have XPT files? Can I generate metadata
+from Excel files or SAS datasets?
 
-### Question 2? {#plots}
-
-**Q:** Question here.
-
-**A:** Answer here.
-
-[top](#top)
-
-****** 
-
-### Question 2? {#stats}
-
-**Q:** Question here.
-
-**A:** Answer here.
+**A:** Not in the current release. If you desire this feature,
+please submit a request to the GitHub 
+[issue list](https://github.com/dbosak01/defineR/issues), and we can
+up the priority.
 
 [top](#top)
 
 ****** 
 
+### Does the package support define 2.1? {#version}
+
+**Q:** Our organization is getting ready for define version 2.1.  Does
+the **defineR** package support it?
+
+**A:** Not yet.  Define version 2.0.0 is the preferred version
+of the FDA, and therefore the package was developed for that version. Define
+version 2.1 will be coming in a future release.
+
+[top](#top)
+
+****** 
+
+### What if I want to use a different XSLT style sheet? {#styles}
+
+**Q:** I have a custom style sheet, and want to use it with 
+**defineR**.  Can I do that?
+
+**A:** Yes.  There is a global option to specify a custom style sheet.
+The option is called "defineR.xslt", and you can set it as follows:
+```{r eval=FALSE, echo=TRUE} 
+options("defineR.xslt" = "<path>")
+
+```
+
+[top](#top)
+
+****** 
+
+### Can it read in an existing define.xml? {#existing}
+
+**Q:** I have a define.xml alread and want to create a 
+metadata template from it. Can this package do it?
+
+**A:** Not at this time. If there is sufficient interest in this feature,
+we can add it.
+
+[top](#top)
+
+****** 
+
+### Is this the same template as the SAS® toolkit? {#sas}
+
+**Q:** This template looks exactly like the template in
+the SAS® Clinical Standards Toolkit.  Are they the same?
+
+**A:** Yes.  The metadata template for the **defineR** package
+was taken directly from the SAS® template.  This was done for ease
+of interchange/migration between the two systems.  
+
+[top](#top)
+
+****** 
+<!--
 ### Question 2? {#validation}
 
 **Q:** Question here.
@@ -151,7 +234,7 @@ on the links below to navigate to the full question and answer content.
 [top](#top)
 
 ****** 
-
+-->
 <!-- ### Question 2? {#q2} -->
 
 <!-- **Q:** Question here. -->

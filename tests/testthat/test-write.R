@@ -549,3 +549,32 @@ test_that("write23: write_define() works with custom XSD and XSLT.", {
           "defineR.xslt" = NULL)
 
 })
+
+
+test_that("write24: ADAM CDISC defineR XML can be converted to HTML", {
+
+  library(xml2)
+  library(xslt)
+
+  fp <- file.path(data_dir, "adam/define.xml")
+  sp <- file.path(data_dir, "xsl/define2-0.xsl")
+  op <- file.path(base_path, "html/test24.html")
+
+  if (file.exists(op))
+    file.remove(op)
+
+  doc <- read_xml(fp)
+  style <- read_xml(sp)
+  html <- xml_xslt(doc, style)
+
+
+  write_html(html, op)
+
+  fe <- file.exists(op)
+
+  expect_equal(fe, TRUE)
+
+
+
+})
+

@@ -15,8 +15,10 @@ knitr::opts_chunk$set(
 ```
 
 The **defineR** package creates the "define.xml" documents needed for 
-regulatory submission to the FDA.  The XML structure for the documents 
-was defined by the [CDISC](https://www.cdisc.org/) standards body, in collaboration 
+regulatory submission to the FDA and other regulatory bodies.
+The XML structure for the documents 
+was defined by the [CDISC](https://www.cdisc.org/) standards organization, 
+in collaboration 
 with industry representatives.  The documents are required for FDA submission, 
 and are frequently characterized as the "most important" documents.  These documents
 are used by FDA reviewers to understand the data being submitted.
@@ -34,7 +36,7 @@ documentation for additional details.
 The **defineR** package uses spreadsheet metadata to create the define.xml
 document. The structure of this metadata has been standardized by CDISC, and is
 widely used in the industry. The functions in **defineR** both read and 
-write this spreadsheet.  The package handles both SDTM and ADAM data 
+write this spreadsheet.  The package handles both SDTM and ADaM data 
 standards.
 
 You can generate a sample metadata spreadsheet using the following code:
