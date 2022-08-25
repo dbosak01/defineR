@@ -8,7 +8,26 @@
 #' @noRd
 create_adam_xml <- function(lst, version) {
 
+  if(!is.list(lst)) {
+    stop("Metadata must provided in the form of a list")
+  }
 
+  if (version == "2.0.0") {
+
+    ret <- get_adam_xml_20(lst)
+
+  } else {
+
+    stop(paste0("Version ", version, " not supported."))
+  }
+
+
+  return(ret)
+
+}
+
+
+get_adam_xml_20 <- function(lst) {
 
   nms <- names(lst)
 
@@ -32,13 +51,13 @@ create_adam_xml <- function(lst, version) {
 
   val <- c()
   if ("VALUELEVEL_METADATA" %in% nms)
-    val <- get_value_level_adam(lst[["VALUELEVEL_METADATA"]])
+    val <- get_value_level(lst[["VALUELEVEL_METADATA"]], lst[["WHERE_CLAUSES"]])
   else
     stop("Table of Contents metadata is required.")
 
   comp <- c()
   if ("COMPUTATION_METHOD" %in% nms)
-    comp <- get_computations_adam(lst[["COMPUTATION_METHOD"]])
+    comp <- get_computations(lst[["COMPUTATION_METHOD"]])
   else
     stop("Computation Method metadata is required.")
 
@@ -50,12 +69,12 @@ create_adam_xml <- function(lst, version) {
 
   whr <- c()
   if ("WHERE_CLAUSES" %in% nms)
-    whr <- get_where_adam(lst[["WHERE_CLAUSES"]])
+    whr <- get_where(lst[["WHERE_CLAUSES"]], lst[["VALUELEVEL_METADATA"]])
 
 
   cmnts <- c()
   if ("COMMENTS" %in% nms)
-    cmnts <- get_comments_adam(lst[["COMMENTS"]])
+    cmnts <- get_comments(lst[["COMMENTS"]])
 
 
   extl <- c()
@@ -63,12 +82,12 @@ create_adam_xml <- function(lst, version) {
   if ("EXTERNAL_LINKS" %in% nms)
   {
     extl <- get_external_links(lst[["EXTERNAL_LINKS"]])
-    leafdefs <- get_leaf_definitions_adam(lst[["EXTERNAL_LINKS"]])
+    leafdefs <- get_leaf_definitions(lst[["EXTERNAL_LINKS"]])
   }
 
   analysis <- c()
   if("ANALYSIS_RESULTS" %in% nms)
-    analysis <- get_analysis_results_adam(lst[["ANALYSIS_RESULTS"]])
+    analysis <- get_analysis_results(lst[["ANALYSIS_RESULTS"]])
 
   ftr <- get_footer()
 
@@ -78,7 +97,6 @@ create_adam_xml <- function(lst, version) {
 
 
   return(ret)
-
 }
 
 
@@ -305,102 +323,102 @@ get_item_defs_adam <- function(toc, vardt) {
 
 
 
-#' @noRd
-get_value_level_adam <- function(dta) {
-
-
-  blk <- '
-  <!-- ******************************************* -->
-  <!-- VALUE LEVEL LIST DEFINITION INFORMATION  ** -->
-  <!-- ******************************************* -->\n'
-
-  defstart <- ' <def:ValueListDef OID="VL.{domain}.{variable}">\n'
-  defend <- ' </def:ValueListDef>\n'
-  wcstr <- ' <def:WhereClauseRef WhereClauseOID="{wcoid}"/>\n'
-
-  str <- '
-    <ItemRef ItemOID="VL.{domain}.{variable}.{value}"
-      OrderNumber="{varnum}"
-      Mandatory="{mandatory}"
-      {methodoid}>
-      {wc}
-    </ItemRef>'
-
-
-  f <- list(as.factor(dta[["DOMAIN"]]), as.factor(dta[["VARIABLE"]]))
-
-  splts <- split(dta, f)
-
-  ret <- c(blk)
-  last_domain <- ""
-  last_variable <- ""
-
-  for (sp in splts) {
-
-    if (nrow(sp)) {
-      ret[length(ret) + 1] <- glue(defstart,
-                                   domain =  sp[[1, "DOMAIN"]],
-                                   variable = sp[[1, "VARIABLE"]])
-
-      for (rw in seq_len(nrow(sp))) {
-
-
-        whrc <- ""
-        holder <- ""
-        if (!is.na(sp[[rw, "WHERECLAUSEOID"]]))
-          whrc <- glue(wcstr, wcoid = sp[[rw, "WHERECLAUSEOID"]])
-        # Added 312, 315-316
-        if(!is.na(sp[[rw, "COMPUTATIONMETHODOID"]]))
-          holder <- paste0('MethodOID="', sp[[rw, "COMPUTATIONMETHODOID"]], '"')
-
-        ret[length(ret) + 1] <- glue(str,
-                                     domain =  sp[[rw, "DOMAIN"]],
-                                     variable = sp[[rw, "VARIABLE"]],
-                                     value =  sp[[rw, "VALUENAME"]],
-                                     varnum =  sp[[rw, "VARNUM"]],
-                                     mandatory =  sp[[rw, "MANDATORY"]],
-                                     methodoid = holder,
-                                     wc = whrc
-        )
-
-      }
-
-      ret[length(ret) + 1] <- defend
-
-    }
-
-  }
-
-
-  return(ret)
-}
+# @noRd
+# get_value_level_adam <- function(dta) {
+#
+#
+#   blk <- '
+#   <!-- ******************************************* -->
+#   <!-- VALUE LEVEL LIST DEFINITION INFORMATION  ** -->
+#   <!-- ******************************************* -->\n'
+#
+#   defstart <- ' <def:ValueListDef OID="VL.{domain}.{variable}">\n'
+#   defend <- ' </def:ValueListDef>\n'
+#   wcstr <- ' <def:WhereClauseRef WhereClauseOID="{wcoid}"/>\n'
+#
+#   str <- '
+#     <ItemRef ItemOID="VL.{domain}.{variable}.{value}"
+#       OrderNumber="{varnum}"
+#       Mandatory="{mandatory}"
+#       {methodoid}>
+#       {wc}
+#     </ItemRef>'
+#
+#
+#   f <- list(as.factor(dta[["DOMAIN"]]), as.factor(dta[["VARIABLE"]]))
+#
+#   splts <- split(dta, f)
+#
+#   ret <- c(blk)
+#   last_domain <- ""
+#   last_variable <- ""
+#
+#   for (sp in splts) {
+#
+#     if (nrow(sp)) {
+#       ret[length(ret) + 1] <- glue(defstart,
+#                                    domain =  sp[[1, "DOMAIN"]],
+#                                    variable = sp[[1, "VARIABLE"]])
+#
+#       for (rw in seq_len(nrow(sp))) {
+#
+#
+#         whrc <- ""
+#         holder <- ""
+#         if (!is.na(sp[[rw, "WHERECLAUSEOID"]]))
+#           whrc <- glue(wcstr, wcoid = sp[[rw, "WHERECLAUSEOID"]])
+#         # Added 312, 315-316
+#         if(!is.na(sp[[rw, "COMPUTATIONMETHODOID"]]))
+#           holder <- paste0('MethodOID="', sp[[rw, "COMPUTATIONMETHODOID"]], '"')
+#
+#         ret[length(ret) + 1] <- glue(str,
+#                                      domain =  sp[[rw, "DOMAIN"]],
+#                                      variable = sp[[rw, "VARIABLE"]],
+#                                      value =  sp[[rw, "VALUENAME"]],
+#                                      varnum =  sp[[rw, "VARNUM"]],
+#                                      mandatory =  sp[[rw, "MANDATORY"]],
+#                                      methodoid = holder,
+#                                      wc = whrc
+#         )
+#
+#       }
+#
+#       ret[length(ret) + 1] <- defend
+#
+#     }
+#
+#   }
+#
+#
+#   return(ret)
+# }
 
 # identical function
-#' @noRd
-get_computations_adam <- function(dta) {
-
-  blk <-'  <!-- ******************************************* -->
-  <!-- COMPUTATIONAL METHOD INFORMATION        *** -->
-  <!-- ******************************************* -->'
-
-  str <- '<MethodDef OID="{mthdOID}" Name="{label}" Type="{comp}">
-        <Description>
-          <TranslatedText xml:lang="en">{compMthd}</TranslatedText>
-        </Description>
-      </MethodDef>'
-
-  ret <- c(blk)
-  for(rw in seq_len(nrow(dta))) {
-    ret[length(ret) + 1] <- glue(str,
-                                 mthdOID = dta[[rw, "COMPUTATIONMETHODOID"]],
-                                 label = encodeMarkup(dta[[rw, "LABEL"]]),
-                                 comp = dta[[rw, "TYPE"]],
-                                 compMthd = encodeMarkup(dta[[rw, "COMPUTATIONMETHOD"]]))
-  }
-  ret[length(ret) + 1] <- ""
-  return(ret)
-
-}
+# @noRd
+# get_computations_adam <- function(dta) {
+#
+#   blk <-'  <!-- ******************************************* -->
+#   <!-- COMPUTATIONAL METHOD INFORMATION        *** -->
+#   <!-- ******************************************* -->'
+#
+#   str <- '<MethodDef OID="{mthdOID}" Name="{label}" Type="{comp}">
+#         <Description>
+#           <TranslatedText xml:lang="en">{compMthd}</TranslatedText>
+#         </Description>
+#       </MethodDef>'
+#
+#   ret <- c(blk)
+#   for(rw in seq_len(nrow(dta))) {
+#     ret[length(ret) + 1] <- glue(str,
+#                                  mthdOID = dta[[rw, "COMPUTATIONMETHODOID"]],
+#                                  label = encodeMarkup(dta[[rw, "LABEL"]]),
+#                                  comp = dta[[rw, "TYPE"]],
+#                                  compMthd = encodeMarkup(dta[[rw, "COMPUTATIONMETHOD"]]))
+#   }
+#   ret[length(ret) + 1] <- ""
+#   return(ret)
+#
+# }
 
 # Changed Rank to OrderNumber, otherwise identical
 #' @noRd
@@ -450,104 +468,104 @@ get_code_lists_adam <- function(dta) {
 
 
 # Identical function
-#' @noRd
-get_where_adam <- function(dta) {
-
-  blk <- '
-  <!-- ****************************************************************** -->
-  <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->
-  <!-- ****************************************************************** -->'
-
-  str <- '<def:WhereClauseDef OID="{oid}">
-    <RangeCheck SoftHard="{sh}" def:ItemOID="{iod}" Comparator="{comp}">
-      <CheckValue>{val}</CheckValue>
-      </RangeCheck>
-      </def:WhereClauseDef>'
-
-  ret <- c(blk)
-
-  for (rw in seq_len(nrow(dta))) {
-
-    ret[length(ret) + 1] <- glue(str,
-                                 oid = dta[[rw, "WHERECLAUSEOID"]],
-                                 sh = dta[[rw, "SOFTHARD"]],
-                                 iod = dta[[rw, "ITEMOID"]],
-                                 comp = encodeMarkup(dta[[rw, "COMPARATOR"]]),
-                                 val = encodeMarkup(dta[[rw, "VALUES"]]))
-  }
-
-
-
-  return(ret)
-}
+# @noRd
+# get_where_adam <- function(dta) {
+#
+#   blk <- '
+#   <!-- ****************************************************************** -->
+#   <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->
+#   <!-- ****************************************************************** -->'
+#
+#   str <- '<def:WhereClauseDef OID="{oid}">
+#     <RangeCheck SoftHard="{sh}" def:ItemOID="{iod}" Comparator="{comp}">
+#       <CheckValue>{val}</CheckValue>
+#       </RangeCheck>
+#       </def:WhereClauseDef>'
+#
+#   ret <- c(blk)
+#
+#   for (rw in seq_len(nrow(dta))) {
+#
+#     ret[length(ret) + 1] <- glue(str,
+#                                  oid = dta[[rw, "WHERECLAUSEOID"]],
+#                                  sh = dta[[rw, "SOFTHARD"]],
+#                                  iod = dta[[rw, "ITEMOID"]],
+#                                  comp = encodeMarkup(dta[[rw, "COMPARATOR"]]),
+#                                  val = encodeMarkup(dta[[rw, "VALUES"]]))
+#   }
+#
+#
+#
+#   return(ret)
+# }
 
 
 
 # Identical function
-#' @noRd
-get_comments_adam <- function(dta) {
-
-  blk <- '
-  <!-- ******************************** -->
-  <!-- COMMENTS DEFINITION SECTION      -->
-  <!-- ******************************** -->'
-
-  str <-'<def:CommentDef OID="{oid}">
-      <Description>
-        <TranslatedText xml:lang="en">{comment}</TranslatedText>
-      </Description>
-    </def:CommentDef>'
-
-
-  ret <- c(blk)
-
-  for (rw in seq_len(nrow(dta))) {
-
-    ret[length(ret) + 1] <- glue(str,
-                                 oid = dta[[rw, "COMMENTOID"]],
-                                 comment = dta[[rw, "COMMENT"]])
-
-  }
-
-  return(ret)
-
-
-}
+# @noRd
+# get_comments_adam <- function(dta) {
+#
+#   blk <- '
+#   <!-- ******************************** -->
+#   <!-- COMMENTS DEFINITION SECTION      -->
+#   <!-- ******************************** -->'
+#
+#   str <-'<def:CommentDef OID="{oid}">
+#       <Description>
+#         <TranslatedText xml:lang="en">{comment}</TranslatedText>
+#       </Description>
+#     </def:CommentDef>'
+#
+#
+#   ret <- c(blk)
+#
+#   for (rw in seq_len(nrow(dta))) {
+#
+#     ret[length(ret) + 1] <- glue(str,
+#                                  oid = dta[[rw, "COMMENTOID"]],
+#                                  comment = dta[[rw, "COMMENT"]])
+#
+#   }
+#
+#   return(ret)
+#
+#
+# }
 
 # Identical Function
-#' @noRd
-get_external_links_adam <- function(dta) {
-  blk <- '
-  <!-- ******************************************* -->
-  <!-- EXTERNAL DOCUMENT REFERENCE             *** -->
-  <!-- ******************************************* -->'
-
-  str1 <- '<def:AnnotatedCRF>
-      <def:DocumentRef leafID="{leafid}"/>
-    </def:AnnotatedCRF>\n\n'
-
-  str2 <- '<def:SupplementalDoc>
-      <def:DocumentRef leafID="{leafid}"/>
-    </def:SupplementalDoc>\n\n'
-
-  ret <- c(blk)
-
-
-  for(rw in seq_len(nrow(dta))) {
-    # print(dta[[rw, "AnnotatedCRF"]])
-    # print(dta[[rw,"SupplementalDoc"]])
-    if(dta[[rw, "AnnotatedCRF"]] %eq% 'Y') {
-      ret[length(ret) + 1] <- glue(str1, leafid = dta[[rw, "LeafID"]])
-    }
-    else if (dta[[rw, "SupplementalDoc"]] %eq% 'Y') {
-      ret[length(ret) + 1] <- glue(str2, leafid = dta[[rw, "LeafID"]])
-    }
-  }
-  return(ret)
-}
+# @noRd
+# get_external_links_adam <- function(dta) {
+#   blk <- '
+#   <!-- ******************************************* -->
+#   <!-- EXTERNAL DOCUMENT REFERENCE             *** -->
+#   <!-- ******************************************* -->'
+#
+#   str1 <- '<def:AnnotatedCRF>
+#       <def:DocumentRef leafID="{leafid}"/>
+#     </def:AnnotatedCRF>\n\n'
+#
+#   str2 <- '<def:SupplementalDoc>
+#       <def:DocumentRef leafID="{leafid}"/>
+#     </def:SupplementalDoc>\n\n'
+#
+#   ret <- c(blk)
+#
+#
+#   for(rw in seq_len(nrow(dta))) {
+#     # print(dta[[rw, "AnnotatedCRF"]])
+#     # print(dta[[rw,"SupplementalDoc"]])
+#     if(dta[[rw, "AnnotatedCRF"]] %eq% 'Y') {
+#       ret[length(ret) + 1] <- glue(str1, leafid = dta[[rw, "LeafID"]])
+#     }
+#     else if (dta[[rw, "SupplementalDoc"]] %eq% 'Y') {
+#       ret[length(ret) + 1] <- glue(str2, leafid = dta[[rw, "LeafID"]])
+#     }
+#   }
+#   return(ret)
+# }
 
 # Stub for leaf definition
-get_leaf_definitions_adam <- function(dta) {
+get_leaf_definitions <- function(dta) {
 
   blk <- "    <!-- ******************************************* -->
     <!-- LEAF DEFINITION SECTION                 *** -->
@@ -571,7 +589,7 @@ get_leaf_definitions_adam <- function(dta) {
 # Final issue - what do with analysis_results_helper when analysisdataset is NA
 # (but the variable is not)
 # Func already handles opposite scenario and returns empty
-get_analysis_results_adam <- function(dta) {
+get_analysis_results <- function(dta) {
   blk <-
   '<!-- ************************************************************ -->
     <!-- Analysis Results MetaData are Presented Below                -->

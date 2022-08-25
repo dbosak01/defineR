@@ -40,7 +40,7 @@ test_that("write2: create_adam_xml test", {
   mdt <- import_metadata(fp)
 
 
-  xml <- create_adam_xml(mdt)
+  xml <- create_adam_xml(mdt, "2.0.0")
 
   write_markup(xml, op)
 
@@ -342,7 +342,7 @@ test_that("write15: write_define() works as expected on metadata with checks.", 
   res <- write_define(fp, op, check = TRUE)
 
   res
-  expect_equal(length(res) > 0, TRUE)
+  expect_equal(length(res) == 0, TRUE)
   expect_equal(file.exists(df), TRUE)
   expect_equal(file.exists(hf), TRUE)
 
@@ -398,7 +398,7 @@ test_that("write17: write_define() works as expected on CDISC metadata with chec
   res <- write_define(fp, op, check = TRUE)
 
   res
-  expect_equal(length(res) > 0, TRUE)
+  expect_equal(length(res) == 0, TRUE)
   expect_equal(file.exists(df), TRUE)
   expect_equal(file.exists(hf), TRUE)
 
@@ -457,7 +457,7 @@ test_that("write20: ADAM CDISC XML conforms to 2.0 define XSD schema", {
   library(xml2)
 
   fp <- file.path(data_dir, "adam/define2-0-0-example-adam-results.xml")
-  op <- file.path(data_dir, "xsd/cdisc-define-2.0/define2-0-0.xsd")
+  op <- file.path(data_dir, "schema/cdisc-define-2.0/define2-0-0.xsd")
 
   doc <- read_xml(fp)
   schema <- read_xml(op)
@@ -471,7 +471,7 @@ test_that("write20: ADAM CDISC XML conforms to 2.0 define XSD schema", {
   expect_equal(TRUE, TRUE)
 })
 
-test_that("write20: ADAM defineR XML conforms to 2.0 define XSD schema", {
+test_that("write21: ADAM defineR XML conforms to 2.0 define XSD schema", {
 
   library(xml2)
 
@@ -491,7 +491,7 @@ res
 
 
 
-test_that("write20: write_define() works as expected on perfect ADAM metadata.", {
+test_that("write22: write_define() works as expected on perfect ADAM metadata.", {
 
   fp <- file.path(data_dir, "data/ADAM_METADATA_PERFECT.xls")
   op <- file.path(base_path, "output")
@@ -516,7 +516,7 @@ test_that("write20: write_define() works as expected on perfect ADAM metadata.",
 })
 
 
-test_that("write20: write_define() works with custom XSD and XSLT.", {
+test_that("write23: write_define() works with custom XSD and XSLT.", {
 
   fp <- file.path(data_dir, "data/ADAM_METADATA_PERFECT.xls")
   op <- file.path(base_path, "output")

@@ -153,7 +153,7 @@ copy_template <- function(dir, type, ver, demo) {
 
     dnm <- dirname(path)
     bnm <- basename(path)
-    fnm <- substr(bnm, 1, nchar(bnm) - 5)  # not the best
+    fnm <- substr(bnm, 1, nchar(bnm) - nchar(".xlsx"))  # not the best
 
     for (i in 1:20) {
 

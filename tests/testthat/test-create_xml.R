@@ -82,11 +82,11 @@ test_that("create5: The get_where function works as expected.", {
   res <- import_metadata(fp)
 
 
-  whr <- get_where(res[["WHERE_CLAUSES"]])
+  whr <- get_where(res[["WHERE_CLAUSES"]], res[["VALUELEVEL_METADATA"]])
 
   whr
 
-  expect_equal(length(whr), 5)
+  expect_equal(length(whr), 17)
 
 
 })
@@ -99,7 +99,7 @@ test_that("create6: The get_value_level function works as expected.", {
   res <- import_metadata(fp)
 
 
-  vl <- get_value_level(res[["VALUELEVEL_METADATA"]])
+  vl <- get_value_level(res[["VALUELEVEL_METADATA"]], res[["WHERE_CLAUSES"]])
 
   vl
 
