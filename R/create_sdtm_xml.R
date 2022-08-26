@@ -556,27 +556,47 @@ get_where <- function(dta, valdta) {
   <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->
   <!-- ****************************************************************** -->'
 
-  str <- '<def:WhereClauseDef OID="{oid}">
-    <RangeCheck SoftHard="{sh}" def:ItemOID="IT.{iod}" Comparator="{comp}">
-      <CheckValue>{val}</CheckValue>
-      </RangeCheck>
-      </def:WhereClauseDef>'
+  wcstart <- '<def:WhereClauseDef OID="WC.{oid}">'
+
+  rcstr <-  '<RangeCheck SoftHard="{sh}" def:ItemOID="IT.{iod}" Comparator="{comp}">
+              <CheckValue>{val}</CheckValue>
+              </RangeCheck>'
+
+  wcend <- '</def:WhereClauseDef>'
 
   ret <- c(blk)
 
-  for (rw in seq_len(nrow(dta))) {
+  if (nrow(dta) > 0) {
+    uwc <- unique(dta[["WHERECLAUSEOID"]])
 
-    wcoid <- paste0("WC.", dta[[rw, "WHERECLAUSEOID"]], ".", dta[[rw, "SEQ"]])
+    for (i in seq_len(length(uwc))) {
 
-    ret[length(ret) + 1] <- glue(str,
-                                 oid = wcoid,
-                                 sh = dta[[rw, "SOFTHARD"]],
-                                 iod = dta[[rw, "ITEMOID"]],
-                                 comp = encodeMarkup(dta[[rw, "COMPARATOR"]]),
-                                 val = encodeMarkup(dta[[rw, "VALUES"]]))
+      sbst <- subset(dta, dta$WHERECLAUSEOID == uwc[i])
+
+      for (rw in seq_len(nrow(sbst))) {
+
+        if (rw == 1) {
+
+          ret[length(ret) + 1] <- glue(wcstart, oid =  sbst[[rw, "WHERECLAUSEOID"]])
+        }
+
+        ret[length(ret) + 1] <- glue(rcstr,
+                                     sh = sbst[[rw, "SOFTHARD"]],
+                                     iod = sbst[[rw, "ITEMOID"]],
+                                     comp = encodeMarkup(sbst[[rw, "COMPARATOR"]]),
+                                     val = encodeMarkup(sbst[[rw, "VALUES"]]))
+
+
+      }
+
+      ret[length(ret) + 1] <- wcend
+
+    }
+
   }
 
-
+  # Dump variables to where clauses.
+  # Not exactly sure why, but it seems to be necessary.
   for (rw in seq_len(nrow(valdta))) {
 
 
@@ -585,16 +605,17 @@ get_where <- function(dta, valdta) {
       wcoid <- paste0("WC.", valdta[[rw, "DOMAIN"]], ".", valdta[[rw, "VARIABLE"]],
                       ".", valdta[[rw, "VALUENAME"]])
 
+      ret[length(ret) + 1] <- glue(wcstart, oid = wcoid)
+
       ioid <- paste0(valdta[[rw, "DOMAIN"]], ".", valdta[[rw, "VALUEVAR"]])
 
-      ret[length(ret) + 1] <- glue(str,
-                                   oid = wcoid,
+      ret[length(ret) + 1] <- glue(rcstr,
                                    sh = "Soft",
                                    iod = ioid,
                                    comp = "EQ",
                                    val = valdta[[rw, "VALUENAME"]])
 
-
+      ret[length(ret) + 1] <- wcend
     }
 
 

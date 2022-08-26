@@ -86,7 +86,7 @@ test_that("create5: The get_where function works as expected.", {
 
   whr
 
-  expect_equal(length(whr), 17)
+  expect_equal(length(whr), 45)
 
 
 })

@@ -771,9 +771,6 @@ document.onclick = function(e)
 <span class="hmenu-bullet">-</span><a class="tocItem" href="#ARD.RD.Figure_14.2.1" title="Time to Pain Relief Analysis by Treatment Group">Figure_14.2.1</a>
 </li>
 <li class="hmenu-item">
-<span class="hmenu-bullet">-</span><a class="tocItem" href="#ARD.RD.Figure_14.2.1" title="Time to Pain Relief Analysis by Treatment Group">Figure_14.2.1</a>
-</li>
-<li class="hmenu-item">
 <span class="hmenu-bullet">-</span><a class="tocItem" href="#ARD.RD.Table_14.3.2.1" title="Incidence Rates of TEAEs by System Organ Class and Preferred Term">Table_14.3.2.1</a>
 </li>
 </ul>
@@ -980,7 +977,7 @@ document.onclick = function(e)
 </div>
 <div id="main">
 <div class="docinfo">
-<p class="documentinfo">Date/Time of Define-XML document generation: 2022-08-25T12:06:35</p>
+<p class="documentinfo">Date/Time of Define-XML document generation: 2022-08-26T00:08:22</p>
 <p class="documentinfo">Define-XML version: 2.0.0</p>
 <p class="stylesheetinfo">Stylesheet version: 2018-11-21</p>
 </div>
@@ -1002,22 +999,20 @@ document.onclick = function(e)
 <h1 id="ARM_Table_Summary">Analysis Results Metadata - Summary</h1>
 <div class="arm-summary">
 <div class="arm-summary-resultdisplay">
-<a href="#ARD.RD.Table_14.1.1">Table_14.1.1</a><span class="arm-display-title">Summary of Demographics (ITT Population)</span><p class="arm-summary-result"><a href="#AR.AR.Table_14.1.1">Summary of Demographics</a></p>
+<a href="#ARD.RD.Table_14.1.1">Table_14.1.1</a><span class="arm-display-title">Summary of Demographics (ITT Population)</span><p class="arm-summary-result"><a href="#AR.AR.Table_14.1.1.R1">Summary of Demographics</a></p>
 </div>
 <div class="arm-summary-resultdisplay">
-<a href="#ARD.RD.Table_14.2.1">Table_14.2.1</a><span class="arm-display-title">Responder Analysis by Visit</span><p class="arm-summary-result"><a href="#AR.AR.Table_14.2.1">Responder Analysis by Visit</a></p>
+<a href="#ARD.RD.Table_14.2.1">Table_14.2.1</a><span class="arm-display-title">Responder Analysis by Visit</span><p class="arm-summary-result"><a href="#AR.AR.Table_14.2.1.R1">Responder Analysis by Visit</a></p>
 </div>
 <div class="arm-summary-resultdisplay">
-<a href="#ARD.RD.Table_14.2.2">Table_14.2.2</a><span class="arm-display-title">Mean Pain Assessments and Changes from Baseline</span><p class="arm-summary-result"><a href="#AR.AR.Table_14.2.2">Summary of Pain Relief</a></p>
+<a href="#ARD.RD.Table_14.2.2">Table_14.2.2</a><span class="arm-display-title">Mean Pain Assessments and Changes from Baseline</span><p class="arm-summary-result"><a href="#AR.AR.Table_14.2.2.R1">Summary of Pain Relief</a></p>
 </div>
 <div class="arm-summary-resultdisplay">
-<a href="#ARD.RD.Figure_14.2.1">Figure_14.2.1</a><span class="arm-display-title">Time to Pain Relief Analysis by Treatment Group</span><p class="arm-summary-result"><a href="#AR.AR.Figure_14.2.1">Time to Pain Relief Kaplan Meier Analysis</a></p>
+<a href="#ARD.RD.Figure_14.2.1">Figure_14.2.1</a><span class="arm-display-title">Time to Pain Relief Analysis by Treatment Group</span><p class="arm-summary-result"><a href="#AR.AR.Figure_14.2.1.R1">Time to Pain Relief Kaplan Meier Analysis</a></p>
+<p class="arm-summary-result"><a href="#AR.AR.Figure_14.2.1.R2">Time to Pain Relief Hazard Ratio Derivation</a></p>
 </div>
 <div class="arm-summary-resultdisplay">
-<a href="#ARD.RD.Figure_14.2.1">Figure_14.2.1</a><span class="arm-display-title">Time to Pain Relief Analysis by Treatment Group</span><p class="arm-summary-result"><a href="#AR.AR.Figure_14.2.1">Time to Pain Relief Hazard Ratio Derivation</a></p>
-</div>
-<div class="arm-summary-resultdisplay">
-<a href="#ARD.RD.Table_14.3.2.1">Table_14.3.2.1</a><span class="arm-display-title">Incidence Rates of TEAEs by System Organ Class and Preferred Term</span><p class="arm-summary-result"><a href="#AR.AR.Table_14.3.2.1">Incidence Rates of TEAEs by System Organ Class and Preferred Term</a></p>
+<a href="#ARD.RD.Table_14.3.2.1">Table_14.3.2.1</a><span class="arm-display-title">Incidence Rates of TEAEs by System Organ Class and Preferred Term</span><p class="arm-summary-result"><a href="#AR.AR.Table_14.3.2.1.R1">Incidence Rates of TEAEs by System Organ Class and Preferred Term</a></p>
 </div>
 </div>
 </div>
@@ -1033,7 +1028,7 @@ document.onclick = function(e)
 </tr>
 <tr class="arm-analysisresult">
 <td>Analysis Result</td>
-<td><span class="arm-resulttitle" id="AR.AR.Table_14.1.1">Summary of Demographics</span></td>
+<td><span class="arm-resulttitle" id="AR.AR.Table_14.1.1.R1">Summary of Demographics</span></td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
@@ -1078,13 +1073,11 @@ document.onclick = function(e)
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-PROC FREQ DATA=ADSL;
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">PROC FREQ DATA=ADSL;
  where ittfl='Y';
   tables trt01pn * (agegr1 sex race) / cmh;
  run;
-
-        </pre>
+</pre>
 <div class="arm-code-ref"></div>
 </td>
 </tr>
@@ -1097,12 +1090,12 @@ PROC FREQ DATA=ADSL;
 <tr>
 <th scope="col" class="arm-resultlabel">Display</th>
 <th scope="col">
-<span class="linebreakcell">Table 14.2.1 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=302">302</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Responder Analysis by Visit</span>
+<span class="linebreakcell">Table 14.2.1 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=352">352</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Responder Analysis by Visit</span>
 </th>
 </tr>
 <tr class="arm-analysisresult">
 <td>Analysis Result</td>
-<td><span class="arm-resulttitle" id="AR.AR.Table_14.2.1">Responder Analysis by Visit</span></td>
+<td><span class="arm-resulttitle" id="AR.AR.Table_14.2.1.R1">Responder Analysis by Visit</span></td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
@@ -1127,7 +1120,7 @@ PROC FREQ DATA=ADSL;
 <tr>
 <td class="arm-label">Data References (incl. Selection Criteria)</td>
 <td><div class="arm-data-reference">
-<a href="#IG.ADEF" title="Efficacy/Pain Scores Analysis Dataset">ADEF</a>  [(<a href="#IG.ADEF.IT.ADEF.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADEF.IT.ADEF.ABLFL" title="Baseline Record Flag">ABLFL</a> ≠ "Y")<br> or <br>(<a href="#IG.ADEF.IT.ADEF.PARAMCD" title="Parameter Code">PARAMCD</a> = "XPPAIN")]</div></td>
+<a href="#IG.ADEF" title="Efficacy/Pain Scores Analysis Dataset">ADEF</a>  [<a href="#IG.ADEF.IT.ADEF.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y" and <a href="#IG.ADEF.IT.ADEF.ABLFL" title="Baseline Record Flag">ABLFL</a> ≠ "Y" and <a href="#IG.ADEF.IT.ADEF.PARAMCD" title="Parameter Code">PARAMCD</a> = "XPPAIN"]</div></td>
 </tr>
 <tr>
 <td class="arm-label">Documentation</td>
@@ -1138,14 +1131,12 @@ PROC FREQ DATA=ADSL;
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc freq data = adef;
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc freq data = adef;
  by crit1 avisitn;
  where ittfl='Y';
  tables trtpn * crit1fl / chisq;
  run;
-
-        </pre>
+</pre>
 <div class="arm-code-ref"></div>
 </td>
 </tr>
@@ -1158,12 +1149,12 @@ proc freq data = adef;
 <tr>
 <th scope="col" class="arm-resultlabel">Display</th>
 <th scope="col">
-<span class="linebreakcell">Table 14.2.2 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=302">302</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Mean Pain Assessments and Changes from Baseline</span>
+<span class="linebreakcell">Table 14.2.2 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=353">353</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Mean Pain Assessments and Changes from Baseline</span>
 </th>
 </tr>
 <tr class="arm-analysisresult">
 <td>Analysis Result</td>
-<td><span class="arm-resulttitle" id="AR.AR.Table_14.2.2">Summary of Pain Relief</span></td>
+<td><span class="arm-resulttitle" id="AR.AR.Table_14.2.2.R1">Summary of Pain Relief</span></td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
@@ -1193,7 +1184,7 @@ proc freq data = adef;
 <tr>
 <td class="arm-label">Data References (incl. Selection Criteria)</td>
 <td><div class="arm-data-reference">
-<a href="#IG.ADEF" title="Efficacy/Pain Scores Analysis Dataset">ADEF</a>  [(<a href="#IG.ADEF.IT.ADEF.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADEF.IT.ADEF.ABLFL" title="Baseline Record Flag">ABLFL</a> ≠ "Y")<br> or <br>(<a href="#IG.ADEF.IT.ADEF.PARAMCD" title="Parameter Code">PARAMCD</a> = "XPPAIN")]</div></td>
+<a href="#IG.ADEF" title="Efficacy/Pain Scores Analysis Dataset">ADEF</a>  [<a href="#IG.ADEF.IT.ADEF.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y" and <a href="#IG.ADEF.IT.ADEF.ABLFL" title="Baseline Record Flag">ABLFL</a> ≠ "Y" and <a href="#IG.ADEF.IT.ADEF.PARAMCD" title="Parameter Code">PARAMCD</a> = "XPPAIN"]</div></td>
 </tr>
 <tr>
 <td class="arm-label">Documentation</td>
@@ -1204,14 +1195,12 @@ proc freq data = adef;
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc glm data = adef;
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc glm data = adef;
  by avisitn avisit;
  class trtpn;
  model aval = trtpn base;
  run;
-
-        </pre>
+</pre>
 <div class="arm-code-ref"></div>
 </td>
 </tr>
@@ -1224,17 +1213,17 @@ proc glm data = adef;
 <tr>
 <th scope="col" class="arm-resultlabel">Display</th>
 <th scope="col">
-<span class="linebreakcell">Figure 14.2.1 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=302">302</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Time to Pain Relief Analysis by Treatment Group</span>
+<span class="linebreakcell">Figure 14.2.1 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=354">354</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Time to Pain Relief Analysis by Treatment Group</span>
 </th>
 </tr>
 <tr class="arm-analysisresult">
 <td>Analysis Result</td>
-<td><span class="arm-resulttitle" id="AR.AR.Figure_14.2.1">Time to Pain Relief Kaplan Meier Analysis</span></td>
+<td><span class="arm-resulttitle" id="AR.AR.Figure_14.2.1.R1">Time to Pain Relief Kaplan Meier Analysis</span></td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
 <td>
-<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br><a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
+<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
 </td>
 </tr>
 <tr>
@@ -1253,18 +1242,8 @@ proc glm data = adef;
 </tr>
 <tr>
 <td class="arm-label">Data References (incl. Selection Criteria)</td>
-<td>
-<div class="arm-data-reference">
-<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")]</div>
-<div class="arm-data-reference">
-<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")]</div>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Documentation</td>
-<td>
-<span>Kaplan-Meier estimates and log-rank test for the treatment effect</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.2</a><span class="external-link-gif"></span> </p>
-</td>
+<td><div class="arm-data-reference">
+<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y" and <a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF"]</div></td>
 </tr>
 <tr>
 <td class="arm-label">Documentation</td>
@@ -1275,39 +1254,25 @@ proc glm data = adef;
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc lifetest  data = adtte plots=s;
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc lifetest  data = adtte plots=s;
   where ittfl = 'Y' and paramcd = 'TTPNRELF';
   id usubjid;
   strata trtpn;
   time aval*cnsr (1 2 3);
    test trtpn;
  run;
-
-        </pre>
-<div class="arm-code-ref"></div>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Programming Statements</td>
-<td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc phreg data = adtte;
- model aval*cnsr(1, 2, 3) = trtpn;
- run;
-
-        </pre>
+</pre>
 <div class="arm-code-ref"></div>
 </td>
 </tr>
 <tr class="arm-analysisresult">
 <td>Analysis Result</td>
-<td><span class="arm-resulttitle" id="AR.AR.Figure_14.2.1">Time to Pain Relief Hazard Ratio Derivation</span></td>
+<td><span class="arm-resulttitle" id="AR.AR.Figure_14.2.1.R2">Time to Pain Relief Hazard Ratio Derivation</span></td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
 <td>
-<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br><a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
+<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
 </td>
 </tr>
 <tr>
@@ -1326,208 +1291,22 @@ proc phreg data = adtte;
 </tr>
 <tr>
 <td class="arm-label">Data References (incl. Selection Criteria)</td>
-<td>
-<div class="arm-data-reference">
-<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")]</div>
-<div class="arm-data-reference">
-<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")]</div>
-</td>
+<td><div class="arm-data-reference">
+<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y" and <a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF"]</div></td>
 </tr>
 <tr>
 <td class="arm-label">Documentation</td>
 <td>
-<span>Kaplan-Meier estimates and log-rank test for the treatment effect</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.2</a><span class="external-link-gif"></span> </p>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Documentation</td>
-<td>
-<span>Kaplan-Meier estimates and log-rank test for the treatment effect</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.2</a><span class="external-link-gif"></span> </p>
+<span>Cox proportional hazards model used to derive the hazard ratio for the treatment group effect</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.2</a><span class="external-link-gif"></span> </p>
 </td>
 </tr>
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc lifetest  data = adtte plots=s;
-  where ittfl = 'Y' and paramcd = 'TTPNRELF';
-  id usubjid;
-  strata trtpn;
-  time aval*cnsr (1 2 3);
-   test trtpn;
- run;
-
-        </pre>
-<div class="arm-code-ref"></div>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Programming Statements</td>
-<td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc phreg data = adtte;
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc phreg data = adtte;
  model aval*cnsr(1, 2, 3) = trtpn;
  run;
-
-        </pre>
-<div class="arm-code-ref"></div>
-</td>
-</tr>
-</table>
-</div>
-<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
-<br><div class="containerbox">
-<a id="ARD.RD.Figure_14.2.1"></a><table class="analysisresults-detail" summary="Analysis Results Metadata - Detail">
-<caption>Figure_14.2.1</caption>
-<tr>
-<th scope="col" class="arm-resultlabel">Display</th>
-<th scope="col">
-<span class="linebreakcell">Figure 14.2.1 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=302">302</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Time to Pain Relief Analysis by Treatment Group</span>
-</th>
-</tr>
-<tr class="arm-analysisresult">
-<td>Analysis Result</td>
-<td><span class="arm-resulttitle" id="AR.AR.Figure_14.2.1">Time to Pain Relief Kaplan Meier Analysis</span></td>
-</tr>
-<tr>
-<td class="arm-label">Analysis Parameter(s)</td>
-<td>
-<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br><a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Analysis Variable(s)</td>
-<td><p class="arm-analysisvariable"><a href="#IG.ADTTE">ADTTE</a>.<a href="#IG.ADTTE.IT.ADTTE.AVAL">AVAL</a> (Analysis Value)
-                              
-                            </p></td>
-</tr>
-<tr>
-<td class="arm-label">Analysis Reason</td>
-<td>SPECIFIED IN SAP</td>
-</tr>
-<tr>
-<td class="arm-label">Analysis Purpose</td>
-<td>Secondary efficacy endpoint</td>
-</tr>
-<tr>
-<td class="arm-label">Data References (incl. Selection Criteria)</td>
-<td>
-<div class="arm-data-reference">
-<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")]</div>
-<div class="arm-data-reference">
-<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")]</div>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Documentation</td>
-<td>
-<span>Kaplan-Meier estimates and log-rank test for the treatment effect</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.2</a><span class="external-link-gif"></span> </p>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Documentation</td>
-<td>
-<span>Kaplan-Meier estimates and log-rank test for the treatment effect</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.2</a><span class="external-link-gif"></span> </p>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Programming Statements</td>
-<td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc lifetest  data = adtte plots=s;
-  where ittfl = 'Y' and paramcd = 'TTPNRELF';
-  id usubjid;
-  strata trtpn;
-  time aval*cnsr (1 2 3);
-   test trtpn;
- run;
-
-        </pre>
-<div class="arm-code-ref"></div>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Programming Statements</td>
-<td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc phreg data = adtte;
- model aval*cnsr(1, 2, 3) = trtpn;
- run;
-
-        </pre>
-<div class="arm-code-ref"></div>
-</td>
-</tr>
-<tr class="arm-analysisresult">
-<td>Analysis Result</td>
-<td><span class="arm-resulttitle" id="AR.AR.Figure_14.2.1">Time to Pain Relief Hazard Ratio Derivation</span></td>
-</tr>
-<tr>
-<td class="arm-label">Analysis Parameter(s)</td>
-<td>
-<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br><a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Analysis Variable(s)</td>
-<td><p class="arm-analysisvariable"><a href="#IG.ADTTE">ADTTE</a>.<a href="#IG.ADTTE.IT.ADTTE.AVAL">AVAL</a> (Analysis Value)
-                              
-                            </p></td>
-</tr>
-<tr>
-<td class="arm-label">Analysis Reason</td>
-<td>SPECIFIED IN SAP</td>
-</tr>
-<tr>
-<td class="arm-label">Analysis Purpose</td>
-<td>Secondary efficacy endpoint</td>
-</tr>
-<tr>
-<td class="arm-label">Data References (incl. Selection Criteria)</td>
-<td>
-<div class="arm-data-reference">
-<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")]</div>
-<div class="arm-data-reference">
-<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y")<br> or <br>(<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF")]</div>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Documentation</td>
-<td>
-<span>Kaplan-Meier estimates and log-rank test for the treatment effect</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.2</a><span class="external-link-gif"></span> </p>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Documentation</td>
-<td>
-<span>Kaplan-Meier estimates and log-rank test for the treatment effect</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.2</a><span class="external-link-gif"></span> </p>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Programming Statements</td>
-<td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc lifetest  data = adtte plots=s;
-  where ittfl = 'Y' and paramcd = 'TTPNRELF';
-  id usubjid;
-  strata trtpn;
-  time aval*cnsr (1 2 3);
-   test trtpn;
- run;
-
-        </pre>
-<div class="arm-code-ref"></div>
-</td>
-</tr>
-<tr>
-<td class="arm-label">Programming Statements</td>
-<td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-proc phreg data = adtte;
- model aval*cnsr(1, 2, 3) = trtpn;
- run;
-
-        </pre>
+</pre>
 <div class="arm-code-ref"></div>
 </td>
 </tr>
@@ -1540,13 +1319,12 @@ proc phreg data = adtte;
 <tr>
 <th scope="col" class="arm-resultlabel">Display</th>
 <th scope="col">
-<span class="linebreakcell">[unresolved: LF.Table_14.3.2.1]
-               [302<span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Incidence Rates of TEAEs by System Organ Class and Preferred Term</span>
+<span class="linebreakcell"></span> <span class="arm-displaytitle">Incidence Rates of TEAEs by System Organ Class and Preferred Term</span>
 </th>
 </tr>
 <tr class="arm-analysisresult">
 <td>Analysis Result</td>
-<td><span class="arm-resulttitle" id="AR.AR.Table_14.3.2.1">Incidence Rates of TEAEs by System Organ Class and Preferred Term</span></td>
+<td><span class="arm-resulttitle" id="AR.AR.Table_14.3.2.1.R1">Incidence Rates of TEAEs by System Organ Class and Preferred Term</span></td>
 </tr>
 <tr>
 <td class="arm-label">Analysis Parameter(s)</td>
@@ -1585,10 +1363,7 @@ proc phreg data = adtte;
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">
-
-        </pre>
-<div class="arm-code-ref"></div>
+<span class="arm-code-context">[SAS Version 9.4]</span><div class="arm-code-ref"><p class="linebreakcell"><a class="external" href="ae-t14-3-02.sas">AE Analysis Program</a><span class="external-link-gif"></span> </p></div>
 </td>
 </tr>
 </table>

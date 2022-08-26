@@ -71,7 +71,8 @@ get_adam_xml_20 <- function(lst) {
 
   whr <- c()
   if ("WHERE_CLAUSES" %in% nms)
-    whr <- get_where(lst[["WHERE_CLAUSES"]], lst[["VALUELEVEL_METADATA"]])
+    whr <- get_where(lst[["WHERE_CLAUSES"]],
+                     lst[["VALUELEVEL_METADATA"]])
 
 
   cmnts <- c()
@@ -89,7 +90,7 @@ get_adam_xml_20 <- function(lst) {
 
   analysis <- c()
   if("ANALYSIS_RESULTS" %in% nms)
-    analysis <- get_analysis_results(lst[["ANALYSIS_RESULTS"]], lst[["WHERE_CLAUSES"]])
+    analysis <- get_analysis_results(lst[["ANALYSIS_RESULTS"]], lst[["EXTERNAL_LINKS"]])
 
   ftr <- get_footer()
 
@@ -657,7 +658,7 @@ get_leaf_definitions <- function(dta) {
 # Final issue - what do with analysis_results_helper when analysisdataset is NA
 # (but the variable is not)
 # Func already handles opposite scenario and returns empty
-get_analysis_results <- function(dta, wcdta) {
+get_analysis_results <- function(dta, lfdta) {
   blk <-
   '<!-- ************************************************************ -->
     <!-- Analysis Results MetaData are Presented Below                -->
@@ -670,12 +671,14 @@ get_analysis_results <- function(dta, wcdta) {
           <TranslatedText xml:lang="en">{dispname}</TranslatedText>
       </Description>
       <def:DocumentRef leafID="LF.{dispid}">
-        <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
-      </def:DocumentRef>
-      <arm:AnalysisResult
-        OID="AR.{dispid}"
+        <def:PDFPageRef PageRefs="{lfpgid}" Type="{lreftype}"/>
+      </def:DocumentRef>'
+
+
+  analysisResult <- '<arm:AnalysisResult
+        OID="AR.{analysisid}"
         {paramcd}
-        ResultIdentifier="{dispid}"
+        ResultIdentifier="AR.{analysisid}"
         AnalysisReason="{reason}"
         AnalysisPurpose="{purpose}">
         <Description>
@@ -697,61 +700,127 @@ get_analysis_results <- function(dta, wcdta) {
         </arm:Documentation>
 
         <arm:ProgrammingCode Context="{context}">
-        <arm:Code>
-{pgrmcode}
-        </arm:Code>
+          {pgrmcode}
+          {pgrmref}
         </arm:ProgrammingCode>
-      </arm:AnalysisResult>
-    </arm:ResultDisplay>'
+      </arm:AnalysisResult>'
+
+  ardend <- '</arm:ResultDisplay>'
 
   end <- '</arm:AnalysisResultDisplays>'
 
-  wcstr <- '      <def:WhereClauseRef WhereClauseOID="WC.{wcoid}" /> '
+  wcstr <- '      <def:WhereClauseRef WhereClauseOID="WC.{wcoid}"/>\n'
 
   ret <- c(blk)
-  for(rw in 1:nrow(dta)) {
+
+  udsp <- unique(dta[["DISPLAYID"]])
+
+  for (sb in seq_len(length(udsp))) {
+
+    sbst <- subset(dta, dta$DISPLAYID == udsp[[sb]])
+
+
+    for(rw in 1:nrow(sbst)) {
+
+
+      if (length(udsp) > 1)
+        cntr <- rw
+      else
+        cntr <- 0
+
+      # Output resultDisplay on first row
+      if (rw == 1) {
 #browser()
-    sbst <- subset(wcdta, wcdta$WHERECLAUSEOID == dta[[rw, "WHERECLAUSEOID"]])
-    wc <- ""
-    if (nrow(sbst) > 0) {
+        lpg <- ""
+        rtype <- ""
+        lsbst <- subset(lfdta, lfdta$LeafID == sbst[[rw, "DISPLAYID"]])
+        if (nrow(lsbst) > 0) {
 
-      for (i in seq_len(nrow(sbst))) {
+          lpg <- lsbst[[1, "LeafPageRef"]]
+          rtype <-  lsbst[[1, "LeafPageRefType"]]
+        }
 
-         wc <- paste0(wc, glue(wcstr, wcoid = paste0(sbst[[i, "WHERECLAUSEOID"]],
-                                                    ".",  sbst[[i, "SEQ"]])), "\n")
+
+        ret[length(ret) + 1] <- glue(resultDisplay,
+                                dispid = sbst[[rw, "DISPLAYID"]],
+                                dispname = encodeMarkup(sbst[[rw, "DISPLAYNAME"]]),
+                                lfpgid = lpg,
+                                lreftype = rtype)
+
       }
 
+
+      wc <- ""
+      if (!is.na(sbst[[rw, "WHERECLAUSEOID"]])) {
+
+           wc <- glue(wcstr, wcoid = sbst[[rw, "WHERECLAUSEOID"]])
+
+
+      }
+
+
+      pcd <- ""
+      if (!is.na(sbst[[rw, "PARAMCD"]])) {
+
+
+        pcd <- paste0('ParameterOID="',
+                        "IT.", trimws(sbst[[rw, "ANALYSISDATASET"]]) , ".PARAMCD",
+                      '"')
+      }
+
+
+      cd <- ""
+      if (!is.na(sbst[[rw, "PROGRAMMINGCODE"]])) {
+
+        cd <- glue('<arm:Code>{pgrmcode}</arm:Code>\n',
+                   pgrmcode = encodeMarkup(sbst[[rw, "PROGRAMMINGCODE"]]))
+      }
+
+      cdref <- ""
+      if (!is.na(sbst[[rw, "PROGRAMLEAFID"]])) {
+
+        cdref <- glue('<def:DocumentRef leafID="LF.{pglfid}" />\n',
+                      pglfid = trimws(sbst[[rw, "PROGRAMLEAFID"]]))
+      }
+
+
+
+
+
+        if (cntr == 0)
+          arid <- sbst[[rw, "DISPLAYID"]]
+        else
+          arid <- paste0(sbst[[rw, "DISPLAYID"]], ".R", cntr)
+#browser()
+      # Output analysis result on every row
+      ret[length(ret) + 1] <- glue(analysisResult,
+                                   analysisid = arid,
+                                   analysisdata = sbst[[rw, "ANALYSISDATASET"]],
+                                   paramcd = pcd,
+                                   reason = encodeMarkup(sbst[[rw, "REASON"]]),
+                                   purpose = encodeMarkup(sbst[[rw, "PURPOSE"]]),
+                                   resultname = sbst[[rw, "RESULTNAME"]],
+                                   WhereClauses = wc,
+                                   analysisvars = analysis_results_helper(sbst[[rw,
+                                    "ANALYSISVARIABLES"]],
+                                    sbst[[rw, "ANALYSISDATASET"]]),
+                                   document = encodeMarkup(sbst[[rw, "DOCUMENTATION"]]),
+                                   rleafid = ifelse(!is.na(sbst[[rw, "REFLEAFID"]]),
+                                                    paste0("LF.", sbst[[rw, "REFLEAFID"]]), ""),
+                                   context = encodeMarkup(sbst[[rw, "CONTEXT"]]),
+                                   pgrmcode = cd,
+                                   pgrmref = cdref
+                                   )
     }
 
-    pcd <- ""
-    if (!is.na(dta[[rw, "PARAMCD"]])) {
+
+    ret[length(ret) + 1] <- ardend
 
 
-      pcd <- paste0('ParameterOID="',
-                      "IT.", trimws(dta[[rw, "ANALYSISDATASET"]]) , ".PARAMCD",
-                    '"')
-    }
-
-    ret[length(ret) + 1] <- glue(resultDisplay,
-                                 dispid = dta[[rw, "DISPLAYID"]],
-                                 dispname = encodeMarkup(dta[[rw, "DISPLAYNAME"]]),
-                                 analysisdata = dta[[rw, "ANALYSISDATASET"]],
-                                 paramcd = pcd,
-                                 reason = encodeMarkup(dta[[rw, "REASON"]]),
-                                 purpose = encodeMarkup(dta[[rw, "PURPOSE"]]),
-                                 resultname = dta[[rw, "RESULTNAME"]],
-                                 WhereClauses = wc,
-                                 analysisvars = analysis_results_helper(dta[[rw,
-                                  "ANALYSISVARIABLES"]],
-                                  dta[[rw, "ANALYSISDATASET"]]),
-                                 document = encodeMarkup(dta[[rw, "DOCUMENTATION"]]),
-                                 rleafid = ifelse(!is.na(dta[[rw, "REFLEAFID"]]),
-                                                  paste0("LF.", dta[[rw, "REFLEAFID"]]), ""),
-                                 context = encodeMarkup(dta[[rw, "CONTEXT"]]),
-                                 pgrmcode = encodeMarkup(dta[[rw, "PROGRAMMINGCODE"]]))
   }
 
   ret[length(ret) + 1] <- end
+
   return(ret)
 }
 
