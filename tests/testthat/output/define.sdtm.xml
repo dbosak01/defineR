@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-08-26T21:13:52">
+  CreationDateTime="2022-08-26T22:34:13">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -2516,19 +2516,29 @@ def:CommentOID="COM.ARMCD"
   <def:ValueListRef ValueListOID="VL.SUPPDM.QVAL"/>
 
 </ItemDef>
-<ItemDef OID="IT.SUPPDM.QVAL.RACEOTH" Name="QVAL" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.SUPPDM.QVAL.RACEOTH"
+  Name="QVAL"
+  SASFieldName="QVAL"
+  DataType="text"
+  Length="20"
+  def:DisplayFormat="20"
+  >
   <Description>
-    <TranslatedText xml:lang="en">Data Value</TranslatedText>
+      <TranslatedText xml:lang="en">Race, Other</TranslatedText>
   </Description>
-  <def:Origin Type="NA"/>
+  <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.SUPPDM.QVAL.RANDDTC" Name="QVAL" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.SUPPDM.QVAL.RANDDTC"
+  Name="QVAL"
+  SASFieldName="QVAL"
+  DataType="text"
+  Length="10"
+  def:DisplayFormat="10"
+  >
   <Description>
-    <TranslatedText xml:lang="en">Data Value</TranslatedText>
+      <TranslatedText xml:lang="en">Randomization Date</TranslatedText>
   </Description>
-  <def:Origin Type="NA"/>
+  <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
 
 <ItemDef OID="IT.SUPPDM.QORIG"
@@ -2674,89 +2684,150 @@ def:CommentOID="COM.ARMCD"
   <def:ValueListRef ValueListOID="VL.LB.LBORRES"/>
 
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.ALB" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.ALB"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="4.2"
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Albumin; Microalbumin</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.ALP" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.ALP"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="3."
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Alkaline Phosphatase</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.ALT" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.ALT"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="3."
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Alanine Aminotransferase; SGPT</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.AST" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.AST"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="3."
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Aspartate Aminotransferase; SGOT</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.BILDIR" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.BILDIR"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="4.2"
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Direct Bilirubin</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.BILI" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.BILI"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="4.2"
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Bilirubin; Total Bilirubin</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.GGT" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.GGT"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="3."
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Gamma Glutamyl Transferase</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.HCT" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.HCT"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="3."
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Hematocrit</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.HGB" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.HGB"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="5.2"
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Hemoglobin</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.PROT" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.PROT"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="4.2"
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Protein</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.GLUC.CHEMISTRY" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.GLUC.CHEMISTRY"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="4.2"
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+      <TranslatedText xml:lang="en">Glucose</TranslatedText>
   </Description>
-  <def:Origin Type="eDT"/>
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
-<ItemDef OID="IT.LB.LBORRES.GLUC.URINALYSIS" Name="LBORRES" SASFieldName="NA"
-   DataType="text" Length="200">
+<ItemDef OID="IT.LB.LBORRES.GLUC.URINALYSIS"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="text"
+  Length="8"
+  def:DisplayFormat="8"
+  >
   <Description>
-    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT"/>
+      <TranslatedText xml:lang="en">Glucose</TranslatedText>
+  </Description><CodeListRef CodeListOID="CL.URINGLUC"/>
+
+  <def:Origin Type="eDT"></def:Origin>
 </ItemDef>
 
 <ItemDef OID="IT.LB.LBORRESU"

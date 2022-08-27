@@ -289,6 +289,20 @@ get_item_defs <- function(toc, vardt, valdt, eldta) {
         <def:Origin Type="{Origin}"/>
       </ItemDef>'
 
+
+  vdefstr <- ' <ItemDef OID="{ValueOID}"
+      Name="{variable}"
+      SASFieldName="{variable}"
+      DataType="{type}"
+      Length="{length}"
+      def:DisplayFormat="{display}"{comment}
+      >
+      <Description>
+          <TranslatedText xml:lang="en">{label}</TranslatedText>
+      </Description>{codelist}
+      {origin}
+    </ItemDef>'
+
   valstr <- '<def:ValueListRef ValueListOID="{ValueID}"/>'
 
   orgstr <- '<def:Origin Type="CRF">
@@ -322,7 +336,7 @@ get_item_defs <- function(toc, vardt, valdt, eldta) {
         valLevel <- ""
         vDefs <- ""
         if (nrow(sbst) > 0) {
-
+          #browser()
           vid <- paste0("VL.",
                         vardt[[varrow, "DOMAIN"]],
                         ".",
@@ -348,14 +362,55 @@ get_item_defs <- function(toc, vardt, valdt, eldta) {
               vid <- paste0(vid, ".", splt[length(splt)])
             }
 
+            vclst <- ""
+            if (!is.na(sbst[[i, "CODELISTNAME"]])) {
+
+              vclst <- paste0('<CodeListRef CodeListOID="CL.',
+                             sbst[[i, "CODELISTNAME"]],
+                             '"/>\n')
+            }
+
+
+            vorgn <- ""
+            if (!is.na(sbst[[i, "ORIGIN"]])) {
+
+              vorgn <- paste0('<def:Origin Type="',
+                             encodeMarkup(sbst[[i, "ORIGIN"]]),
+                             '"></def:Origin>')
+            }
+
+            vcmnt <- ""
+            if (!is.na(sbst[[i, "COMMENTOID"]])) {
+              vcmnt <- paste0('\ndef:CommentOID="COM.',
+                              sbst[[i, "COMMENTOID"]],'"')
+
+            }
+
+
             vDefs <- paste0(vDefs,  glue(vdefstr,
                                          ValueOID = vid,
-                                         Variable = vardt[[varrow, "VARIABLE"]],
-                                         SASFieldName = vardt[[varrow, "SASFIELDNAME"]],
-                                         DataType = vardt[[varrow, "TYPE"]],
-                                         Length = vardt[[varrow, "LENGTH"]],
-                                         Label = vardt[[varrow, "LABEL"]],
-                                         Origin = vardt[[varrow, "ORIGIN"]]), "\n")
+                                         variable = sbst[[i, "VARIABLE"]],
+                                         type = sbst[[i, "TYPE"]],
+                                         length = sbst[[i, "LENGTH"]],
+                                         label = sbst[[i, "LABEL"]],
+                                         display = ifelse(is.na(sbst[[i, "DISPLAYFORMAT"]]),
+                                                          sbst[[i, "LENGTH"]],
+                                                          sbst[[i, "DISPLAYFORMAT"]]),
+                                         origin = vorgn,
+                                         codelist = vclst,
+                                         comment = vcmnt), "\n")
+
+            # domain = vardt[[varrow, "DOMAIN"]],
+            # variable = vardt[[varrow, "VARIABLE"]],
+            # type = vardt[[varrow, "TYPE"]],
+            # length = ifelse(is.na(vardt[[varrow, "LENGTH"]]),
+            #                 "", vardt[[varrow, "LENGTH"]]),
+            # display = strHolder,
+            # label = encodeMarkup(vardt[[varrow, "LABEL"]]),
+            # origin = orgn,
+            # vlevel = valLevel,
+            # codelist = clst,
+            # comment = cmnt
 
           }
 

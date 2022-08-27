@@ -205,6 +205,8 @@ write_define <- function(path, dir = ".", type = "sdtm", ver = NULL,
 
   }
 
+  if (length(msg) == 0)
+    msg <- NULL
 
   return(msg)
 

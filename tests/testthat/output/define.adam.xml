@@ -14,7 +14,7 @@
   xmlns:arm="http://www.cdisc.org/ns/arm/v1.0"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-08-26T00:08:22">
+  CreationDateTime="2022-08-26T22:58:25">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -149,32 +149,32 @@
 <CheckValue>Y</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.WC.ADEF.AVAL.XPPAIN">
+<def:WhereClauseDef OID="WC.ADEF.AVAL.XPPAIN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.ADEF.PARAMCD" Comparator="EQ">
 <CheckValue>XPPAIN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.WC.ADEF.CRIT1.XPPAIN">
+<def:WhereClauseDef OID="WC.ADEF.CRIT1.XPPAIN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.ADEF.PARAMCD" Comparator="EQ">
 <CheckValue>XPPAIN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.WC.ADEF.CRIT1FL.XPPAIN">
+<def:WhereClauseDef OID="WC.ADEF.CRIT1FL.XPPAIN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.ADEF.PARAMCD" Comparator="EQ">
 <CheckValue>XPPAIN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.WC.ADTTE.AVAL.TTPNRELF">
+<def:WhereClauseDef OID="WC.ADTTE.AVAL.TTPNRELF">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.ADTTE.PARAMCD" Comparator="EQ">
 <CheckValue>TTPNRELF</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.WC.ADTTE.CNSR.TTPNRELF">
+<def:WhereClauseDef OID="WC.ADTTE.CNSR.TTPNRELF">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.ADTTE.PARAMCD" Comparator="EQ">
 <CheckValue>TTPNRELF</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.WC.ADTTE.EVNTDESC.XPPAIN">
+<def:WhereClauseDef OID="WC.ADTTE.EVNTDESC.XPPAIN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.ADTTE.PARAMCD" Comparator="EQ">
 <CheckValue>XPPAIN</CheckValue>
 </RangeCheck>
