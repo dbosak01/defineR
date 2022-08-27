@@ -64,7 +64,7 @@ get_sdtm_xml_20 <- function(lst) {
   defs <- c()
   if ("VARIABLE_METADATA" %in% nms)
     defs <- get_item_defs(lst[["TOC_METADATA"]], lst[["VARIABLE_METADATA"]],
-                          lst[["VALUELEVEL_METADATA"]])
+                          lst[["VALUELEVEL_METADATA"]], lst[["EXTERNAL_LINKS"]])
   else
     stop("Variable metadata is required.")
 
@@ -259,7 +259,7 @@ get_item_groups <- function(toc, vardt) {
 }
 
 #' @noRd
-get_item_defs <- function(toc, vardt, valdt) {
+get_item_defs <- function(toc, vardt, valdt, eldta) {
 
   blk <- '<!-- ************************************************************ -->
   <!-- The details of each variable is here for all domains         -->
@@ -270,13 +270,12 @@ get_item_defs <- function(toc, vardt, valdt) {
       SASFieldName="{variable}"
       DataType="{type}"
       Length="{length}"
-      def:DisplayFormat="{display}"
+      def:DisplayFormat="{display}"{comment}
       >
       <Description>
           <TranslatedText xml:lang="en">{label}</TranslatedText>
-      </Description>
-      <def:Origin Type="{origin}">
-      </def:Origin>
+      </Description>{codelist}
+      {origin}
       {vlevel}
     </ItemDef>'
 
@@ -291,6 +290,17 @@ get_item_defs <- function(toc, vardt, valdt) {
       </ItemDef>'
 
   valstr <- '<def:ValueListRef ValueListOID="{ValueID}"/>'
+
+  orgstr <- '<def:Origin Type="CRF">
+                <def:DocumentRef leafID="LF.{lfid}">
+                <def:PDFPageRef PageRefs="{pg}" Type="{pgtype}"/>
+                </def:DocumentRef>
+             </def:Origin>'
+
+
+  crfref <- subset(eldta, eldta$AnnotatedCRF == "Y")
+  if (nrow(crfref) != 1)
+    crfref <- NULL
 
   ret <- c(blk)
     for(varrow in 1:nrow(vardt)) {
@@ -330,6 +340,7 @@ get_item_defs <- function(toc, vardt, valdt) {
                           ".",
                           sbst[[i, "VALUENAME"]])
 
+            # Append last part of where clause onto value oid to make it unique
             if (!is.na(sbst[[i, "WHERECLAUSEOID"]])) {
 
               splt <- strsplit(sbst[[i, "WHERECLAUSEOID"]], ".", fixed = TRUE)[[1]]
@@ -350,6 +361,62 @@ get_item_defs <- function(toc, vardt, valdt) {
 
         }
 
+        # Append code list if it exists
+        clst <- ""
+        if (!is.na(vardt[[varrow, "CODELISTNAME"]])) {
+
+          clst <- paste0('<CodeListRef CodeListOID="CL.',
+                         vardt[[varrow, "CODELISTNAME"]],
+                         '"/>\n')
+
+        }
+
+
+        cmnt <- ""
+        if (!is.na(vardt[[varrow, "COMMENTOID"]])) {
+
+          cmnt <- paste0('\ndef:CommentOID="COM.', vardt[[varrow, "COMMENTOID"]],'"')
+        }
+
+        orgn <- ""
+        if (!is.na(vardt[[varrow, "ORIGIN"]])) {
+
+          #browser()
+          oval <- vardt[[varrow, "ORIGIN"]]
+
+          icrf <- grep("crf", tolower(oval), fixed = TRUE)
+          if (!is.null(crfref) & length(icrf) > 0) {
+
+            ipg <- regexpr("page", tolower(oval), fixed = TRUE)
+            if (ipg > 0) {
+
+              pg <- trimws(substr(oval, ipg + 5, nchar(oval)))
+
+              orgn <- glue(orgstr, lfid = crfref[[1, "LeafID"]],
+                           pg = pg,
+                           pgtype = ifelse(is.na(crfref[[1, "LeafPageRefType"]]),
+                                           "PhysicalRef",
+                                           crfref[[1, "LeafPageRefType"]]))
+
+            } else {
+
+              orgn <- paste0('<def:Origin Type="',
+                             encodeMarkup(oval),
+                             '"></def:Origin>')
+            }
+
+
+
+          } else {
+
+            orgn <- paste0('<def:Origin Type="',
+                           encodeMarkup(oval),
+                           '"></def:Origin>')
+          }
+        }
+
+
+
         ret[length(ret) + 1] <- glue(str,
                                    domain = vardt[[varrow, "DOMAIN"]],
                                    variable = vardt[[varrow, "VARIABLE"]],
@@ -358,8 +425,10 @@ get_item_defs <- function(toc, vardt, valdt) {
                                                    "", vardt[[varrow, "LENGTH"]]),
                                    display = strHolder,
                                    label = encodeMarkup(vardt[[varrow, "LABEL"]]),
-                                   origin = encodeMarkup(vardt[[varrow, "ORIGIN"]]),
-                                   vlevel = valLevel)
+                                   origin = orgn,
+                                   vlevel = valLevel,
+                                   codelist = clst,
+                                   comment = cmnt)
 
         ret[length(ret) + 1] <- vDefs
     }
@@ -414,30 +483,26 @@ get_value_level <- function(dta, wcdt) {
           whrc <- ""
           holder <- ""
           whre <- ""
+
           if (!is.na(sp[[rw, "WHERECLAUSEOID"]])) {
 
+
+            # Create where clause ref based on user value
             wcnm <- sp[[rw, "WHERECLAUSEOID"]]
             splt <- strsplit(wcnm, ".", fixed = TRUE)[[1]]
 
             whre <- paste0(".", splt[length(splt)])
 
-            fltr <- subset(wcdt, wcdt$WHERECLAUSEOID == wcnm)
+            whrc <- paste0(whrc, glue(wcstr,
+                                      wcoid = paste0("WC.",
+                                                     sp[[rw, "WHERECLAUSEOID"]]
+                                                     )), "\n")
 
-            for (i in seq_len(nrow(fltr))) {
 
-
-
-              whrc <- paste0(whrc, glue(wcstr,
-                                        wcoid = paste0("WC.",
-                                                       fltr[[i, "WHERECLAUSEOID"]],
-                                                       ".",
-                                                       fltr[[i, "SEQ"]])), "\n")
-
-            }
 
           } else {
 
-
+            # Even if no where clause is specified, need to create one for this value
             whrc <- paste0(whrc, glue(wcstr,
                                       wcoid = paste0("WC.",
                                                      sp[[rw, "DOMAIN"]],
@@ -602,7 +667,7 @@ get_where <- function(dta, valdta) {
 
     if (is.na(valdta[[rw, "WHERECLAUSEOID"]])) {
 
-      wcoid <- paste0("WC.", valdta[[rw, "DOMAIN"]], ".", valdta[[rw, "VARIABLE"]],
+      wcoid <- paste0(valdta[[rw, "DOMAIN"]], ".", valdta[[rw, "VARIABLE"]],
                       ".", valdta[[rw, "VALUENAME"]])
 
       ret[length(ret) + 1] <- glue(wcstart, oid = wcoid)

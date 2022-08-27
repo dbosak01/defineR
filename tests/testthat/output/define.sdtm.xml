@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 25August2022                                                   -->
+    <!-- Date: 26August2022                                                   -->
     <!-- Description: Define.xml file for XYZ123                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-08-25T01:06:24">
+  CreationDateTime="2022-08-26T21:13:52">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -118,13 +118,15 @@
   OrderNumber="11"
   Mandatory="No"
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY"/>
+
 </ItemRef>
 <ItemRef ItemOID="IT.LB.LBORRES.GLUC.URINALYSIS"
   OrderNumber="12"
   Mandatory="No"
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS"/>
+
 </ItemRef>
  </def:ValueListDef>
 
@@ -149,86 +151,82 @@
   <!-- ****************************************************************** -->
   <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->
   <!-- ****************************************************************** -->
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY.1">
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBCAT" Comparator="EQ">
-  <CheckValue>CHEMISTRY</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY.2">
+<CheckValue>CHEMISTRY</CheckValue>
+</RangeCheck>
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>GLUC</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS.1">
+<CheckValue>GLUC</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBCAT" Comparator="EQ">
-  <CheckValue>URINALYSIS</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS.2">
+<CheckValue>URINALYSIS</CheckValue>
+</RangeCheck>
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>GLUC</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>GLUC</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.LB.LBORRES.ALB">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>ALB</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>ALB</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.LB.LBORRES.ALP">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>ALP</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>ALP</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.LB.LBORRES.ALT">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>ALT</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>ALT</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.LB.LBORRES.AST">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>AST</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>AST</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.LB.LBORRES.BILDIR">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>BILDIR</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>BILDIR</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.LB.LBORRES.BILI">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>BILI</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>BILI</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.LB.LBORRES.GGT">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>GGT</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>GGT</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.LB.LBORRES.HCT">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>HCT</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>HCT</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.LB.LBORRES.HGB">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>HGB</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>HGB</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.LB.LBORRES.PROT">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>PROT</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>PROT</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.SUPPDM.QVAL.RACEOTH">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPDM.QNAM" Comparator="EQ">
-  <CheckValue>RACEOTH</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>RACEOTH</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <def:WhereClauseDef OID="WC.SUPPDM.QVAL.RANDDTC">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPDM.QNAM" Comparator="EQ">
-  <CheckValue>RANDDTC</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<CheckValue>RANDDTC</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <!-- ******************************************* -->
 <!-- AE             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
@@ -1438,8 +1436,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1453,8 +1450,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -1468,8 +1464,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1483,8 +1478,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -1498,8 +1492,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Reported Term for the Adverse Event</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1513,8 +1510,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Lowest Level Term</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1528,8 +1524,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Lowest Level Term Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1542,9 +1537,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Dictionary-Derived Term</TranslatedText>
-  </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.AEDECOD"/>
+
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1558,8 +1553,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Preferred Term Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1573,8 +1567,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">High Level Term</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1588,8 +1581,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">High Level Term Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1603,8 +1595,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">High Level Group Term</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1618,8 +1609,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">High Level Group Term Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1632,9 +1622,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Body System or Organ Class</TranslatedText>
-  </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.AEBODSYS"/>
+
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1648,8 +1638,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Body System or Organ Class Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1663,8 +1652,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Primary System Organ Class</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1678,8 +1666,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Primary System Organ Class Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1692,9 +1679,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Severity</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.AESEV"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1707,9 +1698,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Serious Event</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1722,9 +1717,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Action Taken with Study Treatment</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ACN"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1737,9 +1736,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Causality</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.AEREL"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1752,9 +1755,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Is Life Threatening</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1767,9 +1774,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -1783,8 +1790,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Start Date/Time of Adverse Event</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1798,8 +1808,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">End Date/Time of Adverse Event</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1813,8 +1826,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of Start of Adverse Event</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -1828,8 +1840,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of End of Adverse Event</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -1843,8 +1854,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1858,8 +1868,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -1873,8 +1882,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1888,8 +1896,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Subject Identifier for the Study</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -1903,8 +1910,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Subject Reference Start Date/Time</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 1">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="1" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1918,8 +1928,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Subject Reference End Date/Time</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -1933,8 +1942,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of First Study Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 4">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="4" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1948,8 +1960,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of Last Study Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 4">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="4" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1963,8 +1978,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of Informed Consent</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 1">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="1" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1978,8 +1996,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of End of Participation</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 30">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="30" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -1993,8 +2014,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of Death</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2008,8 +2028,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Subject Death Flag</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2023,8 +2042,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Site Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2038,8 +2056,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of Birth</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 1">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="1" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -2053,8 +2074,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Age</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2067,9 +2087,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Age Units</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.AGEU"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2082,9 +2102,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Sex</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 1">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.SEX"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="1" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -2097,9 +2121,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Race</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 1">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.RACE"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="1" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -2109,12 +2137,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   DataType="text"
   Length="8"
   def:DisplayFormat="8"
+def:CommentOID="COM.ARMCD"
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Arm Code</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARMCD"/>
+
+  <def:Origin Type="eDT"></def:Origin>
   
 </ItemDef>
 
@@ -2127,9 +2156,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Description of Planned Arm</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARM"/>
+
+  <def:Origin Type="eDT"></def:Origin>
   
 </ItemDef>
 
@@ -2142,9 +2171,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Actual Arm Code</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARMCD"/>
+
+  <def:Origin Type="eDT"></def:Origin>
   
 </ItemDef>
 
@@ -2157,9 +2186,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Description of Actual Arm</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARM"/>
+
+  <def:Origin Type="eDT"></def:Origin>
   
 </ItemDef>
 
@@ -2172,9 +2201,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Country</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.COUNTRY"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2188,8 +2217,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2203,8 +2231,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2218,8 +2245,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2233,8 +2259,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2248,8 +2273,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Name of Actual Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2263,8 +2287,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Dose</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 4">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="4" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -2277,9 +2304,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Dose Units</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2292,9 +2319,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Dose Form</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.FRM"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2307,9 +2334,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2323,8 +2350,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Start Date/Time of Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 4">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="4" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -2338,8 +2368,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">End Date/Time of Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 4">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="4" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -2353,8 +2386,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of Start of Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2368,8 +2400,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of End of Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2383,8 +2414,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2398,8 +2428,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Related Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2413,8 +2442,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2428,8 +2456,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Identifying Variable</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2443,8 +2470,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Identifying Variable Value</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2458,8 +2484,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Qualifier Variable Name</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2473,8 +2498,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Qualifier Variable Label</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2488,9 +2512,23 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Data Value</TranslatedText>
   </Description>
-  <def:Origin Type="">
-  </def:Origin>
   
+  <def:ValueListRef ValueListOID="VL.SUPPDM.QVAL"/>
+
+</ItemDef>
+<ItemDef OID="IT.SUPPDM.QVAL.RACEOTH" Name="QVAL" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Data Value</TranslatedText>
+  </Description>
+  <def:Origin Type="NA"/>
+</ItemDef>
+<ItemDef OID="IT.SUPPDM.QVAL.RANDDTC" Name="QVAL" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Data Value</TranslatedText>
+  </Description>
+  <def:Origin Type="NA"/>
 </ItemDef>
 
 <ItemDef OID="IT.SUPPDM.QORIG"
@@ -2503,8 +2541,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Origin</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2518,8 +2555,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Evaluator</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2533,8 +2569,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2548,8 +2583,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2563,8 +2597,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2578,8 +2611,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2592,9 +2624,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Lab Test or Examination Short Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.LBTESTCD"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2607,9 +2639,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Lab Test or Examination Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.LBTEST"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2622,9 +2654,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Category for Lab Test</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.LBCAT"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2638,9 +2670,93 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
   </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
-  
+  <def:Origin Type="eDT"></def:Origin>
+  <def:ValueListRef ValueListOID="VL.LB.LBORRES"/>
+
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.ALB" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.ALP" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.ALT" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.AST" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.BILDIR" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.BILI" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.GGT" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.HCT" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.HGB" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.PROT" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.GLUC.CHEMISTRY" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.GLUC.URINALYSIS" Name="LBORRES" SASFieldName="NA"
+   DataType="text" Length="200">
+  <Description>
+    <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"/>
 </ItemDef>
 
 <ItemDef OID="IT.LB.LBORRESU"
@@ -2652,9 +2768,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Original Units</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
+
+  <def:Origin Type="eDT"></def:Origin>
   
 </ItemDef>
 
@@ -2668,8 +2784,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Reference Range Lower Limit in Orig Unit</TranslatedText>
   </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  <def:Origin Type="eDT"></def:Origin>
   
 </ItemDef>
 
@@ -2683,8 +2798,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Reference Range Upper Limit in Orig Unit</TranslatedText>
   </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  <def:Origin Type="eDT"></def:Origin>
   
 </ItemDef>
 
@@ -2698,8 +2812,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Character Result/Finding in Std Format</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2713,8 +2826,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Numeric Result/Finding in Standard Units</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2727,9 +2839,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Standard Units</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2743,8 +2855,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Reference Range Lower Limit-Std Units</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2758,8 +2869,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Reference Range Upper Limit-Std Units</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2772,9 +2882,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Reference Range Indicator</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.LBNRIND"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2787,9 +2897,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Baseline Flag</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2803,8 +2913,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit Number</TranslatedText>
   </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  <def:Origin Type="eDT"></def:Origin>
   
 </ItemDef>
 
@@ -2817,9 +2926,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Visit Name</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.VISIT"/>
+
+  <def:Origin Type="eDT"></def:Origin>
   
 </ItemDef>
 
@@ -2832,9 +2941,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2848,8 +2957,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of Specimen Collection</TranslatedText>
   </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  <def:Origin Type="eDT"></def:Origin>
   
 </ItemDef>
 
@@ -2863,8 +2971,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of Specimen Collection</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2878,8 +2985,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -2893,8 +2999,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2907,9 +3012,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Arm Code</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARMCD"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2922,9 +3027,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Description of Planned Arm</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARM"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2938,8 +3043,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Planned Order of Element within Arm</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2953,8 +3057,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Element Code</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2968,8 +3071,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Description of Element</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2983,8 +3085,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Branch</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -2998,8 +3099,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Transition Rule</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3012,9 +3112,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3028,8 +3128,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -3043,8 +3142,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3058,8 +3156,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Element Code</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3073,8 +3170,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Description of Element</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3088,8 +3184,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Rule for Start of Element</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3103,8 +3198,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Rule for End of Element</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3118,8 +3212,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Planned Duration of Element</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3133,8 +3226,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -3148,8 +3240,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3163,8 +3254,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Inclusion/Exclusion Criterion Short Name</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3178,8 +3268,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Inclusion/Exclusion Criterion</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3192,9 +3281,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Inclusion/Exclusion Category</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.IECAT"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3208,8 +3297,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -3223,8 +3311,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3238,8 +3325,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence of Planned Assessment Schedule</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3253,8 +3339,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Anchor Variable Name</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3268,8 +3353,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Offset from the Anchor</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3283,8 +3367,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Planned Assessment Interval</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3298,8 +3381,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Planned Assessment Interval Minimum</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3313,8 +3395,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Planned Assessment Interval Maximum</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3328,8 +3409,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Maximum Number of Actual Assessments</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3343,8 +3423,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -3358,8 +3437,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3373,8 +3451,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3387,9 +3464,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Trial Summary Parameter Short Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.TSPARMCD"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3402,9 +3479,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Trial Summary Parameter</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.TSPARM"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3418,8 +3495,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Parameter Value</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3433,8 +3509,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Parameter Value Code</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3448,8 +3523,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Name of the Reference Terminology</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3463,8 +3537,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Version of the Reference Terminology</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3478,8 +3551,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -3493,8 +3565,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3508,8 +3579,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3523,8 +3593,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit Name</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3537,9 +3606,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Arm Code</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARMCD"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3552,9 +3621,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Description of Planned Arm</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARM"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3568,8 +3637,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit Start Rule</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3583,8 +3651,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit End Rule</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3598,8 +3665,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -3613,8 +3679,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3628,8 +3693,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -3643,8 +3707,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3657,9 +3720,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Pain Test Short Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.XPTESTCD"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3672,9 +3735,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Pain Test Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.XPTEST"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3688,8 +3751,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -3703,8 +3769,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Character Result/Finding in Std Format</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -3718,8 +3787,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Numeric Result/Finding in Std Format</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -3732,9 +3804,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3748,8 +3820,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit Number</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
@@ -3762,9 +3833,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Visit Name</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.VISIT"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -3777,9 +3852,9 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Baseline Flag</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
+
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3793,8 +3868,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of  Collection</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
   
 </ItemDef>
 
@@ -3808,8 +3886,7 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of  Collection</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
   
 </ItemDef>
 
@@ -3851,7 +3928,7 @@ DataType="text">
 </CodeListItem>
 <CodeListItem CodedValue="UNKNOWN" Rank="7">
   <Decode>
-    <TranslatedText>U; Unknown</TranslatedText>
+    <TranslatedText>U; Unknown</TranslatedText>
   </Decode>
 </CodeListItem>
 </CodeList>
@@ -3889,17 +3966,17 @@ Name="AESEV"
 DataType="text">
 <CodeListItem CodedValue="MILD" Rank="1">
   <Decode>
-    <TranslatedText>Grade 1; 1</TranslatedText>
+    <TranslatedText>Grade 1; 1</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="MODERATE" Rank="2">
   <Decode>
-    <TranslatedText>Grade 2; 2</TranslatedText>
+    <TranslatedText>Grade 2; 2</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="SEVERE" Rank="3">
   <Decode>
-    <TranslatedText>Grade 3; 3</TranslatedText>
+    <TranslatedText>Grade 3; 3</TranslatedText>
   </Decode>
 </CodeListItem>
 </CodeList>
@@ -4027,9 +4104,9 @@ DataType="text">
 <CodeList OID="CL.LBTEST"
 Name="LBTEST"
 DataType="text">
-<CodeListItem CodedValue="Albumin; Microalbumin" Rank="1">
+<CodeListItem CodedValue="Albumin; Microalbumin" Rank="1">
   <Decode>
-    <TranslatedText>Albumin; Microalbumin</TranslatedText>
+    <TranslatedText>Albumin; Microalbumin</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="Alkaline Phosphatase" Rank="2">
@@ -4037,14 +4114,14 @@ DataType="text">
     <TranslatedText>Alkaline Phosphatase</TranslatedText>
   </Decode>
 </CodeListItem>
-<CodeListItem CodedValue="Alanine Aminotransferase; SGPT" Rank="3">
+<CodeListItem CodedValue="Alanine Aminotransferase; SGPT" Rank="3">
   <Decode>
-    <TranslatedText>Alanine Aminotransferase; SGPT</TranslatedText>
+    <TranslatedText>Alanine Aminotransferase; SGPT</TranslatedText>
   </Decode>
 </CodeListItem>
-<CodeListItem CodedValue="Aspartate Aminotransferase; SGOT" Rank="4">
+<CodeListItem CodedValue="Aspartate Aminotransferase; SGOT" Rank="4">
   <Decode>
-    <TranslatedText>Aspartate Aminotransferase; SGOT</TranslatedText>
+    <TranslatedText>Aspartate Aminotransferase; SGOT</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="Direct Bilirubin" Rank="5">
@@ -4052,9 +4129,9 @@ DataType="text">
     <TranslatedText>Direct Bilirubin</TranslatedText>
   </Decode>
 </CodeListItem>
-<CodeListItem CodedValue="Bilirubin; Total Bilirubin" Rank="6">
+<CodeListItem CodedValue="Bilirubin; Total Bilirubin" Rank="6">
   <Decode>
-    <TranslatedText>Bilirubin; Total Bilirubin</TranslatedText>
+    <TranslatedText>Bilirubin; Total Bilirubin</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="Gamma Glutamyl Transferase" Rank="7">
@@ -4062,14 +4139,14 @@ DataType="text">
     <TranslatedText>Gamma Glutamyl Transferase</TranslatedText>
   </Decode>
 </CodeListItem>
-<CodeListItem CodedValue="EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume" Rank="8">
+<CodeListItem CodedValue="EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume" Rank="8">
   <Decode>
-    <TranslatedText>EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</TranslatedText>
+    <TranslatedText>EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</TranslatedText>
   </Decode>
 </CodeListItem>
-<CodeListItem CodedValue="FHGB; Free Hemoglobin; Hemoglobin" Rank="9">
+<CodeListItem CodedValue="FHGB; Free Hemoglobin; Hemoglobin" Rank="9">
   <Decode>
-    <TranslatedText>FHGB; Free Hemoglobin; Hemoglobin</TranslatedText>
+    <TranslatedText>FHGB; Free Hemoglobin; Hemoglobin</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="Protein" Rank="10">
@@ -4088,7 +4165,7 @@ Name="LBTESTCD"
 DataType="text">
 <CodeListItem CodedValue="ALB" Rank="1">
   <Decode>
-    <TranslatedText>Albumin; Microalbumin</TranslatedText>
+    <TranslatedText>Albumin; Microalbumin</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="ALP" Rank="2">
@@ -4098,12 +4175,12 @@ DataType="text">
 </CodeListItem>
 <CodeListItem CodedValue="ALT" Rank="3">
   <Decode>
-    <TranslatedText>Alanine Aminotransferase; SGPT</TranslatedText>
+    <TranslatedText>Alanine Aminotransferase; SGPT</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="AST" Rank="4">
   <Decode>
-    <TranslatedText>Aspartate Aminotransferase; SGOT</TranslatedText>
+    <TranslatedText>Aspartate Aminotransferase; SGOT</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="BILDIR" Rank="5">
@@ -4113,7 +4190,7 @@ DataType="text">
 </CodeListItem>
 <CodeListItem CodedValue="BILI" Rank="6">
   <Decode>
-    <TranslatedText>Bilirubin; Total Bilirubin</TranslatedText>
+    <TranslatedText>Bilirubin; Total Bilirubin</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="GGT" Rank="7">
@@ -4123,12 +4200,12 @@ DataType="text">
 </CodeListItem>
 <CodeListItem CodedValue="HCT" Rank="8">
   <Decode>
-    <TranslatedText>EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</TranslatedText>
+    <TranslatedText>EVF; Erythrocyte Volume Fraction; Hematocrit; PCV; Packed Cell Volume</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="HGB" Rank="9">
   <Decode>
-    <TranslatedText>FHGB; Free Hemoglobin; Hemoglobin</TranslatedText>
+    <TranslatedText>FHGB; Free Hemoglobin; Hemoglobin</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="PROT" Rank="10">
@@ -4152,12 +4229,12 @@ DataType="text">
 </CodeListItem>
 <CodeListItem CodedValue="NA" Rank="2">
   <Decode>
-    <TranslatedText>NA; Not Applicable</TranslatedText>
+    <TranslatedText>NA; Not Applicable</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="U" Rank="3">
   <Decode>
-    <TranslatedText>U; UNK; Unknown</TranslatedText>
+    <TranslatedText>U; UNK; Unknown</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="Y" Rank="4">
@@ -4200,7 +4277,7 @@ DataType="text">
 </CodeListItem>
 <CodeListItem CodedValue="U" Rank="3">
   <Decode>
-    <TranslatedText>U; UNK; Unknown</TranslatedText>
+    <TranslatedText>U; UNK; Unknown</TranslatedText>
   </Decode>
 </CodeListItem>
 </CodeList>
@@ -4832,7 +4909,7 @@ DataType="text">
 </MethodDef>
 <MethodDef OID="MT.LB.LBNRIND" Name="LBNRIND derivation" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then   lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then   lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and              round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then          lbnrind = 'LOW';    else if lbstnrhi ne . and lbstresn ne . and             round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then      lbnrind = 'HIGH';    else if lbstnrhi ne . and lbstresn ne . then      lbnrind = 'NORMAL';</TranslatedText>
+    <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then   lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then   lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and              round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then          lbnrind = 'LOW';    else if lbstnrhi ne . and lbstresn ne . and             round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then      lbnrind = 'HIGH';    else if lbstnrhi ne . and lbstresn ne . then      lbnrind = 'NORMAL';</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="MT.LB.LBBLFL" Name="LBBLFL derivation" Type="Computation">

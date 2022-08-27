@@ -578,3 +578,31 @@ test_that("write24: ADAM CDISC defineR XML can be converted to HTML", {
 
 })
 
+test_that("write25: SDTM CDISC defineR XML can be converted to HTML", {
+
+  library(xml2)
+  library(xslt)
+
+  fp <- file.path(data_dir, "sdtm/define.xml")
+  sp <- file.path(data_dir, "xsl/define2-0.xsl")
+  op <- file.path(base_path, "html/test25.html")
+
+  if (file.exists(op))
+    file.remove(op)
+
+  doc <- read_xml(fp)
+  style <- read_xml(sp)
+  html <- xml_xslt(doc, style)
+
+
+  write_html(html, op)
+
+  fe <- file.exists(op)
+
+  expect_equal(fe, TRUE)
+
+
+
+})
+
+
