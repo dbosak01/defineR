@@ -108,8 +108,8 @@ write_metadata("<target path>",
 **Q:** I am working on an animal study, and need to generate a define.xml
 for SEND.  Can **defineR** do that?
 
-**A:** Not at this time.  If you desire this feature, please send 
-and an issue to the GitHub [issue list](https://github.com/dbosak01/defineR/issues). 
+**A:** Not at this time.  If you desire this feature, please submit 
+a request to the GitHub [issue list](https://github.com/dbosak01/defineR/issues). 
 
 [top](#top) 
 
@@ -123,8 +123,6 @@ and an issue to the GitHub [issue list](https://github.com/dbosak01/defineR/issu
 **A:** Yes. Use the `write_metadata()` function, and supply the 
 `src_dir` parameter with the directory that contains your XPT files.  Like this:
 ```{r eval=FALSE, echo=TRUE} 
-# Create temp directory
-tmp <- tempdir()
 
 # Create metadata template
 write_metadata("<target path>", 
