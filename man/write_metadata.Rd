@@ -26,7 +26,8 @@ currently supports only version "2.0.0".}
 
 \item{src_dir}{If the metadata will be generated from existing datasets,
 supply the directory path for those datasets.  If the metadata will
-not be created from datasets, this parameter should be NULL.}
+not be created from datasets, this parameter should be NULL.  Datasets
+should be in XPT file format.}
 
 \item{check}{Whether or not to run the checks.}
 

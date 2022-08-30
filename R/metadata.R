@@ -38,7 +38,8 @@
 #' @param check Whether or not to run the checks.
 #' @param src_dir If the metadata will be generated from existing datasets,
 #' supply the directory path for those datasets.  If the metadata will
-#' not be created from datasets, this parameter should be NULL.
+#' not be created from datasets, this parameter should be NULL.  Datasets
+#' should be in XPT file format.
 #' @param demo If this parameter is TRUE, the function will generate
 #' a metadata file populated with sample data. If the parameter is FALSE,
 #' a blank metadata spreadsheet will be produced. Default is FALSE.
@@ -183,13 +184,62 @@ copy_template <- function(dir, type, ver, demo) {
 
 }
 
+#' @import libr
+#' @import openxlsx
 generate_template <- function(dir, type, ver, src_dir, check) {
 
- ret <- NULL
+  ret <- NULL
+
+  if (!dir.exists(src_dir)) {
+
+   stop("Directory '" %p% src_dir %p% "' does not exist.")
+  }
+
+  if (is.null(file.find(src_dir, "*.xpt", up = 0, down = 0))) {
+
+   stop("No XPT data files found in directory '" %p% src_dir %p% "'")
+  }
+
+  #browser()
+
+  xdat <- libname("xdat", src_dir, "xpt", read_only = TRUE,
+                 quiet = TRUE, standard_eval = TRUE)
+
+  dict <- dictionary(xdat)
+
+  tpth <- copy_template(dir, type, ver, demo = FALSE)
+
+  wb <- loadWorkbook(tpth)
 
 
 
- return(ret)
+
+
+  toc <- prepare_toc(dict)
+
+  writeData(wb, "TOC_METADATA", toc, startCol = 1, startRow = 2,
+           colNames = FALSE)
+
+  varm <- prepare_variable_metadata(dict)
+
+
+
+  writeData(wb, "VARIABLE_METADATA", varm, startCol = 1, startRow = 2,
+           colNames = FALSE)
+
+
+  sty <- createStyle(halign = "left")
+
+  addStyle(wb,  "VARIABLE_METADATA", style = sty,
+           rows = seq(2, nrow(dict) + 1),
+           cols = c(2, 5), gridExpand = TRUE)
+
+
+  saveWorkbook(wb, tpth, overwrite = TRUE)
+
+
+ return(tpth)
+
 }
 
 
@@ -234,6 +284,46 @@ import_metadata <- function(location, type = "excel") {
 
   }
 
+
+  return(ret)
+
+}
+
+
+# Utilities ---------------------------------------------------------------
+
+
+#' @noRd
+prepare_toc <- function(dict) {
+
+  dmns <- toupper(unique(dict$Name))
+
+
+  ret <- data.frame(OID = dmns,
+                    NAME = dmns)
+
+  return(ret)
+
+}
+
+#' @import libr
+#' @import stats
+#' @noRd
+prepare_variable_metadata <- function(dict) {
+
+
+  dict$VARNUM <- 1
+
+  dict$VARNUM <- ave(dict$VARNUM,
+                     dict$Name,
+                     FUN = seq_along)
+
+  ret <- data.frame(DOMAIN = toupper(dict$Name),
+                    VARNUM = dict$VARNUM,
+                    VARIABLE = dict$Column,
+                    TYPE = ifelse(dict$Class == "character", "text", dict$Class),
+                    LENGTH = dict$MaxChar,
+                    LABEL = dict$Label)
 
   return(ret)
 

@@ -189,3 +189,117 @@ test_that("metadata8: Parameter checks work.", {
   expect_error(write_metadata(fp, type = NULL))
 
 })
+
+
+
+test_that("metadata9: prepare_toc() works as expected.", {
+
+  library(libr)
+
+  dict <- dictionary(mtcars)
+
+  res <- prepare_toc(dict)
+
+  res
+
+  expect_equal(nrow(res), 1)
+  expect_equal(ncol(res), 2)
+
+})
+
+
+
+test_that("metadata10: prepare_variable_metadata() works as expected.", {
+
+  library(libr)
+
+  dict <- dictionary(mtcars)
+
+  res <- prepare_variable_metadata(dict)
+
+  res
+
+  expect_equal(nrow(res), 11)
+  expect_equal(ncol(res) > 2, TRUE)
+
+})
+
+
+
+test_that("metadata11: generate_template works as expected for ADAM.", {
+
+  sp <- file.path(data_dir, "xpt")
+  op <- file.path(base_path, "xlsx")
+
+  fp <- file.path(op, "ADAM_METADATA.xlsx")
+
+
+  if (file.exists(fp))
+    file.remove(fp)
+
+  res <- generate_template(op, "adam", "2.0.0", sp, TRUE)
+
+
+  expect_equal(file.exists(fp), TRUE)
+  expect_equal(file.exists(res), TRUE)
+
+})
+
+
+test_that("metadata12: generate_template works as expected for SDTM", {
+
+  sp <- file.path(data_dir, "xpt")
+  op <- file.path(base_path, "xlsx")
+
+  fp <- file.path(op, "SDTM_METADATA.xlsx")
+
+
+  if (file.exists(fp))
+    file.remove(fp)
+
+  res <- generate_template(op, "sdtm", "2.0.0", sp, TRUE)
+
+
+  expect_equal(file.exists(fp), TRUE)
+  expect_equal(file.exists(res), TRUE)
+
+})
+
+
+test_that("metadata13: write_metadata() works as expected for ADAM.", {
+
+  sp <- file.path(data_dir, "xpt")
+  op <- file.path(base_path, "xlsx")
+
+  fp <- file.path(op, "ADAM_METADATA.xlsx")
+
+  if (file.exists(fp))
+    file.remove(fp)
+
+  res <- write_metadata(op, "adam", "2.0.0", sp, TRUE)
+
+
+  expect_equal(file.exists(fp), TRUE)
+  expect_equal(file.exists(res), TRUE)
+
+})
+
+
+test_that("metadata14: write_metadata() works as expected for SDTM", {
+
+  sp <- file.path(data_dir, "xpt")
+  op <- file.path(base_path, "xlsx")
+
+  fp <- file.path(op, "SDTM_METADATA.xlsx")
+
+
+  if (file.exists(fp))
+    file.remove(fp)
+
+  res <- write_metadata(op, "sdtm", "2.0.0", sp, TRUE)
+
+
+  expect_equal(file.exists(fp), TRUE)
+  expect_equal(file.exists(res), TRUE)
+
+})

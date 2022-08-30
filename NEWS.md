@@ -2,6 +2,7 @@
 
 * Fixes to XML output.
 * Wrote FAQ.
+* Added XPT metadata generation.
 
 # defineR 0.0.9003
 
