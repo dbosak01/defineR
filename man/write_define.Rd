@@ -12,7 +12,8 @@ write_define(
   check = TRUE,
   html = TRUE,
   view = TRUE,
-  report_type = "PDF"
+  report_type = "PDF",
+  end_char = ""
 )
 }
 \arguments{
@@ -44,6 +45,13 @@ values are TRUE and FALSE.  Default is TRUE.}
 \item{report_type}{The output type of the check report, if requested.
 Valid values are "TXT", "RTF", "PDF", "HTML" and "DOCX".  Default is
 "PDF".}
+
+\item{end_char}{The end character to use on computational method blocks.
+These blocks often contain code samples that include line feeds or other
+line ending characters.  This parameter can be used to control how
+these characters are emitted to the XML parser.  Default is an empty
+string ("").  If the line feeds in your computational methods are not working,
+trying using a return ("\\r") or new line ("\\n").}
 }
 \value{
 The define.xml file and any associated files will be written

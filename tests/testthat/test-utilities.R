@@ -53,3 +53,5 @@ test_that("utils3: The encodeMarkup function works with NA as expected.", {
   expect_equal(res[5], "&amp; string")
 
 })
+
+

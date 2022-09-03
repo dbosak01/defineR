@@ -421,7 +421,7 @@ test_that("write18: write_define() works as expected on perfect SDTM metadata.",
     file.remove(hf)
 
 
-  res <- write_define(fp, op, check = TRUE)
+  res <- write_define(fp, op, check = TRUE, end_char = "\n")
 
   res
   expect_equal(length(res) == 0, TRUE)

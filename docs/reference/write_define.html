@@ -145,7 +145,8 @@ also be shown in the viewer.</p>
 <span>  check <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
 <span>  html <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
 <span>  view <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
-<span>  report_type <span class='op'>=</span> <span class='st'>"PDF"</span></span>
+<span>  report_type <span class='op'>=</span> <span class='st'>"PDF"</span>,</span>
+<span>  end_char <span class='op'>=</span> <span class='st'>""</span></span>
 <span><span class='op'>)</span></span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -195,6 +196,15 @@ values are TRUE and FALSE.  Default is TRUE.</p></td>
       <td><p>The output type of the check report, if requested.
 Valid values are "TXT", "RTF", "PDF", "HTML" and "DOCX".  Default is
 "PDF".</p></td>
+    </tr>
+    <tr>
+      <th>end_char</th>
+      <td><p>The end character to use on computational method blocks.
+These blocks often contain code samples that include line feeds or other
+line ending characters.  This parameter can be used to control how
+these characters are emitted to the XML parser.  Default is an empty
+string ("").  If the line feeds in your computational methods are not working,
+trying using a return ("\r") or new line ("\n").</p></td>
     </tr>
     </table>
 

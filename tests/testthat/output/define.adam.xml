@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 29August2022                                                   -->
+    <!-- Date: 02September2022                                                   -->
     <!-- Description: Define.xml file for XYZ123                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -14,7 +14,7 @@
   xmlns:arm="http://www.cdisc.org/ns/arm/v1.0"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-08-29T16:47:46">
+  CreationDateTime="2022-09-02T23:43:36">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -839,7 +839,7 @@ Mandatory="No"
 <ItemDef OID="IT.ADSL.BRTHDT"
   Name="BRTHDT"
   SASFieldName="BRTHDT"
-  DataType="integer"
+  DataType="date"
   Length="8"
   def:DisplayFormat="8"
   
@@ -2598,7 +2598,7 @@ DataType="text">
 </CodeListItem>
 <CodeListItem CodedValue="UNKNOWN" OrderNumber="7">
   <Decode>
-    <TranslatedText>U; Unknown</TranslatedText>
+    <TranslatedText>U; Unknown</TranslatedText>
   </Decode>
 </CodeListItem>
 </CodeList>
@@ -2690,17 +2690,17 @@ Name="AESEV"
 DataType="text">
 <CodeListItem CodedValue="MILD" OrderNumber="1">
   <Decode>
-    <TranslatedText>Grade 1; 1</TranslatedText>
+    <TranslatedText>Grade 1; 1</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="MODERATE" OrderNumber="2">
   <Decode>
-    <TranslatedText>Grade 2; 2</TranslatedText>
+    <TranslatedText>Grade 2; 2</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="SEVERE" OrderNumber="3">
   <Decode>
-    <TranslatedText>Grade 3; 3</TranslatedText>
+    <TranslatedText>Grade 3; 3</TranslatedText>
   </Decode>
 </CodeListItem>
 </CodeList>
@@ -3077,12 +3077,12 @@ DataType="text">
 </MethodDef>
 <MethodDef OID="MT.TTPNRELF.CNSR" Name="Censoring algorithm for Time to First Pain Relief" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">if pain relief occurs before worsening, then CNSR=0; else if worsening from pain data, then CNSR=1; else if worsening from AE data, then CNSR=3; else if no relief and no worsening at time of last observation, then CNSR=4</TranslatedText>
+    <TranslatedText xml:lang="en">if pain relief occurs before worsening, then CNSR=0; else if worsening from pain data, then CNSR=1; else if worsening from AE data, then CNSR=3; else if no relief and no worsening at time of last observation, then CNSR=4</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="MT.TTPNRELF.EVNTDESC" Name="Event descriptions for Time to First Pain Relief" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">if CNSR=0, then EVNTDESC=PAIN RELIEF; if CNSR=1, then EVNTDESC=PAIN WORSENING PRIOR TO RELIEF; if CNSR=2, then EVNTDESC=PAIN ADVERSE EVENT PRIOR TO RELIEF; if CNSR=3, then EVNTDESC=NO RELIEF AND NO WORSENING AT LAST ASSESSMENT</TranslatedText>
+    <TranslatedText xml:lang="en">if CNSR=0, then EVNTDESC=PAIN RELIEF; if CNSR=1, then EVNTDESC=PAIN WORSENING PRIOR TO RELIEF; if CNSR=2, then EVNTDESC=PAIN ADVERSE EVENT PRIOR TO RELIEF; if CNSR=3, then EVNTDESC=NO RELIEF AND NO WORSENING AT LAST ASSESSMENT</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="MT.TRTSDT" Name="Date of first exposure to treatment derivation" Type="Computation">
@@ -3157,7 +3157,7 @@ DataType="text">
 </MethodDef>
 <MethodDef OID="MT.ADTTE.SRCSEQ" Name="SRCSEQ algorithm" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record; else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</TranslatedText>
+    <TranslatedText xml:lang="en">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record; else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="MT.SEECODELIST" Name="See codelist" Type="Computation">
@@ -3172,12 +3172,12 @@ DataType="text">
 </MethodDef>
 <MethodDef OID="MT.RELGR1" Name="AE relatedness derivation" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">If AEREL=NOT RELATED  then NOT RELATED; Otherwise RELATED</TranslatedText>
+    <TranslatedText xml:lang="en">If AEREL=NOT RELATED  then NOT RELATED; Otherwise RELATED</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="MT.AGEGR1" Name="Age group derivation" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</TranslatedText>
+    <TranslatedText xml:lang="en">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</TranslatedText>
   </Description>
 </MethodDef>
 
@@ -3308,7 +3308,7 @@ DataType="text">
   </arm:Documentation>
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
-    <arm:Code>PROC FREQ DATA=ADSL; where ittfl='Y';  tables trt01pn * (agegr1 sex race) / cmh; run;</arm:Code>
+    <arm:Code>PROC FREQ DATA=ADSL; where ittfl='Y';  tables trt01pn * (agegr1 sex race) / cmh; run;</arm:Code>
     
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
@@ -3346,7 +3346,7 @@ DataType="text">
   </arm:Documentation>
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
-    <arm:Code>proc freq data = adef; by crit1 avisitn; where ittfl='Y'; tables trtpn * crit1fl / chisq; run;</arm:Code>
+    <arm:Code>proc freq data = adef; by crit1 avisitn; where ittfl='Y'; tables trtpn * crit1fl / chisq; run;</arm:Code>
     
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
@@ -3385,7 +3385,7 @@ DataType="text">
   </arm:Documentation>
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
-    <arm:Code>proc glm data = adef; by avisitn avisit; class trtpn; model aval = trtpn base; run;</arm:Code>
+    <arm:Code>proc glm data = adef; by avisitn avisit; class trtpn; model aval = trtpn base; run;</arm:Code>
     
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
@@ -3423,7 +3423,7 @@ DataType="text">
   </arm:Documentation>
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
-    <arm:Code>proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF';  id usubjid;  strata trtpn;  time aval*cnsr (1 2 3);   test trtpn; run;</arm:Code>
+    <arm:Code>proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF';  id usubjid;  strata trtpn;  time aval*cnsr (1 2 3);   test trtpn; run;</arm:Code>
     
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
@@ -3453,7 +3453,7 @@ DataType="text">
   </arm:Documentation>
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
-    <arm:Code>proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;</arm:Code>
+    <arm:Code>proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;</arm:Code>
     
   </arm:ProgrammingCode>
 </arm:AnalysisResult>

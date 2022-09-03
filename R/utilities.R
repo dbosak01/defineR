@@ -210,7 +210,7 @@ vencode <- Vectorize(function(char) {
     else if (char == "&")
       ret <- "&amp;"
     else if (char == "\n")
-      ret <- "\r" #"\r" #"&#xD;&#xA;"  #&#xD;
+      ret <- e$end_char #"\r" #"&#xD;&#xA;"  #&#xD;
     else if (char == "\U2122")
       ret <- "&#8482;"
     else if (char == "\U00AE")
@@ -218,7 +218,7 @@ vencode <- Vectorize(function(char) {
     else if (char == "\U00A9")
       ret <- "&#169;"
     else if (char == ";")
-      ret <- ";\r"
+      ret <- paste0(";") # e$end_char
 
   } else {
     ret = ""

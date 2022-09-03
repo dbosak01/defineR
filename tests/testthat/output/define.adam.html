@@ -977,7 +977,7 @@ document.onclick = function(e)
 </div>
 <div id="main">
 <div class="docinfo">
-<p class="documentinfo">Date/Time of Define-XML document generation: 2022-08-29T16:47:46</p>
+<p class="documentinfo">Date/Time of Define-XML document generation: 2022-09-02T23:43:36</p>
 <p class="documentinfo">Define-XML version: 2.0.0</p>
 <p class="stylesheetinfo">Stylesheet version: 2018-11-21</p>
 </div>
@@ -1073,11 +1073,7 @@ document.onclick = function(e)
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">PROC FREQ DATA=ADSL;
- where ittfl='Y';
-  tables trt01pn * (agegr1 sex race) / cmh;
- run;
-</pre>
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">PROC FREQ DATA=ADSL; where ittfl='Y';  tables trt01pn * (agegr1 sex race) / cmh; run;</pre>
 <div class="arm-code-ref"></div>
 </td>
 </tr>
@@ -1131,12 +1127,7 @@ document.onclick = function(e)
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc freq data = adef;
- by crit1 avisitn;
- where ittfl='Y';
- tables trtpn * crit1fl / chisq;
- run;
-</pre>
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc freq data = adef; by crit1 avisitn; where ittfl='Y'; tables trtpn * crit1fl / chisq; run;</pre>
 <div class="arm-code-ref"></div>
 </td>
 </tr>
@@ -1195,12 +1186,7 @@ document.onclick = function(e)
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc glm data = adef;
- by avisitn avisit;
- class trtpn;
- model aval = trtpn base;
- run;
-</pre>
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc glm data = adef; by avisitn avisit; class trtpn; model aval = trtpn base; run;</pre>
 <div class="arm-code-ref"></div>
 </td>
 </tr>
@@ -1254,14 +1240,7 @@ document.onclick = function(e)
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc lifetest  data = adtte plots=s;
-  where ittfl = 'Y' and paramcd = 'TTPNRELF';
-  id usubjid;
-  strata trtpn;
-  time aval*cnsr (1 2 3);
-   test trtpn;
- run;
-</pre>
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF';  id usubjid;  strata trtpn;  time aval*cnsr (1 2 3);   test trtpn; run;</pre>
 <div class="arm-code-ref"></div>
 </td>
 </tr>
@@ -1303,10 +1282,7 @@ document.onclick = function(e)
 <tr>
 <td class="arm-label">Programming Statements</td>
 <td>
-<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc phreg data = adtte;
- model aval*cnsr(1, 2, 3) = trtpn;
- run;
-</pre>
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;</pre>
 <div class="arm-code-ref"></div>
 </td>
 </tr>
@@ -1523,8 +1499,7 @@ document.onclick = function(e)
 </td>
 <td>
 <div class="linebreakcell">Predecessor: ADSL</div>
-<div class="method-code">If age&lt;55 then "&lt;55 years";
- else if age&gt;=55 then "&gt;=55 YEARS"</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
 </td>
 </tr>
 <tr class="tablerowodd">
@@ -1637,12 +1612,9 @@ document.onclick = function(e)
 <td class="number">40</td>
 <td>
 <span class="linebreakcell"><a href="#CL.CL.AESEV">AESEV</a></span><ul class="codelist">
-<li class="codelist-item">• "MILD" = "Grade 1;
- 1"</li>
-<li class="codelist-item">• "MODERATE" = "Grade 2;
- 2"</li>
-<li class="codelist-item">• "SEVERE" = "Grade 3;
- 3"</li>
+<li class="codelist-item">• "MILD" = "Grade 1; 1"</li>
+<li class="codelist-item">• "MODERATE" = "Grade 2; 2"</li>
+<li class="codelist-item">• "SEVERE" = "Grade 3; 3"</li>
 </ul>
 </td>
 <td><div class="linebreakcell">Predecessor: AE</div></td>
@@ -1751,8 +1723,7 @@ document.onclick = function(e)
 </td>
 <td>
 <div class="linebreakcell">Derived</div>
-<div class="method-code">If AEREL=NOT RELATED  then NOT RELATED;
- Otherwise RELATED</div>
+<div class="method-code">If AEREL=NOT RELATED  then NOT RELATED; Otherwise RELATED</div>
 </td>
 </tr>
 <tr class="tablerowodd">
@@ -1860,9 +1831,9 @@ document.onclick = function(e)
 <td>
 <a id="IG.ADSL.IT.ADSL.BRTHDT"></a>BRTHDT</td>
 <td>Date of Birth</td>
-<td class="datatype">integer</td>
+<td class="datatype">date</td>
 <td class="number">8</td>
-<td></td>
+<td>ISO 8601</td>
 <td><div class="linebreakcell">Predecessor: DM.BIRTHDTC</div></td>
 </tr>
 <tr class="tablerowodd">
@@ -1899,8 +1870,7 @@ document.onclick = function(e)
 </td>
 <td>
 <div class="linebreakcell">Derived</div>
-<div class="method-code">If age&lt;55 then "&lt;55 years";
- else if age&gt;=55 then "&gt;=55 YEARS"</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
 </td>
 </tr>
 <tr class="tableroweven">
@@ -2218,8 +2188,7 @@ document.onclick = function(e)
 </td>
 <td>
 <div class="linebreakcell">Predecessor: ADSL</div>
-<div class="method-code">If age&lt;55 then "&lt;55 years";
- else if age&gt;=55 then "&gt;=55 YEARS"</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
 </td>
 </tr>
 <tr class="tablerowodd">
@@ -2583,8 +2552,7 @@ document.onclick = function(e)
 </td>
 <td>
 <div class="linebreakcell">Predecessor: ADSL</div>
-<div class="method-code">If age&lt;55 then "&lt;55 years";
- else if age&gt;=55 then "&gt;=55 YEARS"</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
 </td>
 </tr>
 <tr class="tableroweven">
@@ -2748,8 +2716,7 @@ document.onclick = function(e)
 <td></td>
 <td>
 <div class="linebreakcell">Derived</div>
-<div class="method-code">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record;
- else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</div>
+<div class="method-code">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record; else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</div>
 </td>
 </tr>
 <tr class="tableroweven">
@@ -2801,8 +2768,7 @@ document.onclick = function(e)
 </tr>
 <tr class="tablerowodd">
 <td>UNKNOWN</td>
-<td class="codelist-item-decode">U;
- Unknown</td>
+<td class="codelist-item-decode">U; Unknown</td>
 </tr>
 </table>
 </div>
@@ -2922,18 +2888,15 @@ document.onclick = function(e)
 </tr>
 <tr class="tablerowodd">
 <td>MILD</td>
-<td class="codelist-item-decode">Grade 1;
- 1</td>
+<td class="codelist-item-decode">Grade 1; 1</td>
 </tr>
 <tr class="tableroweven">
 <td>MODERATE</td>
-<td class="codelist-item-decode">Grade 2;
- 2</td>
+<td class="codelist-item-decode">Grade 2; 2</td>
 </tr>
 <tr class="tablerowodd">
 <td>SEVERE</td>
-<td class="codelist-item-decode">Grade 3;
- 3</td>
+<td class="codelist-item-decode">Grade 3; 3</td>
 </tr>
 </table>
 </div>
@@ -3378,18 +3341,12 @@ document.onclick = function(e)
 <tr id="MT.MT.TTPNRELF.CNSR" class="tablerowodd">
 <td>Censoring algorithm for Time to First Pain Relief</td>
 <td>Computation</td>
-<td><div class="method-code">if pain relief occurs before worsening, then CNSR=0;
- else if worsening from pain data, then CNSR=1;
- else if worsening from AE data, then CNSR=3;
- else if no relief and no worsening at time of last observation, then CNSR=4</div></td>
+<td><div class="method-code">if pain relief occurs before worsening, then CNSR=0; else if worsening from pain data, then CNSR=1; else if worsening from AE data, then CNSR=3; else if no relief and no worsening at time of last observation, then CNSR=4</div></td>
 </tr>
 <tr id="MT.MT.TTPNRELF.EVNTDESC" class="tableroweven">
 <td>Event descriptions for Time to First Pain Relief</td>
 <td>Computation</td>
-<td><div class="method-code">if CNSR=0, then EVNTDESC=PAIN RELIEF;
- if CNSR=1, then EVNTDESC=PAIN WORSENING PRIOR TO RELIEF;
- if CNSR=2, then EVNTDESC=PAIN ADVERSE EVENT PRIOR TO RELIEF;
- if CNSR=3, then EVNTDESC=NO RELIEF AND NO WORSENING AT LAST ASSESSMENT</div></td>
+<td><div class="method-code">if CNSR=0, then EVNTDESC=PAIN RELIEF; if CNSR=1, then EVNTDESC=PAIN WORSENING PRIOR TO RELIEF; if CNSR=2, then EVNTDESC=PAIN ADVERSE EVENT PRIOR TO RELIEF; if CNSR=3, then EVNTDESC=NO RELIEF AND NO WORSENING AT LAST ASSESSMENT</div></td>
 </tr>
 <tr id="MT.MT.TRTSDT" class="tablerowodd">
 <td>Date of first exposure to treatment derivation</td>
@@ -3464,8 +3421,7 @@ document.onclick = function(e)
 <tr id="MT.MT.ADTTE.SRCSEQ" class="tablerowodd">
 <td>SRCSEQ algorithm</td>
 <td>Computation</td>
-<td><div class="method-code">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record;
- else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</div></td>
+<td><div class="method-code">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record; else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</div></td>
 </tr>
 <tr id="MT.MT.SEECODELIST" class="tableroweven">
 <td>See codelist</td>
@@ -3480,14 +3436,12 @@ document.onclick = function(e)
 <tr id="MT.MT.RELGR1" class="tableroweven">
 <td>AE relatedness derivation</td>
 <td>Computation</td>
-<td><div class="method-code">If AEREL=NOT RELATED  then NOT RELATED;
- Otherwise RELATED</div></td>
+<td><div class="method-code">If AEREL=NOT RELATED  then NOT RELATED; Otherwise RELATED</div></td>
 </tr>
 <tr id="MT.MT.AGEGR1" class="tablerowodd">
 <td>Age group derivation</td>
 <td>Computation</td>
-<td><div class="method-code">If age&lt;55 then "&lt;55 years";
- else if age&gt;=55 then "&gt;=55 YEARS"</div></td>
+<td><div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div></td>
 </tr>
 </table>
 </div>

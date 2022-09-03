@@ -297,9 +297,17 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
         strHolder <- vardt[[varrow, "LENGTH"]]
       }
       codeListHolder <- ""
-      if(!is.na(vardt[varrow, "CODELISTNAME"])) {
-        codeListHolder <- '<CodeListRef CodeListOID="CL.{codelist}"/>\n'
-        codeListHolder <- glue(codeListHolder, codelist = vardt[varrow, "CODELISTNAME"])
+      if(!is.na(vardt[[varrow, "CODELISTNAME"]])) {
+
+        clstr <- vardt[[varrow, "CODELISTNAME"]]
+
+        spos <- grep("*", clstr, fixed = TRUE)
+        ipos <- grep("ISO", clstr, fixed = TRUE)
+
+        if (length(spos) == 0 & length(ipos) == 0) {
+          codeListHolder <- '<CodeListRef CodeListOID="CL.{codelist}"/>\n'
+          codeListHolder <- glue(codeListHolder, codelist = vardt[varrow, "CODELISTNAME"])
+        }
       }
 
 

@@ -1,3 +1,6 @@
+e <- new.env()
+e$end_char <- ""
+
 
 # Exported Write Functions ------------------------------------------------
 
@@ -71,6 +74,12 @@
 #' @param report_type The output type of the check report, if requested.
 #' Valid values are "TXT", "RTF", "PDF", "HTML" and "DOCX".  Default is
 #' "PDF".
+#' @param end_char The end character to use on computational method blocks.
+#' These blocks often contain code samples that include line feeds or other
+#' line ending characters.  This parameter can be used to control how
+#' these characters are emitted to the XML parser.  Default is an empty
+#' string ("").  If the line feeds in your computational methods are not working,
+#' trying using a return ("\\r") or new line ("\\n").
 #' @return The define.xml file and any associated files will be written
 #' to the directory specified on the \code{dir} parameter.
 #' @seealso \code{\link{write_metadata}} to create a metadata template.
@@ -99,7 +108,7 @@
 #' # file.show(file.path(tmp, "define.sdtm.html"))
 write_define <- function(path, dir = ".", type = "sdtm", ver = NULL,
                          check = TRUE, html = TRUE, view = TRUE,
-                         report_type = "PDF") {
+                         report_type = "PDF", end_char = "") {
 
   if (!file.exists(path)) {
 
@@ -132,6 +141,9 @@ write_define <- function(path, dir = ".", type = "sdtm", ver = NULL,
 
    v5flg <- FALSE
   }
+
+  # Set line end character
+  e$end_char <- end_char
 
   dfl <- "define." %p% tolower(type) %p% ".xml"
   hfl <- "define." %p% tolower(type) %p% ".html"

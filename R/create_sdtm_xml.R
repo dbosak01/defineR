@@ -365,18 +365,65 @@ get_item_defs <- function(toc, vardt, valdt, eldta) {
             vclst <- ""
             if (!is.na(sbst[[i, "CODELISTNAME"]])) {
 
-              vclst <- paste0('<CodeListRef CodeListOID="CL.',
-                             sbst[[i, "CODELISTNAME"]],
-                             '"/>\n')
+              clstr <- sbst[[i, "CODELISTNAME"]]
+
+              spos <- grep("*", clstr, fixed = TRUE)
+              ipos <- grep("ISO", clstr, fixed = TRUE)
+
+
+              if (length(spos) == 0 & length(ipos) == 0) {
+                vclst <- paste0('<CodeListRef CodeListOID="CL.',
+                               sbst[[i, "CODELISTNAME"]],
+                               '"/>\n')
+              }
             }
 
 
             vorgn <- ""
             if (!is.na(sbst[[i, "ORIGIN"]])) {
 
-              vorgn <- paste0('<def:Origin Type="',
-                             encodeMarkup(sbst[[i, "ORIGIN"]]),
-                             '"></def:Origin>')
+              # vorgn <- paste0('<def:Origin Type="',
+              #                encodeMarkup(sbst[[i, "ORIGIN"]]),
+              #                '"></def:Origin>')
+
+
+              #browser()
+              vval <- sbst[[i, "ORIGIN"]]
+
+              vcrf <- grep("crf", tolower(vval), fixed = TRUE)
+              if (!is.null(crfref) & length(vcrf) > 0) {
+
+                matches <- regmatches(vval, gregexpr("[[:digit:]]+", vval))
+                pgs <- as.numeric(unlist(matches))
+
+                if (length(pgs) > 0) {
+
+                  for (pg in pgs) {
+
+                    torgn <- glue(orgstr, lfid = crfref[[1, "LeafID"]],
+                                  pg = pg,
+                                  pgtype = ifelse(is.na(crfref[[1, "LeafPageRefType"]]),
+                                                  "PhysicalRef",
+                                                  crfref[[1, "LeafPageRefType"]]))
+                    vorgn <- paste0(vorgn, torgn, "\n")
+                  }
+
+                } else {
+
+                  vorgn <- paste0('<def:Origin Type="',
+                                 encodeMarkup(vval),
+                                 '"></def:Origin>')
+                }
+
+
+
+              } else {
+
+                vorgn <- paste0('<def:Origin Type="',
+                               encodeMarkup(vval),
+                               '"></def:Origin>')
+              }
+
             }
 
             vcmnt <- ""
@@ -420,9 +467,18 @@ get_item_defs <- function(toc, vardt, valdt, eldta) {
         clst <- ""
         if (!is.na(vardt[[varrow, "CODELISTNAME"]])) {
 
-          clst <- paste0('<CodeListRef CodeListOID="CL.',
-                         vardt[[varrow, "CODELISTNAME"]],
-                         '"/>\n')
+          clstr <- vardt[[varrow, "CODELISTNAME"]]
+
+          spos <- grep("*", clstr, fixed = TRUE)
+          ipos <- grep("ISO", clstr, fixed = TRUE)
+
+          if (length(spos) == 0 & length(ipos) == 0) {
+
+
+            clst <- paste0('<CodeListRef CodeListOID="CL.',
+                           vardt[[varrow, "CODELISTNAME"]],
+                           '"/>\n')
+          }
 
         }
 
@@ -442,16 +498,20 @@ get_item_defs <- function(toc, vardt, valdt, eldta) {
           icrf <- grep("crf", tolower(oval), fixed = TRUE)
           if (!is.null(crfref) & length(icrf) > 0) {
 
-            ipg <- regexpr("page", tolower(oval), fixed = TRUE)
-            if (ipg > 0) {
+            matches <- regmatches(oval, gregexpr("[[:digit:]]+", oval))
+            pgs <- as.numeric(unlist(matches))
 
-              pg <- trimws(substr(oval, ipg + 5, nchar(oval)))
+            if (length(pgs) > 0) {
 
-              orgn <- glue(orgstr, lfid = crfref[[1, "LeafID"]],
-                           pg = pg,
-                           pgtype = ifelse(is.na(crfref[[1, "LeafPageRefType"]]),
-                                           "PhysicalRef",
-                                           crfref[[1, "LeafPageRefType"]]))
+              for (pg in pgs) {
+
+                torgn <- glue(orgstr, lfid = crfref[[1, "LeafID"]],
+                             pg = pg,
+                             pgtype = ifelse(is.na(crfref[[1, "LeafPageRefType"]]),
+                                             "PhysicalRef",
+                                             crfref[[1, "LeafPageRefType"]]))
+                orgn <- paste0(orgn, torgn, "\n")
+              }
 
             } else {
 
