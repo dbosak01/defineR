@@ -2,8 +2,8 @@
   <?xml-stylesheet type="text/xsl" href="define2-1.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 03September2022                                                   -->
-    <!-- Description: Define.xml file for oGvHD-2-SC                       -->
+    <!-- Date: 06September2022                                                   -->
+    <!-- Description: Define.xml file for oGvHD2SC                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
     <ODM
@@ -11,10 +11,10 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:def="http://www.cdisc.org/ns/def/v2.0"
   ODMVersion="1.3.2"
-  FileOID="oGvHD-2-SC"
+  FileOID="oGvHD2SC"
   FileType="Snapshot"
-  CreationDateTime="2022-09-03T00:20:59">
-    <Study OID="oGvHD-2-SC">
+  CreationDateTime="2022-09-06T11:06:27">
+    <Study OID="oGvHD2SC">
     <GlobalVariables>
     <StudyName>oGvHD-2-SC</StudyName>
     <StudyDescription>A PHASE II/III TRIAL OF SAFETY AND EFFICACY OF PRO-OCULAR&#8482; 1% IN DAILY SCLERAL LENS WEARING PATIENTS WITH OCULAR GRAFT-VERSUS-HOST DISEASE</StudyDescription>
@@ -2628,18 +2628,18 @@
  </def:ValueListDef>
 
 <def:ValueListDef OID="VL.SUPPCM.QVAL">
-<ItemRef ItemOID="IT.SUPPCM.QVAL.V1CPYCON_Oth"
+<ItemRef ItemOID="IT.SUPPCM.QVAL.V1CPYCONOth"
   OrderNumber="1"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPCM.QVAL.V1CPYCON_Oth"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPCM.QVAL.V1CPYCONOth"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPCM.QVAL.V1CPYCONYN_Oth"
+<ItemRef ItemOID="IT.SUPPCM.QVAL.V1CPYCONYNOth"
   OrderNumber="2"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPCM.QVAL.V1CPYCONYN_Oth"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPCM.QVAL.V1CPYCONYNOth"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPCM.QVAL.V1NOMH60YN"
@@ -2798,32 +2798,32 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPIE.QVAL.REASON"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPIE.QVAL.IEOC1_chk"
+<ItemRef ItemOID="IT.SUPPIE.QVAL.IEOC1chk"
   OrderNumber="2"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPIE.QVAL.IEOC1_chk"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPIE.QVAL.IEOC1chk"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPIE.QVAL.IEOC1_imp"
+<ItemRef ItemOID="IT.SUPPIE.QVAL.IEOC1imp"
   OrderNumber="3"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPIE.QVAL.IEOC1_imp"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPIE.QVAL.IEOC1imp"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPIE.QVAL.IEOC2_chk"
+<ItemRef ItemOID="IT.SUPPIE.QVAL.IEOC2chk"
   OrderNumber="4"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPIE.QVAL.IEOC2_chk"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPIE.QVAL.IEOC2chk"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPIE.QVAL.IEOC2_imp"
+<ItemRef ItemOID="IT.SUPPIE.QVAL.IEOC2imp"
   OrderNumber="5"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPIE.QVAL.IEOC2_imp"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPIE.QVAL.IEOC2imp"/>
 
 </ItemRef>
  </def:ValueListDef>
@@ -2927,11 +2927,11 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPMH.QVAL.V1CVANY"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPMH.QVAL.V1CVANY_Oth"
+<ItemRef ItemOID="IT.SUPPMH.QVAL.V1CVANYOth"
   OrderNumber="15"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPMH.QVAL.V1CVANY_Oth"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPMH.QVAL.V1CVANYOth"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPMH.QVAL.OHCOM"
@@ -3000,25 +3000,25 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1A1N"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1W_FPYN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WFPYN"
   OrderNumber="11"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1W_FPYN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WFPYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1W_TSYNOD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WTSYNOD"
   OrderNumber="12"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1W_TSYNOD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WTSYNOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1W_TSYNOS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WTSYNOS"
   OrderNumber="13"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1W_TSYNOS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WTSYNOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V1WKYN"
@@ -3035,18 +3035,18 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WKN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WK_OD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WKOD"
   OrderNumber="16"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WK_OD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WKOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WK_OS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WKOS"
   OrderNumber="17"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WK_OS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WKOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V1WEGSYN"
@@ -3063,25 +3063,25 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WEGSN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WO_FPYN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WOFPYN"
   OrderNumber="20"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WO_FPYN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WOFPYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WO_TSYNOD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WOTSYNOD"
   OrderNumber="21"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WO_TSYNOD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WOTSYNOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WO_TSYNOS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WOTSYNOS"
   OrderNumber="22"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WO_TSYNOS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WOTSYNOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V1WOKYN"
@@ -3098,18 +3098,18 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WOKN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WOK_OD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WOKOD"
   OrderNumber="25"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WOK_OD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WOKOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WOK_OS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1WOKOS"
   OrderNumber="26"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WOK_OS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WOKOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V1WOEGSYN"
@@ -3126,32 +3126,32 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1WOEGSN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1IPWO_YN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1IPWOYN"
   OrderNumber="29"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1IPWO_YN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1IPWOYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1IPWO_N"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1IPWON"
   OrderNumber="30"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1IPWO_N"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1IPWON"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1UFWO_YN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1UFWOYN"
   OrderNumber="31"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1UFWO_YN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1UFWOYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V1UFWO_N"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V1UFWON"
   OrderNumber="32"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1UFWO_N"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V1UFWON"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V1A2YN"
@@ -3182,25 +3182,25 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3A1N"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3W_FPYN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WFPYN"
   OrderNumber="37"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3W_FPYN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WFPYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3W_TSYNOD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WTSYNOD"
   OrderNumber="38"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3W_TSYNOD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WTSYNOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3W_TSYNOS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WTSYNOS"
   OrderNumber="39"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3W_TSYNOS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WTSYNOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V3WKYN"
@@ -3217,18 +3217,18 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WKN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WK_OD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WKOD"
   OrderNumber="42"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WK_OD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WKOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WK_OS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WKOS"
   OrderNumber="43"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WK_OS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WKOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V3WEGSYN"
@@ -3245,25 +3245,25 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WEGSN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WO_FPYN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WOFPYN"
   OrderNumber="46"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WO_FPYN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WOFPYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WO_TSYNOD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WOTSYNOD"
   OrderNumber="47"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WO_TSYNOD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WOTSYNOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WO_TSYNOS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WOTSYNOS"
   OrderNumber="48"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WO_TSYNOS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WOTSYNOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V3WOKYN"
@@ -3280,18 +3280,18 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WOKN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WOK_OD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WOKOD"
   OrderNumber="51"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WOK_OD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WOKOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WOK_OS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3WOKOS"
   OrderNumber="52"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WOK_OS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WOKOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V3WOEGSYN"
@@ -3308,32 +3308,32 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3WOEGSN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3IPWO_YN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3IPWOYN"
   OrderNumber="55"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3IPWO_YN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3IPWOYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3IPWO_N"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3IPWON"
   OrderNumber="56"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3IPWO_N"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3IPWON"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3UFWO_YN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3UFWOYN"
   OrderNumber="57"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3UFWO_YN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3UFWOYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V3UFWO_N"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V3UFWON"
   OrderNumber="58"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3UFWO_N"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V3UFWON"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V3A2YN"
@@ -3364,25 +3364,25 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5A1N"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5W_FPYN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WFPYN"
   OrderNumber="63"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5W_FPYN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WFPYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5W_TSYNOD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WTSYNOD"
   OrderNumber="64"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5W_TSYNOD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WTSYNOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5W_TSYNOS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WTSYNOS"
   OrderNumber="65"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5W_TSYNOS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WTSYNOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V5WKYN"
@@ -3399,18 +3399,18 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WKN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WK_OD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WKOD"
   OrderNumber="68"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WK_OD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WKOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WK_OS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WKOS"
   OrderNumber="69"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WK_OS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WKOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V5WEGSYN"
@@ -3427,25 +3427,25 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WEGSN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WO_FPYN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WOFPYN"
   OrderNumber="72"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WO_FPYN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WOFPYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WO_TSYNOD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WOTSYNOD"
   OrderNumber="73"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WO_TSYNOD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WOTSYNOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WO_TSYNOS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WOTSYNOS"
   OrderNumber="74"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WO_TSYNOS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WOTSYNOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V5WOKYN"
@@ -3462,18 +3462,18 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WOKN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WOK_OD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WOKOD"
   OrderNumber="77"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WOK_OD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WOKOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WOK_OS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5WOKOS"
   OrderNumber="78"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WOK_OS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WOKOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V5WOEGSYN"
@@ -3490,32 +3490,32 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5WOEGSN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5IPWO_YN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5IPWOYN"
   OrderNumber="81"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5IPWO_YN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5IPWOYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5IPWO_N"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5IPWON"
   OrderNumber="82"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5IPWO_N"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5IPWON"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5UFWO_YN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5UFWOYN"
   OrderNumber="83"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5UFWO_YN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5UFWOYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V5UFWO_N"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V5UFWON"
   OrderNumber="84"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5UFWO_N"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V5UFWON"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V5A2YN"
@@ -3546,25 +3546,25 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6A1N"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6W_FPYN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WFPYN"
   OrderNumber="89"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6W_FPYN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WFPYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6W_TSYNOD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WTSYNOD"
   OrderNumber="90"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6W_TSYNOD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WTSYNOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6W_TSYNOS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WTSYNOS"
   OrderNumber="91"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6W_TSYNOS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WTSYNOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V6WKYN"
@@ -3581,18 +3581,18 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WKN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WK_OD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WKOD"
   OrderNumber="94"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WK_OD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WKOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WK_OS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WKOS"
   OrderNumber="95"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WK_OS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WKOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V6WEGSYN"
@@ -3609,25 +3609,25 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WEGSN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WO_FPYN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WOFPYN"
   OrderNumber="98"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WO_FPYN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WOFPYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WO_TSYNOD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WOTSYNOD"
   OrderNumber="99"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WO_TSYNOD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WOTSYNOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WO_TSYNOS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WOTSYNOS"
   OrderNumber="100"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WO_TSYNOS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WOTSYNOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V6WOKYN"
@@ -3644,18 +3644,18 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WOKN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WOK_OD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WOKOD"
   OrderNumber="103"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WOK_OD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WOKOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WOK_OS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6WOKOS"
   OrderNumber="104"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WOK_OS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WOKOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V6WOEGSYN"
@@ -3672,32 +3672,32 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6WOEGSN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6IPWO_YN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6IPWOYN"
   OrderNumber="107"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6IPWO_YN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6IPWOYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6IPWO_N"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6IPWON"
   OrderNumber="108"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6IPWO_N"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6IPWON"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6UFWO_YN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6UFWOYN"
   OrderNumber="109"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6UFWO_YN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6UFWOYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V6UFWO_N"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V6UFWON"
   OrderNumber="110"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6UFWO_N"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V6UFWON"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V6A2YN"
@@ -3728,25 +3728,25 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7A1N"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7W_FPYN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WFPYN"
   OrderNumber="115"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7W_FPYN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WFPYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7W_TSYNOD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WTSYNOD"
   OrderNumber="116"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7W_TSYNOD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WTSYNOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7W_TSYNOS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WTSYNOS"
   OrderNumber="117"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7W_TSYNOS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WTSYNOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V7WKYN"
@@ -3763,18 +3763,18 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WKN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WK_OD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WKOD"
   OrderNumber="120"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WK_OD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WKOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WK_OS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WKOS"
   OrderNumber="121"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WK_OS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WKOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V7WEGSYN"
@@ -3791,25 +3791,25 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WEGSN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WO_FPYN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WOFPYN"
   OrderNumber="124"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WO_FPYN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WOFPYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WO_TSYNOD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WOTSYNOD"
   OrderNumber="125"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WO_TSYNOD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WOTSYNOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WO_TSYNOS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WOTSYNOS"
   OrderNumber="126"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WO_TSYNOS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WOTSYNOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V7WOKYN"
@@ -3826,18 +3826,18 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WOKN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WOK_OD"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WOKOD"
   OrderNumber="129"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WOK_OD"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WOKOD"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WOK_OS"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7WOKOS"
   OrderNumber="130"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WOK_OS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WOKOS"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V7WOEGSYN"
@@ -3854,32 +3854,32 @@
   <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7WOEGSN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7IPWO_YN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7IPWOYN"
   OrderNumber="133"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7IPWO_YN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7IPWOYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7IPWO_N"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7IPWON"
   OrderNumber="134"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7IPWO_N"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7IPWON"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7UFWO_YN"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7UFWOYN"
   OrderNumber="135"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7UFWO_YN"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7UFWOYN"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPOE.QVAL.V7UFWO_N"
+<ItemRef ItemOID="IT.SUPPOE.QVAL.V7UFWON"
   OrderNumber="136"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7UFWO_N"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPOE.QVAL.V7UFWON"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.SUPPOE.QVAL.V7A2YN"
@@ -3899,46 +3899,46 @@
  </def:ValueListDef>
 
 <def:ValueListDef OID="VL.SUPPQS.QVAL">
-<ItemRef ItemOID="IT.SUPPQS.QVAL.V2D_MSEVA"
+<ItemRef ItemOID="IT.SUPPQS.QVAL.V2DMSEVA"
   OrderNumber="1"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V2D_MSEVA"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V2DMSEVA"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPQS.QVAL.V2N_MSEVA"
+<ItemRef ItemOID="IT.SUPPQS.QVAL.V2NMSEVA"
   OrderNumber="2"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V2N_MSEVA"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V2NMSEVA"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPQS.QVAL.V2_GOSDS"
+<ItemRef ItemOID="IT.SUPPQS.QVAL.V2GOSDS"
   OrderNumber="3"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V2_GOSDS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V2GOSDS"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPQS.QVAL.V4D_MSEVA"
+<ItemRef ItemOID="IT.SUPPQS.QVAL.V4DMSEVA"
   OrderNumber="4"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V4D_MSEVA"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V4DMSEVA"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPQS.QVAL.V4N_MSEVA"
+<ItemRef ItemOID="IT.SUPPQS.QVAL.V4NMSEVA"
   OrderNumber="5"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V4N_MSEVA"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V4NMSEVA"/>
 
 </ItemRef>
-<ItemRef ItemOID="IT.SUPPQS.QVAL.V4_GOSDS"
+<ItemRef ItemOID="IT.SUPPQS.QVAL.V4GOSDS"
   OrderNumber="6"
   Mandatory="NA"
   >
-  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V4_GOSDS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPQS.QVAL.V4GOSDS"/>
 
 </ItemRef>
  </def:ValueListDef>
@@ -4033,7 +4033,7 @@
 <CheckValue>V1CVANY</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPMH.QVAL.V1CVANY_Oth">
+<def:WhereClauseDef OID="WC.SUPPMH.QVAL.V1CVANYOth">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPMH.QNAM" Comparator="EQ">
 <CheckValue>V1CVANY_Oth</CheckValue>
 </RangeCheck>
@@ -4108,12 +4108,12 @@
 <CheckValue>OPNOTDTC</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPCM.QVAL.V1CPYCON_Oth">
+<def:WhereClauseDef OID="WC.SUPPCM.QVAL.V1CPYCONOth">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPCM.QNAM" Comparator="EQ">
 <CheckValue>V1CPYCON_Oth</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPCM.QVAL.V1CPYCONYN_Oth">
+<def:WhereClauseDef OID="WC.SUPPCM.QVAL.V1CPYCONYNOth">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPCM.QNAM" Comparator="EQ">
 <CheckValue>V1CPYCONYN_Oth</CheckValue>
 </RangeCheck>
@@ -4363,22 +4363,22 @@
 <CheckValue>REASON</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPIE.QVAL.IEOC1_chk">
+<def:WhereClauseDef OID="WC.SUPPIE.QVAL.IEOC1chk">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPIE.QNAM" Comparator="EQ">
 <CheckValue>IEOC1_chk</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPIE.QVAL.IEOC1_imp">
+<def:WhereClauseDef OID="WC.SUPPIE.QVAL.IEOC1imp">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPIE.QNAM" Comparator="EQ">
 <CheckValue>IEOC1_imp</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPIE.QVAL.IEOC2_chk">
+<def:WhereClauseDef OID="WC.SUPPIE.QVAL.IEOC2chk">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPIE.QNAM" Comparator="EQ">
 <CheckValue>IEOC2_chk</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPIE.QVAL.IEOC2_imp">
+<def:WhereClauseDef OID="WC.SUPPIE.QVAL.IEOC2imp">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPIE.QNAM" Comparator="EQ">
 <CheckValue>IEOC2_imp</CheckValue>
 </RangeCheck>
@@ -4628,32 +4628,32 @@
 <CheckValue>SANDGNOU</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V2D_MSEVA">
+<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V2DMSEVA">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPQS.QNAM" Comparator="EQ">
 <CheckValue>V2D_MSEVA</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V2N_MSEVA">
+<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V2NMSEVA">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPQS.QNAM" Comparator="EQ">
 <CheckValue>V2N_MSEVA</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V2_GOSDS">
+<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V2GOSDS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPQS.QNAM" Comparator="EQ">
 <CheckValue>V2_GOSDS</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V4D_MSEVA">
+<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V4DMSEVA">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPQS.QNAM" Comparator="EQ">
 <CheckValue>V4D_MSEVA</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V4N_MSEVA">
+<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V4NMSEVA">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPQS.QNAM" Comparator="EQ">
 <CheckValue>V4N_MSEVA</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V4_GOSDS">
+<def:WhereClauseDef OID="WC.SUPPQS.QVAL.V4GOSDS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPQS.QNAM" Comparator="EQ">
 <CheckValue>V4_GOSDS</CheckValue>
 </RangeCheck>
@@ -4668,17 +4668,17 @@
 <CheckValue>V1A1N</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1W_FPYN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WFPYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1W_FPYN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1W_TSYNOD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WTSYNOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1W_TSYNOD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1W_TSYNOS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WTSYNOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1W_TSYNOS</CheckValue>
 </RangeCheck>
@@ -4693,12 +4693,12 @@
 <CheckValue>V1WKN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WK_OD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WKOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1WK_OD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WK_OS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WKOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1WK_OS</CheckValue>
 </RangeCheck>
@@ -4713,17 +4713,17 @@
 <CheckValue>V1WEGSN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WO_FPYN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WOFPYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1WO_FPYN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WO_TSYNOD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WOTSYNOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1WO_TSYNOD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WO_TSYNOS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WOTSYNOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1WO_TSYNOS</CheckValue>
 </RangeCheck>
@@ -4738,12 +4738,12 @@
 <CheckValue>V1WOKN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WOK_OD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WOKOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1WOK_OD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WOK_OS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1WOKOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1WOK_OS</CheckValue>
 </RangeCheck>
@@ -4758,22 +4758,22 @@
 <CheckValue>V1WOEGSN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1IPWO_YN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1IPWOYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1IPWO_YN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1IPWO_N">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1IPWON">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1IPWO_N</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1UFWO_YN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1UFWOYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1UFWO_YN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1UFWO_N">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V1UFWON">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V1UFWO_N</CheckValue>
 </RangeCheck>
@@ -4798,17 +4798,17 @@
 <CheckValue>V3A1N</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3W_FPYN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WFPYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3W_FPYN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3W_TSYNOD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WTSYNOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3W_TSYNOD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3W_TSYNOS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WTSYNOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3W_TSYNOS</CheckValue>
 </RangeCheck>
@@ -4823,12 +4823,12 @@
 <CheckValue>V3WKN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WK_OD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WKOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3WK_OD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WK_OS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WKOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3WK_OS</CheckValue>
 </RangeCheck>
@@ -4843,17 +4843,17 @@
 <CheckValue>V3WEGSN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WO_FPYN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WOFPYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3WO_FPYN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WO_TSYNOD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WOTSYNOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3WO_TSYNOD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WO_TSYNOS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WOTSYNOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3WO_TSYNOS</CheckValue>
 </RangeCheck>
@@ -4868,12 +4868,12 @@
 <CheckValue>V3WOKN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WOK_OD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WOKOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3WOK_OD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WOK_OS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3WOKOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3WOK_OS</CheckValue>
 </RangeCheck>
@@ -4888,22 +4888,22 @@
 <CheckValue>V3WOEGSN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3IPWO_YN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3IPWOYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3IPWO_YN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3IPWO_N">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3IPWON">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3IPWO_N</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3UFWO_YN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3UFWOYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3UFWO_YN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3UFWO_N">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V3UFWON">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V3UFWO_N</CheckValue>
 </RangeCheck>
@@ -4928,17 +4928,17 @@
 <CheckValue>V5A1N</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5W_FPYN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WFPYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5W_FPYN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5W_TSYNOD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WTSYNOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5W_TSYNOD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5W_TSYNOS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WTSYNOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5W_TSYNOS</CheckValue>
 </RangeCheck>
@@ -4953,12 +4953,12 @@
 <CheckValue>V5WKN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WK_OD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WKOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5WK_OD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WK_OS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WKOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5WK_OS</CheckValue>
 </RangeCheck>
@@ -4973,17 +4973,17 @@
 <CheckValue>V5WEGSN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WO_FPYN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WOFPYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5WO_FPYN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WO_TSYNOD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WOTSYNOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5WO_TSYNOD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WO_TSYNOS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WOTSYNOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5WO_TSYNOS</CheckValue>
 </RangeCheck>
@@ -4998,12 +4998,12 @@
 <CheckValue>V5WOKN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WOK_OD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WOKOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5WOK_OD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WOK_OS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5WOKOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5WOK_OS</CheckValue>
 </RangeCheck>
@@ -5018,22 +5018,22 @@
 <CheckValue>V5WOEGSN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5IPWO_YN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5IPWOYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5IPWO_YN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5IPWO_N">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5IPWON">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5IPWO_N</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5UFWO_YN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5UFWOYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5UFWO_YN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5UFWO_N">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V5UFWON">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V5UFWO_N</CheckValue>
 </RangeCheck>
@@ -5058,17 +5058,17 @@
 <CheckValue>V6A1N</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6W_FPYN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WFPYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6W_FPYN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6W_TSYNOD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WTSYNOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6W_TSYNOD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6W_TSYNOS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WTSYNOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6W_TSYNOS</CheckValue>
 </RangeCheck>
@@ -5083,12 +5083,12 @@
 <CheckValue>V6WKN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WK_OD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WKOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6WK_OD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WK_OS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WKOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6WK_OS</CheckValue>
 </RangeCheck>
@@ -5103,17 +5103,17 @@
 <CheckValue>V6WEGSN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WO_FPYN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WOFPYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6WO_FPYN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WO_TSYNOD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WOTSYNOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6WO_TSYNOD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WO_TSYNOS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WOTSYNOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6WO_TSYNOS</CheckValue>
 </RangeCheck>
@@ -5128,12 +5128,12 @@
 <CheckValue>V6WOKN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WOK_OD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WOKOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6WOK_OD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WOK_OS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6WOKOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6WOK_OS</CheckValue>
 </RangeCheck>
@@ -5148,22 +5148,22 @@
 <CheckValue>V6WOEGSN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6IPWO_YN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6IPWOYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6IPWO_YN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6IPWO_N">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6IPWON">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6IPWO_N</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6UFWO_YN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6UFWOYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6UFWO_YN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6UFWO_N">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V6UFWON">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V6UFWO_N</CheckValue>
 </RangeCheck>
@@ -5188,17 +5188,17 @@
 <CheckValue>V7A1N</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7W_FPYN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WFPYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7W_FPYN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7W_TSYNOD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WTSYNOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7W_TSYNOD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7W_TSYNOS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WTSYNOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7W_TSYNOS</CheckValue>
 </RangeCheck>
@@ -5213,12 +5213,12 @@
 <CheckValue>V7WKN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WK_OD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WKOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7WK_OD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WK_OS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WKOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7WK_OS</CheckValue>
 </RangeCheck>
@@ -5233,17 +5233,17 @@
 <CheckValue>V7WEGSN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WO_FPYN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WOFPYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7WO_FPYN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WO_TSYNOD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WOTSYNOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7WO_TSYNOD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WO_TSYNOS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WOTSYNOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7WO_TSYNOS</CheckValue>
 </RangeCheck>
@@ -5258,12 +5258,12 @@
 <CheckValue>V7WOKN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WOK_OD">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WOKOD">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7WOK_OD</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WOK_OS">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7WOKOS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7WOK_OS</CheckValue>
 </RangeCheck>
@@ -5278,22 +5278,22 @@
 <CheckValue>V7WOEGSN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7IPWO_YN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7IPWOYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7IPWO_YN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7IPWO_N">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7IPWON">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7IPWO_N</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7UFWO_YN">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7UFWOYN">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7UFWO_YN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7UFWO_N">
+<def:WhereClauseDef OID="WC.SUPPOE.QVAL.V7UFWON">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPOE.QNAM" Comparator="EQ">
 <CheckValue>V7UFWO_N</CheckValue>
 </RangeCheck>
@@ -5335,7 +5335,7 @@ IsReferenceData="No"
 SASDatasetName="AE"
 def:Structure="One record per adverse event per subject"
 def:Class="Events"
-def:ArchiveLocationID="Location.AE">
+def:ArchiveLocationID="LF.AE">
 <Description>
   <TranslatedText xml:lang="en">Adverse Events</TranslatedText>
 </Description>
@@ -5344,173 +5344,173 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AESEQ"
 OrderNumber="4"
 Mandatory="Yes"
 MethodOID="MT.AE.SEQ"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AETERM"
 OrderNumber="5"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AELLT"
 OrderNumber="6"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AELLTCD"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEDECOD"
 OrderNumber="8"
 Mandatory="Yes"
 KeySequence="3"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEPTCD"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEHLT"
 OrderNumber="10"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEHLTCD"
 OrderNumber="11"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEHLGT"
 OrderNumber="12"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEHLGTCD"
 OrderNumber="13"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEBODSYS"
 OrderNumber="14"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEBDSYCD"
 OrderNumber="15"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AESOC"
 OrderNumber="16"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AESOCCD"
 OrderNumber="17"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AESEV"
 OrderNumber="18"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AESER"
 OrderNumber="19"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEACN"
 OrderNumber="20"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEACNOTH"
 OrderNumber="21"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEEXP"
 OrderNumber="22"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEREL"
 OrderNumber="23"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEOUT"
 OrderNumber="24"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.EPOCH"
 OrderNumber="25"
 Mandatory="No"
 MethodOID="MT.AE.EPOCH"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEDTC"
 OrderNumber="26"
 Mandatory="No"
 MethodOID="MT.AE.DTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AESTDTC"
 OrderNumber="27"
 Mandatory="Yes"
 KeySequence="4"
 MethodOID="MT.AE.STDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEENDTC"
 OrderNumber="28"
 Mandatory="Yes"
 MethodOID="MT.AE.ENDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AESTDY"
 OrderNumber="29"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEENDY"
 OrderNumber="30"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.AE.AEDUR"
 OrderNumber="31"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.AE" xlink:href="ae.xpt.xpt">
+<def:leaf ID="LF.AE" xlink:href="ae.xpt.xpt">
     <def:title>ae.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -5526,7 +5526,7 @@ IsReferenceData="Yes"
 SASDatasetName="CM"
 def:Structure="One record per recorded intervention occurrence or constant- dosing interval per subject"
 def:Class="Interventions"
-def:ArchiveLocationID="Location.CM">
+def:ArchiveLocationID="LF.CM">
 <Description>
   <TranslatedText xml:lang="en">Concomitant Medications</TranslatedText>
 </Description>
@@ -5535,137 +5535,137 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMSEQ"
 OrderNumber="4"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMGRPID"
 OrderNumber="5"
 Mandatory="No"
 MethodOID="MT.CM.GRPID"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMTRT"
 OrderNumber="7"
 Mandatory="Yes"
 KeySequence="3"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMMODIFY"
 OrderNumber="8"
 Mandatory="No"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMDECOD"
 OrderNumber="9"
 Mandatory="No"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMCAT"
 OrderNumber="10"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMSCAT"
 OrderNumber="11"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMINDC"
 OrderNumber="16"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMCLAS"
 OrderNumber="17"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMCLASCD"
 OrderNumber="18"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMDOSE"
 OrderNumber="19"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMDOSU"
 OrderNumber="21"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMDOSFRM"
 OrderNumber="22"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMDOSFRQ"
 OrderNumber="23"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMROUTE"
 OrderNumber="26"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.EPOCH"
 OrderNumber="30"
 Mandatory="No"
 MethodOID="MT.CM.EPOCH"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMSTDTC"
 OrderNumber="31"
 Mandatory="No"
 KeySequence="4"
 MethodOID="MT.CM.STDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMENDTC"
 OrderNumber="32"
 Mandatory="No"
 MethodOID="MT.CM.ENDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMSTDY"
 OrderNumber="33"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMENDY"
 OrderNumber="34"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CM.CMDUR"
 OrderNumber="35"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.CM" xlink:href="cm .xpt.xpt">
-    <def:title>cm .xpt.xpt </def:title>
+<def:leaf ID="LF.CM" xlink:href="cm.xpt.xpt">
+    <def:title>cm.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
@@ -5680,7 +5680,7 @@ IsReferenceData="No"
 SASDatasetName="CO"
 def:Structure="One record per comment per subject"
 def:Class="Special Purpose"
-def:ArchiveLocationID="Location.CO">
+def:ArchiveLocationID="LF.CO">
 <Description>
   <TranslatedText xml:lang="en">Comments</TranslatedText>
 </Description>
@@ -5689,76 +5689,76 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.RDOMAIN"
 OrderNumber="3"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.USUBJID"
 OrderNumber="4"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.COSEQ"
 OrderNumber="5"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.IDVAR"
 OrderNumber="6"
 Mandatory="No"
 KeySequence="3"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.IDVARVAL"
 OrderNumber="7"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.COREF"
 OrderNumber="8"
 Mandatory="No"
 KeySequence="4"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.COVAL"
 OrderNumber="9"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.COEVAL"
 OrderNumber="10"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.COEVALID"
 OrderNumber="11"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.CODTC"
 OrderNumber="12"
 Mandatory="No"
 KeySequence="5"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.CO.CODY"
 OrderNumber="13"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.CO" xlink:href="co .xpt.xpt">
-    <def:title>co .xpt.xpt </def:title>
+<def:leaf ID="LF.CO" xlink:href="co.xpt.xpt">
+    <def:title>co.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
@@ -5774,7 +5774,7 @@ SASDatasetName="DA"
 def:Structure="One record per product
 accountability finding per subject"
 def:Class="Findings"
-def:ArchiveLocationID="Location.DA">
+def:ArchiveLocationID="LF.DA">
 <Description>
   <TranslatedText xml:lang="en">Product Acountability</TranslatedText>
 </Description>
@@ -5783,144 +5783,144 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DASEQ"
 OrderNumber="4"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DAGRPID"
 OrderNumber="5"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DAREFID"
 OrderNumber="6"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DASPID"
 OrderNumber="7"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DALNKID"
 OrderNumber="8"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DALNKGRP"
 OrderNumber="9"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DATESTCD"
 OrderNumber="10"
 Mandatory="Yes"
 KeySequence="3"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DATEST"
 OrderNumber="11"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DACAT"
 OrderNumber="12"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DASCAT"
 OrderNumber="13"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DAORRES"
 OrderNumber="14"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DAORRESU"
 OrderNumber="15"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DASTRESC"
 OrderNumber="16"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DASTRESN"
 OrderNumber="17"
 Mandatory="No"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DASTRESU"
 OrderNumber="18"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DASTAT"
 OrderNumber="19"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DAREASND"
 OrderNumber="20"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.VISITNUM"
 OrderNumber="21"
 Mandatory="Yes"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.VISIT"
 OrderNumber="22"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.VISITDY"
 OrderNumber="23"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.TAETORD"
 OrderNumber="24"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.EPOCH"
 OrderNumber="25"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DADTC"
 OrderNumber="26"
 Mandatory="Yes"
 KeySequence="4"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DA.DADY"
 OrderNumber="27"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.DA" xlink:href="da.xpt.xpt">
+<def:leaf ID="LF.DA" xlink:href="da.xpt.xpt">
     <def:title>da.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -5936,7 +5936,7 @@ IsReferenceData="No"
 SASDatasetName="DM"
 def:Structure="One record per subject"
 def:Class="Special Purpose"
-def:ArchiveLocationID="Location.DM">
+def:ArchiveLocationID="LF.DM">
 <Description>
   <TranslatedText xml:lang="en">Demographics</TranslatedText>
 </Description>
@@ -5945,173 +5945,173 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.SUBJID"
 OrderNumber="4"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.RFSTDTC"
 OrderNumber="5"
 Mandatory="Yes"
 MethodOID="MT.DM.RFSTDTC"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.RFENDTC"
 OrderNumber="6"
 Mandatory="Yes"
 MethodOID="MT.DM.RFENDTC"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.RFXSTDTC"
 OrderNumber="7"
 Mandatory="Yes"
 MethodOID="MT.DM.RFXSTDTC"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.RFXENDTC"
 OrderNumber="8"
 Mandatory="Yes"
 MethodOID="MT.DM.RFXENDTC"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.RFICDTC"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.RFPENDTC"
 OrderNumber="10"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.DTHDTC"
 OrderNumber="11"
 Mandatory="Yes"
 MethodOID="MT.DM.DTHDTC"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.DTHFL"
 OrderNumber="12"
 Mandatory="Yes"
 MethodOID="MT.DM.DTHFL"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.SITEID"
 OrderNumber="13"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.INVID"
 OrderNumber="14"
 Mandatory="No"
 MethodOID="MT.DM.INVID"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.INVNAM"
 OrderNumber="15"
 Mandatory="No"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.BRTHDTC"
 OrderNumber="16"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.AGE"
 OrderNumber="17"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.AGEU"
 OrderNumber="18"
 Mandatory="Yes"
 MethodOID="MT.DM.AGEU"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.SEX"
 OrderNumber="19"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.RACE"
 OrderNumber="20"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.ETHNIC"
 OrderNumber="21"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.ARMCD"
 OrderNumber="22"
 Mandatory="Yes"
 MethodOID="MT.DM.ARMCD"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.ARM"
 OrderNumber="23"
 Mandatory="Yes"
 MethodOID="MT.DM.ARM"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.ACTARMCD"
 OrderNumber="24"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.ACTARM"
 OrderNumber="25"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.ARMNRS"
 OrderNumber="26"
 Mandatory="Yes"
 MethodOID="MT.DM.ARMNULRS"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.ACTARMUD"
 OrderNumber="27"
 Mandatory="Yes"
 MethodOID="MT.DM.ACTARMUD"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.COUNTRY"
 OrderNumber="28"
 Mandatory="Yes"
 MethodOID="MT.DM.COUNTRY"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.DMDTC"
 OrderNumber="29"
 Mandatory="No"
 MethodOID="MT.DM.DMDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DM.DMDY"
 OrderNumber="30"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.DM" xlink:href="dm .xpt.xpt">
-    <def:title>dm .xpt.xpt </def:title>
+<def:leaf ID="LF.DM" xlink:href="dm.xpt.xpt">
+    <def:title>dm.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
@@ -6126,7 +6126,7 @@ IsReferenceData="Yes"
 SASDatasetName="DS"
 def:Structure="One record per disposition status or protocol milestone per subject"
 def:Class="Events"
-def:ArchiveLocationID="Location.DS">
+def:ArchiveLocationID="LF.DS">
 <Description>
   <TranslatedText xml:lang="en">Disposition</TranslatedText>
 </Description>
@@ -6135,72 +6135,72 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DS.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DS.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DS.DSSEQ"
 OrderNumber="4"
 Mandatory="Yes"
 MethodOID="MT.DS.DSSEQ"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DS.DSTERM"
 OrderNumber="5"
 Mandatory="Yes"
 MethodOID="MT.DS.DSTERM"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DS.DSDECOD"
 OrderNumber="6"
 Mandatory="Yes"
 KeySequence="3"
 MethodOID="MT.DS.DSDECOD"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DS.DSCAT"
 OrderNumber="7"
 Mandatory="Yes"
 MethodOID="MT.DS.DSCAT"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DS.EPOCH"
 OrderNumber="8"
 Mandatory="No"
 MethodOID="MT.DS.EPOCH"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DS.DSDTC"
 OrderNumber="9"
 Mandatory="No"
 MethodOID="MT.DS.DSDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DS.DSSTDTC"
 OrderNumber="10"
 Mandatory="Yes"
 KeySequence="4"
 MethodOID="MT.DS.DSSTDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DS.DSSTDY"
 OrderNumber="11"
 Mandatory="Yes"
 MethodOID="MT.DS.DSSTDY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.DS" xlink:href="ds.xpt.xpt">
+<def:leaf ID="LF.DS" xlink:href="ds.xpt.xpt">
     <def:title>ds.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -6216,7 +6216,7 @@ IsReferenceData="Yes"
 SASDatasetName="DV"
 def:Structure="One record per protocol deviation per subject"
 def:Class="Events"
-def:ArchiveLocationID="Location.DV">
+def:ArchiveLocationID="LF.DV">
 <Description>
   <TranslatedText xml:lang="en">Protocol Deviations</TranslatedText>
 </Description>
@@ -6225,79 +6225,79 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.DVSEQ"
 OrderNumber="4"
 Mandatory="Yes"
 MethodOID="MT.DV.DVSEQ"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.DVTERM"
 OrderNumber="5"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.DVCAT"
 OrderNumber="6"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.DVIMPACT"
 OrderNumber="7"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.DVACN"
 OrderNumber="8"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.EPOCH"
 OrderNumber="9"
 Mandatory="No"
 MethodOID="MT.DV.EPOCH"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.DVSTDTC"
 OrderNumber="10"
 Mandatory="No"
 KeySequence="4"
 MethodOID="MT.DV.DVSTDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.DVENDTC"
 OrderNumber="11"
 Mandatory="No"
 MethodOID="MT.DV.DVENDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.DVSTDY"
 OrderNumber="12"
 Mandatory="No"
 MethodOID="MT.DV.DVSTDY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.DV.DVENDY"
 OrderNumber="13"
 Mandatory="No"
 MethodOID="MT.DV.DVENDY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.DV" xlink:href="dv.xpt.xpt">
+<def:leaf ID="LF.DV" xlink:href="dv.xpt.xpt">
     <def:title>dv.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -6313,7 +6313,7 @@ IsReferenceData="Yes"
 SASDatasetName="EX"
 def:Structure="One record per protocol-specified study treatment, constant-dosing interval, per subject"
 def:Class="Interventions"
-def:ArchiveLocationID="Location.EX">
+def:ArchiveLocationID="LF.EX">
 <Description>
   <TranslatedText xml:lang="en">Exposure</TranslatedText>
 </Description>
@@ -6322,129 +6322,129 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXSEQ"
 OrderNumber="4"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXGRPID"
 OrderNumber="5"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXTRT"
 OrderNumber="6"
 Mandatory="Yes"
 KeySequence="3"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXCAT"
 OrderNumber="7"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXSCAT"
 OrderNumber="8"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXDOSE"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXDOSTXT"
 OrderNumber="10"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXDOSU"
 OrderNumber="11"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXDOSFRM"
 OrderNumber="12"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXDOSFRQ"
 OrderNumber="13"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXDOSRGM"
 OrderNumber="14"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXROUTE"
 OrderNumber="15"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXLOT"
 OrderNumber="16"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXLOC"
 OrderNumber="17"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.TAETORD"
 OrderNumber="18"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EPOCH"
 OrderNumber="19"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXSTDTC"
 OrderNumber="20"
 Mandatory="Yes"
 KeySequence="4"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXENDTC"
 OrderNumber="21"
 Mandatory="Yes"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXSTDY"
 OrderNumber="22"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXENDY"
 OrderNumber="23"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.EX.EXDUR"
 OrderNumber="24"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.EX" xlink:href="ex.xpt.xpt">
+<def:leaf ID="LF.EX" xlink:href="ex.xpt.xpt">
     <def:title>ex.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -6460,7 +6460,7 @@ IsReferenceData="Yes"
 SASDatasetName="IE"
 def:Structure="One record per inclusion/exclusion criterion not met per subject"
 def:Class="Findings"
-def:ArchiveLocationID="Location.IE">
+def:ArchiveLocationID="LF.IE">
 <Description>
   <TranslatedText xml:lang="en">Inclusion/Exclusion Exceptions</TranslatedText>
 </Description>
@@ -6469,106 +6469,106 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.IESEQ"
 OrderNumber="4"
 Mandatory="Yes"
 MethodOID="MT.IE.IESEQ"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.IETESTCD"
 OrderNumber="6"
 Mandatory="Yes"
 KeySequence="3"
 MethodOID="MT.IE.IETESTCD"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.IETEST"
 OrderNumber="7"
 Mandatory="Yes"
 MethodOID="MT.IE.IETEST"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.IECAT"
 OrderNumber="8"
 Mandatory="Yes"
 MethodOID="MT.IE.IECAT"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.IESCAT"
 OrderNumber="9"
 Mandatory="No"
 MethodOID="MT.IE.IESCAT"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.IEORRES"
 OrderNumber="10"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.IESTRESC"
 OrderNumber="11"
 Mandatory="Yes"
 MethodOID="MT.IE.IESTRESC"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.VISITNUM"
 OrderNumber="12"
 Mandatory="No"
 MethodOID="MT.IE.VISITNUM"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.VISIT"
 OrderNumber="13"
 Mandatory="No"
 MethodOID="MT.IE.VISIT"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.VISITDY"
 OrderNumber="14"
 Mandatory="No"
 MethodOID="MT.IE.VISITDY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.TAETORD"
 OrderNumber="15"
 Mandatory="No"
 MethodOID="MT.IE.TAETORD"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.EPOCH"
 OrderNumber="16"
 Mandatory="No"
 MethodOID="MT.IE.EPOCH"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.IEDTC"
 OrderNumber="17"
 Mandatory="No"
 MethodOID="MT.IE.IEDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.IE.IEDY"
 OrderNumber="18"
 Mandatory="No"
 MethodOID="MT.IE.IEDY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.IE" xlink:href="ie.xpt.xpt">
+<def:leaf ID="LF.IE" xlink:href="ie.xpt.xpt">
     <def:title>ie.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -6584,7 +6584,7 @@ IsReferenceData="Yes"
 SASDatasetName="LB"
 def:Structure="One record per lab test per time point per visit per subject"
 def:Class="Findings"
-def:ArchiveLocationID="Location.LB">
+def:ArchiveLocationID="LF.LB">
 <Description>
   <TranslatedText xml:lang="en">Laboratory Tests</TranslatedText>
 </Description>
@@ -6593,322 +6593,322 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSEQ"
 OrderNumber="4"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBGRPID"
 OrderNumber="5"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBREFID"
 OrderNumber="6"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSPID"
 OrderNumber="7"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBTESTCD"
 OrderNumber="8"
 Mandatory="Yes"
 KeySequence="3"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBTEST"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBTSTCND"
 OrderNumber="10"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBBDAGNT"
 OrderNumber="11"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBTSTOPO"
 OrderNumber="12"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBCAT"
 OrderNumber="13"
 Mandatory="Yes"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSCAT"
 OrderNumber="14"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBORRES"
 OrderNumber="15"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBORRESU"
 OrderNumber="16"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBRESSCL"
 OrderNumber="17"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBRESTYP"
 OrderNumber="18"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBCOLSRT"
 OrderNumber="19"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBORNRLO"
 OrderNumber="20"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBORNRHI"
 OrderNumber="21"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBLLOD"
 OrderNumber="22"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSTRESC"
 OrderNumber="23"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSTRESN"
 OrderNumber="24"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSTRESU"
 OrderNumber="25"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSTNRLO"
 OrderNumber="26"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSTNRHI"
 OrderNumber="27"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSTNRC"
 OrderNumber="28"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBNRIND"
 OrderNumber="29"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSTAT"
 OrderNumber="30"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBREASND"
 OrderNumber="31"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBNAM"
 OrderNumber="32"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBLOINC"
 OrderNumber="33"
 Mandatory="No"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSPEC"
 OrderNumber="34"
 Mandatory="No"
 KeySequence="4"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSPCCND"
 OrderNumber="35"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBSPCUFL"
 OrderNumber="36"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBMETHOD"
 OrderNumber="37"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBANMETH"
 OrderNumber="38"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBTMTHSN"
 OrderNumber="39"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBLOBXFL"
 OrderNumber="40"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBBLFL"
 OrderNumber="41"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBFAST"
 OrderNumber="42"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBDRVFL"
 OrderNumber="43"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBTOX"
 OrderNumber="44"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBTOXGR"
 OrderNumber="45"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBCLSIG"
 OrderNumber="46"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.VISITNUM"
 OrderNumber="47"
 Mandatory="Yes"
 KeySequence="5"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.VISIT"
 OrderNumber="48"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.VISITDY"
 OrderNumber="49"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.TAETORD"
 OrderNumber="50"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.EPOCH"
 OrderNumber="51"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBDTC"
 OrderNumber="52"
 Mandatory="Yes"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBENDTC"
 OrderNumber="53"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBDY"
 OrderNumber="54"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBENDY"
 OrderNumber="55"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBTPT"
 OrderNumber="56"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBTPTNUM"
 OrderNumber="57"
 Mandatory="No"
 KeySequence="7"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBELTM"
 OrderNumber="58"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBTPTREF"
 OrderNumber="59"
 Mandatory="No"
 KeySequence="6"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBRFTDTC"
 OrderNumber="60"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBPTFL"
 OrderNumber="61"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.LB.LBPDUR"
 OrderNumber="62"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.LB" xlink:href="lb.xpt.xpt">
+<def:leaf ID="LF.LB" xlink:href="lb.xpt.xpt">
     <def:title>lb.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -6924,7 +6924,7 @@ IsReferenceData="Yes"
 SASDatasetName="MH"
 def:Structure="One record per medical history event per subject"
 def:Class="Events"
-def:ArchiveLocationID="Location.MH">
+def:ArchiveLocationID="LF.MH">
 <Description>
   <TranslatedText xml:lang="en">Medical History</TranslatedText>
 </Description>
@@ -6933,93 +6933,93 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHSEQ"
 OrderNumber="4"
 Mandatory="Yes"
 MethodOID="MT.MH.MHSEQ"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHTERM"
 OrderNumber="5"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHMODIFY"
 OrderNumber="6"
 Mandatory="No"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHDECOD"
 OrderNumber="7"
 Mandatory="No"
 KeySequence="3"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHCAT"
 OrderNumber="8"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHSCAT"
 OrderNumber="9"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHOCCUR"
 OrderNumber="10"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHREASND"
 OrderNumber="11"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHBODSYS"
 OrderNumber="12"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHDTC"
 OrderNumber="13"
 Mandatory="No"
 MethodOID="MT.MH.MHDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHSTDTC"
 OrderNumber="14"
 Mandatory="No"
 MethodOID="MT.MH.STDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHENDTC"
 OrderNumber="15"
 Mandatory="No"
 MethodOID="MT.MH.ENDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.MH.MHDY"
 OrderNumber="16"
 Mandatory="No"
 MethodOID="MT.MH.MHDY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.MH" xlink:href="mh.xpt.xpt">
+<def:leaf ID="LF.MH" xlink:href="mh.xpt.xpt">
     <def:title>mh.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7035,7 +7035,7 @@ IsReferenceData="Yes"
 SASDatasetName="OE"
 def:Structure="One record per ophthalmic finding per method per location, per time point per visit per subject"
 def:Class="Findings"
-def:ArchiveLocationID="Location.OE">
+def:ArchiveLocationID="LF.OE">
 <Description>
   <TranslatedText xml:lang="en">Opthalmic Examinations</TranslatedText>
 </Description>
@@ -7044,142 +7044,142 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OESEQ"
 OrderNumber="4"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OEGRPID"
 OrderNumber="5"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OETESTCD"
 OrderNumber="6"
 Mandatory="Yes"
 KeySequence="4"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OETEST"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OECAT"
 OrderNumber="8"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OESCAT"
 OrderNumber="9"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OEORRES"
 OrderNumber="10"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OEORRESU"
 OrderNumber="11"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OESTRESC"
 OrderNumber="12"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OESTRESU"
 OrderNumber="13"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OELOC"
 OrderNumber="14"
 Mandatory="Yes"
 KeySequence="7"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OELAT"
 OrderNumber="15"
 Mandatory="Yes"
 KeySequence="8"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OELOBXFL"
 OrderNumber="16"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OEBLFL"
 OrderNumber="17"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OEDRVFL"
 OrderNumber="18"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OEREPNUM"
 OrderNumber="19"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.VISITNUM"
 OrderNumber="20"
 Mandatory="Yes"
 KeySequence="10"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.VISIT"
 OrderNumber="21"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.VISITDY"
 OrderNumber="22"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.TAETORD"
 OrderNumber="23"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.EPOCH"
 OrderNumber="24"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OEDTC"
 OrderNumber="25"
 Mandatory="Yes"
 KeySequence="11"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.OE.OEDY"
 OrderNumber="26"
 Mandatory="Yes"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.OE" xlink:href="oe.xpt.xpt">
+<def:leaf ID="LF.OE" xlink:href="oe.xpt.xpt">
     <def:title>oe.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7195,7 +7195,7 @@ IsReferenceData="Yes"
 SASDatasetName="QS"
 def:Structure="One record per questionnaire per question per time point per visit per subject"
 def:Class="Findings"
-def:ArchiveLocationID="Location.QS">
+def:ArchiveLocationID="LF.QS">
 <Description>
   <TranslatedText xml:lang="en">Questionnaires</TranslatedText>
 </Description>
@@ -7204,122 +7204,122 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSSEQ"
 OrderNumber="4"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSGRPID"
 OrderNumber="5"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSTESTCD"
 OrderNumber="6"
 Mandatory="Yes"
 KeySequence="6"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSTEST"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSCAT"
 OrderNumber="8"
 Mandatory="Yes"
 KeySequence="3"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSSCAT"
 OrderNumber="9"
 Mandatory="No"
 KeySequence="4"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSORRES"
 OrderNumber="10"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSORRESU"
 OrderNumber="11"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSSTRESC"
 OrderNumber="12"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSSTRESN"
 OrderNumber="13"
 Mandatory="No"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSBLFL"
 OrderNumber="14"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSDRVFL"
 OrderNumber="15"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.VISITNUM"
 OrderNumber="16"
 Mandatory="Yes"
 KeySequence="5"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.VISIT"
 OrderNumber="17"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.VISITDY"
 OrderNumber="18"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.TAETORD"
 OrderNumber="19"
 Mandatory="No"
 MethodOID="MT.QS.TAETORD"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.EPOCH"
 OrderNumber="20"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSDTC"
 OrderNumber="21"
 Mandatory="Yes"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.QS.QSDY"
 OrderNumber="22"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.QS" xlink:href="qs.xp.xpt">
+<def:leaf ID="LF.QS" xlink:href="qs.xp.xpt">
     <def:title>qs.xp.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7335,7 +7335,7 @@ IsReferenceData="Yes"
 SASDatasetName="SC"
 def:Structure="One record per characteristic per visit per subject."
 def:Class="Findings"
-def:ArchiveLocationID="Location.SC">
+def:ArchiveLocationID="LF.SC">
 <Description>
   <TranslatedText xml:lang="en">Subject Characteristics</TranslatedText>
 </Description>
@@ -7344,63 +7344,63 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SC.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SC.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SC.SCSEQ"
 OrderNumber="4"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SC.SCTESTCD"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="3"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SC.VISITNUM"
 OrderNumber="6"
 Mandatory="Yes"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SC.SCTEST"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SC.SCORRES"
 OrderNumber="8"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SC.SCSTRESC"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SC.SCDTC"
 OrderNumber="10"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SC.SCDY"
 OrderNumber="11"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SC" xlink:href="sc.xpt.xpt">
+<def:leaf ID="LF.SC" xlink:href="sc.xpt.xpt">
     <def:title>sc.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7416,7 +7416,7 @@ IsReferenceData="Yes"
 SASDatasetName="SE"
 def:Structure="One record per actual Element per subject"
 def:Class="Special Purpose"
-def:ArchiveLocationID="Location.SE">
+def:ArchiveLocationID="LF.SE">
 <Description>
   <TranslatedText xml:lang="en">Subject Elements</TranslatedText>
 </Description>
@@ -7425,78 +7425,78 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.SESEQ"
 OrderNumber="4"
 Mandatory="Yes"
 MethodOID="MT.SE.SEQ"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.ETCD"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="3"
 MethodOID="MT.SE.ETCD"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.ELEMENT"
 OrderNumber="6"
 Mandatory="No"
 MethodOID="MT.SE.ELEMENT"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.TAETORD"
 OrderNumber="7"
 Mandatory="No"
 MethodOID="MT.SE.TAETORD"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.EPOCH"
 OrderNumber="8"
 Mandatory="No"
 MethodOID="MT.SE.EPOCH"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.SESTDTC"
 OrderNumber="9"
 Mandatory="Yes"
 KeySequence="4"
 MethodOID="MT.SE.SESTDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.SEENDTC"
 OrderNumber="10"
 Mandatory="Yes"
 MethodOID="MT.SE.SEENDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.SESTDY"
 OrderNumber="11"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SE.SEENDY"
 OrderNumber="12"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SE" xlink:href="se.xpt.xpt">
+<def:leaf ID="LF.SE" xlink:href="se.xpt.xpt">
     <def:title>se.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7512,7 +7512,7 @@ IsReferenceData="No"
 SASDatasetName="SUPPAE"
 def:Structure="One record per supplemental qualifier per related parent domain record(s)"
 def:Class="Relationship"
-def:ArchiveLocationID="Location.SUPPAE">
+def:ArchiveLocationID="LF.SUPPAE">
 <Description>
   <TranslatedText xml:lang="en">Supplemental Qualifiers for Adverse Events</TranslatedText>
 </Description>
@@ -7521,58 +7521,58 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPAE.RDOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPAE.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPAE.IDVAR"
 OrderNumber="4"
 Mandatory="No"
 KeySequence="3"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPAE.IDVARVAL"
 OrderNumber="5"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPAE.QNAM"
 OrderNumber="6"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPAE.QLABEL"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPAE.QVAL"
 OrderNumber="8"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPAE.QORIG"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPAE.QEVAL"
 OrderNumber="10"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SUPPAE" xlink:href="suppae.xpt.xpt">
+<def:leaf ID="LF.SUPPAE" xlink:href="suppae.xpt.xpt">
     <def:title>suppae.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7588,14 +7588,14 @@ IsReferenceData="No"
 SASDatasetName="SUPPCM"
 def:Structure="One record per supplemental qualifier per related parent domain record(s)"
 def:Class="Relationship"
-def:ArchiveLocationID="Location.SUPPCM">
+def:ArchiveLocationID="LF.SUPPCM">
 <Description>
   <TranslatedText xml:lang="en">Supplemental Qualifiers for Concomitant Medications</TranslatedText>
 </Description>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SUPPCM" xlink:href="suppcm.xpt.xpt">
+<def:leaf ID="LF.SUPPCM" xlink:href="suppcm.xpt.xpt">
     <def:title>suppcm.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7611,7 +7611,7 @@ IsReferenceData="No"
 SASDatasetName="SUPPDM"
 def:Structure="One record per supplemental qualifier per related parent domain record(s)"
 def:Class="Relationship"
-def:ArchiveLocationID="Location.SUPPDM">
+def:ArchiveLocationID="LF.SUPPDM">
 <Description>
   <TranslatedText xml:lang="en">Supplemental Qualifiers for Demographics</TranslatedText>
 </Description>
@@ -7620,58 +7620,58 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPDM.RDOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPDM.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPDM.IDVAR"
 OrderNumber="4"
 Mandatory="No"
 KeySequence="3"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPDM.IDVARVAL"
 OrderNumber="5"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPDM.QNAM"
 OrderNumber="6"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPDM.QLABEL"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPDM.QVAL"
 OrderNumber="8"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPDM.QORIG"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPDM.QEVAL"
 OrderNumber="10"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SUPPDM" xlink:href="suppdm.xpt.xpt">
+<def:leaf ID="LF.SUPPDM" xlink:href="suppdm.xpt.xpt">
     <def:title>suppdm.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7687,7 +7687,7 @@ IsReferenceData="No"
 SASDatasetName="SUPPIE"
 def:Structure="One record per supplemental qualifier per related parent domain record(s)"
 def:Class="Relationship"
-def:ArchiveLocationID="Location.SUPPIE">
+def:ArchiveLocationID="LF.SUPPIE">
 <Description>
   <TranslatedText xml:lang="en">Supplemental Qualifiers for Inclusion/Exclusion Exceptions</TranslatedText>
 </Description>
@@ -7696,58 +7696,58 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPIE.RDOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPIE.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPIE.IDVAR"
 OrderNumber="4"
 Mandatory="No"
 KeySequence="3"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPIE.IDVARVAL"
 OrderNumber="5"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPIE.QNAM"
 OrderNumber="6"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPIE.QLABEL"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPIE.QVAL"
 OrderNumber="8"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPIE.QORIG"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPIE.QEVAL"
 OrderNumber="10"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SUPPIE" xlink:href="suppie.xpt.xpt">
+<def:leaf ID="LF.SUPPIE" xlink:href="suppie.xpt.xpt">
     <def:title>suppie.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7763,7 +7763,7 @@ IsReferenceData="No"
 SASDatasetName="SUPPMH"
 def:Structure="One record per supplemental qualifier per related parent domain record(s)"
 def:Class="Relationship"
-def:ArchiveLocationID="Location.SUPPMH">
+def:ArchiveLocationID="LF.SUPPMH">
 <Description>
   <TranslatedText xml:lang="en">Supplemental Qualifiers for Medical History</TranslatedText>
 </Description>
@@ -7772,58 +7772,58 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPMH.RDOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPMH.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPMH.IDVAR"
 OrderNumber="4"
 Mandatory="No"
 KeySequence="3"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPMH.IDVARVAL"
 OrderNumber="5"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPMH.QNAM"
 OrderNumber="6"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPMH.QLABEL"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPMH.QVAL"
 OrderNumber="8"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPMH.QORIG"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPMH.QEVAL"
 OrderNumber="10"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SUPPMH" xlink:href="suppmh.xpt.xpt">
+<def:leaf ID="LF.SUPPMH" xlink:href="suppmh.xpt.xpt">
     <def:title>suppmh.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7839,14 +7839,14 @@ IsReferenceData="No"
 SASDatasetName="SUPPQS"
 def:Structure="One record per supplemental qualifier per related parent domain record(s)"
 def:Class="Relationship"
-def:ArchiveLocationID="Location.SUPPQS">
+def:ArchiveLocationID="LF.SUPPQS">
 <Description>
   <TranslatedText xml:lang="en">Supplemental Qualifiers for Medical History</TranslatedText>
 </Description>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SUPPQS" xlink:href="suppmh.xpt.xpt">
+<def:leaf ID="LF.SUPPQS" xlink:href="suppmh.xpt.xpt">
     <def:title>suppmh.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7862,7 +7862,7 @@ IsReferenceData="No"
 SASDatasetName="SUPPSV"
 def:Structure="One record per supplemental qualifier per related parent domain record(s)"
 def:Class="Relationship"
-def:ArchiveLocationID="Location.SUPPSV">
+def:ArchiveLocationID="LF.SUPPSV">
 <Description>
   <TranslatedText xml:lang="en">Supplemental Qualifiers for Subject Visits</TranslatedText>
 </Description>
@@ -7871,58 +7871,58 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPSV.RDOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPSV.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPSV.IDVAR"
 OrderNumber="4"
 Mandatory="No"
 KeySequence="3"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPSV.IDVARVAL"
 OrderNumber="5"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPSV.QNAM"
 OrderNumber="6"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPSV.QLABEL"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPSV.QVAL"
 OrderNumber="8"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPSV.QORIG"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SUPPSV.QEVAL"
 OrderNumber="10"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SUPPSV" xlink:href="suppsv.xpt.xpt">
+<def:leaf ID="LF.SUPPSV" xlink:href="suppsv.xpt.xpt">
     <def:title>suppsv.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -7938,7 +7938,7 @@ IsReferenceData="Yes"
 SASDatasetName="SV"
 def:Structure="One record per actual or planned visit per subject"
 def:Class="Special Purpose"
-def:ArchiveLocationID="Location.SV">
+def:ArchiveLocationID="LF.SV">
 <Description>
   <TranslatedText xml:lang="en">Subject Visits</TranslatedText>
 </Description>
@@ -7947,88 +7947,88 @@ OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.VISITNUM"
 OrderNumber="4"
 Mandatory="Yes"
 KeySequence="3"
 MethodOID="MT.SV.VISITNUM"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.VISIT"
 OrderNumber="5"
 Mandatory="No"
 MethodOID="MT.SV.VISIT"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.SVPRESP"
 OrderNumber="6"
 Mandatory="Yes"
 MethodOID="MT.SV.SVPRESP"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.SVOCCUR"
 OrderNumber="7"
 Mandatory="Yes"
 MethodOID="MT.SV.SVOCCUR"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.SVREASOC"
 OrderNumber="8"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.SVCNTMOD"
 OrderNumber="9"
 Mandatory="No"
 MethodOID="MT.SV.SVCNTMODE"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.VISITDY"
 OrderNumber="10"
 Mandatory="No"
 MethodOID="MT.SV.VISITDY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.SVSTDTC"
 OrderNumber="11"
 Mandatory="Yes"
 MethodOID="MT.SV.SVSTDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.SVENDTC"
 OrderNumber="12"
 Mandatory="Yes"
 MethodOID="MT.SV.SVENDTC"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.SVSTDY"
 OrderNumber="13"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.SV.SVENDY"
 OrderNumber="14"
 Mandatory="No"
 MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SV" xlink:href="sv.xpt.xpt">
+<def:leaf ID="LF.SV" xlink:href="sv.xpt.xpt">
     <def:title>sv.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -8044,7 +8044,7 @@ IsReferenceData="No"
 SASDatasetName="TA"
 def:Structure="One record per planned Element per Arm"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TA">
+def:ArchiveLocationID="LF.TA">
 <Description>
   <TranslatedText xml:lang="en">Trial Arms</TranslatedText>
 </Description>
@@ -8054,59 +8054,59 @@ Mandatory="Yes"
 KeySequence="1"
 MethodOID="MT.STUDYID"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TA.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TA.ARMCD"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TA.ARM"
 OrderNumber="4"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TA.TAETORD"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="3"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TA.ETCD"
 OrderNumber="6"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TA.ELEMENT"
 OrderNumber="7"
 Mandatory="No"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TA.TABRANCH"
 OrderNumber="8"
 Mandatory="Yes"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TA.TATRANS"
 OrderNumber="9"
 Mandatory="Yes"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TA.EPOCH"
 OrderNumber="10"
 Mandatory="Yes"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TA" xlink:href="ta.xpt.xpt">
+<def:leaf ID="LF.TA" xlink:href="ta.xpt.xpt">
     <def:title>ta.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -8122,7 +8122,7 @@ IsReferenceData="No"
 SASDatasetName="TE"
 def:Structure="One record per planned Element"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TE">
+def:ArchiveLocationID="LF.TE">
 <Description>
   <TranslatedText xml:lang="en">Trial Elements</TranslatedText>
 </Description>
@@ -8132,43 +8132,43 @@ Mandatory="Yes"
 KeySequence="1"
 MethodOID="MT.STUDYID"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TE.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TE.ETCD"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TE.ELEMENT"
 OrderNumber="4"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TE.TESTRL"
 OrderNumber="5"
 Mandatory="Yes"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TE.TEENRL"
 OrderNumber="6"
 Mandatory="No"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TE.TEDUR"
 OrderNumber="7"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TE" xlink:href="te.xpt.xpt">
+<def:leaf ID="LF.TE" xlink:href="te.xpt.xpt">
     <def:title>te.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -8184,7 +8184,7 @@ IsReferenceData="No"
 SASDatasetName="TI"
 def:Structure="One record per I/E criterion"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TI">
+def:ArchiveLocationID="LF.TI">
 <Description>
   <TranslatedText xml:lang="en">Trial Inclusion/ Exclusion Criteria</TranslatedText>
 </Description>
@@ -8194,48 +8194,48 @@ Mandatory="Yes"
 KeySequence="1"
 MethodOID="MT.STUDYID"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="IT.TI.DOMAIN "
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="IT.TI.IETESTCD      "
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.IETESTCD"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="IT.TI.IETEST "
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.IETEST"
 OrderNumber="4"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="IT.TI.IECAT "
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.IECAT"
 OrderNumber="5"
 Mandatory="Yes"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="IT.TI.IESCAT   "
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.IESCAT"
 OrderNumber="6"
 Mandatory="No"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="IT.TI.TIRL "
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.TIRL"
 OrderNumber="7"
 Mandatory="No"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="IT.TI.TIVERS "
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.TIVERS"
 OrderNumber="8"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TI" xlink:href="tt.xpt.xpt">
+<def:leaf ID="LF.TI" xlink:href="tt.xpt.xpt">
     <def:title>tt.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -8251,7 +8251,7 @@ IsReferenceData="No"
 SASDatasetName="TS"
 def:Structure="One record per trial summary parameter value"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TS">
+def:ArchiveLocationID="LF.TS">
 <Description>
   <TranslatedText xml:lang="en">Trial Summary</TranslatedText>
 </Description>
@@ -8261,64 +8261,64 @@ Mandatory="Yes"
 KeySequence="1"
 MethodOID="MT.STUDYID"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TS.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TS.TSSEQ"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="3"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TS.TSGRPID"
 OrderNumber="4"
 Mandatory="No"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TS.TSPARMCD"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="2"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TS.TSPARM"
 OrderNumber="6"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TS.TSVAL"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TS.TSVALNF"
 OrderNumber="8"
 Mandatory="No"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TS.TSVALCD"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TS.TSVCDREF"
 OrderNumber="10"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TS.TSVCDVER"
 OrderNumber="11"
 Mandatory="Yes"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TS" xlink:href="ts.xpt.xpt">
+<def:leaf ID="LF.TS" xlink:href="ts.xpt.xpt">
     <def:title>ts.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -8334,7 +8334,7 @@ IsReferenceData="No"
 SASDatasetName="TV"
 def:Structure="One record per planned Visit per Arm"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TV">
+def:ArchiveLocationID="LF.TV">
 <Description>
   <TranslatedText xml:lang="en">Trial Visits</TranslatedText>
 </Description>
@@ -8344,57 +8344,57 @@ Mandatory="Yes"
 KeySequence="1"
 MethodOID="MT.STUDYID"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TV.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TV.VISITNUM"
 OrderNumber="3"
 Mandatory="Yes"
 MethodOID="MT.VISITNUM"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TV.VISIT"
 OrderNumber="4"
 Mandatory="Yes"
 KeySequence="3"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TV.VISITDY"
 OrderNumber="5"
 Mandatory="No"
 MethodOID="MT.VISITDY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TV.ARMCD"
 OrderNumber="6"
 Mandatory="Yes"
 MethodOID="MT.ARMCD"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TV.ARM"
 OrderNumber="7"
 Mandatory="No"
 KeySequence="2"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TV.TVSTRL"
 OrderNumber="8"
 Mandatory="Yes"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
 <ItemRef ItemOID="IT.TV.TVENRL"
 OrderNumber="9"
 Mandatory="No"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TV" xlink:href="tv.xpt.xpt">
+<def:leaf ID="LF.TV" xlink:href="tv.xpt.xpt">
     <def:title>tv.xpt.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
@@ -8772,7 +8772,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Serious Event</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.Y / N"/>
+  </Description><CodeListRef CodeListOID="CL.YN"/>
 
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -9806,7 +9806,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Related Domain Abbreviation</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(DOMAIN)"/>
+  </Description><CodeListRef CodeListOID="CL.DOMAIN"/>
 
   <def:Origin Type="Assigned"></def:Origin>
   
@@ -9905,7 +9905,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Evaluator</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(EVAL)"/>
+  </Description><CodeListRef CodeListOID="CL.EVAL"/>
 
   <def:Origin Type="eDT"></def:Origin>
   
@@ -9920,7 +9920,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Evaluator Identifier</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(MEDEVAL)"/>
+  </Description><CodeListRef CodeListOID="CL.MEDEVAL"/>
 
   <def:Origin Type="eDT"></def:Origin>
   
@@ -10090,7 +10090,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Short Name of Accountability Assessment</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(DATESTCD)"/>
+  </Description><CodeListRef CodeListOID="CL.DATESTCD"/>
 
   
   
@@ -10105,7 +10105,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Name of Accountability Assessment</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(DATEST)"/>
+  </Description><CodeListRef CodeListOID="CL.DATEST"/>
 
   
   
@@ -10162,7 +10162,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Original Units</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(UNIT)"/>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
 
   
   
@@ -10205,7 +10205,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Standard Units</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(UNIT)"/>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
 
   
   
@@ -10220,7 +10220,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Completion Status</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(ND)"/>
+  </Description><CodeListRef CodeListOID="CL.ND"/>
 
   
   
@@ -10305,7 +10305,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(EPOCH)"/>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
 
   
   
@@ -10513,7 +10513,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Subject Death Flag</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.Y / N"/>
+  </Description><CodeListRef CodeListOID="CL.YN"/>
 
   <def:Origin Type="Derived"></def:Origin>
   
@@ -11328,7 +11328,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Dose Units</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(UNIT)"/>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
 
   <def:Origin Type="Assigned"></def:Origin>
   
@@ -11343,7 +11343,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Dose Form</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(FRM)"/>
+  </Description><CodeListRef CodeListOID="CL.FRM"/>
 
   <def:Origin Type="Assigned"></def:Origin>
   
@@ -11358,7 +11358,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Dosing Frequency per Interval</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(FREQ)"/>
+  </Description><CodeListRef CodeListOID="CL.FREQ"/>
 
   <def:Origin Type="Assigned"></def:Origin>
   
@@ -11387,7 +11387,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Route of Administration</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(ROUTE)"/>
+  </Description><CodeListRef CodeListOID="CL.ROUTE"/>
 
   <def:Origin Type="Assigned"></def:Origin>
   
@@ -11441,7 +11441,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Location of Dose Administration</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(LOC)"/>
+  </Description><CodeListRef CodeListOID="CL.LOC"/>
 
   
   
@@ -11470,7 +11470,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(EPOCH)"/>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
 
   
   
@@ -12325,7 +12325,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(EPOCH)"/>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
 
   <def:Origin Type="Assigned"></def:Origin>
   
@@ -12467,7 +12467,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Lab Test or Examination Short Name</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(LBTESTCD)"/>
+  </Description><CodeListRef CodeListOID="CL.LBTESTCD"/>
 
   
   
@@ -12482,7 +12482,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Lab Test or Examination Name</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(LBTEST)"/>
+  </Description><CodeListRef CodeListOID="CL.LBTEST"/>
 
   
   
@@ -12497,7 +12497,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Test Condition</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(TESTCOND)"/>
+  </Description><CodeListRef CodeListOID="CL.TESTCOND"/>
 
   
   
@@ -12526,7 +12526,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Test Operational Objective</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(TSTOPOBJ)"/>
+  </Description><CodeListRef CodeListOID="CL.TSTOPOBJ"/>
 
   
   
@@ -12950,7 +12950,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Original Units</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(UNIT)"/>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
 
   
   
@@ -12965,7 +12965,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Result Scale</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(RSLSCLRS)"/>
+  </Description><CodeListRef CodeListOID="CL.RSLSCLRS"/>
 
   
   
@@ -12980,7 +12980,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Result Type</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(RESTYPRS)"/>
+  </Description><CodeListRef CodeListOID="CL.RESTYPRS"/>
 
   
   
@@ -12995,7 +12995,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Collected Summary Result Type</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(COLSTYP)"/>
+  </Description><CodeListRef CodeListOID="CL.COLSTYP"/>
 
   
   
@@ -13052,7 +13052,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Character Result/Finding in Std Format</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(LBSTRESC)"/>
+  </Description><CodeListRef CodeListOID="CL.LBSTRESC"/>
 
   
   
@@ -13081,7 +13081,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Standard Units</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(UNIT)"/>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
 
   
   
@@ -13138,7 +13138,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Reference Range Indicator</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NRIND)"/>
+  </Description><CodeListRef CodeListOID="CL.NRIND"/>
 
   
   
@@ -13153,7 +13153,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Completion Status</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(ND)"/>
+  </Description><CodeListRef CodeListOID="CL.ND"/>
 
   
   
@@ -13211,7 +13211,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Specimen Type</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(SPECTYPE)"/>
+  </Description><CodeListRef CodeListOID="CL.SPECTYPE"/>
 
   
   
@@ -13226,7 +13226,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Specimen Condition</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(SPECCOND)"/>
+  </Description><CodeListRef CodeListOID="CL.SPECCOND"/>
 
   
   
@@ -13241,7 +13241,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Specimen Usability for the Test</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -13256,7 +13256,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Method of Test or Examination</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(METHOD)"/>
+  </Description><CodeListRef CodeListOID="CL.METHOD"/>
 
   
   
@@ -13271,7 +13271,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Analysis Method</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(LBANMET)"/>
+  </Description><CodeListRef CodeListOID="CL.LBANMET"/>
 
   
   
@@ -13286,7 +13286,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Test Method Sensitivity</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(TSTMTHSN)"/>
+  </Description><CodeListRef CodeListOID="CL.TSTMTHSN"/>
 
   
   
@@ -13301,7 +13301,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Last Observation Before Exposure Flag</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -13316,7 +13316,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Baseline Flag</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -13331,7 +13331,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Fasting Status</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -13346,7 +13346,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Derived Flag</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -13389,7 +13389,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Clinically Significant, Collected</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -13460,7 +13460,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(EPOCH)"/>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
 
   
   
@@ -13601,7 +13601,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Point in Time Flag</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -13772,7 +13772,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Medical History Occurrence</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.Y / N"/>
+  </Description><CodeListRef CodeListOID="CL.YN"/>
 
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -13972,7 +13972,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Short Name of Ophthalmic Test or Exam</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(OETESTCD)"/>
+  </Description><CodeListRef CodeListOID="CL.OETESTCD"/>
 
   
   
@@ -13987,7 +13987,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Name of Ophthalmic Test or Exam</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(OETEST)"/>
+  </Description><CodeListRef CodeListOID="CL.OETEST"/>
 
   
   
@@ -23105,7 +23105,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Original Units</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(UNIT)"/>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
 
   
   
@@ -23134,7 +23134,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Standard Units</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(UNIT)"/>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
 
   
   
@@ -23149,7 +23149,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Location Used for the Measurement</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(LOC)"/>
+  </Description><CodeListRef CodeListOID="CL.LOC"/>
 
   
   
@@ -23164,7 +23164,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Laterality</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(LAT)"/>
+  </Description><CodeListRef CodeListOID="CL.LAT"/>
 
   
   
@@ -23179,7 +23179,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Last Observation Before Exposure Flag</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -23194,7 +23194,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Baseline Flag</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -23209,7 +23209,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Derived Flag</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -23294,7 +23294,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(EPOCH)"/>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
 
   
   
@@ -23436,7 +23436,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Category of Question</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(QSCAT)"/>
+  </Description><CodeListRef CodeListOID="CL.QSCAT"/>
 
   
   
@@ -25748,7 +25748,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Original Units</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(UNIT)"/>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
 
   
   
@@ -25791,7 +25791,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Baseline Flag</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -25806,7 +25806,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Derived Flag</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(NY)"/>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
 
   
   
@@ -25877,7 +25877,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(EPOCH)"/>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
 
   
   
@@ -25977,7 +25977,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Subject Characteristic Short Name</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(SCTESTCD)"/>
+  </Description><CodeListRef CodeListOID="CL.SCTESTCD"/>
 
   
   
@@ -26006,7 +26006,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Subject Characteristic</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.(SCTEST)"/>
+  </Description><CodeListRef CodeListOID="CL.SCTEST"/>
 
   
   
@@ -26388,7 +26388,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Pre-specified</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.Y / N"/>
+  </Description><CodeListRef CodeListOID="CL.YN"/>
 
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -26438,7 +26438,7 @@ def:CommentOID="COM.COM.AECOM"
   >
   <Description>
       <TranslatedText xml:lang="en">Occurrence</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.Y / N"/>
+  </Description><CodeListRef CodeListOID="CL.YN"/>
 
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -27443,7 +27443,7 @@ def:CommentOID="COM.COM.AECOM"
 </def:Origin>
 
 </ItemDef>
-<ItemDef OID="IT.SUPPIE.QVAL.IEOC1_chk"
+<ItemDef OID="IT.SUPPIE.QVAL.IEOC1chk"
   Name="QVAL"
   SASFieldName="QVAL"
   DataType="text"
@@ -27460,7 +27460,7 @@ def:CommentOID="COM.COM.AECOM"
 </def:Origin>
 
 </ItemDef>
-<ItemDef OID="IT.SUPPIE.QVAL.IEOC1_imp"
+<ItemDef OID="IT.SUPPIE.QVAL.IEOC1imp"
   Name="QVAL"
   SASFieldName="QVAL"
   DataType="text"
@@ -27477,7 +27477,7 @@ def:CommentOID="COM.COM.AECOM"
 </def:Origin>
 
 </ItemDef>
-<ItemDef OID="IT.SUPPIE.QVAL.IEOC2_chk"
+<ItemDef OID="IT.SUPPIE.QVAL.IEOC2chk"
   Name="QVAL"
   SASFieldName="QVAL"
   DataType="text"
@@ -27494,7 +27494,7 @@ def:CommentOID="COM.COM.AECOM"
 </def:Origin>
 
 </ItemDef>
-<ItemDef OID="IT.SUPPIE.QVAL.IEOC2_imp"
+<ItemDef OID="IT.SUPPIE.QVAL.IEOC2imp"
   Name="QVAL"
   SASFieldName="QVAL"
   DataType="text"
@@ -27931,7 +27931,7 @@ def:CommentOID="COM.COM.AECOM"
 </def:Origin>
 
 </ItemDef>
-<ItemDef OID="IT.SUPPMH.QVAL.V1CVANY_Oth"
+<ItemDef OID="IT.SUPPMH.QVAL.V1CVANYOth"
   Name="QVAL"
   SASFieldName="QVAL"
   DataType="text"
@@ -28541,9 +28541,9 @@ def:CommentOID="COM.COM.AECOM"
   
 </ItemDef>
 
-<ItemDef OID="IT.TI.DOMAIN "
-  Name="DOMAIN "
-  SASFieldName="DOMAIN "
+<ItemDef OID="IT.TI.DOMAIN"
+  Name="DOMAIN"
+  SASFieldName="DOMAIN"
   DataType="Char"
   Length=""
   def:DisplayFormat=""
@@ -28556,9 +28556,9 @@ def:CommentOID="COM.COM.AECOM"
   
 </ItemDef>
 
-<ItemDef OID="IT.TI.IETESTCD      "
-  Name="IETESTCD      "
-  SASFieldName="IETESTCD      "
+<ItemDef OID="IT.TI.IETESTCD"
+  Name="IETESTCD"
+  SASFieldName="IETESTCD"
   DataType="Char"
   Length=""
   def:DisplayFormat=""
@@ -28570,9 +28570,9 @@ def:CommentOID="COM.COM.AECOM"
   
 </ItemDef>
 
-<ItemDef OID="IT.TI.IETEST "
-  Name="IETEST "
-  SASFieldName="IETEST "
+<ItemDef OID="IT.TI.IETEST"
+  Name="IETEST"
+  SASFieldName="IETEST"
   DataType="Char"
   Length=""
   def:DisplayFormat=""
@@ -28584,9 +28584,9 @@ def:CommentOID="COM.COM.AECOM"
   
 </ItemDef>
 
-<ItemDef OID="IT.TI.IECAT "
-  Name="IECAT "
-  SASFieldName="IECAT "
+<ItemDef OID="IT.TI.IECAT"
+  Name="IECAT"
+  SASFieldName="IECAT"
   DataType="Char"
   Length=""
   def:DisplayFormat=""
@@ -28599,9 +28599,9 @@ def:CommentOID="COM.COM.AECOM"
   
 </ItemDef>
 
-<ItemDef OID="IT.TI.IESCAT   "
-  Name="IESCAT   "
-  SASFieldName="IESCAT   "
+<ItemDef OID="IT.TI.IESCAT"
+  Name="IESCAT"
+  SASFieldName="IESCAT"
   DataType="Char"
   Length=""
   def:DisplayFormat=""
@@ -28614,31 +28614,31 @@ def:CommentOID="COM.COM.AECOM"
   
 </ItemDef>
 
-<ItemDef OID="IT.TI.TIRL "
-  Name="TIRL "
-  SASFieldName="TIRL "
+<ItemDef OID="IT.TI.TIRL"
+  Name="TIRL"
+  SASFieldName="TIRL"
   DataType="Char"
   Length=""
   def:DisplayFormat=""
   >
   <Description>
       <TranslatedText xml:lang="en">Inclusion/Exclusion Criterion Rule</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.TIRL "/>
+  </Description><CodeListRef CodeListOID="CL.TIRL"/>
 
   <def:Origin Type="Assigned"></def:Origin>
   
 </ItemDef>
 
-<ItemDef OID="IT.TI.TIVERS "
-  Name="TIVERS "
-  SASFieldName="TIVERS "
+<ItemDef OID="IT.TI.TIVERS"
+  Name="TIVERS"
+  SASFieldName="TIVERS"
   DataType="Char"
   Length=""
   def:DisplayFormat=""
   >
   <Description>
       <TranslatedText xml:lang="en">Protocol Criteria Versions</TranslatedText>
-  </Description><CodeListRef CodeListOID="CL.TIVERS "/>
+  </Description><CodeListRef CodeListOID="CL.TIVERS"/>
 
   <def:Origin Type="Assigned"></def:Origin>
   

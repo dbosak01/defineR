@@ -227,3 +227,12 @@ vencode <- Vectorize(function(char) {
   return(ret)
 
 })
+
+
+cleanid <- function(str) {
+
+  ret <- gsub("([^a-zA-Z0-9\\.])", "",  x=str)
+
+  return(ret)
+
+}

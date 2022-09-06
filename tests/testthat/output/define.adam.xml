@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 02September2022                                                   -->
+    <!-- Date: 06September2022                                                   -->
     <!-- Description: Define.xml file for XYZ123                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -14,7 +14,7 @@
   xmlns:arm="http://www.cdisc.org/ns/arm/v1.0"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-09-02T23:43:36">
+  CreationDateTime="2022-09-06T11:37:23">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -125,7 +125,7 @@
 <CheckValue>Y</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.Table_14.2.1.1">
+<def:WhereClauseDef OID="WC.Table14.2.1.1">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.ADEF.ITTFL" Comparator="EQ">
 <CheckValue>Y</CheckValue>
 </RangeCheck>
@@ -136,7 +136,7 @@
 <CheckValue>XPPAIN</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.Figure_14.2.1.1">
+<def:WhereClauseDef OID="WC.Figure14.2.1.1">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.ADTTE.ITTFL" Comparator="EQ">
 <CheckValue>Y</CheckValue>
 </RangeCheck>
@@ -144,7 +144,7 @@
 <CheckValue>TTPNRELF</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.Table_14.3.2.1">
+<def:WhereClauseDef OID="WC.Table14.3.2.1">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.ADAE.TRTEMFL" Comparator="EQ">
 <CheckValue>Y</CheckValue>
 </RangeCheck>
@@ -3232,39 +3232,39 @@ DataType="text">
   xlink:href="reviewersguide.pdf">
   <def:title>Analysis Data Reviewer's Guide</def:title>
 </def:leaf>
-<def:leaf ID="LF.SAP_Section_9.1.1"
+<def:leaf ID="LF.SAPSection9.1.1"
   xlink:href="..\..\..\..\53-clin-stud-rep\535-rep-effic-safety-stud\5351-stud-rep-contr\studyxyz123\studyxyz123_csr.pdf">
   <def:title>SAP Section 9.1.1</def:title>
 </def:leaf>
-<def:leaf ID="LF.SAP_Section_9.2.1"
+<def:leaf ID="LF.SAPSection9.2.1"
   xlink:href="..\..\..\..\53-clin-stud-rep\535-rep-effic-safety-stud\5351-stud-rep-contr\studyxyz123\studyxyz123_csr.pdf">
   <def:title>SAP Section 9.2.1</def:title>
 </def:leaf>
-<def:leaf ID="LF.SAP_Section_9.2.2"
+<def:leaf ID="LF.SAPSection9.2.2"
   xlink:href="..\..\..\..\53-clin-stud-rep\535-rep-effic-safety-stud\5351-stud-rep-contr\studyxyz123\studyxyz123_csr.pdf">
   <def:title>SAP Section 9.2.2</def:title>
 </def:leaf>
-<def:leaf ID="LF.SAP_Section_9.3.1"
+<def:leaf ID="LF.SAPSection9.3.1"
   xlink:href="..\..\..\..\53-clin-stud-rep\535-rep-effic-safety-stud\5351-stud-rep-contr\studyxyz123\studyxyz123_csr.pdf">
   <def:title>SAP Section 9.3.1</def:title>
 </def:leaf>
-<def:leaf ID="LF.Table_14.1.1"
+<def:leaf ID="LF.Table14.1.1"
   xlink:href="..\..\..\..\53-clin-stud-rep\535-rep-effic-safety-stud\5351-stud-rep-contr\studyxyz123\studyxyz123_csr.pdf">
   <def:title>Table 14.1.1</def:title>
 </def:leaf>
-<def:leaf ID="LF.Table_14.2.1"
+<def:leaf ID="LF.Table14.2.1"
   xlink:href="..\..\..\..\53-clin-stud-rep\535-rep-effic-safety-stud\5351-stud-rep-contr\studyxyz123\studyxyz123_csr.pdf">
   <def:title>Table 14.2.1</def:title>
 </def:leaf>
-<def:leaf ID="LF.Table_14.2.2"
+<def:leaf ID="LF.Table14.2.2"
   xlink:href="..\..\..\..\53-clin-stud-rep\535-rep-effic-safety-stud\5351-stud-rep-contr\studyxyz123\studyxyz123_csr.pdf">
   <def:title>Table 14.2.2</def:title>
 </def:leaf>
-<def:leaf ID="LF.Figure_14.2.1"
+<def:leaf ID="LF.Figure14.2.1"
   xlink:href="..\..\..\..\53-clin-stud-rep\535-rep-effic-safety-stud\5351-stud-rep-contr\studyxyz123\studyxyz123_csr.pdf">
   <def:title>Figure 14.2.1</def:title>
 </def:leaf>
-<def:leaf ID="LF.ae-t14-3-02"
+<def:leaf ID="LF.aet14302"
   xlink:href="ae-t14-3-02.sas">
   <def:title>AE Analysis Program</def:title>
 </def:leaf>
@@ -3272,17 +3272,17 @@ DataType="text">
     <!-- Analysis Results MetaData are Presented Below                -->
     <!-- ************************************************************ -->
     <arm:AnalysisResultDisplays>
-<arm:ResultDisplay OID="RD.Table_14.1.1" Name="Table_14.1.1">
+<arm:ResultDisplay OID="RD.Table14.1.1" Name="Table14.1.1">
 <Description>
     <TranslatedText xml:lang="en">Summary of Demographics (ITT Population)</TranslatedText>
 </Description>
-<def:DocumentRef leafID="LF.Table_14.1.1">
+<def:DocumentRef leafID="LF.Table14.1.1">
   <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
 </def:DocumentRef>
 <arm:AnalysisResult
-  OID="AR.Table_14.1.1.R1"
+  OID="AR.Table14.1.1.R1"
   
-  ResultIdentifier="AR.Table_14.1.1.R1"
+  ResultIdentifier="AR.Table14.1.1.R1"
   AnalysisReason="SPECIFIED IN SAP"
   AnalysisPurpose="Comparisons of baseline characteristics by treatment group">
   <Description>
@@ -3303,7 +3303,7 @@ DataType="text">
   <Description>
     <TranslatedText xml:lang="en">Rates and chi-squared tests of categorical demographic variables</TranslatedText>
   </Description>
-  <def:DocumentRef  leafID="LF.SAP_Section_9.1.1">
+  <def:DocumentRef  leafID="LF.SAPSection9.1.1">
   </def:DocumentRef>
   </arm:Documentation>
 
@@ -3313,17 +3313,17 @@ DataType="text">
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 </arm:ResultDisplay>
-<arm:ResultDisplay OID="RD.Table_14.2.1" Name="Table_14.2.1">
+<arm:ResultDisplay OID="RD.Table14.2.1" Name="Table14.2.1">
 <Description>
     <TranslatedText xml:lang="en">Responder Analysis by Visit</TranslatedText>
 </Description>
-<def:DocumentRef leafID="LF.Table_14.2.1">
+<def:DocumentRef leafID="LF.Table14.2.1">
   <def:PDFPageRef PageRefs="352" Type="PhysicalRef"/>
 </def:DocumentRef>
 <arm:AnalysisResult
-  OID="AR.Table_14.2.1.R1"
+  OID="AR.Table14.2.1.R1"
   ParameterOID="IT.ADEF.PARAMCD"
-  ResultIdentifier="AR.Table_14.2.1.R1"
+  ResultIdentifier="AR.Table14.2.1.R1"
   AnalysisReason="SPECIFIED IN SAP"
   AnalysisPurpose="Primary efficacy endpoint">
   <Description>
@@ -3332,7 +3332,7 @@ DataType="text">
   <arm:AnalysisDatasets>
     <arm:AnalysisDataset ItemGroupOID="IG.ADEF" >
 
-  <def:WhereClauseRef WhereClauseOID="WC.Table_14.2.1.1"/>
+  <def:WhereClauseRef WhereClauseOID="WC.Table14.2.1.1"/>
   <arm:AnalysisVariable ItemOID="IT.ADEF.CRIT1FL"/>
 
     </arm:AnalysisDataset>
@@ -3341,7 +3341,7 @@ DataType="text">
   <Description>
     <TranslatedText xml:lang="en">Chi-squared test of responder rates by treatment group</TranslatedText>
   </Description>
-  <def:DocumentRef  leafID="LF.SAP_Section_9.2.1">
+  <def:DocumentRef  leafID="LF.SAPSection9.2.1">
   </def:DocumentRef>
   </arm:Documentation>
 
@@ -3351,17 +3351,17 @@ DataType="text">
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 </arm:ResultDisplay>
-<arm:ResultDisplay OID="RD.Table_14.2.2" Name="Table_14.2.2">
+<arm:ResultDisplay OID="RD.Table14.2.2" Name="Table14.2.2">
 <Description>
     <TranslatedText xml:lang="en">Mean Pain Assessments and Changes from Baseline</TranslatedText>
 </Description>
-<def:DocumentRef leafID="LF.Table_14.2.2">
+<def:DocumentRef leafID="LF.Table14.2.2">
   <def:PDFPageRef PageRefs="353" Type="PhysicalRef"/>
 </def:DocumentRef>
 <arm:AnalysisResult
-  OID="AR.Table_14.2.2.R1"
+  OID="AR.Table14.2.2.R1"
   ParameterOID="IT.ADEF.PARAMCD"
-  ResultIdentifier="AR.Table_14.2.2.R1"
+  ResultIdentifier="AR.Table14.2.2.R1"
   AnalysisReason="SPECIFIED IN SAP"
   AnalysisPurpose="Secondary efficacy endpoint">
   <Description>
@@ -3370,7 +3370,7 @@ DataType="text">
   <arm:AnalysisDatasets>
     <arm:AnalysisDataset ItemGroupOID="IG.ADEF" >
 
-  <def:WhereClauseRef WhereClauseOID="WC.Table_14.2.1.1"/>
+  <def:WhereClauseRef WhereClauseOID="WC.Table14.2.1.1"/>
   <arm:AnalysisVariable ItemOID="IT.ADEF.AVAL"/>
 <arm:AnalysisVariable ItemOID="IT.ADEF.CHG"/>
 
@@ -3380,7 +3380,7 @@ DataType="text">
   <Description>
     <TranslatedText xml:lang="en">ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</TranslatedText>
   </Description>
-  <def:DocumentRef  leafID="LF.SAP_Section_9.2.1">
+  <def:DocumentRef  leafID="LF.SAPSection9.2.1">
   </def:DocumentRef>
   </arm:Documentation>
 
@@ -3390,17 +3390,17 @@ DataType="text">
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 </arm:ResultDisplay>
-<arm:ResultDisplay OID="RD.Figure_14.2.1" Name="Figure_14.2.1">
+<arm:ResultDisplay OID="RD.Figure14.2.1" Name="Figure14.2.1">
 <Description>
     <TranslatedText xml:lang="en">Time to Pain Relief Analysis by Treatment Group</TranslatedText>
 </Description>
-<def:DocumentRef leafID="LF.Figure_14.2.1">
+<def:DocumentRef leafID="LF.Figure14.2.1">
   <def:PDFPageRef PageRefs="354" Type="PhysicalRef"/>
 </def:DocumentRef>
 <arm:AnalysisResult
-  OID="AR.Figure_14.2.1.R1"
+  OID="AR.Figure14.2.1.R1"
   ParameterOID="IT.ADTTE.PARAMCD"
-  ResultIdentifier="AR.Figure_14.2.1.R1"
+  ResultIdentifier="AR.Figure14.2.1.R1"
   AnalysisReason="SPECIFIED IN SAP"
   AnalysisPurpose="Secondary efficacy endpoint">
   <Description>
@@ -3409,7 +3409,7 @@ DataType="text">
   <arm:AnalysisDatasets>
     <arm:AnalysisDataset ItemGroupOID="IG.ADTTE" >
 
-  <def:WhereClauseRef WhereClauseOID="WC.Figure_14.2.1.1"/>
+  <def:WhereClauseRef WhereClauseOID="WC.Figure14.2.1.1"/>
   <arm:AnalysisVariable ItemOID="IT.ADTTE.AVAL"/>
 
     </arm:AnalysisDataset>
@@ -3418,7 +3418,7 @@ DataType="text">
   <Description>
     <TranslatedText xml:lang="en">Kaplan-Meier estimates and log-rank test for the treatment effect</TranslatedText>
   </Description>
-  <def:DocumentRef  leafID="LF.SAP_Section_9.2.2">
+  <def:DocumentRef  leafID="LF.SAPSection9.2.2">
   </def:DocumentRef>
   </arm:Documentation>
 
@@ -3428,9 +3428,9 @@ DataType="text">
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 <arm:AnalysisResult
-  OID="AR.Figure_14.2.1.R2"
+  OID="AR.Figure14.2.1.R2"
   ParameterOID="IT.ADTTE.PARAMCD"
-  ResultIdentifier="AR.Figure_14.2.1.R2"
+  ResultIdentifier="AR.Figure14.2.1.R2"
   AnalysisReason="SPECIFIED IN SAP"
   AnalysisPurpose="Secondary efficacy endpoint">
   <Description>
@@ -3439,7 +3439,7 @@ DataType="text">
   <arm:AnalysisDatasets>
     <arm:AnalysisDataset ItemGroupOID="IG.ADTTE" >
 
-  <def:WhereClauseRef WhereClauseOID="WC.Figure_14.2.1.1"/>
+  <def:WhereClauseRef WhereClauseOID="WC.Figure14.2.1.1"/>
   <arm:AnalysisVariable ItemOID="IT.ADTTE.AVAL"/>
 
     </arm:AnalysisDataset>
@@ -3448,7 +3448,7 @@ DataType="text">
   <Description>
     <TranslatedText xml:lang="en">Cox proportional hazards model used to derive the hazard ratio for the treatment group effect</TranslatedText>
   </Description>
-  <def:DocumentRef  leafID="LF.SAP_Section_9.2.2">
+  <def:DocumentRef  leafID="LF.SAPSection9.2.2">
   </def:DocumentRef>
   </arm:Documentation>
 
@@ -3458,17 +3458,17 @@ DataType="text">
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 </arm:ResultDisplay>
-<arm:ResultDisplay OID="RD.Table_14.3.2.1" Name="Table_14.3.2.1">
+<arm:ResultDisplay OID="RD.Table14.3.2.1" Name="Table14.3.2.1">
 <Description>
     <TranslatedText xml:lang="en">Incidence Rates of TEAEs by System Organ Class and Preferred Term</TranslatedText>
 </Description>
-<def:DocumentRef leafID="LF.Table_14.3.2.1">
+<def:DocumentRef leafID="LF.Table14.3.2.1">
   <def:PDFPageRef PageRefs="" Type=""/>
 </def:DocumentRef>
 <arm:AnalysisResult
-  OID="AR.Table_14.3.2.1.R1"
+  OID="AR.Table14.3.2.1.R1"
   
-  ResultIdentifier="AR.Table_14.3.2.1.R1"
+  ResultIdentifier="AR.Table14.3.2.1.R1"
   AnalysisReason="SPECIFIED IN SAP"
   AnalysisPurpose="Secondary safety endpoint">
   <Description>
@@ -3477,7 +3477,7 @@ DataType="text">
   <arm:AnalysisDatasets>
     <arm:AnalysisDataset ItemGroupOID="IG.ADAE" >
 
-  <def:WhereClauseRef WhereClauseOID="WC.Table_14.3.2.1"/>
+  <def:WhereClauseRef WhereClauseOID="WC.Table14.3.2.1"/>
   <arm:AnalysisVariable ItemOID="IT.ADAE.AEBODSYS"/>
 <arm:AnalysisVariable ItemOID="IT.ADAE.AEDECOD"/>
 
@@ -3487,13 +3487,13 @@ DataType="text">
   <Description>
     <TranslatedText xml:lang="en">Incidence rates of TEAEs by System Organ Class and Preferred Term</TranslatedText>
   </Description>
-  <def:DocumentRef  leafID="LF.SAP_Section_9.3.1">
+  <def:DocumentRef  leafID="LF.SAPSection9.3.1">
   </def:DocumentRef>
   </arm:Documentation>
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
     
-    <def:DocumentRef leafID="LF.ae-t14-3-02" />
+    <def:DocumentRef leafID="LF.aet14302" />
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 </arm:ResultDisplay>

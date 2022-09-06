@@ -141,8 +141,8 @@ get_header_adam <- function(dta) {
   ret <- glue(str,
               sdt = format(Sys.Date(), "%d%B%Y"),
               dstmp = format(Sys.time(), "%Y-%m-%dT%H:%M:%S"),
-              foid = dta[["FILEOID"]][1],
-              soid = dta[["STUDYOID"]][1],
+              foid = cleanid(dta[["FILEOID"]][1]),
+              soid = cleanid(dta[["STUDYOID"]][1]),
               study = dta[["STUDYNAME"]][1],
               desc = encodeMarkup(dta[["STUDYDESCRIPTION"]][1]),
               protocol = dta[["PROTOCOLNAME"]][1],
@@ -197,16 +197,16 @@ get_item_groups_adam <- function(toc, vardt) {
 
   ret<-vector()
   for(rw in 1:nrow(toc)) {
-    ret[length(ret) + 1] <- glue(blk, name = toc[[rw, "NAME"]])
+    ret[length(ret) + 1] <- glue(blk, name = cleanid(toc[[rw, "NAME"]]))
     ret[length(ret) + 1] <- glue(itemGroup,
-                                 oid = toc[[rw, "OID"]],
-                                 name = toc[[rw, "NAME"]],
+                                 oid = cleanid(toc[[rw, "OID"]]),
+                                 name = cleanid(toc[[rw, "NAME"]]),
                                  reps = toc[[rw, "REPEATING"]],
-                                 purp = toc[[rw, "PURPOSE"]],
+                                 purp = cleanid(toc[[rw, "PURPOSE"]]),
                                  isRef = toc[[rw, "ISREFERENCEDATA"]],
                                  struct = toc[[rw, "STRUCTURE"]],
                                  class = toc[[rw, "CLASS"]],
-                                 commentoid = toc[[rw, "COMMENTOID"]],
+                                 commentoid = cleanid(toc[[rw, "COMMENTOID"]]),
                                  label = encodeMarkup(toc[[rw, "LABEL"]]))
 
     for(varrow in 1:nrow(vardt)) {
@@ -216,11 +216,11 @@ get_item_groups_adam <- function(toc, vardt) {
       if(toc[[rw, "NAME"]] %eq% vardt[[varrow, "DOMAIN"]]) {
         # second check, existence of keyseq
         if(!is.na(vardt[varrow, "KEYSEQUENCE"])) {
-          keyHolder <- paste0('KeySequence="',vardt[[varrow, "KEYSEQUENCE"]],'"\n')
+          keyHolder <- paste0('KeySequence="',cleanid(vardt[[varrow, "KEYSEQUENCE"]]),'"\n')
         }
         # third check, nonmutual, existence of methodoid
         if(!is.na(vardt[varrow, "COMPUTATIONMETHODOID"])) {
-          methodoidHolder <- paste0('MethodOID="MT.',vardt[[varrow, "COMPUTATIONMETHODOID"]],'"\n')
+          methodoidHolder <- paste0('MethodOID="MT.',cleanid(vardt[[varrow, "COMPUTATIONMETHODOID"]]),'"\n')
         }
 
 
@@ -228,9 +228,9 @@ get_item_groups_adam <- function(toc, vardt) {
 
         # itemref
         ret[length(ret) + 1] <- glue(itemRefs,
-                                     domain = vardt[[varrow, "DOMAIN"]],
-                                     varname = vardt[[varrow, "VARIABLE"]],
-                                     varnum = vardt[[varrow, "VARNUM"]],
+                                     domain = cleanid(vardt[[varrow, "DOMAIN"]]),
+                                     varname = cleanid(vardt[[varrow, "VARIABLE"]]),
+                                     varnum = cleanid(vardt[[varrow, "VARNUM"]]),
                                      manda = vardt[[varrow, "MANDATORY"]],
                                      keyseq = keyHolder,
                                      methodoid = methodoidHolder)
@@ -239,8 +239,8 @@ get_item_groups_adam <- function(toc, vardt) {
 
     ret[length(ret) + 1] <- endCom
     ret[length(ret) + 1] <- glue(groupEnd,
-                                 name = toc[[rw, "NAME"]],
-                                 loc = toc[[rw, "ARCHIVELOCATIONID"]])
+                                 name = cleanid(toc[[rw, "NAME"]]),
+                                 loc = cleanid(toc[[rw, "ARCHIVELOCATIONID"]]))
 
   }
   return(ret)
@@ -306,7 +306,7 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
 
         if (length(spos) == 0 & length(ipos) == 0) {
           codeListHolder <- '<CodeListRef CodeListOID="CL.{codelist}"/>\n'
-          codeListHolder <- glue(codeListHolder, codelist = vardt[varrow, "CODELISTNAME"])
+          codeListHolder <- glue(codeListHolder, codelist = cleanid(vardt[varrow, "CODELISTNAME"]))
         }
       }
 
@@ -322,9 +322,9 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
         #browser()
 
         vid <- paste0("VL.",
-                      vardt[[varrow, "DOMAIN"]],
+                      cleanid(vardt[[varrow, "DOMAIN"]]),
                       ".",
-                      vardt[[varrow, "VARIABLE"]])
+                      cleanid(vardt[[varrow, "VARIABLE"]]))
 
         valLevel <- paste0(valLevel,  glue(valstr,
                                            ValueID = vid), "\n")
@@ -332,24 +332,24 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
         for (i in seq_len(nrow(sbst))) {
 
           vid <- paste0("IT.",
-                        sbst[[i, "DOMAIN"]],
+                        cleanid(sbst[[i, "DOMAIN"]]),
                         ".",
-                        sbst[[i, "VARIABLE"]],
+                        cleanid(sbst[[i, "VARIABLE"]]),
                         ".",
-                        sbst[[i, "VALUENAME"]])
+                        cleanid(sbst[[i, "VALUENAME"]]))
 
           if (!is.na(sbst[[i, "WHERECLAUSEOID"]])) {
 
             splt <- strsplit(sbst[[i, "WHERECLAUSEOID"]], ".", fixed = TRUE)[[1]]
 
-            vid <- paste0(vid, ".", splt[length(splt)])
+            vid <- paste0(vid, ".", cleanid(splt[length(splt)]))
           }
 
           vDefs <- paste0(vDefs,  glue(vdefstr,
                                        ValueOID = vid,
-                                       Variable = vardt[[varrow, "VARIABLE"]],
+                                       Variable = cleanid(vardt[[varrow, "VARIABLE"]]),
                                        SASFieldName = vardt[[varrow, "VARIABLE"]],
-                                       DataType = vardt[[varrow, "TYPE"]],
+                                       DataType = cleanid(vardt[[varrow, "TYPE"]]),
                                        Length = vardt[[varrow, "LENGTH"]],
                                        Label = vardt[[varrow, "LABEL"]],
                                        Origin = vardt[[varrow, "ORIGIN"]]), "\n")
@@ -376,12 +376,12 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
       cmtid <- ""
       if (!is.na(vardt[[varrow, "COMMENTOID"]])) {
 
-        cmtid <- paste0('def:CommentOID="COM.', vardt[[varrow, "COMMENTOID"]], '"')
+        cmtid <- paste0('def:CommentOID="COM.', cleanid(vardt[[varrow, "COMMENTOID"]]), '"')
       }
       ret[length(ret) + 1] <- glue(str,
-                                   domain = vardt[[varrow, "DOMAIN"]],
-                                   variable = vardt[[varrow, "VARIABLE"]],
-                                   type = vardt[[varrow, "TYPE"]],
+                                   domain = cleanid(vardt[[varrow, "DOMAIN"]]),
+                                   variable = cleanid(vardt[[varrow, "VARIABLE"]]),
+                                   type = cleanid(vardt[[varrow, "TYPE"]]),
                                    length = vardt[[varrow, "LENGTH"]],
                                    display = strHolder,
                                    internals = internalHolder,
@@ -399,103 +399,6 @@ get_item_defs_adam <- function(toc, vardt, valdt) {
 }
 
 
-
-# @noRd
-# get_value_level_adam <- function(dta) {
-#
-#
-#   blk <- '
-#   <!-- ******************************************* -->
-#   <!-- VALUE LEVEL LIST DEFINITION INFORMATION  ** -->
-#   <!-- ******************************************* -->\n'
-#
-#   defstart <- ' <def:ValueListDef OID="VL.{domain}.{variable}">\n'
-#   defend <- ' </def:ValueListDef>\n'
-#   wcstr <- ' <def:WhereClauseRef WhereClauseOID="{wcoid}"/>\n'
-#
-#   str <- '
-#     <ItemRef ItemOID="VL.{domain}.{variable}.{value}"
-#       OrderNumber="{varnum}"
-#       Mandatory="{mandatory}"
-#       {methodoid}>
-#       {wc}
-#     </ItemRef>'
-#
-#
-#   f <- list(as.factor(dta[["DOMAIN"]]), as.factor(dta[["VARIABLE"]]))
-#
-#   splts <- split(dta, f)
-#
-#   ret <- c(blk)
-#   last_domain <- ""
-#   last_variable <- ""
-#
-#   for (sp in splts) {
-#
-#     if (nrow(sp)) {
-#       ret[length(ret) + 1] <- glue(defstart,
-#                                    domain =  sp[[1, "DOMAIN"]],
-#                                    variable = sp[[1, "VARIABLE"]])
-#
-#       for (rw in seq_len(nrow(sp))) {
-#
-#
-#         whrc <- ""
-#         holder <- ""
-#         if (!is.na(sp[[rw, "WHERECLAUSEOID"]]))
-#           whrc <- glue(wcstr, wcoid = sp[[rw, "WHERECLAUSEOID"]])
-#         # Added 312, 315-316
-#         if(!is.na(sp[[rw, "COMPUTATIONMETHODOID"]]))
-#           holder <- paste0('MethodOID="', sp[[rw, "COMPUTATIONMETHODOID"]], '"')
-#
-#         ret[length(ret) + 1] <- glue(str,
-#                                      domain =  sp[[rw, "DOMAIN"]],
-#                                      variable = sp[[rw, "VARIABLE"]],
-#                                      value =  sp[[rw, "VALUENAME"]],
-#                                      varnum =  sp[[rw, "VARNUM"]],
-#                                      mandatory =  sp[[rw, "MANDATORY"]],
-#                                      methodoid = holder,
-#                                      wc = whrc
-#         )
-#
-#       }
-#
-#       ret[length(ret) + 1] <- defend
-#
-#     }
-#
-#   }
-#
-#
-#   return(ret)
-# }
-
-# identical function
-# @noRd
-# get_computations_adam <- function(dta) {
-#
-#   blk <-'  <!-- ******************************************* -->
-#   <!-- COMPUTATIONAL METHOD INFORMATION        *** -->
-#   <!-- ******************************************* -->'
-#
-#   str <- '<MethodDef OID="{mthdOID}" Name="{label}" Type="{comp}">
-#         <Description>
-#           <TranslatedText xml:lang="en">{compMthd}</TranslatedText>
-#         </Description>
-#       </MethodDef>'
-#
-#   ret <- c(blk)
-#   for(rw in seq_len(nrow(dta))) {
-#     ret[length(ret) + 1] <- glue(str,
-#                                  mthdOID = dta[[rw, "COMPUTATIONMETHODOID"]],
-#                                  label = encodeMarkup(dta[[rw, "LABEL"]]),
-#                                  comp = dta[[rw, "TYPE"]],
-#                                  compMthd = encodeMarkup(dta[[rw, "COMPUTATIONMETHOD"]]))
-#   }
-#   ret[length(ret) + 1] <- ""
-#   return(ret)
-#
-# }
 
 # Changed Rank to OrderNumber, otherwise identical
 #' @noRd
@@ -523,8 +426,8 @@ get_code_lists_adam <- function(dta) {
 
   for(sp in splts) {
     ret[length(ret) + 1] <- glue(listHead,
-                                 codelistname = sp[[1, "CODELISTNAME"]],
-                                 dtype = sp[[1, "TYPE"]])
+                                 codelistname = cleanid(sp[[1, "CODELISTNAME"]]),
+                                 dtype = cleanid(sp[[1, "TYPE"]]))
     for(rw in seq_len(nrow(sp))) {
       if(!is.na(sp[[rw, "CODELISTDICTIONARY"]])) {
         ret[length(ret) + 1] <- glue(dictcl,
@@ -544,102 +447,6 @@ get_code_lists_adam <- function(dta) {
 }
 
 
-# Identical function
-# @noRd
-# get_where_adam <- function(dta) {
-#
-#   blk <- '
-#   <!-- ****************************************************************** -->
-#   <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->
-#   <!-- ****************************************************************** -->'
-#
-#   str <- '<def:WhereClauseDef OID="{oid}">
-#     <RangeCheck SoftHard="{sh}" def:ItemOID="{iod}" Comparator="{comp}">
-#       <CheckValue>{val}</CheckValue>
-#       </RangeCheck>
-#       </def:WhereClauseDef>'
-#
-#   ret <- c(blk)
-#
-#   for (rw in seq_len(nrow(dta))) {
-#
-#     ret[length(ret) + 1] <- glue(str,
-#                                  oid = dta[[rw, "WHERECLAUSEOID"]],
-#                                  sh = dta[[rw, "SOFTHARD"]],
-#                                  iod = dta[[rw, "ITEMOID"]],
-#                                  comp = encodeMarkup(dta[[rw, "COMPARATOR"]]),
-#                                  val = encodeMarkup(dta[[rw, "VALUES"]]))
-#   }
-#
-#
-#
-#   return(ret)
-# }
-
-
-
-# Identical function
-# @noRd
-# get_comments_adam <- function(dta) {
-#
-#   blk <- '
-#   <!-- ******************************** -->
-#   <!-- COMMENTS DEFINITION SECTION      -->
-#   <!-- ******************************** -->'
-#
-#   str <-'<def:CommentDef OID="{oid}">
-#       <Description>
-#         <TranslatedText xml:lang="en">{comment}</TranslatedText>
-#       </Description>
-#     </def:CommentDef>'
-#
-#
-#   ret <- c(blk)
-#
-#   for (rw in seq_len(nrow(dta))) {
-#
-#     ret[length(ret) + 1] <- glue(str,
-#                                  oid = dta[[rw, "COMMENTOID"]],
-#                                  comment = dta[[rw, "COMMENT"]])
-#
-#   }
-#
-#   return(ret)
-#
-#
-# }
-
-# Identical Function
-# @noRd
-# get_external_links_adam <- function(dta) {
-#   blk <- '
-#   <!-- ******************************************* -->
-#   <!-- EXTERNAL DOCUMENT REFERENCE             *** -->
-#   <!-- ******************************************* -->'
-#
-#   str1 <- '<def:AnnotatedCRF>
-#       <def:DocumentRef leafID="{leafid}"/>
-#     </def:AnnotatedCRF>\n\n'
-#
-#   str2 <- '<def:SupplementalDoc>
-#       <def:DocumentRef leafID="{leafid}"/>
-#     </def:SupplementalDoc>\n\n'
-#
-#   ret <- c(blk)
-#
-#
-#   for(rw in seq_len(nrow(dta))) {
-#     # print(dta[[rw, "AnnotatedCRF"]])
-#     # print(dta[[rw,"SupplementalDoc"]])
-#     if(dta[[rw, "AnnotatedCRF"]] %eq% 'Y') {
-#       ret[length(ret) + 1] <- glue(str1, leafid = dta[[rw, "LeafID"]])
-#     }
-#     else if (dta[[rw, "SupplementalDoc"]] %eq% 'Y') {
-#       ret[length(ret) + 1] <- glue(str2, leafid = dta[[rw, "LeafID"]])
-#     }
-#   }
-#   return(ret)
-# }
 
 # Stub for leaf definition
 get_leaf_definitions <- function(dta) {
@@ -655,7 +462,7 @@ get_leaf_definitions <- function(dta) {
   ret <- c(blk)
   for(rw in 1:nrow(dta)) {
     ret[length(ret) + 1] <- glue(leafdefs,
-                                 leafid = dta[[rw, "LeafID"]],
+                                 leafid = cleanid(dta[[rw, "LeafID"]]),
                                  leafrelpath = dta[[rw, "LeafRelPath"]],
                                  title = encodeMarkup(dta[[rw, "Title"]]))
   }
@@ -750,7 +557,7 @@ get_analysis_results <- function(dta, lfdta) {
 
 
         ret[length(ret) + 1] <- glue(resultDisplay,
-                                dispid = sbst[[rw, "DISPLAYID"]],
+                                dispid = cleanid(sbst[[rw, "DISPLAYID"]]),
                                 dispname = encodeMarkup(sbst[[rw, "DISPLAYNAME"]]),
                                 lfpgid = lpg,
                                 lreftype = rtype)
@@ -761,7 +568,7 @@ get_analysis_results <- function(dta, lfdta) {
       wc <- ""
       if (!is.na(sbst[[rw, "WHERECLAUSEOID"]])) {
 
-           wc <- glue(wcstr, wcoid = sbst[[rw, "WHERECLAUSEOID"]])
+           wc <- glue(wcstr, wcoid = cleanid(sbst[[rw, "WHERECLAUSEOID"]]))
 
 
       }
@@ -772,7 +579,7 @@ get_analysis_results <- function(dta, lfdta) {
 
 
         pcd <- paste0('ParameterOID="',
-                        "IT.", trimws(sbst[[rw, "ANALYSISDATASET"]]) , ".PARAMCD",
+                        "IT.", cleanid(trimws(sbst[[rw, "ANALYSISDATASET"]])) , ".PARAMCD",
                       '"')
       }
 
@@ -788,7 +595,7 @@ get_analysis_results <- function(dta, lfdta) {
       if (!is.na(sbst[[rw, "PROGRAMLEAFID"]])) {
 
         cdref <- glue('<def:DocumentRef leafID="LF.{pglfid}" />\n',
-                      pglfid = trimws(sbst[[rw, "PROGRAMLEAFID"]]))
+                      pglfid = cleanid(trimws(sbst[[rw, "PROGRAMLEAFID"]])))
       }
 
 
@@ -796,14 +603,14 @@ get_analysis_results <- function(dta, lfdta) {
 
 
         if (cntr == 0)
-          arid <- sbst[[rw, "DISPLAYID"]]
+          arid <- cleanid(sbst[[rw, "DISPLAYID"]])
         else
-          arid <- paste0(sbst[[rw, "DISPLAYID"]], ".R", cntr)
+          arid <- paste0(cleanid(sbst[[rw, "DISPLAYID"]]), ".R", cntr)
 #browser()
       # Output analysis result on every row
       ret[length(ret) + 1] <- glue(analysisResult,
                                    analysisid = arid,
-                                   analysisdata = sbst[[rw, "ANALYSISDATASET"]],
+                                   analysisdata = cleanid(sbst[[rw, "ANALYSISDATASET"]]),
                                    paramcd = pcd,
                                    reason = encodeMarkup(sbst[[rw, "REASON"]]),
                                    purpose = encodeMarkup(sbst[[rw, "PURPOSE"]]),
@@ -814,7 +621,7 @@ get_analysis_results <- function(dta, lfdta) {
                                     sbst[[rw, "ANALYSISDATASET"]]),
                                    document = encodeMarkup(sbst[[rw, "DOCUMENTATION"]]),
                                    rleafid = ifelse(!is.na(sbst[[rw, "REFLEAFID"]]),
-                                                    paste0("LF.", sbst[[rw, "REFLEAFID"]]), ""),
+                                                    paste0("LF.", cleanid(sbst[[rw, "REFLEAFID"]])), ""),
                                    context = encodeMarkup(sbst[[rw, "CONTEXT"]]),
                                    pgrmcode = cd,
                                    pgrmref = cdref
@@ -843,8 +650,8 @@ analysis_results_helper <- function(cellcont, dtaSetName) {
 
     for(i in 1:length(varRes[[1]])) {
       temp <- glue(varTag,
-                   analysisdata = dtaSetName,
-                   varname = varRes[[1]][[i]])
+                   analysisdata = cleanid(dtaSetName),
+                   varname = cleanid(varRes[[1]][[i]]))
       strHolder <- paste0(strHolder, temp,"\n")
     }
   }
