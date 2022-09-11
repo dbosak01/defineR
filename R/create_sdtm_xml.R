@@ -70,7 +70,8 @@ get_sdtm_xml_20 <- function(lst) {
 
   val <- c()
   if ("VALUELEVEL_METADATA" %in% nms)
-    val <- get_value_level(lst[["VALUELEVEL_METADATA"]], lst[["WHERE_CLAUSES"]])
+    val <- get_value_level(lst[["VALUELEVEL_METADATA"]], lst[["WHERE_CLAUSES"]],
+                           lst[["VARIABLE_METADATA"]])
   else
     stop("Table of Contents metadata is required.")
 
@@ -109,6 +110,8 @@ get_sdtm_xml_20 <- function(lst) {
 
 
   ret <- c(hdr, extl, val, whr, grps, defs, cl, comp,  cmnts, leafs, ftr)
+ # ret <- c(hdr, extl, val, whr, grps, defs, ftr) #, extl, val, whr, grps, defs, cl, comp,  cmnts, leafs, ftr)
+
 
   return(ret)
 
@@ -439,7 +442,7 @@ get_item_defs <- function(toc, vardt, valdt, eldta) {
                                          variable = cleanid(sbst[[i, "VARIABLE"]]),
                                          type = sbst[[i, "TYPE"]],
                                          length = sbst[[i, "LENGTH"]],
-                                         label = sbst[[i, "LABEL"]],
+                                         label = cleanid(sbst[[i, "LABEL"]]),
                                          display = ifelse(is.na(sbst[[i, "DISPLAYFORMAT"]]),
                                                           sbst[[i, "LENGTH"]],
                                                           sbst[[i, "DISPLAYFORMAT"]]),
@@ -556,7 +559,7 @@ get_item_defs <- function(toc, vardt, valdt, eldta) {
 }
 
 #' @noRd
-get_value_level <- function(dta, wcdt) {
+get_value_level <- function(dta, wcdt, vdta) {
 
 
   blk <- '
@@ -571,7 +574,7 @@ get_value_level <- function(dta, wcdt) {
   str <- '
     <ItemRef ItemOID="IT.{domain}.{variable}.{value}{where}"
       OrderNumber="{varnum}"
-      Mandatory="{mandatory}"
+      {mandatory}
       {methodoid}>
       {wc}
     </ItemRef>'
@@ -629,6 +632,30 @@ get_value_level <- function(dta, wcdt) {
 
           }
 
+          manda = ""
+          if (!is.na(sp[[rw, "MANDATORY"]])) {
+
+            manda <- paste0('Mandatory="',  sp[[rw, "MANDATORY"]], '"\n')
+          } else {
+
+            lkp <- subset(vdta, vdta$DOMAIN == sp[[rw, "DOMAIN"]] &
+                            vdta$VARIABLE == sp[[rw, "VARIABLE"]])
+            if (is.null(lkp)) {
+              manda <- paste0('Mandatory=""\n')
+
+            } else if (nrow(lkp) == 0) {
+              manda <- paste0('Mandatory=""\n')
+
+            } else if (is.na(lkp[["MANDATORY"]])) {
+
+              manda <- paste0('Mandatory=""\n')
+            } else {
+
+              manda <- paste0('Mandatory="', lkp[["MANDATORY"]] ,'"\n')
+
+            }
+          }
+
           # Added 312, 315-316
           if(!is.na(sp[[rw, "COMPUTATIONMETHODOID"]]))
             holder <- paste0('MethodOID="MT.', sp[[rw, "COMPUTATIONMETHODOID"]], '"')
@@ -638,7 +665,7 @@ get_value_level <- function(dta, wcdt) {
                                        variable = cleanid(sp[[rw, "VARIABLE"]]),
                                        value =  cleanid(sp[[rw, "VALUENAME"]]),
                                        varnum =  sp[[rw, "VARNUM"]],
-                                       mandatory =  sp[[rw, "MANDATORY"]],
+                                       mandatory =  manda,
                                        methodoid = holder,
                                        wc = whrc,
                                        where = whre
@@ -671,10 +698,27 @@ get_computations <- function(dta) {
 
   ret <- c(blk)
   for(rw in seq_len(nrow(dta))) {
+
+    lbl <- ""
+    if (is.na(dta[[rw, "LABEL"]])) {
+      lbl <- cleanid(dta[[rw, "COMPUTATIONMETHODOID"]])
+    } else {
+
+      lbl <- encodeMarkup(dta[[rw, "LABEL"]])
+    }
+
+    typ <- ""
+    if (is.na(dta[[rw, "TYPE"]])) {
+      typ <- "Other"
+    } else {
+
+      typ <- encodeMarkup(dta[[rw, "TYPE"]])
+    }
+
     ret[length(ret) + 1] <- glue(str,
                                  mthdOID = paste0("MT.", cleanid(dta[[rw, "COMPUTATIONMETHODOID"]])),
-                                 label = encodeMarkup(dta[[rw, "LABEL"]]),
-                                 comp = cleanid(dta[[rw, "TYPE"]]),
+                                 label = lbl,
+                                 comp = typ,
                                  compMthd = encodeMarkup(dta[[rw, "COMPUTATIONMETHOD"]]))
   }
   ret[length(ret) + 1] <- ""

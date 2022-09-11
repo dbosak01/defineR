@@ -30,7 +30,7 @@ test_that("metadata2: Import sdtm metadata xlsx works as expected.", {
 
   res
 
-  expect_equal(length(res), 10)
+  expect_equal(length(res), 9)
 
 
 })
@@ -60,7 +60,7 @@ test_that("metadata4: Import sdtm robustness metadata works as expected.", {
 
   res
 
-  expect_equal(length(res), 10)
+  expect_equal(length(res), 9)
 
 
 })

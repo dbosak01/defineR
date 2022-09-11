@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 06September2022                                                   -->
+    <!-- Date: 11September2022                                                   -->
     <!-- Description: Define.xml file for XYZ123                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -14,7 +14,7 @@
   xmlns:arm="http://www.cdisc.org/ns/arm/v1.0"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-09-06T11:37:23">
+  CreationDateTime="2022-09-11T14:13:52">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -44,6 +44,7 @@
 <ItemRef ItemOID="IT.ADEF.AVAL.XPPAIN"
   OrderNumber="1"
   Mandatory="No"
+
   >
   <def:WhereClauseRef WhereClauseOID="WC.ADEF.AVAL.XPPAIN"/>
 
@@ -54,6 +55,7 @@
 <ItemRef ItemOID="IT.ADTTE.AVAL.TTPNRELF"
   OrderNumber="1"
   Mandatory="No"
+
   MethodOID="MT.TTPNRELF">
   <def:WhereClauseRef WhereClauseOID="WC.ADTTE.AVAL.TTPNRELF"/>
 
@@ -64,6 +66,7 @@
 <ItemRef ItemOID="IT.ADTTE.CNSR.TTPNRELF"
   OrderNumber="1"
   Mandatory="No"
+
   MethodOID="MT.TTPNRELF.CNSR">
   <def:WhereClauseRef WhereClauseOID="WC.ADTTE.CNSR.TTPNRELF"/>
 
@@ -74,6 +77,7 @@
 <ItemRef ItemOID="IT.ADEF.CRIT1.XPPAIN"
   OrderNumber="1"
   Mandatory="No"
+
   >
   <def:WhereClauseRef WhereClauseOID="WC.ADEF.CRIT1.XPPAIN"/>
 
@@ -84,6 +88,7 @@
 <ItemRef ItemOID="IT.ADEF.CRIT1FL.XPPAIN"
   OrderNumber="1"
   Mandatory="No"
+
   MethodOID="MT.RESPONDER">
   <def:WhereClauseRef WhereClauseOID="WC.ADEF.CRIT1FL.XPPAIN"/>
 
@@ -94,6 +99,7 @@
 <ItemRef ItemOID="IT.ADTTE.EVNTDESC.XPPAIN"
   OrderNumber="1"
   Mandatory="No"
+
   MethodOID="MT.TTPNRELF.EVNTDESC">
   <def:WhereClauseRef WhereClauseOID="WC.ADTTE.EVNTDESC.XPPAIN"/>
 

@@ -1,7 +1,6 @@
 
 # Write Metadata ----------------------------------------------------------
 
-
 #' @title Creates define XML metadata
 #' @description The function generates define.xml metadata and
 #' writes it to the file system. The function can generate a blank metadata
@@ -276,7 +275,13 @@ import_metadata <- function(location, type = "excel") {
     # Get sheets from excel file
     shts <- excel_sheets(location)
 
-    for (sht in shts) {
+    ashts <- c("DEFINE_HEADER_METADATA", "TOC_METADATA", "VARIABLE_METADATA",
+               "VALUELEVEL_METADATA", "COMPUTATION_METHOD", "CODELISTS",
+               "WHERE_CLAUSES", "COMMENTS", "EXTERNAL_LINKS", "ANALYSIS_RESULTS")
+
+    gshts <- shts[shts %in% ashts]
+
+    for (sht in gshts) {
 
       ret[[sht]] <- read_excel(location, sheet = sht)
 

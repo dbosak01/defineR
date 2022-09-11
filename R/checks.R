@@ -88,9 +88,14 @@ check_xsd <- function(pth, ver, msg) {
 
         if (res == FALSE) {
 
-          msg <- append(msg, attr(res, "errors"))
 
-          msg <- remove_messages(msg)
+          tmp <- remove_messages(attr(res, "errors"))
+
+          if (length(tmp) > 0) {
+            msg <- append(msg, "NOTE: XML Parser errors found. See results below.")
+            msg <- append(msg, tmp)
+
+          }
         }
 
       }
@@ -176,10 +181,91 @@ check_metadata <- function(lst, ver, v5flg, msg) {
 
     }
 
+    if (!is.null(lst[["TOC_METADATA"]])) {
+      if (sum(is.na(lst[["TOC_METADATA"]]$OID)) > 0) {
+
+        msg <- append(msg, req_msg("TOC_METADATA", "OID"))
+      }
+      if (sum(is.na(lst[["TOC_METADATA"]]$NAME)) > 0) {
+
+        msg <- append(msg, req_msg("TOC_METADATA", "NAME"))
+      }
+      if (sum(is.na(lst[["TOC_METADATA"]]$PURPOSE)) > 0) {
+
+        msg <- append(msg, req_msg("TOC_METADATA", "PURPOSE"))
+      }
+      if (sum(is.na(lst[["TOC_METADATA"]]$LABEL)) > 0) {
+
+        msg <- append(msg, req_msg("TOC_METADATA", "LABEL"))
+      }
+
+    }
+
+    if (!is.null(lst[["VARIABLE_METADATA"]])) {
+      if (sum(is.na(lst[["VARIABLE_METADATA"]]$DOMAIN)) > 0) {
+
+       msg <- append(msg, req_msg("VALUELEVEL_METADATA", "DOMAIN"))
+      }
+      if (sum(is.na(lst[["VARIABLE_METADATA"]]$VARIABLE)) > 0) {
+
+        msg <- append(msg, req_msg("VARIABLE_METADATA", "VARIABLE"))
+      }
+      if (sum(is.na(lst[["VARIABLE_METADATA"]]$TYPE)) > 0) {
+
+        msg <- append(msg, req_msg("VARIABLE_METADATA", "TYPE"))
+      }
+      if (sum(is.na(lst[["VARIABLE_METADATA"]]$LENGTH)) > 0) {
+
+        msg <- append(msg, req_msg("VARIABLE_METADATA", "LENGTH"))
+      }
+      if (sum(is.na(lst[["VARIABLE_METADATA"]]$MANDATORY)) > 0) {
+
+        msg <- append(msg, req_msg("VARIABLE_METADATA", "MANDATORY"))
+      }
+    }
+
+    if (!is.null(lst[["VALUELEVEL_METADATA"]])) {
+      if (sum(is.na(lst[["VALUELEVEL_METADATA"]]$DOMAIN)) > 0) {
+
+        msg <- append(msg, req_msg("VALUELEVEL_METADATA", "DOMAIN"))
+      }
+      if (sum(is.na(lst[["VALUELEVEL_METADATA"]]$VARIABLE)) > 0) {
+
+        msg <- append(msg, req_msg("VALUELEVEL_METADATA", "VARIABLE"))
+      }
+      if (sum(is.na(lst[["VALUELEVEL_METADATA"]]$VALUEVAR)) > 0) {
+
+        msg <- append(msg, req_msg("VALUELEVEL_METADATA", "VALUEVAR"))
+      }
+
+      if (sum(is.na(lst[["VALUELEVEL_METADATA"]]$VALUENAME)) > 0) {
+
+        msg <- append(msg, req_msg("VALUELEVEL_METADATA", "VALUENAME"))
+      }
+      if (sum(is.na(lst[["VALUELEVEL_METADATA"]]$TYPE)) > 0) {
+
+        msg <- append(msg, req_msg("VALUELEVEL_METADATA", "TYPE"))
+      }
+      if (sum(is.na(lst[["VALUELEVEL_METADATA"]]$LENGTH)) > 0) {
+
+        msg <- append(msg, req_msg("VALUELEVEL_METADATA", "LENGTH"))
+      }
+    }
+
   }
 
 
   return(msg)
+
+}
+
+req_msg <- function(sheet, field) {
+
+
+  ret <- paste0("WARNING: Missing values found in sheet ", sheet,
+                " column ", field, ". This field is required.")
+
+  return(ret)
 
 }
 

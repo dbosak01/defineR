@@ -405,7 +405,7 @@ test_that("write17: write_define() works as expected on CDISC metadata with chec
 })
 
 
-
+# Key test
 test_that("write18: write_define() works as expected on perfect SDTM metadata.", {
 
   fp <- file.path(data_dir, "data/SDTM_METADATA_PERFECT.xls")
@@ -490,7 +490,7 @@ res
 })
 
 
-
+# Key test
 test_that("write22: write_define() works as expected on perfect ADAM metadata.", {
 
   fp <- file.path(data_dir, "data/ADAM_METADATA_PERFECT.xls")
@@ -605,6 +605,36 @@ test_that("write25: SDTM CDISC defineR XML can be converted to HTML", {
 
 })
 
+
+
+test_that("write9: create_sdtm_xml works with JS2 metadata", {
+
+  if (DEV) {
+    fp <- file.path(data_dir, "data/SDTM_METADATA_JS2.xlsx")
+    op <- file.path(base_path, "output")
+
+    df <- file.path(op, "define.sdtm.xml")
+    hf <- file.path(op, "define.sdtm.html")
+
+    if (file.exists(df))
+      file.remove(df)
+
+    if (file.exists(hf))
+      file.remove(hf)
+
+
+    res <- write_define(fp, op, type = "SDTM", check = TRUE)
+
+    res
+    expect_equal(length(res) == 0, TRUE)
+    expect_equal(file.exists(df), TRUE)
+    expect_equal(file.exists(hf), TRUE)
+  } else {
+
+   expect_equal(1, 1)
+  }
+
+})
 
 # test_that("write26: JS SDTM defineR XML can be converted to HTML", {
 #
