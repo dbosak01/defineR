@@ -442,7 +442,7 @@ get_item_defs <- function(toc, vardt, valdt, eldta) {
                                          variable = cleanid(sbst[[i, "VARIABLE"]]),
                                          type = sbst[[i, "TYPE"]],
                                          length = sbst[[i, "LENGTH"]],
-                                         label = cleanid(sbst[[i, "LABEL"]]),
+                                         label = cleanlabel(sbst[[i, "LABEL"]]),
                                          display = ifelse(is.na(sbst[[i, "DISPLAYFORMAT"]]),
                                                           sbst[[i, "LENGTH"]],
                                                           sbst[[i, "DISPLAYFORMAT"]]),

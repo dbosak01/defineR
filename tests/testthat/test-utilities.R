@@ -55,3 +55,15 @@ test_that("utils3: The encodeMarkup function works with NA as expected.", {
 })
 
 
+test_that("utils4: cleanlabel() function is working.", {
+
+
+  v1 <- ("here is, a / nice; label-with (some) stuff.")
+
+  res <- cleanlabel(v1)
+
+  res
+
+  expect_equal(res, "here is, a / nice; label-with (some) stuff.")
+})
+
