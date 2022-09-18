@@ -25,7 +25,7 @@ are used by FDA reviewers to understand the data being submitted.
 
 The **defineR** package contains only two functions:
 
-<tab>1. **`write_define()`**: Create the define XML from spreadsheet metadata.  
+<tab>1. **`write_define()`**: Creates the define XML from spreadsheet metadata.  
 <tab>2. **`write_metadata()`**: Generates a metadata spreadsheet template.  
 
 Below is a brief demonstration of the above two functions. See the function

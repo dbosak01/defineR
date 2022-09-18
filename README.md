@@ -23,7 +23,6 @@ capabilities:
 
 Currently, the package only supports version 2.0.0 of the define.xml for
 SDTM and ADaM. 
-Define version 2.0.0 is the version preferred by the FDA.
 Future enhancements to the package will add support for define version 2.1.
 
 IMPORTANT: This package is being released experimentally for the purposes

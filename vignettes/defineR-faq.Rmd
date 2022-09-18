@@ -89,8 +89,6 @@ res <- write_define(pth, tmp, type = "adam")
 with the demo template, rather than a blank template.  To do that, 
 set the `demo` option on the `write_metadata()` function.  Like this:
 ```{r eval=FALSE, echo=TRUE} 
-# Create temp directory
-tmp <- tempdir()
 
 # Create metadata template
 write_metadata("<target path>", 
@@ -154,8 +152,7 @@ up the priority.
 **Q:** Our organization is getting ready for define version 2.1.  Does
 the **defineR** package support it?
 
-**A:** Not yet.  Define version 2.0.0 is the preferred version
-of the FDA, and therefore the package was developed for that version. Define
+**A:** Not yet. Define
 version 2.1 will be coming in a future release.
 
 [top](#top)

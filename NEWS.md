@@ -1,3 +1,7 @@
+# defineR 0.0.9005
+
+* Release to CRAN.
+
 # defineR 0.0.9004
 
 * Fixes to XML output.

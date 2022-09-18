@@ -28,13 +28,12 @@ does not exist, the function will attempt to create it.}
 \item{type}{The type of define.xml to create.  Valid values are
 "sdtm" and "adam".  Default is "sdtm".}
 
-\item{ver}{The version of the define XML to produce.  Default is the
-preferred version of the FDA. Currently only version "2.0.0" is supported.}
+\item{ver}{The version of the define XML to produce. Currently only
+version "2.0.0" is supported.}
 
 \item{check}{Whether or not to perform consistency checks.  If so,
 a check report will be produced in the output directory. Valid values
-are TRUE, FALSE, and "V5".  Default is TRUE.  The "V5" option will include
-checks that metadata conforms to SAS Transport file version 5 requirements.}
+are TRUE and FALSE.  Default is TRUE.}
 
 \item{html}{Whether or not to produce the HTML output associated with the
 define.xml.  Valid values are TRUE and FALSE.  Default is TRUE.}
@@ -81,7 +80,7 @@ both SDTM and ADAM metadata by passing the appropriate value on the
 
 Importantly, the function also produces a check report.  This report
 will compare the define.xml file against the XSD schema supplied by
-CDISC.  Any discrepancies will be writted to the check report.  By default,
+CDISC.  Any discrepancies will be written to the check report.  By default,
 the check report is also shown in the viewer, and returned as a vector of
 strings by the function.  This discrepancy list allows you to verify
 that the metadata has been filled out correctly.
@@ -97,9 +96,7 @@ execution, and be displayed in the console.  All other errors and
 warnings will be sent to the check report, and will not stop execution.
 
 Note that the \code{check} parameter can be used to turn off the
-conformance check mechanism, and just create the XML.  Also note that this
-parameter accepts a "V5" option, to perform checks that ensure the
-data complies with version 5 transport file constraints.
+conformance check mechanism, and just create the XML.
 
 The XSD schema and XSLT transformation documents were created by CDISC,
 and are included in the \strong{defineR} package for convenience. To
