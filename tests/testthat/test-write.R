@@ -457,7 +457,8 @@ test_that("write20: ADAM CDISC XML conforms to 2.0 define XSD schema", {
   library(xml2)
 
   fp <- file.path(data_dir, "adam/define2-0-0-example-adam-results.xml")
-  op <- file.path(data_dir, "schema/cdisc-define-2.0/define2-0-0.xsd")
+  #op <- file.path(data_dir, "schema/cdisc-define-2.0/define2-0-0.xsd")
+  op <- file.path(data_dir, "xsd/cdisc-define-2.0/define2-0-0.xsd")
 
   doc <- read_xml(fp)
   schema <- read_xml(op)
@@ -476,7 +477,8 @@ test_that("write21: ADAM defineR XML conforms to 2.0 define XSD schema", {
   library(xml2)
 
   fp <- file.path(data_dir, "output/define.adam.xml")
-  op <- file.path(data_dir, "schema/cdisc-define-2.0/define2-0-0.xsd")
+  #op <- file.path(data_dir, "schema/cdisc-define-2.0/define2-0-0.xsd")
+  op <- file.path(data_dir, "xsd/cdisc-define-2.0/define2-0-0.xsd")
 
   doc <- read_xml(fp)
   schema <- read_xml(op)
@@ -524,7 +526,8 @@ test_that("write23: write_define() works with custom XSD and XSLT.", {
   df <- file.path(op, "define.adam.xml")
   hf <- file.path(op, "define.adam.html")
 
-  xd <- file.path(data_dir, "schema/cdisc-define-2.0/define2-0-0.xsd")
+  #xd <- file.path(data_dir, "schema/cdisc-define-2.0/define2-0-0.xsd")
+  xd <- file.path(data_dir, "xsd/cdisc-define-2.0/define2-0-0.xsd")
   xs <- file.path(data_dir, "adam/define2-0-0.xsl")
 
   options("defineR.xsd" = xd,
