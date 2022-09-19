@@ -84,17 +84,19 @@ test_that("checks4: write_check_report() works as expected.", {
 
 test_that("checks5: view_check_report() works as expected.", {
 
+  if (DEV) {
+
+    res <- view_check_report(c())
 
 
-  res <- view_check_report(c())
-
-
-  msg <- c("Hello", "Goodbye")
+    msg <- c("Hello", "Goodbye")
 
 
 
-  res <- view_check_report(msg)
+    res <- view_check_report(msg)
 
+
+  }
 
   # No way to test this
   # Must test interactively
@@ -102,3 +104,4 @@ test_that("checks5: view_check_report() works as expected.", {
 
 
 })
+

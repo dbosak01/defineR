@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 21August2022                                                   -->
+    <!-- Date: 18September2022                                                   -->
     <!-- Description: Define.xml file for XYZ123                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-08-21T17:58:25">
+  CreationDateTime="2022-09-18T21:32:47">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -31,11 +31,11 @@
   <!-- EXTERNAL DOCUMENT REFERENCE             *** -->
   <!-- ******************************************* -->
 <def:AnnotatedCRF>
-  <def:DocumentRef leafID="blankcrf"/>
+  <def:DocumentRef leafID="LF.blankcrf"/>
 </def:AnnotatedCRF>
 
 <def:SupplementalDoc>
-  <def:DocumentRef leafID="CRTRG"/>
+  <def:DocumentRef leafID="LF.CRTRG"/>
 </def:SupplementalDoc>
 
 
@@ -44,92 +44,120 @@
   <!-- ******************************************* -->
 
 <def:ValueListDef OID="VL.LB.LBORRES">
-<ItemRef ItemOID="VL.LB.LBORRES.ALB"
+<ItemRef ItemOID="IT.LB.LBORRES.ALB"
   OrderNumber="1"
   Mandatory="No"
+
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBORRES.ALB"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.ALP"
+<ItemRef ItemOID="IT.LB.LBORRES.ALP"
   OrderNumber="2"
   Mandatory="No"
+
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBORRES.ALP"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.ALT"
+<ItemRef ItemOID="IT.LB.LBORRES.ALT"
   OrderNumber="3"
   Mandatory="No"
+
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBORRES.ALT"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.AST"
+<ItemRef ItemOID="IT.LB.LBORRES.AST"
   OrderNumber="4"
   Mandatory="No"
+
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBORRES.AST"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.BILDIR"
+<ItemRef ItemOID="IT.LB.LBORRES.BILDIR"
   OrderNumber="5"
   Mandatory="No"
+
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBORRES.BILDIR"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.BILI"
+<ItemRef ItemOID="IT.LB.LBORRES.BILI"
   OrderNumber="6"
   Mandatory="No"
+
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBORRES.BILI"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.GGT"
+<ItemRef ItemOID="IT.LB.LBORRES.GGT"
   OrderNumber="7"
   Mandatory="No"
+
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBORRES.GGT"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.HCT"
+<ItemRef ItemOID="IT.LB.LBORRES.HCT"
   OrderNumber="8"
   Mandatory="No"
+
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBORRES.HCT"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.HGB"
+<ItemRef ItemOID="IT.LB.LBORRES.HGB"
   OrderNumber="9"
   Mandatory="No"
+
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBORRES.HGB"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.PROT"
+<ItemRef ItemOID="IT.LB.LBORRES.PROT"
   OrderNumber="10"
   Mandatory="No"
+
   >
-  
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBORRES.PROT"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.GLUC"
+<ItemRef ItemOID="IT.LB.LBORRES.GLUC.CHEMISTRY"
   OrderNumber="11"
   Mandatory="No"
+
   >
-  <def:WhereClauseRef WhereClauseOID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY"/>
+  <def:WhereClauseRef WhereClauseOID="WC.WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.LB.LBORRES.GLUC"
+<ItemRef ItemOID="IT.LB.LBORRES.GLUC.URINALYSIS"
   OrderNumber="12"
   Mandatory="No"
+
   >
-  <def:WhereClauseRef WhereClauseOID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS"/>
+
 </ItemRef>
  </def:ValueListDef>
 
 <def:ValueListDef OID="VL.SUPPDM.QVAL">
-<ItemRef ItemOID="VL.SUPPDM.QVAL.RACEOTH"
+<ItemRef ItemOID="IT.SUPPDM.QVAL.RACEOTH"
   OrderNumber="1"
   Mandatory="No"
-  MethodOID="SUPPDM.RACEOTH">
-  
+
+  MethodOID="MT.SUPPDM.RACEOTH">
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPDM.QVAL.RACEOTH"/>
+
 </ItemRef>
-<ItemRef ItemOID="VL.SUPPDM.QVAL.RANDDTC"
+<ItemRef ItemOID="IT.SUPPDM.QVAL.RANDDTC"
   OrderNumber="2"
   Mandatory="No"
-  MethodOID="SUPPDM.RANDDT">
-  
+
+  MethodOID="MT.SUPPDM.RANDDT">
+  <def:WhereClauseRef WhereClauseOID="WC.SUPPDM.QVAL.RANDDTC"/>
+
 </ItemRef>
  </def:ValueListDef>
 
@@ -137,30 +165,86 @@
   <!-- ****************************************************************** -->
   <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->
   <!-- ****************************************************************** -->
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY">
-<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBCAT" Comparator="EQ">
-  <CheckValue>CHEMISTRY</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY">
-<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>GLUC</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS">
-<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBCAT" Comparator="EQ">
-  <CheckValue>URINALYSIS</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS">
-<RangeCheck SoftHard="Soft" def:ItemOID="LB.LBTESTCD" Comparator="EQ">
-  <CheckValue>GLUC</CheckValue>
-  </RangeCheck>
-  </def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBCAT" Comparator="EQ">
+<CheckValue>CHEMISTRY</CheckValue>
+</RangeCheck>
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>GLUC</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBCAT" Comparator="EQ">
+<CheckValue>URINALYSIS</CheckValue>
+</RangeCheck>
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>GLUC</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBORRES.ALB">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>ALB</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBORRES.ALP">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>ALP</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBORRES.ALT">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>ALT</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBORRES.AST">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>AST</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBORRES.BILDIR">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>BILDIR</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBORRES.BILI">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>BILI</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBORRES.GGT">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>GGT</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBORRES.HCT">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>HCT</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBORRES.HGB">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>HGB</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.LB.LBORRES.PROT">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBTESTCD" Comparator="EQ">
+<CheckValue>PROT</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.SUPPDM.QVAL.RACEOTH">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPDM.QNAM" Comparator="EQ">
+<CheckValue>RACEOTH</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
+<def:WhereClauseDef OID="WC.SUPPDM.QVAL.RANDDTC">
+<RangeCheck SoftHard="Soft" def:ItemOID="IT.SUPPDM.QNAM" Comparator="EQ">
+<CheckValue>RANDDTC</CheckValue>
+</RangeCheck>
+</def:WhereClauseDef>
 <!-- ******************************************* -->
 <!-- AE             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="AE"
+<ItemGroupDef OID="IG.AE"
 Domain="AE"
 Name="AE"
 Repeating="Yes"
@@ -169,165 +253,165 @@ IsReferenceData="No"
 SASDatasetName="AE"
 def:Structure="Events - One record per event per subject"
 def:Class="Events"
-def:ArchiveLocationID="Location.AE">
+def:ArchiveLocationID="LF.AE">
 <Description>
   <TranslatedText xml:lang="en">Adverse Events</TranslatedText>
 </Description>
-<ItemRef ItemOID="AE.STUDYID"
+<ItemRef ItemOID="IT.AE.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.USUBJID"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AESEQ"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AESEQ"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="AE.AESEQ"
+MethodOID="MT.AE.AESEQ"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AETERM"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AETERM"
 OrderNumber="5"
 Mandatory="Yes"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AELLT"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AELLT"
 OrderNumber="6"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AELLTCD"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AELLTCD"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEDECOD"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEDECOD"
 OrderNumber="8"
 Mandatory="Yes"
 KeySequence="3"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEPTCD"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEPTCD"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEHLT"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEHLT"
 OrderNumber="10"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEHLTCD"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEHLTCD"
 OrderNumber="11"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEHLGT"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEHLGT"
 OrderNumber="12"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEHLGTCD"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEHLGTCD"
 OrderNumber="13"
 Mandatory="Yes"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEBODSYS"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEBODSYS"
 OrderNumber="14"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEBDSYCD"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEBDSYCD"
 OrderNumber="15"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AESOC"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AESOC"
 OrderNumber="16"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AESOCCD"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AESOCCD"
 OrderNumber="17"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AESEV"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AESEV"
 OrderNumber="18"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AESER"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AESER"
 OrderNumber="19"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEACN"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEACN"
 OrderNumber="20"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEREL"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEREL"
 OrderNumber="21"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AESLIFE"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AESLIFE"
 OrderNumber="22"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.EPOCH"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.EPOCH"
 OrderNumber="23"
 Mandatory="No"
-MethodOID="AE.EPOCH"
+MethodOID="MT.AE.EPOCH"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AESTDTC"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AESTDTC"
 OrderNumber="24"
 Mandatory="No"
 KeySequence="4"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEENDTC"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEENDTC"
 OrderNumber="25"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AESTDY"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AESTDY"
 OrderNumber="26"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="AE.AEENDY"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.AE.AEENDY"
 OrderNumber="27"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.AE" xlink:href="ae.xpt">
+<def:leaf ID="LF.AE" xlink:href="ae.xpt">
     <def:title>ae.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- DM             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="DM"
+<ItemGroupDef OID="IG.DM"
 Domain="DM"
 Name="DM"
 Repeating="No"
@@ -336,145 +420,145 @@ IsReferenceData="No"
 SASDatasetName="DM"
 def:Structure="Special Purpose - One record per event per subject"
 def:Class="Special Purpose"
-def:ArchiveLocationID="Location.DM">
+def:ArchiveLocationID="LF.DM">
 <Description>
   <TranslatedText xml:lang="en">Demographics</TranslatedText>
 </Description>
-<ItemRef ItemOID="DM.STUDYID"
+<ItemRef ItemOID="IT.DM.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.USUBJID"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.SUBJID"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.SUBJID"
 OrderNumber="4"
 Mandatory="Yes"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.RFSTDTC"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.RFSTDTC"
 OrderNumber="5"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.RFENDTC"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.RFENDTC"
 OrderNumber="6"
 Mandatory="No"
-MethodOID="DM.RFENDTC"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.RFXSTDTC"
+MethodOID="MT.DM.RFENDTC"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.RFXSTDTC"
 OrderNumber="7"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.RFXENDTC"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.RFXENDTC"
 OrderNumber="8"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.RFICDTC"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.RFICDTC"
 OrderNumber="9"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.RFPENDTC"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.RFPENDTC"
 OrderNumber="10"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.DTHDTC"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.DTHDTC"
 OrderNumber="11"
 Mandatory="Yes"
-MethodOID="DM.DTHDTC"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.DTHFL"
+MethodOID="MT.DM.DTHDTC"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.DTHFL"
 OrderNumber="12"
 Mandatory="Yes"
-MethodOID="DM.DTHFL"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.SITEID"
+MethodOID="MT.DM.DTHFL"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.SITEID"
 OrderNumber="13"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.BRTHDTC"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.BRTHDTC"
 OrderNumber="14"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.AGE"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.AGE"
 OrderNumber="15"
 Mandatory="No"
-MethodOID="DM.AGE"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.AGEU"
+MethodOID="MT.DM.AGE"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.AGEU"
 OrderNumber="16"
 Mandatory="No"
-MethodOID="DM.AGEU"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.SEX"
+MethodOID="MT.DM.AGEU"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.SEX"
 OrderNumber="17"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.RACE"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.RACE"
 OrderNumber="18"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.ARMCD"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.ARMCD"
 OrderNumber="19"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.ARM"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.ARM"
 OrderNumber="20"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.ACTARMCD"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.ACTARMCD"
 OrderNumber="21"
 Mandatory="Yes"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.ACTARM"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.ACTARM"
 OrderNumber="22"
 Mandatory="Yes"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="DM.COUNTRY"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.DM.COUNTRY"
 OrderNumber="23"
 Mandatory="Yes"
-MethodOID="DM.COUNTRY"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+MethodOID="MT.DM.COUNTRY"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.DM" xlink:href="dm.xpt">
+<def:leaf ID="LF.DM" xlink:href="dm.xpt">
     <def:title>dm.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- EX             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="EX"
+<ItemGroupDef OID="IG.EX"
 Domain="EX"
 Name="EX"
 Repeating="Yes"
@@ -483,98 +567,98 @@ IsReferenceData="No"
 SASDatasetName="EX"
 def:Structure="One record per constant dosing interval per subject"
 def:Class="Interventions"
-def:ArchiveLocationID="Location.EX">
+def:ArchiveLocationID="LF.EX">
 <Description>
   <TranslatedText xml:lang="en">Exposure</TranslatedText>
 </Description>
-<ItemRef ItemOID="EX.STUDYID"
+<ItemRef ItemOID="IT.EX.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.USUBJID"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.EXSEQ"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.EXSEQ"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="EX.EXSEQ"
+MethodOID="MT.EX.EXSEQ"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.EXTRT"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.EXTRT"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="3"
-MethodOID="EX.EXTRT"
+MethodOID="MT.EX.EXTRT"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.EXDOSE"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.EXDOSE"
 OrderNumber="6"
 Mandatory="No"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.EXDOSU"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.EXDOSU"
 OrderNumber="7"
 Mandatory="No"
-MethodOID="EX.EXDOSU"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.EXDOSFRM"
+MethodOID="MT.EX.EXDOSU"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.EXDOSFRM"
 OrderNumber="8"
 Mandatory="No"
-MethodOID="EX.EXDOSFRM"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.EPOCH"
+MethodOID="MT.EX.EXDOSFRM"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.EPOCH"
 OrderNumber="9"
 Mandatory="No"
-MethodOID="EX.EPOCH"
+MethodOID="MT.EX.EPOCH"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.EXSTDTC"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.EXSTDTC"
 OrderNumber="10"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.EXENDTC"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.EXENDTC"
 OrderNumber="11"
 Mandatory="No"
 KeySequence="4"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.EXSTDY"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.EXSTDY"
 OrderNumber="12"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="EX.EXENDY"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.EX.EXENDY"
 OrderNumber="13"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.EX" xlink:href="ex.xpt">
+<def:leaf ID="LF.EX" xlink:href="ex.xpt">
     <def:title>ex.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- LB             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="LB"
+<ItemGroupDef OID="IG.LB"
 Domain="LB"
 Name="LB"
 Repeating="Yes"
@@ -583,155 +667,155 @@ IsReferenceData="No"
 SASDatasetName="LB"
 def:Structure="Findings - One record per lab test per subject"
 def:Class="Findings"
-def:ArchiveLocationID="Location.LB">
+def:ArchiveLocationID="LF.LB">
 <Description>
   <TranslatedText xml:lang="en">Laboratory Test Results</TranslatedText>
 </Description>
-<ItemRef ItemOID="LB.STUDYID"
+<ItemRef ItemOID="IT.LB.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.USUBJID"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBSEQ"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBSEQ"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="LB.LBSEQ"
+MethodOID="MT.LB.LBSEQ"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBTESTCD"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBTESTCD"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="4"
-MethodOID="LB.LBTESTCD"
+MethodOID="MT.LB.LBTESTCD"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBTEST"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBTEST"
 OrderNumber="6"
 Mandatory="Yes"
-MethodOID="LB.LBTEST"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBCAT"
+MethodOID="MT.LB.LBTEST"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBCAT"
 OrderNumber="7"
 Mandatory="No"
 KeySequence="3"
-MethodOID="LB.LBCAT"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBORRES"
+MethodOID="MT.LB.LBCAT"
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBORRES"
 OrderNumber="8"
 Mandatory="No"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBORRESU"
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBORRESU"
 OrderNumber="9"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBORNRLO"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBORNRLO"
 OrderNumber="10"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBORNRHI"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBORNRHI"
 OrderNumber="11"
 Mandatory="No"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBSTRESC"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBSTRESC"
 OrderNumber="12"
 Mandatory="No"
-MethodOID="LB.LBSTRESC"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBSTRESN"
+MethodOID="MT.LB.LBSTRESC"
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBSTRESN"
 OrderNumber="13"
 Mandatory="No"
-MethodOID="LB.LBSTRESN"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBSTRESU"
+MethodOID="MT.LB.LBSTRESN"
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBSTRESU"
 OrderNumber="14"
 Mandatory="No"
-MethodOID="LB.LBSTRESU"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBSTNRLO"
+MethodOID="MT.LB.LBSTRESU"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBSTNRLO"
 OrderNumber="15"
 Mandatory="No"
-MethodOID="LB.LBSTNRLO"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBSTNRHI"
+MethodOID="MT.LB.LBSTNRLO"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBSTNRHI"
 OrderNumber="16"
 Mandatory="No"
-MethodOID="LB.LBSTNRHI"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBNRIND"
+MethodOID="MT.LB.LBSTNRHI"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBNRIND"
 OrderNumber="17"
 Mandatory="No"
-MethodOID="LB.LBNRIND"
-Role="Variable Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBBLFL"
+MethodOID="MT.LB.LBNRIND"
+Role="VariableQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBBLFL"
 OrderNumber="18"
 Mandatory="No"
-MethodOID="LB.LBBLFL"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.VISITNUM"
+MethodOID="MT.LB.LBBLFL"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.VISITNUM"
 OrderNumber="19"
 Mandatory="No"
 KeySequence="5"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.VISIT"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.VISIT"
 OrderNumber="20"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.EPOCH"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.EPOCH"
 OrderNumber="21"
 Mandatory="No"
-MethodOID="LB.EPOCH"
+MethodOID="MT.LB.EPOCH"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBDTC"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBDTC"
 OrderNumber="22"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="LB.LBDY"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.LB.LBDY"
 OrderNumber="23"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.LB" xlink:href="lb.xpt">
+<def:leaf ID="LF.LB" xlink:href="lb.xpt">
     <def:title>lb.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- XP             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="XP"
+<ItemGroupDef OID="IG.XP"
 Domain="XP"
 Name="XP"
 Repeating="Yes"
@@ -740,107 +824,107 @@ IsReferenceData="No"
 SASDatasetName="XP"
 def:Structure="One record per subject per visit"
 def:Class="Findings"
-def:ArchiveLocationID="Location.XP">
+def:ArchiveLocationID="LF.XP">
 <Description>
   <TranslatedText xml:lang="en">Pain Scores</TranslatedText>
 </Description>
-<ItemRef ItemOID="XP.STUDYID"
+<ItemRef ItemOID="IT.XP.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.USUBJID"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.XPSEQ"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.XPSEQ"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="XP.XPSEQ"
+MethodOID="MT.XP.XPSEQ"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.XPTESTCD"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.XPTESTCD"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="3"
-MethodOID="XP.XPTESTCD"
+MethodOID="MT.XP.XPTESTCD"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.XPTEST"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.XPTEST"
 OrderNumber="6"
 Mandatory="Yes"
-MethodOID="XP.XPTEST"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.XPORRES"
+MethodOID="MT.XP.XPTEST"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.XPORRES"
 OrderNumber="7"
 Mandatory="No"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.XPSTRESC"
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.XPSTRESC"
 OrderNumber="8"
 Mandatory="No"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.XPSTRESN"
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.XPSTRESN"
 OrderNumber="9"
 Mandatory="No"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.EPOCH"
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.EPOCH"
 OrderNumber="10"
 Mandatory="No"
-MethodOID="XP.EPOCH"
+MethodOID="MT.XP.EPOCH"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.VISITNUM"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.VISITNUM"
 OrderNumber="11"
 Mandatory="No"
 KeySequence="4"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.VISIT"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.VISIT"
 OrderNumber="12"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.XPBLFL"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.XPBLFL"
 OrderNumber="13"
 Mandatory="No"
-MethodOID="XP.XPBLFL"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.XPDTC"
+MethodOID="MT.XP.XPBLFL"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.XPDTC"
 OrderNumber="14"
 Mandatory="No"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="XP.XPDY"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.XP.XPDY"
 OrderNumber="15"
 Mandatory="No"
-MethodOID="STUDYDAYS"
+MethodOID="MT.STUDYDAYS"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.XP" xlink:href="xp.xpt">
+<def:leaf ID="LF.XP" xlink:href="xp.xpt">
     <def:title>xp.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- TA             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="TA"
+<ItemGroupDef OID="IG.TA"
 Domain="TA"
 Name="TA"
 Repeating="Yes"
@@ -849,83 +933,83 @@ IsReferenceData="Yes"
 SASDatasetName="TA"
 def:Structure="One record per planned Element per Arm"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TA">
+def:ArchiveLocationID="LF.TA">
 <Description>
   <TranslatedText xml:lang="en">Trial Arms</TranslatedText>
 </Description>
-<ItemRef ItemOID="TA.STUDYID"
+<ItemRef ItemOID="IT.TA.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TA.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TA.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TA.ARMCD"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TA.ARMCD"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TA.ARM"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TA.ARM"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TA.TAETORD"
+MethodOID="MT.METADATAENTRY"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TA.TAETORD"
 OrderNumber="5"
 Mandatory="Yes"
 KeySequence="3"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TA.ETCD"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TA.ETCD"
 OrderNumber="6"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TA.ELEMENT"
+MethodOID="MT.METADATAENTRY"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TA.ELEMENT"
 OrderNumber="7"
 Mandatory="No"
-MethodOID="METADATAENTRY"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TA.TABRANCH"
+MethodOID="MT.METADATAENTRY"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TA.TABRANCH"
 OrderNumber="8"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TA.TATRANS"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TA.TATRANS"
 OrderNumber="9"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TA.EPOCH"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TA.EPOCH"
 OrderNumber="10"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TA" xlink:href="ta.xpt">
+<def:leaf ID="LF.TA" xlink:href="ta.xpt">
     <def:title>ta.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- TD             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="TD"
+<ItemGroupDef OID="IG.TD"
 Domain="TD"
 Name="TD"
 Repeating="Yes"
@@ -934,76 +1018,76 @@ IsReferenceData="Yes"
 SASDatasetName="TD"
 def:Structure="One record per planned schedule of assessments"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TD">
+def:ArchiveLocationID="LF.TD">
 <Description>
   <TranslatedText xml:lang="en">Trial Disease Assessments</TranslatedText>
 </Description>
-<ItemRef ItemOID="TD.STUDYID"
+<ItemRef ItemOID="IT.TD.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TD.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TD.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TD.TDORDER"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TD.TDORDER"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TD.TDANCVAR"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TD.TDANCVAR"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TD.TDSTOFF"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TD.TDSTOFF"
 OrderNumber="5"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TD.TDTGTPAI"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TD.TDTGTPAI"
 OrderNumber="6"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TD.TDMINPAI"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TD.TDMINPAI"
 OrderNumber="7"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TD.TDMAXPAI"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TD.TDMAXPAI"
 OrderNumber="8"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TD.TDNUMRPT"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TD.TDNUMRPT"
 OrderNumber="9"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+MethodOID="MT.METADATAENTRY"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TD" xlink:href="td.xpt">
+<def:leaf ID="LF.TD" xlink:href="td.xpt">
     <def:title>td.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- TE             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="TE"
+<ItemGroupDef OID="IG.TE"
 Domain="TE"
 Name="TE"
 Repeating="Yes"
@@ -1012,64 +1096,64 @@ IsReferenceData="Yes"
 SASDatasetName="TE"
 def:Structure="One record per planned Element"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TE">
+def:ArchiveLocationID="LF.TE">
 <Description>
   <TranslatedText xml:lang="en">Trial Elements</TranslatedText>
 </Description>
-<ItemRef ItemOID="TE.STUDYID"
+<ItemRef ItemOID="IT.TE.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TE.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TE.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TE.ETCD"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TE.ETCD"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TE.ELEMENT"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TE.ELEMENT"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TE.TESTRL"
+MethodOID="MT.METADATAENTRY"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TE.TESTRL"
 OrderNumber="5"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TE.TEENRL"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TE.TEENRL"
 OrderNumber="6"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TE.TEDUR"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TE.TEDUR"
 OrderNumber="7"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Timing"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TE" xlink:href="te.xpt">
+<def:leaf ID="LF.TE" xlink:href="te.xpt">
     <def:title>te.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- TI             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="TI"
+<ItemGroupDef OID="IG.TI"
 Domain="TI"
 Name="TI"
 Repeating="Yes"
@@ -1078,52 +1162,52 @@ IsReferenceData="Yes"
 SASDatasetName="TI"
 def:Structure="One record per I/E criterion"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TI">
+def:ArchiveLocationID="LF.TI">
 <Description>
   <TranslatedText xml:lang="en">Trial Inclusion/Exclusion Criteria</TranslatedText>
 </Description>
-<ItemRef ItemOID="TI.STUDYID"
+<ItemRef ItemOID="IT.TI.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TI.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TI.IETESTCD"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.IETESTCD"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TI.IETEST"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.IETEST"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TI.IECAT"
+MethodOID="MT.METADATAENTRY"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TI.IECAT"
 OrderNumber="5"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Grouping Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+MethodOID="MT.METADATAENTRY"
+Role="GroupingQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TI" xlink:href="ti.xpt">
+<def:leaf ID="LF.TI" xlink:href="ti.xpt">
     <def:title>ti.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- TS             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="TS"
+<ItemGroupDef OID="IG.TS"
 Domain="TS"
 Name="TS"
 Repeating="Yes"
@@ -1132,76 +1216,76 @@ IsReferenceData="Yes"
 SASDatasetName="TS"
 def:Structure="One record per trial summary parameter value"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TS">
+def:ArchiveLocationID="LF.TS">
 <Description>
   <TranslatedText xml:lang="en">Trial Summary</TranslatedText>
 </Description>
-<ItemRef ItemOID="TS.STUDYID"
+<ItemRef ItemOID="IT.TS.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TS.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TS.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TS.TSSEQ"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TS.TSSEQ"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TS.TSPARMCD"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TS.TSPARMCD"
 OrderNumber="4"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TS.TSPARM"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TS.TSPARM"
 OrderNumber="5"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TS.TSVAL"
+MethodOID="MT.METADATAENTRY"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TS.TSVAL"
 OrderNumber="6"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TS.TSVALCD"
+MethodOID="MT.METADATAENTRY"
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TS.TSVALCD"
 OrderNumber="8"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TS.TSVCDREF"
+MethodOID="MT.METADATAENTRY"
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TS.TSVCDREF"
 OrderNumber="9"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TS.TSVCDVER"
+MethodOID="MT.METADATAENTRY"
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TS.TSVCDVER"
 OrderNumber="10"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
-Role="Result Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
+MethodOID="MT.METADATAENTRY"
+Role="ResultQualifier"
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TS" xlink:href="ts.xpt">
+<def:leaf ID="LF.TS" xlink:href="ts.xpt">
     <def:title>ts.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- TV             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="TV"
+<ItemGroupDef OID="IG.TV"
 Domain="TV"
 Name="TV"
 Repeating="Yes"
@@ -1210,71 +1294,71 @@ IsReferenceData="Yes"
 SASDatasetName="TV"
 def:Structure="One record per planned Visit per Arm"
 def:Class="Trial Design"
-def:ArchiveLocationID="Location.TV">
+def:ArchiveLocationID="LF.TV">
 <Description>
   <TranslatedText xml:lang="en">Trial Visits</TranslatedText>
 </Description>
-<ItemRef ItemOID="TV.STUDYID"
+<ItemRef ItemOID="IT.TV.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TV.DOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TV.DOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="Identifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TV.VISITNUM"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TV.VISITNUM"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Topic"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TV.VISIT"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TV.VISIT"
 OrderNumber="4"
 Mandatory="No"
-MethodOID="METADATAENTRY"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TV.ARMCD"
+MethodOID="MT.METADATAENTRY"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TV.ARMCD"
 OrderNumber="5"
 Mandatory="No"
 KeySequence="3"
-MethodOID="METADATAENTRY"
-Role="Record Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TV.ARM"
+MethodOID="MT.METADATAENTRY"
+Role="RecordQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TV.ARM"
 OrderNumber="6"
 Mandatory="No"
-MethodOID="METADATAENTRY"
-Role="Synonym Qualifier"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TV.TVSTRL"
+MethodOID="MT.METADATAENTRY"
+Role="SynonymQualifier"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TV.TVSTRL"
 OrderNumber="7"
 Mandatory="Yes"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="TV.TVENRL"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.TV.TVENRL"
 OrderNumber="8"
 Mandatory="No"
-MethodOID="METADATAENTRY"
+MethodOID="MT.METADATAENTRY"
 Role="Rule"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.TV" xlink:href="tv.xpt">
+<def:leaf ID="LF.TV" xlink:href="tv.xpt">
     <def:title>tv.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ******************************************* -->
 <!-- SUPPDM             ItemGroupDef INFORMATION *** -->
 <!-- ******************************************* -->
-<ItemGroupDef OID="SUPPDM"
+<ItemGroupDef OID="IG.SUPPDM"
 Domain="SUPPDM"
 Name="SUPPDM"
 Repeating="Yes"
@@ -1283,80 +1367,80 @@ IsReferenceData="No"
 SASDatasetName="SUPPDM"
 def:Structure="Supplemental Qualifier - One record per qualifier"
 def:Class="Relationship"
-def:ArchiveLocationID="Location.SUPPDM">
+def:ArchiveLocationID="LF.SUPPDM">
 <Description>
   <TranslatedText xml:lang="en">DM - Supplemental Qualifiers</TranslatedText>
 </Description>
-<ItemRef ItemOID="SUPPDM.STUDYID"
+<ItemRef ItemOID="IT.SUPPDM.STUDYID"
 OrderNumber="1"
 Mandatory="Yes"
 KeySequence="1"
 Role="NA"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="SUPPDM.RDOMAIN"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.SUPPDM.RDOMAIN"
 OrderNumber="2"
 Mandatory="Yes"
 KeySequence="2"
-MethodOID="SETDOMAIN"
+MethodOID="MT.SETDOMAIN"
 Role="NA"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="SUPPDM.USUBJID"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.SUPPDM.USUBJID"
 OrderNumber="3"
 Mandatory="Yes"
 KeySequence="3"
 Role="NA"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="SUPPDM.IDVAR"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.SUPPDM.IDVAR"
 OrderNumber="4"
 Mandatory="No"
 KeySequence="4"
 Role="NA"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="SUPPDM.IDVARVAL"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.SUPPDM.IDVARVAL"
 OrderNumber="5"
 Mandatory="No"
 KeySequence="5"
 Role="NA"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="SUPPDM.QNAM"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.SUPPDM.QNAM"
 OrderNumber="6"
 Mandatory="Yes"
 KeySequence="6"
 Role="NA"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="SUPPDM.QLABEL"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.SUPPDM.QLABEL"
 OrderNumber="7"
 Mandatory="Yes"
 Role="NA"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="SUPPDM.QVAL"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.SUPPDM.QVAL"
 OrderNumber="8"
 Mandatory="Yes"
 Role="NA"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="SUPPDM.QORIG"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.SUPPDM.QORIG"
 OrderNumber="9"
 Mandatory="Yes"
-MethodOID="SETNULL"
+MethodOID="MT.SETNULL"
 Role="NA"
-RoleCodeListOID="CodeList.rolecode"/>
-<ItemRef ItemOID="SUPPDM.QEVAL"
+RoleCodeListOID="CL.rolecode"/>
+<ItemRef ItemOID="IT.SUPPDM.QEVAL"
 OrderNumber="10"
 Mandatory="No"
-MethodOID="SETNULL"
+MethodOID="MT.SETNULL"
 Role="NA"
-RoleCodeListOID="CodeList.rolecode"/>
+RoleCodeListOID="CL.rolecode"/>
  <!-- **************************************************** -->
       <!-- def:leaf details for hypertext linking the dataset   -->
       <!-- **************************************************** -->
-<def:leaf ID="Location.SUPPDM" xlink:href="suppdm.xpt">
+<def:leaf ID="LF.SUPPDM" xlink:href="suppdm.xpt">
     <def:title>suppdm.xpt </def:title>
   </def:leaf>
 </ItemGroupDef>
 <!-- ************************************************************ -->
   <!-- The details of each variable is here for all domains         -->
   <!-- ************************************************************ -->
-<ItemDef OID="AE.STUDYID"
+<ItemDef OID="IT.AE.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -1366,10 +1450,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.DOMAIN"
+
+<ItemDef OID="IT.AE.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -1379,10 +1464,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.USUBJID"
+
+<ItemDef OID="IT.AE.USUBJID"
   Name="USUBJID"
   SASFieldName="USUBJID"
   DataType="text"
@@ -1392,10 +1478,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AESEQ"
+
+<ItemDef OID="IT.AE.AESEQ"
   Name="AESEQ"
   SASFieldName="AESEQ"
   DataType="integer"
@@ -1405,10 +1492,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AETERM"
+
+<ItemDef OID="IT.AE.AETERM"
   Name="AETERM"
   SASFieldName="AETERM"
   DataType="text"
@@ -1418,10 +1506,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Reported Term for the Adverse Event</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="AE.AELLT"
+
+<ItemDef OID="IT.AE.AELLT"
   Name="AELLT"
   SASFieldName="AELLT"
   DataType="text"
@@ -1431,10 +1525,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Lowest Level Term</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AELLTCD"
+
+<ItemDef OID="IT.AE.AELLTCD"
   Name="AELLTCD"
   SASFieldName="AELLTCD"
   DataType="integer"
@@ -1444,10 +1539,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Lowest Level Term Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AEDECOD"
+
+<ItemDef OID="IT.AE.AEDECOD"
   Name="AEDECOD"
   SASFieldName="AEDECOD"
   DataType="text"
@@ -1456,11 +1552,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Dictionary-Derived Term</TranslatedText>
-  </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.AEDECOD"/>
+
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AEPTCD"
+
+<ItemDef OID="IT.AE.AEPTCD"
   Name="AEPTCD"
   SASFieldName="AEPTCD"
   DataType="integer"
@@ -1470,10 +1568,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Preferred Term Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AEHLT"
+
+<ItemDef OID="IT.AE.AEHLT"
   Name="AEHLT"
   SASFieldName="AEHLT"
   DataType="text"
@@ -1483,10 +1582,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">High Level Term</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AEHLTCD"
+
+<ItemDef OID="IT.AE.AEHLTCD"
   Name="AEHLTCD"
   SASFieldName="AEHLTCD"
   DataType="integer"
@@ -1496,10 +1596,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">High Level Term Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AEHLGT"
+
+<ItemDef OID="IT.AE.AEHLGT"
   Name="AEHLGT"
   SASFieldName="AEHLGT"
   DataType="text"
@@ -1509,10 +1610,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">High Level Group Term</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AEHLGTCD"
+
+<ItemDef OID="IT.AE.AEHLGTCD"
   Name="AEHLGTCD"
   SASFieldName="AEHLGTCD"
   DataType="integer"
@@ -1522,10 +1624,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">High Level Group Term Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AEBODSYS"
+
+<ItemDef OID="IT.AE.AEBODSYS"
   Name="AEBODSYS"
   SASFieldName="AEBODSYS"
   DataType="text"
@@ -1534,11 +1637,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Body System or Organ Class</TranslatedText>
-  </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.AEBODSYS"/>
+
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AEBDSYCD"
+
+<ItemDef OID="IT.AE.AEBDSYCD"
   Name="AEBDSYCD"
   SASFieldName="AEBDSYCD"
   DataType="integer"
@@ -1548,10 +1653,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Body System or Organ Class Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AESOC"
+
+<ItemDef OID="IT.AE.AESOC"
   Name="AESOC"
   SASFieldName="AESOC"
   DataType="text"
@@ -1561,10 +1667,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Primary System Organ Class</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AESOCCD"
+
+<ItemDef OID="IT.AE.AESOCCD"
   Name="AESOCCD"
   SASFieldName="AESOCCD"
   DataType="integer"
@@ -1574,10 +1681,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Primary System Organ Class Code</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AESEV"
+
+<ItemDef OID="IT.AE.AESEV"
   Name="AESEV"
   SASFieldName="AESEV"
   DataType="text"
@@ -1586,11 +1694,18 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Severity</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.AESEV"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="AE.AESER"
+
+<ItemDef OID="IT.AE.AESER"
   Name="AESER"
   SASFieldName="AESER"
   DataType="text"
@@ -1599,11 +1714,18 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Serious Event</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="AE.AEACN"
+
+<ItemDef OID="IT.AE.AEACN"
   Name="AEACN"
   SASFieldName="AEACN"
   DataType="text"
@@ -1612,11 +1734,18 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Action Taken with Study Treatment</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ACN"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="AE.AEREL"
+
+<ItemDef OID="IT.AE.AEREL"
   Name="AEREL"
   SASFieldName="AEREL"
   DataType="text"
@@ -1625,11 +1754,18 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Causality</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.AEREL"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="AE.AESLIFE"
+
+<ItemDef OID="IT.AE.AESLIFE"
   Name="AESLIFE"
   SASFieldName="AESLIFE"
   DataType="text"
@@ -1638,11 +1774,18 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Is Life Threatening</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="AE.EPOCH"
+
+<ItemDef OID="IT.AE.EPOCH"
   Name="EPOCH"
   SASFieldName="EPOCH"
   DataType="text"
@@ -1651,11 +1794,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AESTDTC"
+
+<ItemDef OID="IT.AE.AESTDTC"
   Name="AESTDTC"
   SASFieldName="AESTDTC"
   DataType="date"
@@ -1665,10 +1810,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Start Date/Time of Adverse Event</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="AE.AEENDTC"
+
+<ItemDef OID="IT.AE.AEENDTC"
   Name="AEENDTC"
   SASFieldName="AEENDTC"
   DataType="date"
@@ -1678,10 +1829,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">End Date/Time of Adverse Event</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 6">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="AE.AESTDY"
+
+<ItemDef OID="IT.AE.AESTDY"
   Name="AESTDY"
   SASFieldName="AESTDY"
   DataType="integer"
@@ -1691,10 +1848,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of Start of Adverse Event</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="AE.AEENDY"
+
+<ItemDef OID="IT.AE.AEENDY"
   Name="AEENDY"
   SASFieldName="AEENDY"
   DataType="integer"
@@ -1704,10 +1862,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of End of Adverse Event</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.STUDYID"
+
+<ItemDef OID="IT.DM.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -1717,10 +1876,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.DOMAIN"
+
+<ItemDef OID="IT.DM.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -1730,10 +1890,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.USUBJID"
+
+<ItemDef OID="IT.DM.USUBJID"
   Name="USUBJID"
   SASFieldName="USUBJID"
   DataType="text"
@@ -1743,10 +1904,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.SUBJID"
+
+<ItemDef OID="IT.DM.SUBJID"
   Name="SUBJID"
   SASFieldName="SUBJID"
   DataType="text"
@@ -1756,10 +1918,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Subject Identifier for the Study</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.RFSTDTC"
+
+<ItemDef OID="IT.DM.RFSTDTC"
   Name="RFSTDTC"
   SASFieldName="RFSTDTC"
   DataType="date"
@@ -1769,10 +1932,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Subject Reference Start Date/Time</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 1">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="1" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="DM.RFENDTC"
+
+<ItemDef OID="IT.DM.RFENDTC"
   Name="RFENDTC"
   SASFieldName="RFENDTC"
   DataType="date"
@@ -1782,10 +1951,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Subject Reference End Date/Time</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.RFXSTDTC"
+
+<ItemDef OID="IT.DM.RFXSTDTC"
   Name="RFXSTDTC"
   SASFieldName="RFXSTDTC"
   DataType="date"
@@ -1795,10 +1965,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of First Study Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 4">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="4" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="DM.RFXENDTC"
+
+<ItemDef OID="IT.DM.RFXENDTC"
   Name="RFXENDTC"
   SASFieldName="RFXENDTC"
   DataType="date"
@@ -1808,10 +1984,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of Last Study Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 4">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="4" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="DM.RFICDTC"
+
+<ItemDef OID="IT.DM.RFICDTC"
   Name="RFICDTC"
   SASFieldName="RFICDTC"
   DataType="date"
@@ -1821,10 +2003,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of Informed Consent</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 1">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="1" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="DM.RFPENDTC"
+
+<ItemDef OID="IT.DM.RFPENDTC"
   Name="RFPENDTC"
   SASFieldName="RFPENDTC"
   DataType="date"
@@ -1834,10 +2022,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of End of Participation</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 30">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="30" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="DM.DTHDTC"
+
+<ItemDef OID="IT.DM.DTHDTC"
   Name="DTHDTC"
   SASFieldName="DTHDTC"
   DataType="date"
@@ -1847,10 +2041,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of Death</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.DTHFL"
+
+<ItemDef OID="IT.DM.DTHFL"
   Name="DTHFL"
   SASFieldName="DTHFL"
   DataType="text"
@@ -1860,10 +2055,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Subject Death Flag</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.SITEID"
+
+<ItemDef OID="IT.DM.SITEID"
   Name="SITEID"
   SASFieldName="SITEID"
   DataType="text"
@@ -1873,10 +2069,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Site Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.BRTHDTC"
+
+<ItemDef OID="IT.DM.BRTHDTC"
   Name="BRTHDTC"
   SASFieldName="BRTHDTC"
   DataType="date"
@@ -1886,10 +2083,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of Birth</TranslatedText>
   </Description>
-  <def:Origin Type="CRF page 1">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="1" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="DM.AGE"
+
+<ItemDef OID="IT.DM.AGE"
   Name="AGE"
   SASFieldName="AGE"
   DataType="integer"
@@ -1899,10 +2102,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Age</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.AGEU"
+
+<ItemDef OID="IT.DM.AGEU"
   Name="AGEU"
   SASFieldName="AGEU"
   DataType="text"
@@ -1911,11 +2115,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Age Units</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.AGEU"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.SEX"
+
+<ItemDef OID="IT.DM.SEX"
   Name="SEX"
   SASFieldName="SEX"
   DataType="text"
@@ -1924,11 +2130,18 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Sex</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 1">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.SEX"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="1" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="DM.RACE"
+
+<ItemDef OID="IT.DM.RACE"
   Name="RACE"
   SASFieldName="RACE"
   DataType="text"
@@ -1937,24 +2150,34 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Race</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF page 1">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.RACE"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="1" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="DM.ARMCD"
+
+<ItemDef OID="IT.DM.ARMCD"
   Name="ARMCD"
   SASFieldName="ARMCD"
   DataType="text"
   Length="8"
   def:DisplayFormat="8"
+def:CommentOID="COM.COM.ARMCD"
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Arm Code</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARMCD"/>
+
+  <def:Origin Type="eDT"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.ARM"
+
+<ItemDef OID="IT.DM.ARM"
   Name="ARM"
   SASFieldName="ARM"
   DataType="text"
@@ -1963,11 +2186,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Description of Planned Arm</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARM"/>
+
+  <def:Origin Type="eDT"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.ACTARMCD"
+
+<ItemDef OID="IT.DM.ACTARMCD"
   Name="ACTARMCD"
   SASFieldName="ACTARMCD"
   DataType="text"
@@ -1976,11 +2201,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Actual Arm Code</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARMCD"/>
+
+  <def:Origin Type="eDT"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.ACTARM"
+
+<ItemDef OID="IT.DM.ACTARM"
   Name="ACTARM"
   SASFieldName="ACTARM"
   DataType="text"
@@ -1989,11 +2216,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Description of Actual Arm</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARM"/>
+
+  <def:Origin Type="eDT"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="DM.COUNTRY"
+
+<ItemDef OID="IT.DM.COUNTRY"
   Name="COUNTRY"
   SASFieldName="COUNTRY"
   DataType="text"
@@ -2002,11 +2231,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Country</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.COUNTRY"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="EX.STUDYID"
+
+<ItemDef OID="IT.EX.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -2016,10 +2247,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="EX.DOMAIN"
+
+<ItemDef OID="IT.EX.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -2029,10 +2261,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="EX.USUBJID"
+
+<ItemDef OID="IT.EX.USUBJID"
   Name="USUBJID"
   SASFieldName="USUBJID"
   DataType="text"
@@ -2042,10 +2275,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="EX.EXSEQ"
+
+<ItemDef OID="IT.EX.EXSEQ"
   Name="EXSEQ"
   SASFieldName="EXSEQ"
   DataType="integer"
@@ -2055,10 +2289,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="EX.EXTRT"
+
+<ItemDef OID="IT.EX.EXTRT"
   Name="EXTRT"
   SASFieldName="EXTRT"
   DataType="text"
@@ -2068,10 +2303,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Name of Actual Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="EX.EXDOSE"
+
+<ItemDef OID="IT.EX.EXDOSE"
   Name="EXDOSE"
   SASFieldName="EXDOSE"
   DataType="integer"
@@ -2081,10 +2317,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Dose</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 4">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="4" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="EX.EXDOSU"
+
+<ItemDef OID="IT.EX.EXDOSU"
   Name="EXDOSU"
   SASFieldName="EXDOSU"
   DataType="text"
@@ -2093,11 +2335,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Dose Units</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="EX.EXDOSFRM"
+
+<ItemDef OID="IT.EX.EXDOSFRM"
   Name="EXDOSFRM"
   SASFieldName="EXDOSFRM"
   DataType="text"
@@ -2106,11 +2350,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Dose Form</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.FRM"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="EX.EPOCH"
+
+<ItemDef OID="IT.EX.EPOCH"
   Name="EPOCH"
   SASFieldName="EPOCH"
   DataType="text"
@@ -2119,11 +2365,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="EX.EXSTDTC"
+
+<ItemDef OID="IT.EX.EXSTDTC"
   Name="EXSTDTC"
   SASFieldName="EXSTDTC"
   DataType="date"
@@ -2133,10 +2381,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Start Date/Time of Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 4">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="4" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="EX.EXENDTC"
+
+<ItemDef OID="IT.EX.EXENDTC"
   Name="EXENDTC"
   SASFieldName="EXENDTC"
   DataType="date"
@@ -2146,10 +2400,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">End Date/Time of Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 4">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="4" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="EX.EXSTDY"
+
+<ItemDef OID="IT.EX.EXSTDY"
   Name="EXSTDY"
   SASFieldName="EXSTDY"
   DataType="integer"
@@ -2159,10 +2419,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of Start of Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="EX.EXENDY"
+
+<ItemDef OID="IT.EX.EXENDY"
   Name="EXENDY"
   SASFieldName="EXENDY"
   DataType="integer"
@@ -2172,10 +2433,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of End of Treatment</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="SUPPDM.STUDYID"
+
+<ItemDef OID="IT.SUPPDM.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -2185,10 +2447,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="SUPPDM.RDOMAIN"
+
+<ItemDef OID="IT.SUPPDM.RDOMAIN"
   Name="RDOMAIN"
   SASFieldName="RDOMAIN"
   DataType="text"
@@ -2198,10 +2461,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Related Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="SUPPDM.USUBJID"
+
+<ItemDef OID="IT.SUPPDM.USUBJID"
   Name="USUBJID"
   SASFieldName="USUBJID"
   DataType="text"
@@ -2211,10 +2475,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="SUPPDM.IDVAR"
+
+<ItemDef OID="IT.SUPPDM.IDVAR"
   Name="IDVAR"
   SASFieldName="IDVAR"
   DataType="text"
@@ -2224,10 +2489,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Identifying Variable</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="SUPPDM.IDVARVAL"
+
+<ItemDef OID="IT.SUPPDM.IDVARVAL"
   Name="IDVARVAL"
   SASFieldName="IDVARVAL"
   DataType="text"
@@ -2237,10 +2503,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Identifying Variable Value</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="SUPPDM.QNAM"
+
+<ItemDef OID="IT.SUPPDM.QNAM"
   Name="QNAM"
   SASFieldName="QNAM"
   DataType="text"
@@ -2250,10 +2517,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Qualifier Variable Name</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="SUPPDM.QLABEL"
+
+<ItemDef OID="IT.SUPPDM.QLABEL"
   Name="QLABEL"
   SASFieldName="QLABEL"
   DataType="text"
@@ -2263,10 +2531,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Qualifier Variable Label</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="SUPPDM.QVAL"
+
+<ItemDef OID="IT.SUPPDM.QVAL"
   Name="QVAL"
   SASFieldName="QVAL"
   DataType="text"
@@ -2276,10 +2545,36 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Data Value</TranslatedText>
   </Description>
-  <def:Origin Type="">
-  </def:Origin>
+  
+  <def:ValueListRef ValueListOID="VL.SUPPDM.QVAL"/>
+
 </ItemDef>
-<ItemDef OID="SUPPDM.QORIG"
+<ItemDef OID="IT.SUPPDM.QVAL.RACEOTH"
+  Name="QVAL"
+  SASFieldName="QVAL"
+  DataType="text"
+  Length="20"
+  def:DisplayFormat="20"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Race, Other</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.SUPPDM.QVAL.RANDDTC"
+  Name="QVAL"
+  SASFieldName="QVAL"
+  DataType="text"
+  Length="10"
+  def:DisplayFormat="10"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Randomization Date</TranslatedText>
+  </Description>
+  <def:Origin Type="Derived"></def:Origin>
+</ItemDef>
+
+<ItemDef OID="IT.SUPPDM.QORIG"
   Name="QORIG"
   SASFieldName="QORIG"
   DataType="text"
@@ -2289,10 +2584,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Origin</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="SUPPDM.QEVAL"
+
+<ItemDef OID="IT.SUPPDM.QEVAL"
   Name="QEVAL"
   SASFieldName="QEVAL"
   DataType="text"
@@ -2302,10 +2598,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Evaluator</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.STUDYID"
+
+<ItemDef OID="IT.LB.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -2315,10 +2612,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.DOMAIN"
+
+<ItemDef OID="IT.LB.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -2328,10 +2626,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.USUBJID"
+
+<ItemDef OID="IT.LB.USUBJID"
   Name="USUBJID"
   SASFieldName="USUBJID"
   DataType="text"
@@ -2341,10 +2640,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBSEQ"
+
+<ItemDef OID="IT.LB.LBSEQ"
   Name="LBSEQ"
   SASFieldName="LBSEQ"
   DataType="integer"
@@ -2354,10 +2654,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBTESTCD"
+
+<ItemDef OID="IT.LB.LBTESTCD"
   Name="LBTESTCD"
   SASFieldName="LBTESTCD"
   DataType="text"
@@ -2366,11 +2667,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Lab Test or Examination Short Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.LBTESTCD"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBTEST"
+
+<ItemDef OID="IT.LB.LBTEST"
   Name="LBTEST"
   SASFieldName="LBTEST"
   DataType="text"
@@ -2379,11 +2682,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Lab Test or Examination Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.LBTEST"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBCAT"
+
+<ItemDef OID="IT.LB.LBCAT"
   Name="LBCAT"
   SASFieldName="LBCAT"
   DataType="text"
@@ -2392,11 +2697,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Category for Lab Test</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.LBCAT"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBORRES"
+
+<ItemDef OID="IT.LB.LBORRES"
   Name="LBORRES"
   SASFieldName="LBORRES"
   DataType="text"
@@ -2406,10 +2713,157 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
   </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  <def:Origin Type="eDT"></def:Origin>
+  <def:ValueListRef ValueListOID="VL.LB.LBORRES"/>
+
 </ItemDef>
-<ItemDef OID="LB.LBORRESU"
+<ItemDef OID="IT.LB.LBORRES.ALB"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="4.2"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Albumin; Microalbumin</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.ALP"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="3."
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Alkaline Phosphatase</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.ALT"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="3."
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Alanine Aminotransferase; SGPT</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.AST"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="3."
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Aspartate Aminotransferase; SGOT</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.BILDIR"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="4.2"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Direct Bilirubin</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.BILI"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="4.2"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Bilirubin; Total Bilirubin</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.GGT"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="3."
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Gamma Glutamyl Transferase</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.HCT"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="3."
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Hematocrit</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.HGB"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="5.2"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Hemoglobin</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.PROT"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="4.2"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Protein</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.GLUC.CHEMISTRY"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="float"
+  Length="8"
+  def:DisplayFormat="4.2"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Glucose</TranslatedText>
+  </Description>
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+<ItemDef OID="IT.LB.LBORRES.GLUC.URINALYSIS"
+  Name="LBORRES"
+  SASFieldName="LBORRES"
+  DataType="text"
+  Length="8"
+  def:DisplayFormat="8"
+  >
+  <Description>
+      <TranslatedText xml:lang="en">Glucose</TranslatedText>
+  </Description><CodeListRef CodeListOID="CL.URINGLUC"/>
+
+  <def:Origin Type="eDT"></def:Origin>
+</ItemDef>
+
+<ItemDef OID="IT.LB.LBORRESU"
   Name="LBORRESU"
   SASFieldName="LBORRESU"
   DataType="text"
@@ -2418,11 +2872,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Original Units</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
+
+  <def:Origin Type="eDT"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBORNRLO"
+
+<ItemDef OID="IT.LB.LBORNRLO"
   Name="LBORNRLO"
   SASFieldName="LBORNRLO"
   DataType="text"
@@ -2432,10 +2888,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Reference Range Lower Limit in Orig Unit</TranslatedText>
   </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  <def:Origin Type="eDT"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBORNRHI"
+
+<ItemDef OID="IT.LB.LBORNRHI"
   Name="LBORNRHI"
   SASFieldName="LBORNRHI"
   DataType="text"
@@ -2445,10 +2902,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Reference Range Upper Limit in Orig Unit</TranslatedText>
   </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  <def:Origin Type="eDT"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBSTRESC"
+
+<ItemDef OID="IT.LB.LBSTRESC"
   Name="LBSTRESC"
   SASFieldName="LBSTRESC"
   DataType="text"
@@ -2458,10 +2916,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Character Result/Finding in Std Format</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBSTRESN"
+
+<ItemDef OID="IT.LB.LBSTRESN"
   Name="LBSTRESN"
   SASFieldName="LBSTRESN"
   DataType="float"
@@ -2471,10 +2930,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Numeric Result/Finding in Standard Units</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBSTRESU"
+
+<ItemDef OID="IT.LB.LBSTRESU"
   Name="LBSTRESU"
   SASFieldName="LBSTRESU"
   DataType="text"
@@ -2483,11 +2943,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Standard Units</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.UNIT"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBSTNRLO"
+
+<ItemDef OID="IT.LB.LBSTNRLO"
   Name="LBSTNRLO"
   SASFieldName="LBSTNRLO"
   DataType="float"
@@ -2497,10 +2959,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Reference Range Lower Limit-Std Units</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBSTNRHI"
+
+<ItemDef OID="IT.LB.LBSTNRHI"
   Name="LBSTNRHI"
   SASFieldName="LBSTNRHI"
   DataType="float"
@@ -2510,10 +2973,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Reference Range Upper Limit-Std Units</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBNRIND"
+
+<ItemDef OID="IT.LB.LBNRIND"
   Name="LBNRIND"
   SASFieldName="LBNRIND"
   DataType="text"
@@ -2522,11 +2986,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Reference Range Indicator</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.LBNRIND"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBBLFL"
+
+<ItemDef OID="IT.LB.LBBLFL"
   Name="LBBLFL"
   SASFieldName="LBBLFL"
   DataType="text"
@@ -2535,11 +3001,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Baseline Flag</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.VISITNUM"
+
+<ItemDef OID="IT.LB.VISITNUM"
   Name="VISITNUM"
   SASFieldName="VISITNUM"
   DataType="integer"
@@ -2549,10 +3017,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit Number</TranslatedText>
   </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  <def:Origin Type="eDT"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.VISIT"
+
+<ItemDef OID="IT.LB.VISIT"
   Name="VISIT"
   SASFieldName="VISIT"
   DataType="text"
@@ -2561,11 +3030,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Visit Name</TranslatedText>
-  </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.VISIT"/>
+
+  <def:Origin Type="eDT"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.EPOCH"
+
+<ItemDef OID="IT.LB.EPOCH"
   Name="EPOCH"
   SASFieldName="EPOCH"
   DataType="text"
@@ -2574,11 +3045,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBDTC"
+
+<ItemDef OID="IT.LB.LBDTC"
   Name="LBDTC"
   SASFieldName="LBDTC"
   DataType="date"
@@ -2588,10 +3061,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of Specimen Collection</TranslatedText>
   </Description>
-  <def:Origin Type="eDT">
-  </def:Origin>
+  <def:Origin Type="eDT"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="LB.LBDY"
+
+<ItemDef OID="IT.LB.LBDY"
   Name="LBDY"
   SASFieldName="LBDY"
   DataType="integer"
@@ -2601,10 +3075,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of Specimen Collection</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TA.STUDYID"
+
+<ItemDef OID="IT.TA.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -2614,10 +3089,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TA.DOMAIN"
+
+<ItemDef OID="IT.TA.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -2627,10 +3103,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TA.ARMCD"
+
+<ItemDef OID="IT.TA.ARMCD"
   Name="ARMCD"
   SASFieldName="ARMCD"
   DataType="text"
@@ -2639,11 +3116,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Arm Code</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARMCD"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TA.ARM"
+
+<ItemDef OID="IT.TA.ARM"
   Name="ARM"
   SASFieldName="ARM"
   DataType="text"
@@ -2652,11 +3131,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Description of Planned Arm</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARM"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TA.TAETORD"
+
+<ItemDef OID="IT.TA.TAETORD"
   Name="TAETORD"
   SASFieldName="TAETORD"
   DataType="integer"
@@ -2666,10 +3147,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Planned Order of Element within Arm</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TA.ETCD"
+
+<ItemDef OID="IT.TA.ETCD"
   Name="ETCD"
   SASFieldName="ETCD"
   DataType="text"
@@ -2679,10 +3161,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Element Code</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TA.ELEMENT"
+
+<ItemDef OID="IT.TA.ELEMENT"
   Name="ELEMENT"
   SASFieldName="ELEMENT"
   DataType="text"
@@ -2692,10 +3175,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Description of Element</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TA.TABRANCH"
+
+<ItemDef OID="IT.TA.TABRANCH"
   Name="TABRANCH"
   SASFieldName="TABRANCH"
   DataType="text"
@@ -2705,10 +3189,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Branch</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TA.TATRANS"
+
+<ItemDef OID="IT.TA.TATRANS"
   Name="TATRANS"
   SASFieldName="TATRANS"
   DataType="text"
@@ -2718,10 +3203,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Transition Rule</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TA.EPOCH"
+
+<ItemDef OID="IT.TA.EPOCH"
   Name="EPOCH"
   SASFieldName="EPOCH"
   DataType="text"
@@ -2730,11 +3216,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TE.STUDYID"
+
+<ItemDef OID="IT.TE.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -2744,10 +3232,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TE.DOMAIN"
+
+<ItemDef OID="IT.TE.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -2757,10 +3246,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TE.ETCD"
+
+<ItemDef OID="IT.TE.ETCD"
   Name="ETCD"
   SASFieldName="ETCD"
   DataType="text"
@@ -2770,10 +3260,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Element Code</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TE.ELEMENT"
+
+<ItemDef OID="IT.TE.ELEMENT"
   Name="ELEMENT"
   SASFieldName="ELEMENT"
   DataType="text"
@@ -2783,10 +3274,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Description of Element</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TE.TESTRL"
+
+<ItemDef OID="IT.TE.TESTRL"
   Name="TESTRL"
   SASFieldName="TESTRL"
   DataType="text"
@@ -2796,10 +3288,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Rule for Start of Element</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TE.TEENRL"
+
+<ItemDef OID="IT.TE.TEENRL"
   Name="TEENRL"
   SASFieldName="TEENRL"
   DataType="text"
@@ -2809,10 +3302,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Rule for End of Element</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TE.TEDUR"
+
+<ItemDef OID="IT.TE.TEDUR"
   Name="TEDUR"
   SASFieldName="TEDUR"
   DataType="text"
@@ -2822,10 +3316,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Planned Duration of Element</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TI.STUDYID"
+
+<ItemDef OID="IT.TI.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -2835,10 +3330,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TI.DOMAIN"
+
+<ItemDef OID="IT.TI.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -2848,10 +3344,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TI.IETESTCD"
+
+<ItemDef OID="IT.TI.IETESTCD"
   Name="IETESTCD"
   SASFieldName="IETESTCD"
   DataType="text"
@@ -2861,10 +3358,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Inclusion/Exclusion Criterion Short Name</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TI.IETEST"
+
+<ItemDef OID="IT.TI.IETEST"
   Name="IETEST"
   SASFieldName="IETEST"
   DataType="text"
@@ -2874,10 +3372,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Inclusion/Exclusion Criterion</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TI.IECAT"
+
+<ItemDef OID="IT.TI.IECAT"
   Name="IECAT"
   SASFieldName="IECAT"
   DataType="text"
@@ -2886,11 +3385,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Inclusion/Exclusion Category</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.IECAT"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TD.STUDYID"
+
+<ItemDef OID="IT.TD.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -2900,10 +3401,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TD.DOMAIN"
+
+<ItemDef OID="IT.TD.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -2913,10 +3415,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TD.TDORDER"
+
+<ItemDef OID="IT.TD.TDORDER"
   Name="TDORDER"
   SASFieldName="TDORDER"
   DataType="integer"
@@ -2926,10 +3429,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence of Planned Assessment Schedule</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TD.TDANCVAR"
+
+<ItemDef OID="IT.TD.TDANCVAR"
   Name="TDANCVAR"
   SASFieldName="TDANCVAR"
   DataType="text"
@@ -2939,10 +3443,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Anchor Variable Name</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TD.TDSTOFF"
+
+<ItemDef OID="IT.TD.TDSTOFF"
   Name="TDSTOFF"
   SASFieldName="TDSTOFF"
   DataType="date"
@@ -2952,10 +3457,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Offset from the Anchor</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TD.TDTGTPAI"
+
+<ItemDef OID="IT.TD.TDTGTPAI"
   Name="TDTGTPAI"
   SASFieldName="TDTGTPAI"
   DataType="date"
@@ -2965,10 +3471,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Planned Assessment Interval</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TD.TDMINPAI"
+
+<ItemDef OID="IT.TD.TDMINPAI"
   Name="TDMINPAI"
   SASFieldName="TDMINPAI"
   DataType="date"
@@ -2978,10 +3485,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Planned Assessment Interval Minimum</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TD.TDMAXPAI"
+
+<ItemDef OID="IT.TD.TDMAXPAI"
   Name="TDMAXPAI"
   SASFieldName="TDMAXPAI"
   DataType="date"
@@ -2991,10 +3499,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Planned Assessment Interval Maximum</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TD.TDNUMRPT"
+
+<ItemDef OID="IT.TD.TDNUMRPT"
   Name="TDNUMRPT"
   SASFieldName="TDNUMRPT"
   DataType="integer"
@@ -3004,10 +3513,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Maximum Number of Actual Assessments</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TS.STUDYID"
+
+<ItemDef OID="IT.TS.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -3017,10 +3527,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TS.DOMAIN"
+
+<ItemDef OID="IT.TS.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -3030,10 +3541,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TS.TSSEQ"
+
+<ItemDef OID="IT.TS.TSSEQ"
   Name="TSSEQ"
   SASFieldName="TSSEQ"
   DataType="integer"
@@ -3043,10 +3555,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TS.TSPARMCD"
+
+<ItemDef OID="IT.TS.TSPARMCD"
   Name="TSPARMCD"
   SASFieldName="TSPARMCD"
   DataType="text"
@@ -3055,11 +3568,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Trial Summary Parameter Short Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.TSPARMCD"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TS.TSPARM"
+
+<ItemDef OID="IT.TS.TSPARM"
   Name="TSPARM"
   SASFieldName="TSPARM"
   DataType="text"
@@ -3068,11 +3583,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Trial Summary Parameter</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.TSPARM"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TS.TSVAL"
+
+<ItemDef OID="IT.TS.TSVAL"
   Name="TSVAL"
   SASFieldName="TSVAL"
   DataType="text"
@@ -3082,10 +3599,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Parameter Value</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TS.TSVALCD"
+
+<ItemDef OID="IT.TS.TSVALCD"
   Name="TSVALCD"
   SASFieldName="TSVALCD"
   DataType="text"
@@ -3095,10 +3613,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Parameter Value Code</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TS.TSVCDREF"
+
+<ItemDef OID="IT.TS.TSVCDREF"
   Name="TSVCDREF"
   SASFieldName="TSVCDREF"
   DataType="text"
@@ -3108,10 +3627,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Name of the Reference Terminology</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TS.TSVCDVER"
+
+<ItemDef OID="IT.TS.TSVCDVER"
   Name="TSVCDVER"
   SASFieldName="TSVCDVER"
   DataType="text"
@@ -3121,10 +3641,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Version of the Reference Terminology</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TV.STUDYID"
+
+<ItemDef OID="IT.TV.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -3134,10 +3655,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TV.DOMAIN"
+
+<ItemDef OID="IT.TV.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -3147,10 +3669,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TV.VISITNUM"
+
+<ItemDef OID="IT.TV.VISITNUM"
   Name="VISITNUM"
   SASFieldName="VISITNUM"
   DataType="integer"
@@ -3160,10 +3683,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TV.VISIT"
+
+<ItemDef OID="IT.TV.VISIT"
   Name="VISIT"
   SASFieldName="VISIT"
   DataType="text"
@@ -3173,10 +3697,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit Name</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TV.ARMCD"
+
+<ItemDef OID="IT.TV.ARMCD"
   Name="ARMCD"
   SASFieldName="ARMCD"
   DataType="text"
@@ -3185,11 +3710,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Arm Code</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARMCD"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TV.ARM"
+
+<ItemDef OID="IT.TV.ARM"
   Name="ARM"
   SASFieldName="ARM"
   DataType="text"
@@ -3198,11 +3725,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Description of Planned Arm</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.ARM"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TV.TVSTRL"
+
+<ItemDef OID="IT.TV.TVSTRL"
   Name="TVSTRL"
   SASFieldName="TVSTRL"
   DataType="text"
@@ -3212,10 +3741,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit Start Rule</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="TV.TVENRL"
+
+<ItemDef OID="IT.TV.TVENRL"
   Name="TVENRL"
   SASFieldName="TVENRL"
   DataType="text"
@@ -3225,10 +3755,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit End Rule</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="XP.STUDYID"
+
+<ItemDef OID="IT.XP.STUDYID"
   Name="STUDYID"
   SASFieldName="STUDYID"
   DataType="text"
@@ -3238,10 +3769,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="XP.DOMAIN"
+
+<ItemDef OID="IT.XP.DOMAIN"
   Name="DOMAIN"
   SASFieldName="DOMAIN"
   DataType="text"
@@ -3251,10 +3783,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="XP.USUBJID"
+
+<ItemDef OID="IT.XP.USUBJID"
   Name="USUBJID"
   SASFieldName="USUBJID"
   DataType="text"
@@ -3264,10 +3797,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="XP.XPSEQ"
+
+<ItemDef OID="IT.XP.XPSEQ"
   Name="XPSEQ"
   SASFieldName="XPSEQ"
   DataType="integer"
@@ -3277,10 +3811,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="XP.XPTESTCD"
+
+<ItemDef OID="IT.XP.XPTESTCD"
   Name="XPTESTCD"
   SASFieldName="XPTESTCD"
   DataType="text"
@@ -3289,11 +3824,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Pain Test Short Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.XPTESTCD"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="XP.XPTEST"
+
+<ItemDef OID="IT.XP.XPTEST"
   Name="XPTEST"
   SASFieldName="XPTEST"
   DataType="text"
@@ -3302,11 +3839,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Pain Test Name</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.XPTEST"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="XP.XPORRES"
+
+<ItemDef OID="IT.XP.XPORRES"
   Name="XPORRES"
   SASFieldName="XPORRES"
   DataType="text"
@@ -3316,10 +3855,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Result or Finding in Original Units</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="XP.XPSTRESC"
+
+<ItemDef OID="IT.XP.XPSTRESC"
   Name="XPSTRESC"
   SASFieldName="XPSTRESC"
   DataType="text"
@@ -3329,10 +3874,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Character Result/Finding in Std Format</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="XP.XPSTRESN"
+
+<ItemDef OID="IT.XP.XPSTRESN"
   Name="XPSTRESN"
   SASFieldName="XPSTRESN"
   DataType="integer"
@@ -3342,10 +3893,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Numeric Result/Finding in Std Format</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="XP.EPOCH"
+
+<ItemDef OID="IT.XP.EPOCH"
   Name="EPOCH"
   SASFieldName="EPOCH"
   DataType="text"
@@ -3354,11 +3911,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Epoch</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.EPOCH"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="XP.VISITNUM"
+
+<ItemDef OID="IT.XP.VISITNUM"
   Name="VISITNUM"
   SASFieldName="VISITNUM"
   DataType="integer"
@@ -3368,10 +3927,11 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Visit Number</TranslatedText>
   </Description>
-  <def:Origin Type="Assigned">
-  </def:Origin>
+  <def:Origin Type="Assigned"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="XP.VISIT"
+
+<ItemDef OID="IT.XP.VISIT"
   Name="VISIT"
   SASFieldName="VISIT"
   DataType="text"
@@ -3380,11 +3940,18 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Visit Name</TranslatedText>
-  </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.VISIT"/>
+
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="XP.XPBLFL"
+
+<ItemDef OID="IT.XP.XPBLFL"
   Name="XPBLFL"
   SASFieldName="XPBLFL"
   DataType="text"
@@ -3393,11 +3960,13 @@ RoleCodeListOID="CodeList.rolecode"/>
   >
   <Description>
       <TranslatedText xml:lang="en">Baseline Flag</TranslatedText>
-  </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  </Description><CodeListRef CodeListOID="CL.NY"/>
+
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
-<ItemDef OID="XP.XPDTC"
+
+<ItemDef OID="IT.XP.XPDTC"
   Name="XPDTC"
   SASFieldName="XPDTC"
   DataType="date"
@@ -3407,10 +3976,16 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Date/Time of  Collection</TranslatedText>
   </Description>
-  <def:Origin Type="CRF Page 5">
-  </def:Origin>
+  <def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+
+  
 </ItemDef>
-<ItemDef OID="XP.XPDY"
+
+<ItemDef OID="IT.XP.XPDY"
   Name="XPDY"
   SASFieldName="XPDY"
   DataType="integer"
@@ -3420,13 +3995,14 @@ RoleCodeListOID="CodeList.rolecode"/>
   <Description>
       <TranslatedText xml:lang="en">Study Day of  Collection</TranslatedText>
   </Description>
-  <def:Origin Type="Derived">
-  </def:Origin>
+  <def:Origin Type="Derived"></def:Origin>
+  
 </ItemDef>
+
   <!-- ************************************************************ -->
   <!-- Codelists are presented below                                -->
   <!-- ************************************************************ -->
-<CodeList OID="CodeList.ACN"
+<CodeList OID="CL.ACN"
 Name="ACN"
 DataType="text">
 <CodeListItem CodedValue="DOSE INCREASED" Rank="1">
@@ -3465,17 +4041,17 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.AEBODSYS"
+<CodeList OID="CL.AEBODSYS"
 Name="AEBODSYS"
 DataType="text">
 <ExternalCodeList Dictionary="MedDRA" Version="18.0"/>
 </CodeList>
-<CodeList OID="CodeList.AEDECOD"
+<CodeList OID="CL.AEDECOD"
 Name="AEDECOD"
 DataType="text">
 <ExternalCodeList Dictionary="MedDRA" Version="18.0"/>
 </CodeList>
-<CodeList OID="CodeList.AEREL"
+<CodeList OID="CL.AEREL"
 Name="AEREL"
 DataType="text">
 <CodeListItem CodedValue="NOT RELATED" Rank="1">
@@ -3494,7 +4070,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.AESEV"
+<CodeList OID="CL.AESEV"
 Name="AESEV"
 DataType="text">
 <CodeListItem CodedValue="MILD" Rank="1">
@@ -3513,7 +4089,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.AGEU"
+<CodeList OID="CL.AGEU"
 Name="AGEU"
 DataType="text">
 <CodeListItem CodedValue="YEARS" Rank="1">
@@ -3522,7 +4098,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.ARM"
+<CodeList OID="CL.ARM"
 Name="ARM"
 DataType="text">
 <CodeListItem CodedValue="Analgezia HCL 30 mg" Rank="1">
@@ -3536,7 +4112,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.ARMCD"
+<CodeList OID="CL.ARMCD"
 Name="ARMCD"
 DataType="text">
 <CodeListItem CodedValue="ALG123" Rank="1">
@@ -3550,7 +4126,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.COUNTRY"
+<CodeList OID="CL.COUNTRY"
 Name="COUNTRY"
 DataType="text">
 <CodeListItem CodedValue="USA" Rank="1">
@@ -3559,7 +4135,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.EPOCH"
+<CodeList OID="CL.EPOCH"
 Name="EPOCH"
 DataType="text">
 <CodeListItem CodedValue="SCREENING" Rank="1">
@@ -3573,7 +4149,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.FRM"
+<CodeList OID="CL.FRM"
 Name="FRM"
 DataType="text">
 <CodeListItem CodedValue="TABLET, COATED" Rank="1">
@@ -3582,7 +4158,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.IECAT"
+<CodeList OID="CL.IECAT"
 Name="IECAT"
 DataType="text">
 <CodeListItem CodedValue="INCLUSION" Rank="1">
@@ -3596,7 +4172,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.LBCAT"
+<CodeList OID="CL.LBCAT"
 Name="LBCAT"
 DataType="text">
 <CodeListItem CodedValue="CHEMISTRY" Rank="1">
@@ -3615,7 +4191,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.LBNRIND"
+<CodeList OID="CL.LBNRIND"
 Name="LBNRIND"
 DataType="text">
 <CodeListItem CodedValue="HIGH" Rank="1">
@@ -3634,7 +4210,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.LBTEST"
+<CodeList OID="CL.LBTEST"
 Name="LBTEST"
 DataType="text">
 <CodeListItem CodedValue="Albumin; Microalbumin" Rank="1">
@@ -3693,7 +4269,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.LBTESTCD"
+<CodeList OID="CL.LBTESTCD"
 Name="LBTESTCD"
 DataType="text">
 <CodeListItem CodedValue="ALB" Rank="1">
@@ -3752,7 +4328,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.NY"
+<CodeList OID="CL.NY"
 Name="NY"
 DataType="text">
 <CodeListItem CodedValue="N" Rank="1">
@@ -3776,7 +4352,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.RACE"
+<CodeList OID="CL.RACE"
 Name="RACE"
 DataType="text">
 <CodeListItem CodedValue="BLACK OR AFRICAN AMERICAN" Rank="1">
@@ -3795,7 +4371,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.SEX"
+<CodeList OID="CL.SEX"
 Name="SEX"
 DataType="text">
 <CodeListItem CodedValue="F" Rank="1">
@@ -3814,7 +4390,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.TSPARM"
+<CodeList OID="CL.TSPARM"
 Name="TSPARM"
 DataType="text">
 <CodeListItem CodedValue="Added on to Existing Treatments" Rank="1">
@@ -4023,7 +4599,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.TSPARMCD"
+<CodeList OID="CL.TSPARMCD"
 Name="TSPARMCD"
 DataType="text">
 <CodeListItem CodedValue="ADDON" Rank="1">
@@ -4232,7 +4808,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.UNIT"
+<CodeList OID="CL.UNIT"
 Name="UNIT"
 DataType="text">
 <CodeListItem CodedValue="%" Rank="1">
@@ -4261,7 +4837,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.URINGLUC"
+<CodeList OID="CL.URINGLUC"
 Name="URINGLUC"
 DataType="text">
 <CodeListItem CodedValue="NEGATIVE" Rank="1">
@@ -4275,7 +4851,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.VISIT"
+<CodeList OID="CL.VISIT"
 Name="VISIT"
 DataType="text">
 <CodeListItem CodedValue="Baseline" Rank="1">
@@ -4294,7 +4870,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.XPTEST"
+<CodeList OID="CL.XPTEST"
 Name="XPTEST"
 DataType="text">
 <CodeListItem CodedValue="Pain Score" Rank="1">
@@ -4303,7 +4879,7 @@ DataType="text">
   </Decode>
 </CodeListItem>
 </CodeList>
-<CodeList OID="CodeList.XPTESTCD"
+<CodeList OID="CL.XPTESTCD"
 Name="XPTESTCD"
 DataType="text">
 <CodeListItem CodedValue="XPPAIN" Rank="1">
@@ -4315,182 +4891,182 @@ DataType="text">
   <!-- ******************************************* -->
   <!-- COMPUTATIONAL METHOD INFORMATION        *** -->
   <!-- ******************************************* -->
-<MethodDef OID="SETDOMAIN" Name="Hardcode to assign domain" Type="Computation">
+<MethodDef OID="MT.SETDOMAIN" Name="Hardcode to assign domain" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Hardcode to the name of the SDTM domain</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="STUDYDAYS" Name="--DY derivation" Type="Computation">
+<MethodDef OID="MT.STUDYDAYS" Name="--DY derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">If the date is before RFSTDTC, then --DY = this date minus RFSTDTC. Otherwise, --DY = this date minus RFSTDTC plus 1.</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="SETNULL" Name="Null Value" Type="Computation">
+<MethodDef OID="MT.SETNULL" Name="Null Value" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Set to null</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="AE.AESEQ" Name="AESEQ derivation" Type="Computation">
+<MethodDef OID="MT.AE.AESEQ" Name="AESEQ derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid aedecod aestdtc aeendtc</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="AE.EPOCH" Name="EPOCH hardcode" Type="Computation">
+<MethodDef OID="MT.AE.EPOCH" Name="EPOCH hardcode" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Hardcoded to TREATMENT</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="DM.RFENDTC" Name="RFENDTC derivation" Type="Computation">
+<MethodDef OID="MT.DM.RFENDTC" Name="RFENDTC derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">RFENDTC is the last date of dosing from the source dosing dataset</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="DM.DTHDTC" Name="DTHDTC derivation" Type="Computation">
+<MethodDef OID="MT.DM.DTHDTC" Name="DTHDTC derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">DTHDTC is set to null as no subjects died</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="DM.DTHFL" Name="DTHFL derivation" Type="Computation">
+<MethodDef OID="MT.DM.DTHFL" Name="DTHFL derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">DTHFL='N' since no subjects died</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="DM.AGE" Name="Algorithm to compute age" Type="Computation">
+<MethodDef OID="MT.DM.AGE" Name="Algorithm to compute age" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">integer value of (BRTHDTC - RFSTDTC)/365.25</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="DM.AGEU" Name="Age units hardcode" Type="Computation">
+<MethodDef OID="MT.DM.AGEU" Name="Age units hardcode" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Hardcoded to YEARS</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="DM.COUNTRY" Name="Country hardcode" Type="Computation">
+<MethodDef OID="MT.DM.COUNTRY" Name="Country hardcode" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Hardcoded to USA</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="EX.EXSEQ" Name="EXSEQ derivation" Type="Computation">
+<MethodDef OID="MT.EX.EXSEQ" Name="EXSEQ derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid extrt exstdtc</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="EX.EXTRT" Name="EXTRT derivation" Type="Computation">
+<MethodDef OID="MT.EX.EXTRT" Name="EXTRT derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">All subjects were dosed with what they were randomized to, so EXTRT=DM.ARM</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="EX.EXDOSU" Name="EXDOSU hardcode" Type="Computation">
+<MethodDef OID="MT.EX.EXDOSU" Name="EXDOSU hardcode" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Hardcoded to mg</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="EX.EXDOSFRM" Name="EXDOSFRM hardcode" Type="Computation">
+<MethodDef OID="MT.EX.EXDOSFRM" Name="EXDOSFRM hardcode" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Hardcoded to TABLET, COATED</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="EX.EPOCH" Name="EPOCH hardcode" Type="Computation">
+<MethodDef OID="MT.EX.EPOCH" Name="EPOCH hardcode" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Hardcoded to TREATMENT</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBSEQ" Name="LBSEQ derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBSEQ" Name="LBSEQ derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid lbcat lbtestcd visitnum</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBTESTCD" Name="LBTESTCD derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBTESTCD" Name="LBTESTCD derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Source labs.labtest variable mapped to LBTESTCD controlled terminology</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBTEST" Name="LBTEST derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBTEST" Name="LBTEST derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Source labs.labtest variable mapped to LBTEST controlled terminology</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBCAT" Name="LBCAT derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBCAT" Name="LBCAT derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Source labs.labcat variable mapped to LBCAT controlled terminology</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBSTRESC" Name="LBSTRESC derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBSTRESC" Name="LBSTRESC derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Copied directly (and unrealistically) from LBORRES</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBSTRESN" Name="LBSTRESN derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBSTRESN" Name="LBSTRESN derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Copied directly (and unrealistically) from LBORRES</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBSTRESU" Name="LBSTRESN derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBSTRESU" Name="LBSTRESN derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Copied directly (and unrealistically) from LBORRESU</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBSTNRLO" Name="LBSTNRLO derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBSTNRLO" Name="LBSTNRLO derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Set equal to (and unrealistically) from the soucre labs.lownorm</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBSTNRHI" Name="LBSTNRHI derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBSTNRHI" Name="LBSTNRHI derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Set equal to (and unrealistically) from the soucre labs.highnorm</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBNRIND" Name="LBNRIND derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBNRIND" Name="LBNRIND derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then   lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then   lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and              round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then          lbnrind = 'LOW';    else if lbstnrhi ne . and lbstresn ne . and             round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then      lbnrind = 'HIGH';    else if lbstnrhi ne . and lbstresn ne . then      lbnrind = 'NORMAL';</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.LBBLFL" Name="LBBLFL derivation" Type="Computation">
+<MethodDef OID="MT.LB.LBBLFL" Name="LBBLFL derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">If visit=Baseline then Y, else blank</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="LB.EPOCH" Name="EPOCH derivation" Type="Computation">
+<MethodDef OID="MT.LB.EPOCH" Name="EPOCH derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">If VISITNUM &lt; 0 then SCREENING and otherwise TREATMENT</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="METADATAENTRY" Name="Manual entry" Type="Computation">
+<MethodDef OID="MT.METADATAENTRY" Name="Manual entry" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">This variable consists of study level metadata that was manually entered</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="XP.XPSEQ" Name="XPSEQ derivation" Type="Computation">
+<MethodDef OID="MT.XP.XPSEQ" Name="XPSEQ derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Unique sequence based on sort order of studyid usubjid xptestcd visitnum</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="XP.XPTESTCD" Name="XPTESTCD hardcode" Type="Computation">
+<MethodDef OID="MT.XP.XPTESTCD" Name="XPTESTCD hardcode" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Set to XPAIN</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="XP.XPTEST" Name="XPTEST hardcode" Type="Computation">
+<MethodDef OID="MT.XP.XPTEST" Name="XPTEST hardcode" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Set to Pain Score</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="XP.EPOCH" Name="EPOCH hardcode" Type="Computation">
+<MethodDef OID="MT.XP.EPOCH" Name="EPOCH hardcode" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Hardcoded to TREATMENT</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="XP.XPBLFL" Name="XPBLFL derivation" Type="Computation">
+<MethodDef OID="MT.XP.XPBLFL" Name="XPBLFL derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">If visit=Baseline then Y, else blank</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="SUPPDM.RACEOTH" Name="RACEOTH derivation" Type="Computation">
+<MethodDef OID="MT.SUPPDM.RACEOTH" Name="RACEOTH derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Set to other race from source demographics file</TranslatedText>
   </Description>
 </MethodDef>
-<MethodDef OID="SUPPDM.RANDDT" Name="RANDDT derivation" Type="Computation">
+<MethodDef OID="MT.SUPPDM.RANDDT" Name="RANDDT derivation" Type="Computation">
   <Description>
     <TranslatedText xml:lang="en">Set equal to the randomization date from the source demographics file</TranslatedText>
   </Description>
@@ -4500,16 +5076,27 @@ DataType="text">
   <!-- ******************************** -->
   <!-- COMMENTS DEFINITION SECTION      -->
   <!-- ******************************** -->
-<def:CommentDef OID="COM.ARMCD">
+<def:CommentDef OID="COM.COM.ARMCD">
   <Description>
     <TranslatedText xml:lang="en">Assigned based on Randomization Number.</TranslatedText>
   </Description>
 </def:CommentDef>
-<def:CommentDef OID="com.ae">
+<def:CommentDef OID="COM.com.ae">
   <Description>
     <TranslatedText xml:lang="en">MedDRA dictionary version XX.1 was used to code all adverse events.</TranslatedText>
   </Description>
 </def:CommentDef>
+    <!-- ******************************************* -->
+    <!-- LEAF DEFINITION SECTION                 *** -->
+    <!-- ******************************************* -->
+<def:leaf ID="LF.blankcrf"
+  xlink:href="blankcrf.pdf">
+  <def:title>Annotated Case Report Form</def:title>
+</def:leaf>
+<def:leaf ID="LF.CRTRG"
+  xlink:href="reviewersguide.pdf">
+  <def:title>CRT Reviewer's Guide</def:title>
+</def:leaf>
 </MetaDataVersion>
 </Study>
 </ODM>

@@ -1,4 +1,4 @@
-# defineR 0.0.9006
+# defineR 0.0.1
 
 * Release to CRAN.
 

@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 11September2022                                                   -->
+    <!-- Date: 18September2022                                                   -->
     <!-- Description: Define.xml file for XYZ123                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -14,7 +14,7 @@
   xmlns:arm="http://www.cdisc.org/ns/arm/v1.0"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-09-11T14:37:08">
+  CreationDateTime="2022-09-18T21:34:40">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>

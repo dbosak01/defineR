@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2022-09-18T21:32:50">
+  CreationDateTime="2022-09-18T21:34:27">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
@@ -129,7 +129,7 @@
   Mandatory="No"
 
   >
-  <def:WhereClauseRef WhereClauseOID="WC.WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY"/>
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY"/>
 
 </ItemRef>
 <ItemRef ItemOID="IT.LB.LBORRES.GLUC.URINALYSIS"
@@ -137,7 +137,7 @@
   Mandatory="No"
 
   >
-  <def:WhereClauseRef WhereClauseOID="WC.WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS"/>
+  <def:WhereClauseRef WhereClauseOID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS"/>
 
 </ItemRef>
  </def:ValueListDef>
@@ -165,7 +165,7 @@
   <!-- ****************************************************************** -->
   <!-- WhereClause Definitions Used/Referenced in Value List Definitions) -->
   <!-- ****************************************************************** -->
-<def:WhereClauseDef OID="WC.WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY">
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.CHEMISTRY">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBCAT" Comparator="EQ">
 <CheckValue>CHEMISTRY</CheckValue>
 </RangeCheck>
@@ -173,7 +173,7 @@
 <CheckValue>GLUC</CheckValue>
 </RangeCheck>
 </def:WhereClauseDef>
-<def:WhereClauseDef OID="WC.WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS">
+<def:WhereClauseDef OID="WC.LB.LBTESTCD.GLUC.LBCAT.URINALYSIS">
 <RangeCheck SoftHard="Soft" def:ItemOID="IT.LB.LBCAT" Comparator="EQ">
 <CheckValue>URINALYSIS</CheckValue>
 </RangeCheck>
@@ -252,7 +252,7 @@ Purpose="Tabulation"
 IsReferenceData="No"
 SASDatasetName="AE"
 def:Structure="Events - One record per event per subject"
-def:Class="NA"
+def:Class="Events"
 def:ArchiveLocationID="LF.AE">
 <Description>
   <TranslatedText xml:lang="en">Adverse Events</TranslatedText>
@@ -2167,7 +2167,7 @@ RoleCodeListOID="CL.rolecode"/>
   DataType="text"
   Length="8"
   def:DisplayFormat="8"
-def:CommentOID="COM.COM.ARMCD"
+def:CommentOID="COM.ARMCD"
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Arm Code</TranslatedText>
@@ -3947,6 +3947,16 @@ def:CommentOID="COM.COM.ARMCD"
    <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
    </def:DocumentRef>
 </def:Origin>
+<def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
+<def:Origin Type="CRF">
+   <def:DocumentRef leafID="LF.blankcrf">
+   <def:PDFPageRef PageRefs="7" Type="PhysicalRef"/>
+   </def:DocumentRef>
+</def:Origin>
 
   
 </ItemDef>
@@ -4563,9 +4573,9 @@ DataType="text">
     <TranslatedText>Study Type</TranslatedText>
   </Decode>
 </CodeListItem>
-<CodeListItem CodedValue="*failed to decode utf16*Intervention Type" Rank="35">
+<CodeListItem CodedValue="Intervention Type" Rank="35">
   <Decode>
-    <TranslatedText>*failed to decode utf16*Intervention Type</TranslatedText>
+    <TranslatedText>Intervention Type</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="Study Start Date" Rank="36">
@@ -4774,7 +4784,7 @@ DataType="text">
 </CodeListItem>
 <CodeListItem CodedValue="INTTYPE" Rank="35">
   <Decode>
-    <TranslatedText>*failed to decode utf16*Intervention Type</TranslatedText>
+    <TranslatedText>Intervention Type</TranslatedText>
   </Decode>
 </CodeListItem>
 <CodeListItem CodedValue="SSTDTC" Rank="36">
@@ -5018,7 +5028,18 @@ DataType="text">
 </MethodDef>
 <MethodDef OID="MT.LB.LBNRIND" Name="LBNRIND derivation" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then   lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then   lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and              round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then          lbnrind = 'LOW';    else if lbstnrhi ne . and lbstresn ne . and             round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then      lbnrind = 'HIGH';    else if lbstnrhi ne . and lbstresn ne . then      lbnrind = 'NORMAL';</TranslatedText>
+    <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then
+   lbnrind = 'HIGH';
+ else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then
+   lbnrind = 'NORMAL';
+ else if lbstnrlo ne . and lbstresn ne . and 
+             round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then
+          lbnrind = 'LOW';
+    else if lbstnrhi ne . and lbstresn ne . and 
+            round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then
+      lbnrind = 'HIGH';
+    else if lbstnrhi ne . and lbstresn ne . then
+      lbnrind = 'NORMAL';</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="MT.LB.LBBLFL" Name="LBBLFL derivation" Type="Computation">
@@ -5028,7 +5049,10 @@ DataType="text">
 </MethodDef>
 <MethodDef OID="MT.LB.EPOCH" Name="EPOCH derivation" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">If VISITNUM &lt; 0 then SCREENING and otherwise TREATMENT</TranslatedText>
+    <TranslatedText xml:lang="en">If VISITNUM &lt; 0 then 
+   SCREENING 
+and otherwise 
+    TREATMENT</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="MT.METADATAENTRY" Name="Manual entry" Type="Computation">
@@ -5076,12 +5100,12 @@ DataType="text">
   <!-- ******************************** -->
   <!-- COMMENTS DEFINITION SECTION      -->
   <!-- ******************************** -->
-<def:CommentDef OID="COM.COM.ARMCD">
+<def:CommentDef OID="COM.ARMCD">
   <Description>
     <TranslatedText xml:lang="en">Assigned based on Randomization Number.</TranslatedText>
   </Description>
 </def:CommentDef>
-<def:CommentDef OID="COM.com.ae">
+<def:CommentDef OID="COM.AE">
   <Description>
     <TranslatedText xml:lang="en">MedDRA dictionary version XX.1 was used to code all adverse events.</TranslatedText>
   </Description>

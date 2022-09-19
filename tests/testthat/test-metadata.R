@@ -303,3 +303,4 @@ test_that("metadata14: write_metadata() works as expected for SDTM", {
   expect_equal(file.exists(res), TRUE)
 
 })
+

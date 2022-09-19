@@ -2,7 +2,7 @@
   <?xml-stylesheet type="text/xsl" href="define2-1.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 11September2022                                                   -->
+    <!-- Date: 18September2022                                                   -->
     <!-- Description: Define.xml file for oGvHD2SC                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -13,7 +13,7 @@
   ODMVersion="1.3.2"
   FileOID="oGvHD2SC"
   FileType="Snapshot"
-  CreationDateTime="2022-09-11T14:08:19">
+  CreationDateTime="2022-09-18T21:33:00">
     <Study OID="oGvHD2SC">
     <GlobalVariables>
     <StudyName>oGvHD-2-SC</StudyName>
@@ -12294,7 +12294,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">1.Issubjectamaleorfemaleofanyraceatleast18yearsofageatVisit1</TranslatedText>
+      <TranslatedText xml:lang="en">1. Is subject a male or female of any race, at least 18 years of age at Visit 1</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12311,7 +12311,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">2.DoessubjecthaveadiagnosisofocularGvHDforatleast3monthspriortoVisit1</TranslatedText>
+      <TranslatedText xml:lang="en">2. Does subject have a diagnosis of ocular GvHD for at least 3 months prior to Visit 1</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12328,7 +12328,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">3.HassubjectusedsclerallensesdailyinbotheyesforatleasttwomonthspriortoVisit1fortreatmentofoGvHDandplanningtocontinueusingthesamesclerallensesdailyinbotheyesthroughoutthisstudy</TranslatedText>
+      <TranslatedText xml:lang="en">3. Has subject used scleral lenses daily in both eyes for at least two months prior to Visit 1 for treatment of oGvHD and planning to continue using the same scleral lenses daily in both eyes throughout this study</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12345,7 +12345,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">4.Excludingfinalsclerallensremovalofthedayaftersuccessfuldailyinsertiondoessubjectfeeltheneedtoremoveordoessubjectremoveoneorbothsclerallensesatleastonceperdayduetophysicaldiscomfortorvisualacuityissueslenseshavedebrisordepositbuilduporvisionisfoggycloudyblurry</TranslatedText>
+      <TranslatedText xml:lang="en">4. Excluding final scleral lens removal of the day, after successful daily insertion, does subject feel the need to remove or does subject remove one or both scleral lenses at least once per day due to physical discomfort or visual acuity issues (lenses have debris or deposit build up, or vision is foggy, cloudy, blurry)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12362,7 +12362,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">5.Doessubjecthavestainingscoreincentralcornealregionof2outof10ineithereyeatVisit1</TranslatedText>
+      <TranslatedText xml:lang="en">5. Does subject have staining score in central corneal region of 2 out of 10 in either eye at Visit 1</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12379,7 +12379,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">6.DoessubjecthavemeanbetweenODandOScoresof35outof100inFrequencyScoreofModifiedSANDEnighttimequestionnairewithoutsclerallenses</TranslatedText>
+      <TranslatedText xml:lang="en">6. Does subject have mean between OD and OS cores of  35 out of 100 in Frequency Score of Modified SANDE nighttime questionnaire without scleral lenses</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12396,7 +12396,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">7.Hasthesubjectprovidedverbalandwritteninformedconsent</TranslatedText>
+      <TranslatedText xml:lang="en">7. Has the subject provided verbal and written informed consent</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12413,7 +12413,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">8.IsthesubjectorsubjectsparentorlegalguardianableandwillingtofolloworalandwritteninstructionsprovidedinEnglishwithorwithoutassistanceandparticipateinallstudyassessmentsandvisits</TranslatedText>
+      <TranslatedText xml:lang="en">8. Is the subject (or subjects parent or legal guardian) able and willing to follow oral and written instructions provided in English, with or without assistance, and participate in all study assessments and visits</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12430,7 +12430,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">9.Doessubjecthaveatelephonenecessaryforevaluations</TranslatedText>
+      <TranslatedText xml:lang="en">9. Does subject have a telephone necessary for evaluations</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12447,7 +12447,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">10.HassubjecthadanophthalmologicalexamwithinthepastyearpriortoVisit1</TranslatedText>
+      <TranslatedText xml:lang="en">10. Has subject had an ophthalmological exam within the past year prior to Visit 1</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12464,7 +12464,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">1.HassubjecttestedpositiveforCOVID19withintwentyeightdayspriortoVisit1</TranslatedText>
+      <TranslatedText xml:lang="en">1. Has subject tested positive for COVID-19 within twenty-eight days prior to Visit 1</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12481,7 +12481,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">2.DoessubjecthaveactivetrigeminalneuritistrigeminalneuralgiaocularherpeszosterophthalmicshinglesfacialherpeszosterfacialshinglesocularherpessimplexorneurotrophickeratitisatVisit1</TranslatedText>
+      <TranslatedText xml:lang="en">2. Does subject have active trigeminal neuritis, trigeminal neuralgia, ocular herpes zoster (ophthalmic shingles), facial herpes zoster (facial shingles), ocular herpes simplex or neurotrophic keratitis at Visit 1</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12498,7 +12498,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">3.Doessubjecthaveahistoryofocularherpeszosterophthalmicshinglesfacialherpeszosterfacialshinglesocularherpessimplexorneurotrophickeratitiswithinthelast5yearsthatisnotbeingmedicallymanagedincludingoralantiviralspatientswithhistoryofherpessimplexvirusmustbereceivingappropriateantiviraltherapy</TranslatedText>
+      <TranslatedText xml:lang="en">3. Does subject have a history of ocular herpes zoster (ophthalmic shingles), facial herpes zoster (facial shingles), ocular herpes simplex or neurotrophic keratitis within the last 5 years that is not being medically managed including oral antivirals (patients with history of herpes simplex virus must be receiving appropriate antiviral therapy)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12515,7 +12515,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">4.Femaleswithhistoryofbreastcancerinpatientorimmediatebiologicalfamilyparentssiblingsandchildren</TranslatedText>
+      <TranslatedText xml:lang="en">4. Females with history of breast cancer in patient or immediate biological family (parents, siblings and children)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12532,7 +12532,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">5.Hassubjecthadeyelidsurgeryorocularsurgerywithinthelast12weekspriortoVisit1thatinthejudgmentoftheclinicalinvestigatorwillinterferewithstudyassessments</TranslatedText>
+      <TranslatedText xml:lang="en">5. Has subject had eyelid surgery or ocular surgery within the last 12 weeks prior to Visit 1 that in the judgment of the clinical investigator will interfere with study assessments</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12549,7 +12549,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">6.Doessubjecthavecomorbiditywithothersevereacuteorchronicsystemicorocularconditionsthatinthejudgmentoftheclinicalinvestigatorwillinterferewithstudyassessmentsorstudyparticipantsafety</TranslatedText>
+      <TranslatedText xml:lang="en">6. Does subject have comorbidity with other severe, acute or chronic systemic or ocular conditions that in the judgment of the clinical investigator will interfere with study assessments or study participant safety</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12566,7 +12566,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">7.Hasthesubjectmadeasignificantchangee.g.discontinuationtothedrugregimenofhisorheroralcorticosteroidscorticosteroidcontainingeyedropsorgelscyclosporineophthalmicemulsionRESTASISorCEQUAorlifitegrastsolutionXIIDRAwithinsevendayspriortoVisit1</TranslatedText>
+      <TranslatedText xml:lang="en">7. Has the subject made a significant change (e.g. discontinuation) to the drug regimen of his or her oral corticosteroids, corticosteroid-containing eye drops or gels, cyclosporine ophthalmic emulsion (RESTASIS or CEQUA) or lifitegrast solution (XIIDRA) within seven days prior to Visit 1</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12583,7 +12583,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">8.Doessubjectwearanytypeoflensesovernightsclerallensesbandagecontactlenses</TranslatedText>
+      <TranslatedText xml:lang="en">8. Does subject wear any type of lenses overnight (scleral lens(es), bandage contact lens(es))</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12600,7 +12600,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">9.IsthesubjectawomanofchildbearingpotentialwhoispregnantnursinganinfantplanningapregnancynotreceivinganadequatemethodofbirthcontrolorhaveapositiveurinepregnancytestatVisit1orIsfemalesubjectofchildbearingpotentialnotwillingtousecontraceptionthroughoutthisstudy</TranslatedText>
+      <TranslatedText xml:lang="en">9. Is the subject a woman of childbearing potential who is pregnant, nursing an infant, planning a pregnancy, not receiving an adequate method of birth control or have a positive urine pregnancy test at Visit 1 or Is female subject of childbearing potential not willing to use contraception throughout this study</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12617,7 +12617,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">10.DoessubjecthaveknownadversereactionandorsensitivitytostudydrugProgesteroneUSPoritscomponentsseeinformedconsent</TranslatedText>
+      <TranslatedText xml:lang="en">10. Does subject have known adverse reaction and/or sensitivity to study drug (Progesterone USP) or its components (see informed consent)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12634,7 +12634,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">11.IssubjectcurrentlyusingorhassubjecteverusedProocular</TranslatedText>
+      <TranslatedText xml:lang="en">11. Is subject currently using or has subject ever used Pro-ocular</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12651,7 +12651,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">12.Issubjectunwillingtoceasetheuseofsunscreenontheforeheadoreyearea</TranslatedText>
+      <TranslatedText xml:lang="en">12. Is subject unwilling to cease the use of sunscreen on the forehead or eye area</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12668,7 +12668,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">13.Issubjectcurrentlyonmorethanonepreservedtopicalmedicationforglaucomacombinationdrugproductscountasonemedication</TranslatedText>
+      <TranslatedText xml:lang="en">13. Is subject currently on more than one preserved topical medication for glaucoma (combination drug products count as one medication)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12685,7 +12685,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">14.IssubjectcurrentlyenrolledinanyinvestigationaldrugordeviceclinicalstudiesexclusivelyforOcularGvHD</TranslatedText>
+      <TranslatedText xml:lang="en">14. Is subject currently enrolled in any investigational drug or device clinical studies exclusively for Ocular GvHD</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12702,7 +12702,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="20"
   >
   <Description>
-      <TranslatedText xml:lang="en">DATEOFGRAFTVERSUSHOSTDISEASEDIAGNOSIS</TranslatedText>
+      <TranslatedText xml:lang="en">DATE OF GRAFT-VERSUS-HOST DISEASE DIAGNOSIS</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12719,7 +12719,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="20"
   >
   <Description>
-      <TranslatedText xml:lang="en">REVIEWEDONCOLOGICMEDICALRECORDSIFAVAILABLE</TranslatedText>
+      <TranslatedText xml:lang="en">REVIEWED ONCOLOGIC MEDICAL RECORDS IF AVAILABLE</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12736,7 +12736,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="20"
   >
   <Description>
-      <TranslatedText xml:lang="en">TYPEOFSTEMCELLTRANSPLANT1</TranslatedText>
+      <TranslatedText xml:lang="en">TYPE OF STEM CELL TRANSPLANT (1)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12753,7 +12753,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="20"
   >
   <Description>
-      <TranslatedText xml:lang="en">TYPEOFSTEMCELLTRANSPLANT2</TranslatedText>
+      <TranslatedText xml:lang="en">TYPE OF STEM CELL TRANSPLANT (2)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12770,7 +12770,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="20"
   >
   <Description>
-      <TranslatedText xml:lang="en">REVIEWEDMOSTRECENTOPHTHALMOLIGICEXAMRECORDS</TranslatedText>
+      <TranslatedText xml:lang="en">REVIEWED MOST RECENT OPHTHALMOLIGIC EXAM RECORDS</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -12787,7 +12787,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Didthesubjectqualifytocontinuethestudy</TranslatedText>
+      <TranslatedText xml:lang="en">Did the subject qualify to continue the study</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -13134,7 +13134,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UrinePregnancytest</TranslatedText>
+      <TranslatedText xml:lang="en">Urine Pregnancy test</TranslatedText>
   </Description><CodeListRef CodeListOID="CL.C64851"/>
 
   <def:Origin Type="CRF">
@@ -13210,7 +13210,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="3."
   >
   <Description>
-      <TranslatedText xml:lang="en">TotalTestosterone</TranslatedText>
+      <TranslatedText xml:lang="en">Total Testosterone</TranslatedText>
   </Description><CodeListRef CodeListOID="CL.C74793"/>
 
   <def:Origin Type="CRF">
@@ -13384,7 +13384,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="4.2"
   >
   <Description>
-      <TranslatedText xml:lang="en">LuteinizingHormone</TranslatedText>
+      <TranslatedText xml:lang="en">Luteinizing Hormone</TranslatedText>
   </Description><CodeListRef CodeListOID="CL.C74790"/>
 
   <def:Origin Type="CRF">
@@ -13442,7 +13442,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="4.2"
   >
   <Description>
-      <TranslatedText xml:lang="en">FollicleStimulatingHormone</TranslatedText>
+      <TranslatedText xml:lang="en">Follicle Stimulating Hormone</TranslatedText>
   </Description><CodeListRef CodeListOID="CL.C74783"/>
 
   <def:Origin Type="CRF">
@@ -14595,7 +14595,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityODNumerator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OD) - Numerator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -14632,7 +14632,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOSNumerator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OS) - Numerator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -14669,7 +14669,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOUNumerator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OU) - Numerator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -14706,7 +14706,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityODDenominator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OD) - Denominator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -14743,7 +14743,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOSDenominator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OS) - Denominator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -14780,7 +14780,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOUDenominator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OU) - Denominator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -14817,7 +14817,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOSMissedorAdditionalLetters</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OS) - Missed or Additional Letters</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -14854,7 +14854,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOSMissedorAdditionalLetters</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OS) - Missed or Additional Letters</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -14891,7 +14891,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOSMissedorAdditionalLetters</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OS) - Missed or Additional Letters</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -14928,7 +14928,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessTemporalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Temporal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -14965,7 +14965,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessTemporalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Temporal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15002,7 +15002,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessTemporalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Temporal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15014,7 +15014,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessNasalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Nasal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15051,7 +15051,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessNasalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Nasal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15088,7 +15088,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessNasalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Nasal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15100,7 +15100,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessTemporalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Temporal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15137,7 +15137,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessTemporalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Temporal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15174,7 +15174,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessTemporalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Temporal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15186,7 +15186,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessNasalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Nasal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15223,7 +15223,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessNasalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Nasal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15260,7 +15260,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessNasalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Nasal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15272,7 +15272,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AverageBulbarRednessOD</TranslatedText>
+      <TranslatedText xml:lang="en">Average Bulbar Redness (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15309,7 +15309,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AverageBulbarRednessOS</TranslatedText>
+      <TranslatedText xml:lang="en">Average Bulbar Redness (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15346,7 +15346,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AverageBulbarRednessOU</TranslatedText>
+      <TranslatedText xml:lang="en">Average Bulbar Redness (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15358,7 +15358,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnalyzedAreaSizeOD</TranslatedText>
+      <TranslatedText xml:lang="en">Analyzed Area (Size) (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15395,7 +15395,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnalyzedAreaSizeOS</TranslatedText>
+      <TranslatedText xml:lang="en">Analyzed Area (Size) (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15432,7 +15432,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnalyzedAreaSizeOU</TranslatedText>
+      <TranslatedText xml:lang="en">Analyzed Area (Size) (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15444,7 +15444,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlephritisOD</TranslatedText>
+      <TranslatedText xml:lang="en">Blephritis (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15481,7 +15481,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlephritisOS</TranslatedText>
+      <TranslatedText xml:lang="en">Blephritis (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15518,7 +15518,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlephritisOU</TranslatedText>
+      <TranslatedText xml:lang="en">Blephritis (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15530,7 +15530,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessNasalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Nasal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15567,7 +15567,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessNasalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Nasal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15604,7 +15604,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessNasalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Nasal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15616,7 +15616,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessUnderLensOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Under Lens (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15653,7 +15653,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessUnderLensOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Under Lens (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15690,7 +15690,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessUnderLensOU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Under Lens (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15702,7 +15702,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessTemporalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Temporal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15739,7 +15739,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessTemporalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Temporal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15776,7 +15776,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessTemporalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Temporal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15788,7 +15788,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessTemporalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Temporal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15825,7 +15825,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessTemporalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Temporal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15862,7 +15862,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessTemporalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Temporal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15874,7 +15874,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessNasalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Nasal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15911,7 +15911,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessNasalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Nasal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15948,7 +15948,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BulbarRednessNasalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Bulbar Redness  Nasal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -15960,7 +15960,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessTemporalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Temporal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -15997,7 +15997,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessTemporalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Temporal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16034,7 +16034,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessTemporalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Temporal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -16046,7 +16046,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessNasalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Nasal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16083,7 +16083,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessNasalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Nasal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16120,7 +16120,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LimbalRednessNasalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Limbal Redness - Nasal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -16132,7 +16132,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AverageBulbarRednessOD</TranslatedText>
+      <TranslatedText xml:lang="en">Average Bulbar Redness (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16169,7 +16169,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AverageBulbarRednessOS</TranslatedText>
+      <TranslatedText xml:lang="en">Average Bulbar Redness (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16206,7 +16206,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AverageBulbarRednessOU</TranslatedText>
+      <TranslatedText xml:lang="en">Average Bulbar Redness (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -16218,7 +16218,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnalyzedAreaSizeOD</TranslatedText>
+      <TranslatedText xml:lang="en">Analyzed Area (Size) (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16255,7 +16255,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnalyzedAreaSizeOS</TranslatedText>
+      <TranslatedText xml:lang="en">Analyzed Area (Size) (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16292,7 +16292,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnalyzedAreaSizeOU</TranslatedText>
+      <TranslatedText xml:lang="en">Analyzed Area (Size) (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -16304,7 +16304,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlephritisOD</TranslatedText>
+      <TranslatedText xml:lang="en">Blephritis (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16341,7 +16341,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlephritisOS</TranslatedText>
+      <TranslatedText xml:lang="en">Blephritis (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16378,7 +16378,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlephritisOU</TranslatedText>
+      <TranslatedText xml:lang="en">Blephritis (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -16390,7 +16390,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessNasalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Nasal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16427,7 +16427,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessNasalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Nasal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16464,7 +16464,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessNasalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Nasal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -16476,7 +16476,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessUnderLensOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Under Lens (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16513,7 +16513,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessUnderLensOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Under Lens (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16550,7 +16550,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessUnderLensOU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Under Lens (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -16562,7 +16562,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessTemporalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Temporal (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16599,7 +16599,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessTemporalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Temporal (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16636,7 +16636,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjuntivalRednessTemporalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjuntival Redness - Temporal (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -16648,7 +16648,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlepharitisOD</TranslatedText>
+      <TranslatedText xml:lang="en">Blepharitis (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16685,7 +16685,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlepharitisOS</TranslatedText>
+      <TranslatedText xml:lang="en">Blepharitis (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16722,7 +16722,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlepharitisOD</TranslatedText>
+      <TranslatedText xml:lang="en">Blepharitis (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16759,7 +16759,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlepharitisOS</TranslatedText>
+      <TranslatedText xml:lang="en">Blepharitis (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16796,7 +16796,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">BlepharitisOU</TranslatedText>
+      <TranslatedText xml:lang="en">Blepharitis (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -16808,7 +16808,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidMarginErythemaOD</TranslatedText>
+      <TranslatedText xml:lang="en">Lid Margin Erythema (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16845,7 +16845,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidMarginErythemaOS</TranslatedText>
+      <TranslatedText xml:lang="en">Lid Margin Erythema (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16882,7 +16882,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidMarginErythemaOD</TranslatedText>
+      <TranslatedText xml:lang="en">Lid Margin Erythema (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16919,7 +16919,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidMarginErythemaOS</TranslatedText>
+      <TranslatedText xml:lang="en">Lid Margin Erythema (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -16956,7 +16956,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidMarginErythemaOU</TranslatedText>
+      <TranslatedText xml:lang="en">Lid Margin Erythema (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -16968,7 +16968,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidMarginUlcerationOD</TranslatedText>
+      <TranslatedText xml:lang="en">Lid Margin Ulceration (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17005,7 +17005,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidMarginUlcerationOS</TranslatedText>
+      <TranslatedText xml:lang="en">Lid Margin Ulceration (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17042,7 +17042,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidMarginUlcerationOD</TranslatedText>
+      <TranslatedText xml:lang="en">Lid Margin Ulceration (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17079,7 +17079,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidMarginUlcerationOS</TranslatedText>
+      <TranslatedText xml:lang="en">Lid Margin Ulceration (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17116,7 +17116,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidMarginUlcerationOU</TranslatedText>
+      <TranslatedText xml:lang="en">Lid Margin Ulceration (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -17128,7 +17128,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Lid - Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17165,7 +17165,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Lid - Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17202,7 +17202,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Lid - Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17239,7 +17239,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LidOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Lid - Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17276,7 +17276,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SuperiorLimbicKeratoconjunctivitisOD</TranslatedText>
+      <TranslatedText xml:lang="en">Superior Limbic Keratoconjunctivitis (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17313,7 +17313,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SuperiorLimbicKeratoconjunctivitisOS</TranslatedText>
+      <TranslatedText xml:lang="en">Superior Limbic Keratoconjunctivitis (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17350,7 +17350,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SuperiorLimbicKeratoconjunctivitisOD</TranslatedText>
+      <TranslatedText xml:lang="en">Superior Limbic Keratoconjunctivitis (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17387,7 +17387,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SuperiorLimbicKeratoconjunctivitisOS</TranslatedText>
+      <TranslatedText xml:lang="en">Superior Limbic Keratoconjunctivitis (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17424,7 +17424,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SuperiorLimbicKeratoconjunctivitisOU</TranslatedText>
+      <TranslatedText xml:lang="en">Superior Limbic Keratoconjunctivitis (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -17436,7 +17436,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">PapillaryConjunctivitisOD</TranslatedText>
+      <TranslatedText xml:lang="en">Papillary Conjunctivitis (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17473,7 +17473,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">PapillaryConjunctivitisOS</TranslatedText>
+      <TranslatedText xml:lang="en">Papillary Conjunctivitis (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17510,7 +17510,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">PapillaryConjunctivitisOD</TranslatedText>
+      <TranslatedText xml:lang="en">Papillary Conjunctivitis (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17547,7 +17547,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">PapillaryConjunctivitisOS</TranslatedText>
+      <TranslatedText xml:lang="en">Papillary Conjunctivitis (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17584,7 +17584,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">PapillaryConjunctivitisOU</TranslatedText>
+      <TranslatedText xml:lang="en">Papillary Conjunctivitis (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -17596,7 +17596,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalScarringOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Scarring (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17633,7 +17633,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalScarringOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Scarring (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17670,7 +17670,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalScarringOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Scarring (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17707,7 +17707,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalScarringOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Scarring (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17744,7 +17744,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalScarringOU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Scarring (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -17756,7 +17756,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">FornixShorteningOD</TranslatedText>
+      <TranslatedText xml:lang="en">Fornix Shortening (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17793,7 +17793,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">FornixShorteningOS</TranslatedText>
+      <TranslatedText xml:lang="en">Fornix Shortening (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17830,7 +17830,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">FornixShorteningOD</TranslatedText>
+      <TranslatedText xml:lang="en">Fornix Shortening (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17867,7 +17867,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">FornixShorteningOS</TranslatedText>
+      <TranslatedText xml:lang="en">Fornix Shortening (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17904,7 +17904,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">FornixShorteningOU</TranslatedText>
+      <TranslatedText xml:lang="en">Fornix Shortening (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -17916,7 +17916,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SymblepharonOD</TranslatedText>
+      <TranslatedText xml:lang="en">Symblepharon (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17953,7 +17953,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SymblepharonOS</TranslatedText>
+      <TranslatedText xml:lang="en">Symblepharon (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -17990,7 +17990,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SymblepharonOD</TranslatedText>
+      <TranslatedText xml:lang="en">Symblepharon (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18027,7 +18027,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SymblepharonOS</TranslatedText>
+      <TranslatedText xml:lang="en">Symblepharon (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18064,7 +18064,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SymblepharonOU</TranslatedText>
+      <TranslatedText xml:lang="en">Symblepharon (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -18076,7 +18076,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">KeratinizationOD</TranslatedText>
+      <TranslatedText xml:lang="en">Keratinization (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18113,7 +18113,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">KeratinizationOS</TranslatedText>
+      <TranslatedText xml:lang="en">Keratinization (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18150,7 +18150,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">KeratinizationOD</TranslatedText>
+      <TranslatedText xml:lang="en">Keratinization (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18187,7 +18187,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">KeratinizationOS</TranslatedText>
+      <TranslatedText xml:lang="en">Keratinization (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18224,7 +18224,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">KeratinizationOU</TranslatedText>
+      <TranslatedText xml:lang="en">Keratinization (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -18236,7 +18236,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival - Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18273,7 +18273,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival - Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18310,7 +18310,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival - Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18347,7 +18347,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival - Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18384,7 +18384,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealInfiltratesOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Infiltrates (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18421,7 +18421,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealInfiltratesOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Infiltrates (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18458,7 +18458,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealInfiltratesOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Infiltrates (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18495,7 +18495,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealInfiltratesOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Infiltrates (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18532,7 +18532,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealInfiltratesOU</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Infiltrates (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -18544,7 +18544,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ActiveCornealUlcerationOD</TranslatedText>
+      <TranslatedText xml:lang="en">Active Corneal Ulceration (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18581,7 +18581,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ActiveCornealUlcerationOS</TranslatedText>
+      <TranslatedText xml:lang="en">Active Corneal Ulceration (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18618,7 +18618,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ActiveCornealUlcerationOD</TranslatedText>
+      <TranslatedText xml:lang="en">Active Corneal Ulceration (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18655,7 +18655,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ActiveCornealUlcerationOS</TranslatedText>
+      <TranslatedText xml:lang="en">Active Corneal Ulceration (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18692,7 +18692,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ActiveCornealUlcerationOU</TranslatedText>
+      <TranslatedText xml:lang="en">Active Corneal Ulceration (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -18704,7 +18704,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealNeovascularizationOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Neovascularization (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18741,7 +18741,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealNeovascularizationOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Neovascularization (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18778,7 +18778,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealNeovascularizationOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Neovascularization (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18815,7 +18815,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealNeovascularizationOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Neovascularization (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18852,7 +18852,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealNeovascularizationOU</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Neovascularization (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -18864,7 +18864,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">FilamentaryKeratitisOD</TranslatedText>
+      <TranslatedText xml:lang="en">Filamentary Keratitis (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18901,7 +18901,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">FilamentaryKeratitisOS</TranslatedText>
+      <TranslatedText xml:lang="en">Filamentary Keratitis (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18938,7 +18938,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">FilamentaryKeratitisOD</TranslatedText>
+      <TranslatedText xml:lang="en">Filamentary Keratitis (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -18975,7 +18975,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">FilamentaryKeratitisOS</TranslatedText>
+      <TranslatedText xml:lang="en">Filamentary Keratitis (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19012,7 +19012,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">FilamentaryKeratitisOU</TranslatedText>
+      <TranslatedText xml:lang="en">Filamentary Keratitis (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -19024,7 +19024,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ChronicCornealThinningOD</TranslatedText>
+      <TranslatedText xml:lang="en">Chronic Corneal Thinning (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19061,7 +19061,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ChronicCornealThinningOS</TranslatedText>
+      <TranslatedText xml:lang="en">Chronic Corneal Thinning (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19098,7 +19098,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ChronicCornealThinningOD</TranslatedText>
+      <TranslatedText xml:lang="en">Chronic Corneal Thinning (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19135,7 +19135,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ChronicCornealThinningOS</TranslatedText>
+      <TranslatedText xml:lang="en">Chronic Corneal Thinning (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19172,7 +19172,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ChronicCornealThinningOU</TranslatedText>
+      <TranslatedText xml:lang="en">Chronic Corneal Thinning (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -19184,7 +19184,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealScarsOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Scars (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19221,7 +19221,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealScarsOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Scars (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19258,7 +19258,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealScarsOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Scars (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19295,7 +19295,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealScarsOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Scars (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19332,7 +19332,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealScarsOU</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Scars (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -19344,7 +19344,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">MicrocysticEdemaOD</TranslatedText>
+      <TranslatedText xml:lang="en">Microcystic Edema (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19381,7 +19381,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">MicrocysticEdemaOS</TranslatedText>
+      <TranslatedText xml:lang="en">Microcystic Edema (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19418,7 +19418,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">MicrocysticEdemaOD</TranslatedText>
+      <TranslatedText xml:lang="en">Microcystic Edema (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19455,7 +19455,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">MicrocysticEdemaOS</TranslatedText>
+      <TranslatedText xml:lang="en">Microcystic Edema (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19492,7 +19492,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">MicrocysticEdemaOU</TranslatedText>
+      <TranslatedText xml:lang="en">Microcystic Edema (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -19504,7 +19504,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealEdemaOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Edema (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19541,7 +19541,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealEdemaOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Edema (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19578,7 +19578,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealEdemaOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Edema (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19615,7 +19615,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealEdemaOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Edema (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19652,7 +19652,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealEdemaOU</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Edema (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -19664,7 +19664,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CorneaOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Cornea - Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19701,7 +19701,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CorneaOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Cornea - Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19738,7 +19738,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CorneaOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Cornea - Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19775,7 +19775,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CorneaOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Cornea - Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19812,7 +19812,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberCellsOD</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber Cells (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19849,7 +19849,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberCellsOS</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber Cells (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19886,7 +19886,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberCellsOD</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber Cells (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19923,7 +19923,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberCellsOS</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber Cells (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -19960,7 +19960,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberCellsOU</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber Cells (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -19972,7 +19972,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberFlareOD</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber Flare (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20009,7 +20009,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberFlareOS</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber Flare (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20046,7 +20046,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberFlareOD</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber Flare (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20083,7 +20083,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberFlareOS</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber Flare (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20120,7 +20120,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberFlareOU</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber Flare (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -20132,7 +20132,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber - Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20169,7 +20169,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber - Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20206,7 +20206,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber - Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20243,7 +20243,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">AnteriorChamberOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Anterior Chamber - Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20280,7 +20280,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LensStatusOD</TranslatedText>
+      <TranslatedText xml:lang="en">Lens Status (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20317,7 +20317,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LensStatusOS</TranslatedText>
+      <TranslatedText xml:lang="en">Lens Status (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20354,7 +20354,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LensStatusOU</TranslatedText>
+      <TranslatedText xml:lang="en">Lens Status (OU)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20391,7 +20391,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LensOpacityPhakicEyeONLYOD</TranslatedText>
+      <TranslatedText xml:lang="en">Lens Opacity (Phakic Eye ONLY) (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20428,7 +20428,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LensOpacityPhakicEyeONLYOS</TranslatedText>
+      <TranslatedText xml:lang="en">Lens Opacity (Phakic Eye ONLY) (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20465,7 +20465,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">LensOpacityPhakicEyeONLYOU</TranslatedText>
+      <TranslatedText xml:lang="en">Lens Opacity (Phakic Eye ONLY) (OU)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20539,7 +20539,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone2OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 2 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20576,7 +20576,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone2OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 2 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20613,7 +20613,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone2OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 2 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20650,7 +20650,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone2OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 2 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20687,7 +20687,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone2OU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 2 (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -20699,7 +20699,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone3OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 3 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20736,7 +20736,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone3OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 3 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20773,7 +20773,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone3OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 3 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20810,7 +20810,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone3OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 3 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20847,7 +20847,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone3OU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 3 (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -20859,7 +20859,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone4OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 4 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20896,7 +20896,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone4OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 4 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20933,7 +20933,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone4OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 4 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -20970,7 +20970,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone4OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 4 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21007,7 +21007,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone4OU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 4 (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -21019,7 +21019,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone5OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 5 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21056,7 +21056,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone5OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 5 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21093,7 +21093,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone5OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 5 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21130,7 +21130,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone5OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 5 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21167,7 +21167,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone5OU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 5 (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -21179,7 +21179,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingInsideScleralLensParimeterOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Inside Scleral Lens Parimeter, Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21216,7 +21216,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingInsideScleralLensParimeterOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Inside Scleral Lens Parimeter, Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21253,7 +21253,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingInsideScleralLensParimeterOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Inside Scleral Lens Parimeter, Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21290,7 +21290,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingInsideScleralLensParimeterOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Inside Scleral Lens Parimeter, Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21327,7 +21327,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone1OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 1 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21364,7 +21364,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone1OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 1 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21401,7 +21401,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone1OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 1 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21438,7 +21438,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone1OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 1 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21475,7 +21475,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone1OU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 1 (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -21487,7 +21487,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone6OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 6 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21524,7 +21524,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone6OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 6 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21561,7 +21561,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone6OD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 6 (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21598,7 +21598,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone6OS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 6 (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21635,7 +21635,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingZone6OU</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Zone 6 (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -21647,7 +21647,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingOutsideScleralLensParimeterOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Outside Scleral Lens Parimeter, Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21684,7 +21684,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingOutsideScleralLensParimeterOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Outside Scleral Lens Parimeter, Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21721,7 +21721,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingOutsideScleralLensParimeterOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Outside Scleral Lens Parimeter, Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21758,7 +21758,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ConjunctivalStainingOutsideScleralLensParimeterOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Conjunctival Staining - Outside Scleral Lens Parimeter, Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21795,7 +21795,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingSuperiorOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Superior (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21832,7 +21832,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingSuperiorOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Superior (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21869,7 +21869,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingSuperiorOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Superior (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21906,7 +21906,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingSuperiorOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Superior (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21943,7 +21943,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingSuperiorOU</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Superior (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -21955,7 +21955,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingCentralOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Central (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -21992,7 +21992,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingCentralOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Central (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22029,7 +22029,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingCentralOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Central (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22066,7 +22066,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingCentralOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Central (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22103,7 +22103,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingCentralOU</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Central (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -22115,7 +22115,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingInferiorOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Inferior (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22152,7 +22152,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingInferiorOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Inferior (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22189,7 +22189,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingInferiorOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Inferior (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22226,7 +22226,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingInferiorOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Inferior (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22263,7 +22263,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingInferiorOU</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Inferior (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -22275,7 +22275,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22312,7 +22312,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22349,7 +22349,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingOtherPathologyOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Other Pathology (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22386,7 +22386,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingOtherPathologyOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Other Pathology (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22423,7 +22423,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingTotalScoreOD</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Total Score (OD)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -22435,7 +22435,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingTotalScoreOS</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Total Score (OS)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -22447,7 +22447,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">CornealStainingTotalScoreOU</TranslatedText>
+      <TranslatedText xml:lang="en">Corneal Staining - Total Score (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -22459,7 +22459,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">TearBreakUpTimeOD</TranslatedText>
+      <TranslatedText xml:lang="en">Tear Break-Up Time (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22496,7 +22496,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">TearBreakUpTimeOS</TranslatedText>
+      <TranslatedText xml:lang="en">Tear Break-Up Time (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22533,7 +22533,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">TearBreakUpTimeOU</TranslatedText>
+      <TranslatedText xml:lang="en">Tear Break-Up Time (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -22545,7 +22545,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">IntraocularPressureOD</TranslatedText>
+      <TranslatedText xml:lang="en">Intraocular Pressure (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22582,7 +22582,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">IntraocularPressureOS</TranslatedText>
+      <TranslatedText xml:lang="en">Intraocular Pressure (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22619,7 +22619,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">IntraocularPressureOU</TranslatedText>
+      <TranslatedText xml:lang="en">Intraocular Pressure (OU</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22656,7 +22656,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityODNumerator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OD) - Numerator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22693,7 +22693,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOSNumerator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OS) - Numerator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22730,7 +22730,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOUNumerator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OU) - Numerator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22767,7 +22767,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityODDenominator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OD) - Denominator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22804,7 +22804,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOSDenominator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OS) - Denominator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22841,7 +22841,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOUDenominator</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OU) - Denominator</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22878,7 +22878,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOSMissedorAdditionalLetters</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OS) - Missed or Additional Letters</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22915,7 +22915,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOSMissedorAdditionalLetters</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OS) - Missed or Additional Letters</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22952,7 +22952,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">VisualAcuityOSMissedorAdditionalLetters</TranslatedText>
+      <TranslatedText xml:lang="en">Visual Acuity (OS) - Missed or Additional Letters</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -22989,7 +22989,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyVitreousHumourOD</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Vitreous Humour (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23026,7 +23026,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyVitreousHumourOS</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Vitreous Humour (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23063,7 +23063,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyVitreousHumourOU</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Vitreous Humour (OU)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23100,7 +23100,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyVitreousHumourOD</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Vitreous Humour (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23137,7 +23137,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyVitreousHumourOU</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Vitreous Humour (OU)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23174,7 +23174,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyOpticNerveOD</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Optic Nerve (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23211,7 +23211,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyOpticNerveOS</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Optic Nerve (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23248,7 +23248,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyOpticNerveOU</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Optic Nerve (OU)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23285,7 +23285,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyOpticNerveOD</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Optic Nerve (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23322,7 +23322,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyOpticNerveOS</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Optic Nerve (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23359,7 +23359,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyCuptoDiscRatioVerticalOD</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Cup to Disc Ratio (Vertical) (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23396,7 +23396,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyCuptoDiscRatioVerticalOS</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Cup to Disc Ratio (Vertical) (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23433,7 +23433,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyCuptoDiscRatioVerticalOU</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Cup to Disc Ratio (Vertical) (OU)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23470,7 +23470,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyMaculaOD</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Macula (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23507,7 +23507,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyMaculaOS</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Macula (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23544,7 +23544,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyMaculaOU</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Macula (OU)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23581,7 +23581,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyMaculaOD</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Macula (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -23618,7 +23618,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">UndilatedFundoscopyMaculaOS</TranslatedText>
+      <TranslatedText xml:lang="en">Undilated Fundoscopy - Macula (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24030,7 +24030,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDEDaytimeFrequencyOS</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Daytime  Frequency (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24102,7 +24102,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDEDaytimeFrequencyOD</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Daytime  Frequency (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24174,7 +24174,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDEDaytimeFrequencyOU</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Daytime  Frequency (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -24186,7 +24186,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDEDaytimeSeverityOS</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Daytime  Severity (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24258,7 +24258,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDEDaytimeSeverityOD</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Daytime  Severity (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24330,7 +24330,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDEDaytimeSeverityOU</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Daytime  Severity (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -24342,7 +24342,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDENighttimeFrequencyOS</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Nighttime  Frequency (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24414,7 +24414,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDENighttimeFrequencyOD</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Nighttime  Frequency (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24486,7 +24486,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDENighttimeFrequencyOU</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Nighttime  Frequency (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -24498,7 +24498,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDENighttimeSeverityOS</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Nighttime  Severity (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24570,7 +24570,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDENighttimeSeverityOD</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Nighttime  Severity (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24642,7 +24642,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDENighttimeSeverityOU</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Nighttime  Severity (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -24654,7 +24654,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQOcularDiscomfortOS</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Ocular Discomfort (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24726,7 +24726,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQOcularDiscomfortOD</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Ocular Discomfort (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24798,7 +24798,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQOcularDiscomfortOU</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Ocular Discomfort (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -24810,7 +24810,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQDrynessOS</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Dryness (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24882,7 +24882,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQDrynessOD</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Dryness (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -24954,7 +24954,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQDrynessOU</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Dryness (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -24966,7 +24966,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQEyeRednessOS</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Eye Redness (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25038,7 +25038,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQEyeRednessOD</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Eye Redness (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25110,7 +25110,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQEyeRednessOU</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Eye Redness (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -25122,7 +25122,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQLightSensitivityOS</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Light Sensitivity (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25194,7 +25194,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQLightSensitivityOD</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Light Sensitivity (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25266,7 +25266,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQLightSensitivityOU</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Light Sensitivity (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -25278,7 +25278,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQBlurredorCloudyVisionOS</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Blurred or Cloudy Vision (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25350,7 +25350,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQBlurredorCloudyVisionOD</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Blurred or Cloudy Vision (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25422,7 +25422,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQBlurredorCloudyVisionOU</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Blurred or Cloudy Vision (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -25434,7 +25434,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQBlinkingDiscomfortOS</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Blinking Discomfort (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25506,7 +25506,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQBlinkingDiscomfortOD</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Blinking Discomfort (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25578,7 +25578,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQBlinkingDiscomfortOU</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Blinking Discomfort (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -25590,7 +25590,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">GOSDSQSleepDisturbanceOU</TranslatedText>
+      <TranslatedText xml:lang="en">GOSDSQ - Sleep Disturbance (OU)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25662,7 +25662,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQHoursLensinEyeOD</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Hours Lens in Eye (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25709,7 +25709,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQHoursLensinEyeOS</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Hours Lens in Eye (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25756,7 +25756,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQHoursLensinEyeOU</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Hours Lens in Eye (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -25768,7 +25768,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQFewestHoursDuetoPhysicalDiscomfortOD</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Fewest Hours Due to Physical Discomfort (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25815,7 +25815,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQFewestHoursDuetoPhysicalDiscomfortOS</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Fewest Hours Due to Physical Discomfort (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25862,7 +25862,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQFewestHoursDuetoPhysicalDiscomfortOU</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Fewest Hours Due to Physical Discomfort (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -25874,7 +25874,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQFewestHoursDuetoLensDirtinessorBlurredVisionOD</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Fewest Hours Due to Lens Dirtiness or Blurred Vision (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25921,7 +25921,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQFewestHoursDuetoLensDirtinessorBlurredVisionOS</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Fewest Hours Due to Lens Dirtiness or Blurred Vision (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -25968,7 +25968,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQFewestHoursDuetoLensDirtinessorBlurredVisionOU</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Fewest Hours Due to Lens Dirtiness or Blurred Vision (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -25980,7 +25980,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQNumberofTimesRemovedCleanedandReinsertedLensOD</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Number of Times Removed, Cleaned and Reinserted Lens (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -26027,7 +26027,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQNumberofTimesRemovedCleanedandReinsertedLensOS</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Number of Times Removed, Cleaned and Reinserted Lens (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -26074,7 +26074,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SLWGQNumberofTimesRemovedCleanedandReinsertedLensOU</TranslatedText>
+      <TranslatedText xml:lang="en">SLWGQ - Number of Times Removed, Cleaned and Reinserted Lens (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -26086,7 +26086,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDEDaytimeGlobalScoreOS</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Daytime  Global Score (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -26133,7 +26133,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDEDaytimeGlobalScoreOD</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Daytime  Global Score (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -26180,7 +26180,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDEDaytimeGlobalScoreOU</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Daytime  Global Score (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -26192,7 +26192,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDENightimeGlobalScoreOS</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Nightime  Global Score (OS)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -26239,7 +26239,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDENighttimeGlobalScoreOD</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Nighttime  Global Score (OD)</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -26286,7 +26286,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SANDENighttimeGlobalScoreOU</TranslatedText>
+      <TranslatedText xml:lang="en">SANDE Nighttime  Global Score (OU)</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -27695,7 +27695,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="10"
   >
   <Description>
-      <TranslatedText xml:lang="en">ScreenningNumber</TranslatedText>
+      <TranslatedText xml:lang="en">Screenning Number</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -27712,7 +27712,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="10"
   >
   <Description>
-      <TranslatedText xml:lang="en">RandomizationNumber</TranslatedText>
+      <TranslatedText xml:lang="en">Randomization Number</TranslatedText>
   </Description>
   <def:Origin Type="Derived"></def:Origin>
 </ItemDef>
@@ -27724,7 +27724,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="20"
   >
   <Description>
-      <TranslatedText xml:lang="en">RaceOther</TranslatedText>
+      <TranslatedText xml:lang="en">Race, Other</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -27741,7 +27741,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">DoessubjectagreetohavePrincipalInvestigatornotifysubjectsoncologistofsubjectsparticipationinthisstudy</TranslatedText>
+      <TranslatedText xml:lang="en">Does subject agree to have Principal Investigator notify subjects oncologist of subjects participation in this study</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -27758,7 +27758,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">NotificationDate</TranslatedText>
+      <TranslatedText xml:lang="en">Notification Date</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -27775,7 +27775,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">DoessubjectagreetohavePrincipalInvestigatornotifysubjectsophthalmologistofsubjectsparticipationinthisstudy</TranslatedText>
+      <TranslatedText xml:lang="en">Does subject agree to have Principal Investigator notify subjects ophthalmologist of subjects participation in this study</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -27792,7 +27792,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">NotificationDate</TranslatedText>
+      <TranslatedText xml:lang="en">Notification Date</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -27986,7 +27986,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">reasonforscreenfailure</TranslatedText>
+      <TranslatedText xml:lang="en">reason for screen failure</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28003,7 +28003,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SYSTEMCALCULATIONDatecheck</TranslatedText>
+      <TranslatedText xml:lang="en">SYSTEM CALCULATION Date check</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28020,7 +28020,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SYSTEMCALCULATIONImputeddate</TranslatedText>
+      <TranslatedText xml:lang="en">SYSTEM CALCULATION Imputed date</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28037,7 +28037,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SYSTEMCALCULATIONDatecheck</TranslatedText>
+      <TranslatedText xml:lang="en">SYSTEM CALCULATION Date check</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28054,7 +28054,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">SYSTEMCALCULATIONImputeddate</TranslatedText>
+      <TranslatedText xml:lang="en">SYSTEM CALCULATION Imputed date</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28253,7 +28253,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">HavesubjectbeenincontactwithanyoneconfirmedorsuspectedtohaveCOVID19inthepast28days</TranslatedText>
+      <TranslatedText xml:lang="en">Have subject been in contact with anyone confirmed or suspected to have COVID-19 in the past 28 days</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28270,7 +28270,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">HassubjectbeendiagnosedwithorsuspectedtohaveCOVID19</TranslatedText>
+      <TranslatedText xml:lang="en">Has subject been diagnosed with or suspected to have COVID-19</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28321,7 +28321,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Feverorchills</TranslatedText>
+      <TranslatedText xml:lang="en">Fever or chills</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28355,7 +28355,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">ShortnessofBreath</TranslatedText>
+      <TranslatedText xml:lang="en">Shortness of Breath</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28372,7 +28372,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Chestpain</TranslatedText>
+      <TranslatedText xml:lang="en">Chest pain</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28389,7 +28389,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Sorethroat</TranslatedText>
+      <TranslatedText xml:lang="en">Sore throat</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28406,7 +28406,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">NauseavomitingGIdistress</TranslatedText>
+      <TranslatedText xml:lang="en">Nausea, vomiting, GI distress</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28423,7 +28423,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Haveyouexperiencedlossoftasteorsmell</TranslatedText>
+      <TranslatedText xml:lang="en">Have you experienced loss of taste or smell</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28440,7 +28440,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Newonsetmusclesaches</TranslatedText>
+      <TranslatedText xml:lang="en">New onset muscles aches</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28457,7 +28457,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Generallyfeelingunwellfatigue</TranslatedText>
+      <TranslatedText xml:lang="en">Generally feeling unwell, fatigue</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28474,7 +28474,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Anyotherconcerningsymptoms</TranslatedText>
+      <TranslatedText xml:lang="en">Any other concerning symptoms</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28491,7 +28491,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Anyotherconcerningsymptoms</TranslatedText>
+      <TranslatedText xml:lang="en">Any other concerning symptoms</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28559,7 +28559,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">IsthereanySurgicalHistory</TranslatedText>
+      <TranslatedText xml:lang="en">Is there any Surgical History</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">
@@ -28593,7 +28593,7 @@ def:CommentOID="COM.COM.AECOM"
   def:DisplayFormat="8"
   >
   <Description>
-      <TranslatedText xml:lang="en">Hassubjecthadhysterectomy</TranslatedText>
+      <TranslatedText xml:lang="en">Has subject had hysterectomy</TranslatedText>
   </Description>
   <def:Origin Type="CRF">
    <def:DocumentRef leafID="LF.blankcrf">

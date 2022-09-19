@@ -7,7 +7,7 @@ base_path <- tempdir()
 data_dir <- "."
 
 DEV <- FALSE
-
+view <- FALSE
 
 test_that("write1: create_sdtm_xml test", {
 
@@ -25,6 +25,7 @@ test_that("write1: create_sdtm_xml test", {
   write_markup(xml, op)
 
   expect_equal(file.exists(op), TRUE)
+
 
 })
 
@@ -190,20 +191,27 @@ test_that("write8: ADAM defineR XML can be converted to HTML using XSL", {
 
 test_that("write9: create_sdtm_xml works with JS metadata", {
 
-  fp <- file.path(data_dir, "data/SDTM_METADATA_JS.xlsx")
-  op <- file.path(base_path, "xml/test9.xml")
+  if (DEV) {
 
-  if (file.exists(op))
-    file.remove(op)
+    fp <- file.path(data_dir, "data/SDTM_METADATA_JS.xlsx")
+    op <- file.path(base_path, "xml/test9.xml")
 
-  mdt <- import_metadata(fp)
+    if (file.exists(op))
+      file.remove(op)
+
+    mdt <- import_metadata(fp)
 
 
-  xml <- create_sdtm_xml(mdt)
+    xml <- create_sdtm_xml(mdt)
 
-  write_markup(xml, op)
+    write_markup(xml, op)
 
-  expect_equal(file.exists(op), TRUE)
+    expect_equal(file.exists(op), TRUE)
+
+  } else {
+
+   expect_equal(1, 1)
+  }
 
 })
 
@@ -287,7 +295,7 @@ test_that("write13: write_define() works as expected on CDISC metadata.", {
     file.remove(hf)
 
 
-  res <- write_define(fp, op, check = FALSE)
+  res <- write_define(fp, op, check = FALSE, view = view)
 
   res
 
@@ -313,7 +321,7 @@ test_that("write14: write_define() works as expected on JS metadata.", {
     file.remove(hf)
 
 
-  res <- write_define(fp, op, check = FALSE)
+  res <- write_define(fp, op, check = FALSE, view = view)
 
   res
 
@@ -339,7 +347,7 @@ test_that("write15: write_define() works as expected on metadata with checks.", 
     file.remove(hf)
 
 
-  res <- write_define(fp, op, check = TRUE)
+  res <- write_define(fp, op, check = TRUE, view = view)
 
   res
   expect_equal(length(res) == 0, TRUE)
@@ -364,7 +372,7 @@ test_that("write16: write_define() works as expected on JS metadata with checks.
       file.remove(hf)
 
 
-    res <- write_define(fp, op, check = TRUE)
+    res <- write_define(fp, op, check = TRUE, view = view)
 
     res
     expect_equal(length(res) > 0, TRUE)
@@ -395,7 +403,7 @@ test_that("write17: write_define() works as expected on CDISC metadata with chec
     file.remove(hf)
 
 
-  res <- write_define(fp, op, check = TRUE)
+  res <- write_define(fp, op, check = TRUE, view = view)
 
   res
   expect_equal(length(res) == 0, TRUE)
@@ -421,7 +429,7 @@ test_that("write18: write_define() works as expected on perfect SDTM metadata.",
     file.remove(hf)
 
 
-  res <- write_define(fp, op, check = TRUE, end_char = "\n")
+  res <- write_define(fp, op, check = TRUE, view = view, end_char = "\n")
 
   res
   expect_equal(length(res) == 0, TRUE)
@@ -508,7 +516,7 @@ test_that("write22: write_define() works as expected on perfect ADAM metadata.",
     file.remove(hf)
 
 
-  res <- write_define(fp, op, type = "ADAM", check = TRUE)
+  res <- write_define(fp, op, type = "ADAM", check = TRUE, view = view)
 
   res
   expect_equal(length(res) == 0, TRUE)
@@ -540,7 +548,7 @@ test_that("write23: write_define() works with custom XSD and XSLT.", {
     file.remove(hf)
 
 
-  res <- write_define(fp, op, type = "ADAM", check = TRUE)
+  res <- write_define(fp, op, type = "ADAM", check = TRUE, view = view)
 
   res
   expect_equal(length(res) == 0, TRUE)
