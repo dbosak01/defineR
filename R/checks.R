@@ -297,8 +297,9 @@ write_check_report <- function(cpth, msg, rtype = "PDF", viewer = FALSE) {
   #attr(dt$Messages, "width") <- 5
 
   mrg <- 1
-  if (viewer)
+  if (viewer) {
     mrg <- .5
+  }
 
   res <- output_report(list(dt), dirname(cpth), basename(cpth),
                        titles = "Define XML Check Report Results",

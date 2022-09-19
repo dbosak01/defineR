@@ -1,7 +1,7 @@
 Package: defineR
 Type: Package
 Title: Creates Define XML Documents
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(
     person(given = "David",
            family = "Bosak",
@@ -19,7 +19,7 @@ Maintainer: David Bosak <dbosak01@gmail.com>
 Description: Creates 'define.xml' documents used for FDA 
     submissions based on spreadsheet metadata.  Can also help
     create metadata and generate HTML data explorer. 
-License: CC BY-NC 4.0
+License: CC0
 Encoding: UTF-8
 Depends: R (>= 3.6.0),
          common,

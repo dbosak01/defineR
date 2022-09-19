@@ -63,7 +63,7 @@ function will create the define.xml, a PDF check report, and the define.html.
 
 ```{r eval=FALSE, echo=TRUE} 
 # Generate define files
-res <- write_define(pth, tmp)
+res <- write_define(pth, tmp, view = FALSE)
 
 # View check results
 res

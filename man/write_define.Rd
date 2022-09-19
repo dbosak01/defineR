@@ -112,7 +112,7 @@ tmp <- tempdir()
 pth <- write_metadata(tmp, demo = TRUE)
 
 # Generate define files
-res <- write_define(pth, tmp)
+res <- write_define(pth, tmp, view = FALSE)
 
 # View check results
 res
