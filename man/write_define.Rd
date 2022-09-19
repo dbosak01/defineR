@@ -6,7 +6,7 @@
 \usage{
 write_define(
   path,
-  dir = ".",
+  dir,
   type = "sdtm",
   ver = NULL,
   check = TRUE,
@@ -22,8 +22,7 @@ files are supported.  Other metadata sources may be added if there is sufficient
 interest.}
 
 \item{dir}{The output directory to create the define.xml and associated files.
-By default, the current working directory will be used. If the directory
-does not exist, the function will attempt to create it.}
+If the directory does not exist, the function will attempt to create it.}
 
 \item{type}{The type of define.xml to create.  Valid values are
 "sdtm" and "adam".  Default is "sdtm".}

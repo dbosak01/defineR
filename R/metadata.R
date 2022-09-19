@@ -27,8 +27,7 @@
 #' The demo spreadsheet was created by CDISC, and is
 #' included in the \strong{defineR} package for convenience.
 #'
-#' @param dir The directory in which to produce the metadata. The default
-#' is the current working directory.
+#' @param dir The directory in which to produce the metadata.
 #' @param type The type of metadata file to produce.  Valid values are
 #' "SDTM" and "ADAM". Default is "SDTM".
 #' @param ver The version of the metadata file.  Default is
@@ -61,7 +60,7 @@
 #'
 #' # View file
 #' # file.show(out2)
-write_metadata <- function(dir = ".", type = "sdtm", ver = NULL,
+write_metadata <- function(dir, type = "sdtm", ver = NULL,
                            src_dir = NULL, check = TRUE,
                            demo = FALSE) {
 

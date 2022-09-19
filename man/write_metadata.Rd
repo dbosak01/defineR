@@ -5,7 +5,7 @@
 \title{Creates define XML metadata}
 \usage{
 write_metadata(
-  dir = ".",
+  dir,
   type = "sdtm",
   ver = NULL,
   src_dir = NULL,
@@ -14,8 +14,7 @@ write_metadata(
 )
 }
 \arguments{
-\item{dir}{The directory in which to produce the metadata. The default
-is the current working directory.}
+\item{dir}{The directory in which to produce the metadata.}
 
 \item{type}{The type of metadata file to produce.  Valid values are
 "SDTM" and "ADAM". Default is "SDTM".}

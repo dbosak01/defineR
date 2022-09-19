@@ -58,8 +58,7 @@ e$end_char <- ""
 #' files are supported.  Other metadata sources may be added if there is sufficient
 #' interest.
 #' @param dir The output directory to create the define.xml and associated files.
-#' By default, the current working directory will be used. If the directory
-#' does not exist, the function will attempt to create it.
+#' If the directory does not exist, the function will attempt to create it.
 #' @param type The type of define.xml to create.  Valid values are
 #' "sdtm" and "adam".  Default is "sdtm".
 #' @param ver The version of the define XML to produce. Currently only
@@ -108,7 +107,7 @@ e$end_char <- ""
 #'
 #' # View HTML
 #' # file.show(file.path(tmp, "define.sdtm.html"))
-write_define <- function(path, dir = ".", type = "sdtm", ver = NULL,
+write_define <- function(path, dir, type = "sdtm", ver = NULL,
                          check = TRUE, html = TRUE, view = TRUE,
                          report_type = "PDF", end_char = "") {
 

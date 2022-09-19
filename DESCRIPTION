@@ -1,7 +1,7 @@
 Package: defineR
 Type: Package
 Title: Creates Define XML Documents
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: c(
     person(given = "David",
            family = "Bosak",
@@ -16,7 +16,7 @@ Authors@R: c(
            role = c("ctb"), 
            email = "jdstallings@dataindeed.io"))
 Maintainer: David Bosak <dbosak01@gmail.com>
-Description: Creates 'define.xml' documents used for FDA 
+Description: Creates 'define.xml' documents used for regulatory 
     submissions based on spreadsheet metadata.  Can also help
     create metadata and generate HTML data explorer. 
 License: CC0
