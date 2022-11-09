@@ -1,3 +1,7 @@
+# defineR 0.0.5
+
+* Update documentation.
+
 # defineR 0.0.4
 
 * Release to CRAN.

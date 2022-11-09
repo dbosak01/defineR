@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">defineR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.5</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/defineR.html">Get started</a>
 </li>
@@ -62,8 +58,21 @@
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
+<li>
+  <a href="https://github.com/dbosak01/defineR/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/dbosak01/defineR/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -73,13 +82,13 @@
 
       
 
-      </header><script src="defineR-faq_files/header-attrs-2.14/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Frequently Asked Questions</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/dbosak01/defineR/blob/HEAD/vignettes/defineR-faq.Rmd" class="external-link"><code>vignettes/defineR-faq.Rmd</code></a></small>
       <div class="hidden name"><code>defineR-faq.Rmd</code></div>
 
     </div>
@@ -89,9 +98,9 @@
 <p>Below are some frequently asked questions about the
 <strong>defineR</strong> package. Click on the links below to navigate
 to the full question and answer content.</p>
-<div id="top" class="section level2">
-<h2 class="hasAnchor">
-<a href="#top" class="anchor"></a>Index</h2>
+<div class="section level2">
+<h2 id="top">Index<a class="anchor" aria-label="anchor" href="#top"></a>
+</h2>
 <ul>
 <li><a href="#define">What is a define.xml?</a></li>
 <li><a href="#adam">How do I generate a define.xml for ADaM?</a></li>
@@ -109,12 +118,12 @@ sheet?</a></li>
 toolkit?</a></li>
 </ul>
 </div>
-<div id="content" class="section level2">
-<h2 class="hasAnchor">
-<a href="#content" class="anchor"></a>Content</h2>
-<div id="define" class="section level3">
-<h3 class="hasAnchor">
-<a href="#define" class="anchor"></a>What is a define.xml?</h3>
+<div class="section level2">
+<h2 id="content">Content<a class="anchor" aria-label="anchor" href="#content"></a>
+</h2>
+<div class="section level3">
+<h3 id="define">What is a define.xml?<a class="anchor" aria-label="anchor" href="#define"></a>
+</h3>
 <p><strong>Q:</strong> I don’t quite understand what this is about. What
 is a define.xml? Do I need one?</p>
 <p><strong>A:</strong> The define.xml is a special XML file used to
@@ -123,39 +132,38 @@ don’t know what it is, then you don’t need one.</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="adam" class="section level3">
-<h3 class="hasAnchor">
-<a href="#adam" class="anchor"></a>How do I generate a define.xml for ADaM?</h3>
+<div class="section level3">
+<h3 id="adam">How do I generate a define.xml for ADaM?<a class="anchor" aria-label="anchor" href="#adam"></a>
+</h3>
 <p><strong>Q:</strong> The <strong>defineR</strong> generator seems to
 always create a define.xml for SDTM. I want to create one for ADaM. How
 can I do that?</p>
 <p><strong>A:</strong> There is a parameter called <code>type</code> on
 the <code><a href="../reference/write_define.html">write_define()</a></code> function that you can use to specify an
 SDTM or ADaM define. Here is an example:</p>
-<pre><code># Get temporary directory for output
-tmp &lt;- tempdir()
-
-# Create demo spreadsheet
-pth &lt;- write_metadata(tmp, type = "adam", demo = TRUE)
-
-# Generate define for ADaM
-res &lt;- write_define(pth, tmp, type = "adam")
-
-# View XML
-# file.show(file.path(tmp, "define.adam.xml"))
-
-# View check report
-# file.show(file.path(tmp, "check.adam.pdf"))
-
-# View HTML
-# file.show(file.path(tmp, "define.adam.html"))
-</code></pre>
+<pre><code><span><span class="co"># Get temporary directory for output</span></span>
+<span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create demo spreadsheet</span></span>
+<span><span class="va">pth</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/write_metadata.html">write_metadata</a></span><span class="op">(</span><span class="va">tmp</span>, type <span class="op">=</span> <span class="st">"adam"</span>, demo <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Generate define for ADaM</span></span>
+<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/write_define.html">write_define</a></span><span class="op">(</span><span class="va">pth</span>, <span class="va">tmp</span>, type <span class="op">=</span> <span class="st">"adam"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># View XML</span></span>
+<span><span class="co"># file.show(file.path(tmp, "define.adam.xml"))</span></span>
+<span></span>
+<span><span class="co"># View check report</span></span>
+<span><span class="co"># file.show(file.path(tmp, "check.adam.pdf"))</span></span>
+<span></span>
+<span><span class="co"># View HTML</span></span>
+<span><span class="co"># file.show(file.path(tmp, "define.adam.html"))</span></span></code></pre>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="template" class="section level3">
-<h3 class="hasAnchor">
-<a href="#template" class="anchor"></a>Where can I get a metadata template?</h3>
+<div class="section level3">
+<h3 id="template">Where can I get a metadata template?<a class="anchor" aria-label="anchor" href="#template"></a>
+</h3>
 <p><strong>Q:</strong> I’d like to try out <strong>defineR</strong>.
 Where can I get a starting template?</p>
 <p><strong>A:</strong> You can generate a starting template. It it
@@ -165,7 +173,7 @@ template. To do that, set the <code>demo</code> option on the
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Get temporary directory</span></span>
-<span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Create metadata template</span></span>
 <span><span class="fu"><a href="../reference/write_metadata.html">write_metadata</a></span><span class="op">(</span><span class="va">tmp</span>, </span>
@@ -174,20 +182,20 @@ template. To do that, set the <code>demo</code> option on the
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="send" class="section level3">
-<h3 class="hasAnchor">
-<a href="#send" class="anchor"></a>Can I generate a define.xml for SEND?</h3>
+<div class="section level3">
+<h3 id="send">Can I generate a define.xml for SEND?<a class="anchor" aria-label="anchor" href="#send"></a>
+</h3>
 <p><strong>Q:</strong> I am working on an animal study, and need to
 generate a define.xml for SEND. Can <strong>defineR</strong> do
 that?</p>
 <p><strong>A:</strong> Not at this time. If you desire this feature,
-please submit a request to the GitHub <a href="https://github.com/dbosak01/defineR/issues">issue list</a>.</p>
+please submit a request to the GitHub <a href="https://github.com/dbosak01/defineR/issues" class="external-link">issue list</a>.</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="xpt" class="section level3">
-<h3 class="hasAnchor">
-<a href="#xpt" class="anchor"></a>Can I use my XPT files to generate a metadata file?</h3>
+<div class="section level3">
+<h3 id="xpt">Can I use my XPT files to generate a metadata file?<a class="anchor" aria-label="anchor" href="#xpt"></a>
+</h3>
 <p><strong>Q:</strong> I have some XPT files already. Can I use them to
 generate metadata?</p>
 <p><strong>A:</strong> Yes. Use the <code><a href="../reference/write_metadata.html">write_metadata()</a></code>
@@ -196,7 +204,7 @@ directory that contains your XPT files. Like this:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Get temporary directory</span></span>
-<span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Create metadata template</span></span>
 <span><span class="fu"><a href="../reference/write_metadata.html">write_metadata</a></span><span class="op">(</span><span class="va">tmp</span>, </span>
@@ -205,20 +213,20 @@ directory that contains your XPT files. Like this:</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="other" class="section level3">
-<h3 class="hasAnchor">
-<a href="#other" class="anchor"></a>Can I use other files to generate a metadata file?</h3>
+<div class="section level3">
+<h3 id="other">Can I use other files to generate a metadata file?<a class="anchor" aria-label="anchor" href="#other"></a>
+</h3>
 <p><strong>Q:</strong> What if I don’t have XPT files? Can I generate
 metadata from Excel files or SAS datasets?</p>
 <p><strong>A:</strong> Not in the current release. If you desire this
-feature, please submit a request to the GitHub <a href="https://github.com/dbosak01/defineR/issues">issue list</a>, and we
+feature, please submit a request to the GitHub <a href="https://github.com/dbosak01/defineR/issues" class="external-link">issue list</a>, and we
 can up the priority.</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="version" class="section level3">
-<h3 class="hasAnchor">
-<a href="#version" class="anchor"></a>Does the package support define 2.1?</h3>
+<div class="section level3">
+<h3 id="version">Does the package support define 2.1?<a class="anchor" aria-label="anchor" href="#version"></a>
+</h3>
 <p><strong>Q:</strong> Our organization is getting ready for define
 version 2.1. Does the <strong>defineR</strong> package support it?</p>
 <p><strong>A:</strong> Not yet. Define version 2.1 will be coming in a
@@ -226,22 +234,22 @@ future release.</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="styles" class="section level3">
-<h3 class="hasAnchor">
-<a href="#styles" class="anchor"></a>What if I want to use a different XSLT style sheet?</h3>
+<div class="section level3">
+<h3 id="styles">What if I want to use a different XSLT style sheet?<a class="anchor" aria-label="anchor" href="#styles"></a>
+</h3>
 <p><strong>Q:</strong> I have a custom style sheet, and want to use it
 with <strong>defineR</strong>. Can I do that?</p>
 <p><strong>A:</strong> Yes. There is a global option to specify a custom
 style sheet. The option is called “defineR.xslt”, and you can set it as
 follows:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span><span class="st">"defineR.xslt"</span> <span class="op">=</span> <span class="st">"&lt;path&gt;"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span><span class="st">"defineR.xslt"</span> <span class="op">=</span> <span class="st">"&lt;path&gt;"</span><span class="op">)</span></span></code></pre></div>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="existing" class="section level3">
-<h3 class="hasAnchor">
-<a href="#existing" class="anchor"></a>Can it read in an existing define.xml?</h3>
+<div class="section level3">
+<h3 id="existing">Can it read in an existing define.xml?<a class="anchor" aria-label="anchor" href="#existing"></a>
+</h3>
 <p><strong>Q:</strong> I have a define.xml alread and want to create a
 metadata template from it. Can this package do it?</p>
 <p><strong>A:</strong> Not at this time. If there is sufficient interest
@@ -249,15 +257,17 @@ in this feature, we can add it.</p>
 <p><a href="#top">top</a></p>
 <hr>
 </div>
-<div id="sas" class="section level3">
-<h3 class="hasAnchor">
-<a href="#sas" class="anchor"></a>Is this the same template as the SAS® toolkit?</h3>
-<p><strong>Q:</strong> This template looks exactly like the template in
+<div class="section level3">
+<h3 id="sas">Is this the same template as the SAS® toolkit?<a class="anchor" aria-label="anchor" href="#sas"></a>
+</h3>
+<p><strong>Q:</strong> This template looks similar to the template in
 the SAS® Clinical Standards Toolkit. Are they the same?</p>
-<p><strong>A:</strong> Yes. The metadata template for the
-<strong>defineR</strong> package was taken directly from the SAS®
-template. This was done for ease of interchange/migration between the
-two systems.</p>
+<p><strong>A:</strong> No. The metadata template for the
+<strong>defineR</strong> package was taken from the book “Implementing
+CDISC Using SAS: An End-to-End Guide” by Chris Holland and Jack Shostak.
+This book was published by SAS Institute®, but the metadata format is
+different than what was used for the SAS® Clinical Standards
+Toolkit.</p>
 <p><a href="#top">top</a></p>
 <hr>
 <!--
@@ -306,11 +316,13 @@ two systems.</p>
 
 
       <footer><div class="copyright">
-  <p>Developed by David Bosak, Aheer Alvi.</p>
+  <p></p>
+<p>Developed by David Bosak, Aheer Alvi.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.9000.</p>
 </div>
 
       </footer>
@@ -318,6 +330,8 @@ two systems.</p>
 
   
 
+
+  
 
   </body>
 </html>

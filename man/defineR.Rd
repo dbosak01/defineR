@@ -25,3 +25,4 @@ See the [Getting Started](https://defineR.r-sassy.org/articles/defineR.html)
 page for an overview of these functions.  Additional
 information is available in the function references.
 }
+\keyword{internal}

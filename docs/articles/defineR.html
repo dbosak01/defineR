@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">defineR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.5</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/defineR.html">Get started</a>
 </li>
@@ -62,8 +58,21 @@
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
+<li>
+  <a href="https://github.com/dbosak01/defineR/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/dbosak01/defineR/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -73,13 +82,13 @@
 
       
 
-      </header><script src="defineR_files/header-attrs-2.14/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>defineR</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/dbosak01/defineR/blob/HEAD/vignettes/defineR.Rmd" class="external-link"><code>vignettes/defineR.Rmd</code></a></small>
       <div class="hidden name"><code>defineR.Rmd</code></div>
 
     </div>
@@ -89,7 +98,7 @@
 <p>The <strong>defineR</strong> package creates the “define.xml”
 documents needed for regulatory submission to the FDA and other
 regulatory bodies. The XML structure for the documents was defined by
-the <a href="https://www.cdisc.org/">CDISC</a> standards organization,
+the <a href="https://www.cdisc.org/" class="external-link">CDISC</a> standards organization,
 in collaboration with industry representatives. The documents are
 required for FDA submission, and are frequently characterized as the
 “most important” documents. These documents are used by FDA reviewers to
@@ -100,9 +109,9 @@ define XML from spreadsheet metadata.<br><tab>2. <strong><code><a href="../refer
 metadata spreadsheet template.</tab></tab></p>
 <p>Below is a brief demonstration of the above two functions. See the
 function documentation for additional details.</p>
-<div id="how-to-use" class="section level3">
-<h3 class="hasAnchor">
-<a href="#how-to-use" class="anchor"></a>How to Use</h3>
+<div class="section level3">
+<h3 id="how-to-use">How to Use<a class="anchor" aria-label="anchor" href="#how-to-use"></a>
+</h3>
 <p>The <strong>defineR</strong> package uses spreadsheet metadata to
 create the define.xml document. The structure of this metadata has been
 standardized by CDISC, and is widely used in the industry. The functions
@@ -112,7 +121,7 @@ package handles both SDTM and ADaM data standards.</p>
 code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Get temporary directory </span></span>
-<span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Create demo spreadsheet</span></span>
 <span><span class="va">pth</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/write_metadata.html">write_metadata</a></span><span class="op">(</span><span class="va">tmp</span>, demo <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -122,9 +131,9 @@ code:</p>
 <p>The above code will produce sample metadata for SDTM that looks like
 this:</p>
 <p><img src="../man/images/metadata.png"></p>
-<div id="create-the-define-xml" class="section level4">
-<h4 class="hasAnchor">
-<a href="#create-the-define-xml" class="anchor"></a>Create the Define.xml</h4>
+<div class="section level4">
+<h4 id="create-the-define-xml">Create the Define.xml<a class="anchor" aria-label="anchor" href="#create-the-define-xml"></a>
+</h4>
 <p>Using the metadata from above, we can now create the define.xml and
 associated files. More than one file can be generated by this function,
 depending on the parameters selected. By default, the function will
@@ -147,9 +156,9 @@ create the define.xml, a PDF check report, and the define.html.</p>
 <span><span class="co"># file.show(file.path(tmp, "define.sdtm.html"))</span></span></code></pre></div>
 </div>
 </div>
-<div id="function-outputs" class="section level3">
-<h3 class="hasAnchor">
-<a href="#function-outputs" class="anchor"></a>Function Outputs</h3>
+<div class="section level3">
+<h3 id="function-outputs">Function Outputs<a class="anchor" aria-label="anchor" href="#function-outputs"></a>
+</h3>
 <p>The output directory will now contain the define.xml. Here is the top
 portion of the document: <img src="../man/images/define.png"></p>
 <p>Here is the check report: <img src="../man/images/report1.png"></p>
@@ -164,9 +173,9 @@ in the past.</p>
 completeness of your metadata. But even more feedback can be obtained
 from the check report.</p>
 </div>
-<div id="check-report" class="section level3">
-<h3 class="hasAnchor">
-<a href="#check-report" class="anchor"></a>Check Report</h3>
+<div class="section level3">
+<h3 id="check-report">Check Report<a class="anchor" aria-label="anchor" href="#check-report"></a>
+</h3>
 <p>The SDTM demo metadata produces no completeness check messages. When
 there are messages, they will be communicated in three ways:</p>
 <ol style="list-style-type: decimal">
@@ -185,9 +194,9 @@ PDF: <img src="../man/images/report.png"></p>
 metadata. You can use this function to iteratively check and correct
 your metadata until no issues are found.</p>
 </div>
-<div id="next-steps" class="section level3">
-<h3 class="hasAnchor">
-<a href="#next-steps" class="anchor"></a>Next Steps</h3>
+<div class="section level3">
+<h3 id="next-steps">Next Steps<a class="anchor" aria-label="anchor" href="#next-steps"></a>
+</h3>
 <p>For next steps, please review the function reference
 documentation:</p>
 <ul>
@@ -206,11 +215,13 @@ documentation:</p>
 
 
       <footer><div class="copyright">
-  <p>Developed by David Bosak, Aheer Alvi.</p>
+  <p></p>
+<p>Developed by David Bosak, Aheer Alvi.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.9000.</p>
 </div>
 
       </footer>
@@ -218,6 +229,8 @@ documentation:</p>
 
   
 
+
+  
 
   </body>
 </html>

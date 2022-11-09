@@ -359,7 +359,7 @@ test_that("write15: write_define() works as expected on metadata with checks.", 
 test_that("write16: write_define() works as expected on JS metadata with checks.", {
 
   if (DEV) {
-    fp <- file.path(data_dir, "data/SDTM_METADATA_JS.xlsx")
+    fp <- file.path(data_dir, "data/SDTM_METADATA_JS2.xlsx")
     op <- file.path(base_path, "output")
 
     df <- file.path(op, "define.sdtm.xml")

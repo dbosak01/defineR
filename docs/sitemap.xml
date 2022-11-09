@@ -1,21 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://defineR.r-sassy.org/index.html</loc>
+    <loc>https://defineR.r-sassy.org/404.html</loc>
   </url>
   <url>
-    <loc>https://defineR.r-sassy.org/reference/defineR.html</loc>
-  </url>
-  <url>
-    <loc>https://defineR.r-sassy.org/reference/write_define.html</loc>
-  </url>
-  <url>
-    <loc>https://defineR.r-sassy.org/reference/write_metadata.html</loc>
+    <loc>https://defineR.r-sassy.org/articles/defineR-define.html</loc>
   </url>
   <url>
     <loc>https://defineR.r-sassy.org/articles/defineR-faq.html</loc>
   </url>
   <url>
+    <loc>https://defineR.r-sassy.org/articles/defineR-metadata.html</loc>
+  </url>
+  <url>
     <loc>https://defineR.r-sassy.org/articles/defineR.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/index.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/add_column.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/add_dataset.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/add_variable.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/create_adam_xml.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/create_define.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/create_document.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/create_sdtm_xml.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/defineR.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/define_dataset.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/import_metadata.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/import_metadata_xl.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/print.dfn_spec.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/print.doc_spec.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/write_define.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/write_markup.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/write_metadata.html</loc>
+  </url>
+  <url>
+    <loc>https://defineR.r-sassy.org/reference/write_xml.html</loc>
   </url>
 </urlset>

@@ -195,12 +195,14 @@ we can add it.
 
 ### Is this the same template as the SAS® toolkit? {#sas}
 
-**Q:** This template looks exactly like the template in
+**Q:** This template looks similar to the template in
 the SAS® Clinical Standards Toolkit.  Are they the same?
 
-**A:** Yes.  The metadata template for the **defineR** package
-was taken directly from the SAS® template.  This was done for ease
-of interchange/migration between the two systems.  
+**A:** No.  The metadata template for the **defineR** package
+was taken from the book "Implementing CDISC Using SAS: An End-to-End Guide" 
+by Chris Holland and Jack Shostak.  This book was published by SAS Institute®, 
+but the metadata format is different than what was used for the 
+SAS® Clinical Standards Toolkit.
 
 [top](#top)
 

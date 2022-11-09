@@ -1,7 +1,7 @@
 Package: defineR
 Type: Package
 Title: Creates Define XML Documents
-Version: 0.0.4
+Version: 0.0.5
 Authors@R: c(
     person(given = "David",
            family = "Bosak",
@@ -20,6 +20,8 @@ Description: Creates 'define.xml' documents used for regulatory
     submissions based on spreadsheet metadata.  Can also help
     create metadata and generate HTML data explorer. 
 License: CC0
+URL: https://defineR.r-sassy.org
+BugReports: https://github.com/dbosak01/defineR/issues
 Encoding: UTF-8
 Depends: R (>= 3.6.0),
          common,
@@ -28,7 +30,7 @@ Suggests:
     knitr,
     rmarkdown,
     magrittr,
-    testthat (>= 3.0.0),
+    testthat (>= 3.0.0)
 Imports:
     readxl,
     xml2,
@@ -39,4 +41,4 @@ Imports:
     stats
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1

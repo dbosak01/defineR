@@ -8,7 +8,7 @@
 <!-- badges: end -->
 
 # Introduction to **defineR**
-<img src="man/images/defineRe.png" align="left" height="138" style="margin-right:10px;"/>
+<img src="man/images/defineRe.png" align="left" height="138" style="margin-right:10px;height:138px"/>
 
 The **defineR** package is an open-source R language package to 
 create define.xml documents that are suitable for submission 

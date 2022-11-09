@@ -24,6 +24,7 @@
 #' @import common
 #' @import xml2
 #' @import xslt
+#' @keywords internal
 #' @docType package
 #' @name defineR
 NULL

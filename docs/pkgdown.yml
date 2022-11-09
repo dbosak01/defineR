@@ -1,10 +1,10 @@
 pandoc: '2.18'
-pkgdown: 1.6.1
-pkgdown_sha: ~
+pkgdown: 2.0.6.9000
+pkgdown_sha: 7fe9e802df2964d483d0267f1d5a59aa7b3c685d
 articles:
   defineR-faq: defineR-faq.html
   defineR: defineR.html
-last_built: 2022-09-19T15:46Z
+last_built: 2022-11-09T20:35Z
 urls:
   reference: https://defineR.r-sassy.org/reference
   article: https://defineR.r-sassy.org/articles

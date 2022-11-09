@@ -1,10 +1,5 @@
 url: https://defineR.r-sassy.org
 
-
-articles:
-- titles: Examples
-  navbar: ~
-
 reference:
 - title: All Functions
   desc: Functions to create define.xml documents and metadata.

@@ -28,6 +28,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -40,18 +42,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">defineR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.5</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="articles/defineR.html">Get started</a>
 </li>
@@ -64,8 +60,21 @@
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
+<li>
+  <a href="https://github.com/dbosak01/defineR/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/dbosak01/defineR/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -79,95 +88,97 @@
   <div class="contents col-md-9">
 
 
-<div id="introduction-to-definer" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#introduction-to-definer" class="anchor"></a>Introduction to <strong>defineR</strong>
+<div class="section level1">
+<div class="page-header"><h1 id="introduction-to-definer">Introduction to <strong>defineR</strong>
+<a class="anchor" aria-label="anchor" href="#introduction-to-definer"></a>
 </h1></div>
-<p><img src="man/images/defineRe.png" align="left" height="138" style="margin-right:10px;"></p>
-<p>The <strong>defineR</strong> package is an open-source R language
-package to create define.xml documents that are suitable for submission
-to the U.S. Food and Drug Administration. The package has the following
-capabilities:</p>
-<p><tab>1. Create the define.xml document<br><tab>2. Perform consistency checks and schema validation of the
-define.xml<br><tab>3. Write and view a report of the consistency checks<br><tab>4. Produce the define.html transformation of define.xml<br><tab>5. Generate the metadata templates needed to create the
-define.xml</tab></tab></tab></tab></tab></p>
-<p>Currently, the package only supports version 2.0.0 of the define.xml
-for SDTM and ADaM. Future enhancements to the package will add support
-for define version 2.1.</p>
-<p>IMPORTANT: This package is being released experimentally for the
-purposes of gathering public feedback. It is not recommended to use this
-package for regulatory submissions yet. Please do use this package to
-examine and refine your metadata, scrutinize the output, and submit any
-issues/suggestions to the GitHub issue list <a href="https://github.com/dbosak01/defineR/issues">here</a>.</p>
-<div id="installation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h3>
-<p>The easiest way to install the <strong>defineR</strong> package is to
-run the following command from your R console:</p>
+<p><img src="man/images/defineRe.png" align="left" height="138" style="margin-right:10px;height:138px"></p>
+<p>The <strong>defineR</strong> package is an open-source R language package to create define.xml documents that are suitable for submission to the U.S. Food and Drug Administration. The package has the following capabilities:</p>
+<p><tab>1. Create the define.xml document<br><tab>2. Perform consistency checks and schema validation of the define.xml<br><tab>3. Write and view a report of the consistency checks<br><tab>4. Produce the define.html transformation of define.xml<br><tab>5. Generate the metadata templates needed to create the define.xml</tab></tab></tab></tab></tab></p>
+<p>Currently, the package only supports version 2.0.0 of the define.xml for SDTM and ADaM. Future enhancements to the package will add support for define version 2.1.</p>
+<p>IMPORTANT: This package is being released experimentally for the purposes of gathering public feedback. It is not recommended to use this package for regulatory submissions yet. Please do use this package to examine and refine your metadata, scrutinize the output, and submit any issues/suggestions to the GitHub issue list <a href="https://github.com/dbosak01/defineR/issues" class="external-link">here</a>.</p>
+<div class="section level3">
+<h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h3>
+<p>The easiest way to install the <strong>defineR</strong> package is to run the following command from your R console:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"defineR"</span>)</span></code></pre></div>
 <p>Then put the following line at the top of your script:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(defineR)</span></code></pre></div>
-<p>For examples and usage information, please visit the
-<strong>defineR</strong> documentation site <a href="https://defineR.r-sassy.org/articles/defineR.html">here</a></p>
+<p>For examples and usage information, please visit the <strong>defineR</strong> documentation site <a href="https://defineR.r-sassy.org/articles/defineR.html">here</a></p>
 </div>
-<div id="getting-help" class="section level3">
-<h3 class="hasAnchor">
-<a href="#getting-help" class="anchor"></a>Getting Help</h3>
+<div class="section level3">
+<h3 id="getting-help">Getting Help<a class="anchor" aria-label="anchor" href="#getting-help"></a>
+</h3>
 <p>If you need help, the first place to turn to is the <a href="https://defineR.r-sassy.org">defineR</a> web site.</p>
-<p>If you want to look at the code for the <strong>defineR</strong>
-package, visit the github page <a href="https://github.com/dbosak01/defineR">here</a>.</p>
-<p>If you encounter a bug or have a feature request, please submit an
-issue <a href="https://github.com/dbosak01/defineR/issues">here</a>.</p>
+<p>If you want to look at the code for the <strong>defineR</strong> package, visit the github page <a href="https://github.com/dbosak01/defineR" class="external-link">here</a>.</p>
+<p>If you encounter a bug or have a feature request, please submit an issue <a href="https://github.com/dbosak01/defineR/issues" class="external-link">here</a>.</p>
 </div>
-<div id="see-also" class="section level3">
-<h3 class="hasAnchor">
-<a href="#see-also" class="anchor"></a>See Also</h3>
-<p>The <strong>defineR</strong> package is associated with the
-<strong>sassy</strong> meta-package, and utilizes many of the packages
-from that system. The <strong>sassy</strong> meta-package includes
-several packages that help make R easier. You can read more about the
-<strong>sassy</strong> packages <a href="https://sassy.r-sassy.org">here</a>.</p>
+<div class="section level3">
+<h3 id="see-also">See Also<a class="anchor" aria-label="anchor" href="#see-also"></a>
+</h3>
+<p>The <strong>defineR</strong> package is associated with the <strong>sassy</strong> meta-package, and utilizes many of the packages from that system. The <strong>sassy</strong> meta-package includes several packages that help make R easier. You can read more about the <strong>sassy</strong> packages <a href="https://sassy.r-sassy.org" class="external-link">here</a>.</p>
 </div>
 </div>
 
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="license">
-<h2>License</h2>
+    <div class="links">
+<h2 data-toc-skip>Links</h2>
+<ul class="list-unstyled">
+<li><a href="https://cloud.r-project.org/package=defineR" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/dbosak01/defineR/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/dbosak01/defineR/issues" class="external-link">Report a bug</a></li>
+</ul>
+</div>
+
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>CC0</li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>David Bosak <br><small class="roles"> Author, maintainer </small>  </li>
-<li>Aheer Alvi <br><small class="roles"> Author </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html#citation">Citing defineR</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=defineR"><img src="https://www.r-pkg.org/badges/version/defineR" alt="defineR version"></a></li>
-<li><a href="https://cran.r-project.org/package=defineR"><img src="https://img.shields.io/badge/lifecycle-experimental-red.svg" alt="defineR lifecycle"></a></li>
-<li><a href="https://cran.r-project.org/package=defineR"><img src="https://cranlogs.r-pkg.org/badges/defineR" alt="defineR downloads"></a></li>
-<li><a href="https://cran.r-project.org/package=defineR"><img src="https://cranlogs.r-pkg.org/badges/grand-total/defineR" alt="defineR total downloads"></a></li>
-<li><a href="https://github.com/dbosak01/defineR/actions/workflows/R-CMD-check.yaml"><img src="https://github.com/dbosak01/defineR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li>David Bosak <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Aheer Alvi <br><small class="roles"> Author </small>  </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://cran.r-project.org/package=defineR" class="external-link"><img src="https://www.r-pkg.org/badges/version/defineR" alt="defineR version"></a></li>
+<li><a href="https://cran.r-project.org/package=defineR" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-red.svg" alt="defineR lifecycle"></a></li>
+<li><a href="https://cran.r-project.org/package=defineR" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/defineR" alt="defineR downloads"></a></li>
+<li><a href="https://cran.r-project.org/package=defineR" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/defineR" alt="defineR total downloads"></a></li>
+<li><a href="https://github.com/dbosak01/defineR/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/dbosak01/defineR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
 </div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by David Bosak, Aheer Alvi.</p>
+  <p></p>
+<p>Developed by David Bosak, Aheer Alvi.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.9000.</p>
 </div>
 
       </footer>
@@ -175,6 +186,8 @@ several packages that help make R easier. You can read more about the
 
   
 
+
+  
 
   </body>
 </html>
