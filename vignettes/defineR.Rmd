@@ -34,8 +34,7 @@ documentation for additional details.
 ### How to Use
 
 The **defineR** package uses spreadsheet metadata to create the define.xml
-document. The structure of this metadata has been standardized by CDISC, and is
-widely used in the industry. The functions in **defineR** both read and 
+document. The functions in **defineR** both read and 
 write this spreadsheet.  The package handles both SDTM and ADaM data 
 standards.
 

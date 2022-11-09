@@ -24,7 +24,7 @@
 #' conformance errors.  Use this demo spreadsheet as a guide to fill
 #' out your metadata.
 #'
-#' The demo spreadsheet was created by CDISC, and is
+#' The demo spreadsheet is
 #' included in the \strong{defineR} package for convenience.
 #'
 #' @param dir The directory in which to produce the metadata.
