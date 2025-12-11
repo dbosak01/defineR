@@ -258,7 +258,7 @@ generate_template <- function(dir, type, ver, src_dir, check) {
 import_metadata <- function(location, type = "excel") {
 
 
-  print("Debug 1")
+  # print("Debug 1")
 
   if (!type %in% c("excel")) {
 
@@ -274,12 +274,12 @@ import_metadata <- function(location, type = "excel") {
       stop(paste0("Location '", location, "' does not exist."))
     }
 
-    print("Debug 2")
+    # print("Debug 2")
 
     # Get sheets from excel file
     shts <- excel_sheets(location)
 
-    print("Debug 3")
+    # print("Debug 3")
 
     ashts <- c("DEFINE_HEADER_METADATA", "TOC_METADATA", "VARIABLE_METADATA",
                "VALUELEVEL_METADATA", "COMPUTATION_METHOD", "CODELISTS",
@@ -289,7 +289,7 @@ import_metadata <- function(location, type = "excel") {
 
     for (sht in gshts) {
 
-      print(paste0("Sheetname: ", sht))
+      # print(paste0("Sheetname: ", sht))
 
       ret[[sht]] <- read_excel(location, sheet = sht)
 
@@ -297,7 +297,7 @@ import_metadata <- function(location, type = "excel") {
 
   }
 
-  print("Debug 4")
+  #print("Debug 4")
 
   return(ret)
 
