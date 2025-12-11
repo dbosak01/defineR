@@ -1,18 +1,16 @@
 %PDF-1.7
 %‚„œ”
-1 0 obj<</Type /Catalog /Pages 5 0 R>>
+1 0 obj<</Type /Catalog /Pages 4 0 R>>
 endobj
 2 0 obj<</Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding>>
 endobj
 3 0 obj<</Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding>>
 endobj
-4 0 obj<</Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding>>
+4 0 obj<</Type /Pages /Kids [5 0 R] /Count 1 /MediaBox [0 0 612 792]>>
 endobj
-5 0 obj<</Type /Pages /Kids [6 0 R] /Count 1 /MediaBox [0 0 612 792]>>
+5 0 obj<</Type /Page /Parent 4 0 R /Contents 6 0 R /Resources <</Font <</F1 2 0 R /F2 3 0 R>> /ProcSet [/PDF /Text]>>>>
 endobj
-6 0 obj<</Type /Page /Parent 5 0 R /Contents 7 0 R /Resources <</Font <</F1 2 0 R /F2 3 0 R /F3 4 0 R>> /ProcSet [/PDF /Text]>>>>
-endobj
-7 0 obj<</Length 759>>
+6 0 obj<</Length 745>>
 stream
 BT /F1 10 Tf 100 Tz 224.275 715 Td <446566696e6520584d4c20436865636b205265706f727420526573756c7473>Tj ET
 BT /F1 10 Tf 100 Tz 227.935 687.2 Td <4944>Tj ET
@@ -26,25 +24,24 @@ BT /F1 10 Tf 100 Tz 243.715 672.8 Td <4e6f20636865636b206d6573736167657320746f20
 223.045 684.2 m 223.045 668.8 l S
 378.955 684.2 m 378.955 668.8 l S
 223.045 668.8 m 378.955 668.8 l S
-BT /F1 10 Tf 100 Tz 70 78.4 Td <323032352d31322d31302032333a34323a33382e323838393736>Tj ET
+BT /F1 10 Tf 100 Tz 70 78.4 Td <323032322d31322d30362031343a35313a3139>Tj ET
 BT /F1 10 Tf 100 Tz 481.7275 78.4 Td <506167652031206f662031>Tj ET
 endstream
 endobj
-8 0 obj<</Producer (reporter v1.4.4) /Author (dbosa) /Title () /Subject () /Creator (R version 4.4.3 (2025-02-28 ucrt)) /Keywords ()
- /CreationDate (D:20251210234238-05'00') /ModDate (D:20251210234238-05'00')>>
+7 0 obj<</Producer (reporter v1.3.8) /Author (dbosa) /Title () /Subject () /Creator (R version 4.2.1 (2022-06-23 ucrt)) /Keywords ()
+ /CreationDate (D:20221206145119-05'00') /ModDate (D:20221206145119-05'00')>>
 endobj
 xref
-0 9
+0 8
 0000000000 65535 f 
 0000000015 00000 n 
 0000000061 00000 n 
 0000000155 00000 n 
 0000000254 00000 n 
-0000000356 00000 n 
-0000000434 00000 n 
-0000000571 00000 n 
-0000001377 00000 n 
-trailer <</Size 9 /Root 1 0 R /Info 8 0 R>>
+0000000332 00000 n 
+0000000459 00000 n 
+0000001251 00000 n 
+trailer <</Size 8 /Root 1 0 R /Info 7 0 R>>
 startxref
-1595
+1469
 %%EOF

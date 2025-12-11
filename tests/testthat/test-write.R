@@ -419,6 +419,10 @@ test_that("write18: write_define() works as expected on perfect SDTM metadata.",
   fp <- file.path(data_dir, "data/SDTM_METADATA_PERFECT.xls")
   op <- file.path(base_path, "output")
 
+  if (dir.exists(op) == FALSE) {
+    dir.create(op)
+  }
+
   df <- file.path(op, "define.sdtm.xml")
   hf <- file.path(op, "define.sdtm.html")
 
@@ -432,6 +436,10 @@ test_that("write18: write_define() works as expected on perfect SDTM metadata.",
   res <- write_define(fp, op, check = TRUE, view = view, end_char = "\n")
 
   res
+
+  print("here is the res")
+  print(res)
+
   expect_equal(length(res) == 0, TRUE)
   expect_equal(file.exists(df), TRUE)
   expect_equal(file.exists(hf), TRUE)
@@ -674,4 +682,29 @@ test_that("write25: SDTM CDISC defineR XML can be converted to HTML", {
 #
 # })
 
+
+# Key test
+# test_that("write18: write_define() works as expected on perfect SDTM metadata.", {
+#
+#   fp <- file.path(data_dir, "metadata/demo/SDTM_METADATA.xlsx")
+#   op <- file.path(base_path, "output")
+#
+#   df <- file.path(op, "define.sdtm.xml")
+#   hf <- file.path(op, "define.sdtm.html")
+#
+#   if (file.exists(df))
+#     file.remove(df)
+#
+#   if (file.exists(hf))
+#     file.remove(hf)
+#
+#
+#   res <- write_define(fp, op, check = TRUE, view = view, end_char = "\n")
+#
+#   res
+#   expect_equal(length(res) == 0, TRUE)
+#   expect_equal(file.exists(df), TRUE)
+#   expect_equal(file.exists(hf), TRUE)
+#
+# })
 

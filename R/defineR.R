@@ -25,6 +25,6 @@
 #' @import xml2
 #' @import xslt
 #' @keywords internal
-#' @docType package
+#' @aliases defineR-package
 #' @name defineR
-NULL
+"_PACKAGE"

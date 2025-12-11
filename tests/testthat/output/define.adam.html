@@ -1,0 +1,3452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<!--
+     xsl:version = "1.0"
+     xsl:vendor = "libxslt"
+     xsl:vendor-url = "http://xmlsoft.org/XSLT/"
+   -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>XYZ123, ADaM-IG1.0</title>
+<script type="text/javascript"><!--
+/**
+ * With one argument, return the textContent or innerText of the element.
+ * With two arguments, set the textContent or innerText of element to value.
+ */
+function textContent(element, value) {
+  "use strict";
+  var rtn;
+  var content = element.textContent;  // Check if textContent is defined
+  if (value === undefined) { // No value passed, so return current text
+    if (content !== undefined) {
+      rtn = content;
+    } else {
+      rtn = element.innerText;
+    }
+    return rtn;
+  }
+  else { // A value was passed, so set text
+    if (content !== undefined) {
+      element.textContent = value;
+    } else {
+      element.innerText = value;
+    }
+  }
+}
+
+var ITEM  = '\u00A0';
+var CLOSE = '\u25BA';
+var OPEN  = '\u25BC';
+
+function toggle_submenu(e) {
+  "use strict";
+  if (textContent(e)===OPEN) {
+    textContent(e, CLOSE);
+  }
+  else {
+    textContent(e, OPEN);
+  }
+
+  var i;
+  for (i=0; i < e.parentNode.childNodes.length; i++) {
+    var c;
+    c=e.parentNode.childNodes[i];
+    if (c.tagName==='UL') {c.style.display=(c.style.display==='none') ? 'block' : 'none';}
+   }
+}
+
+function reset_menus() {
+"use strict";
+  var li;
+  var c;
+  var i;
+  var j;
+  var li_tags = document.getElementsByTagName('LI');
+  for (i=0; i < li_tags.length; i++) {
+    li=li_tags[i];
+    if ( li.className.match('hmenu-item') ){
+      for (j=0; j < li.childNodes.length; j++) {
+        c=li.childNodes[j];
+        if ( c.tagName === 'SPAN' && c.className.match('hmenu-bullet') ) {textContent(c, ITEM);}
+        }
+      }
+    if ( li.className.match('hmenu-submenu') ) {
+      for (j=0; j < li.childNodes.length; j++) {
+        c=li.childNodes[j];
+        if ( c.tagName === 'SPAN' && c.className.match('hmenu-bullet') ) {textContent(c, CLOSE);}
+        else if ( c.tagName === 'UL' ) { c.style.display = 'none'; }
+        }
+    }
+  }
+}
+
+function toggle_vlm(element) {
+  var child_id = element.childNodes[0].getAttribute("id");
+  var vlm_rows = document.getElementsByClassName(child_id);
+  for (j=0; j < vlm_rows.length; j++) {
+    if (vlm_rows[j].style.display==='none') {
+      vlm_rows[j].style.display=''; }
+    else {
+      vlm_rows[j].style.display='none'; 
+      }
+    }
+}
+
+function expand_all_vlm() {
+  var vlm_rows = document.getElementsByClassName("vlm");
+  for (j=0; j < vlm_rows.length; j++) {
+      vlm_rows[j].style.display='';
+    }
+}
+
+function collapse_all_vlm() {
+  var vlm_rows = document.getElementsByClassName("vlm");
+  for (j=0; j < vlm_rows.length; j++) {
+      vlm_rows[j].style.display='none';
+    }
+}
+
+/**
+ * Open external documents (PDFs, ...) in a new window.
+ */
+document.onclick = function(e)
+{
+  var target = e ? e.target : window.event.srcElement;    
+  while (target && !/^(a|body)$/i.test(target.nodeName))
+  {
+    target = target.parentNode;
+  }
+
+  if (target && target.className.match('external'))
+  {
+    var external = window.open(target.href);
+    return external.closed;
+  }
+}
+//--></script>
+  <style type="text/css">
+      .external-link-gif{
+        background: 
+        url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gCGhErDWL4mOoAAAB6SURBVBjTbVCxDcAgDHNRP2KDY9gYO5YbWNno1mPY6E3pAJEIYCmCOCQOPogII6wNkug4d49KiXMz1EiUEg8uLBN3Ui7FVduYmxjG3JRru+facubVuIdLEV4Dzwe8V4BYg7t4Ap+d57qUnuWICBzi116v1ggfd3bM+AEZWXFvnym8EwAAAABJRU5ErkJggg==)
+       no-repeat
+       right center;
+        padding: 8px;
+      }      
+      
+      body{
+        background-color: #FFFFFF;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 62.5%;
+        margin: 0;
+        padding: 30px;
+      }
+      
+      h1{
+        font-size: 1.6em;
+        margin-left: 0;
+        font-weight: bolder;
+        text-align: left;
+        color: #696969;
+      }
+      
+      h1.header{
+        text-align: center;
+      }
+      
+      ul{
+        margin-left: 0px;
+      }
+      
+      a{
+      color: #0000FF;
+        text-decoration: underline;
+      }
+      a.visited{
+      color: #551A8B;
+        text-decoration: underline;
+      }
+      a:hover{
+      color: #FF9900;
+        text-decoration: underline;
+      }
+      a.tocItem{
+      color: #004A95;
+      text-decoration: none;
+      margin-top: 2px;
+      font-size: 1.4em;
+      }
+      .tocItem{
+      text-decoration: none;
+      margin-top: 2px;
+      font-size: 1.4em;
+      }
+      
+      #menu{
+        position: fixed;
+        left: 0px;
+        top: 10px;
+        width: 20%;
+        height: 96%;
+        bottom: 0px;
+        overflow: auto;
+        background-color: #FFFFFF;
+        color: #000000;
+        border: 0px;
+        text-align: left;
+        white-space: nowrap;
+      }
+ 
+      .hmenu li{
+        list-style-type: none;
+        line-height: 200%;
+        padding-left: 0;
+      }
+      .hmenu ul{
+        padding-left: 14px;
+        margin-left: 0;
+      }
+      .hmenu-item{
+      }
+      .hmenu-submenu{
+      }
+      .hmenu-bullet{
+        float: left;
+        width: 16px;
+        color: #AAAAAA;
+        font-size: 1.2em;
+      }
+      
+      div.buttons {
+        padding: 5px 0 5px 40px;
+        display: inline-block;
+      }
+        div.button {
+        padding: 5px 0 5px 0;   
+      }
+      
+      button { 
+        width: 100%;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 3px 3px 2px #888;
+        -moz-box-shadow: 3px 3px 2px #888;
+        box-shadow: 3px 3px 2px #888;
+        padding: 4px 16px 4px 16px;
+        display:block;
+        cursor: pointer;
+      }
+
+      #main{
+        position: absolute;
+        left: 22%;
+        top: 0px;
+        overflow: auto;
+        background-color: #FFFFFF;
+        color: #000000;
+        float: none !important;
+      }
+      
+      ul.codelist{
+        padding: 1px;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        
+      }
+      .codelist li{
+        list-style-type:none;
+        line-height: 200%;
+        padding-left: 0;
+        text-indent: -4px;
+      }
+      
+      .codelist-caption{
+        font-size: 1.4em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-left: 0;
+        font-weight: bolder;
+        text-align: left;
+        color: #696969;
+      }
+      
+      .codelist-item{
+        list-style-type: disk;
+        list-style-position: inside;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 0 0 0;
+        }
+
+      .codelist-item-decode{
+        white-space: pre; /* CSS 2.0 */
+        white-space: pre-wrap; /* CSS 2.1 */
+         /* CSS 3.0 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap; /* HP Printers */
+        word-wrap: break-word; /* IE 5+ */
+      }      
+
+      ul.SubClass {
+        list-style-type: '- ';
+        padding-left: 5;
+        margin: 0 0 0 0;
+      }
+      ul.SubClass.li {}
+
+      #main .docinfo{
+        width: 95%;
+        text-align: right;
+        padding: 0px 5px;
+      }
+      
+      div.containerbox{
+        padding: 0px;
+        margin: 10px auto;
+        border: 0px;
+        page-break-after: always;
+      }
+      
+      .study-name{
+        font-size: 1.6em;
+        font-weight: bold;
+        text-align: left;
+        padding: 15px;
+        margin-left: 20px;
+        margin-top: 40px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        color: #696969;
+        border: 0px;
+      }
+      
+      div.study-metadata{
+        font-size: 1.6em;
+        font-weight: bold;
+        text-align: left;
+        padding: 0px;
+        margin-left: 0px;
+        margin-top: 00px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        color: #696969;
+        border: 0px;
+      }
+      
+      dl.study-metadata{
+        width: 95%;
+        padding: 5px 0px;
+        font-size: 0.8em;
+        color: black;
+      }
+      
+      dl.study-metadata dt{
+        clear: left;
+        float: left;
+        width: 200px;
+        margin: 0;
+        padding: 5px 5px 5px 0px;
+        font-weight: bold;
+      }
+      
+      dl.study-metadata dd{
+        margin-left: 210px;
+        padding: 5px;
+        font-weight: normal;
+        min-height: 20px;
+      }
+      
+      div.codelist{
+        page-break-after: avoid;
+      }
+      
+      div.qval-indent {
+      margin-left: 20px;
+      }
+      
+      div.qval-indent2 {
+      margin-left: 40px;
+      }
+      
+      table{
+        width: 95%;
+        border-spacing: 4px;
+        border: 1px solid #000000;
+        background-color: #EEEEEE;
+        margin-top: 5px;
+        border-collapse: collapse;
+        padding: 5px;
+        empty-cells: show;
+      }
+      
+      table caption{
+        border: 0px;
+        left: 20px;
+        font-size: 1.4em;
+        font-weight: bolder;
+        color: #696969;
+        margin: 10px auto;
+        text-align: left;
+      }
+      
+      .description{
+        margin-left: 0px;
+        color: black;
+        font-weight: normal;
+        font-size: 0.85em;
+      }
+      
+      table caption .dataset{
+        font-weight: normal;
+        float: right;
+      }
+
+      table caption.header{
+        font-size: 1.6em;
+        margin-left: 0;
+        font-weight: bolder;
+        text-align: center;
+        color: #696969;
+      }
+      
+      table tr{
+        border: 1px solid #000000;
+      }
+      
+      table tr.header{
+        background-color: #6699CC;
+        color: #FFFFFF;
+        font-weight: bold;
+      }
+      
+      table th{
+        font-weight: bold;
+        vertical-align: top;
+        text-align: left;
+        padding: 5px;
+        border: 1px solid #000000;
+        font-size: 1.3em;
+      }
+      
+      table th.codedvalue{
+        width: 20%;
+      }
+      table th.length{
+        width: 7%;
+      }
+ 
+      table th.label{
+        width: 13%;
+      }
+ 
+      table td{
+        vertical-align: top;
+        padding: 5px;
+        border: 1px solid #000000;
+        font-size: 1.2em;
+        line-height: 150%;
+      }
+
+      table td.datatype{
+        text-align: left;
+      }
+      table td.role{
+        text-align: left;
+      }
+      table td.number{
+        text-align: right;
+      }
+      
+      tr.tablerowodd{
+        background-color: #FFFFFF;
+      }
+      tr.tableroweven{
+        background-color: #EEEEEE;
+      }
+      
+      .linebreakcell{
+        vertical-align: top;
+        margin-top: 3px;
+        margin-bottom: 3px;
+      }
+      
+      .nci,
+      .extended{
+        font-style: italic;
+      }
+      .super{
+        vertical-align: super;
+      }
+      .footnote{
+        font-size: 1.2em;
+      }
+      
+      .valuelist-reference{
+      vertical-align: super;
+      font-size: 0.8em;
+      padding-left: 5px;
+      cursor: pointer;
+      }
+      
+      .valuelist-no-reference{
+      vertical-align: super;
+      font-size: 0.8em;
+      padding-left: 5px;
+      }
+      
+      div.formalexpression{
+        margin-top: 6px;
+        margin-bottom: 6px;      
+      }
+
+      span.label{
+        font-weight: bold;      
+      }
+
+      .formalexpression-reference{
+        vertical-align: super;
+        font-size: 0.8em;
+        padding-left: 5px;
+      }
+
+      .formalexpression-code{
+        font-family:"Courier New", monospace, serif;
+        font-size:1.2em;
+        line-height:120%;
+        display:block;
+        vertical-align:top;
+        margin: 0px;
+        padding: 5px 0 0 20px;
+        white-space:pre;  /* CSS 2.0 */
+        white-space: pre-wrap; /* CSS 2.1 */
+        /* CSS 3.0 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap; /* HP Printers */
+        word-wrap: break-word; /* IE 5+ */
+      }
+      
+      .method-code{
+        vertical-align: top;
+        white-space: pre; /* CSS 2.0 */
+        white-space: pre-wrap; /* CSS 2.1 */
+         /* CSS 3.0 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap; /* HP Printers */
+        word-wrap: break-word; /* IE 5+ */
+      }
+
+      .linktop{
+        font-size: 1.2em;
+        margin-top: 5px;
+      }
+      .documentinfo,
+      .stylesheetinfo{
+        font-size: 1.1em;
+        line-height: 60%;
+      }
+      
+      .invisible{
+        display: none;
+      }
+      
+      .standard-refeference {
+        width: 95%;
+        font-size: 1.0em;
+        font-weight: bold;
+        padding: 5px;
+        color: #696969;
+        white-space: nowrap;
+      }
+
+      .nodata{
+        width: 95%;
+        font-size: 1.0em;
+        font-weight: bold;
+        padding: 5px;
+        color: #000000;
+        white-space: nowrap;
+      }
+
+      span.unresolved{
+        color: #000000;
+      }
+      td.unresolved{
+      color: #000000;
+      }
+      td.span.unresolved{
+      color: #000000;
+      }
+      
+      span.prefix{
+        font-weight: normal;
+      }      
+
+      .arm-summary{
+        width: 95%;
+        border-spacing: 5px;
+        border-width: 1px;
+        border-color: #000000;
+        border-style: solid solid none solid;
+        background-color: #EEEEEE;
+        font-size: 1.2em;
+        line-height: 150%;
+        vertical-align: top;
+      }
+      .arm-summary-resultdisplay{
+        margin: 0px 0px 0px 0px;
+        padding: 10px 10px 10px 10px;  
+        border-spacing: 5px;
+        border-width: 1px;
+        border-color #000000;
+        border-style: none none solid none;
+      }
+
+      .arm-display-title{
+        margin-left: 5pt;
+      }
+      
+      .table.analysisresults-detail{
+        background-color: #EEEEEE;
+      }
+      
+      .arm-summary-result{
+        margin-left: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      th span.arm-displaytitle{
+        font-weight: bold;
+      }
+      td span.arm-resulttitle{
+        font-weight: bold;
+      }
+      tr.arm-analysisresult{
+        background-color: #6699CC;
+        color: #FFFFFF;
+        font-weight: bold;
+        border: 1px solid #000000;
+      }
+      td.arm-label{
+        font-weight: bold;
+      }
+
+      p.arm-analysisvariable{
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .arm-data-reference{
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      
+      .arm-code-context{
+        padding: 5px 0px;
+      }
+      .arm-code-ref{
+        font-size: 1.2em;
+        line-height: 150%;
+        padding: 5px;
+      }
+
+      .arm-code{
+        font-family:"Courier New", monospace, serif;
+        font-size:1.2em;
+        line-height:120%;
+        display:block;
+        vertical-align:top;
+        margin: 0px;
+        padding:0px;
+        white-space:pre;  /* CSS 2.0 */
+        white-space: pre-wrap; /* CSS 2.1 */
+        /* CSS 3.0 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap; /* HP Printers */
+        word-wrap: break-word; /* IE 5+ */
+      }
+      
+
+      
+      @media print{
+      
+        @page {
+          margin: 1.5cm;
+        }
+      
+        body,
+        h1,
+        table caption,
+        table caption.header{
+          color: #000;
+          background: #fff;
+          float: none !important;
+        }
+      
+        div.containerbox{
+          padding: 0px;
+          border: 0px;
+          page-break-after: always;
+        }
+      
+        a:link,
+        a:visited{
+          background: transparent;
+          text-decoration: none;
+          color: black;
+        }
+        a.external:link:after,
+        #main a:visited:after{
+          content: " (" attr(href) ") ";
+          font-size: 100%;
+          text-decoration: underline;
+          font-weight: normal;
+          color: black;
+        }
+        .external-link-gif,
+        .formalexpression-reference
+        .valuelist-reference{
+          display: none !important;
+          width: 0px;
+        }
+        
+        table{
+          border-width: 2px;
+        }
+
+        table tr.vlm{
+        display: table-row !important;
+        }
+      
+        #menu,
+        .linktop{
+          display: none !important;
+          width: 0px;
+        }
+        #main{
+          left: 2cm;
+          float: none !important;
+        }
+        span.prefix{
+          font-weight: normal;
+        }
+        
+        row, ul, img {
+          page-break-inside: avoid;
+        }
+      
+      }
+    </style>
+  </head>
+<body onload="reset_menus();">
+<div id="menu">
+<a name="top" class="invisible" href="#main">Skip Navigation Link</a><span class="study-name">XYZ123</span><ul class="hmenu">
+<li class="hmenu-submenu">
+<span onclick="toggle_submenu(this);" class="hmenu-bullet">+</span><a class="tocItem">Supplemental Documents</a><ul><li class="hmenu-item">
+<span class="hmenu-bullet">+</span><a class="external tocItem" href="reviewersguide.pdf">Analysis Data Reviewer's Guide</a><span class="external-link-gif"></span>
+</li></ul>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#ARM_Table_Summary">Analysis Results Metadata</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#ARD.RD.Table14.1.1" title="Summary of Demographics (ITT Population)">Table14.1.1</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#ARD.RD.Table14.2.1" title="Responder Analysis by Visit">Table14.2.1</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#ARD.RD.Table14.2.2" title="Mean Pain Assessments and Changes from Baseline">Table14.2.2</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#ARD.RD.Figure14.2.1" title="Time to Pain Relief Analysis by Treatment Group">Figure14.2.1</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#ARD.RD.Table14.3.2.1" title="Incidence Rates of TEAEs by System Organ Class and Preferred Term">Table14.3.2.1</a>
+</li>
+</ul>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#datasets">Datasets</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.IG.ADAE">ADAE (Adverse Events Analysis Datasets)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.IG.ADSL">ADSL (Subject Level Analysis Dataset)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.IG.ADEF">ADEF (Efficacy/Pain Scores Analysis Dataset)</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#IG.IG.ADTTE">ADTTE (Time-to-Pain Relief Analysis Dataset)</a>
+</li>
+</ul>
+</li>
+<li class="hmenu-submenu">
+<span onclick="toggle_submenu(this);" class="hmenu-bullet">+</span><a href="#decodelist" class="tocItem">Controlled Terminology</a><ul><li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#decodelist">CodeLists</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.ACN">ACN</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.ADEF.CRIT1">ADEF.CRIT1</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.ADEF.PARAM">ADEF.PARAM</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.ADEF.PARAMCD">ADEF.PARAMCD</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.ADTTE.PARAM">ADTTE.PARAM</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.ADTTE.PARAMCD">ADTTE.PARAMCD</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.AEREL">AEREL</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.AERELN">AERELN</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.AESEV">AESEV</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.AESEVN">AESEVN</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.AGEGR1">AGEGR1</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.AGEGR1N">AGEGR1N</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.AGEU">AGEU</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.ARM">ARM</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.ARMCD">ARMCD</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.ARMN">ARMN</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.AVISITN">AVISITN</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.CENSOR">CENSOR</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.COUNTRY">COUNTRY</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.CRIT1VALUES">CRIT1VALUES</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.EVNTDESC">EVNTDESC</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.FLAGS">FLAGS</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.PAINSCORE">PAINSCORE</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.RACE">RACE</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.RELGR1">RELGR1</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.RELGR1N">RELGR1N</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.SEX">SEX</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.TRT01PN">TRT01PN</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.VISIT">VISIT</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.VISITNUM">VISITNUM</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#CL.CL.YN">YN</a>
+</li>
+</ul>
+</li></ul>
+</li>
+<li class="hmenu-submenu">
+<span class="hmenu-bullet" onclick="toggle_submenu(this);">+</span><a class="tocItem" href="#compmethod">Methods</a><ul>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.BASE">Baseline value derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.CHANGEFROMBASELINE">Change from baseline calculation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.RESPONDER">Responder derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.TTPNRELF">Time to first pain relief without worsening derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.TTPNRELF.CNSR">Censoring algorithm for Time to First Pain Relief</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.TTPNRELF.EVNTDESC">Event descriptions for Time to First Pain Relief</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.TRTSDT">Date of first exposure to treatment derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.TRTEDT">Date of last exposure to treatment derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.ITTFL">Intent-to-Treat flag derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.SAFFL">Safety population flag derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.RESPFL">Responder population flag derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.RANDDT">Randomization date derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.ABLFL">Analysis baseline record flag</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.ADT">Analysis date calculation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.ADY">Analysis day calculation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.ADAE.ASTDT">Analysis start date calculation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.ADAE.AENDT">Analysis end date calculation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.ADAE.ASTDY">Analysis start day calculation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.ADAE.AENDY">Analysis end day calculation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.ADTTE.SRCVAR">SRCVAR algorithm</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.ADTTE.SRCSEQ">SRCSEQ algorithm</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.SEECODELIST">See codelist</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.SEEVALUELEVEL">See parameter value-level metadata</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.RELGR1">AE relatedness derivation</a>
+</li>
+<li class="hmenu-item">
+<span class="hmenu-bullet">-</span><a class="tocItem" href="#MT.MT.AGEGR1">Age group derivation</a>
+</li>
+</ul>
+</li>
+</ul>
+<div class="buttons">
+<div class="button"><button type="button" onclick="expand_all_vlm();">Expand all VLM</button></div>
+<div class="button"><button type="button" onclick="collapse_all_vlm();">Collapse all VLM</button></div>
+</div>
+</div>
+<div id="main">
+<div class="docinfo">
+<p class="documentinfo">Date/Time of Define-XML document generation: 2022-12-06T14:51:17</p>
+<p class="documentinfo">Define-XML version: 2.0.0</p>
+<p class="stylesheetinfo">Stylesheet version: 2018-11-21</p>
+</div>
+<div class="study-metadata"><dl class="study-metadata">
+<dt>Standard</dt>
+<dd>ADaM-IG 1.0</dd>
+<dt>Study Name</dt>
+<dd>XYZ123</dd>
+<dt>Study Description</dt>
+<dd>A PHASE IIB, DOUBLE-BLIND, MULTI-CENTER, PLACEBO CONTROLLED, PARALLEL GROUP TRIAL OF ANALGEZIA HCL FOR THE TREATMENT OF CHRONIC PAIN</dd>
+<dt>Protocol Name</dt>
+<dd>XYZ123</dd>
+<dt>Metadata Name</dt>
+<dd>XYZ123, ADaM Data Definitions</dd>
+<dt>Metadata Description</dt>
+<dd>XYZ123, ADaM Data Definitions</dd>
+</dl></div>
+<div class="containerbox">
+<h1 id="ARM_Table_Summary">Analysis Results Metadata - Summary</h1>
+<div class="arm-summary">
+<div class="arm-summary-resultdisplay">
+<a href="#ARD.RD.Table14.1.1">Table14.1.1</a><span class="arm-display-title">Summary of Demographics (ITT Population)</span><p class="arm-summary-result"><a href="#AR.AR.Table14.1.1.R1">Summary of Demographics</a></p>
+</div>
+<div class="arm-summary-resultdisplay">
+<a href="#ARD.RD.Table14.2.1">Table14.2.1</a><span class="arm-display-title">Responder Analysis by Visit</span><p class="arm-summary-result"><a href="#AR.AR.Table14.2.1.R1">Responder Analysis by Visit</a></p>
+</div>
+<div class="arm-summary-resultdisplay">
+<a href="#ARD.RD.Table14.2.2">Table14.2.2</a><span class="arm-display-title">Mean Pain Assessments and Changes from Baseline</span><p class="arm-summary-result"><a href="#AR.AR.Table14.2.2.R1">Summary of Pain Relief</a></p>
+</div>
+<div class="arm-summary-resultdisplay">
+<a href="#ARD.RD.Figure14.2.1">Figure14.2.1</a><span class="arm-display-title">Time to Pain Relief Analysis by Treatment Group</span><p class="arm-summary-result"><a href="#AR.AR.Figure14.2.1.R1">Time to Pain Relief Kaplan Meier Analysis</a></p>
+<p class="arm-summary-result"><a href="#AR.AR.Figure14.2.1.R2">Time to Pain Relief Hazard Ratio Derivation</a></p>
+</div>
+<div class="arm-summary-resultdisplay">
+<a href="#ARD.RD.Table14.3.2.1">Table14.3.2.1</a><span class="arm-display-title">Incidence Rates of TEAEs by System Organ Class and Preferred Term</span><p class="arm-summary-result"><a href="#AR.AR.Table14.3.2.1.R1">Incidence Rates of TEAEs by System Organ Class and Preferred Term</a></p>
+</div>
+</div>
+</div>
+<br><h1>Analysis Results Metadata - Detail</h1>
+<div class="containerbox">
+<a id="ARD.RD.Table14.1.1"></a><table class="analysisresults-detail" summary="Analysis Results Metadata - Detail">
+<caption>Table14.1.1</caption>
+<tr>
+<th scope="col" class="arm-resultlabel">Display</th>
+<th scope="col">
+<span class="linebreakcell">Table 14.1.1 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=302">302</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Summary of Demographics (ITT Population)</span>
+</th>
+</tr>
+<tr class="arm-analysisresult">
+<td>Analysis Result</td>
+<td><span class="arm-resulttitle" id="AR.AR.Table14.1.1.R1">Summary of Demographics</span></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Parameter(s)</td>
+<td></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Variable(s)</td>
+<td>
+<p class="arm-analysisvariable"><a href="#IG.ADSL">ADSL</a>.<a href="#IG.ADSL.IT.ADSL.AGE">AGE</a> (Age)
+                              
+                            </p>
+<p class="arm-analysisvariable"><a href="#IG.ADSL">ADSL</a>.<a href="#IG.ADSL.IT.ADSL.AGEGR1">AGEGR1</a> (Pooled Age Group 1)
+                              
+                            </p>
+<p class="arm-analysisvariable"><a href="#IG.ADSL">ADSL</a>.<a href="#IG.ADSL.IT.ADSL.SEX">SEX</a> (Sex)
+                              
+                            </p>
+<p class="arm-analysisvariable"><a href="#IG.ADSL">ADSL</a>.<a href="#IG.ADSL.IT.ADSL.RACE">RACE</a> (Race)
+                              
+                            </p>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Reason</td>
+<td>SPECIFIED IN SAP</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Purpose</td>
+<td>Comparisons of baseline characteristics by treatment group</td>
+</tr>
+<tr>
+<td class="arm-label">Data References (incl. Selection Criteria)</td>
+<td><div class="arm-data-reference">
+<a href="#IG.ADSL" title="Subject Level Analysis Dataset">ADSL</a>  [<a href="#IG.ADSL.IT.ADSL.ITTFL" title="Intent-To-Treat Population Flag">ITTFL</a> = "Y"]</div></td>
+</tr>
+<tr>
+<td class="arm-label">Documentation</td>
+<td>
+<span>Rates and chi-squared tests of categorical demographic variables</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.1.1</a><span class="external-link-gif"></span> </p>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Programming Statements</td>
+<td>
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">PROC FREQ DATA=ADSL; where ittfl='Y';  tables trt01pn * (agegr1 sex race) / cmh; run;</pre>
+<div class="arm-code-ref"></div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><div class="containerbox">
+<a id="ARD.RD.Table14.2.1"></a><table class="analysisresults-detail" summary="Analysis Results Metadata - Detail">
+<caption>Table14.2.1</caption>
+<tr>
+<th scope="col" class="arm-resultlabel">Display</th>
+<th scope="col">
+<span class="linebreakcell">Table 14.2.1 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=352">352</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Responder Analysis by Visit</span>
+</th>
+</tr>
+<tr class="arm-analysisresult">
+<td>Analysis Result</td>
+<td><span class="arm-resulttitle" id="AR.AR.Table14.2.1.R1">Responder Analysis by Visit</span></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Parameter(s)</td>
+<td>
+<a href="#IG.ADEF.IT.ADEF.PARAMCD" title="Parameter Code">PARAMCD</a> = "XPPAIN" (Pain Score)<br>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Variable(s)</td>
+<td><p class="arm-analysisvariable"><a href="#IG.ADEF">ADEF</a>.<a href="#IG.ADEF.IT.ADEF.CRIT1FL">CRIT1FL</a> (Criterion 1 Evaluation Result Flag)
+                              
+                            </p></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Reason</td>
+<td>SPECIFIED IN SAP</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Purpose</td>
+<td>Primary efficacy endpoint</td>
+</tr>
+<tr>
+<td class="arm-label">Data References (incl. Selection Criteria)</td>
+<td><div class="arm-data-reference">
+<a href="#IG.ADEF" title="Efficacy/Pain Scores Analysis Dataset">ADEF</a>  [<a href="#IG.ADEF.IT.ADEF.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y" and <a href="#IG.ADEF.IT.ADEF.ABLFL" title="Baseline Record Flag">ABLFL</a> ≠ "Y" and <a href="#IG.ADEF.IT.ADEF.PARAMCD" title="Parameter Code">PARAMCD</a> = "XPPAIN"]</div></td>
+</tr>
+<tr>
+<td class="arm-label">Documentation</td>
+<td>
+<span>Chi-squared test of responder rates by treatment group</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.1</a><span class="external-link-gif"></span> </p>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Programming Statements</td>
+<td>
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc freq data = adef; by crit1 avisitn; where ittfl='Y'; tables trtpn * crit1fl / chisq; run;</pre>
+<div class="arm-code-ref"></div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><div class="containerbox">
+<a id="ARD.RD.Table14.2.2"></a><table class="analysisresults-detail" summary="Analysis Results Metadata - Detail">
+<caption>Table14.2.2</caption>
+<tr>
+<th scope="col" class="arm-resultlabel">Display</th>
+<th scope="col">
+<span class="linebreakcell">Table 14.2.2 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=353">353</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Mean Pain Assessments and Changes from Baseline</span>
+</th>
+</tr>
+<tr class="arm-analysisresult">
+<td>Analysis Result</td>
+<td><span class="arm-resulttitle" id="AR.AR.Table14.2.2.R1">Summary of Pain Relief</span></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Parameter(s)</td>
+<td>
+<a href="#IG.ADEF.IT.ADEF.PARAMCD" title="Parameter Code">PARAMCD</a> = "XPPAIN" (Pain Score)<br>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Variable(s)</td>
+<td>
+<p class="arm-analysisvariable"><a href="#IG.ADEF">ADEF</a>.<a href="#IG.ADEF.IT.ADEF.AVAL">AVAL</a> (Analysis Value)
+                              
+                            </p>
+<p class="arm-analysisvariable"><a href="#IG.ADEF">ADEF</a>.<a href="#IG.ADEF.IT.ADEF.CHG">CHG</a> (Change from Baseline)
+                              
+                            </p>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Reason</td>
+<td>SPECIFIED IN SAP</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Purpose</td>
+<td>Secondary efficacy endpoint</td>
+</tr>
+<tr>
+<td class="arm-label">Data References (incl. Selection Criteria)</td>
+<td><div class="arm-data-reference">
+<a href="#IG.ADEF" title="Efficacy/Pain Scores Analysis Dataset">ADEF</a>  [<a href="#IG.ADEF.IT.ADEF.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y" and <a href="#IG.ADEF.IT.ADEF.ABLFL" title="Baseline Record Flag">ABLFL</a> ≠ "Y" and <a href="#IG.ADEF.IT.ADEF.PARAMCD" title="Parameter Code">PARAMCD</a> = "XPPAIN"]</div></td>
+</tr>
+<tr>
+<td class="arm-label">Documentation</td>
+<td>
+<span>ANCOVA analysis of the treatment group effect with a baseline covariate, by visit</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.1</a><span class="external-link-gif"></span> </p>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Programming Statements</td>
+<td>
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc glm data = adef; by avisitn avisit; class trtpn; model aval = trtpn base; run;</pre>
+<div class="arm-code-ref"></div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><div class="containerbox">
+<a id="ARD.RD.Figure14.2.1"></a><table class="analysisresults-detail" summary="Analysis Results Metadata - Detail">
+<caption>Figure14.2.1</caption>
+<tr>
+<th scope="col" class="arm-resultlabel">Display</th>
+<th scope="col">
+<span class="linebreakcell">Figure 14.2.1 [<a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf#page=354">354</a><span class="external-link-gif"></span> ]</span> <span class="arm-displaytitle">Time to Pain Relief Analysis by Treatment Group</span>
+</th>
+</tr>
+<tr class="arm-analysisresult">
+<td>Analysis Result</td>
+<td><span class="arm-resulttitle" id="AR.AR.Figure14.2.1.R1">Time to Pain Relief Kaplan Meier Analysis</span></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Parameter(s)</td>
+<td>
+<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Variable(s)</td>
+<td><p class="arm-analysisvariable"><a href="#IG.ADTTE">ADTTE</a>.<a href="#IG.ADTTE.IT.ADTTE.AVAL">AVAL</a> (Analysis Value)
+                              
+                            </p></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Reason</td>
+<td>SPECIFIED IN SAP</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Purpose</td>
+<td>Secondary efficacy endpoint</td>
+</tr>
+<tr>
+<td class="arm-label">Data References (incl. Selection Criteria)</td>
+<td><div class="arm-data-reference">
+<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y" and <a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF"]</div></td>
+</tr>
+<tr>
+<td class="arm-label">Documentation</td>
+<td>
+<span>Kaplan-Meier estimates and log-rank test for the treatment effect</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.2</a><span class="external-link-gif"></span> </p>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Programming Statements</td>
+<td>
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF';  id usubjid;  strata trtpn;  time aval*cnsr (1 2 3);   test trtpn; run;</pre>
+<div class="arm-code-ref"></div>
+</td>
+</tr>
+<tr class="arm-analysisresult">
+<td>Analysis Result</td>
+<td><span class="arm-resulttitle" id="AR.AR.Figure14.2.1.R2">Time to Pain Relief Hazard Ratio Derivation</span></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Parameter(s)</td>
+<td>
+<a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF" (Time to first pain relief)<br>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Variable(s)</td>
+<td><p class="arm-analysisvariable"><a href="#IG.ADTTE">ADTTE</a>.<a href="#IG.ADTTE.IT.ADTTE.AVAL">AVAL</a> (Analysis Value)
+                              
+                            </p></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Reason</td>
+<td>SPECIFIED IN SAP</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Purpose</td>
+<td>Secondary efficacy endpoint</td>
+</tr>
+<tr>
+<td class="arm-label">Data References (incl. Selection Criteria)</td>
+<td><div class="arm-data-reference">
+<a href="#IG.ADTTE" title="Time-to-Pain Relief Analysis Dataset">ADTTE</a>  [<a href="#IG.ADTTE.IT.ADTTE.ITTFL" title="Intent-to-Treat Flag">ITTFL</a> = "Y" and <a href="#IG.ADTTE.IT.ADTTE.PARAMCD" title="Parameter Code">PARAMCD</a> = "TTPNRELF"]</div></td>
+</tr>
+<tr>
+<td class="arm-label">Documentation</td>
+<td>
+<span>Cox proportional hazards model used to derive the hazard ratio for the treatment group effect</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.2.2</a><span class="external-link-gif"></span> </p>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Programming Statements</td>
+<td>
+<span class="arm-code-context">[SAS Version 9.4]</span><pre class="arm-code">proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;</pre>
+<div class="arm-code-ref"></div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><div class="containerbox">
+<a id="ARD.RD.Table14.3.2.1"></a><table class="analysisresults-detail" summary="Analysis Results Metadata - Detail">
+<caption>Table14.3.2.1</caption>
+<tr>
+<th scope="col" class="arm-resultlabel">Display</th>
+<th scope="col">
+<span class="linebreakcell"></span> <span class="arm-displaytitle">Incidence Rates of TEAEs by System Organ Class and Preferred Term</span>
+</th>
+</tr>
+<tr class="arm-analysisresult">
+<td>Analysis Result</td>
+<td><span class="arm-resulttitle" id="AR.AR.Table14.3.2.1.R1">Incidence Rates of TEAEs by System Organ Class and Preferred Term</span></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Parameter(s)</td>
+<td></td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Variable(s)</td>
+<td>
+<p class="arm-analysisvariable"><a href="#IG.ADAE">ADAE</a>.<a href="#IG.ADAE.IT.ADAE.AEBODSYS">AEBODSYS</a> (Body System or Organ Class)
+                              
+                            </p>
+<p class="arm-analysisvariable"><a href="#IG.ADAE">ADAE</a>.<a href="#IG.ADAE.IT.ADAE.AEDECOD">AEDECOD</a> (Dictionary-Derived Term)
+                              
+                            </p>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Reason</td>
+<td>SPECIFIED IN SAP</td>
+</tr>
+<tr>
+<td class="arm-label">Analysis Purpose</td>
+<td>Secondary safety endpoint</td>
+</tr>
+<tr>
+<td class="arm-label">Data References (incl. Selection Criteria)</td>
+<td><div class="arm-data-reference">
+<a href="#IG.ADAE" title="Adverse Events Analysis Datasets">ADAE</a>  [<a href="#IG.ADAE.IT.ADAE.TRTEMFL" title="Treatment Emergent Flag">TRTEMFL</a> = "Y"]</div></td>
+</tr>
+<tr>
+<td class="arm-label">Documentation</td>
+<td>
+<span>Incidence rates of TEAEs by System Organ Class and Preferred Term</span><p class="linebreakcell"><a class="external" href="..%5C..%5C..%5C..%5C53-clin-stud-rep%5C535-rep-effic-safety-stud%5C5351-stud-rep-contr%5Cstudyxyz123%5Cstudyxyz123_csr.pdf">SAP Section 9.3.1</a><span class="external-link-gif"></span> </p>
+</td>
+</tr>
+<tr>
+<td class="arm-label">Programming Statements</td>
+<td>
+<span class="arm-code-context">[SAS Version 9.4]</span><div class="arm-code-ref"><p class="linebreakcell"><a class="external" href="ae-t14-3-02.sas">AE Analysis Program</a><span class="external-link-gif"></span> </p></div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><br><a id="datasets"></a><h1 class="invisible">Datasets</h1>
+<div class="containerbox"><table summary="Data Definition Tables">
+<caption class="header">Datasets</caption>
+<tr class="header">
+<th scope="col">Dataset</th>
+<th scope="col">Description</th>
+<th scope="col">Class
+            </th>
+<th scope="col">Structure</th>
+<th scope="col">Purpose</th>
+<th scope="col">Keys</th>
+<th scope="col">Documentation</th>
+<th scope="col">Location</th>
+</tr>
+<tr class="tablerowodd" id="IG.ADAE">
+<td><a href="#IG.IG.ADAE">ADAE</a></td>
+<td>Adverse Events Analysis Datasets</td>
+<td>Occurrence data structure</td>
+<td>ADAE - One record per event per subject</td>
+<td>Analysis</td>
+<td>STUDYID, USUBJID, ASTDT, AEDECOD</td>
+<td><p class="linebreakcell">Primarily derived from SDTM.AE</p></td>
+<td>
+<a class="external" href="ADAE.xpt">ADAE.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tableroweven" id="IG.ADSL">
+<td><a href="#IG.IG.ADSL">ADSL</a></td>
+<td>Subject Level Analysis Dataset</td>
+<td>Subject level analysis dataset</td>
+<td>ADSL - One record per subject</td>
+<td>Analysis</td>
+<td>STUDYID, USUBJID</td>
+<td><p class="linebreakcell">Derived from multiple SDTM domains</p></td>
+<td>
+<a class="external" href="ADSL.xpt">ADSL.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tablerowodd" id="IG.ADEF">
+<td><a href="#IG.IG.ADEF">ADEF</a></td>
+<td>Efficacy/Pain Scores Analysis Dataset</td>
+<td>Basic data structure</td>
+<td>One record per subject per visit</td>
+<td>Analysis</td>
+<td>STUDYID, USUBJID, PARAMCD, AVISITN, ADT</td>
+<td><p class="linebreakcell">Primarily derived from SDTM.XP</p></td>
+<td>
+<a class="external" href="ADEF.xpt">ADEF.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+<tr class="tableroweven" id="IG.ADTTE">
+<td><a href="#IG.IG.ADTTE">ADTTE</a></td>
+<td>Time-to-Pain Relief Analysis Dataset</td>
+<td>Basic data structure</td>
+<td>One record per subject</td>
+<td>Analysis</td>
+<td>STUDYID, USUBJID, PARAMCD</td>
+<td><p class="linebreakcell">Primarily derived from ADaM.ADAE</p></td>
+<td>
+<a class="external" href="ADTTE.xpt">ADTTE.xpt </a><span class="external-link-gif"></span> </td>
+</tr>
+</table></div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.IG.ADAE"></a><div class="containerbox">
+<h1 class="invisible">Adverse Events Analysis Datasets (ADAE) </h1>
+<table summary="ItemGroup IG.IG.ADAE">
+<caption><span>ADAE (Adverse Events Analysis Datasets) - Occurrence data structure <span class="dataset">Location: <a class="external" href="ADAE.xpt">ADAE.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">text</td>
+<td class="number">25</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.SITEID"></a>SITEID</td>
+<td>Study Site Identifier</td>
+<td class="datatype">text</td>
+<td class="number">7</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.COUNTRY"></a>COUNTRY</td>
+<td>Country</td>
+<td class="datatype">text</td>
+<td class="number">3</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.COUNTRY">COUNTRY</a></span><ul class="codelist"><li class="codelist-item">• "USA" = "UNITED STATES"</li></ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.AESEQ"></a>AESEQ</td>
+<td>Sequence Number</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: AE</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.AGE"></a>AGE</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.AGEGR1N"></a>AGEGR1N</td>
+<td>Pooled Age Group 1 (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Predecessor: ADSL</div>
+<div class="method-code">See codelist</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.AGEGR1"></a>AGEGR1</td>
+<td>Pooled Age Group 1</td>
+<td class="datatype">text</td>
+<td class="number">20</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AGEGR1">AGEGR1</a></span><ul class="codelist">
+<li class="codelist-item">• "&lt;55 YEARS" = "&lt;55 Years"</li>
+<li class="codelist-item">• "&gt;=55 YEARS" = "&gt;=55 Years"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Predecessor: ADSL</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.SEX"></a>SEX</td>
+<td>Sex</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.TRTAN"></a>TRTAN</td>
+<td>Actual Treatment (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL.TRT01AN</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.TRTA"></a>TRTA</td>
+<td>Actual Treatment</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL.TRT01A</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.AETERM"></a>AETERM</td>
+<td>Reported Term for the Adverse Event</td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: AE</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.AEDECOD"></a>AEDECOD</td>
+<td>Dictionary-Derived Term</td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td><span class="unresolved">[unresolved: CL.MedDRA]</span></td>
+<td><div class="linebreakcell">Predecessor: AE</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.AEBODSYS"></a>AEBODSYS</td>
+<td>Body System or Organ Class</td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td><span class="unresolved">[unresolved: CL.MedDRA]</span></td>
+<td><div class="linebreakcell">Predecessor: AE</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.ASTDT"></a>ASTDT</td>
+<td>Start Date/Time of Adverse Events</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">AESTDTC converted to a SAS date.  See SAP for missing or partial value imputations</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.AENDT"></a>AENDT</td>
+<td>End Date/Time of Adverse Events</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">AEENDTC converted to a SAS date.  See SAP for missing or partial value imputations</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.ASTDY"></a>ASTDY</td>
+<td>Study Day of Start of Adverse Event</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">ASTDT - ADSL.TRTSDT + 1</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.AENDY"></a>AENDY</td>
+<td>Study Day of End of Adverse Event</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">AENDT - ADSL.TRTEDT + 1</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.AESEV"></a>AESEV</td>
+<td>Severity/Intensity</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AESEV">AESEV</a></span><ul class="codelist">
+<li class="codelist-item">• "MILD" = "Grade 1; 1"</li>
+<li class="codelist-item">• "MODERATE" = "Grade 2; 2"</li>
+<li class="codelist-item">• "SEVERE" = "Grade 3; 3"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: AE</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.AESEVN"></a>AESEVN</td>
+<td>Severity/Intensity (N)</td>
+<td class="datatype">integer</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AESEVN">AESEVN</a></span><ul class="codelist">
+<li class="codelist-item">• 1 = "Mild"</li>
+<li class="codelist-item">• 2 = "Moderate"</li>
+<li class="codelist-item">• 3 = "Severe"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See codelist</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.AESER"></a>AESER</td>
+<td>Serious Event</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.YN">YN</a></span><ul class="codelist">
+<li class="codelist-item">• "Y" = "YES"</li>
+<li class="codelist-item">• "N" = "NO"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: AE</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.AEACN"></a>AEACN</td>
+<td>Action Taken with Study Treatment</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<a href="#CL.CL.ACN">ACN</a><p class="linebreakcell">
+                  [7 Terms]
+                </p>
+</td>
+<td><div class="linebreakcell">Predecessor: AE</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.AEREL"></a>AEREL</td>
+<td>Causality</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AEREL">AEREL</a></span><ul class="codelist">
+<li class="codelist-item">• "NOT RELATED" = "NOT RELATED"</li>
+<li class="codelist-item">• "POSSIBLY RELATED" = "POSSIBLY RELATED"</li>
+<li class="codelist-item">• "PROBABLY RELATED" = "PROBABLY RELATED"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: AE</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.AERELN"></a>AERELN</td>
+<td>Causality (N)</td>
+<td class="datatype">integer</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AERELN">AERELN</a></span><ul class="codelist">
+<li class="codelist-item">• 0 = "NOT RELATED"</li>
+<li class="codelist-item">• 1 = "POSSIBLY RELATED"</li>
+<li class="codelist-item">• 2 = "PROBABLY RELATED"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See codelist</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.CQ01NAM"></a>CQ01NAM</td>
+<td>CQ 01 Name</td>
+<td class="datatype">text</td>
+<td class="number">200</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code"><span class="unresolved">[unresolved: MT.CQ01NAME]</span></div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.RELGR1"></a>RELGR1</td>
+<td>Pooled Causality Group 1</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.RELGR1">RELGR1</a></span><ul class="codelist">
+<li class="codelist-item">• "Not related" = "Not related"</li>
+<li class="codelist-item">• "Related" = "Related"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If AEREL=NOT RELATED  then NOT RELATED; Otherwise RELATED</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.RELGR1N"></a>RELGR1N</td>
+<td>Pooled Causality Group 1 (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.RELGR1N">RELGR1N</a></span><ul class="codelist">
+<li class="codelist-item">• 0 = "Not related"</li>
+<li class="codelist-item">• 1 = "Related"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See codelist</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADAE.IT.ADAE.TRTEMFL"></a>TRTEMFL</td>
+<td>Treatment Emergent Flag</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.FLAGS">FLAGS</a></span><ul class="codelist"><li class="codelist-item">• "Y" = "Yes"</li></ul>
+</td>
+<td><div class="linebreakcell">Derived</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADAE.IT.ADAE.SAFFL"></a>SAFFL</td>
+<td>Safety Population Flag</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.FLAGS">FLAGS</a></span><ul class="codelist"><li class="codelist-item">• "Y" = "Yes"</li></ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.IG.ADSL"></a><div class="containerbox">
+<h1 class="invisible">Subject Level Analysis Dataset (ADSL) </h1>
+<table summary="ItemGroup IG.IG.ADSL">
+<caption><span>ADSL (Subject Level Analysis Dataset) - Subject level analysis dataset <span class="dataset">Location: <a class="external" href="ADSL.xpt">ADSL.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">text</td>
+<td class="number">25</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.SUBJID"></a>SUBJID</td>
+<td>Subject Identifier for the Study</td>
+<td class="datatype">text</td>
+<td class="number">7</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.SITEID"></a>SITEID</td>
+<td>Study Site Identifier</td>
+<td class="datatype">text</td>
+<td class="number">7</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.COUNTRY"></a>COUNTRY</td>
+<td>Country</td>
+<td class="datatype">text</td>
+<td class="number">3</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.COUNTRY">COUNTRY</a></span><ul class="codelist"><li class="codelist-item">• "USA" = "UNITED STATES"</li></ul>
+</td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.BRTHDT"></a>BRTHDT</td>
+<td>Date of Birth</td>
+<td class="datatype">date</td>
+<td class="number">8</td>
+<td>ISO 8601</td>
+<td><div class="linebreakcell">Predecessor: DM.BIRTHDTC</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.AGE"></a>AGE</td>
+<td>Age</td>
+<td class="datatype">integer</td>
+<td class="number">3.0</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.AGEU"></a>AGEU</td>
+<td>Age Units</td>
+<td class="datatype">text</td>
+<td class="number">5</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AGEU">AGEU</a></span><ul class="codelist"><li class="codelist-item">• "YEARS" = "YEARS"</li></ul>
+</td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.AGEGR1"></a>AGEGR1</td>
+<td>Pooled Age Group 1</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AGEGR1">AGEGR1</a></span><ul class="codelist">
+<li class="codelist-item">• "&lt;55 YEARS" = "&lt;55 Years"</li>
+<li class="codelist-item">• "&gt;=55 YEARS" = "&gt;=55 Years"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.AGEGR1N"></a>AGEGR1N</td>
+<td>Pooled Age Group 1 (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AGEGR1N">AGEGR1N</a></span><ul class="codelist">
+<li class="codelist-item">• 1 = "&lt;55 Years"</li>
+<li class="codelist-item">• 2 = "&gt;=55 Years"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See codelist</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.SEX"></a>SEX</td>
+<td>Sex</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.SEX">SEX</a></span><ul class="codelist">
+<li class="codelist-item">• "F" = "FEMALE"</li>
+<li class="codelist-item">• "M" = "MALE"</li>
+<li class="codelist-item">• "U" = "UNKNOWN"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.RACE"></a>RACE</td>
+<td>Race</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.RACE">RACE</a></span><ul class="codelist">
+<li class="codelist-item">• "BLACK OR AFRICAN AMERICAN" = "BLACK OR AFRICAN AMERICAN"</li>
+<li class="codelist-item">• "ASIAN" = "ASIAN"</li>
+<li class="codelist-item">• "WHITE" = "WHITE"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.RACEOTH"></a>RACEOTH</td>
+<td>Race, Other, Specify</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.RANDDT"></a>RANDDT</td>
+<td>Date of Randomization</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">SUPPDM.QVAL where SUPPDM.QNAM=RANDDTC, converted to a SAS date</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.TRTSDT"></a>TRTSDT</td>
+<td>Date of First Exposure to Treatment</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">EX.EXSTDTC where EXSEQ=1, converted to a SAS date.  See SAP for missing or partial value imputations.</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.TRTEDT"></a>TRTEDT</td>
+<td>Date of Last Exposure to Treatment</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">EX.EXENDTC converted to a SAS date for the last record in EX.  See SAP for missing or partial value imputations.</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.ARM"></a>ARM</td>
+<td>Description of Planned Arm</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ARM">ARM</a></span><ul class="codelist">
+<li class="codelist-item">• "Analgezia HCL 30 mg" = "Analgezia HCL 30 mg"</li>
+<li class="codelist-item">• "Placebo" = "Placebo"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: DM</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.TRT01P"></a>TRT01P</td>
+<td>Planned Treatment for Period 01</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ARM">ARM</a></span><ul class="codelist">
+<li class="codelist-item">• "Analgezia HCL 30 mg" = "Analgezia HCL 30 mg"</li>
+<li class="codelist-item">• "Placebo" = "Placebo"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: DM.ARM</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.TRT01A"></a>TRT01A</td>
+<td>Actual Treatment for Period 01</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ARM">ARM</a></span><ul class="codelist">
+<li class="codelist-item">• "Analgezia HCL 30 mg" = "Analgezia HCL 30 mg"</li>
+<li class="codelist-item">• "Placebo" = "Placebo"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: DM.ARM</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.TRT01PN"></a>TRT01PN</td>
+<td>Planned Treatment for Period 01 (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ARMN">ARMN</a></span><ul class="codelist">
+<li class="codelist-item">• 1 = "Analgezia HCL 30 mg"</li>
+<li class="codelist-item">• 0 = "Placebo"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See codelist</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.TRT01AN"></a>TRT01AN</td>
+<td>Actual Treatment for Period 01 (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ARMN">ARMN</a></span><ul class="codelist">
+<li class="codelist-item">• 1 = "Analgezia HCL 30 mg"</li>
+<li class="codelist-item">• 0 = "Placebo"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See codelist</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.ITTFL"></a>ITTFL</td>
+<td>Intent-To-Treat Population Flag</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.FLAGS">FLAGS</a></span><ul class="codelist"><li class="codelist-item">• "Y" = "Yes"</li></ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If ADSL.RANDDT ^= missing then Y, else Null</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADSL.IT.ADSL.SAFFL"></a>SAFFL</td>
+<td>Safety Population Flag</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.FLAGS">FLAGS</a></span><ul class="codelist"><li class="codelist-item">• "Y" = "Yes"</li></ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If ADSL.TRTSDT^=missing then Y, else Null</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADSL.IT.ADSL.RESPFL"></a>RESPFL</td>
+<td>Efficacy Responder Flag</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.YN">YN</a></span><ul class="codelist">
+<li class="codelist-item">• "Y" = "YES"</li>
+<li class="codelist-item">• "N" = "NO"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">If XP.VISIT='Month 6' and XPSTRESN represents at least a two-point improvement from the baseline record then Y, else N</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.IG.ADEF"></a><div class="containerbox">
+<h1 class="invisible">Efficacy/Pain Scores Analysis Dataset (ADEF) </h1>
+<table summary="ItemGroup IG.IG.ADEF">
+<caption><span>ADEF (Efficacy/Pain Scores Analysis Dataset) - Basic data structure <span class="dataset">Location: <a class="external" href="ADEF.xpt">ADEF.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.USUBJID"></a>USUBJID</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">text</td>
+<td class="number">25</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.SITEID"></a>SITEID</td>
+<td>Study Site Identifier</td>
+<td class="datatype">text</td>
+<td class="number">7</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.COUNTRY"></a>COUNTRY</td>
+<td>Country</td>
+<td class="datatype">text</td>
+<td class="number">3</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.COUNTRY">COUNTRY</a></span><ul class="codelist"><li class="codelist-item">• "USA" = "UNITED STATES"</li></ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.RANDDT"></a>RANDDT</td>
+<td>Date of Randomization</td>
+<td class="datatype">integer</td>
+<td class="number">date9.</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.AGE"></a>AGE</td>
+<td>Age</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.AGEGR1N"></a>AGEGR1N</td>
+<td>Pooled Age Group 1 (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AGEGR1N">AGEGR1N</a></span><ul class="codelist">
+<li class="codelist-item">• 1 = "&lt;55 Years"</li>
+<li class="codelist-item">• 2 = "&gt;=55 Years"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Predecessor: ADSL</div>
+<div class="method-code">See codelist</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.AGEGR1"></a>AGEGR1</td>
+<td>Pooled Age Group 1</td>
+<td class="datatype">text</td>
+<td class="number">20</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AGEGR1">AGEGR1</a></span><ul class="codelist">
+<li class="codelist-item">• "&lt;55 YEARS" = "&lt;55 Years"</li>
+<li class="codelist-item">• "&gt;=55 YEARS" = "&gt;=55 Years"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Predecessor: ADSL</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.SEX"></a>SEX</td>
+<td>Sex</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.SEX">SEX</a></span><ul class="codelist">
+<li class="codelist-item">• "F" = "FEMALE"</li>
+<li class="codelist-item">• "M" = "MALE"</li>
+<li class="codelist-item">• "U" = "UNKNOWN"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.RACE"></a>RACE</td>
+<td>Race</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.RACE">RACE</a></span><ul class="codelist">
+<li class="codelist-item">• "BLACK OR AFRICAN AMERICAN" = "BLACK OR AFRICAN AMERICAN"</li>
+<li class="codelist-item">• "ASIAN" = "ASIAN"</li>
+<li class="codelist-item">• "WHITE" = "WHITE"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.TRTPN"></a>TRTPN</td>
+<td>Planned Treatment (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ARMN">ARMN</a></span><ul class="codelist">
+<li class="codelist-item">• 1 = "Analgezia HCL 30 mg"</li>
+<li class="codelist-item">• 0 = "Placebo"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL.TRT01PN</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.TRTP"></a>TRTP</td>
+<td>Planned Treatment</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ARM">ARM</a></span><ul class="codelist">
+<li class="codelist-item">• "Analgezia HCL 30 mg" = "Analgezia HCL 30 mg"</li>
+<li class="codelist-item">• "Placebo" = "Placebo"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Predecessor: ADSL.TRT01P</div>
+<div class="method-code"><span class="unresolved">[unresolved: MT.TRTP]</span></div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.PARAMCD"></a>PARAMCD</td>
+<td>Parameter Code</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ADEF.PARAMCD">ADEF.PARAMCD</a></span><ul class="codelist"><li class="codelist-item">• "XPPAIN" = "Pain Score"</li></ul>
+</td>
+<td>
+<div class="linebreakcell">Assigned</div>
+<p class="linebreakcell">See codelist</p>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.PARAM"></a>PARAM</td>
+<td>Parameter</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ADEF.PARAM">ADEF.PARAM</a></span><ul class="codelist"><li class="codelist-item">• "Pain Score" = "Pain Score"</li></ul>
+</td>
+<td>
+<div class="linebreakcell">Assigned</div>
+<p class="linebreakcell">See codelist</p>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.AVISIT"></a>AVISIT</td>
+<td>Analysis Visit</td>
+<td class="datatype">text</td>
+<td class="number">16</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.VISIT">VISIT</a></span><ul class="codelist">
+<li class="codelist-item">• "Baseline" = "Baseline"</li>
+<li class="codelist-item">• "Month 3" = "Month 3"</li>
+<li class="codelist-item">• "Month 6" = "Month 6"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: XP.VISIT</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.AVISITN"></a>AVISITN</td>
+<td>Analysis Visit (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AVISITN">AVISITN</a></span><ul class="codelist">
+<li class="codelist-item">• 0 = "Baseline"</li>
+<li class="codelist-item">• 3 = "Month 3"</li>
+<li class="codelist-item">• 6 = "Month 6"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See codelist</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.ABLFL"></a>ABLFL</td>
+<td>Baseline Record Flag</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.FLAGS">FLAGS</a></span><ul class="codelist"><li class="codelist-item">• "Y" = "Yes"</li></ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Last visit with a non-missing record prior to first dose</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.XPSEQ"></a>XPSEQ</td>
+<td>Sequence Number</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: XP</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.VISITNUM"></a>VISITNUM</td>
+<td>Visit Number</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.VISITNUM">VISITNUM</a></span><ul class="codelist">
+<li class="codelist-item">• "0" = "Baseline"</li>
+<li class="codelist-item">• "1" = "Month 3"</li>
+<li class="codelist-item">• "2" = "Month 6"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: XP</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.ADT"></a>ADT</td>
+<td>Analysis Date</td>
+<td class="datatype">integer</td>
+<td class="number">date9.</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">XPDTC converted to a SAS date.  See SAP for missing or partial value imputations</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.ADY"></a>ADY</td>
+<td>Analysis Relative Day</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">ADT - ADSL.RANDDT + 1</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.AVAL"></a>AVAL</td>
+<td>Analysis Value</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See parameter value-level metadata</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.AVALC"></a>AVALC</td>
+<td>Analysis Value (C)</td>
+<td class="datatype">text</td>
+<td class="number">12</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See parameter value-level metadata</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.BASE"></a>BASE</td>
+<td>Baseline Value</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">Last non-missing value of AVAL prior to first dose</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.CHG"></a>CHG</td>
+<td>Change from Baseline</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">AVAL-BASE</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.CRIT1FL"></a>CRIT1FL</td>
+<td>Criterion 1 Evaluation Result Flag</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.YN">YN</a></span><ul class="codelist">
+<li class="codelist-item">• "Y" = "YES"</li>
+<li class="codelist-item">• "N" = "NO"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See parameter value-level metadata</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADEF.IT.ADEF.CRIT1"></a>CRIT1</td>
+<td>Analysis Criterion 1</td>
+<td class="datatype">text</td>
+<td class="number">60</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See parameter value-level metadata</div>
+<p class="linebreakcell">Assignment per the codelist</p>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADEF.IT.ADEF.ITTFL"></a>ITTFL</td>
+<td>Intent-to-Treat Flag</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.FLAGS">FLAGS</a></span><ul class="codelist"><li class="codelist-item">• "Y" = "Yes"</li></ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="IG.IG.ADTTE"></a><div class="containerbox">
+<h1 class="invisible">Time-to-Pain Relief Analysis Dataset (ADTTE) </h1>
+<table summary="ItemGroup IG.IG.ADTTE">
+<caption><span>ADTTE (Time-to-Pain Relief Analysis Dataset) - Basic data structure <span class="dataset">Location: <a class="external" href="ADTTE.xpt">ADTTE.xpt </a><span class="external-link-gif"></span> </span></span></caption>
+<tr class="header">
+<th scope="col">Variable</th>
+<th scope="col">Label / Description</th>
+<th scope="col">Type</th>
+<th scope="col" class="length">Length or Display Format</th>
+<th scope="col" abbr="Format">Controlled Terms or ISO Format</th>
+<th scope="col">Origin / Source / Method / Comment</th>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.STUDYID"></a>STUDYID</td>
+<td>Study Identifier</td>
+<td class="datatype">text</td>
+<td class="number">15</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.USUBJID"></a>USUBJID</td>
+<td>Domain Abbreviation</td>
+<td class="datatype">text</td>
+<td class="number">25</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.SITEID"></a>SITEID</td>
+<td>Study Site Identifier</td>
+<td class="datatype">text</td>
+<td class="number">7</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.COUNTRY"></a>COUNTRY</td>
+<td>Country</td>
+<td class="datatype">text</td>
+<td class="number">3</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.COUNTRY">COUNTRY</a></span><ul class="codelist"><li class="codelist-item">• "USA" = "UNITED STATES"</li></ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.AGE"></a>AGE</td>
+<td>Unique Subject Identifier</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.AGEGR1N"></a>AGEGR1N</td>
+<td>Pooled Age Group 1 (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Predecessor: ADSL</div>
+<div class="method-code">See codelist</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.AGEGR1"></a>AGEGR1</td>
+<td>Pooled Age Group 1</td>
+<td class="datatype">text</td>
+<td class="number">20</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.AGEGR1">AGEGR1</a></span><ul class="codelist">
+<li class="codelist-item">• "&lt;55 YEARS" = "&lt;55 Years"</li>
+<li class="codelist-item">• "&gt;=55 YEARS" = "&gt;=55 Years"</li>
+</ul>
+</td>
+<td>
+<div class="linebreakcell">Predecessor: ADSL</div>
+<div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.SEX"></a>SEX</td>
+<td>Sex</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.RACE"></a>RACE</td>
+<td>Race</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.RACE">RACE</a></span><ul class="codelist">
+<li class="codelist-item">• "BLACK OR AFRICAN AMERICAN" = "BLACK OR AFRICAN AMERICAN"</li>
+<li class="codelist-item">• "ASIAN" = "ASIAN"</li>
+<li class="codelist-item">• "WHITE" = "WHITE"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.TRTPN"></a>TRTPN</td>
+<td>Planned Treatment (N)</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ARMN">ARMN</a></span><ul class="codelist">
+<li class="codelist-item">• 1 = "Analgezia HCL 30 mg"</li>
+<li class="codelist-item">• 0 = "Placebo"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL.TRT01PN</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.TRTP"></a>TRTP</td>
+<td>Planned Treatment</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ARM">ARM</a></span><ul class="codelist">
+<li class="codelist-item">• "Analgezia HCL 30 mg" = "Analgezia HCL 30 mg"</li>
+<li class="codelist-item">• "Placebo" = "Placebo"</li>
+</ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL.TRT01P</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.PARAMCD"></a>PARAMCD</td>
+<td>Parameter Code</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ADTTE.PARAMCD">ADTTE.PARAMCD</a></span><ul class="codelist"><li class="codelist-item">• "TTPNRELF" = "Time to first pain relief"</li></ul>
+</td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.PARAM"></a>PARAM</td>
+<td>Parameter</td>
+<td class="datatype">text</td>
+<td class="number">40</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.ADTTE.PARAM">ADTTE.PARAM</a></span><ul class="codelist"><li class="codelist-item">• "Time to first pain relief" = "Time to first pain relief"</li></ul>
+</td>
+<td><div class="linebreakcell">Assigned</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.ADT"></a>ADT</td>
+<td>Analysis Date</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Derived</div></td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.STARTDT"></a>STARTDT</td>
+<td>Time to Event Origin Date for Subject</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td><div class="linebreakcell">Predecessor: ADSL.RANDDT</div></td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.AVAL"></a>AVAL</td>
+<td>Analysis Value</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See parameter value-level metadata</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.CNSR"></a>CNSR</td>
+<td>Censor</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See parameter value-level metadata</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.EVNTDESC"></a>EVNTDESC</td>
+<td>Event description</td>
+<td class="datatype">text</td>
+<td class="number">50</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">See parameter value-level metadata</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.SRCDOM"></a>SRCDOM</td>
+<td>Source Domain</td>
+<td class="datatype">text</td>
+<td class="number">6</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code"><span class="unresolved">[unresolved: MT.ADTTE.SRCDOM]</span></div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.SRCVAR"></a>SRCVAR</td>
+<td>Source Variable</td>
+<td class="datatype">text</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">SRCVAR = ADEF if first event is a negative pain score or if worsening occurs before an improvement.  SRCVAR = ADAE if ADAE.CQ01NAM is non-missing on a date prior to a pain improvement or worsening.</div>
+</td>
+</tr>
+<tr class="tablerowodd">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.SRCSEQ"></a>SRCSEQ</td>
+<td>Source Sequence Number</td>
+<td class="datatype">integer</td>
+<td class="number">8</td>
+<td></td>
+<td>
+<div class="linebreakcell">Derived</div>
+<div class="method-code">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record; else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</div>
+</td>
+</tr>
+<tr class="tableroweven">
+<td>
+<a id="IG.ADTTE.IT.ADTTE.ITTFL"></a>ITTFL</td>
+<td>Intent-to-Treat Flag</td>
+<td class="datatype">text</td>
+<td class="number">1</td>
+<td>
+<span class="linebreakcell"><a href="#CL.CL.FLAGS">FLAGS</a></span><ul class="codelist"><li class="codelist-item">• "Y" = "Yes"</li></ul>
+</td>
+<td><div class="linebreakcell">Predecessor: ADSL</div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br><a id="decodelist"></a><div class="containerbox">
+<h1 class="header">CodeLists</h1>
+<div class="codelist" id="CL.CL.ACN">
+<div class="codelist-caption">ACN</div>
+<table summary="Controlled Term - ACN">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>DOSE INCREASED</td>
+<td class="codelist-item-decode">DOSE INCREASED</td>
+</tr>
+<tr class="tableroweven">
+<td>DOSE NOT CHANGED</td>
+<td class="codelist-item-decode">DOSE NOT CHANGED</td>
+</tr>
+<tr class="tablerowodd">
+<td>DOSE REDUCED</td>
+<td class="codelist-item-decode">DOSE REDUCED</td>
+</tr>
+<tr class="tableroweven">
+<td>DRUG INTERRUPTED</td>
+<td class="codelist-item-decode">DRUG INTERRUPTED</td>
+</tr>
+<tr class="tablerowodd">
+<td>DRUG WITHDRAWN</td>
+<td class="codelist-item-decode">DRUG WITHDRAWN</td>
+</tr>
+<tr class="tableroweven">
+<td>NOT APPLICABLE</td>
+<td class="codelist-item-decode">NA</td>
+</tr>
+<tr class="tablerowodd">
+<td>UNKNOWN</td>
+<td class="codelist-item-decode">U; Unknown</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.ADEF.CRIT1">
+<div class="codelist-caption">ADEF.CRIT1</div>
+<table summary="Controlled Term - ADEF.CRIT1">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Pain improvement from baseline of at least 2 points</td>
+<td class="codelist-item-decode">Pain improvement from baseline of at least 2 points</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.ADEF.PARAM">
+<div class="codelist-caption">ADEF.PARAM</div>
+<table summary="Controlled Term - ADEF.PARAM">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Pain Score</td>
+<td class="codelist-item-decode">Pain Score</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.ADEF.PARAMCD">
+<div class="codelist-caption">ADEF.PARAMCD</div>
+<table summary="Controlled Term - ADEF.PARAMCD">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>XPPAIN</td>
+<td class="codelist-item-decode">Pain Score</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.ADTTE.PARAM">
+<div class="codelist-caption">ADTTE.PARAM</div>
+<table summary="Controlled Term - ADTTE.PARAM">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Time to first pain relief</td>
+<td class="codelist-item-decode">Time to first pain relief</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.ADTTE.PARAMCD">
+<div class="codelist-caption">ADTTE.PARAMCD</div>
+<table summary="Controlled Term - ADTTE.PARAMCD">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>TTPNRELF</td>
+<td class="codelist-item-decode">Time to first pain relief</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.AEREL">
+<div class="codelist-caption">AEREL</div>
+<table summary="Controlled Term - AEREL">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>NOT RELATED</td>
+<td class="codelist-item-decode">NOT RELATED</td>
+</tr>
+<tr class="tableroweven">
+<td>POSSIBLY RELATED</td>
+<td class="codelist-item-decode">POSSIBLY RELATED</td>
+</tr>
+<tr class="tablerowodd">
+<td>PROBABLY RELATED</td>
+<td class="codelist-item-decode">PROBABLY RELATED</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.AERELN">
+<div class="codelist-caption">AERELN</div>
+<table summary="Controlled Term - AERELN">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>0</td>
+<td class="codelist-item-decode">NOT RELATED</td>
+</tr>
+<tr class="tableroweven">
+<td>1</td>
+<td class="codelist-item-decode">POSSIBLY RELATED</td>
+</tr>
+<tr class="tablerowodd">
+<td>2</td>
+<td class="codelist-item-decode">PROBABLY RELATED</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.AESEV">
+<div class="codelist-caption">AESEV</div>
+<table summary="Controlled Term - AESEV">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>MILD</td>
+<td class="codelist-item-decode">Grade 1; 1</td>
+</tr>
+<tr class="tableroweven">
+<td>MODERATE</td>
+<td class="codelist-item-decode">Grade 2; 2</td>
+</tr>
+<tr class="tablerowodd">
+<td>SEVERE</td>
+<td class="codelist-item-decode">Grade 3; 3</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.AESEVN">
+<div class="codelist-caption">AESEVN</div>
+<table summary="Controlled Term - AESEVN">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>1</td>
+<td class="codelist-item-decode">Mild</td>
+</tr>
+<tr class="tableroweven">
+<td>2</td>
+<td class="codelist-item-decode">Moderate</td>
+</tr>
+<tr class="tablerowodd">
+<td>3</td>
+<td class="codelist-item-decode">Severe</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.AGEGR1">
+<div class="codelist-caption">AGEGR1</div>
+<table summary="Controlled Term - AGEGR1">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>&lt;55 YEARS</td>
+<td class="codelist-item-decode">&lt;55 Years</td>
+</tr>
+<tr class="tableroweven">
+<td>&gt;=55 YEARS</td>
+<td class="codelist-item-decode">&gt;=55 Years</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.AGEGR1N">
+<div class="codelist-caption">AGEGR1N</div>
+<table summary="Controlled Term - AGEGR1N">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>1</td>
+<td class="codelist-item-decode">&lt;55 Years</td>
+</tr>
+<tr class="tableroweven">
+<td>2</td>
+<td class="codelist-item-decode">&gt;=55 Years</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.AGEU">
+<div class="codelist-caption">AGEU</div>
+<table summary="Controlled Term - AGEU">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>YEARS</td>
+<td class="codelist-item-decode">YEARS</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.ARM">
+<div class="codelist-caption">ARM</div>
+<table summary="Controlled Term - ARM">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Analgezia HCL 30 mg</td>
+<td class="codelist-item-decode">Analgezia HCL 30 mg</td>
+</tr>
+<tr class="tableroweven">
+<td>Placebo</td>
+<td class="codelist-item-decode">Placebo</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.ARMCD">
+<div class="codelist-caption">ARMCD</div>
+<table summary="Controlled Term - ARMCD">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>ALG123</td>
+<td class="codelist-item-decode">Analgezia HCL 30 mg</td>
+</tr>
+<tr class="tableroweven">
+<td>PLACEBO</td>
+<td class="codelist-item-decode">Placebo</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.ARMN">
+<div class="codelist-caption">ARMN</div>
+<table summary="Controlled Term - ARMN">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>1</td>
+<td class="codelist-item-decode">Analgezia HCL 30 mg</td>
+</tr>
+<tr class="tableroweven">
+<td>0</td>
+<td class="codelist-item-decode">Placebo</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.AVISITN">
+<div class="codelist-caption">AVISITN</div>
+<table summary="Controlled Term - AVISITN">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>0</td>
+<td class="codelist-item-decode">Baseline</td>
+</tr>
+<tr class="tableroweven">
+<td>3</td>
+<td class="codelist-item-decode">Month 3</td>
+</tr>
+<tr class="tablerowodd">
+<td>6</td>
+<td class="codelist-item-decode">Month 6</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.CENSOR">
+<div class="codelist-caption">CENSOR</div>
+<table summary="Controlled Term - CENSOR">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>0</td>
+<td class="codelist-item-decode">Pain relief</td>
+</tr>
+<tr class="tableroweven">
+<td>1</td>
+<td class="codelist-item-decode">Pain worsening prior to relief</td>
+</tr>
+<tr class="tablerowodd">
+<td>2</td>
+<td class="codelist-item-decode">Pain adverse event prior to relief</td>
+</tr>
+<tr class="tableroweven">
+<td>3</td>
+<td class="codelist-item-decode">No relief and no worsening at last assessment</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.COUNTRY">
+<div class="codelist-caption">COUNTRY</div>
+<table summary="Controlled Term - COUNTRY">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>USA</td>
+<td class="codelist-item-decode">UNITED STATES</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.CRIT1VALUES">
+<div class="codelist-caption">CRIT1VALUES</div>
+<table summary="Controlled Term - CRIT1VALUES">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Pain improvement from baseline of at least 2 points</td>
+<td class="codelist-item-decode">Pain improvement from baseline of at least 2 points</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.EVNTDESC">
+<div class="codelist-caption">EVNTDESC</div>
+<table summary="Controlled Term - EVNTDESC">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>PAIN RELIEF</td>
+<td class="codelist-item-decode">Pain relief</td>
+</tr>
+<tr class="tableroweven">
+<td>PAIN WORSENING PRIOR TO RELIEF</td>
+<td class="codelist-item-decode">Pain worsening prior to relief</td>
+</tr>
+<tr class="tablerowodd">
+<td>PAIN ADVERSE EVENT PRIOR TO RELIEF</td>
+<td class="codelist-item-decode">Pain adverse event prior to relief</td>
+</tr>
+<tr class="tableroweven">
+<td>NO RELIEF AND NO WORSENING AT LAST ASSESSMENT</td>
+<td class="codelist-item-decode">No relief and no worsening at last assessment</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.FLAGS">
+<div class="codelist-caption">FLAGS</div>
+<table summary="Controlled Term - FLAGS">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Y</td>
+<td class="codelist-item-decode">Yes</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.PAINSCORE">
+<div class="codelist-caption">PAINSCORE</div>
+<table summary="Controlled Term - PAINSCORE">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>0</td>
+<td class="codelist-item-decode">None</td>
+</tr>
+<tr class="tableroweven">
+<td>1</td>
+<td class="codelist-item-decode">Mild</td>
+</tr>
+<tr class="tablerowodd">
+<td>2</td>
+<td class="codelist-item-decode">Moderate</td>
+</tr>
+<tr class="tableroweven">
+<td>3</td>
+<td class="codelist-item-decode">Severe</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.RACE">
+<div class="codelist-caption">RACE</div>
+<table summary="Controlled Term - RACE">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>BLACK OR AFRICAN AMERICAN</td>
+<td class="codelist-item-decode">BLACK OR AFRICAN AMERICAN</td>
+</tr>
+<tr class="tableroweven">
+<td>ASIAN</td>
+<td class="codelist-item-decode">ASIAN</td>
+</tr>
+<tr class="tablerowodd">
+<td>WHITE</td>
+<td class="codelist-item-decode">WHITE</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.RELGR1">
+<div class="codelist-caption">RELGR1</div>
+<table summary="Controlled Term - RELGR1">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Not related</td>
+<td class="codelist-item-decode">Not related</td>
+</tr>
+<tr class="tableroweven">
+<td>Related</td>
+<td class="codelist-item-decode">Related</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.RELGR1N">
+<div class="codelist-caption">RELGR1N</div>
+<table summary="Controlled Term - RELGR1N">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>0</td>
+<td class="codelist-item-decode">Not related</td>
+</tr>
+<tr class="tableroweven">
+<td>1</td>
+<td class="codelist-item-decode">Related</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.SEX">
+<div class="codelist-caption">SEX</div>
+<table summary="Controlled Term - SEX">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>F</td>
+<td class="codelist-item-decode">FEMALE</td>
+</tr>
+<tr class="tableroweven">
+<td>M</td>
+<td class="codelist-item-decode">MALE</td>
+</tr>
+<tr class="tablerowodd">
+<td>U</td>
+<td class="codelist-item-decode">UNKNOWN</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.TRT01PN">
+<div class="codelist-caption">TRT01PN</div>
+<table summary="Controlled Term - TRT01PN">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>0</td>
+<td class="codelist-item-decode">Placebo</td>
+</tr>
+<tr class="tableroweven">
+<td>1</td>
+<td class="codelist-item-decode">Analgezia HCL 30 mg</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.VISIT">
+<div class="codelist-caption">VISIT</div>
+<table summary="Controlled Term - VISIT">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>Baseline</td>
+<td class="codelist-item-decode">Baseline</td>
+</tr>
+<tr class="tableroweven">
+<td>Month 3</td>
+<td class="codelist-item-decode">Month 3</td>
+</tr>
+<tr class="tablerowodd">
+<td>Month 6</td>
+<td class="codelist-item-decode">Month 6</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.VISITNUM">
+<div class="codelist-caption">VISITNUM</div>
+<table summary="Controlled Term - VISITNUM">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>0</td>
+<td class="codelist-item-decode">Baseline</td>
+</tr>
+<tr class="tableroweven">
+<td>1</td>
+<td class="codelist-item-decode">Month 3</td>
+</tr>
+<tr class="tablerowodd">
+<td>2</td>
+<td class="codelist-item-decode">Month 6</td>
+</tr>
+</table>
+</div>
+<div class="codelist" id="CL.CL.YN">
+<div class="codelist-caption">YN</div>
+<table summary="Controlled Term - YN">
+<tr class="header">
+<th scope="col" class="codedvalue">Permitted Value (Code)</th>
+<th scope="col">Display Value (Decode)</th>
+</tr>
+<tr class="tablerowodd">
+<td>N</td>
+<td class="codelist-item-decode">NO</td>
+</tr>
+<tr class="tableroweven">
+<td>Y</td>
+<td class="codelist-item-decode">YES</td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br>
+</div>
+<a id="compmethod"></a><div class="containerbox">
+<h1 class="invisible">Methods</h1>
+<table summary="Methods">
+<caption class="header">Methods</caption>
+<tr class="header">
+<th scope="col">Method</th>
+<th scope="col">Type</th>
+<th scope="col">Description</th>
+</tr>
+<tr id="MT.MT.BASE" class="tablerowodd">
+<td>Baseline value derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Last non-missing value of AVAL prior to first dose</div></td>
+</tr>
+<tr id="MT.MT.CHANGEFROMBASELINE" class="tableroweven">
+<td>Change from baseline calculation</td>
+<td>Computation</td>
+<td><div class="method-code">AVAL-BASE</div></td>
+</tr>
+<tr id="MT.MT.RESPONDER" class="tablerowodd">
+<td>Responder derivation</td>
+<td>Computation</td>
+<td><div class="method-code">IF (.Z&lt;CHG&lt;=-2) THEN CRIT1FL='Y' ELSE CRIT1FL='N'</div></td>
+</tr>
+<tr id="MT.MT.TTPNRELF" class="tableroweven">
+<td>Time to first pain relief without worsening derivation</td>
+<td>Computation</td>
+<td><div class="method-code">Derived from ADEF.ADY (where PARAMCD=XPPAIN and ADY&gt;1) or ADAE.ASDY where CQ01NAM=PAIN EVENT.  Value is the earliest day when ADEF.CHG&lt;0 (for an event) or (ADEF.CHG&gt;0 or ADAE.ASDY&gt;0) (for subjects censored due to pain worsening) or the last record where ADEF.CHG=0 (for subjects censored due to no improvement or worsening by the time of the last assessment)</div></td>
+</tr>
+<tr id="MT.MT.TTPNRELF.CNSR" class="tablerowodd">
+<td>Censoring algorithm for Time to First Pain Relief</td>
+<td>Computation</td>
+<td><div class="method-code">if pain relief occurs before worsening, then CNSR=0; else if worsening from pain data, then CNSR=1; else if worsening from AE data, then CNSR=3; else if no relief and no worsening at time of last observation, then CNSR=4</div></td>
+</tr>
+<tr id="MT.MT.TTPNRELF.EVNTDESC" class="tableroweven">
+<td>Event descriptions for Time to First Pain Relief</td>
+<td>Computation</td>
+<td><div class="method-code">if CNSR=0, then EVNTDESC=PAIN RELIEF; if CNSR=1, then EVNTDESC=PAIN WORSENING PRIOR TO RELIEF; if CNSR=2, then EVNTDESC=PAIN ADVERSE EVENT PRIOR TO RELIEF; if CNSR=3, then EVNTDESC=NO RELIEF AND NO WORSENING AT LAST ASSESSMENT</div></td>
+</tr>
+<tr id="MT.MT.TRTSDT" class="tablerowodd">
+<td>Date of first exposure to treatment derivation</td>
+<td>Computation</td>
+<td><div class="method-code">EX.EXSTDTC where EXSEQ=1, converted to a SAS date.  See SAP for missing or partial value imputations.</div></td>
+</tr>
+<tr id="MT.MT.TRTEDT" class="tableroweven">
+<td>Date of last exposure to treatment derivation</td>
+<td>Computation</td>
+<td><div class="method-code">EX.EXENDTC converted to a SAS date for the last record in EX.  See SAP for missing or partial value imputations.</div></td>
+</tr>
+<tr id="MT.MT.ITTFL" class="tablerowodd">
+<td>Intent-to-Treat flag derivation</td>
+<td>Computation</td>
+<td><div class="method-code">If ADSL.RANDDT ^= missing then Y, else Null</div></td>
+</tr>
+<tr id="MT.MT.SAFFL" class="tableroweven">
+<td>Safety population flag derivation</td>
+<td>Computation</td>
+<td><div class="method-code">If ADSL.TRTSDT^=missing then Y, else Null</div></td>
+</tr>
+<tr id="MT.MT.RESPFL" class="tablerowodd">
+<td>Responder population flag derivation</td>
+<td>Computation</td>
+<td><div class="method-code">If XP.VISIT='Month 6' and XPSTRESN represents at least a two-point improvement from the baseline record then Y, else N</div></td>
+</tr>
+<tr id="MT.MT.RANDDT" class="tableroweven">
+<td>Randomization date derivation</td>
+<td>Computation</td>
+<td><div class="method-code">SUPPDM.QVAL where SUPPDM.QNAM=RANDDTC, converted to a SAS date</div></td>
+</tr>
+<tr id="MT.MT.ABLFL" class="tablerowodd">
+<td>Analysis baseline record flag</td>
+<td>Computation</td>
+<td><div class="method-code">Last visit with a non-missing record prior to first dose</div></td>
+</tr>
+<tr id="MT.MT.ADT" class="tableroweven">
+<td>Analysis date calculation</td>
+<td>Computation</td>
+<td><div class="method-code">XPDTC converted to a SAS date.  See SAP for missing or partial value imputations</div></td>
+</tr>
+<tr id="MT.MT.ADY" class="tablerowodd">
+<td>Analysis day calculation</td>
+<td>Computation</td>
+<td><div class="method-code">ADT - ADSL.RANDDT + 1</div></td>
+</tr>
+<tr id="MT.MT.ADAE.ASTDT" class="tableroweven">
+<td>Analysis start date calculation</td>
+<td>Computation</td>
+<td><div class="method-code">AESTDTC converted to a SAS date.  See SAP for missing or partial value imputations</div></td>
+</tr>
+<tr id="MT.MT.ADAE.AENDT" class="tablerowodd">
+<td>Analysis end date calculation</td>
+<td>Computation</td>
+<td><div class="method-code">AEENDTC converted to a SAS date.  See SAP for missing or partial value imputations</div></td>
+</tr>
+<tr id="MT.MT.ADAE.ASTDY" class="tableroweven">
+<td>Analysis start day calculation</td>
+<td>Computation</td>
+<td><div class="method-code">ASTDT - ADSL.TRTSDT + 1</div></td>
+</tr>
+<tr id="MT.MT.ADAE.AENDY" class="tablerowodd">
+<td>Analysis end day calculation</td>
+<td>Computation</td>
+<td><div class="method-code">AENDT - ADSL.TRTEDT + 1</div></td>
+</tr>
+<tr id="MT.MT.ADTTE.SRCVAR" class="tableroweven">
+<td>SRCVAR algorithm</td>
+<td>Computation</td>
+<td><div class="method-code">SRCVAR = ADEF if first event is a negative pain score or if worsening occurs before an improvement.  SRCVAR = ADAE if ADAE.CQ01NAM is non-missing on a date prior to a pain improvement or worsening.</div></td>
+</tr>
+<tr id="MT.MT.ADTTE.SRCSEQ" class="tablerowodd">
+<td>SRCSEQ algorithm</td>
+<td>Computation</td>
+<td><div class="method-code">if SRCVAR=ADEF then SRCSEQ=ADEF.XPSEQ from the corresponding record; else if SRCVAR=ADAE then SRCSEQ=ADAE.AESEQ from the corresponding record.</div></td>
+</tr>
+<tr id="MT.MT.SEECODELIST" class="tableroweven">
+<td>See codelist</td>
+<td>Computation</td>
+<td><div class="method-code">See codelist</div></td>
+</tr>
+<tr id="MT.MT.SEEVALUELEVEL" class="tablerowodd">
+<td>See parameter value-level metadata</td>
+<td>Computation</td>
+<td><div class="method-code">See parameter value-level metadata</div></td>
+</tr>
+<tr id="MT.MT.RELGR1" class="tableroweven">
+<td>AE relatedness derivation</td>
+<td>Computation</td>
+<td><div class="method-code">If AEREL=NOT RELATED  then NOT RELATED; Otherwise RELATED</div></td>
+</tr>
+<tr id="MT.MT.AGEGR1" class="tablerowodd">
+<td>Age group derivation</td>
+<td>Computation</td>
+<td><div class="method-code">If age&lt;55 then "&lt;55 years"; else if age&gt;=55 then "&gt;=55 YEARS"</div></td>
+</tr>
+</table>
+</div>
+<p class="linktop">Go to the <a href="#main">top</a> of the Define-XML document</p>
+<br>
+</div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 # defineR 0.0.5
 
 * Update documentation.
+* Fixes for CRAN.
 
 # defineR 0.0.4
 

@@ -3,6 +3,7 @@
 \docType{package}
 \name{defineR}
 \alias{defineR}
+\alias{defineR-package}
 \title{Creates Define XML documents}
 \description{
 The \strong{defineR} package contains functions to
@@ -24,5 +25,28 @@ The \strong{defineR} package is simple to use.  It contains only two functions:
 See the [Getting Started](https://defineR.r-sassy.org/articles/defineR.html)
 page for an overview of these functions.  Additional
 information is available in the function references.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://defineR.r-sassy.org}
+  \item \url{https://github.com/dbosak01/defineR}
+  \item Report bugs at \url{https://github.com/dbosak01/defineR/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: David Bosak \email{dbosak01@gmail.com}
+
+Authors:
+\itemize{
+  \item Aheer Alvi \email{aheer.alvi@gmail.com}
+}
+
+Other contributors:
+\itemize{
+  \item Jonathan Stallings \email{jdstallings@dataindeed.io} [contributor]
+}
+
 }
 \keyword{internal}

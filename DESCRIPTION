@@ -20,7 +20,7 @@ Description: Creates 'define.xml' documents used for regulatory
     submissions based on spreadsheet metadata.  Can also help
     create metadata and generate HTML data explorer. 
 License: CC0
-URL: https://defineR.r-sassy.org
+URL: https://defineR.r-sassy.org, https://github.com/dbosak01/defineR
 BugReports: https://github.com/dbosak01/defineR/issues
 Encoding: UTF-8
 Depends: R (>= 3.6.0),
@@ -41,4 +41,4 @@ Imports:
     stats
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-RoxygenNote: 7.2.1
+RoxygenNote: 7.3.3
