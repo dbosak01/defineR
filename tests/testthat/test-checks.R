@@ -26,43 +26,43 @@ test_that("checks1: The get check_xsd() function works as expected.", {
 
 
 
-# test_that("checks2: get check_xsd() error messages work as expected.", {
-#
-#   fp <- file.path(data_dir, "xml/corrupted.xml")
-#
-#   msg <- c("Hello")
-#
-#   res <- check_xsd(fp, "2.0.0", msg)
-#
-#   res
-#
-#   expect_equal(length(res), 4)
-#   expect_equal(res[1], "Hello")
-#
-# })
-#
-# test_that("checks3: check_metadata() tab check works as expected.", {
-#
-#   msg <- "Hello"
-#
-#   fp <- file.path(data_dir, "data/SDTM_METADATA.xls")
-#
-#   lst <- import_metadata(fp)
-#
-#   res <- check_metadata(lst, "2.0.0", FALSE, msg)
-#
-#   expect_equal(length(res), 1)
-#
-#
-#   lst$VARIABLE_METADATA <- NULL
-#   lst$CODELISTS <- NULL
-#
-#   res <- check_metadata(lst, "2.0.0", FALSE, msg)
-#
-#   expect_equal(length(res), 3)
-#
-# })
-#
+test_that("checks2: get check_xsd() error messages work as expected.", {
+
+  fp <- file.path(data_dir, "xml/corrupted.xml")
+
+  msg <- c("Hello")
+
+  res <- check_xsd(fp, "2.0.0", msg)
+
+  res
+
+  expect_equal(length(res), 4)
+  expect_equal(res[1], "Hello")
+
+})
+
+test_that("checks3: check_metadata() tab check works as expected.", {
+
+  msg <- "Hello"
+
+  fp <- file.path(data_dir, "data/SDTM_METADATA.xls")
+
+  lst <- import_metadata(fp)
+
+  res <- check_metadata(lst, "2.0.0", FALSE, msg)
+
+  expect_equal(length(res), 1)
+
+
+  lst$VARIABLE_METADATA <- NULL
+  lst$CODELISTS <- NULL
+
+  res <- check_metadata(lst, "2.0.0", FALSE, msg)
+
+  expect_equal(length(res), 3)
+
+})
+
 # test_that("checks4: write_check_report() works as expected.", {
 #
 #   msg <- c("Hello", "Goodbye")
