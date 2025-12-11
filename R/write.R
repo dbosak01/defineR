@@ -86,6 +86,7 @@ e$end_char <- ""
 #' @seealso \code{\link{write_metadata}} to create a metadata template.
 #' @export
 #' @examples
+#' donttest{
 #' # Get temp directory
 #' tmp <- tempdir()
 #'
@@ -107,6 +108,7 @@ e$end_char <- ""
 #'
 #' # View HTML
 #' # file.show(file.path(tmp, "define.sdtm.html"))
+#' }
 write_define <- function(path, dir, type = "sdtm", ver = NULL,
                          check = TRUE, html = TRUE, view = TRUE,
                          report_type = "PDF", end_char = "") {

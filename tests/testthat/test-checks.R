@@ -49,19 +49,19 @@ test_that("checks3: check_metadata() tab check works as expected.", {
 
   lst <- import_metadata(fp)
 
-  # res <- check_metadata(lst, "2.0.0", FALSE, msg)
-  #
-  # expect_equal(length(res), 1)
+  res <- check_metadata(lst, "2.0.0", FALSE, msg)
+
+  expect_equal(length(res), 1)
 
   expect_equal(TRUE, TRUE)
 
 
-  # lst$VARIABLE_METADATA <- NULL
-  # lst$CODELISTS <- NULL
-  #
-  # res <- check_metadata(lst, "2.0.0", FALSE, msg)
-  #
-  # expect_equal(length(res), 3)
+  lst$VARIABLE_METADATA <- NULL
+  lst$CODELISTS <- NULL
+
+  res <- check_metadata(lst, "2.0.0", FALSE, msg)
+
+  expect_equal(length(res), 3)
 
 })
 
