@@ -86,7 +86,7 @@ e$end_char <- ""
 #' @seealso \code{\link{write_metadata}} to create a metadata template.
 #' @export
 #' @examples
-#' donttest{
+#' \donttest{
 #' # Get temp directory
 #' tmp <- tempdir()
 #'

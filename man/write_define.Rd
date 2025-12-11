@@ -104,7 +104,7 @@ and "defineR.xslt".  For example:
 \code{options("defineR.xsd" = "c:/myproject/define2-1-0.xsd")}.
 }
 \examples{
-donttest{
+\donttest{
 # Get temp directory
 tmp <- tempdir()
 
