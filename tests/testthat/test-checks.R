@@ -7,25 +7,25 @@ data_dir <- "."
 
 DEV <- FALSE
 
-#
-# test_that("checks1: The get check_xsd() function works as expected.", {
-#
-#   fp <- file.path(data_dir, "sdtm/define.xml")
-#
-#   msg <- c("Hello")
-#
-#   res <- check_xsd(fp, "2.0.0", msg)
-#
-#   res
-#
-#   expect_equal(length(res) > 0, TRUE)
-#   expect_equal(res[1], "Hello")
-#
-#
-# })
-#
-#
-#
+
+test_that("checks1: The get check_xsd() function works as expected.", {
+
+  fp <- file.path(data_dir, "sdtm/define.xml")
+
+  msg <- c("Hello")
+
+  res <- check_xsd(fp, "2.0.0", msg)
+
+  res
+
+  expect_equal(length(res) > 0, TRUE)
+  expect_equal(res[1], "Hello")
+
+
+})
+
+
+
 # test_that("checks2: get check_xsd() error messages work as expected.", {
 #
 #   fp <- file.path(data_dir, "xml/corrupted.xml")
