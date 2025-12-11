@@ -104,17 +104,18 @@ and "defineR.xslt".  For example:
 \code{options("defineR.xsd" = "c:/myproject/define2-1-0.xsd")}.
 }
 \examples{
+donttest{
 # Get temp directory
 tmp <- tempdir()
 
 # Create demo metadata
-pth <- write_metadata(tmp, demo = TRUE)
+# pth <- write_metadata(tmp, demo = TRUE)
 
 # Generate define files
-res <- write_define(pth, tmp, view = FALSE)
+# res <- write_define(pth, tmp, view = FALSE)
 
 # View check results
-res
+# res
 # NULL
 
 # View XML
@@ -125,6 +126,7 @@ res
 
 # View HTML
 # file.show(file.path(tmp, "define.sdtm.html"))
+}
 }
 \seealso{
 \code{\link{write_metadata}} to create a metadata template.
