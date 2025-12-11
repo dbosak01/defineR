@@ -65,45 +65,45 @@ test_that("checks3: check_metadata() tab check works as expected.", {
 
 })
 
-# test_that("checks4: write_check_report() works as expected.", {
-#
-#   msg <- c("Hello", "Goodbye")
-#
-#
-#   op <- file.path(base_path, "checks/test4.pdf")
-#
-#   if (file.exists(op))
-#     file.remove(op)
-#
-#   res <- write_check_report(op, msg, "PDF")
-#
-#
-#   expect_equal(file.exists(op), TRUE)
-#
-#
-# })
-#
-#
-# test_that("checks5: view_check_report() works as expected.", {
-#
-#   if (DEV) {
-#
-#     res <- view_check_report(c())
-#
-#
-#     msg <- c("Hello", "Goodbye")
-#
-#
-#
-#     res <- view_check_report(msg)
-#
-#
-#   }
-#
-#   # No way to test this
-#   # Must test interactively
-#   expect_equal(1, 1)
-#
-#
-# })
+test_that("checks4: write_check_report() works as expected.", {
+
+  msg <- c("Hello", "Goodbye")
+
+
+  op <- file.path(base_path, "checks/test4.pdf")
+
+  if (file.exists(op))
+    file.remove(op)
+
+  res <- write_check_report(op, msg, "PDF")
+
+
+  expect_equal(file.exists(op), TRUE)
+
+
+})
+
+
+test_that("checks5: view_check_report() works as expected.", {
+
+  if (DEV) {
+
+    res <- view_check_report(c())
+
+
+    msg <- c("Hello", "Goodbye")
+
+
+
+    res <- view_check_report(msg)
+
+
+  }
+
+  # No way to test this
+  # Must test interactively
+  expect_equal(1, 1)
+
+
+})
 
