@@ -52,7 +52,7 @@ pth <- write_metadata(tmp, demo = TRUE)
 ```
 The above code will produce sample metadata for SDTM that looks like this:
 
-<img src="../man/images/metadata.png"/>
+<img src="../man/images/metadata.png" alt = "Sample metadata"/>
 
 #### Create the Define.xml
 Using the metadata from above, we can now create the define.xml and 
@@ -83,14 +83,14 @@ res
 
 The output directory will now contain the define.xml.  Here is the 
 top portion of the document:
-<img src="../man/images/define.png"/>
+<img src="../man/images/define.png" alt="Define.xml"/>
 
 Here is the check report:
-<img src="../man/images/report1.png"/>
+<img src="../man/images/report1.png" alt = "Check Report"/>
 
 The HTML transformation was also generated and placed in the 
 output directory.  Here is a portion of the HTML:
-<img src="../man/images/html.png"/>
+<img src="../man/images/html.png" alt = "HTML Report"/>
 
 The transformation uses the latest available XSLT transformation from CDISC.
 The latest XSLT includes code to insert line feeds in the method/comment column.
@@ -110,10 +110,10 @@ will be contained in a vector returned by the function
 3. They will be written to a PDF report in the output directory  
 
 Here is what the viewer looks like when there are completeness messages:
-<img src="../man/images/viewer.png"/>
+<img src="../man/images/viewer.png" alt = "Completeness messages"/>
 
 The same check report is also output to the target directory as a PDF:
-<img src="../man/images/report.png"/>
+<img src="../man/images/report.png" alt = "PDF Report"/>
 
 These check results can help you identify problems with your metadata.
 You can use this function to iteratively check and correct your metadata

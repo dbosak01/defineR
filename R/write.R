@@ -91,13 +91,13 @@ e$end_char <- ""
 #' tmp <- tempdir()
 #'
 #' # Create demo metadata
-#' # pth <- write_metadata(tmp, demo = TRUE)
+#' pth <- write_metadata(tmp, demo = TRUE)
 #'
 #' # Generate define files
-#' # res <- write_define(pth, tmp, view = FALSE)
+#' res <- write_define(pth, tmp, view = FALSE)
 #'
 #' # View check results
-#' # res
+#' res
 #' # NULL
 #'
 #' # View XML
