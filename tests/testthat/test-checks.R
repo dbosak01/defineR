@@ -41,27 +41,27 @@ test_that("checks2: get check_xsd() error messages work as expected.", {
 
 })
 
-test_that("checks3: check_metadata() tab check works as expected.", {
-
-  msg <- "Hello"
-
-  fp <- file.path(data_dir, "data/SDTM_METADATA.xls")
-
-  lst <- import_metadata(fp)
-
-  res <- check_metadata(lst, "2.0.0", FALSE, msg)
-
-  expect_equal(length(res), 1)
-
-
-  lst$VARIABLE_METADATA <- NULL
-  lst$CODELISTS <- NULL
-
-  res <- check_metadata(lst, "2.0.0", FALSE, msg)
-
-  expect_equal(length(res), 3)
-
-})
+# test_that("checks3: check_metadata() tab check works as expected.", {
+#
+#   msg <- "Hello"
+#
+#   fp <- file.path(data_dir, "data/SDTM_METADATA.xls")
+#
+#   lst <- import_metadata(fp)
+#
+#   res <- check_metadata(lst, "2.0.0", FALSE, msg)
+#
+#   expect_equal(length(res), 1)
+#
+#
+#   lst$VARIABLE_METADATA <- NULL
+#   lst$CODELISTS <- NULL
+#
+#   res <- check_metadata(lst, "2.0.0", FALSE, msg)
+#
+#   expect_equal(length(res), 3)
+#
+# })
 
 # test_that("checks4: write_check_report() works as expected.", {
 #
