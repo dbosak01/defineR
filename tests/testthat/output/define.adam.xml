@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
@@ -758,7 +758,7 @@ Mandatory="No"
   DataType="text"
   Length="15"
   def:DisplayFormat="15"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
@@ -776,7 +776,7 @@ Mandatory="No"
   DataType="text"
   Length="25"
   def:DisplayFormat="25"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
@@ -794,7 +794,7 @@ Mandatory="No"
   DataType="text"
   Length="7"
   def:DisplayFormat="7"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Subject Identifier for the Study</TranslatedText>
@@ -812,7 +812,7 @@ Mandatory="No"
   DataType="text"
   Length="7"
   def:DisplayFormat="7"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Study Site Identifier</TranslatedText>
@@ -830,7 +830,7 @@ Mandatory="No"
   DataType="text"
   Length="3"
   def:DisplayFormat="3"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Country</TranslatedText>
@@ -848,7 +848,7 @@ Mandatory="No"
   DataType="date"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Date of Birth</TranslatedText>
@@ -866,7 +866,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="3.0"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Age</TranslatedText>
@@ -884,7 +884,7 @@ Mandatory="No"
   DataType="text"
   Length="5"
   def:DisplayFormat="5"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Age Units</TranslatedText>
@@ -902,13 +902,13 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Pooled Age Group 1</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.AGEGR1"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -918,13 +918,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Pooled Age Group 1 (N)</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.AGEGR1N"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -934,7 +934,7 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Sex</TranslatedText>
@@ -952,7 +952,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Race</TranslatedText>
@@ -970,7 +970,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Race, Other, Specify</TranslatedText>
@@ -988,13 +988,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Date of Randomization</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1004,13 +1004,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Date of First Exposure to Treatment</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1020,13 +1020,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Date of Last Exposure to Treatment</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1036,7 +1036,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Description of Planned Arm</TranslatedText>
@@ -1054,7 +1054,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Treatment for Period 01</TranslatedText>
@@ -1072,7 +1072,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Actual Treatment for Period 01</TranslatedText>
@@ -1090,13 +1090,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Treatment for Period 01 (N)</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.ARMN"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1106,13 +1106,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Actual Treatment for Period 01 (N)</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.ARMN"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1122,13 +1122,13 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Intent-To-Treat Population Flag</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.FLAGS"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1138,13 +1138,13 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Safety Population Flag</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.FLAGS"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1154,13 +1154,13 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Efficacy Responder Flag</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.YN"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1170,7 +1170,7 @@ Mandatory="No"
   DataType="text"
   Length="15"
   def:DisplayFormat="15"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
@@ -1188,7 +1188,7 @@ Mandatory="No"
   DataType="text"
   Length="25"
   def:DisplayFormat="25"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
@@ -1206,7 +1206,7 @@ Mandatory="No"
   DataType="text"
   Length="7"
   def:DisplayFormat="7"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Study Site Identifier</TranslatedText>
@@ -1224,7 +1224,7 @@ Mandatory="No"
   DataType="text"
   Length="3"
   def:DisplayFormat="3"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Country</TranslatedText>
@@ -1242,7 +1242,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="date9."
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Date of Randomization</TranslatedText>
@@ -1260,7 +1260,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Age</TranslatedText>
@@ -1278,7 +1278,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Pooled Age Group 1 (N)</TranslatedText>
@@ -1296,7 +1296,7 @@ Mandatory="No"
   DataType="text"
   Length="20"
   def:DisplayFormat="20"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Pooled Age Group 1</TranslatedText>
@@ -1314,7 +1314,7 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Sex</TranslatedText>
@@ -1332,7 +1332,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Race</TranslatedText>
@@ -1350,7 +1350,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Treatment (N)</TranslatedText>
@@ -1368,7 +1368,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Treatment</TranslatedText>
@@ -1392,7 +1392,7 @@ Mandatory="No"
       <TranslatedText xml:lang="en">Parameter Code</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.ADEF.PARAMCD"/><def:Origin Type="Assigned">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1408,7 +1408,7 @@ Mandatory="No"
       <TranslatedText xml:lang="en">Parameter</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.ADEF.PARAM"/><def:Origin Type="Assigned">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1418,7 +1418,7 @@ Mandatory="No"
   DataType="text"
   Length="16"
   def:DisplayFormat="16"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Analysis Visit</TranslatedText>
@@ -1436,13 +1436,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Analysis Visit (N)</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.AVISITN"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1452,13 +1452,13 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Baseline Record Flag</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.FLAGS"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1468,7 +1468,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
@@ -1486,7 +1486,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Visit Number</TranslatedText>
@@ -1504,13 +1504,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="date9."
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Analysis Date</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1520,13 +1520,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Analysis Relative Day</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1536,13 +1536,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Analysis Value</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 <ItemDef OID="IT.ADEF.AVAL.XPPAIN" Name="AVAL" SASFieldName="AVAL"
@@ -1559,13 +1559,13 @@ Mandatory="No"
   DataType="text"
   Length="12"
   def:DisplayFormat="12"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Analysis Value (C)</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1575,13 +1575,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Baseline Value</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1591,13 +1591,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Change from Baseline</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1607,13 +1607,13 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Criterion 1 Evaluation Result Flag</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.YN"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 <ItemDef OID="IT.ADEF.CRIT1FL.XPPAIN" Name="CRIT1FL" SASFieldName="CRIT1FL"
@@ -1636,7 +1636,7 @@ Mandatory="No"
       <TranslatedText xml:lang="en">Analysis Criterion 1</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 <ItemDef OID="IT.ADEF.CRIT1.XPPAIN" Name="CRIT1" SASFieldName="CRIT1"
@@ -1653,7 +1653,7 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Intent-to-Treat Flag</TranslatedText>
@@ -1671,7 +1671,7 @@ Mandatory="No"
   DataType="text"
   Length="15"
   def:DisplayFormat="15"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
@@ -1689,7 +1689,7 @@ Mandatory="No"
   DataType="text"
   Length="25"
   def:DisplayFormat="25"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
@@ -1707,7 +1707,7 @@ Mandatory="No"
   DataType="text"
   Length="7"
   def:DisplayFormat="7"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Study Site Identifier</TranslatedText>
@@ -1725,7 +1725,7 @@ Mandatory="No"
   DataType="text"
   Length="3"
   def:DisplayFormat="3"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Country</TranslatedText>
@@ -1743,7 +1743,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Sequence Number</TranslatedText>
@@ -1761,7 +1761,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
@@ -1779,7 +1779,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Pooled Age Group 1 (N)</TranslatedText>
@@ -1797,7 +1797,7 @@ Mandatory="No"
   DataType="text"
   Length="20"
   def:DisplayFormat="20"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Pooled Age Group 1</TranslatedText>
@@ -1815,7 +1815,7 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Sex</TranslatedText>
@@ -1833,7 +1833,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Actual Treatment (N)</TranslatedText>
@@ -1851,7 +1851,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Actual Treatment</TranslatedText>
@@ -1869,7 +1869,7 @@ Mandatory="No"
   DataType="text"
   Length="200"
   def:DisplayFormat="200"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Reported Term for the Adverse Event</TranslatedText>
@@ -1887,7 +1887,7 @@ Mandatory="No"
   DataType="text"
   Length="200"
   def:DisplayFormat="200"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Dictionary-Derived Term</TranslatedText>
@@ -1905,7 +1905,7 @@ Mandatory="No"
   DataType="text"
   Length="200"
   def:DisplayFormat="200"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Body System or Organ Class</TranslatedText>
@@ -1923,13 +1923,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Start Date/Time of Adverse Events</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1939,13 +1939,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">End Date/Time of Adverse Events</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1955,13 +1955,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Study Day of Start of Adverse Event</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1971,13 +1971,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Study Day of End of Adverse Event</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -1987,7 +1987,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Severity/Intensity</TranslatedText>
@@ -2005,13 +2005,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Severity/Intensity (N)</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.AESEVN"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2021,7 +2021,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Serious Event</TranslatedText>
@@ -2039,7 +2039,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Action Taken with Study Treatment</TranslatedText>
@@ -2057,7 +2057,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Causality</TranslatedText>
@@ -2075,13 +2075,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Causality (N)</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.AERELN"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2091,13 +2091,13 @@ Mandatory="No"
   DataType="text"
   Length="200"
   def:DisplayFormat="200"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">CQ 01 Name</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2107,13 +2107,13 @@ Mandatory="No"
   DataType="text"
   Length="15"
   def:DisplayFormat="15"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Pooled Causality Group 1</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.RELGR1"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2123,13 +2123,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Pooled Causality Group 1 (N)</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.RELGR1N"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2139,13 +2139,13 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Treatment Emergent Flag</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.FLAGS"/><def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2155,7 +2155,7 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Safety Population Flag</TranslatedText>
@@ -2173,7 +2173,7 @@ Mandatory="No"
   DataType="text"
   Length="15"
   def:DisplayFormat="15"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Study Identifier</TranslatedText>
@@ -2191,7 +2191,7 @@ Mandatory="No"
   DataType="text"
   Length="25"
   def:DisplayFormat="25"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Domain Abbreviation</TranslatedText>
@@ -2209,7 +2209,7 @@ Mandatory="No"
   DataType="text"
   Length="7"
   def:DisplayFormat="7"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Study Site Identifier</TranslatedText>
@@ -2227,7 +2227,7 @@ Mandatory="No"
   DataType="text"
   Length="3"
   def:DisplayFormat="3"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Country</TranslatedText>
@@ -2245,7 +2245,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Unique Subject Identifier</TranslatedText>
@@ -2263,7 +2263,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Pooled Age Group 1 (N)</TranslatedText>
@@ -2281,7 +2281,7 @@ Mandatory="No"
   DataType="text"
   Length="20"
   def:DisplayFormat="20"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Pooled Age Group 1</TranslatedText>
@@ -2299,7 +2299,7 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Sex</TranslatedText>
@@ -2317,7 +2317,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Race</TranslatedText>
@@ -2335,7 +2335,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Treatment (N)</TranslatedText>
@@ -2353,7 +2353,7 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Planned Treatment</TranslatedText>
@@ -2371,13 +2371,13 @@ Mandatory="No"
   DataType="text"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Parameter Code</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.ADTTE.PARAMCD"/><def:Origin Type="Assigned">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2387,13 +2387,13 @@ Mandatory="No"
   DataType="text"
   Length="40"
   def:DisplayFormat="40"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Parameter</TranslatedText>
   </Description>
   <CodeListRef CodeListOID="CL.ADTTE.PARAM"/><def:Origin Type="Assigned">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2403,13 +2403,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Analysis Date</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2419,7 +2419,7 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Time to Event Origin Date for Subject</TranslatedText>
@@ -2437,13 +2437,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Analysis Value</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 <ItemDef OID="IT.ADTTE.AVAL.TTPNRELF" Name="AVAL" SASFieldName="AVAL"
@@ -2460,13 +2460,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Censor</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 <ItemDef OID="IT.ADTTE.CNSR.TTPNRELF" Name="CNSR" SASFieldName="CNSR"
@@ -2483,13 +2483,13 @@ Mandatory="No"
   DataType="text"
   Length="50"
   def:DisplayFormat="50"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Event description</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 <ItemDef OID="IT.ADTTE.EVNTDESC.XPPAIN" Name="EVNTDESC" SASFieldName="EVNTDESC"
@@ -2506,13 +2506,13 @@ Mandatory="No"
   DataType="text"
   Length="6"
   def:DisplayFormat="6"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Source Domain</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2522,13 +2522,13 @@ Mandatory="No"
   DataType="text"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Source Variable</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2538,13 +2538,13 @@ Mandatory="No"
   DataType="integer"
   Length="8"
   def:DisplayFormat="8"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Source Sequence Number</TranslatedText>
   </Description>
   <def:Origin Type="Derived">
-    
+
   </def:Origin>
 </ItemDef>
 
@@ -2554,7 +2554,7 @@ Mandatory="No"
   DataType="text"
   Length="1"
   def:DisplayFormat="1"
-  
+
   >
   <Description>
       <TranslatedText xml:lang="en">Intent-to-Treat Flag</TranslatedText>
@@ -3287,7 +3287,7 @@ DataType="text">
 </def:DocumentRef>
 <arm:AnalysisResult
   OID="AR.Table14.1.1.R1"
-  
+
   ResultIdentifier="AR.Table14.1.1.R1"
   AnalysisReason="SPECIFIED IN SAP"
   AnalysisPurpose="Comparisons of baseline characteristics by treatment group">
@@ -3315,7 +3315,7 @@ DataType="text">
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
     <arm:Code>PROC FREQ DATA=ADSL; where ittfl='Y';  tables trt01pn * (agegr1 sex race) / cmh; run;</arm:Code>
-    
+
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 </arm:ResultDisplay>
@@ -3353,7 +3353,7 @@ DataType="text">
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
     <arm:Code>proc freq data = adef; by crit1 avisitn; where ittfl='Y'; tables trtpn * crit1fl / chisq; run;</arm:Code>
-    
+
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 </arm:ResultDisplay>
@@ -3392,7 +3392,7 @@ DataType="text">
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
     <arm:Code>proc glm data = adef; by avisitn avisit; class trtpn; model aval = trtpn base; run;</arm:Code>
-    
+
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 </arm:ResultDisplay>
@@ -3430,7 +3430,7 @@ DataType="text">
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
     <arm:Code>proc lifetest  data = adtte plots=s;  where ittfl = 'Y' and paramcd = 'TTPNRELF';  id usubjid;  strata trtpn;  time aval*cnsr (1 2 3);   test trtpn; run;</arm:Code>
-    
+
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 <arm:AnalysisResult
@@ -3460,7 +3460,7 @@ DataType="text">
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
     <arm:Code>proc phreg data = adtte; model aval*cnsr(1, 2, 3) = trtpn; run;</arm:Code>
-    
+
   </arm:ProgrammingCode>
 </arm:AnalysisResult>
 </arm:ResultDisplay>
@@ -3473,7 +3473,7 @@ DataType="text">
 </def:DocumentRef>
 <arm:AnalysisResult
   OID="AR.Table14.3.2.1.R1"
-  
+
   ResultIdentifier="AR.Table14.3.2.1.R1"
   AnalysisReason="SPECIFIED IN SAP"
   AnalysisPurpose="Secondary safety endpoint">
@@ -3498,7 +3498,7 @@ DataType="text">
   </arm:Documentation>
 
   <arm:ProgrammingCode Context="SAS Version 9.4">
-    
+
     <def:DocumentRef leafID="LF.aet14302" />
   </arm:ProgrammingCode>
 </arm:AnalysisResult>

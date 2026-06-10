@@ -789,7 +789,38 @@ test_that("write25: SDTM CDISC defineR XML can be converted to HTML", {
 
 })
 
+test_that("write26: write_define() works as expected with Chinese characters.", {
 
+  if (osname == "Darwin") {
+
+    expect_equal(TRUE, TRUE)
+
+  } else {
+
+    fp <- file.path(data_dir, "metadata/demo/SDTM_METADATA3_CN.xlsx")
+    op <- file.path(base_path, "output")
+
+    df <- file.path(op, "define.sdtm.xml")
+    hf <- file.path(op, "define.sdtm.xml")
+
+    if (file.exists(df))
+      file.remove(df)
+
+    if (file.exists(hf))
+      file.remove(hf)
+
+
+    res <- write_define(fp, op, check = FALSE, view = view)
+
+    res
+
+    expect_equal(length(res), 0)
+    expect_equal(file.exists(df), TRUE)
+    expect_equal(file.exists(hf), TRUE)
+
+  }
+
+})
 
 # test_that("write9: create_sdtm_xml works with JS2 metadata", {
 #

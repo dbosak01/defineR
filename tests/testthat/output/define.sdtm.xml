@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
   <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
     <!-- ************************************************************* -->
     <!-- File: define.xml                                              -->
-    <!-- Date: 10December2025                                                   -->
+    <!-- Date: 10June2026                                                   -->
     <!-- Description: Define.xml file for XYZ123                       -->
     <!-- Created by the defineR package                                -->
     <!-- ************************************************************* -->
@@ -13,11 +13,11 @@
   ODMVersion="1.3.2"
   FileOID="XYZ123"
   FileType="Snapshot"
-  CreationDateTime="2025-12-10T23:42:36">
+  CreationDateTime="2026-06-10T09:00:35">
     <Study OID="123">
     <GlobalVariables>
     <StudyName>XYZ123</StudyName>
-    <StudyDescription>A PHASE IIB, DOUBLE-BLIND, MULTI-CENTER, PLACEBO CONTROLLED, PARALLEL GROUP TRIAL OF ANALGEZIA HCL FOR THE TREATMENT OF CHRONIC PAIN</StudyDescription>
+    <StudyDescription>一项评估 Analgezia HCl 治疗慢性疼痛疗效的 IIb 期、双盲、多中心、安慰剂对照、平行组试验</StudyDescription>
     <ProtocolName>XYZ123</ProtocolName>
     </GlobalVariables>
     <MetaDataVersion OID="CDISC.SDTM-IG.3.2"
@@ -251,7 +251,7 @@ Repeating="Yes"
 Purpose="Tabulation"
 IsReferenceData="No"
 SASDatasetName="AE"
-def:Structure="Events - One record per event per subject"
+def:Structure="事件——每个受试者的每个事件对应一条记录"
 def:Class="Events"
 def:ArchiveLocationID="LF.AE">
 <Description>
@@ -3947,16 +3947,6 @@ def:CommentOID="COM.ARMCD"
    <def:PDFPageRef PageRefs="5" Type="PhysicalRef"/>
    </def:DocumentRef>
 </def:Origin>
-<def:Origin Type="CRF">
-   <def:DocumentRef leafID="LF.blankcrf">
-   <def:PDFPageRef PageRefs="6" Type="PhysicalRef"/>
-   </def:DocumentRef>
-</def:Origin>
-<def:Origin Type="CRF">
-   <def:DocumentRef leafID="LF.blankcrf">
-   <def:PDFPageRef PageRefs="7" Type="PhysicalRef"/>
-   </def:DocumentRef>
-</def:Origin>
 
   
 </ItemDef>
@@ -5028,18 +5018,7 @@ DataType="text">
 </MethodDef>
 <MethodDef OID="MT.LB.LBNRIND" Name="LBNRIND derivation" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then
-   lbnrind = 'HIGH';
- else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then
-   lbnrind = 'NORMAL';
- else if lbstnrlo ne . and lbstresn ne . and 
-             round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then
-          lbnrind = 'LOW';
-    else if lbstnrhi ne . and lbstresn ne . and 
-            round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then
-      lbnrind = 'HIGH';
-    else if lbstnrhi ne . and lbstresn ne . then
-      lbnrind = 'NORMAL';</TranslatedText>
+    <TranslatedText xml:lang="en">if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'POSITIVE' then   lbnrind = 'HIGH'; else if lbtestcd = 'GLUC' and lbcat = 'URINALYSIS' and lborres = 'NEGATIVE' then   lbnrind = 'NORMAL'; else if lbstnrlo ne . and lbstresn ne . and              round(lbstresn,.0000001) &lt; round(lbstnrlo,.0000001) then          lbnrind = 'LOW';    else if lbstnrhi ne . and lbstresn ne . and             round(lbstresn,.0000001) &gt; round(lbstnrhi,.0000001) then      lbnrind = 'HIGH';    else if lbstnrhi ne . and lbstresn ne . then      lbnrind = 'NORMAL';</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="MT.LB.LBBLFL" Name="LBBLFL derivation" Type="Computation">
@@ -5049,10 +5028,7 @@ DataType="text">
 </MethodDef>
 <MethodDef OID="MT.LB.EPOCH" Name="EPOCH derivation" Type="Computation">
   <Description>
-    <TranslatedText xml:lang="en">If VISITNUM &lt; 0 then 
-   SCREENING 
-and otherwise 
-    TREATMENT</TranslatedText>
+    <TranslatedText xml:lang="en">If VISITNUM &lt; 0 then SCREENING and otherwise TREATMENT</TranslatedText>
   </Description>
 </MethodDef>
 <MethodDef OID="MT.METADATAENTRY" Name="Manual entry" Type="Computation">

@@ -1,3 +1,7 @@
+# defineR 0.0.6
+
+* Support for Chinese characters.
+
 # defineR 0.0.5
 
 * Update documentation.

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
 <!-- ******************************************************************************* -->
 <!-- File: define.xml                                                                -->
@@ -3127,16 +3127,16 @@
     <!-- ************************************************************ -->
     <!-- Analysis Results MetaData are Presented Below                -->
     <!-- ************************************************************ -->
-    <arm:AnalysisResultDisplays> 
+    <arm:AnalysisResultDisplays>
 
-    <arm:ResultDisplay OID="RD.Table_14.1.1" Name="Table 14.1.1"> 
+    <arm:ResultDisplay OID="RD.Table_14.1.1" Name="Table 14.1.1">
       <Description>
           <TranslatedText xml:lang="en">Summary of Demographics (ITT Population)</TranslatedText>
       </Description>
       <def:DocumentRef leafID="Table_14.1.1">
         <def:PDFPageRef PageRefs="302" Type="PhysicalRef"/>
       </def:DocumentRef>
-      <arm:AnalysisResult 
+      <arm:AnalysisResult
         OID="Table_14.1.1"
         ParameterOID="ADSL.PARAMCD"
         ResultIdentifier="Table_14.1.1"
@@ -3173,14 +3173,14 @@ PROC FREQ DATA=ADSL;
         </arm:ProgrammingCode>
       </arm:AnalysisResult>
     </arm:ResultDisplay>
-    <arm:ResultDisplay OID="RD.Table_14.2.1" Name="Table 14.2.1"> 
+    <arm:ResultDisplay OID="RD.Table_14.2.1" Name="Table 14.2.1">
       <Description>
           <TranslatedText xml:lang="en">Responder Analysis by Visit</TranslatedText>
       </Description>
       <def:DocumentRef leafID="Table_14.2.1">
         <def:PDFPageRef PageRefs="352" Type="PhysicalRef"/>
       </def:DocumentRef>
-      <arm:AnalysisResult 
+      <arm:AnalysisResult
         OID="Table_14.2.1"
         ParameterOID="ADEF.PARAMCD"
         ResultIdentifier="Table_14.2.1"
@@ -3214,14 +3214,14 @@ proc freq data = adef;
         </arm:ProgrammingCode>
       </arm:AnalysisResult>
     </arm:ResultDisplay>
-    <arm:ResultDisplay OID="RD.Table_14.2.2" Name="Table 14.2.2"> 
+    <arm:ResultDisplay OID="RD.Table_14.2.2" Name="Table 14.2.2">
       <Description>
           <TranslatedText xml:lang="en">Mean Pain Assessments and Changes from Baseline</TranslatedText>
       </Description>
       <def:DocumentRef leafID="Table_14.2.2">
         <def:PDFPageRef PageRefs="353" Type="PhysicalRef"/>
       </def:DocumentRef>
-      <arm:AnalysisResult 
+      <arm:AnalysisResult
         OID="Table_14.2.2"
         ParameterOID="ADEF.PARAMCD"
         ResultIdentifier="Table_14.2.2"
@@ -3257,14 +3257,14 @@ proc glm data = adef;
         </arm:ProgrammingCode>
       </arm:AnalysisResult>
     </arm:ResultDisplay>
-    <arm:ResultDisplay OID="RD.Figure_14.2.1" Name="Figure 14.2.1"> 
+    <arm:ResultDisplay OID="RD.Figure_14.2.1" Name="Figure 14.2.1">
       <Description>
           <TranslatedText xml:lang="en">Time to Pain Relief Analysis by Treatment Group</TranslatedText>
       </Description>
       <def:DocumentRef leafID="Figure_14.2.1">
         <def:PDFPageRef PageRefs="354" Type="PhysicalRef"/>
       </def:DocumentRef>
-      <arm:AnalysisResult 
+      <arm:AnalysisResult
         OID="Figure_14.2.1.R.01"
         ParameterOID="ADTTE.PARAMCD"
         ResultIdentifier="Figure_14.2.1.R.01"
@@ -3295,7 +3295,7 @@ proc lifetest  data = adtte plots=s;
         </arm:Code>
         </arm:ProgrammingCode>
       </arm:AnalysisResult>
-      <arm:AnalysisResult 
+      <arm:AnalysisResult
         OID="Figure_14.2.1.R.02"
         ParameterOID="ADTTE.PARAMCD"
         ResultIdentifier="Figure_14.2.1.R.02"
@@ -3328,14 +3328,14 @@ proc phreg data = adtte;
         </arm:ProgrammingCode>
       </arm:AnalysisResult>
     </arm:ResultDisplay>
-    <arm:ResultDisplay OID="RD.Table_14.3.2.1" Name=" "> 
+    <arm:ResultDisplay OID="RD.Table_14.3.2.1" Name=" ">
       <Description>
           <TranslatedText xml:lang="en">Incidence Rates of TEAEs by System Organ Class and Preferred Term</TranslatedText>
       </Description>
       <def:DocumentRef leafID="Table_14.3.2.1">
         <def:PDFPageRef PageRefs=" " Type=" "/>
       </def:DocumentRef>
-      <arm:AnalysisResult 
+      <arm:AnalysisResult
         OID="Table_14.3.2.1"
         ParameterOID="ADAE.PARAMCD"
         ResultIdentifier="Table_14.3.2.1"

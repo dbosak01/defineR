@@ -108,7 +108,7 @@ get_adam_xml_20 <- function(lst) {
 get_header_adam <- function(dta) {
 
   str <- '
-  <?xml version="1.0" encoding="ISO-8859-1" ?>
+  <?xml version="1.0" encoding="UTF-8" ?>
     <?xml-stylesheet type="text/xsl" href="define2-0-0.xsl"?>
       <!-- ************************************************************* -->
       <!-- File: define.xml                                              -->

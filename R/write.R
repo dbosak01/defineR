@@ -258,7 +258,7 @@ write_markup <- function(x, file_path) {
   }
 
 
-  f <- file(file_path, open="w", encoding = "native.enc")
+  f <- file(file_path, open="w", encoding = "native.enc") # encoding = "UTF-8"
 
   writeLines(x, con = f, useBytes = TRUE)
 
